@@ -16,8 +16,11 @@ your best ai assistant with the best practice
 
 #### Venn Diagram - Skills vs. Agents | Commands
 [Claude Code Brand New Feature: Claude Skills - Ray Amjad](https://www.youtube.com/watch?v=v1y5EUSQ8WA)
+![](!/skill-agent-commands.png)
+
 
 ## IDE
 
 ### Cursor vs. Windsurf vs. VS Code
 [Claude Code Replaced Cursor for Me… Here’s Why](https://www.youtube.com/watch?v=0iGEpx8IeM0)
+![](!/ide.png)
