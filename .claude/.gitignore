@@ -3,4 +3,4 @@ settings.local.json
 
 # Hooks
 hooks/config/hooks-config.local.json
-hooks/logs/hooks-logs.jsonl
+hooks/logs/
