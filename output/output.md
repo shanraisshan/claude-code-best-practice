@@ -1,3 +1,3 @@
-Original Temperature: 28°C
-Transformation Applied: Add +10
-Final Result: 38°C
+Original Temperature: 26Â°C
+Transformation Applied: add +10 in the result
+Final Result: 36Â°C
