@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:wttr.in)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
