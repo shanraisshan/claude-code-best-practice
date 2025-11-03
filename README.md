@@ -7,6 +7,17 @@ your best ai assistant with the best practice
 - **[Hooks](https://docs.claude.com/en/docs/claude-code/hooks)** - Shell commands that execute in response to events like tool calls
 - **[Skills](https://docs.claude.com/en/docs/claude-code/skills)** - Installable capabilities that add specialized functionality to Claude Code
 
+## Documentation
+
+### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
+Learn how to properly orchestrate multiple agents, avoid common pitfalls when sub-agents aren't invoking, and implement sequential workflows using the Task tool.
+
+### **[docs/PROMPTS.md](docs/PROMPTS.md)** - Invocation Patterns Reference
+Quick reference tables showing how to invoke agents and commands from different contexts (CLI, other agents, other commands).
+
+### **[docs/WEATHER.md](docs/WEATHER.md)** - Weather System Flow Documentation
+Complete system architecture and flow diagram for the weather data fetching and transformation workflow, demonstrating real-world agent and command orchestration.
+
 ## SKILLS
 #### Skills vs. Agents | Commands | Memory
 [Claude Code Skills: What Problem Do They Solve? - Brian Casel](https://www.youtube.com/watch?v=Z0DB0kCfNOM)

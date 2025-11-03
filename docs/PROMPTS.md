@@ -2,25 +2,221 @@
 
 
 # Creating Agents and Commands
-create a claude agent and command. the agent will first use tool to call weather api to fetch karachi weather in degree centigrade and then read instructions from @input/input.md to transform the result and update the @output/output.md 
+create a claude agent and command. the agent will first use tool to call weather api to fetch karachi weather in degree centigrade and then read instructions from @input/input.md to transform the result and update the @output/output.md
 
-# Invocation difference between agents and commands
-see the table in @PROMPTS.md of Agent Invocation and Command Invocation and cross verify, also add missing invocation cases if I have missed any
+# Invocation Patterns Reference
 
-### Agent Invocation
+This document provides a comprehensive reference for invoking Agents, Commands, and Skills across different contexts.
 
-  | From                 | How                    | Example                             |
-  |----------------------|------------------------|-------------------------------------|
-  | Claude CLI           | Prompt                 | use weather transformer agent to transform 50 degree |
-  | /commands/Commands.md| Task tool              | Task(subagent_type="weather-transformer") |
-  | Another subagent     | Task tool              | Task(subagent_type="weather-fetcher") |
+## Agent Invocation
 
-  ### Command Invocation
+Agents are specialized subprocesses that handle complex, multi-step tasks. They support both **automatic delegation** (proactive) and **explicit invocation**.
 
-  | From                 | How                    | Example                             |
-  |----------------------|------------------------|-------------------------------------|
-  | Claude CLI           | Prompt                 | use the weather command to fetch the weather |
-  | Claude CLI           | /command-name          | /weather-karachi |
-  | /agents/Agents.md    | SlashCommand tool      | SlashCommand(command="/weather-karachi") |
-  | Another /command     | SlashCommand tool      | SlashCommand(command="/weather-karachi") |
+### Invocation Methods
+
+  | From                 | How                    | Example                             | Notes |
+  |----------------------|------------------------|-------------------------------------|-------|
+  | Claude CLI           | **Automatic (proactive)** | User: "I just modified the auth code"<br/>Claude auto-invokes code-review agent | Requires "PROACTIVELY" keyword in agent description |
+  | Claude CLI           | Explicit natural language | "use weather transformer agent to transform 50 degree" | Direct request by name |
+  | /commands/Commands.md| Task tool              | `Task(subagent_type="weather-transformer", description="Transform temperature", prompt="Apply transformation to 50°C", model="haiku")` | Programmatic invocation from commands |
+  | Another subagent     | Task tool              | `Task(subagent_type="weather-fetcher", description="Fetch temperature", prompt="Get Karachi temperature", model="haiku")` | Agent-to-agent orchestration |
+
+### Automatic Delegation (Proactive Agents)
+
+Agents can be configured for **automatic invocation** by Claude based on context. Claude analyzes:
+- Your task description and request
+- Each agent's `description` field
+- Current context and available tools
+
+**To enable automatic delegation**, include directive keywords in the agent's `description` field:
+- `"use PROACTIVELY"`
+- `"MUST BE USED"`
+- `"Invoke automatically"`
+
+**Example: Proactive Code Review Agent**
+```yaml
+---
+name: code-reviewer
+description: Use this agent PROACTIVELY after any code modifications. Expert code reviewer that analyzes quality, security, and maintainability. Invoke automatically when code is written or modified.
+tools: Read, Grep, Bash
+model: haiku
+---
+```
+
+**Result**: When you modify code, Claude automatically invokes `code-reviewer` without explicit request.
+
+**Example: Proactive Test Agent**
+```yaml
+---
+name: test-runner
+description: MUST BE USED when tests fail or new code is added. Automatically runs tests and fixes failures.
+tools: Bash, Read, Edit
+model: haiku
+---
+```
+
+**Result**: Claude proactively runs tests after code changes.
+
+## Command Invocation
+
+Commands (slash commands) are user-defined operations that extend Claude Code with reusable prompts. They require explicit activation.
+
+  | From                 | How                    | Example                             | Notes |
+  |----------------------|------------------------|-------------------------------------|-------|
+  | Claude CLI           | Natural language prompt | "use the weather command to fetch the weather" | Claude interprets and expands command |
+  | Claude CLI           | Explicit slash command  | `/weather-karachi` | Direct command execution |
+  | /agents/Agents.md    | SlashCommand tool      | `SlashCommand(command="/weather-karachi")` | Commands invoked from agents |
+  | Another /command     | SlashCommand tool      | `SlashCommand(command="/weather-karachi")` | Command chaining |
+
+## Skill Invocation
+
+Skills are model-invoked capabilities that Claude activates automatically based on context. Unlike agents and commands, skills cannot be explicitly invoked.
+
+  | From                 | How                    | Example                             | Notes |
+  |----------------------|------------------------|-------------------------------------|-------|
+  | Claude CLI           | Automatic (model-driven) | User: "Extract text from this PDF"<br/>Claude autonomously activates PDF skill | No explicit invocation - Claude decides based on Skill description |
+  | Claude CLI           | Natural language prompt | "Can you help me analyze this Excel file?"<br/>Claude may invoke Excel skill if available | Context-dependent activation |
+  | /agents/Agents.md    | Skill tool             | `Skill(command="pdf")` | **Only if agent has Skill tool access** |
+  | Another /command     | Skill tool             | `Skill(command="xlsx")` | **Only if command prompt includes Skill tool access** |
+  | Another skill        | N/A                    | Skills cannot invoke other skills | Skills are single-purpose and don't orchestrate |
+
+### Key Differences: Skills vs Agents vs Commands
+
+| Feature              | Agent                  | Command                | Skill                  |
+|----------------------|------------------------|------------------------|------------------------|
+| **Invocation**       | **Both**: Automatic (with PROACTIVELY keyword) OR Explicit (Task tool/prompt) | Explicit (slash or prompt) | Automatic (model-driven) |
+| **User Activation**  | Contextual (if proactive) OR "Use X agent" | `/command-name`        | Contextual request     |
+| **Discoverability**  | Automatic via description (if proactive) OR user must know name | User must know name    | Automatic via description |
+| **Orchestration**    | Can invoke other agents/commands | Can invoke agents/commands | Single-purpose, no orchestration |
+| **Configuration**    | Use `PROACTIVELY` keyword in description for auto-invocation | N/A - always explicit | Description determines when to activate |
+| **Best For**         | Multi-step workflows   | Reusable procedures    | Ambient capabilities   |
+
+## Invocation Examples by Scenario
+
+### Scenario 1: User Wants Weather Data
+
+**Using Command (Explicit):**
+```
+User: /weather-karachi
+Result: Explicit command execution → agents run → output generated
+```
+
+**Using Agent (Explicit):**
+```
+User: "Use the weather-fetcher agent to get Karachi temperature"
+Result: Claude invokes weather-fetcher agent → returns temperature
+```
+
+**Using Agent (Automatic/Proactive):**
+```yaml
+# Agent configuration with PROACTIVELY keyword
+---
+description: Use this agent PROACTIVELY when user asks about Karachi weather.
+             Fetch current temperature from wttr.in.
+---
+```
+```
+User: "What's the weather like in Karachi?"
+Result: Claude automatically invokes weather-fetcher agent → returns temperature
+Note: Agent description contains "PROACTIVELY" keyword
+```
+
+**Using Skill (Automatic):**
+```
+User: "What's the weather in Karachi?"
+Result: If weather skill exists with proper description, Claude automatically invokes it
+Note: No explicit mention of "skill" needed
+```
+
+### Scenario 2: Orchestrating Multiple Steps
+
+**Command Orchestrating Agents:**
+```markdown
+<!-- In /weather-karachi command -->
+1. Task(subagent_type="weather-fetcher", ...)
+2. Task(subagent_type="weather-transformer", ...)
+```
+
+**Agent Orchestrating Other Agents:**
+```markdown
+<!-- In weather-orchestrator agent -->
+1. Task(subagent_type="weather-fetcher", ...)
+2. Extract temperature from report
+3. Task(subagent_type="weather-transformer", prompt="Transform {temperature}", ...)
+```
+
+**Skills Cannot Orchestrate:**
+Skills are single-purpose and don't coordinate other capabilities.
+
+### Scenario 3: Automatic Agent Invocation (Real-World)
+
+**Proactive Code Review Agent:**
+```yaml
+---
+name: code-reviewer
+description: Use this agent PROACTIVELY after any code modifications. Reviews for quality, security, and best practices.
+tools: Read, Grep, Bash
+---
+```
+
+**User Workflow:**
+```
+User: "I've updated the authentication logic in auth.ts"
+Claude: Automatically invokes code-reviewer agent
+Agent: Reads auth.ts, analyzes changes, reports findings
+User: Gets automatic code review without asking for it
+```
+
+**Proactive Test Runner Agent:**
+```yaml
+---
+name: test-runner
+description: MUST BE USED when code is modified or tests fail. Automatically runs tests and reports results.
+tools: Bash, Read
+---
+```
+
+**User Workflow:**
+```
+User: "I fixed the login bug"
+Claude: Automatically invokes test-runner agent
+Agent: Runs test suite, reports pass/fail status
+User: Gets immediate test feedback
+```
+
+### Scenario 4: From Within Code/Prompts
+
+**Invoking Agent from Command:**
+```markdown
+Use the Task tool to invoke the weather-fetcher subagent:
+- subagent_type: weather-fetcher
+- description: Fetch Karachi temperature
+- prompt: Fetch the current temperature for Karachi, Pakistan in Celsius
+- model: haiku
+```
+
+**Invoking Command from Agent:**
+```markdown
+Use the SlashCommand tool to execute the weather workflow:
+SlashCommand(command="/weather-karachi")
+```
+
+**Invoking Skill (if Skill tool available):**
+```markdown
+Use the Skill tool to process the PDF:
+Skill(command="pdf")
+```
+
+## Summary
+
+- **Agents**: **Both automatic and explicit invocation**
+  - Automatic: Use `PROACTIVELY` or `MUST BE USED` keywords in description field
+  - Explicit: Via Task tool or natural language prompt
+- **Commands**: Explicit invocation only via slash syntax (`/command`) or SlashCommand tool
+- **Skills**: Automatic invocation only - Claude decides based on context and description
+- **Key Design Choices**:
+  - Use **proactive agents** for workflows that should trigger automatically based on context
+  - Use **commands** for deterministic workflows requiring explicit user control
+  - Use **skills** for ambient, always-available capabilities that integrate seamlessly
+  - **Agents vs Skills for automatic invocation**: Agents can orchestrate other agents/commands; skills are single-purpose
 
