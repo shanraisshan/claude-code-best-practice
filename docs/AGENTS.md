@@ -101,7 +101,7 @@ After updating the orchestrator agent definition, test it by invoking the orches
 
 ```bash
 # Via slash command
-/weather
+/weather-karachi
 
 # Or directly via Task tool
 Task(subagent_type="weather-orchestrator", description="Run weather workflow", prompt="Orchestrate the complete weather workflow", model="haiku")

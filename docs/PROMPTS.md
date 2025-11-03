@@ -20,7 +20,7 @@ see the table in @PROMPTS.md of Agent Invocation and Command Invocation and cros
   | From                 | How                    | Example                             |
   |----------------------|------------------------|-------------------------------------|
   | Claude CLI           | Prompt                 | use the weather command to fetch the weather |
-  | Claude CLI           | /command-name          | /weather |
-  | /agents/Agents.md    | SlashCommand tool      | SlashCommand(command="/weather Karachi") |
-  | Another /command     | SlashCommand tool      | SlashCommand(command="/weather Karachi") |
+  | Claude CLI           | /command-name          | /weather-karachi |
+  | /agents/Agents.md    | SlashCommand tool      | SlashCommand(command="/weather-karachi") |
+  | Another /command     | SlashCommand tool      | SlashCommand(command="/weather-karachi") |
 
