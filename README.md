@@ -1,12 +1,11 @@
 # claude-code-best-practice
 your best ai assistant with the best practice
 
-- Agents
-- Commands
-- Actions/Workflows
-- Memory
-- Hooks
-- Skills
+- **[Agents](https://docs.claude.com/en/docs/claude-code/agents)** - Specialized subprocesses that autonomously handle complex, multi-step tasks
+- **[Commands](https://docs.claude.com/en/docs/claude-code/slash-commands)** - Custom slash commands to extend Claude Code with reusable prompts
+- **[Memory](https://docs.claude.com/en/docs/claude-code/memory)** - Persistent context that Claude remembers across conversations
+- **[Hooks](https://docs.claude.com/en/docs/claude-code/hooks)** - Shell commands that execute in response to events like tool calls
+- **[Skills](https://docs.claude.com/en/docs/claude-code/skills)** - Installable capabilities that add specialized functionality to Claude Code
 
 ## SKILLS
 #### Skills vs. Agents | Commands | Memory
