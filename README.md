@@ -3,6 +3,7 @@ your best ai assistant with the best practice
 
 - Agents
 - Commands
+- Actions/Workflows
 - Memory
 - Hooks
 - Skills
