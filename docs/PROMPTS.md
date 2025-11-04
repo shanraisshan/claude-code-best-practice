@@ -59,14 +59,55 @@ model: haiku
 
 ## Command Invocation
 
-Commands (slash commands) are user-defined operations that extend Claude Code with reusable prompts. They require explicit activation.
+Commands (slash commands) are user-defined operations that extend Claude Code with reusable prompts. They support both **automatic invocation** (by default) and **explicit activation**.
+
+### Invocation Methods
 
   | From                 | How                    | Example                             | Notes |
   |----------------------|------------------------|-------------------------------------|-------|
+  | Claude CLI           | **Automatic (default)** | User: "I need to write unit tests"<br/>Claude auto-invokes `/write-unit-test` if description matches | Requires `description` field; can disable with `disable-model-invocation: true` |
   | Claude CLI           | Natural language prompt | "use the weather command to fetch the weather" | Claude interprets and expands command |
   | Claude CLI           | Explicit slash command  | `/weather-karachi` | Direct command execution |
   | /agents/Agents.md    | SlashCommand tool      | `SlashCommand(command="/weather-karachi")` | Commands invoked from agents |
   | Another /command     | SlashCommand tool      | `SlashCommand(command="/weather-karachi")` | Command chaining |
+
+### Automatic Command Invocation
+
+By default, Claude can **automatically invoke slash commands** through the SlashCommand tool when contextually appropriate. This works similarly to proactive agents.
+
+**How it works:**
+- Commands with a `description` field are included in Claude's context
+- Claude analyzes your request and matches it against available command descriptions
+- If a match is found, Claude automatically invokes the command via SlashCommand tool
+
+**To enable automatic invocation**, ensure your command has a clear `description`:
+```yaml
+---
+description: Writes comprehensive unit tests for the specified function or module
+model: haiku
+---
+```
+
+**To disable automatic invocation** for a specific command:
+```yaml
+---
+description: Administrative command for system configuration
+disable-model-invocation: true
+model: haiku
+---
+```
+
+**Example: Auto-invoked Test Command**
+```yaml
+---
+description: Generates and runs unit tests for new code. Use when user adds new functions or asks about testing.
+model: haiku
+---
+```
+
+**Result**: When you say "I added a new login function", Claude may automatically invoke this command.
+
+**Global Control**: Use `/permissions` to disable the SlashCommand tool entirely, preventing all automatic command execution.
 
 ## Skill Invocation
 
@@ -84,11 +125,12 @@ Skills are model-invoked capabilities that Claude activates automatically based 
 
 | Feature              | Agent                  | Command                | Skill                  |
 |----------------------|------------------------|------------------------|------------------------|
-| **Invocation**       | **Both**: Automatic (with PROACTIVELY keyword) OR Explicit (Task tool/prompt) | Explicit (slash or prompt) | Automatic (model-driven) |
-| **User Activation**  | Contextual (if proactive) OR "Use X agent" | `/command-name`        | Contextual request     |
-| **Discoverability**  | Automatic via description (if proactive) OR user must know name | User must know name    | Automatic via description |
+| **Invocation**       | **Both**: Automatic (with PROACTIVELY keyword) OR Explicit (Task tool/prompt) | **Both**: Automatic (default, via SlashCommand tool) OR Explicit (slash syntax) | Automatic only (model-driven) |
+| **User Activation**  | Contextual (if proactive) OR "Use X agent" | Contextual (default) OR `/command-name` | Contextual request only |
+| **Discoverability**  | Automatic via description (if proactive) OR user must know name | Automatic via description (default) | Automatic via description |
 | **Orchestration**    | Can invoke other agents/commands | Can invoke agents/commands | Single-purpose, no orchestration |
-| **Configuration**    | Use `PROACTIVELY` keyword in description for auto-invocation | N/A - always explicit | Description determines when to activate |
+| **Configuration**    | Use `PROACTIVELY` keyword in description for auto-invocation | `disable-model-invocation: true` to prevent auto-invocation | Description determines when to activate |
+| **Opt-Out**          | Don't use PROACTIVELY keyword | Set `disable-model-invocation: true` | No opt-out mechanism |
 | **Best For**         | Multi-step workflows   | Reusable procedures    | Ambient capabilities   |
 
 ## Invocation Examples by Scenario
@@ -99,6 +141,20 @@ Skills are model-invoked capabilities that Claude activates automatically based 
 ```
 User: /weather-karachi
 Result: Explicit command execution → agents run → output generated
+```
+
+**Using Command (Automatic - Default Behavior):**
+```yaml
+# Command configuration with description (automatic invocation enabled by default)
+---
+description: Fetch and transform weather data for Karachi
+model: haiku
+---
+```
+```
+User: "What's the weather like in Karachi?"
+Result: Claude automatically invokes /weather-karachi command via SlashCommand tool
+Note: Commands are auto-invoked by default unless disable-model-invocation: true is set
 ```
 
 **Using Agent (Explicit):**
@@ -212,11 +268,20 @@ Skill(command="pdf")
 - **Agents**: **Both automatic and explicit invocation**
   - Automatic: Use `PROACTIVELY` or `MUST BE USED` keywords in description field
   - Explicit: Via Task tool or natural language prompt
-- **Commands**: Explicit invocation only via slash syntax (`/command`) or SlashCommand tool
-- **Skills**: Automatic invocation only - Claude decides based on context and description
+
+- **Commands**: **Both automatic (default) and explicit invocation**
+  - Automatic: Enabled by default when `description` field is present
+  - Explicit: Via slash syntax (`/command`) or SlashCommand tool
+  - Opt-out: Set `disable-model-invocation: true` to prevent automatic invocation
+
+- **Skills**: **Automatic invocation only** - Claude decides based on context and description
+  - No explicit invocation mechanism
+  - No opt-out available
+
 - **Key Design Choices**:
-  - Use **proactive agents** for workflows that should trigger automatically based on context
-  - Use **commands** for deterministic workflows requiring explicit user control
-  - Use **skills** for ambient, always-available capabilities that integrate seamlessly
-  - **Agents vs Skills for automatic invocation**: Agents can orchestrate other agents/commands; skills are single-purpose
+  - Use **proactive agents** for complex multi-step workflows that should trigger automatically
+  - Use **commands (with auto-invocation)** for reusable procedures that should activate contextually
+  - Use **commands (with disable-model-invocation)** for workflows requiring strict explicit control
+  - Use **skills** for ambient, always-available single-purpose capabilities
+  - **Orchestration difference**: Agents and commands can orchestrate other agents/commands; skills are single-purpose
 
