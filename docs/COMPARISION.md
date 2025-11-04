@@ -1,8 +1,5 @@
-# Prompts
-
-
-# Creating Agents and Commands
-create a claude agent and command. the agent will first use tool to call weather api to fetch karachi weather in degree centigrade and then read instructions from @input/input.md to transform the result and update the @output/output.md
+# COMPARISION
+commands, agents, skill
 
 # Invocation Patterns Reference
 
@@ -262,6 +259,53 @@ SlashCommand(command="/weather-karachi")
 Use the Skill tool to process the PDF:
 Skill(command="pdf")
 ```
+
+## Core Differences Between Commands and Agents
+
+While commands and agents share similar invocation patterns, they have fundamental architectural differences:
+
+### Key Architectural Differences
+
+**1. Purpose & Complexity**
+- **Commands**: Reusable prompt templates that expand into instructions. Best for **procedural workflows** with predefined steps.
+- **Agents**: Autonomous subprocesses with their own tool access. Best for **complex, multi-step tasks** requiring independent decision-making.
+
+**2. Execution Model**
+- **Commands**: Expand into prompts that Claude executes in the main conversation context
+- **Agents**: Run as separate subprocesses with isolated execution environments
+
+**3. Tool Access**
+- **Commands**: Execute within the main Claude context and inherit available tools
+- **Agents**: Have explicitly defined tool subsets specified in their configuration (e.g., `tools: Read, Grep, Bash`)
+
+**4. Autonomy Level**
+- **Commands**: Provide instructions for Claude to follow. Can interact with users via AskUserQuestion tool to gather preferences or clarify requirements.
+- **Agents**: Act autonomously to complete tasks and return final reports. **Should NOT ask questions** - they run independently and must work with the information provided in their prompt.
+
+**5. Model Selection**
+- **Commands**: Can specify which model to use for executing the command
+- **Agents**: Can specify which model runs the agent subprocess (e.g., `model: haiku` for cost efficiency)
+
+### When to Choose Each
+
+**Choose Commands when:**
+- You have a reusable prompt/workflow
+- Steps are mostly predefined
+- You want users to trigger via `/slash` syntax
+- You need a simple procedural template
+
+**Choose Agents when:**
+- Task requires autonomous multi-step problem solving
+- You need isolated tool access for security/organization
+- Task should run as independent subprocess
+- You want specialized capabilities (like code review, test running)
+
+**Example from this repository:**
+- `/weather-karachi` command: Orchestrates the workflow
+- `weather-fetcher` agent: Autonomous subprocess that fetches temperature
+- `weather-transformer` agent: Autonomous subprocess that transforms data
+
+The command coordinates, while agents execute their specialized tasks independently.
 
 ## Summary
 
