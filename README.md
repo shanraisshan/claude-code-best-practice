@@ -15,6 +15,11 @@ your best ai assistant with the best practice
 - **[Output Styles](https://docs.claude.com/en/docs/claude-code/output-styles)** - Custom system prompt modifications for different use cases
 - **[Permissions](https://docs.claude.com/en/docs/claude-code/permissions)** - Fine-grained access control for tools and operations
 
+## Other Libraries
+
+- [Claude Code Tips](https://github.com/ykdojo/claude-code-tips)
+- [Awesome Claude Code](https://github.com/hesreallyhim/awesome-claude-code)
+
 ## Documentation
 
 ### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
