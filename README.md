@@ -20,6 +20,11 @@ your best ai assistant with the best practice
 - [Claude Code Tips](https://github.com/ykdojo/claude-code-tips)
 - [Awesome Claude Code](https://github.com/hesreallyhim/awesome-claude-code)
 
+## Keywords
+
+- [ultrathink] Triggers extended thinking with up to ~32K thinking tokens for a single request.
+- [btw] start prompt with btw to let the current task executing in background
+
 ## Documentation
 
 ### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
