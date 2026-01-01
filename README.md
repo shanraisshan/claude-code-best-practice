@@ -24,6 +24,7 @@ your best ai assistant with the best practice
 
 - [ultrathink] Triggers extended thinking with up to ~32K thinking tokens for a single request.
 - [btw] start prompt with btw to let the current task executing in background
+- [claude --dangerously-skip-permissions] accepts everything
 
 ## Documentation
 
