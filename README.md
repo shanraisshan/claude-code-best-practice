@@ -26,6 +26,12 @@ your best ai assistant with the best practice
 - [btw] start prompt with btw to let the current task executing in background
 - [claude --dangerously-skip-permissions] "defaultMode": "bypassPermissions"
 
+## Tips
+
+### Debugging
+- always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
+- use claude in chrome to let claude see chrome console logs on its own
+
 ## Documentation
 
 ### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
