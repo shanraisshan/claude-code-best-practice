@@ -32,6 +32,9 @@ your best ai assistant with the best practice
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - use claude in chrome to let claude see chrome console logs on its own
 
+### Sandboxing
+- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
+
 ## Documentation
 
 ### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
