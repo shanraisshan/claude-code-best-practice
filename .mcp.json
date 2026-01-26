@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"]
+    },
+    "reddit-mcp-server": {
+      "type": "http",
+      "url": "http://144.91.76.33:8080/mcp"
+    }
+  }
+}

@@ -9,6 +9,7 @@ Fetch the current temperature for Karachi, Pakistan and apply transformations.
 
 ## Workflow
 
+
 1. Use the AskUserQuestion tool to ask the user whether they want the temperature in Celsius or Fahrenheit
 2. Use the weather-fetcher agent to retrieve the current temperature from wttr.in API in the requested unit
 3. Use the weather-transformer agent to read transformation rules from input/input.md and apply them to the temperature

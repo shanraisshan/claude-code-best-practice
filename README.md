@@ -3,17 +3,20 @@ your best ai assistant with the best practice
 
 ## CONCEPTS
 
-- **[Agents](https://docs.claude.com/en/docs/claude-code/agents)** - Specialized subprocesses that autonomously handle complex, multi-step tasks
-- **[Commands](https://docs.claude.com/en/docs/claude-code/slash-commands)** - Custom slash commands to extend Claude Code with reusable prompts
-- **[Memory](https://docs.claude.com/en/docs/claude-code/memory)** - Persistent context that Claude remembers across conversations
-- **[Hooks](https://docs.claude.com/en/docs/claude-code/hooks)** - Shell commands that execute in response to events like tool calls
-- **[Skills](https://docs.claude.com/en/docs/claude-code/skills)** - Installable capabilities that add specialized functionality to Claude Code
-- **[Settings](https://docs.claude.com/en/docs/claude-code/settings)** - Hierarchical configuration system for Claude Code behavior
-- **[MCP Servers](https://docs.claude.com/en/docs/claude-code/mcp)** - Model Context Protocol for connecting to external tools, databases, and APIs
-- **[Plugins](https://docs.claude.com/en/docs/claude-code/plugins)** - Extensible packages that bundle commands, agents, skills, hooks, and MCP servers
-- **[Rules](https://docs.claude.com/en/docs/claude-code/memory#project-rules)** - Modular topic-specific instructions in `.claude/rules/*.md`
-- **[Output Styles](https://docs.claude.com/en/docs/claude-code/output-styles)** - Custom system prompt modifications for different use cases
-- **[Permissions](https://docs.claude.com/en/docs/claude-code/permissions)** - Fine-grained access control for tools and operations
+> **Note:** Custom slash commands have been merged into skills. Files in `.claude/commands/` still work, but skills (`.claude/skills/`) are recommended as they support additional features like supporting files, invocation control, and subagent execution.
+
+- **[Skills](https://code.claude.com/docs/en/skills)** - Reusable knowledge, workflows, and slash commands that Claude can load on-demand or you invoke with `/skill-name`
+- **[Subagents](https://code.claude.com/docs/en/sub-agents)** - Isolated execution contexts that run their own loops and return summarized results
+- **[Memory](https://code.claude.com/docs/en/memory)** - Persistent context via CLAUDE.md files and `@path` imports that Claude sees every session
+- **[Rules](https://code.claude.com/docs/en/memory#modular-rules-with-clauderules)** - Modular topic-specific instructions in `.claude/rules/*.md` with optional path-scoping via frontmatter
+- **[Hooks](https://code.claude.com/docs/en/hooks)** - Deterministic scripts that run outside the agentic loop on specific events
+- **[MCP Servers](https://code.claude.com/docs/en/mcp)** - Model Context Protocol connections to external tools, databases, and APIs
+- **[Plugins](https://code.claude.com/docs/en/plugins)** - Distributable packages that bundle skills, subagents, hooks, and MCP servers
+- **[Marketplaces](https://code.claude.com/docs/en/discover-plugins)** - Host and discover plugin collections
+- **[Settings](https://code.claude.com/docs/en/settings)** - Hierarchical configuration system for Claude Code behavior
+- **[Permissions](https://code.claude.com/docs/en/iam)** - Fine-grained access control for tools and operations
+
+**Extension Overview:** See [Extend Claude Code](https://code.claude.com/docs/en/features-overview) for when to use each feature and how they layer together.
 
 
 ## LESSON LEARNED
