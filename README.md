@@ -28,6 +28,9 @@ your best ai assistant with the best practice
 
 ## Tips
 
+### Claude.md
+- [Humanlayer - Writing a good Claude.Md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
+
 ### Debugging
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - use claude in chrome to let claude see chrome console logs on its own
