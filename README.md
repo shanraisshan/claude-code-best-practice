@@ -44,6 +44,10 @@ your best ai assistant with the best practice
 - [claude --dangerously-skip-permissions] "defaultMode": "bypassPermissions"
 - *deprecated** [ultrathink] Triggers extended thinking with up to ~32K thinking tokens for a single request.
 
+## CLAUDE CODE FEATURES INSPIRATION
+
+- [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
+
 ## DOCS
 
 ### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
