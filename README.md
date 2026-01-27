@@ -25,6 +25,7 @@ your best ai assistant with the best practice
 
 ■ **Workflows**
 - Claude.md should not exceed 150+ lines. (still not 100% guarenteed)
+- use commands for your workflows instead of agents
 - have feature specific subagents (extra context) with skills (progressive disclosure) instead of general qa, backend engineer.
 - /memory, /rules, constitution.md does not guarentee anything
 - do manual /compact at max 50%
