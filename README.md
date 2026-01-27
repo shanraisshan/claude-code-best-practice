@@ -21,7 +21,7 @@ your best ai assistant with the best practice
 
 ## LESSON LEARNED
 
-### My Experience (4 months)
+### My Experience
 
 ■ **Workflows**
 - Claude.md should not exceed 150+ lines. (still not 100% guarenteed)
