@@ -44,7 +44,7 @@ your best ai assistant with the best practice
 - /doctor
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - use mcp (claude in chrome, playwright, chrome dev tool) to let claude see chrome console logs on its own
-
+- provide screenshots of the issue
 
 ### Context Engineering
 - [Humanlayer - Writing a good Claude.Md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
