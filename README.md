@@ -21,23 +21,23 @@ your best ai assistant with the best practice
 
 ## LESSON LEARNED
 
-### My Experience
+### My Experience (4 months)
 
 ■ **Workflows**
-- Claude.md should be 100 lines only.
-- Have feature specific subagents (extra context) with skills (progressive disclosure).
+- Claude.md should not exceed 150+ lines. (still not 100% guarenteed)
+- have feature specific subagents (extra context) with skills (progressive disclosure) instead of general qa, backend engineer.
 - /memory, /rules, constitution.md does not guarentee anything
 - do manual /compact at max 50%
-- subtasks should be so small that it can be completed in less than 50% session of context window
 - always start with plan mode
 - use human pass gated todo list workflow
-- vanilla cc is better than 3rd party workflows
+- subtasks should be so small that it can be completed in less than 50% context
+- vanilla cc is better than any workflows with smaller tasks
 
 ■ **Utilities**
-- terminal instead of ide (crash issue) 
-- wispr-flow for voice prompting (10x productivity)
-- voice hooks for claude feedback
-- status line for glancing compact
+- iTerm terminal instead of IDE (crash issue) 
+- Wispr Flow for voice prompting (10x productivity)
+- claude-code-voice-hooks for claude feedback
+- status line for context awareness and fast compacting
 - use git worktress
 - use /config dont ask permission mode instead of dangerously—skip--permissions
 
