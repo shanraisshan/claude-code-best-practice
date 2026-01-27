@@ -34,6 +34,7 @@ your best ai assistant with the best practice
 - vanilla cc is better than 3rd party workflows
 
 ■ **Utilities**
+- terminal instead of ide (crash issue) 
 - wispr-flow for voice prompting (10x productivity)
 - voice hooks for claude feedback
 - status line for glancing compact
