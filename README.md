@@ -89,6 +89,10 @@ your best ai assistant with the best practice
 - [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
 - [Ralph Plugin](https://x.com/GeoffreyHuntley/status/2015031262692753449)
 
+## SECURITY
+
+- [Great talk at 39C3 on "Agentic ProbLLMs: Exploiting AI Computer-Use and Coding Agents"](https://www.reddit.com/r/cybersecurity/comments/1qannih/great_talk_at_39c3_on_agentic_probllms_exploiting/)
+
 ## DOCS
 
 ### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
