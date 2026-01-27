@@ -23,7 +23,7 @@ your best ai assistant with the best practice
 
 ### My Experience
 
-- **Workflows**
+■ **Workflows**
 - Claude.md should be 100 lines only.
 - Have feature specific subagents (extra context) with skills (progressive disclosure).
 - /memory, /rules, constitution.md does not guarentee anything
@@ -32,10 +32,13 @@ your best ai assistant with the best practice
 - always start with plan mode
 - use human pass gated todo list workflow
 - vanilla cc is better than 3rd party workflows
-- **Utilities**
-- status line, voice hooks
-- never use dangerously—skip--permissions
-- **Debugging** 
+■ **Utilities**
+- wispr-flow for voice prompting (10x productivity)
+- voice hooks for claude feedback
+- status line for glancing compact
+- use git worktress
+- use /config dont ask permission mode instead of dangerously—skip--permissions
+■ **Debugging** 
 - /doctor
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - use mcp (claude in chrome, playwright, chrome dev tool) to let claude see chrome console logs on its own
@@ -55,6 +58,7 @@ your best ai assistant with the best practice
 - [Github Speckit](https://github.com/github/spec-kit)
 - [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
 - [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
+- [Superpower](https://github.com/obra/superpowers)
 
 ## LIBRARIES
 
