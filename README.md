@@ -32,12 +32,14 @@ your best ai assistant with the best practice
 - always start with plan mode
 - use human pass gated todo list workflow
 - vanilla cc is better than 3rd party workflows
+
 ■ **Utilities**
 - wispr-flow for voice prompting (10x productivity)
 - voice hooks for claude feedback
 - status line for glancing compact
 - use git worktress
 - use /config dont ask permission mode instead of dangerously—skip--permissions
+
 ■ **Debugging** 
 - /doctor
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
@@ -73,11 +75,18 @@ your best ai assistant with the best practice
 - *deprecated** [ultrathink] Triggers extended thinking with up to ~32K thinking tokens for a single request.
 
 ### Community
-- Vibe Coding
+- Agentic Workflow
+- AI Slop
 - Context Engineering
 - Context Rot
 - Dumb Zone
-
+- Hallucination
+- One Shot
+- Rate Limit Jail / Cooldown
+- Slot Machine Method = Save state → let Claude run → revert if bad results → try again
+- The Holy Trinity = Skills + Agents + Hooks working together
+- Token Burn
+- Vibe Coding
 
 ## CLAUDE CODE FEATURES INSPIRATION
 
