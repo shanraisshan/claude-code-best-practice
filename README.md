@@ -1,6 +1,10 @@
 # claude-code-best-practice
 practice makes claude perfect
 
+<a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers">
+  <img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&logo=github&label=⭐ Stars&color=yellow" alt="GitHub Stars">
+</a>
+
 <p align="center">
   <img src="assets/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
 </p>
@@ -36,6 +40,7 @@ practice makes claude perfect
 - use human pass gated todo list workflow
 - subtasks should be so small that it can be completed in less than 50% context
 - vanilla cc is better than any workflows with smaller tasks
+- commit often, as soon as task is completed, commit.
 
 ■ **Utilities**
 - iTerm terminal instead of IDE (crash issue) 
