@@ -23,10 +23,7 @@ your best ai assistant with the best practice
 
 **Extension Overview:** See [Extend Claude Code](https://code.claude.com/docs/en/features-overview) for when to use each feature and how they layer together.
 
-
-## LESSON LEARNED
-
-### My Experience
+## MY EXPERIENCE
 
 ■ **Workflows**
 - Claude.md should not exceed 150+ lines. (still not 100% guarenteed)
@@ -53,10 +50,11 @@ your best ai assistant with the best practice
 - use mcp (claude in chrome, playwright, chrome dev tool) to let claude see chrome console logs on its own
 - provide screenshots of the issue
 
-### Context Engineering
-- [Humanlayer - Writing a good Claude.Md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
+   CONTEXT ENGINEERING
+- [Humanlayer - Writing a good Claude.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
+- [Claude.md for larger monorepos - Boris Cherny on X](https://github.com/shanraisshan/claude-code-best-practice/blob/main/reports/claude-md-for-larger-mono-repos.md)
 
-### Workflows
+## WORKFLOWS
 - [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
 - [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
 - [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
@@ -64,6 +62,7 @@ your best ai assistant with the best practice
 - [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
 - [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
 - [Superpower](https://github.com/obra/superpowers)
+- [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
 
 ## LIBRARIES
 
@@ -99,20 +98,3 @@ your best ai assistant with the best practice
 ## SECURITY
 
 - [Great talk at 39C3 on "Agentic ProbLLMs: Exploiting AI Computer-Use and Coding Agents"](https://www.reddit.com/r/cybersecurity/comments/1qannih/great_talk_at_39c3_on_agentic_probllms_exploiting/)
-
-## DOCS
-
-### **[docs/AGENTS.md](docs/AGENTS.md)** - Agent Orchestration Best Practices
-Learn how to properly orchestrate multiple agents, avoid common pitfalls when sub-agents aren't invoking, and implement sequential workflows using the Task tool.
-
-### **[docs/PROMPTS.md](docs/PROMPTS.md)** - Invocation Patterns Reference
-Quick reference tables showing how to invoke agents and commands from different contexts (CLI, other agents, other commands).
-
-### **[docs/WEATHER.md](docs/WEATHER.md)** - Weather System Flow Documentation
-Complete system architecture and flow diagram for the weather data fetching and transformation workflow, demonstrating real-world agent and command orchestration.
-
-## IDE
-
-### Cursor vs. Windsurf vs. VS Code
-[Claude Code Replaced Cursor for Me… Here’s Why](https://www.youtube.com/watch?v=0iGEpx8IeM0)
-![](!/ide.png)
