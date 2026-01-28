@@ -49,7 +49,8 @@ your best ai assistant with the best practice
 - provide screenshots of the issue
 
 ### Context Engineering
-- [Humanlayer - Writing a good Claude.Md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
+- [Humanlayer - Writing a good Claude.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
+- [Claude.md for larger monorepos - Boris Cherny on X](https://github.com/shanraisshan/claude-code-best-practice/blob/main/reports/claude-md-for-larger-mono-repos.md)
 
 ### Workflows
 - [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
@@ -59,6 +60,7 @@ your best ai assistant with the best practice
 - [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
 - [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
 - [Superpower](https://github.com/obra/superpowers)
+- [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
 
 ## LIBRARIES
 
