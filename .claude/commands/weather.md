@@ -5,6 +5,10 @@ model: haiku
 
 # Weather Command
 
-Execute the weather-karachi command to fetch and transform temperature data.
+Execute the weather-karachi skill to fetch and transform temperature data.
 
-Use the SlashCommand tool to execute `/weather-karachi`.
+Use the Skill tool to execute the `weather-karachi` skill:
+
+```
+Skill(skill="weather-karachi")
+```

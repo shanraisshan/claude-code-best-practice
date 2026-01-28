@@ -4,7 +4,7 @@ This document describes the complete flow of the weather data fetching and trans
 
 ## System Overview
 
-The weather system consists of slash commands and specialized agents that work together to fetch and transform temperature data for Karachi, Pakistan.
+The weather system consists of skills and specialized subagents that work together to fetch and transform temperature data for Karachi, Pakistan.
 
 ## Flow Diagram
 
@@ -19,18 +19,18 @@ The weather system consists of slash commands and specialized agents that work t
                     │  Command         │
                     └──────────────────┘
                               │
-                              │ calls
+                              │ invokes via Skill tool
                               ▼
                     ┌──────────────────┐
                     │ /weather-karachi │
-                    │  Command         │
+                    │  Skill           │
                     └──────────────────┘
                               │
-                              │ Step 1 (Sequential)
+                              │ Step 1 (Sequential via Task tool)
                               ▼
                   ┌────────────────────────┐
                   │  weather-fetcher       │
-                  │  Agent                 │
+                  │  Subagent              │
                   │  (subagent_type)       │
                   └────────────────────────┘
                               │
@@ -44,11 +44,11 @@ The weather system consists of slash commands and specialized agents that work t
                               │ Returns: 26°C
                               ▼
                               │
-                              │ Step 2 (Sequential)
+                              │ Step 2 (Sequential via Task tool)
                               ▼
                   ┌─────────────────────────┐
                   │  weather-transformer    │
-                  │  Agent                  │
+                  │  Subagent               │
                   │  (subagent_type)        │
                   └─────────────────────────┘
                               │
@@ -80,21 +80,21 @@ The weather system consists of slash commands and specialized agents that work t
 
 ## Component Details
 
-### 1. Slash Commands
+### 1. Skills and Commands
 
-#### `/weather`
+#### `/weather` (Command)
 - **Location**: `.claude/commands/weather.md`
 - **Purpose**: Entry point for weather operations
-- **Action**: Calls `/weather-karachi` command
+- **Action**: Invokes `weather-karachi` skill via Skill tool
 - **Model**: haiku
 
-#### `/weather-karachi`
-- **Location**: `.claude/commands/weather-karachi.md`
+#### `/weather-karachi` (Skill)
+- **Location**: `.claude/skills/weather-karachi/SKILL.md`
 - **Purpose**: Orchestrates the weather fetching and transformation workflow
-- **Action**: Launches two specialized agents sequentially
+- **Action**: Launches two specialized subagents sequentially via Task tool
 - **Model**: haiku
 
-### 2. Specialized Agents
+### 2. Specialized Subagents
 
 #### `weather-fetcher`
 - **Location**: `.claude/agents/weather-fetcher.md`
@@ -115,7 +115,7 @@ The weather system consists of slash commands and specialized agents that work t
 #### `input/input.md`
 - **Purpose**: Stores transformation rules
 - **Format**: Natural language instructions (e.g., "add +10 in the result")
-- **Access**: Read by weather-transformer agent
+- **Access**: Read by weather-transformer subagent
 
 #### `output/output.md`
 - **Purpose**: Stores formatted transformation results
@@ -127,11 +127,11 @@ The weather system consists of slash commands and specialized agents that work t
 
 ## Execution Flow
 
-1. **User Invocation**: User runs `/weather` command
-2. **Command Delegation**: `/weather` delegates to `/weather-karachi`
-3. **Sequential Agent Execution**:
-   - **Step 1**: `weather-fetcher` agent fetches current temperature from wttr.in
-   - **Step 2**: `weather-transformer` agent:
+1. **User Invocation**: User runs `/weather` command or `/weather-karachi` skill
+2. **Skill Invocation**: `/weather` invokes `weather-karachi` skill via Skill tool
+3. **Sequential Subagent Execution** (via Task tool):
+   - **Step 1**: `weather-fetcher` subagent fetches current temperature from wttr.in
+   - **Step 2**: `weather-transformer` subagent:
      - Reads transformation rules from `input/input.md`
      - Applies rules to the fetched temperature
      - Formats and writes results to `output/output.md`
@@ -144,10 +144,10 @@ The weather system consists of slash commands and specialized agents that work t
 
 ```
 Input: /weather
-├─ Calls: /weather-karachi
-│  ├─ Agent: weather-fetcher
+├─ Invokes: weather-karachi skill (via Skill tool)
+│  ├─ Subagent: weather-fetcher (via Task tool)
 │  │  └─ Result: 26°C
-│  ├─ Agent: weather-transformer
+│  ├─ Subagent: weather-transformer (via Task tool)
 │  │  ├─ Reads: input/input.md ("add +10")
 │  │  ├─ Calculates: 26 + 10 = 36°C
 │  │  └─ Writes: output/output.md
@@ -160,8 +160,8 @@ Input: /weather
 ## Key Design Principles
 
 1. **Separation of Concerns**: Each component has a single, clear responsibility
-2. **Sequential Execution**: Agents run in order to ensure data dependencies are met
-3. **Specialized Agents**: Task-specific agents with minimal tool access
-4. **Command Chaining**: Simple commands can delegate to more complex workflows
+2. **Sequential Execution**: Subagents run in order to ensure data dependencies are met
+3. **Specialized Subagents**: Task-specific subagents with minimal tool access
+4. **Skill-Based Architecture**: Skills orchestrate workflows, subagents execute tasks
 5. **Configurable Transformations**: Rules stored externally in input files
 6. **Structured Output**: Results formatted consistently in output files

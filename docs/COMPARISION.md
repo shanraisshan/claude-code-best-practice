@@ -134,35 +134,37 @@ Skills are model-invoked capabilities that Claude activates automatically based 
 
 ### Scenario 1: User Wants Weather Data
 
-**Using Command (Explicit):**
+**Using Skill (Explicit):**
 ```
 User: /weather-karachi
-Result: Explicit command execution → agents run → output generated
+Result: Explicit skill execution → subagents run → output generated
 ```
 
-**Using Command (Automatic - Default Behavior):**
+**Using Skill (Automatic - Default Behavior):**
 ```yaml
-# Command configuration with description (automatic invocation enabled by default)
+# Skill configuration with description (automatic invocation enabled by default)
+# Location: .claude/skills/weather-karachi/SKILL.md
 ---
-description: Fetch and transform weather data for Karachi
+name: weather-karachi
+description: Fetch and transform weather data for Karachi. Use when the user asks about Karachi weather.
 model: haiku
 ---
 ```
 ```
 User: "What's the weather like in Karachi?"
-Result: Claude automatically invokes /weather-karachi command via SlashCommand tool
-Note: Commands are auto-invoked by default unless disable-model-invocation: true is set
+Result: Claude automatically invokes weather-karachi skill via Skill tool
+Note: Skills are auto-invoked by default unless disable-model-invocation: true is set
 ```
 
-**Using Agent (Explicit):**
+**Using Subagent (Explicit):**
 ```
 User: "Use the weather-fetcher agent to get Karachi temperature"
-Result: Claude invokes weather-fetcher agent → returns temperature
+Result: Claude invokes weather-fetcher subagent → returns temperature
 ```
 
-**Using Agent (Automatic/Proactive):**
+**Using Subagent (Automatic/Proactive):**
 ```yaml
-# Agent configuration with PROACTIVELY keyword
+# Subagent configuration with PROACTIVELY keyword
 ---
 description: Use this agent PROACTIVELY when user asks about Karachi weather.
              Fetch current temperature from wttr.in.
@@ -170,36 +172,39 @@ description: Use this agent PROACTIVELY when user asks about Karachi weather.
 ```
 ```
 User: "What's the weather like in Karachi?"
-Result: Claude automatically invokes weather-fetcher agent → returns temperature
-Note: Agent description contains "PROACTIVELY" keyword
+Result: Claude automatically invokes weather-fetcher subagent → returns temperature
+Note: Subagent description contains "PROACTIVELY" keyword
 ```
 
-**Using Skill (Automatic):**
+**Using Command (Legacy):**
 ```
-User: "What's the weather in Karachi?"
-Result: If weather skill exists with proper description, Claude automatically invokes it
-Note: No explicit mention of "skill" needed
+User: /weather
+Result: Command invokes weather-karachi skill via Skill tool
+Note: Commands still work but skills are recommended
 ```
 
 ### Scenario 2: Orchestrating Multiple Steps
 
-**Command Orchestrating Agents:**
+**Skill Orchestrating Subagents:**
 ```markdown
-<!-- In /weather-karachi command -->
+<!-- In .claude/skills/weather-karachi/SKILL.md -->
 1. Task(subagent_type="weather-fetcher", ...)
 2. Task(subagent_type="weather-transformer", ...)
 ```
 
-**Agent Orchestrating Other Agents:**
+**Command Invoking Skill:**
 ```markdown
-<!-- In weather-orchestrator agent -->
+<!-- In /weather command -->
+Skill(skill="weather-karachi")
+```
+
+**Subagent Orchestrating Other Subagents:**
+```markdown
+<!-- In weather-orchestrator subagent -->
 1. Task(subagent_type="weather-fetcher", ...)
 2. Extract temperature from report
 3. Task(subagent_type="weather-transformer", prompt="Transform {temperature}", ...)
 ```
-
-**Skills Cannot Orchestrate:**
-Skills are single-purpose and don't coordinate other capabilities.
 
 ### Scenario 3: Automatic Agent Invocation (Real-World)
 
@@ -239,7 +244,7 @@ User: Gets immediate test feedback
 
 ### Scenario 4: From Within Code/Prompts
 
-**Invoking Agent from Command:**
+**Invoking Subagent from Skill:**
 ```markdown
 Use the Task tool to invoke the weather-fetcher subagent:
 - subagent_type: weather-fetcher
@@ -248,16 +253,16 @@ Use the Task tool to invoke the weather-fetcher subagent:
 - model: haiku
 ```
 
-**Invoking Command from Agent:**
+**Invoking Skill from Command:**
 ```markdown
-Use the SlashCommand tool to execute the weather workflow:
-SlashCommand(command="/weather-karachi")
+Use the Skill tool to execute the weather-karachi skill:
+Skill(skill="weather-karachi")
 ```
 
-**Invoking Skill (if Skill tool available):**
+**Invoking Skill from Another Skill:**
 ```markdown
-Use the Skill tool to process the PDF:
-Skill(command="pdf")
+Use the Skill tool to invoke a related skill:
+Skill(skill="data-processor")
 ```
 
 ## Core Differences Between Commands and Agents
@@ -301,11 +306,12 @@ While commands and agents share similar invocation patterns, they have fundament
 - You want specialized capabilities (like code review, test running)
 
 **Example from this repository:**
-- `/weather-karachi` command: Orchestrates the workflow
-- `weather-fetcher` agent: Autonomous subprocess that fetches temperature
-- `weather-transformer` agent: Autonomous subprocess that transforms data
+- `/weather-karachi` skill: Orchestrates the workflow (`.claude/skills/weather-karachi/SKILL.md`)
+- `/weather` command: Entry point that invokes the skill (`.claude/commands/weather.md`)
+- `weather-fetcher` subagent: Autonomous subprocess that fetches temperature
+- `weather-transformer` subagent: Autonomous subprocess that transforms data
 
-The command coordinates, while agents execute their specialized tasks independently.
+The skill coordinates, while subagents execute their specialized tasks independently.
 
 ## Summary
 
