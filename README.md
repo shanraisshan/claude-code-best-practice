@@ -97,3 +97,7 @@ practice makes claude perfect
 **Why it works:** Progressive disclosure • Single execution context • Clean separation • Reusability
 
 See [docs/weather-flow-architecture.md](docs/weather-flow-architecture.md) for implementation details.
+
+## SETTINGS
+
+See [reports/claude-settings.md](reports/claude-settings.md) for a comprehensive reference of all available `settings.json` configuration options.
