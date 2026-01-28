@@ -37,7 +37,6 @@ practice makes claude perfect
 - /memory, /rules, constitution.md does not guarentee anything
 - do manual /compact at max 50%
 - always start with plan mode
-- use human pass gated todo list workflow
 - subtasks should be so small that it can be completed in less than 50% context
 - vanilla cc is better than any workflows with smaller tasks
 - commit often, as soon as task is completed, commit.
@@ -47,8 +46,8 @@ practice makes claude perfect
 - Wispr Flow for voice prompting (10x productivity)
 - claude-code-voice-hooks for claude feedback
 - status line for context awareness and fast compacting
-- use git worktress
-- use /config dont ask permission mode instead of dangerously—skip--permissions
+- git worktress for parallel development
+- /config dont ask permission mode instead of dangerously—skip--permissions
 
 ■ **Debugging** 
 - /doctor
