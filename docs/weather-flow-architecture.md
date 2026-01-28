@@ -4,7 +4,10 @@ This document describes the complete flow of the weather data fetching and trans
 
 ## System Overview
 
-The weather system consists of skills and specialized subagents that work together to fetch and transform temperature data for Karachi, Pakistan.
+The weather system demonstrates the **Command → Agent → Skills** architecture pattern, where:
+- A command orchestrates the workflow
+- An agent executes tasks using preloaded skills
+- Skills provide domain-specific knowledge and instructions
 
 ## Flow Diagram
 
@@ -14,108 +17,100 @@ The weather system consists of skills and specialized subagents that work togeth
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
-                    ┌──────────────────┐
-                    │  /weather        │
-                    │  Command         │
-                    └──────────────────┘
+                    ┌──────────────────────┐
+                    │  /weather-orchestrator│
+                    │  Command              │
+                    │  (Entry point)        │
+                    └──────────────────────┘
                               │
-                              │ invokes via Skill tool
+                              │ Task tool invocation
                               ▼
-                    ┌──────────────────┐
-                    │ /weather-karachi │
-                    │  Skill           │
-                    └──────────────────┘
+                    ┌──────────────────────┐
+                    │  weather             │
+                    │  Agent               │
+                    │  (Orchestrates flow) │
+                    │                      │
+                    │  skills:             │
+                    │  - weather-fetcher   │
+                    │  - weather-transformer│
+                    └──────────────────────┘
                               │
-                              │ Step 1 (Sequential via Task tool)
-                              ▼
-                  ┌────────────────────────┐
-                  │  weather-fetcher       │
-                  │  Subagent              │
-                  │  (subagent_type)       │
-                  └────────────────────────┘
-                              │
-                              ▼
-                  ┌────────────────────────┐
-                  │  wttr.in API           │
-                  │  Fetch Temperature     │
-                  │  for Karachi           │
-                  └────────────────────────┘
-                              │
-                              │ Returns: 26°C
-                              ▼
-                              │
-                              │ Step 2 (Sequential via Task tool)
-                              ▼
-                  ┌─────────────────────────┐
-                  │  weather-transformer    │
-                  │  Subagent               │
-                  │  (subagent_type)        │
-                  └─────────────────────────┘
-                              │
-                              ▼
-                  ┌─────────────────────────┐
-                  │  input/input.md         │
-                  │  Read Transform Rules   │
-                  └─────────────────────────┘
-                              │
-                              │ Reads: "add +10"
-                              ▼
-                  ┌────────────────────────┐
-                  │  Apply Transform       │
-                  │  26 + 10 = 36°C        │
-                  └────────────────────────┘
-                              │
-                              ▼
-                  ┌────────────────────────┐
-                  │  output/output.md      │
-                  │  Write Results         │
-                  └────────────────────────┘
-                              │
-                              ▼
-                  ┌────────────────────────┐
-                  │  Display Summary       │
-                  │  to User               │
-                  └────────────────────────┘
+              ┌───────────────┴───────────────┐
+              │                               │
+              ▼                               ▼
+┌─────────────────────────┐     ┌─────────────────────────┐
+│  weather-fetcher        │     │  weather-transformer    │
+│  Skill                  │     │  Skill                  │
+│  (Preloaded knowledge)  │     │  (Preloaded knowledge)  │
+└─────────────────────────┘     └─────────────────────────┘
+              │                               │
+              ▼                               ▼
+┌─────────────────────────┐     ┌─────────────────────────┐
+│  wttr.in API            │     │  input/input.md         │
+│  Fetch Temperature      │     │  Read Transform Rules   │
+│  for Karachi            │     └─────────────────────────┘
+└─────────────────────────┘                   │
+              │                               ▼
+              │ Returns: 26°C       ┌─────────────────────────┐
+              │                     │  Apply Transform        │
+              └─────────────────────│  26 + 10 = 36°C         │
+                                    └─────────────────────────┘
+                                              │
+                                              ▼
+                                    ┌─────────────────────────┐
+                                    │  output/output.md       │
+                                    │  Write Results          │
+                                    └─────────────────────────┘
+                                              │
+                                              ▼
+                                    ┌─────────────────────────┐
+                                    │  Display Summary        │
+                                    │  to User                │
+                                    └─────────────────────────┘
 ```
 
 ## Component Details
 
-### 1. Skills and Commands
+### 1. Command
 
-#### `/weather` (Command)
-- **Location**: `.claude/commands/weather.md`
+#### `/weather-orchestrator` (Command)
+- **Location**: `.claude/commands/weather-orchestrator.md`
 - **Purpose**: Entry point for weather operations
-- **Action**: Invokes `weather-karachi` skill via Skill tool
+- **Action**: Invokes the weather agent via Task tool
 - **Model**: haiku
 
-#### `/weather-karachi` (Skill)
-- **Location**: `.claude/skills/weather-karachi/SKILL.md`
-- **Purpose**: Orchestrates the weather fetching and transformation workflow
-- **Action**: Launches two specialized subagents sequentially via Task tool
+### 2. Agent with Skills
+
+#### `weather` (Agent)
+- **Location**: `.claude/agents/weather.md`
+- **Purpose**: Execute the weather workflow using preloaded skills
+- **Skills**: `weather-fetcher`, `weather-transformer`
+- **Tools Available**: WebFetch, Read, Write
 - **Model**: haiku
+- **Color**: green
 
-### 2. Specialized Subagents
+The agent has skills preloaded into its context at startup. It follows the instructions from each skill sequentially.
 
-#### `weather-fetcher`
-- **Location**: `.claude/agents/weather-fetcher.md`
-- **Purpose**: Fetch real-time temperature data
+### 3. Skills
+
+#### `weather-fetcher` (Skill)
+- **Location**: `.claude/skills/weather-fetcher/SKILL.md`
+- **Purpose**: Instructions for fetching real-time temperature data
 - **Data Source**: wttr.in API for Karachi, Pakistan
 - **Output**: Temperature in Celsius (numeric value)
-- **Tools Available**: WebFetch
 
-#### `weather-transformer`
-- **Location**: `.claude/agents/weather-transformer.md`
-- **Purpose**: Apply mathematical transformations to temperature data
+#### `weather-transformer` (Skill)
+- **Location**: `.claude/skills/weather-transformer/SKILL.md`
+- **Purpose**: Instructions for applying mathematical transformations
 - **Input Source**: `input/input.md` (transformation rules)
 - **Output Destination**: `output/output.md` (formatted results)
-- **Tools Available**: Read, Write
 
-### 3. Data Files
+### 4. Data Files
 
 #### `input/input.md`
 - **Purpose**: Stores transformation rules
 - **Format**: Natural language instructions (e.g., "add +10 in the result")
-- **Access**: Read by weather-transformer subagent
+- **Access**: Read by weather agent following weather-transformer skill
 
 #### `output/output.md`
 - **Purpose**: Stores formatted transformation results
@@ -127,15 +122,17 @@ The weather system consists of skills and specialized subagents that work togeth
 
 ## Execution Flow
 
-1. **User Invocation**: User runs `/weather` command or `/weather-karachi` skill
-2. **Skill Invocation**: `/weather` invokes `weather-karachi` skill via Skill tool
-3. **Sequential Subagent Execution** (via Task tool):
-   - **Step 1**: `weather-fetcher` subagent fetches current temperature from wttr.in
-   - **Step 2**: `weather-transformer` subagent:
-     - Reads transformation rules from `input/input.md`
-     - Applies rules to the fetched temperature
-     - Formats and writes results to `output/output.md`
-4. **Result Display**: Summary shown to user with:
+1. **User Invocation**: User runs `/weather-orchestrator` command
+2. **User Prompt**: Command asks user for preferred temperature unit (Celsius/Fahrenheit)
+3. **Agent Invocation**: Command invokes weather agent via Task tool
+4. **Skill Execution** (within agent context):
+   - **Step 1**: Agent follows `weather-fetcher` skill instructions to fetch temperature from wttr.in
+   - **Step 2**: Agent follows `weather-transformer` skill instructions to:
+     - Read transformation rules from `input/input.md`
+     - Apply rules to the fetched temperature
+     - Write formatted results to `output/output.md`
+5. **Result Display**: Summary shown to user with:
+   - Temperature unit requested
    - Original temperature
    - Transformation rule applied
    - Final transformed result
@@ -143,25 +140,51 @@ The weather system consists of skills and specialized subagents that work togeth
 ## Example Execution
 
 ```
-Input: /weather
-├─ Invokes: weather-karachi skill (via Skill tool)
-│  ├─ Subagent: weather-fetcher (via Task tool)
-│  │  └─ Result: 26°C
-│  ├─ Subagent: weather-transformer (via Task tool)
+Input: /weather-orchestrator
+├─ Asks: Celsius or Fahrenheit?
+├─ User: Celsius
+├─ Task: weather agent (via Task tool)
+│  ├─ Skills Preloaded:
+│  │  ├─ weather-fetcher (knowledge)
+│  │  └─ weather-transformer (knowledge)
+│  ├─ Step 1 (weather-fetcher skill):
+│  │  └─ Fetches from wttr.in → 26°C
+│  ├─ Step 2 (weather-transformer skill):
 │  │  ├─ Reads: input/input.md ("add +10")
 │  │  ├─ Calculates: 26 + 10 = 36°C
 │  │  └─ Writes: output/output.md
-│  └─ Output:
-│     ├─ Original: 26°C
-│     ├─ Transform: Add +10
-│     └─ Result: 36°C
+│  └─ Returns: Complete report
+└─ Output:
+   ├─ Unit: Celsius
+   ├─ Original: 26°C
+   ├─ Transform: Add +10
+   └─ Result: 36°C
 ```
 
 ## Key Design Principles
 
-1. **Separation of Concerns**: Each component has a single, clear responsibility
-2. **Sequential Execution**: Subagents run in order to ensure data dependencies are met
-3. **Specialized Subagents**: Task-specific subagents with minimal tool access
-4. **Skill-Based Architecture**: Skills orchestrate workflows, subagents execute tasks
+1. **Command → Agent → Skills**: Three-tier architecture for clean separation
+2. **Skills as Knowledge**: Skills provide domain knowledge preloaded into agent context
+3. **Single Agent**: One agent handles multiple related tasks using its skills
+4. **Sequential Execution**: Agent follows skill instructions in order
 5. **Configurable Transformations**: Rules stored externally in input files
 6. **Structured Output**: Results formatted consistently in output files
+
+## Architecture Pattern: Agent-Skills
+
+This system demonstrates the **agent-skills pattern** where:
+
+```yaml
+# In agent definition (.claude/agents/weather.md)
+---
+name: weather
+skills:
+  - weather-fetcher
+  - weather-transformer
+---
+```
+
+- **Skills are preloaded**: Full skill content is injected into agent's context at startup
+- **Agent uses skill knowledge**: Agent follows instructions from preloaded skills
+- **No dynamic invocation**: Skills are not invoked separately; they're reference material
+- **Single execution context**: All work happens within one agent's context

@@ -9,13 +9,13 @@ This is a best practices repository for Claude Code configuration, demonstrating
 ## Key Components
 
 ### Weather System (Example Workflow)
-A demonstration of skill-based subagent orchestration:
-- `/weather` command (`.claude/commands/weather.md`): Entry point, invokes the weather-karachi skill
-- `/weather-karachi` skill (`.claude/skills/weather-karachi/SKILL.md`): Orchestrates the workflow
-- `weather-fetcher` subagent: fetches temperature from wttr.in API
-- `weather-transformer` subagent: applies transformation rules from `input/input.md`, writes results to `output/output.md`
+A demonstration of the **Command → Agent → Skills** architecture pattern:
+- `/weather-orchestrator` command (`.claude/commands/weather-orchestrator.md`): Entry point that invokes the weather agent
+- `weather` agent (`.claude/agents/weather.md`): Executes workflow using preloaded skills
+- `weather-fetcher` skill (`.claude/skills/weather-fetcher/SKILL.md`): Instructions for fetching temperature from wttr.in API
+- `weather-transformer` skill (`.claude/skills/weather-transformer/SKILL.md`): Instructions for applying transformation rules from `input/input.md`, writes results to `output/output.md`
 
-Subagents run sequentially via Task tool, not in parallel, to maintain data dependencies.
+The agent has skills preloaded via the `skills` field, providing domain knowledge for sequential execution.
 
 ### Skill Definition Structure
 Skills in `.claude/skills/<name>/SKILL.md` use YAML frontmatter:
