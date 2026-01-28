@@ -71,24 +71,9 @@ practice makes claude perfect
 
 ## KEYWORDS
 
-### Claude Keywords
-- [btw] start prompt with btw to let the current task executing in background
-- [claude --dangerously-skip-permissions] "defaultMode": "bypassPermissions"
-- *deprecated** [ultrathink] Triggers extended thinking with up to ~32K thinking tokens for a single request.
+**Claude:** `btw` (background task) • `"defaultMode": "bypassPermissions"` • ~~`ultrathink`~~ (deprecated)
 
-### Community
-- Agentic Workflow
-- AI Slop
-- Context Engineering
-- Context Rot
-- Dumb Zone
-- Hallucination
-- One Shot
-- Rate Limit Jail / Cooldown
-- Slot Machine Method = Save state → let Claude run → revert if bad results → try again
-- The Holy Trinity = Skills + Agents + Hooks working together
-- Token Burn
-- Vibe Coding
+**Community:** Agentic Workflow • AI Slop • Context Engineering • Context Rot • Dumb Zone • Hallucination • One Shot • Rate Limit Jail • Slot Machine Method (save→run→revert→retry) • The Holy Trinity (Skills+Agents+Hooks) • Token Burn • Vibe Coding
 
 ## CLAUDE CODE FEATURES INSPIRATION
 
