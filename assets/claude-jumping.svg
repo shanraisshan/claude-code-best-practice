@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="140" height="126">
+  <style>
+    .claude-body {
+      animation: jump 0.5s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .shadow {
+      animation: shadow-scale 0.5s ease-in-out infinite;
+    }
+    .left-arm {
+      animation: wave-left 0.5s ease-in-out infinite;
+      transform-origin: right center;
+    }
+    .right-arm {
+      animation: wave-right 0.5s ease-in-out infinite;
+      transform-origin: left center;
+    }
+    .left-ear {
+      animation: ear-bounce 0.5s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .right-ear {
+      animation: ear-bounce 0.5s ease-in-out infinite 0.1s;
+      transform-origin: center bottom;
+    }
+    @keyframes jump {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); }
+      50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); }
+      80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); }
+    }
+    @keyframes shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.25; }
+      50% { transform: scaleX(0.4); opacity: 0.08; }
+    }
+    @keyframes wave-left {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-25deg); }
+    }
+    @keyframes wave-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(25deg); }
+    }
+    @keyframes ear-bounce {
+      0%, 100% { transform: scaleY(1); }
+      40% { transform: scaleY(1.2); }
+      60% { transform: scaleY(0.85); }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse class="shadow" cx="50" cy="82" rx="22" ry="5" fill="#000"/>
+
+  <!-- Claude Character Group -->
+  <g class="claude-body">
+    <!-- Claude Orange: #E07C4C -->
+
+    <!-- Left ear -->
+    <rect class="left-ear" x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+
+    <!-- Right ear -->
+    <rect class="right-ear" x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+
+    <!-- Main body - top row (narrower) -->
+    <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
+
+    <!-- Main body - full block -->
+    <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
+
+    <!-- Left eye (smaller, positioned higher) -->
+    <rect x="30" y="34" width="8" height="10" fill="#000000"/>
+
+    <!-- Right eye (smaller, positioned higher) -->
+    <rect x="62" y="34" width="8" height="10" fill="#000000"/>
+
+    <!-- Left arm -->
+    <rect class="left-arm" x="2" y="36" width="12" height="8" fill="#E07C4C"/>
+
+    <!-- Right arm -->
+    <rect class="right-arm" x="86" y="36" width="12" height="8" fill="#E07C4C"/>
+
+    <!-- Left leg -->
+    <rect x="24" y="60" width="12" height="14" fill="#E07C4C"/>
+
+    <!-- Right leg -->
+    <rect x="64" y="60" width="12" height="14" fill="#E07C4C"/>
+  </g>
+</svg>
