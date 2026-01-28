@@ -51,7 +51,7 @@ practice makes claude perfect
 - use mcp (claude in chrome, playwright, chrome dev tool) to let claude see chrome console logs on its own
 - provide screenshots of the issue
 
-   CONTEXT ENGINEERING
+## CONTEXT ENGINEERING
 - [Humanlayer - Writing a good Claude.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - [Claude.md for larger monorepos - Boris Cherny on X](https://github.com/shanraisshan/claude-code-best-practice/blob/main/reports/claude-md-for-larger-mono-repos.md)
 
