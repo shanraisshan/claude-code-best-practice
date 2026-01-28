@@ -1,10 +1,11 @@
 # claude-code-best-practice
+practice makes claude perfect
 
 <p align="center">
   <img src="assets/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
 </p>
 
-your best ai assistant with the best practice
+
 
 ## CONCEPTS
 
