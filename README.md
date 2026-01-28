@@ -21,17 +21,44 @@ your best ai assistant with the best practice
 
 ## LESSON LEARNED
 
+### My Experience
+
+■ **Workflows**
+- Claude.md should not exceed 150+ lines. (still not 100% guarenteed)
+- use commands for your workflows instead of agents
+- have feature specific subagents (extra context) with skills (progressive disclosure) instead of general qa, backend engineer.
+- /memory, /rules, constitution.md does not guarentee anything
+- do manual /compact at max 50%
+- always start with plan mode
+- use human pass gated todo list workflow
+- subtasks should be so small that it can be completed in less than 50% context
+- vanilla cc is better than any workflows with smaller tasks
+
+■ **Utilities**
+- iTerm terminal instead of IDE (crash issue) 
+- Wispr Flow for voice prompting (10x productivity)
+- claude-code-voice-hooks for claude feedback
+- status line for context awareness and fast compacting
+- use git worktress
+- use /config dont ask permission mode instead of dangerously—skip--permissions
+
+■ **Debugging** 
+- /doctor
+- always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
+- use mcp (claude in chrome, playwright, chrome dev tool) to let claude see chrome console logs on its own
+- provide screenshots of the issue
+
 ### Context Engineering
 - [Humanlayer - Writing a good Claude.Md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 
-### Debugging
-- always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
-- use claude in chrome to let claude see chrome console logs on its own
-
 ### Workflows
 - [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
-- [RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
+- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
 - [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
+- [Github Speckit](https://github.com/github/spec-kit)
+- [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
+- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
+- [Superpower](https://github.com/obra/superpowers)
 
 ## LIBRARIES
 
@@ -40,9 +67,33 @@ your best ai assistant with the best practice
 
 ## KEYWORDS
 
+### Claude Keywords
 - [btw] start prompt with btw to let the current task executing in background
 - [claude --dangerously-skip-permissions] "defaultMode": "bypassPermissions"
 - *deprecated** [ultrathink] Triggers extended thinking with up to ~32K thinking tokens for a single request.
+
+### Community
+- Agentic Workflow
+- AI Slop
+- Context Engineering
+- Context Rot
+- Dumb Zone
+- Hallucination
+- One Shot
+- Rate Limit Jail / Cooldown
+- Slot Machine Method = Save state → let Claude run → revert if bad results → try again
+- The Holy Trinity = Skills + Agents + Hooks working together
+- Token Burn
+- Vibe Coding
+
+## CLAUDE CODE FEATURES INSPIRATION
+
+- [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
+- [Ralph Plugin](https://x.com/GeoffreyHuntley/status/2015031262692753449)
+
+## SECURITY
+
+- [Great talk at 39C3 on "Agentic ProbLLMs: Exploiting AI Computer-Use and Coding Agents"](https://www.reddit.com/r/cybersecurity/comments/1qannih/great_talk_at_39c3_on_agentic_probllms_exploiting/)
 
 ## DOCS
 
