@@ -7,6 +7,10 @@
     "reddit-mcp-server": {
       "type": "http",
       "url": "http://144.91.76.33:8080/mcp"
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
     }
   }
 }
