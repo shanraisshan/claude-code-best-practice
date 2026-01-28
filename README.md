@@ -94,3 +94,21 @@ practice makes claude perfect
 
 - [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
 - [Ralph Plugin](https://x.com/GeoffreyHuntley/status/2015031262692753449)
+
+## COMMAND + SKILL + SUBAGENT ARCHITECTURE
+
+<p align="center">
+  <img src="assets/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="600">
+</p>
+
+| Component | Role | Example |
+|-----------|------|---------|
+| **Command** | Entry point, user interaction | `/weather-orchestrator` |
+| **Agent** | Orchestrates workflow with preloaded skills | `weather` agent |
+| **Skills** | Domain knowledge injected at startup | `weather-fetcher`, `weather-transformer` |
+
+**When to use:** Multi-step workflows • Domain-specific knowledge injection • Sequential tasks • Reusable components
+
+**Why it works:** Progressive disclosure • Single execution context • Clean separation • Reusability
+
+See [docs/weather-flow-architecture.md](docs/weather-flow-architecture.md) for implementation details.

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="200" fill="#fafafa" rx="8"/>
+
+  <!-- User -->
+  <circle cx="50" cy="100" r="25" fill="#E07C4C"/>
+  <text x="50" y="105" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">User</text>
+
+  <!-- Arrow 1 -->
+  <line x1="80" y1="100" x2="115" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Command Box -->
+  <rect x="120" y="70" width="100" height="60" rx="6" fill="#4A90D9" stroke="#3A7BC8" stroke-width="2"/>
+  <text x="170" y="95" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Command</text>
+  <text x="170" y="115" text-anchor="middle" fill="white" font-family="system-ui" font-size="9" opacity="0.9">/orchestrator</text>
+
+  <!-- Arrow 2 -->
+  <line x1="225" y1="100" x2="260" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="243" y="92" text-anchor="middle" fill="#666" font-family="system-ui" font-size="8">Task</text>
+
+  <!-- Agent Box -->
+  <rect x="265" y="55" width="130" height="90" rx="6" fill="#50B87D" stroke="#3DA066" stroke-width="2"/>
+  <text x="330" y="78" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Agent</text>
+
+  <!-- Skills inside Agent -->
+  <rect x="275" y="88" width="110" height="48" rx="4" fill="white" opacity="0.2"/>
+  <text x="330" y="103" text-anchor="middle" fill="white" font-family="system-ui" font-size="9">skills:</text>
+  <text x="330" y="118" text-anchor="middle" fill="white" font-family="system-ui" font-size="8" opacity="0.9">• fetcher • transformer</text>
+  <text x="330" y="130" text-anchor="middle" fill="white" font-family="system-ui" font-size="8" opacity="0.7">(preloaded knowledge)</text>
+
+  <!-- Arrow 3 -->
+  <line x1="400" y1="100" x2="435" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Output Box -->
+  <rect x="440" y="70" width="100" height="60" rx="6" fill="#9B59B6" stroke="#8E44AD" stroke-width="2"/>
+  <text x="490" y="95" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Output</text>
+  <text x="490" y="115" text-anchor="middle" fill="white" font-family="system-ui" font-size="9" opacity="0.9">output.md</text>
+
+  <!-- Arrow 4 (back to user) -->
+  <path d="M 540 100 Q 570 100 570 160 Q 570 180 50 180 Q 30 180 30 140 L 30 130"
+        stroke="#666" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <text x="300" y="190" text-anchor="middle" fill="#888" font-family="system-ui" font-size="9">
+    Command → Agent (with preloaded Skills) → Output
+  </text>
+</svg>
