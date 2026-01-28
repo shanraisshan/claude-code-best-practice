@@ -70,11 +70,6 @@ practice makes claude perfect
 - [Superpower](https://github.com/obra/superpowers)
 - [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
 
-## LIBRARIES
-
-- [Claude Code Tips](https://github.com/ykdojo/claude-code-tips)
-- [Awesome Claude Code](https://github.com/hesreallyhim/awesome-claude-code)
-
 ## KEYWORDS
 
 ### Claude Keywords
@@ -100,7 +95,3 @@ practice makes claude perfect
 
 - [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
 - [Ralph Plugin](https://x.com/GeoffreyHuntley/status/2015031262692753449)
-
-## SECURITY
-
-- [Great talk at 39C3 on "Agentic ProbLLMs: Exploiting AI Computer-Use and Coding Agents"](https://www.reddit.com/r/cybersecurity/comments/1qannih/great_talk_at_39c3_on_agentic_probllms_exploiting/)
