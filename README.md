@@ -2,7 +2,7 @@
 practice makes claude perfect
 
 <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers">
-  <img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&logo=github&label=⭐ Stars&color=yellow" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=social" alt="GitHub Stars">
 </a>
 
 <p align="center">
