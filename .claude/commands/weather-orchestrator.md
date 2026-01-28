@@ -14,9 +14,7 @@ Fetch the current temperature for Karachi, Pakistan and apply transformations.
 
 ## Agent Invocation
 
-Use the Task tool to invoke the weather agent. This agent has two skills preloaded:
-- `weather-fetcher`: Fetches current temperature from wttr.in API
-- `weather-transformer`: Applies transformation rules and writes results
+Use the Task tool to invoke the weather agent.
 
 ### Invoke Weather Agent
 
