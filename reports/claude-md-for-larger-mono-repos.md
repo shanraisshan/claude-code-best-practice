@@ -12,7 +12,7 @@ When you start Claude Code, it walks **upward** from your current working direct
 
 ### 2. Descendant Loading (DOWN the directory tree)
 
-CLAUDE.md files in subdirectories below your current working directory are **NOT loaded at launch**. They are only included when Claude reads or writes files in those subdirectories during your session. This is known as **lazy loading**.
+CLAUDE.md files in subdirectories below your current working directory are **NOT loaded at launch**. They are only included when Claude reads files in those subdirectories during your session. This is known as **lazy loading**.
 
 ## Example Monorepo Structure
 
