@@ -499,6 +499,7 @@ Configure via `env` key:
 | `statusLine` | object | - | Custom status line configuration |
 | `outputStyle` | string | `"default"` | Output style (e.g., `"Explanatory"`) |
 | `spinnerTipsEnabled` | boolean | `true` | Show tips while waiting |
+| `spinnerVerbs` | object | - | Custom spinner verbs with `mode` ("append" or "replace") and `verbs` array |
 | `terminalProgressBarEnabled` | boolean | `true` | Show progress bar in terminal |
 | `showTurnDuration` | boolean | `true` | Show turn duration messages |
 | `respectGitignore` | boolean | `true` | Respect .gitignore in file picker |
@@ -535,6 +536,10 @@ Configure via `env` key:
     "command": "git branch --show-current 2>/dev/null || echo 'no-branch'"
   },
   "spinnerTipsEnabled": false,
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": ["Cooking", "Brewing", "Crafting", "Conjuring"]
+  },
   "terminalProgressBarEnabled": true,
   "showTurnDuration": false
 }

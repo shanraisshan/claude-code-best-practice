@@ -16,7 +16,11 @@
     "deny": [],
     "ask": []
   },
-  "plansDirectory": "./ralph-wiggum/plans",
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": ["Hiring new dev", "Burning mac harddisk", "Deleting production db", "rm -rf", "Switching to old commit"]
+  },
+  "plansDirectory": "./plans",
   "enableAllProjectMcpServers": true,
   "disableAllHooks": false,
   "hooks": {
