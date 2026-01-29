@@ -1,6 +1,6 @@
 ---
 name: weather
-description: Use this agent PROACTIVELY when you need to fetch and transform weather data for Karachi, Pakistan. This agent fetches real-time temperature from wttr.in API and applies transformation rules from input/input.md, writing results to output/output.md.
+description: Use this agent PROACTIVELY when you need to fetch and transform weather data for Karachi, Pakistan. This agent fetches real-time temperature from wttr.in API and applies transformation rules from weather-orchestration/input.md, writing results to weather-orchestration/output.md.
 tools: WebFetch, Read, Write
 model: haiku
 color: green
@@ -32,9 +32,9 @@ Follow the weather-fetcher skill instructions to:
 ### Step 2: Transform Temperature (weather-transformer skill)
 
 Follow the weather-transformer skill instructions to:
-- Read transformation rules from `input/input.md`
+- Read transformation rules from `weather-orchestration/input.md`
 - Apply the transformation to the fetched temperature
-- Write formatted results to `output/output.md`
+- Write formatted results to `weather-orchestration/output.md`
 
 ## Final Report
 
@@ -43,7 +43,7 @@ After completing both steps, provide a summary:
 - Original temperature fetched
 - Transformation rule applied
 - Final transformed result
-- Confirmation that output was written to `output/output.md`
+- Confirmation that output was written to `weather-orchestration/output.md`
 
 ## Critical Requirements
 

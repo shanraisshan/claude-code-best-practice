@@ -46,7 +46,7 @@ The weather system demonstrates the **Command → Agent → Skills** architectur
               │                               │
               ▼                               ▼
 ┌─────────────────────────┐     ┌─────────────────────────┐
-│  wttr.in API            │     │  input/input.md         │
+│  wttr.in API            │     │  weather-orchestration/ │
 │  Fetch Temperature      │     │  Read Transform Rules   │
 │  for Karachi            │     └─────────────────────────┘
 └─────────────────────────┘                   │
@@ -58,7 +58,7 @@ The weather system demonstrates the **Command → Agent → Skills** architectur
                                               │
                                               ▼
                                     ┌─────────────────────────┐
-                                    │  output/output.md       │
+                                    │  weather-orchestration/output.md       │
                                     │  Write Results          │
                                     └─────────────────────────┘
                                               │
@@ -102,17 +102,17 @@ The agent has skills preloaded into its context at startup. It follows the instr
 #### `weather-transformer` (Skill)
 - **Location**: `.claude/skills/weather-transformer/SKILL.md`
 - **Purpose**: Instructions for applying mathematical transformations
-- **Input Source**: `input/input.md` (transformation rules)
-- **Output Destination**: `output/output.md` (formatted results)
+- **Input Source**: `weather-orchestration/input.md` (transformation rules)
+- **Output Destination**: `weather-orchestration/output.md` (formatted results)
 
 ### 4. Data Files
 
-#### `input/input.md`
+#### `weather-orchestration/input.md`
 - **Purpose**: Stores transformation rules
 - **Format**: Natural language instructions (e.g., "add +10 in the result")
 - **Access**: Read by weather agent following weather-transformer skill
 
-#### `output/output.md`
+#### `weather-orchestration/output.md`
 - **Purpose**: Stores formatted transformation results
 - **Format**: Structured markdown with sections:
   - Original Temperature
@@ -128,9 +128,9 @@ The agent has skills preloaded into its context at startup. It follows the instr
 4. **Skill Execution** (within agent context):
    - **Step 1**: Agent follows `weather-fetcher` skill instructions to fetch temperature from wttr.in
    - **Step 2**: Agent follows `weather-transformer` skill instructions to:
-     - Read transformation rules from `input/input.md`
+     - Read transformation rules from `weather-orchestration/input.md`
      - Apply rules to the fetched temperature
-     - Write formatted results to `output/output.md`
+     - Write formatted results to `weather-orchestration/output.md`
 5. **Result Display**: Summary shown to user with:
    - Temperature unit requested
    - Original temperature
@@ -150,9 +150,9 @@ Input: /weather-orchestrator
 │  ├─ Step 1 (weather-fetcher skill):
 │  │  └─ Fetches from wttr.in → 26°C
 │  ├─ Step 2 (weather-transformer skill):
-│  │  ├─ Reads: input/input.md ("add +10")
+│  │  ├─ Reads: weather-orchestration/input.md ("add +10")
 │  │  ├─ Calculates: 26 + 10 = 36°C
-│  │  └─ Writes: output/output.md
+│  │  └─ Writes: weather-orchestration/output.md
 │  └─ Returns: Complete report
 └─ Output:
    ├─ Unit: Celsius

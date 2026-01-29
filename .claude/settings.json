@@ -18,9 +18,9 @@
   },
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": ["Hiring new dev", "Burning mac harddisk", "Deleting production db", "rm -rf", "Switching to old commit"]
+    "verbs": ["Hiring new dev", "Burning mac harddisk", "Switching to old commit", "Leaking API keys", "Hardcoding credentials", "Trusting user input", "Disabling 2FA", "Ignoring .gitignore", "Bypassing code review"]
   },
-  "plansDirectory": "./plans",
+  "plansDirectory": "./reports",
   "enableAllProjectMcpServers": true,
   "disableAllHooks": false,
   "hooks": {

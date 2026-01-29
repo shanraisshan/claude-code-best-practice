@@ -6,7 +6,11 @@ practice makes claude perfect
 </a>
 
 <p align="center">
-  <img src="assets/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
+  <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
+</p>
+
+<p align="center">
+  <img src="!/boris-cherny.png" alt="Claude Code Creator" width="50%" height="50%">
 </p>
 
 
@@ -83,7 +87,7 @@ practice makes claude perfect
 ## COMMAND + SKILL + SUBAGENT ARCHITECTURE
 
 <p align="center">
-  <img src="assets/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="600">
+  <img src="!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="600">
 </p>
 
 | Component | Role | Example |
@@ -96,7 +100,7 @@ practice makes claude perfect
 
 **Why it works:** Progressive disclosure • Single execution context • Clean separation • Reusability
 
-See [docs/weather-flow-architecture.md](docs/weather-flow-architecture.md) for implementation details.
+See [weather-orchestration/weather-orchestration-architecture.md](weather-orchestration/weather-orchestration-architecture.md) for implementation details.
 
 ## SETTINGS
 

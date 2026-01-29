@@ -1,13 +1,13 @@
 # Weather Transformation Result
 
 ## Original Temperature
-25°C
+24°C
 
 ## Transformation Applied
 Add +20 to the temperature value
 
 ## Final Result
-45°C
+44°C
 
 ## Calculation Details
-25°C + 20 = 45°C
+24°C + 20 = 44°C

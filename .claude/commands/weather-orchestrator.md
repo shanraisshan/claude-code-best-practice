@@ -21,7 +21,7 @@ Use the Task tool to invoke the weather agent.
 Use the Task tool to invoke the weather agent:
 - subagent_type: weather
 - description: Fetch and transform Karachi weather
-- prompt: Fetch the current temperature for Karachi, Pakistan in [unit requested by user]. Then apply the transformation rules from input/input.md and write the results to output/output.md. The agent has preloaded skills (weather-fetcher and weather-transformer) that provide the detailed instructions.
+- prompt: Fetch the current temperature for Karachi, Pakistan in [unit requested by user]. Then apply the transformation rules from weather-orchestration/input.md and write the results to weather-orchestration/output.md. The agent has preloaded skills (weather-fetcher and weather-transformer) that provide the detailed instructions.
 - model: haiku
 
 Wait for the agent to complete its workflow.
@@ -37,5 +37,5 @@ Wait for the agent to complete its workflow.
 Provide a clear summary to the user showing:
 - Temperature unit requested
 - Original temperature fetched
-- Transformation rule applied (from input/input.md)
-- Final transformed result (written to output/output.md)
+- Transformation rule applied (from weather-orchestration/input.md)
+- Final transformed result (written to weather-orchestration/output.md)
