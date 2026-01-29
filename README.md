@@ -100,7 +100,7 @@ practice makes claude perfect
 
 **Why it works:** Progressive disclosure • Single execution context • Clean separation • Reusability
 
-See [weather-orchestration/weather-orchestration-architecture.md](weather-orchestration/weather-orchestration-architecture.md) for implementation details.
+See [weather-orchestration-architecture](weather-orchestration/weather-orchestration-architecture.md) for implementation details.
 
 ## SETTINGS
 
