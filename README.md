@@ -72,6 +72,7 @@ practice makes claude perfect
 - [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
 - [Superpower](https://github.com/obra/superpowers)
 - [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
+- [Creator of Clawd Bot Workflow](https://www.youtube.com/watch?v=8lF7HmQ_RgY)
 
 ## KEYWORDS
 
