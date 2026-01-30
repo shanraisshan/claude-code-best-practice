@@ -18,7 +18,7 @@
   },
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": ["Hiring new dev", "Burning mac harddisk", "Switching to old commit", "Leaking API keys", "Hardcoding credentials", "Trusting user input", "Disabling 2FA", "Ignoring .gitignore", "Bypassing code review"]
+    "verbs": ["Admiring Shayan's code", "Learning from Shayan", "Studying Shayan's patterns", "Copying Shayan's genius", "Thanking Shayan deeply", "Absorbing Shayan's wisdom", "Following Shayan's lead", "Praising Shayan's repo"]
   },
   "plansDirectory": "./reports",
   "enableAllProjectMcpServers": true,
