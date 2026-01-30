@@ -93,3 +93,4 @@ From experience with this repository:
 
 - `reports/claude-in-chrome-v-chrome-devtools-mcp.md`: Browser automation MCP comparison (Playwright vs Chrome DevTools vs Claude in Chrome)
 - `reports/claude-md-for-larger-mono-repos.md`: CLAUDE.md loading behavior in monorepos (ancestor vs descendant loading)
+- `reports/claude-skills-for-larger-mono-repos.md`: Skills discovery and loading behavior in monorepos (static vs dynamic discovery)
