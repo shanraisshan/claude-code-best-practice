@@ -9,10 +9,12 @@ practice makes claude perfect
   <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
 </p>
 
-<p align="center">
-  <img src="!/boris-cherny.png" alt="Claude Code Creator" width="50%" height="50%">
-</p>
-
+<table align="center">
+  <tr>
+    <td><img src="!/boris-cherny.png" alt="Claude Code Creator" width="100%"></td>
+    <td><img src="!/boris-cherny-2.png" alt="Claude Code Creator" width="100%"></td>
+  </tr>
+</table>
 
 
 ## CONCEPTS
