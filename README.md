@@ -64,6 +64,7 @@ practice makes claude perfect
 - [Claude.md for larger monorepos - Boris Cherny on X](https://github.com/shanraisshan/claude-code-best-practice/blob/main/reports/claude-md-for-larger-mono-repos.md)
 
 ## WORKFLOWS
+- [Boris Feb26 workflow](https://x.com/bcherny/status/2017742741636321619)
 - [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
 - [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
 - [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
