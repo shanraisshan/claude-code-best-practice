@@ -11,7 +11,8 @@
       "mcp__ide__*",
       "mcp__chrome-devtools__*",
       "mcp__claude-in-chrome__*",
-      "mcp__playwright__*"
+      "mcp__playwright__*",
+      "mcp__reddit-mcp-server__get_post_details"
     ],
     "deny": [],
     "ask": []
