@@ -459,7 +459,7 @@ Configure Claude Code plugins and marketplaces.
 |-------|-------------|
 | `"default"` | Recommended for your account type |
 | `"sonnet"` | Latest Sonnet model (Claude 4.5) |
-| `"opus"` | Latest Opus model (Claude 4.5) |
+| `"opus"` | Latest Opus model (Claude 4.6) |
 | `"haiku"` | Fast Haiku model |
 | `"sonnet[1m]"` | Sonnet with 1M token context |
 | `"opusplan"` | Opus for planning, Sonnet for execution |
@@ -470,6 +470,24 @@ Configure Claude Code plugins and marketplaces.
   "model": "opus"
 }
 ```
+
+### Effort Level (Opus 4.6)
+
+When Opus 4.6 is selected, the `/model` command exposes an **effort level** control that adjusts how much reasoning the model applies per response. Use the ← → arrow keys in the `/model` UI to cycle through effort levels.
+
+| Effort Level | Description |
+|-------------|-------------|
+| High (default) | Full reasoning depth, best for complex tasks |
+| Medium | Balanced reasoning, good for everyday tasks |
+| Low | Minimal reasoning, fastest responses |
+
+**How to use:**
+1. Run `/model` in Claude Code
+2. Select **Default (recommended)** — Opus 4.6
+3. Use **← →** arrow keys to adjust the effort level
+4. The setting applies to the current session and future sessions
+
+**Note:** Effort level is only available for Opus 4.6. Other models (Sonnet, Haiku) do not expose this control.
 
 ### Model Environment Variables
 
@@ -625,6 +643,7 @@ Set environment variables for all Claude Code sessions.
 
 | Command | Description |
 |---------|-------------|
+| `/model` | Switch models and adjust Opus 4.6 effort level |
 | `/config` | Interactive configuration UI |
 | `/memory` | View/edit all memory files |
 | `/agents` | Manage subagents |
