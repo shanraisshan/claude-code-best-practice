@@ -80,9 +80,20 @@ practice makes claude perfect
 
 ## KEYWORDS
 
-**Claude:** `btw` (background task) • `"defaultMode": "bypassPermissions"` • ~~`ultrathink`~~ (deprecated)
+**Claude:**
 
-**Community:** Agentic Workflow • AI Slop • Closing the loop • Context Bloat • Context Engineering • Context Rot • Dumb Zone • Hallucination • One Shot • Progressive Disclosure • Rate Limit Jail • Slot Machine Method (save→run→revert→retry) • The Holy Trinity (Skills+Agents+Hooks) • Token Burn • Vibe Coding
+| | | |
+|---|---|---|
+| `btw` (background task) | `"defaultMode": "bypassPermissions"` | ~~`ultrathink`~~ (deprecated) |
+
+**Community:**
+
+| | | | | | |
+|---|---|---|---|---|---|
+| Agentic Workflow | AI Slop | Closing the loop | Context Bloat | Context Engineering | Context Rot |
+| Dumb Zone | Hallucination | Harness | One Shot | Orchestration | Progressive Disclosure |
+| Rate Limit Jail | Scaffolding | Slot Machine Method (save→run→revert→retry) | Stop | The Holy Trinity (Skills+Agents+Hooks) | Token Burn |
+| Vibe Coding | | | | | |
 
 ## CLAUDE CODE FEATURES INSPIRATION
 
