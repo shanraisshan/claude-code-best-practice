@@ -3,9 +3,9 @@ practice makes claude perfect
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Feb_28%2C_2026_07%3A59_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
-![Best Practice](!/tags/best-practice.svg) *Click on this badge to show the latest best practice*<br>
-![Implemented](!/tags/implemented.svg) *Click on this badge to show implementation in this repo*<br>
-![Orchestration Workflow](!/tags/orchestration-workflow.svg) *Click on this badge to see the Command → Agent → Skills orchestration workflow*
+[![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
+[![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
+[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Click on this badge to see the Command → Agent → Skills orchestration workflow*
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
@@ -112,9 +112,9 @@ practice makes claude perfect
 
 <a id="orchestration-workflow"></a>
 
-## <img src="!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow">
+## <a href="orchestration-workflow/orchestration-workflow.md"><img src="!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
 
-Multi-step workflows using the **Command → Agent → Skills** architecture pattern.
+Workflow orchestration using the **Command → Agent → Skills** pattern.
 
 <p align="center">
   <img src="!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="600">
@@ -125,10 +125,6 @@ Multi-step workflows using the **Command → Agent → Skills** architecture pat
 | **Command** | Entry point, user interaction | `/weather-orchestrator` |
 | **Agent** | Orchestrates workflow with preloaded skills | `weather` agent |
 | **Skills** | Domain knowledge injected at startup | `weather-fetcher`, `weather-transformer` |
-
-**When to use:** Multi-step workflows • Domain-specific knowledge injection • Sequential tasks • Reusable components
-
-**Why it works:** Progressive disclosure • Single execution context • Clean separation • Reusability
 
 See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for implementation details.
 
