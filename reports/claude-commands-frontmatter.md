@@ -85,11 +85,11 @@ These items were identified during the 2.1.0–2.1.49 audit but belong in other 
 
 | Item | Reason | Where It Belongs |
 |------|--------|-----------------|
-| Skill `user-invocable` field | Skill-specific frontmatter | [claude-skills-frontmatter.md](claude-skills-frontmatter.md) |
-| Skill `${CLAUDE_SESSION_ID}` variable | Skill-specific template variable | [claude-skills-frontmatter.md](claude-skills-frontmatter.md) |
+| Skill `user-invocable` field | Skill-specific frontmatter | [claude-skills-frontmatter.md](../best-practice/claude-skills-frontmatter.md) |
+| Skill `${CLAUDE_SESSION_ID}` variable | Skill-specific template variable | [claude-skills-frontmatter.md](../best-practice/claude-skills-frontmatter.md) |
 | Agent `memory` frontmatter | Already covered in depth | [claude-agent-memory.md](../claude-agent-memory.md) |
 | claude.ai MCP connectors | Product feature, not settings | N/A |
-| `chat:newline` keybinding | Keybindings reference, not settings | [claude-commands.md](claude-commands.md) (Keyboard Shortcuts section) |
+| `chat:newline` keybinding | Keybindings reference, not settings | [claude-commands.md](../best-practice/claude-commands.md) (Keyboard Shortcuts section) |
 
 ---
 

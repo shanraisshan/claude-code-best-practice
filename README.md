@@ -23,8 +23,8 @@ practice makes claude perfect
 
 | Feature | Location | Description |
 |---------|----------|-------------|
-| [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/<name>/SKILL.md` | Reusable knowledge, workflows, and slash commands — load on-demand or invoke with `/skill-name` |
-| [**Commands**](https://code.claude.com/docs/en/skills) | `.claude/commands/<name>.md` | Entry-point prompts for workflows — invoke with `/command-name` |
+| [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/<name>/SKILL.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-skills-frontmatter.md) [![Implemented](!/tags/implemented.svg)](.claude/skills/) Reusable knowledge, workflows, and slash commands — load on-demand or invoke with `/skill-name` |
+| [**Commands**](https://code.claude.com/docs/en/skills) | `.claude/commands/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md) [![Implemented](!/tags/implemented.svg)](.claude/commands/) Entry-point prompts for workflows — invoke with `/command-name` |
 | [**Sub-Agents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Custom agents with their own name, color, tools, permissions, and model — usable as main agent or isolated subagents via the Task tool |
 | [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md` | Persistent context via CLAUDE.md files and `@path` imports that Claude sees every session |
 | [**Rules**](https://code.claude.com/docs/en/memory#modular-rules-with-clauderules) | `.claude/rules/*.md` | Modular topic-specific instructions with optional path-scoping via frontmatter |
@@ -34,7 +34,7 @@ practice makes claude perfect
 | [**Marketplaces**](https://code.claude.com/docs/en/discover-plugins) | plugin registries | Host and discover plugin collections |
 | [**Sandboxing**](https://code.claude.com/docs/en/sandboxing) | runtime config | File and network isolation that improves safety while reducing permission prompts |
 | [**Output Styles**](https://code.claude.com/docs/en/output-styles) | `.claude/settings.json` | Configurable response tone and format — Explanatory, Learning, or Custom |
-| [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | Hierarchical configuration system for Claude Code behavior (37 settings, 84 env vars) |
+| [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-settings.md) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Hierarchical configuration system for Claude Code behavior (37 settings, 84 env vars) |
 | [**Permissions**](https://code.claude.com/docs/en/iam) | `.claude/settings.json` | Fine-grained access control for tools and operations with wildcard syntax |
 
 > **Note:** Custom slash commands have been merged into skills. Files in `.claude/commands/` still work, but skills (`.claude/skills/`) are recommended as they support additional features like supporting files, invocation control, and subagent execution.
@@ -45,11 +45,11 @@ practice makes claude perfect
 
 | Report | Description |
 |--------|-------------|
-| [Claude Code Commands Reference](reports/claude-commands.md) | Complete reference of all slash commands, keyboard shortcuts, and input modes |
-| [Claude Code Settings Reference](reports/claude-settings.md) | Comprehensive guide to all `settings.json` configuration options |
+| [Claude Code Commands Reference](best-practice/claude-commands.md) | Complete reference of all slash commands, keyboard shortcuts, and input modes |
+| [Claude Code Settings Reference](best-practice/claude-settings.md) | Comprehensive guide to all `settings.json` configuration options |
 | [Subagents Reference](best-practice/claude-subagents.md) | Complete reference for Claude Code subagents — built-in agents, custom agents, and frontmatter fields |
 | [Commands Frontmatter Reference](reports/claude-commands-frontmatter.md) | Complete reference of all command (`.claude/commands/`) frontmatter fields |
-| [Skills Frontmatter Reference](reports/claude-skills-frontmatter.md) | Complete reference of all skill (`.claude/skills/`) frontmatter fields |
+| [Skills Frontmatter Reference](best-practice/claude-skills-frontmatter.md) | Complete reference of all skill (`.claude/skills/`) frontmatter fields |
 
 ## MY EXPERIENCE
 
@@ -153,14 +153,14 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 | `/compact` | `/context` | `/model` | `/plan` | `/config` |
 | `/clear` | `/cost` | `/memory` | `/doctor` | `/rewind` |
 
-[**See Complete List →**](reports/claude-commands.md)
+[**See Complete List →**](best-practice/claude-commands.md)
 
 
 ## CLAUDE SETTINGS
 
 | | |
 |---|---|
-| [**Claude Settings**](reports/claude-settings.md) | [**Global vs Project Settings**](reports/claude-global-vs-project-settings.md) |
+| [**Claude Settings**](best-practice/claude-settings.md) | [**Global vs Project Settings**](reports/claude-global-vs-project-settings.md) |
 
 
 ## MCP SERVERS FOR DAILY USE
@@ -191,8 +191,8 @@ Research (Context7/DeepWiki) -> Debug (Playwright/Chrome) -> Document (Excalidra
 | [Boris Cherny's 12 Customization Tips](reports/claude-boris-tips-feb-26.md) | 12 ways to customize Claude Code — from terminal config to plugins, agents, hooks, and output styles |
 | [Advanced Tool Use Patterns](reports/claude-advanced-tool-use.md) | Programmatic Tool Calling (PTC), Tool Search, and Tool Use Examples |
 | [Usage, Rate Limits & Extra Usage](reports/claude-usage-and-rate-limits.md) | Usage commands (`/usage`, `/extra-usage`, `/cost`), rate limits, and pay-as-you-go overflow billing |
-| [Claude Code Commands Reference](reports/claude-commands.md) | Complete reference of all slash commands, keyboard shortcuts, and input modes |
-| [Claude Code Settings Reference](reports/claude-settings.md) | Comprehensive guide to all `settings.json` configuration options |
+| [Claude Code Commands Reference](best-practice/claude-commands.md) | Complete reference of all slash commands, keyboard shortcuts, and input modes |
+| [Claude Code Settings Reference](best-practice/claude-settings.md) | Comprehensive guide to all `settings.json` configuration options |
 | [Subagents Reference](best-practice/claude-subagents.md) | Complete reference for Claude Code subagents — built-in agents, custom agents, and frontmatter fields |
 | [Commands Frontmatter Reference](reports/claude-commands-frontmatter.md) | Complete reference of all command (`.claude/commands/`) frontmatter fields |
-| [Skills Frontmatter Reference](reports/claude-skills-frontmatter.md) | Complete reference of all skill (`.claude/skills/`) frontmatter fields |
+| [Skills Frontmatter Reference](best-practice/claude-skills-frontmatter.md) | Complete reference of all skill (`.claude/skills/`) frontmatter fields |

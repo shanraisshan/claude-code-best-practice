@@ -19,61 +19,61 @@ The weather system demonstrates the **Command → Agent → Skills** architectur
 ## Flow Diagram
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                        User Interaction                         │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                    ┌──────────────────────┐
-                    │  /weather-orchestrator│
-                    │  Command              │
-                    │  (Entry point)        │
-                    └──────────────────────┘
-                              │
-                              │ Task tool invocation
-                              ▼
-                    ┌──────────────────────┐
-                    │  weather             │
-                    │  Agent               │
-                    │  (Orchestrates flow) │
-                    │                      │
-                    │  skills:             │
-                    │  - weather-fetcher   │
-                    │  - weather-transformer│
-                    └──────────────────────┘
-                              │
-              ┌───────────────┴───────────────┐
-              │                               │
-              ▼                               ▼
-┌─────────────────────────┐     ┌─────────────────────────┐
-│  weather-fetcher        │     │  weather-transformer    │
-│  Skill                  │     │  Skill                  │
-│  (Preloaded knowledge)  │     │  (Preloaded knowledge)  │
-└─────────────────────────┘     └─────────────────────────┘
-              │                               │
-              ▼                               ▼
-┌─────────────────────────┐     ┌─────────────────────────┐
-│  wttr.in API            │     │  orchestration-workflow/ │
-│  Fetch Temperature      │     │  Read Transform Rules   │
-│  for Karachi            │     └─────────────────────────┘
-└─────────────────────────┘                   │
-              │                               ▼
-              │ Returns: 26°C       ┌─────────────────────────┐
-              │                     │  Apply Transform        │
-              └─────────────────────│  26 + 10 = 36°C         │
-                                    └─────────────────────────┘
-                                              │
-                                              ▼
-                                    ┌─────────────────────────┐
-                                    │  orchestration-workflow/output.md       │
-                                    │  Write Results          │
-                                    └─────────────────────────┘
-                                              │
-                                              ▼
-                                    ┌─────────────────────────┐
-                                    │  Display Summary        │
-                                    │  to User                │
-                                    └─────────────────────────┘
+          ┌─────────────────────────────────────────────────┐
+          │                 User Interaction                 │
+          └─────────────────────────────────────────────────┘
+                                   │
+                                   ▼
+                     ┌───────────────────────────┐
+                     │  /weather-orchestrator    │
+                     │  Command                  │
+                     │  (Entry point)            │
+                     └───────────────────────────┘
+                                   │
+                                   │ Task tool invocation
+                                   ▼
+                     ┌───────────────────────────┐
+                     │  weather                  │
+                     │  Agent                    │
+                     │  (Orchestrates flow)      │
+                     │                           │
+                     │  skills:                  │
+                     │  - weather-fetcher        │
+                     │  - weather-transformer    │
+                     └───────────────────────────┘
+                                   │
+                  ┌────────────────┴────────────────┐
+                  │                                 │
+                  ▼                                 ▼
+    ┌───────────────────────────┐     ┌───────────────────────────┐
+    │  weather-fetcher          │     │  weather-transformer      │
+    │  Skill                    │     │  Skill                    │
+    │  (Preloaded knowledge)    │     │  (Preloaded knowledge)    │
+    └───────────────────────────┘     └───────────────────────────┘
+                  │                                 │
+                  ▼                                 ▼
+    ┌───────────────────────────┐     ┌───────────────────────────┐
+    │  wttr.in API              │     │  orchestration-workflow/  │
+    │  Fetch Temperature        │     │  Read Transform Rules     │
+    │  for Karachi              │     └───────────────────────────┘
+    └───────────────────────────┘                   │
+                  │                                 ▼
+                  │ Returns: 26°C     ┌───────────────────────────┐
+                  │                   │  Apply Transform          │
+                  └──────────────────▶│  26 + 10 = 36°C           │
+                                      └───────────────────────────┘
+                                                    │
+                                                    ▼
+                                 ┌─────────────────────────────────────┐
+                                 │  orchestration-workflow/output.md   │
+                                 │  Write Results                      │
+                                 └─────────────────────────────────────┘
+                                                    │
+                                                    ▼
+                                      ┌───────────────────────────┐
+                                      │  Display Summary          │
+                                      │  to User                  │
+                                      └───────────────────────────┘
 ```
 
 ## Component Details

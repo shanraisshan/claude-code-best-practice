@@ -85,7 +85,7 @@ Update `.claude/skills/presentation/presentation-structure/SKILL.md`:
 
 If your slide edits change canonical claims that are also documented elsewhere, sync these files in the same execution:
 
-- `reports/claude-settings.md` for settings precedence and hook counts
+- `best-practice/claude-settings.md` for settings precedence and hook counts
 - `.claude/hooks/HOOKS-README.md` for hook-event totals and names
 - `reports/claude-global-vs-project-settings.md` for settings precedence language
 
