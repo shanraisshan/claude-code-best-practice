@@ -1,7 +1,7 @@
 # Commands Best Practice
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_2%2C_2026-white?style=flat&labelColor=555)<br>
-[![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/commands/)
+[![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Complete reference for Claude Code commands — command definitions, frontmatter fields, and all built-in slash commands.
 

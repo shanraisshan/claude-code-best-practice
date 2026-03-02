@@ -77,6 +77,6 @@ The weather agent is the **Agent** in the Command → Agent → Skill orchestrat
 
 | Component | Role | This Repo |
 |-----------|------|-----------|
-| **Command** | Entry point, user interaction | `/weather-orchestrator` |
-| **Agent** | Fetches data with preloaded skill (agent skill) | `weather-agent` with `weather-fetcher` |
-| **Skill** | Creates output independently (skill) | `weather-svg-creator` |
+| **Command** | Entry point, user interaction | [`/weather-orchestrator`](../.claude/commands/weather-orchestrator.md) |
+| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](../.claude/agents/weather-agent.md) with [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) |
+| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) |

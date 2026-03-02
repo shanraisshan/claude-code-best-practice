@@ -64,6 +64,20 @@
   
   "plansDirectory": "./reports",
   "outputStyle": "Explanatory",
+  "statusLine": {
+    "type": "command",
+    "command": "echo 'this is a status line'",
+    "padding": 0
+  },
+  "attribution": {
+    "commit": "Co-Authored-By: Claude <noreply@anthropic.com>",
+    "pr": "Generated with [Claude Code](https://claude.ai/code)"
+  },
+  "spinnerTipsEnabled": true,
+  "respectGitignore": true,
+  "env": {
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
+  },
   "enableAllProjectMcpServers": true,
   "disableAllHooks": false,
   "hooks": {
