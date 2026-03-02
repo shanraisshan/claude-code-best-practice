@@ -162,7 +162,7 @@ Custom agents defined in `.claude/agents/` for this project:
 |-------|-------|-------|-------|--------|--------|
 | [`presentation-curator`](../.claude/agents/presentation-curator.md) | sonnet | magenta | Read, Write, Edit, Grep, Glob | presentation/vibe-to-agentic-framework, presentation/presentation-structure, presentation/presentation-styling | — |
 | [`weather`](../.claude/agents/weather.md) | sonnet | green | WebFetch, Read, Write | weather-fetcher, weather-transformer | project |
-| [`workflow-changelog-claude-subagents-agent`](../.claude/agents/workflows/reports/workflow-changelog-claude-subagents-agent.md) | opus | blue | All (inherited) | — | — |
+| [`workflow-claude-subagents-agent`](../.claude/agents/workflows/best-practice/workflow-claude-subagents-agent.md) | opus | blue | All (inherited) | — | — |
 
 ---
 

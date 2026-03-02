@@ -76,7 +76,7 @@ $ claude
 The weather agent is the **Agent** in the Command → Agent → Skills orchestration pattern. It receives the workflow from the `/weather-orchestrator` command and executes it using two preloaded skills (`weather-fetcher`, `weather-transformer`) within a single execution context.
 
 <p align="center">
-  <img src="../!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="600">
+  <img src="../!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
 </p>
 
 | Component | Role | This Repo |

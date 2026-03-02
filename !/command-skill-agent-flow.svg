@@ -1,53 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380">
   <defs>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#666"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L8,4 z" fill="#666"/>
     </marker>
   </defs>
 
   <!-- Background -->
-  <rect width="600" height="200" fill="#fafafa" rx="8"/>
+  <rect width="1200" height="380" fill="#fafafa" rx="10"/>
 
   <!-- User -->
-  <circle cx="50" cy="100" r="25" fill="#E07C4C"/>
-  <text x="50" y="105" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">User</text>
+  <circle cx="75" cy="135" r="38" fill="#E07C4C"/>
+  <text x="75" y="141" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">User</text>
 
   <!-- Arrow 1 -->
-  <line x1="80" y1="100" x2="115" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="118" y1="135" x2="183" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <!-- Command Box -->
-  <rect x="120" y="70" width="100" height="60" rx="6" fill="#4A90D9" stroke="#3A7BC8" stroke-width="2"/>
-  <text x="170" y="95" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Command</text>
-  <text x="170" y="115" text-anchor="middle" fill="white" font-family="system-ui" font-size="9" opacity="0.9">/orchestrator</text>
+  <rect x="193" y="90" width="240" height="90" rx="8" fill="#4A90D9" stroke="#3A7BC8" stroke-width="2.5"/>
+  <text x="313" y="124" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Command</text>
+  <text x="313" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">commands/weather-orchestrator</text>
+  <!-- Command description -->
+  <text x="313" y="210" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Invokes the weather agent</text>
+  <text x="313" y="225" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">to fetch &amp; transform data</text>
 
   <!-- Arrow 2 -->
-  <line x1="225" y1="100" x2="260" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="243" y="92" text-anchor="middle" fill="#666" font-family="system-ui" font-size="8">Task</text>
+  <line x1="438" y1="135" x2="503" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="470" y="125" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">Task</text>
 
   <!-- Agent Box -->
-  <rect x="265" y="55" width="130" height="90" rx="6" fill="#50B87D" stroke="#3DA066" stroke-width="2"/>
-  <text x="330" y="78" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Agent</text>
+  <rect x="513" y="62" width="240" height="146" rx="8" fill="#50B87D" stroke="#3DA066" stroke-width="2.5"/>
+  <text x="633" y="94" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Agent</text>
+  <text x="633" y="114" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.85">agents/weather</text>
 
   <!-- Skills inside Agent -->
-  <rect x="275" y="88" width="110" height="48" rx="4" fill="white" opacity="0.2"/>
-  <text x="330" y="103" text-anchor="middle" fill="white" font-family="system-ui" font-size="9">skills:</text>
-  <text x="330" y="118" text-anchor="middle" fill="white" font-family="system-ui" font-size="8" opacity="0.9">• fetcher • transformer</text>
-  <text x="330" y="130" text-anchor="middle" fill="white" font-family="system-ui" font-size="8" opacity="0.7">(preloaded knowledge)</text>
+  <rect x="527" y="126" width="212" height="72" rx="5" fill="white" opacity="0.2"/>
+  <text x="633" y="148" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" font-weight="bold">preloaded skills:</text>
+  <text x="633" y="168" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" opacity="0.9">weather-fetcher</text>
+  <text x="633" y="186" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" opacity="0.9">weather-transformer</text>
+  <!-- Agent description -->
+  <text x="633" y="232" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Executes skills sequentially:</text>
+  <text x="633" y="247" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">fetch temp, then transform it</text>
 
   <!-- Arrow 3 -->
-  <line x1="400" y1="100" x2="435" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="758" y1="135" x2="823" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <!-- Output Box -->
-  <rect x="440" y="70" width="100" height="60" rx="6" fill="#9B59B6" stroke="#8E44AD" stroke-width="2"/>
-  <text x="490" y="95" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">Output</text>
-  <text x="490" y="115" text-anchor="middle" fill="white" font-family="system-ui" font-size="9" opacity="0.9">output.md</text>
+  <rect x="833" y="90" width="280" height="90" rx="8" fill="#9B59B6" stroke="#8E44AD" stroke-width="2.5"/>
+  <text x="973" y="124" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Output</text>
+  <text x="973" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">orchestration-workflow/output.md</text>
+  <!-- Output description -->
+  <text x="973" y="210" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Transformed temperature</text>
+  <text x="973" y="225" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">written to output file</text>
 
   <!-- Arrow 4 (back to user) -->
-  <path d="M 540 100 Q 570 100 570 160 Q 570 180 50 180 Q 30 180 30 140 L 30 130"
-        stroke="#666" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <path d="M 1113 135 Q 1160 135 1160 270 Q 1160 305 75 305 Q 40 305 40 200 L 40 180"
+        stroke="#666" stroke-width="2.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
 
   <!-- Legend -->
-  <text x="300" y="190" text-anchor="middle" fill="#888" font-family="system-ui" font-size="9">
-    Command → Agent (with preloaded Skills) → Output
+  <text x="600" y="352" text-anchor="middle" fill="#888" font-family="system-ui" font-size="12">
+    commands/weather-orchestrator → agents/weather (with preloaded skills) → orchestration-workflow/output.md
   </text>
 </svg>

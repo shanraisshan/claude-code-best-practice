@@ -17,9 +17,9 @@ This is a **read-then-report** workflow. Launch agents, merge results, and produ
 
 **Immediately** spawn both agents using the Task tool **in the same message** (parallel launch):
 
-### Agent 1: workflow-changelog-claude-subagents-agent
+### Agent 1: workflow-claude-subagents-agent
 
-Spawn using `subagent_type: "workflow-changelog-claude-subagents-agent"`. Give it this prompt:
+Spawn using `subagent_type: "workflow-claude-subagents-agent"`. Give it this prompt:
 
 > Research the claude-code-best-practice project for subagents report drift. Check the last $ARGUMENTS versions (default: 10).
 >
@@ -69,7 +69,7 @@ Both agents run independently and will return their findings.
 ## Phase 2: Merge Findings & Generate Report
 
 **Wait for both agents to complete.** Once you have:
-- **workflow-changelog-claude-subagents-agent findings** — detailed report analysis with local file reads, external doc fetches, and drift detection
+- **workflow-claude-subagents-agent findings** — detailed report analysis with local file reads, external doc fetches, and drift detection
 - **claude-code-guide findings** — independent research on latest Claude Code agents features and frontmatter changes
 
 Cross-reference the two. The dedicated agent provides report-specific drift analysis, while the claude-code-guide agent may surface things it missed (e.g. very recent changes, undocumented features, or context from web searches). Flag any contradictions between the two for the user to resolve.

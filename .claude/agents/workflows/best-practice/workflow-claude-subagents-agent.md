@@ -1,5 +1,5 @@
 ---
-name: workflow-changelog-claude-subagents-agent
+name: workflow-claude-subagents-agent
 description: Research agent that fetches Claude Code docs, reads the local subagents report, and analyzes drift
 model: opus
 color: blue
