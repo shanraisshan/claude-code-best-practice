@@ -66,7 +66,7 @@
   "outputStyle": "Explanatory",
   "statusLine": {
     "type": "command",
-    "command": "echo 'this is a status line'",
+    "command": "echo 'shayan's best practice status line'",
     "padding": 0
   },
   "attribution": {

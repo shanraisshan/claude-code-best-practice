@@ -1,6 +1,8 @@
-# Claude Code CLI Startup Flags Reference
+# CLI Startup Flags Best Practice
 
-A comprehensive reference of all available command-line flags when launching Claude Code from the terminal.
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2002%2C%202026-white?style=flat&labelColor=555)
+
+Complete reference of all available command-line flags, subcommands, and environment variables when launching Claude Code from the terminal.
 
 <table width="100%">
 <tr>
@@ -8,6 +10,8 @@ A comprehensive reference of all available command-line flags when launching Cla
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
+
+---
 
 ## Table of Contents
 
