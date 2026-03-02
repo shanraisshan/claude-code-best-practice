@@ -93,7 +93,7 @@ From experience with this repository:
 - Create feature-specific subagents with skills (progressive disclosure) rather than general-purpose agents
 - Perform manual `/compact` at ~50% context usage
 - Start with plan mode for complex tasks
-- Use human-gated todo list workflow for multi-step tasks
+- Use human-gated task list workflow for multi-step tasks
 - Break subtasks small enough to complete in under 50% context
 
 ### Debugging Tips
