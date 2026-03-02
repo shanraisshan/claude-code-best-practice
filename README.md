@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_02%2C_2026_11%3A13_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_02%2C_2026_07%3A15_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -109,10 +109,10 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 
 ![Boris Cherny](!/tags/boris-cherny.svg)
 
-- [Git Worktrees - 5 ways how boris is using | 21 Feb 2026]() ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
 - [Boris setup - 5 tips | 03/Jan/26]() ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
 - [10 tips for using claude code by team itself | 01/Feb/26]() ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
 - [12 ways how people are customizing their claudes | 12/Feb/26](reports/claude-boris-tips-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
+- [Git Worktrees - 5 ways how boris is using | 21 Feb 2026]() ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
 
 ## REPORTS
 
