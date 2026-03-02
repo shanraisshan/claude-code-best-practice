@@ -99,7 +99,7 @@ This is an **agent skill** — preloaded into the `weather-agent` at startup via
 
 ---
 
-## How to Use
+## ![How to Use](../!/tags/how-to-use.svg)
 
 **Skill** — invoke directly via slash command:
 ```bash
@@ -107,27 +107,13 @@ $ claude
 > /weather-svg-creator
 ```
 
-**Agent Skill** — not directly invocable (`user-invocable: false`). Preloaded into the agent via `skills:` frontmatter:
-```yaml
-# In .claude/agents/weather-agent.md
 ---
-skills:
-  - weather-fetcher
----
+
+## ![How to Implement](../!/tags/how-to-implement.svg)
+
+Ask Claude to create one for you — it will generate the markdown file with YAML frontmatter and body in `.claude/skills/my-skill/SKILL.md`
+
+# My Skill
+
+Instructions for what the skill does.
 ```
-
----
-
-<a href="https://github.com/shanraisshan/claude-code-best-practice#orchestration-workflow"><img src="../!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
-
-The skills are the final components in the Command → Agent → Skill orchestration pattern. The `weather-fetcher` is preloaded into the `weather-agent` as domain knowledge for API interaction, while the `weather-svg-creator` is invoked directly by the command to transform the fetched data into visual output.
-
-<p align="center">
-  <img src="../!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
-</p>
-
-| Component | Role | This Repo |
-|-----------|------|-----------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](../.claude/commands/weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](../.claude/agents/weather-agent.md) with [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) |
-| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) |

@@ -1,14 +1,35 @@
 ---
 name: weather-agent
-description: Use this agent PROACTIVELY when you need to fetch weather data for
-  Dubai, UAE. This agent fetches real-time temperature from wttr.in API
-  using its preloaded weather-fetcher skill.
-tools: WebFetch, Read
+description: Use this agent PROACTIVELY when you need to fetch weather data for Dubai, UAE. This agent fetches real-time temperature from wttr.in API using its preloaded weather-fetcher skill.
+tools: WebFetch, Read, Write, Edit
 model: sonnet
-color: green
+color: teal
+maxTurns: 5
+permissionMode: acceptEdits
 memory: project
 skills:
   - weather-fetcher
+hooks:
+  PreToolUse:
+    - matcher: ".*"
+      hooks:
+        - type: command
+          command: python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py  --agent=voice-hook-agent
+          timeout: 5000
+          async: true
+  PostToolUse:
+    - matcher: ".*"
+      hooks:
+        - type: command
+          command: python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py  --agent=voice-hook-agent
+          timeout: 5000
+          async: true
+  PostToolUseFailure:
+    - hooks:
+        - type: command
+          command: python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py  --agent=voice-hook-agent
+          timeout: 5000
+          async: true
 ---
 
 # Weather Agent

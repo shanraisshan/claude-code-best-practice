@@ -58,12 +58,24 @@ The agent has one preloaded skill (`weather-fetcher`) that provides instructions
 
 ---
 
-## How to Use
+## ![How to Use](../!/tags/how-to-use.svg)
 
 ```bash
 $ claude
 > /weather-orchestrator
 ```
+
+---
+
+## ![How to Implement](../!/tags/how-to-implement.svg)
+
+You can create an agent using the `/agents` command, 
+```bash
+$ claude
+> /agents
+```
+
+or ask Claude to create one for you — it will generate the markdown file with YAML frontmatter and body in `.claude/agents/<name>.md`
 
 ---
 

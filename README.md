@@ -36,9 +36,8 @@ practice makes claude perfect
 | [**Checkpointing**](https://code.claude.com/docs/en/checkpointing) | automatic (git-based) | Automatic tracking of file edits with rewind (`Esc Esc` or `/rewind`) and targeted summarization |
 | [**Remote Control**](https://code.claude.com/docs/en/remote-control) | CLI / claude.ai | Continue local sessions from any device — phone, tablet, or browser · [Headless Mode](https://code.claude.com/docs/en/headless) |
 | [**CLI Startup Flags**](https://code.claude.com/docs/en/cli-reference) | `claude [flags]` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-cli-startup-flags.md) Command-line flags, subcommands, and environment variables for launching Claude Code |
+| **AI Terms** | | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-codex-cursor-gemini/blob/main/reports/ai-terms.md) Agentic Engineering · Context Engineering · Vibe Coding |
 | [**Best Practices**](https://code.claude.com/docs/en/best-practices) | | Official best practices · [Extend Claude Code](https://code.claude.com/docs/en/features-overview) |
-
-> **Note:** Custom slash commands have been merged into skills. Files in `.claude/commands/` still work, but skills (`.claude/skills/`) are recommended as they support additional features like supporting files, invocation control, and subagent execution.
 
 <a id="orchestration-workflow"></a>
 
@@ -57,6 +56,19 @@ Workflow orchestration using the **Command → Agent → Skill** pattern.
 | **Skill** | Creates output independently (skill) | [`weather-svg-creator`](.claude/skills/weather-svg-creator/SKILL.md) |
 
 See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for implementation details.
+
+## DEVELOPMENT WORKFLOW
+- [RPI](workflow/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](workflow/rpi/rpi-workflow.md)
+- [Boris Feb26 workflow](https://x.com/bcherny/status/2017742741636321619)
+- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
+- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
+- [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
+- [Github Speckit](https://github.com/github/spec-kit)
+- [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
+- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
+- [Superpower](https://github.com/obra/superpowers)
+- [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
+- [Creator of Clawd Bot Workflow](https://www.youtube.com/watch?v=8lF7HmQ_RgY)
 
 ## MY EXPERIENCE
 
@@ -95,36 +107,12 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 - [Humanlayer - Writing a good Claude.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - [Claude.md for larger monorepos - Boris Cherny on X](https://github.com/shanraisshan/claude-code-best-practice/blob/main/reports/claude-md-for-larger-mono-repos.md)
 
-## WORKFLOWS
-- [RPI](workflow/rpi/rpi-workflow.md)
-- [Boris Feb26 workflow](https://x.com/bcherny/status/2017742741636321619)
-- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
-- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
-- [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
-- [Github Speckit](https://github.com/github/spec-kit)
-- [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
-- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
-- [Superpower](https://github.com/obra/superpowers)
-- [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
-- [Creator of Clawd Bot Workflow](https://www.youtube.com/watch?v=8lF7HmQ_RgY)
-
-
-
 
 
 ## CLAUDE CODE FEATURES INSPIRATION
 
 - [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
 - [Ralph Plugin](https://x.com/GeoffreyHuntley/status/2015031262692753449)
-
-## AI TERMS
-
-| | | | | |
-|---|---|---|---|---|
-| Agentic Engineering | AI Slop | Context Bloat | Context Engineering | Context Rot |
-| Dumb Zone | Hallucination | Scaffolding | Orchestration | Vibe Coding |
-
-[**See Complete List →**](https://github.com/shanraisshan/claude-code-codex-cursor-gemini/blob/main/reports/ai-terms.md)
 
 ## REPORTS
 

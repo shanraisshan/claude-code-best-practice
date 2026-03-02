@@ -53,12 +53,18 @@ The command orchestrates the entire workflow: it asks the user for their tempera
 
 ---
 
-## How to Use
+## ![How to Use](../!/tags/how-to-use.svg)
 
 ```bash
 $ claude
 > /weather-orchestrator
 ```
+
+---
+
+## ![How to Implement](../!/tags/how-to-implement.svg)
+
+Ask Claude to create one for you — it will generate the markdown file with YAML frontmatter and body in `.claude/commands/<name>.md`
 
 ---
 
