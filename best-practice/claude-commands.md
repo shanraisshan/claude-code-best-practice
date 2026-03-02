@@ -58,11 +58,11 @@ Custom commands are invoked by typing `/command-name` in Claude Code's interacti
 
 ```yaml
 ---
-description: Fetch and transform weather data for Karachi
+description: Fetch weather data for Dubai and create an SVG weather card
 model: haiku
 ---
 
-Fetch the current temperature for Karachi, Pakistan and apply transformations.
+Fetch the current temperature for Dubai, UAE and create a visual SVG weather card.
 ```
 
 ## Example: Full-Featured Command (All Fields)
@@ -161,7 +161,7 @@ Custom commands defined in `.claude/commands/` for this project:
 
 | Command | Description | Model |
 |---------|-------------|-------|
-| [`weather-orchestrator`](../.claude/commands/weather-orchestrator.md) | Fetch and transform weather data for Karachi | haiku |
+| [`weather-orchestrator`](../.claude/commands/weather-orchestrator.md) | Fetch weather data for Dubai and create an SVG weather card | haiku |
 | [`workflows/best-practice/workflow-claude-subagents`](../.claude/commands/workflows/best-practice/workflow-claude-subagents.md) | Track Claude Code subagents report changes and find what needs updating | — |
 
 ---

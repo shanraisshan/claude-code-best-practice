@@ -1,6 +1,6 @@
 # Orchestration Workflow
 
-This document describes the **Command → Agent → Skills** orchestration workflow, demonstrated through a weather data fetching and transformation system.
+This document describes the **Command → Agent (with skill) → Skill** orchestration workflow, demonstrated through a weather data fetching and SVG rendering system.
 
 <table width="100%">
 <tr>
@@ -11,10 +11,14 @@ This document describes the **Command → Agent → Skills** orchestration workf
 
 ## System Overview
 
-The weather system demonstrates the **Command → Agent → Skills** architecture pattern, where:
-- A command orchestrates the workflow
-- An agent executes tasks using preloaded skills
-- Skills provide domain-specific knowledge and instructions
+The weather system demonstrates two distinct skill patterns within a single orchestration workflow:
+- **Agent Skills** (preloaded): `weather-fetcher` is injected into the `weather-agent` at startup as domain knowledge
+- **Skills** (independent): `weather-svg-creator` is invoked directly by the command via the Skill tool
+
+This showcases the **Command → Agent → Skill** architecture pattern, where:
+- A command orchestrates the workflow and handles user interaction
+- An agent fetches data using its preloaded skill
+- A skill creates the visual output independently
 
 ## Flow Diagram
 
@@ -22,58 +26,60 @@ The weather system demonstrates the **Command → Agent → Skills** architectur
           ┌─────────────────────────────────────────────────┐
           │                 User Interaction                 │
           └─────────────────────────────────────────────────┘
-                                   │
-                                   ▼
-                     ┌───────────────────────────┐
-                     │  /weather-orchestrator    │
-                     │  Command                  │
-                     │  (Entry point)            │
-                     └───────────────────────────┘
-                                   │
-                                   │ Task tool invocation
-                                   ▼
-                     ┌───────────────────────────┐
-                     │  weather                  │
-                     │  Agent                    │
-                     │  (Orchestrates flow)      │
-                     │                           │
-                     │  skills:                  │
-                     │  - weather-fetcher        │
-                     │  - weather-transformer    │
-                     └───────────────────────────┘
-                                   │
-                  ┌────────────────┴────────────────┐
-                  │                                 │
-                  ▼                                 ▼
-    ┌───────────────────────────┐     ┌───────────────────────────┐
-    │  weather-fetcher          │     │  weather-transformer      │
-    │  Skill                    │     │  Skill                    │
-    │  (Preloaded knowledge)    │     │  (Preloaded knowledge)    │
-    └───────────────────────────┘     └───────────────────────────┘
-                  │                                 │
-                  ▼                                 ▼
-    ┌───────────────────────────┐     ┌───────────────────────────┐
-    │  wttr.in API              │     │  orchestration-workflow/  │
-    │  Fetch Temperature        │     │  Read Transform Rules     │
-    │  for Karachi              │     └───────────────────────────┘
-    └───────────────────────────┘                   │
-                  │                                 ▼
-                  │ Returns: 26°C     ┌───────────────────────────┐
-                  │                   │  Apply Transform          │
-                  └──────────────────▶│  26 + 10 = 36°C           │
-                                      └───────────────────────────┘
-                                                    │
-                                                    ▼
-                                 ┌─────────────────────────────────────┐
-                                 │  orchestration-workflow/output.md   │
-                                 │  Write Results                      │
-                                 └─────────────────────────────────────┘
-                                                    │
-                                                    ▼
-                                      ┌───────────────────────────┐
-                                      │  Display Summary          │
-                                      │  to User                  │
-                                      └───────────────────────────┘
+                                  │
+                                  ▼
+                    ┌───────────────────────────┐
+                    │  /weather-orchestrator    │
+                    │  Command                  │
+                    │  (Entry point)            │
+                    └───────────────────────────┘
+                                  │
+                    ┌─────────────┤
+                    │             │
+                    ▼             │
+          ┌──────────────┐       │
+          │ AskUser      │       │
+          │ C° or F°?    │       │
+          └──────────────┘       │
+                    │             │
+                    ▼             │
+     Step 2: Task tool            │
+                    │             │
+                    ▼             │
+          ┌───────────────────────────┐
+          │  weather-agent            │
+          │  Agent                    │
+          │                           │
+          │  preloaded skill:         │
+          │  - weather-fetcher        │
+          └───────────────────────────┘
+                    │
+                    │ Returns: temperature + unit
+                    │
+                    ▼
+     Step 3: Skill tool
+                    │
+                    ▼
+          ┌───────────────────────────┐
+          │  weather-svg-creator      │
+          │  Skill         │
+          │                           │
+          │  Creates SVG card         │
+          │  Writes output files      │
+          └───────────────────────────┘
+                    │
+          ┌────────┴────────┐
+          │                 │
+          ▼                 ▼
+┌──────────────────┐  ┌──────────────────┐
+│  weather.svg     │  │  output.md       │
+└──────────────────┘  └──────────────────┘
+                    │
+                    ▼
+          ┌───────────────────────────┐
+          │  Display Summary          │
+          │  to User                  │
+          └───────────────────────────┘
 ```
 
 ## Component Details
@@ -82,116 +88,118 @@ The weather system demonstrates the **Command → Agent → Skills** architectur
 
 #### `/weather-orchestrator` (Command)
 - **Location**: `.claude/commands/weather-orchestrator.md`
-- **Purpose**: Entry point for weather operations
-- **Action**: Invokes the weather agent via Task tool
+- **Purpose**: Entry point — orchestrates the workflow and handles user interaction
+- **Actions**:
+  1. Asks user for temperature unit preference (Celsius/Fahrenheit)
+  2. Invokes weather-agent via Task tool
+  3. Invokes weather-svg-creator via Skill tool
 - **Model**: haiku
 
-### 2. Agent with Skills
+### 2. Agent with Preloaded Skill (Agent Skill)
 
-#### `weather` (Agent)
-- **Location**: `.claude/agents/weather.md`
-- **Purpose**: Execute the weather workflow using preloaded skills
-- **Skills**: `weather-fetcher`, `weather-transformer`
-- **Tools Available**: WebFetch, Read, Write
-- **Model**: haiku
+#### `weather-agent` (Agent)
+- **Location**: `.claude/agents/weather-agent.md`
+- **Purpose**: Fetch weather data using its preloaded skill
+- **Skills**: `weather-fetcher` (preloaded as domain knowledge)
+- **Tools Available**: WebFetch, Read
+- **Model**: sonnet
 - **Color**: green
+- **Memory**: project
 
-The agent has skills preloaded into its context at startup. It follows the instructions from each skill sequentially.
+The agent has `weather-fetcher` preloaded into its context at startup. It follows the skill's instructions to fetch the temperature and returns the value to the command.
 
-### 3. Skills
+### 3. Skill
+
+#### `weather-svg-creator` (Skill)
+- **Location**: `.claude/skills/weather-svg-creator/SKILL.md`
+- **Purpose**: Create a visual SVG weather card and write output files
+- **Invocation**: Via Skill tool from the command (not preloaded into any agent)
+- **Outputs**:
+  - `orchestration-workflow/weather.svg` — SVG weather card
+  - `orchestration-workflow/output.md` — Weather summary
+
+### 4. Preloaded Skill
 
 #### `weather-fetcher` (Skill)
 - **Location**: `.claude/skills/weather-fetcher/SKILL.md`
 - **Purpose**: Instructions for fetching real-time temperature data
-- **Data Source**: wttr.in API for Karachi, Pakistan
-- **Output**: Temperature in Celsius (numeric value)
-
-#### `weather-transformer` (Skill)
-- **Location**: `.claude/skills/weather-transformer/SKILL.md`
-- **Purpose**: Instructions for applying mathematical transformations
-- **Input Source**: `orchestration-workflow/input.md` (transformation rules)
-- **Output Destination**: `orchestration-workflow/output.md` (formatted results)
-
-### 4. Data Files
-
-#### `orchestration-workflow/input.md`
-- **Purpose**: Stores transformation rules
-- **Format**: Natural language instructions (e.g., "add +10 in the result")
-- **Access**: Read by weather agent following weather-transformer skill
-
-#### `orchestration-workflow/output.md`
-- **Purpose**: Stores formatted transformation results
-- **Format**: Structured markdown with sections:
-  - Original Temperature
-  - Transformation Applied
-  - Final Result
-  - Calculation Details
+- **Data Source**: wttr.in API for Dubai, UAE
+- **Output**: Temperature value and unit (Celsius or Fahrenheit)
+- **Note**: This is an agent skill — preloaded into `weather-agent`, not invoked directly
 
 ## Execution Flow
 
 1. **User Invocation**: User runs `/weather-orchestrator` command
 2. **User Prompt**: Command asks user for preferred temperature unit (Celsius/Fahrenheit)
-3. **Agent Invocation**: Command invokes weather agent via Task tool
+3. **Agent Invocation**: Command invokes `weather-agent` via Task tool
 4. **Skill Execution** (within agent context):
-   - **Step 1**: Agent follows `weather-fetcher` skill instructions to fetch temperature from wttr.in
-   - **Step 2**: Agent follows `weather-transformer` skill instructions to:
-     - Read transformation rules from `orchestration-workflow/input.md`
-     - Apply rules to the fetched temperature
-     - Write formatted results to `orchestration-workflow/output.md`
-5. **Result Display**: Summary shown to user with:
+   - Agent follows `weather-fetcher` skill instructions to fetch temperature from wttr.in
+   - Agent returns the temperature value and unit to the command
+5. **SVG Creation**: Command invokes `weather-svg-creator` via Skill tool
+   - Skill creates SVG weather card at `orchestration-workflow/weather.svg`
+   - Skill writes summary to `orchestration-workflow/output.md`
+6. **Result Display**: Summary shown to user with:
    - Temperature unit requested
-   - Original temperature
-   - Transformation rule applied
-   - Final transformed result
+   - Temperature fetched
+   - SVG card location
+   - Output file location
 
 ## Example Execution
 
 ```
 Input: /weather-orchestrator
-├─ Asks: Celsius or Fahrenheit?
-├─ User: Celsius
-├─ Task: weather agent (via Task tool)
-│  ├─ Skills Preloaded:
-│  │  ├─ weather-fetcher (knowledge)
-│  │  └─ weather-transformer (knowledge)
-│  ├─ Step 1 (weather-fetcher skill):
-│  │  └─ Fetches from wttr.in → 26°C
-│  ├─ Step 2 (weather-transformer skill):
-│  │  ├─ Reads: orchestration-workflow/input.md ("add +10")
-│  │  ├─ Calculates: 26 + 10 = 36°C
-│  │  └─ Writes: orchestration-workflow/output.md
-│  └─ Returns: Complete report
+├─ Step 1: Asks: Celsius or Fahrenheit?
+│  └─ User: Celsius
+├─ Step 2: Task tool → weather-agent
+│  ├─ Preloaded Skill:
+│  │  └─ weather-fetcher (domain knowledge)
+│  ├─ Fetches from wttr.in → 26°C
+│  └─ Returns: temperature=26, unit=Celsius
+├─ Step 3: Skill tool → /weather-svg-creator
+│  ├─ Creates: orchestration-workflow/weather.svg
+│  └─ Writes: orchestration-workflow/output.md
 └─ Output:
    ├─ Unit: Celsius
-   ├─ Original: 26°C
-   ├─ Transform: Add +10
-   └─ Result: 36°C
+   ├─ Temperature: 26°C
+   ├─ SVG: orchestration-workflow/weather.svg
+   └─ Summary: orchestration-workflow/output.md
 ```
 
 ## Key Design Principles
 
-1. **Command → Agent → Skills**: Three-tier architecture for clean separation
-2. **Skills as Knowledge**: Skills provide domain knowledge preloaded into agent context
-3. **Single Agent**: One agent handles multiple related tasks using its skills
-4. **Sequential Execution**: Agent follows skill instructions in order
-5. **Configurable Transformations**: Rules stored externally in input files
-6. **Structured Output**: Results formatted consistently in output files
+1. **Two Skill Patterns**: Demonstrates both agent skills (preloaded) and skills (invoked directly)
+2. **Command as Orchestrator**: The command handles user interaction and coordinates the workflow
+3. **Agent for Data Fetching**: The agent uses its preloaded skill to fetch data, then returns it
+4. **Skill for Output**: The SVG creator runs independently, receiving data from the command context
+5. **Clean Separation**: Fetch (agent) → Render (skill) — each component has a single responsibility
 
-## Architecture Pattern: Agent-Skills
+## Architecture Patterns
 
-This system demonstrates the **agent-skills pattern** where:
+### Agent Skill (Preloaded)
 
 ```yaml
-# In agent definition (.claude/agents/weather.md)
+# In agent definition (.claude/agents/weather-agent.md)
 ---
-name: weather
+name: weather-agent
 skills:
-  - weather-fetcher
-  - weather-transformer
+  - weather-fetcher    # Preloaded into agent context at startup
 ---
 ```
 
 - **Skills are preloaded**: Full skill content is injected into agent's context at startup
 - **Agent uses skill knowledge**: Agent follows instructions from preloaded skills
-- **No dynamic invocation**: Skills are not invoked separately; they're reference material
-- **Single execution context**: All work happens within one agent's context
+- **No dynamic invocation**: Skills are reference material, not invoked separately
+
+### Skill (Direct Invocation)
+
+```yaml
+# In skill definition (.claude/skills/weather-svg-creator/SKILL.md)
+---
+name: weather-svg-creator
+description: Creates an SVG weather card...
+---
+```
+
+- **Invoked via Skill tool**: Command calls `Skill(skill: "weather-svg-creator")`
+- **Independent execution**: Runs in the command's context, not inside an agent
+- **Receives data from context**: Uses temperature data already available in the conversation

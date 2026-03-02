@@ -1,11 +1,11 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Feb_28%2C_2026_07%3A59_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_02%2C_2026_11%3A13_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
-[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Click on this badge to see the Command → Agent → Skills orchestration workflow*
+[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Click on this badge to see the Command → Agent → Skill orchestration workflow*
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
@@ -24,18 +24,15 @@ practice makes claude perfect
 | Feature | Location | Description |
 |---------|----------|-------------|
 | [**Commands**](https://code.claude.com/docs/en/skills) | `.claude/commands/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md) [![Implemented](!/tags/implemented.svg)](.claude/commands/) Entry-point prompts for workflows — invoke with `/command-name` |
-| [**Sub-Agents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Custom agents with their own name, color, tools, permissions, and model — usable as main agent or isolated subagents via the Task tool |
+| [**Sub-Agents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Custom agents with their own name, color, tools, permissions, and model · [Agent Teams](https://code.claude.com/docs/en/agent-teams) |
 | [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/<name>/SKILL.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md#skills-frontmatter-fields) [![Implemented](!/tags/implemented.svg)](.claude/skills/) Reusable knowledge, workflows, and slash commands — load on-demand or invoke with `/skill-name` |
-| [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md` | Persistent context via CLAUDE.md files and `@path` imports that Claude sees every session |
-| [**Rules**](https://code.claude.com/docs/en/memory#modular-rules-with-clauderules) | `.claude/rules/*.md` | Modular topic-specific instructions with optional path-scoping via frontmatter |
-| [**Hooks**](https://code.claude.com/docs/en/hooks) | `.claude/hooks/` | Deterministic scripts that run outside the agentic loop on specific events |
-| [**MCP Servers**](https://code.claude.com/docs/en/mcp) | `.claude/settings.json` | Model Context Protocol connections to external tools, databases, and APIs |
-| [**Plugins**](https://code.claude.com/docs/en/plugins) | distributable packages | Bundles of skills, subagents, hooks, and MCP servers |
-| [**Marketplaces**](https://code.claude.com/docs/en/discover-plugins) | plugin registries | Host and discover plugin collections |
-| [**Sandboxing**](https://code.claude.com/docs/en/sandboxing) | runtime config | File and network isolation that improves safety while reducing permission prompts |
-| [**Output Styles**](https://code.claude.com/docs/en/output-styles) | `.claude/settings.json` | Configurable response tone and format — Explanatory, Learning, or Custom |
-| [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-settings.md) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Hierarchical configuration system for Claude Code behavior (37 settings, 84 env vars) |
-| [**Permissions**](https://code.claude.com/docs/en/iam) | `.claude/settings.json` | Fine-grained access control for tools and operations with wildcard syntax |
+| [**Hooks**](https://code.claude.com/docs/en/hooks) | `.claude/hooks/` | [![Implemented](!/tags/implemented.svg)](.claude/hooks/) Deterministic scripts that run outside the agentic loop on specific events |
+| [**MCP Servers**](https://code.claude.com/docs/en/mcp) | `.claude/settings.json`, `.mcp.json` | [![Implemented](!/tags/implemented.svg)](.mcp.json) Model Context Protocol connections to external tools, databases, and APIs |
+| [**Plugins**](https://code.claude.com/docs/en/plugins) | distributable packages | Bundles of skills, subagents, hooks, and MCP servers · [Marketplaces](https://code.claude.com/docs/en/discover-plugins) |
+| [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-settings.md) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Hierarchical configuration system · [Permissions](https://code.claude.com/docs/en/permissions) · [Model Config](https://code.claude.com/docs/en/model-config) · [Output Styles](https://code.claude.com/docs/en/output-styles) · [Sandboxing](https://code.claude.com/docs/en/sandboxing) · [Keybindings](https://code.claude.com/docs/en/keybindings) · [Status Line](https://code.claude.com/docs/en/statusline) · [Fast Mode](https://code.claude.com/docs/en/fast-mode) |
+| [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md`, `~/.claude/projects/<project>/memory/` | [![Implemented](!/tags/implemented.svg)](CLAUDE.md) Persistent context via CLAUDE.md files and `@path` imports · [Auto Memory](https://code.claude.com/docs/en/memory) · [Rules](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) |
+| [**Checkpointing**](https://code.claude.com/docs/en/checkpointing) | automatic (git-based) | Automatic tracking of file edits with rewind (`Esc Esc` or `/rewind`) and targeted summarization |
+| [**Remote Control**](https://code.claude.com/docs/en/remote-control) | CLI / claude.ai | Continue local sessions from any device — phone, tablet, or browser · [Headless Mode](https://code.claude.com/docs/en/headless) |
 
 > **Note:** Custom slash commands have been merged into skills. Files in `.claude/commands/` still work, but skills (`.claude/skills/`) are recommended as they support additional features like supporting files, invocation control, and subagent execution.
 
@@ -43,7 +40,7 @@ practice makes claude perfect
 
 ## <a href="orchestration-workflow/orchestration-workflow.md"><img src="!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
 
-Workflow orchestration using the **Command → Agent → Skills** pattern.
+Workflow orchestration using the **Command → Agent → Skill** pattern.
 
 <p align="center">
   <img src="!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
@@ -51,9 +48,9 @@ Workflow orchestration using the **Command → Agent → Skills** pattern.
 
 | Component | Role | Example |
 |-----------|------|---------|
-| **Command** | Entry point, user interaction | `/weather-orchestrator` |
-| **Agent** | Orchestrates workflow with preloaded skills | `weather` agent |
-| **Skills** | Domain knowledge injected at startup | `weather-fetcher`, `weather-transformer` |
+| **Command** | Entry point, user interaction | [`/weather-orchestrator`](.claude/commands/weather-orchestrator.md) |
+| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](.claude/agents/weather-agent.md) with [`weather-fetcher`](.claude/skills/weather-fetcher/SKILL.md) |
+| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](.claude/skills/weather-svg-creator/SKILL.md) |
 
 See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for implementation details.
 

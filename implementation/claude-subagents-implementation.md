@@ -1,6 +1,6 @@
 # Sub-agents Implementation
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Feb_28%2C_2026_07%3A59_PM_PKT-white?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_02%2C_2026_07%3A59_PM_PKT-white?style=flat&labelColor=555)
 
 <table width="100%">
 <tr>
@@ -13,52 +13,48 @@
 
 <a href="#weather-agent"><img src="../!/tags/implemented-hd.svg" alt="Implemented"></a>
 
-The weather agent is implemented in this repo as an example of the **Command → Agent → Skills** architecture pattern.
+The weather agent is implemented in this repo as an example of the **Command → Agent → Skill** architecture pattern, demonstrating two distinct skill patterns.
 
 ---
 
 ## Weather Agent
 
-**File**: [`.claude/agents/weather.md`](../.claude/agents/weather.md)
+**File**: [`.claude/agents/weather-agent.md`](../.claude/agents/weather-agent.md)
 
 ```yaml
 ---
-name: weather
-description: Use this agent PROACTIVELY when you need to fetch and transform
-  weather data for Karachi, Pakistan. This agent fetches real-time temperature
-  from wttr.in API and applies transformation rules from
-  orchestration-workflow/input.md, writing results to
-  orchestration-workflow/output.md.
-tools: WebFetch, Read, Write
+name: weather-agent
+description: Use this agent PROACTIVELY when you need to fetch weather data for
+  Dubai, UAE. This agent fetches real-time temperature from wttr.in API
+  using its preloaded weather-fetcher skill.
+tools: WebFetch, Read
 model: sonnet
 color: green
 memory: project
 skills:
   - weather-fetcher
-  - weather-transformer
 ---
 
 # Weather Agent
 
-You are a specialized weather agent that fetches and transforms weather data
-for Karachi, Pakistan.
+You are a specialized weather agent that fetches weather data for Dubai,
+Pakistan.
 
 ## Your Task
 
 Execute the weather workflow by following the instructions from your preloaded
-skills sequentially:
+skill:
 
-1. **First**: Follow the `weather-fetcher` skill instructions to fetch the
+1. **Fetch**: Follow the `weather-fetcher` skill instructions to fetch the
    current temperature
-2. **Then**: Follow the `weather-transformer` skill instructions to apply
-   transformations and write results
-3. **Finally**: Update your agent memory with the reading details for
+2. **Report**: Return the temperature value and unit to the caller
+3. **Memory**: Update your agent memory with the reading details for
    historical tracking
 
 ...
 ```
 
-The agent has two skills preloaded (`weather-fetcher` and `weather-transformer`) that provide step-by-step instructions for fetching from the wttr.in API and applying transformation rules.
+The agent has one preloaded skill (`weather-fetcher`) that provides instructions for fetching from the wttr.in API. It returns the temperature value and unit to the calling command.
 
 ---
 
@@ -66,14 +62,14 @@ The agent has two skills preloaded (`weather-fetcher` and `weather-transformer`)
 
 ```bash
 $ claude
-> What is the weather in Karachi?
+> /weather-orchestrator
 ```
 
 ---
 
 <a href="https://github.com/shanraisshan/claude-code-best-practice#orchestration-workflow"><img src="../!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
 
-The weather agent is the **Agent** in the Command → Agent → Skills orchestration pattern. It receives the workflow from the `/weather-orchestrator` command and executes it using two preloaded skills (`weather-fetcher`, `weather-transformer`) within a single execution context.
+The weather agent is the **Agent** in the Command → Agent → Skill orchestration pattern. It receives the workflow from the `/weather-orchestrator` command and fetches temperature using its preloaded skill (`weather-fetcher`). The command then invokes the standalone `weather-svg-creator` skill to create the visual output.
 
 <p align="center">
   <img src="../!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
@@ -82,6 +78,5 @@ The weather agent is the **Agent** in the Command → Agent → Skills orchestra
 | Component | Role | This Repo |
 |-----------|------|-----------|
 | **Command** | Entry point, user interaction | `/weather-orchestrator` |
-| **Agent** | Orchestrates workflow with preloaded skills | `weather` agent |
-| **Skills** | Domain knowledge injected at startup | `weather-fetcher`, `weather-transformer` |
-
+| **Agent** | Fetches data with preloaded skill (agent skill) | `weather-agent` with `weather-fetcher` |
+| **Skill** | Creates output independently (skill) | `weather-svg-creator` |

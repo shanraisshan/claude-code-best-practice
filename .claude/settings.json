@@ -13,7 +13,13 @@
       "mcp__claude-in-chrome__*",
       "mcp__playwright__*",
       "mcp__reddit-mcp-server__get_post_details",
-      "mcp__reddit-mcp-server__search_reddit"
+      "mcp__reddit-mcp-server__search_reddit",
+      "mcp__tavily-web-search__tavily_search",
+      "mcp__tavily-web-search__tavily_extract",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:support.claude.com)",
+      "WebFetch(domain:wttr.in)"
     ],
     "deny": [],
     "ask": [

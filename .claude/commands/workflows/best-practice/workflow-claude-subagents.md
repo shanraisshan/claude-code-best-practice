@@ -172,7 +172,7 @@ Update the "Last Updated" badge at the top of `best-practice/claude-subagents.md
 
 Scan `best-practice/claude-subagents.md` for every hyperlink (both markdown `[text](url)` and inline URLs). For each link:
 
-1. **Local file links** (relative paths like `../.claude/agents/weather.md`, `../claude-agent-memory.md`): Verify the file exists at the resolved path using the Read tool. Flag any broken links.
+1. **Local file links** (relative paths like `../.claude/agents/weather-agent.md`, `../claude-agent-memory.md`): Verify the file exists at the resolved path using the Read tool. Flag any broken links.
 2. **External URLs** (e.g., `https://code.claude.com/docs/en/sub-agents`): Fetch each URL using WebFetch and verify it returns a valid page (not a 404 or redirect to an error page). Flag any dead or moved links.
 3. **Anchor links** (e.g., `#section-name`): Verify the target heading exists within the same file.
 
@@ -181,7 +181,7 @@ Include a **Hyperlink Validation Log** in the report:
 ```
 Hyperlink Validation Log:
 #  | Type     | Link                                          | Status | Notes
-1  | Local    | ../.claude/agents/weather.md                   | OK     |
+1  | Local    | ../.claude/agents/weather-agent.md              | OK     |
 2  | External | https://code.claude.com/docs/en/sub-agents     | OK     |
 3  | Local    | ../claude-agent-memory.md                      | BROKEN | File not found
 ...
