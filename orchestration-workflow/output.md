@@ -1,7 +1,7 @@
 # Weather Result
 
 ## Temperature
-32°C
+26.8°C
 
 ## Location
 Dubai, UAE

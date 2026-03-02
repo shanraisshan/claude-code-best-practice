@@ -16,6 +16,7 @@
       "mcp__reddit-mcp-server__search_reddit",
       "mcp__tavily-web-search__tavily_search",
       "mcp__tavily-web-search__tavily_extract",
+      "WebFetch(domain:api.open-meteo.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:support.claude.com)",
