@@ -11,12 +11,10 @@ practice makes claude perfect
   <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
 </p>
 
-<table align="center">
-  <tr>
-    <td><img src="!/boris-cherny.png" alt="Claude Code Creator" width="100%"></td>
-    <td><img src="!/boris-cherny-2.png" alt="Claude Code Creator" width="100%"></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="!/slider/boris-slider.gif" alt="Boris Cherny on Claude Code" width="600"><br>
+  <a href="https://x.com/bcherny/status/2007179832300581177">tweet 1</a> · <a href="https://x.com/bcherny/status/2017742741636321619">tweet 2</a> · <a href="https://x.com/bcherny/status/2021699851499798911">tweet 3</a>
+</p>
 
 
 ## CONCEPTS
@@ -32,7 +30,7 @@ practice makes claude perfect
 | [**Plugins**](https://code.claude.com/docs/en/plugins) | distributable packages | Bundles of skills, subagents, hooks, and MCP servers · [Marketplaces](https://code.claude.com/docs/en/discover-plugins) |
 | [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-settings.md) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Hierarchical configuration system · [Permissions](https://code.claude.com/docs/en/permissions) · [Model Config](https://code.claude.com/docs/en/model-config) · [Output Styles](https://code.claude.com/docs/en/output-styles) · [Sandboxing](https://code.claude.com/docs/en/sandboxing) · [Keybindings](https://code.claude.com/docs/en/keybindings) · [Fast Mode](https://code.claude.com/docs/en/fast-mode) |
 | [**Status Line**](https://code.claude.com/docs/en/statusline) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-status-line) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Customizable status bar showing context usage, model, cost, and session info |
-| [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md`, `~/.claude/projects/<project>/memory/` | [![Implemented](!/tags/implemented.svg)](CLAUDE.md) Persistent context via CLAUDE.md files and `@path` imports · [Auto Memory](https://code.claude.com/docs/en/memory) · [Rules](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) |
+| [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md`, `~/.claude/projects/<project>/memory/` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-memory.md) [![Implemented](!/tags/implemented.svg)](CLAUDE.md) Persistent context via CLAUDE.md files and `@path` imports · [Auto Memory](https://code.claude.com/docs/en/memory) · [Rules](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) |
 | [**Checkpointing**](https://code.claude.com/docs/en/checkpointing) | automatic (git-based) | Automatic tracking of file edits with rewind (`Esc Esc` or `/rewind`) and targeted summarization |
 | [**Remote Control**](https://code.claude.com/docs/en/remote-control) | CLI / claude.ai | Continue local sessions from any device — phone, tablet, or browser · [Headless Mode](https://code.claude.com/docs/en/headless) |
 | [**CLI Startup Flags**](https://code.claude.com/docs/en/cli-reference) | `claude [flags]` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-cli-startup-flags.md) Command-line flags, subcommands, and environment variables for launching Claude Code |
@@ -60,7 +58,7 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 ## DEVELOPMENT WORKFLOW
 - [RPI](workflow/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](workflow/rpi/rpi-workflow.md)
 - [Boris Feb26 workflow](https://x.com/bcherny/status/2017742741636321619)
-- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
+- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26)
 - [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
 - [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
 - [Github Speckit](https://github.com/github/spec-kit)
@@ -70,7 +68,9 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 - [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
 - [Creator of Clawd Bot Workflow](https://www.youtube.com/watch?v=8lF7HmQ_RgY)
 
-## MY EXPERIENCE
+## TIPS AND TRICKS
+
+![Shayan](!/tags/shayan.svg)
 
 ■ **Workflows**
 - Claude.md should not exceed 150+ lines. (still not 100% guaranteed)
@@ -100,19 +100,9 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 - use mcp (claude in chrome, playwright, chrome dev tool) to let claude see chrome console logs on its own
 - provide screenshots of the issue
 
-## TIPS FROM BORIS CHERNY (CREATOR OF CLAUDE CODE)
+![Boris Cherny](!/tags/boris-cherny.svg)
+
 - [Feb 2026 - 12 Tips](reports/claude-boris-tips-feb-26.md) ([Reddit thread](https://www.reddit.com/r/ClaudeAI/comments/1r2m8ma/12_claude_code_tips_from_creator_of_claude_code/))
-
-## CONTEXT ENGINEERING
-- [Humanlayer - Writing a good Claude.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
-- [Claude.md for larger monorepos - Boris Cherny on X](https://github.com/shanraisshan/claude-code-best-practice/blob/main/reports/claude-md-for-larger-mono-repos.md)
-
-
-
-## CLAUDE CODE FEATURES INSPIRATION
-
-- [Claude Code Tasks - inspired by beats](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/) [Inspiration](https://github.com/steveyegge/beads)
-- [Ralph Plugin](https://x.com/GeoffreyHuntley/status/2015031262692753449)
 
 ## REPORTS
 
@@ -120,15 +110,9 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 |--------|-------------|
 | [Agent SDK vs CLI System Prompts](reports/claude-agent-sdk-vs-cli-system-prompts.md) | Why Claude CLI and Agent SDK outputs may differ—system prompt architecture and determinism |
 | [Browser Automation MCP Comparison](reports/claude-in-chrome-v-chrome-devtools-mcp.md) | Comparison of Playwright, Chrome DevTools, and Claude in Chrome for automated testing |
-| [CLI Startup Flags Best Practice](best-practice/claude-cli-startup-flags.md) | Complete reference of all CLI flags, subcommands, and environment variables |
-| [CLAUDE.md Loading in Monorepos](reports/claude-md-for-larger-mono-repos.md) | Understanding ancestor vs descendant loading behavior for CLAUDE.md files |
 | [Global vs Project Settings](reports/claude-global-vs-project-settings.md) | Which features are global-only (`~/.claude/`) vs dual-scope, including Tasks and Agent Teams |
 | [Skills Discovery in Monorepos](reports/claude-skills-for-larger-mono-repos.md) | How skills are discovered and loaded in large monorepo projects |
 | [Agent Memory Frontmatter](reports/claude-agent-memory.md) | Persistent memory scopes (`user`, `project`, `local`) for subagents — enabling agents to learn across sessions |
 | [Boris Cherny's 12 Customization Tips](reports/claude-boris-tips-feb-26.md) | 12 ways to customize Claude Code — from terminal config to plugins, agents, hooks, and output styles |
 | [Advanced Tool Use Patterns](reports/claude-advanced-tool-use.md) | Programmatic Tool Calling (PTC), Tool Search, and Tool Use Examples |
 | [Usage, Rate Limits & Extra Usage](reports/claude-usage-and-rate-limits.md) | Usage commands (`/usage`, `/extra-usage`, `/cost`), rate limits, and pay-as-you-go overflow billing |
-| [Commands Reference](best-practice/claude-commands.md) | Complete reference for Claude Code commands — command definitions, frontmatter fields, and all built-in slash commands |
-| [Claude Code Settings Reference](best-practice/claude-settings.md) | Comprehensive guide to all `settings.json` configuration options |
-| [Subagents Reference](best-practice/claude-subagents.md) | Complete reference for Claude Code subagents — built-in agents, custom agents, and frontmatter fields |
-| [MCP Servers Best Practice](best-practice/claude-mcp.md) | Recommended MCP servers for daily use, configuration, scopes, and permission patterns |
