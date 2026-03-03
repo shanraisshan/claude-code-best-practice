@@ -88,7 +88,7 @@ claude
 ![Shayan](!/tags/shayan.svg)
 
 ■ **Workflows**
-- [CLAUDE.md](https://code.claude.com/docs/en/memory) should not exceed 150+ lines. (still not 100% guaranteed)
+- [CLAUDE.md](https://code.claude.com/docs/en/memory) should not exceed 150+ lines. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) (still not 100% guaranteed)
 - use [commands](https://code.claude.com/docs/en/skills) for your workflows instead of [agents](https://code.claude.com/docs/en/sub-agents)
 - have feature specific [subagents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer.
 - [/memory](https://code.claude.com/docs/en/memory), [/rules](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules), constitution.md does not guarantee anything
