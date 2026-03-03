@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_03%2C_2026_11%3A30_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_03%2C_2026_6%3A25_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -56,6 +56,13 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 <p align="center">
   <img src="!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
 </p>
+
+![How to Use](!/tags/how-to-use.svg)
+
+```bash
+claude
+/weather-orchestrator
+```
 
 | Component | Role | Example |
 |-----------|------|---------|
@@ -120,8 +127,10 @@ See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) f
 | Claude | Killed |
 |-|-|
 |[**Voice Mode**](https://x.com/trq212/status/2028628570692890800)|[Wispr Flow](https://wisprflow.ai), [SuperWhisper](https://superwhisper.com/)|
-|[**Remote Control**](https://code.claude.com/docs/en/remote-control)|[OpenClaw](https://openclaw.ai/)|
-
+|[**Remote Control**](https://code.claude.com/docs/en/remote-control)|[OpenClaw](https://openclaw.ai/)
+|[**Cowork**](https://code.claude.com/docs/en/cowork)|[OpenAI Operator](https://openai.com/operator), [AgentShadow](https://agentshadow.ai)
+|[**Tasks**](https://x.com/trq212/status/2014480496013803643)|[Beads](https://github.com/steveyegge/beads)
+|[**Skills / Plugins**](https://code.claude.com/docs/en/plugins)|YC AI wrapper startups ([reddit](https://reddit.com/r/ClaudeAI/comments/1r6bh4d/claude_code_skills_are_basically_yc_ai_startup/))|
 
 ## REPORTS
 
