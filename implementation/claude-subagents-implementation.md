@@ -62,7 +62,7 @@ The agent has one preloaded skill (`weather-fetcher`) that provides instructions
 
 ```bash
 $ claude
-> /weather-orchestrator
+> what is the weather in dubai?
 ```
 
 ---
