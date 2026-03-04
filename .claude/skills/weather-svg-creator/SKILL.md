@@ -1,8 +1,6 @@
 ---
 name: weather-svg-creator
-description: Creates an SVG weather card showing the current temperature for
-  Dubai. Writes the SVG to orchestration-workflow/weather.svg and updates
-  orchestration-workflow/output.md.
+description: Creates an SVG weather card showing the current temperature for Dubai. Writes the SVG to orchestration-workflow/weather.svg and updates orchestration-workflow/output.md.
 ---
 
 # Weather SVG Creator Skill
