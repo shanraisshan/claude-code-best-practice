@@ -1,11 +1,13 @@
 ---
 description: Audit your project against Claude Code best practices and generate a compliance report
-allowed-tools: Read, Glob, Grep, Bash(find *), Bash(ls *), Bash(cat *)
+allowed-tools: Read, Write, Glob, Grep, Bash(find *), Bash(ls *), Bash(cat *), Bash(mkdir *), Bash(git check-ignore *)
 ---
 
 # Claude Code Best Practices Audit
 
-Perform a comprehensive audit of the current project against all Claude Code best practices documented in this repository. Generate a structured compliance report with actionable findings.
+Perform a comprehensive audit of the current project against all Claude Code best practices. Generate a structured compliance report with actionable findings.
+
+**Usage:** Run `/audit` from any project directory. The command audits the current working directory — no arguments needed.
 
 ## Audit Scope
 
@@ -15,7 +17,7 @@ Check the following areas systematically. For each area, report status as PASS, 
 
 Check for the presence and quality of:
 
-- [ ] `CLAUDE.md` exists at project root
+- [ ] `CLAUDE.md` exists at project root (or `.claude/CLAUDE.md` as alternative)
   - Contains repository overview
   - Documents key components and architecture
   - Lists development commands (build, test, lint, deploy)
@@ -26,8 +28,6 @@ Check for the presence and quality of:
 
 ## Step 2: Commands Audit
 
-Reference: `best-practice/claude-commands.md`
-
 Check `.claude/commands/` directory:
 - [ ] Custom commands exist with proper `.md` extension
 - [ ] Commands use YAML frontmatter (description, model, allowed-tools)
@@ -36,8 +36,6 @@ Check `.claude/commands/` directory:
 - [ ] Commands follow the naming convention (lowercase, hyphenated)
 
 ## Step 3: Skills Audit
-
-Reference: `best-practice/claude-skills.md`
 
 Check `.claude/skills/` directory:
 - [ ] Skills exist with `SKILL.md` files in subdirectories
@@ -48,8 +46,6 @@ Check `.claude/skills/` directory:
 
 ## Step 4: Subagents Audit
 
-Reference: `best-practice/claude-subagents.md`
-
 Check `.claude/agents/` directory:
 - [ ] Agent definitions exist with proper `.md` files
 - [ ] Agents use YAML frontmatter (name, description, model, skills, tools)
@@ -58,8 +54,6 @@ Check `.claude/agents/` directory:
 
 ## Step 5: MCP Server Configuration
 
-Reference: `best-practice/claude-mcp.md`
-
 Check MCP setup:
 - [ ] `.mcp.json` exists at project root (project-level MCP servers)
 - [ ] MCP servers are relevant to the project domain
@@ -67,8 +61,6 @@ Check MCP setup:
 - [ ] No hardcoded secrets in MCP configuration (use environment variables)
 
 ## Step 6: Hooks Audit
-
-Reference: `.claude/hooks/HOOKS-README.md`
 
 Check hooks configuration:
 - [ ] Hooks are defined in `.claude/settings.json` under the `hooks` key
@@ -80,29 +72,23 @@ Check hooks configuration:
 
 ## Step 7: Memory & Context
 
-Reference: `best-practice/claude-memory.md`
-
 Check memory configuration:
-- [ ] `CLAUDE.md` serves as primary project memory
-- [ ] `.claude/CLAUDE.md` exists for additional context (if needed)
-- [ ] Memory files are concise (under 200 lines for auto-loaded files)
+- [ ] `CLAUDE.md` (or `.claude/CLAUDE.md`) serves as primary project memory
+- [ ] `CLAUDE.local.md` exists for personal context that shouldn't be committed
+- [ ] Auto-loaded memory files are concise (under ~150 lines recommended)
 - [ ] No sensitive information in memory files (API keys, passwords)
 - [ ] Memory is organized semantically, not chronologically
 
 ## Step 8: Settings Audit
 
-Reference: `best-practice/claude-settings.md`
-
 Check settings configuration:
 - [ ] `.claude/settings.json` has `permissions.allow` configured for common tools
 - [ ] `.claude/settings.json` has `permissions.deny` for dangerous operations
-- [ ] `.claude/settings.local.json` is in `.gitignore` (for personal overrides)
+- [ ] `.claude/settings.local.json` is git-ignored (verify with `git check-ignore .claude/settings.local.json`)
 - [ ] Model preferences are set appropriately
 - [ ] No overly permissive settings (avoid `Bash(*)` in allow)
 
 ## Step 9: CLI Flags Audit
-
-Reference: `best-practice/claude-cli-startup-flags.md`
 
 Check if the project documents recommended CLI flags:
 - [ ] README or CLAUDE.md mentions recommended startup flags
@@ -157,4 +143,4 @@ Generate a markdown report with this structure:
 [Prioritized action items]
 ```
 
-Write the report to `reports/audit-report.md` in the project root. If the `reports/` directory doesn't exist, create it.
+Write the report to `reports/audit-report.md` in the project root. If the `reports/` directory doesn't exist, create it first.
