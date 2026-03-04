@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_04%2C_2026_1%3A16_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_05%2C_2026_12%3A39_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -96,17 +96,22 @@ claude
 - avoid agent dumb zone, do manual /compact at max 50%
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows)
 - vanilla cc is better than any workflows with smaller tasks
-- [agent teams](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
+- use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
+- [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
 - use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks
+- use `ultrathink` keyword in prompts for [high effort reasoning](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-and-best-practices)
+- use [/model](https://code.claude.com/docs/en/model-configuration) to select model and reasoning, [/context](https://code.claude.com/docs/en/context-management) to see context usage, [/usage](https://code.claude.com/docs/en/usage-billing) to set a weekly limit, [/config](https://code.claude.com/docs/en/settings) to configure settings
 
 ■ **Daily**
 - [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
+- follow [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/), [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/) on Reddit
+- follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie) on X
 
 ■ **Hourly**
 - commit often, as soon as task is completed, commit.
 
 ■ **Utilities**
-- [iTerm](https://iterm2.com/) terminal instead of IDE (crash issue)
+- [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
 - [Wispr Flow](https://wisprflow.ai) for voice prompting (10x productivity)
 - [claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks) for claude feedback
 - [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting
@@ -124,6 +129,7 @@ claude
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
+- [Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25]() ● [Tweet](https://x.com/trq212/status/2005315275026260309)
 - [Boris setup - 5 tips | 03/Jan/26]() ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
 - [10 tips for using claude code by team itself | 01/Feb/26]() ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
 - [12 ways how people are customizing their claudes | 12/Feb/26](tips/claude-boris-tips-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
