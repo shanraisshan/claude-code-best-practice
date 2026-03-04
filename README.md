@@ -112,7 +112,8 @@ claude
 - [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (`Bash(npm run *)`, `Edit(/docs/**)`) instead of dangerously-skip-permissions
 - [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation
-- explore [settings.json](best-practice/claude-settings.md) features like [Output Styles](https://code.claude.com/docs/en/output-styles) (e.g. Explanatory when learning a new codebase), Plan Directory, Spinner Verbs for a personalized experience
+- explore [settings.json](best-practice/claude-settings.md) features like [Output Styles](best-practice/claude-settings.md#display--ux) (e.g. Explanatory when learning a new codebase), [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience
+- [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [todo refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
 
 ■ **Debugging**
 - [/doctor](https://code.claude.com/docs/en/cli-reference)
