@@ -112,8 +112,7 @@ claude
 - [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (`Bash(npm run *)`, `Edit(/docs/**)`) instead of dangerously-skip-permissions
 - [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation
-- [output styles](https://code.claude.com/docs/en/output-styles): use Explanatory when learning a new codebase, Learning for coaching
-- explore [settings.json](best-practice/claude-settings.md) features like Plan Directory, Spinner Verbs for a personalized experience
+- explore [settings.json](best-practice/claude-settings.md) features like [Output Styles](https://code.claude.com/docs/en/output-styles) (e.g. Explanatory when learning a new codebase), Plan Directory, Spinner Verbs for a personalized experience
 
 ■ **Debugging**
 - [/doctor](https://code.claude.com/docs/en/cli-reference)
@@ -132,7 +131,7 @@ claude
 
 ## ☠️ STARTUPS / BUSINESSES
 
-| Claude | Killed |
+| Claude | Replaced |
 |-|-|
 |[**Voice Mode**](https://x.com/trq212/status/2028628570692890800)|[Wispr Flow](https://wisprflow.ai), [SuperWhisper](https://superwhisper.com/)|
 |[**Remote Control**](https://code.claude.com/docs/en/remote-control)|[OpenClaw](https://openclaw.ai/)
