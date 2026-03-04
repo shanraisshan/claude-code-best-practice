@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_04%2C_2026_9%3A23_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_04%2C_2026_1%3A16_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -96,9 +96,14 @@ claude
 - avoid agent dumb zone, do manual /compact at max 50%
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows)
 - vanilla cc is better than any workflows with smaller tasks
-- commit often, as soon as task is completed, commit.
 - [agent teams](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
 - use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks
+
+■ **Daily**
+- [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
+
+■ **Hourly**
+- commit often, as soon as task is completed, commit.
 
 ■ **Utilities**
 - [iTerm](https://iterm2.com/) terminal instead of IDE (crash issue)
@@ -108,12 +113,14 @@ claude
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (`Bash(npm run *)`, `Edit(/docs/**)`) instead of dangerously-skip-permissions
 - [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation
 - [output styles](https://code.claude.com/docs/en/output-styles): use Explanatory when learning a new codebase, Learning for coaching
+- explore [settings.json](best-practice/claude-settings.md) features like Plan Directory, Spinner Verbs for a personalized experience
 
 ■ **Debugging**
 - [/doctor](https://code.claude.com/docs/en/cli-reference)
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
 - provide screenshots of the issue
+- use a different model for QA — e.g. [Codex](https://chatgpt.com/codex) for plan and implementation review
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
