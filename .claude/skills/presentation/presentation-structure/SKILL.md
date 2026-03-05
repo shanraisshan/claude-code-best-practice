@@ -13,19 +13,19 @@ Knowledge about how the presentation at `presentation/index.html` is structured.
 
 ## Slide Format
 
-Each slide is a div with `data-slide` (sequential number) and optional `data-weight` (journey percentage):
+Each slide is a div with `data-slide` (sequential number) and optional `data-level` (journey level at transition points):
 
 ```html
-<!-- Regular slide -->
-<div class="slide" data-slide="12" data-weight="5">
+<!-- Regular slide — inherits level from previous data-level slide -->
+<div class="slide" data-slide="12">
     <h1>Slide Title</h1>
     <!-- content -->
 </div>
 
-<!-- Section divider slide -->
-<div class="slide section-slide" data-slide="10">
+<!-- Level transition slide — sets new level for this slide and all following -->
+<div class="slide section-slide" data-slide="10" data-level="low">
     <h1>Section Name</h1>
-    <p class="section-desc">Description of this section</p>
+    <p class="section-desc">Level: Low — description of this section</p>
 </div>
 
 <!-- Title slide (centered) -->
@@ -35,26 +35,29 @@ Each slide is a div with `data-slide` (sequential number) and optional `data-wei
 </div>
 ```
 
-## Journey Bar Weight System
+## Journey Bar Level System
 
-- Slides with `data-weight="N"` contribute N% to the journey progress bar
-- All weights across the entire presentation MUST sum to exactly 100
-- The journey bar reads weights at page load and pre-computes cumulative sums
-- Slides without `data-weight` contribute 0% (informational slides, appendix)
-- The bar is hidden on slide 1 (title slide)
+The presentation uses a 4-level system instead of cumulative percentages:
 
-### Weight Distribution by Section
+- Levels are set via `data-level` attribute on key transition slides (section dividers)
+- All slides after a `data-level` slide inherit that level until the next transition
+- The journey bar fills to 25% / 50% / 75% / 100% for Low / Medium / High / Pro respectively
+- The bar is hidden on slide 1 (title slide); from slide 2 onward the bar is shown
+- Slides before the first `data-level` (slides 2–9) show an empty bar (no level yet set)
+- A `.level-badge` is JS-injected on the `<h1>` of slides that carry `data-level` — do NOT hardcode in HTML
 
-| Section | Range | Total Weight |
-|---------|-------|-------------|
-| Part 0: Introduction | Slides 1-4 | 0% |
-| Part 1: Prerequisites | Slides 5-9 | 0% |
-| Part 2: Better Prompting | Slides 10-17 | 20% |
-| Part 3: Project Memory | Slides 18-24 | 20% |
-| Part 4: Structured Workflows | Slides 25-28 | 10% |
-| Part 5: Domain Knowledge | Slides 29-33 | 15% |
-| Part 6: Agentic Engineering | Slides 34-46 | 35% |
-| Appendix | Slides 47+ | 0% |
+### Level Transitions by Section
+
+| Section | Slide Range | data-level | Bar Height |
+|---------|-------------|------------|------------|
+| Part 0: Introduction | Slides 1-4 | (none) | hidden / empty |
+| Part 1: Prerequisites | Slides 5-9 | (none) | empty |
+| Part 2: Better Prompting | Slides 10-17 | `low` | 25% |
+| Part 3: Project Memory | Slides 18-24 | `medium` | 50% |
+| Part 4: Structured Workflows | Slides 25-28 | (inherits medium) | 50% |
+| Part 5: Domain Knowledge | Slides 29-33 | `high` | 75% |
+| Part 6: Agentic Engineering | Slides 34-46 | `high` | 75% |
+| Appendix | Slides 47+ | (inherits high) | 75% |
 
 ## Navigation System
 
@@ -73,12 +76,14 @@ After adding, removing, or reordering slides:
 
 ## Section Divider Format
 
-Section dividers use the `section-slide` class and show the current journey percentage:
+Section dividers use the `section-slide` class. Level-transition section dividers carry `data-level` and show the level name in the description:
 
 ```html
-<div class="slide section-slide" data-slide="10">
+<div class="slide section-slide" data-slide="10" data-level="low">
     <p class="section-number">Part 2</p>
     <h1>Better Prompting</h1>
-    <p class="section-desc">Journey: 0% — effective prompting for real results.</p>
+    <p class="section-desc">Level: Low — effective prompting for real results.</p>
 </div>
 ```
+
+The JS will inject a `.level-badge` (e.g., "→ Low") into the `<h1>` at runtime when the level transitions — do not add these manually in HTML.

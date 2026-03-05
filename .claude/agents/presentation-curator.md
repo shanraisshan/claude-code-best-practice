@@ -23,8 +23,8 @@ Apply the requested changes to the presentation while maintaining structural int
 ### Step 1: Understand Current State (presentation-structure skill)
 
 Follow the presentation-structure skill to understand:
-- The slide format (`data-slide` and `data-weight` attributes)
-- The journey bar system and weight requirements
+- The slide format (`data-slide` and `data-level` attributes)
+- The journey bar level system (Low/Medium/High/Pro — 4 discrete levels)
 - The section structure (Parts 0-6 + Appendix)
 - How slide numbering works
 
@@ -34,7 +34,7 @@ Based on the request:
 - **Content changes**: Edit slide HTML within existing `<div class="slide">` elements
 - **New slides**: Insert new slide divs with correct `data-slide` numbering
 - **Reorder**: Move slide divs and renumber all `data-slide` attributes sequentially
-- **Weight changes**: Update `data-weight` attributes ensuring they sum to 100%
+- **Level changes**: Update `data-level` attributes on section-divider slides (3 transition points in main presentation: Low at slide 10, Medium at slide 18, High at slide 29; Part 6 at slide 34 also uses `high` — the presentation caps at High, not Pro)
 - **Styling changes**: Update CSS within the `<style>` block, matching existing patterns
 
 ### Step 3: Match Styling (presentation-styling skill)
@@ -48,14 +48,14 @@ Follow the presentation-styling skill to ensure:
 
 After changes, verify:
 1. All `data-slide` attributes are sequential (1, 2, 3, ...)
-2. All `data-weight` values sum to exactly 100
+2. `data-level` transitions exist at section dividers: slide 10 (`low`), 18 (`medium`), 29 (`high`), 34 (`high`) — the main presentation caps at High, not Pro
 3. No duplicate slide numbers exist
 4. The `totalSlides` JS variable matches the actual count (it's auto-computed from DOM)
 5. Any `goToSlide()` calls in the TOC point to correct slide numbers
-6. Weighted slide titles in `vibe-to-agentic-framework` match actual `<h1>` titles in `presentation/index.html`
+6. Level transition slides in `vibe-to-agentic-framework` match actual `<h1>` titles in `presentation/index.html`
 7. Agent identifiers are consistent across examples (use `frontend-engineer` / `backend-engineer`; do not introduce aliases like `frontend-eng`)
 8. Hook references remain canonical (`16 hook events`) in presentation-facing content
-9. Do not manually insert `.weight-badge` markup in slide HTML (badges are JS-injected)
+9. Do not manually insert `.level-badge` or `.weight-badge` markup in slide HTML (badges are JS-injected)
 10. Settings precedence text must separate user-writable override order from enforced policy (`managed-settings.json`)
 11. If slide 32 is touched, ensure skill frontmatter coverage includes `context: fork`
 12. Keep the framework skill identity canonical: `presentation/vibe-to-agentic-framework` (do not rename to variants)
@@ -68,17 +68,17 @@ After completing changes to the presentation, you MUST update your own knowledge
 
 Read the actual current state of `presentation/index.html` and update `.claude/skills/presentation/vibe-to-agentic-framework/SKILL.md`:
 
-- **Weight Reference Table**: If any slides were added, removed, renamed, or reweighted, update the table at the bottom of the skill to reflect the actual `data-weight` attributes and `<h1>` titles in the HTML. The table must always match reality.
+- **Level Transition Table**: If any level transitions were added, removed, or changed, update the table to reflect actual `data-level` attributes and their slide numbers. The table must always match reality.
 - **Section ranges**: If slide numbering changed (e.g., Part 3 now spans slides 19–25 instead of 18–24), update the journey arc section descriptions.
-- **Journey percentages**: If section dividers have new journey percentages in their `section-desc`, update the corresponding Part descriptions.
-- **New concepts**: If a new weighted slide introduces a concept not yet described in the journey arc, add a bullet explaining what it is, why it has its weight, and how it fits the Vibe Coding → Agentic Engineering narrative.
-- **Removed concepts**: If a weighted slide was removed, remove its entry from both the journey arc and the weight table.
+- **Level labels**: If section dividers have new `Level: X` text in their `section-desc`, update the corresponding Part descriptions.
+- **New concepts**: If a new slide introduces a concept not yet described in the journey arc, add a bullet explaining what it is and how it fits the Vibe Coding → Agentic Engineering narrative.
+- **Removed concepts**: If a slide was removed, remove its description from the journey arc.
 
 #### 5b. Update the Structure Skill
 
 Update `.claude/skills/presentation/presentation-structure/SKILL.md`:
 
-- **Weight Distribution table**: Update section slide ranges and total weights to match the current presentation.
+- **Level Transitions table**: Update section slide ranges and level assignments to match the current presentation.
 - **Section divider examples**: If section divider format changed, update the example HTML.
 
 #### 5c. Cross-Doc Consistency (when claims change)
@@ -99,14 +99,17 @@ _Findings from previous executions are recorded here. Add new entries as bullet 
 
 - Hook-event references drifted across files. Treat `16 hook events` as canonical and sync all docs in the same run.
 - Do not use shorthand agent names in examples (`frontend-eng`). Keep identifiers exactly aligned with agent definitions.
-- Never hardcode `.weight-badge` in slide HTML; badges are runtime-injected.
+- Never hardcode `.weight-badge` or `.level-badge` in slide HTML; badges are runtime-injected by JS.
 - Keep the framework skill name stable as `vibe-to-agentic-framework` to avoid broken skill references.
 - When updating slide 2 (TodoApp structure) to show before/after comparison, the `.two-col` layout works well with centered h3 headers using inline styles for red/green color coding. Update framework skill's Part 0 description and TodoApp example section to reflect the new before/after structure.
+- The journey bar was refactored from a percentage-based system (`data-weight` attributes summing to 100%) to a 4-level system (`data-level` attributes: low/medium/high/pro). The `.journey-track-wrap` wrapper div is required to display the ticks column alongside the bar without being clipped by `overflow: hidden`. The level transitions in the main presentation are at section dividers only (slides 10, 18, 29, 34). The video presentation (`!/video-presentation-transcript/1-video-workflow.html`) uses the same system with its own level transitions at slides 2 (low) and 7 (medium).
+- The main presentation caps at **High** level (not Pro). Slide 34 uses `data-level="high"`. The Pro tick on the journey bar remains as a visual scale marker showing the theoretical ceiling, but the fill never reaches it. Do not assign `data-level="pro"` to any slide in the main presentation.
+- Journey bar top/bottom labels (`journey-label-top` / `journey-label-bottom`) were removed from both presentation files. The current-level indicator now uses the format `Current = <strong>Level</strong>` rendered via `innerHTML` in the JS `updateJourneyBar` function. The `journey-level-label` CSS class was updated to use lighter, smaller styling (font-weight: 400, font-size: 0.65rem, color: #777) since the label word is now light and only the bold `<strong>` element is accented.
 
 ## Critical Requirements
 
 1. **Sequential Numbering**: After any add/remove/reorder, renumber ALL slides sequentially
-2. **Weight Integrity**: Weighted slides must sum to exactly 100%
+2. **Level Integrity**: The main presentation has `data-level` transitions at slides 10 (low), 18 (medium), 29 (high), 34 (high). It caps at High — `data-level="pro"` is NOT used in the main presentation. The Pro tick mark on the bar is a visual reference marker only.
 3. **Preserve Existing Content**: Don't modify slides that aren't part of the requested change
 4. **Match Patterns**: Use the same HTML patterns as existing slides (see skills)
 
@@ -115,5 +118,5 @@ _Findings from previous executions are recorded here. Add new entries as bullet 
 After completing changes, report:
 - What slides were changed
 - Current total slide count
-- Current weight sum (should be 100%)
+- Current level transitions (which slides carry `data-level`)
 - Any renumbering that occurred

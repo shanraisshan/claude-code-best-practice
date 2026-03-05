@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../!/claude-jumping.svg">
     <title>Claude Code — From Vibe Coding to Agentic Engineering</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -76,13 +77,15 @@
         /* Journey Bar — vertical, right side below mascot */
         .journey-bar { position: fixed; top: 95px; right: 62px; display: flex; flex-direction: column; align-items: center; z-index: 99; gap: 6px; }
         .journey-bar.hidden { display: none; }
-        .journey-label { font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
-        .journey-label-top { color: #2e7d32; }
-        .journey-label-bottom { color: #c62828; }
-        .journey-track { width: 20px; height: 280px; background: #e5e5e5; border-radius: 10px; overflow: hidden; position: relative; }
+        .journey-track-wrap { position: relative; display: flex; align-items: stretch; gap: 4px; }
+        .journey-track { width: 20px; height: 280px; background: #e5e5e5; border-radius: 10px; overflow: hidden; position: relative; flex-shrink: 0; }
         .journey-fill { position: absolute; bottom: 0; width: 100%; border-radius: 10px; transition: height 0.4s ease, background-color 0.4s ease; height: 0%; }
-        .journey-percent { font-weight: 700; font-size: 0.75rem; color: #333; }
-        .weight-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 12px; vertical-align: middle; }
+        .journey-level-label { font-size: 0.65rem; color: #777; font-weight: 400; }
+        /* Level tick marks beside the journey track */
+        .journey-ticks { display: flex; flex-direction: column; justify-content: space-between; height: 280px; padding: 2px 0; }
+        .journey-tick { font-size: 0.45rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; color: #999; white-space: nowrap; line-height: 1; }
+        /* Level badge shown on level-transition slides */
+        .level-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 12px; vertical-align: middle; }
         /* Celebration slide */
         .celebration { font-size: 4rem; margin-bottom: 24px; }
     </style>
@@ -90,10 +93,16 @@
 <body>
     <div class="progress" id="progress"></div>
     <div class="journey-bar hidden" id="journeyBar">
-        <span class="journey-label journey-label-top">Agentic</span>
-        <div class="journey-track"><div class="journey-fill" id="journeyFill"></div></div>
-        <span class="journey-label journey-label-bottom">Vibe</span>
-        <span class="journey-percent" id="journeyPercent">0%</span>
+        <div class="journey-track-wrap">
+            <div class="journey-track"><div class="journey-fill" id="journeyFill"></div></div>
+            <div class="journey-ticks">
+                <span class="journey-tick">Pro</span>
+                <span class="journey-tick">High</span>
+                <span class="journey-tick">Med</span>
+                <span class="journey-tick">Low</span>
+            </div>
+        </div>
+        <span class="journey-level-label" id="journeyLevelLabel">Current = <strong>Low</strong></span>
     </div>
 
     <!-- ============================================================ -->
@@ -187,7 +196,7 @@ todoapp/
         <p>This is where everyone starts. The question is: how fast can you move beyond it?</p>
         <div class="two-col">
             <div class="col-card bad">
-                <h4>What Happens (0%)</h4>
+                <h4>What Happens (Low Level)</h4>
                 <p><code>&gt; add a notes feature</code></p>
                 <p>Claude creates <code>/api/notes</code> with a random schema</p>
                 <p>Frontend gets a standalone page with no sidebar nav</p>
@@ -195,7 +204,7 @@ todoapp/
                 <p style="margin-top: 16px; color: #c62828;">Every new feature is a coin flip. Code entropy increases with every prompt.</p>
             </div>
             <div class="col-card good">
-                <h4>What We Want (100%)</h4>
+                <h4>What We Want (High Level)</h4>
                 <p>Claude knows the TodoApp architecture</p>
                 <p>New routes follow existing patterns in <code>routes/todos.py</code></p>
                 <p>Frontend uses <code>Sidebar.tsx</code> nav and Tailwind tokens</p>
@@ -209,16 +218,16 @@ todoapp/
     <div class="slide" data-slide="4">
         <h1>The Journey</h1>
         <div class="trigger-box">
-            <h4>From 0% to 100%</h4>
+            <h4>From Low to High</h4>
             <p>Each section adds techniques that move you from vibe coding toward fully agentic engineering.</p>
         </div>
         <div class="toc-list" style="margin-top: 24px;">
             <div class="toc-item" onclick="goToSlide(5)"><span class="toc-number">1</span><span class="toc-name">Prerequisites</span></div>
-            <div class="toc-item" onclick="goToSlide(10)"><span class="toc-number">2</span><span class="toc-name">Better Prompting (0%&rarr;20%)</span></div>
-            <div class="toc-item" onclick="goToSlide(18)"><span class="toc-number">3</span><span class="toc-name">Project Memory (20%&rarr;40%)</span></div>
-            <div class="toc-item" onclick="goToSlide(25)"><span class="toc-number">4</span><span class="toc-name">Structured Workflows (40%&rarr;50%)</span></div>
-            <div class="toc-item" onclick="goToSlide(29)"><span class="toc-number">5</span><span class="toc-name">Domain Knowledge (50%&rarr;65%)</span></div>
-            <div class="toc-item" onclick="goToSlide(34)"><span class="toc-number">6</span><span class="toc-name">Agentic Engineering (65%&rarr;100%)</span></div>
+            <div class="toc-item" onclick="goToSlide(10)"><span class="toc-number">2</span><span class="toc-name">Better Prompting &mdash; Low</span></div>
+            <div class="toc-item" onclick="goToSlide(18)"><span class="toc-number">3</span><span class="toc-name">Project Memory &mdash; Medium</span></div>
+            <div class="toc-item" onclick="goToSlide(25)"><span class="toc-number">4</span><span class="toc-name">Structured Workflows &mdash; Medium</span></div>
+            <div class="toc-item" onclick="goToSlide(29)"><span class="toc-number">5</span><span class="toc-name">Domain Knowledge &mdash; High</span></div>
+            <div class="toc-item" onclick="goToSlide(34)"><span class="toc-number">6</span><span class="toc-name">Agentic Engineering &mdash; High</span></div>
         </div>
     </div>
 
@@ -347,7 +356,7 @@ todoapp/
             <p>Claude Code scans your project structure, reads CLAUDE.md (if it exists), and opens an interactive REPL where you can type prompts.</p>
         </div>
         <h3>This IS Vibe Coding</h3>
-        <p>Right now, with no CLAUDE.md, no skills, no agents — you're at <strong>0%</strong>. Claude will guess at everything. That's okay. We'll fix it step by step.</p>
+        <p>Right now, with no CLAUDE.md, no skills, no agents — you're at the <strong>Low</strong> level. Claude will guess at everything. That's okay. We'll fix it step by step.</p>
     </div>
 
     <!-- Slide 9: The Interface -->
@@ -374,10 +383,10 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 10: Section Divider - Better Prompting -->
-    <div class="slide section-slide" data-slide="10">
+    <div class="slide section-slide" data-slide="10" data-level="low">
         <p class="section-number">Part 2</p>
         <h1>Better Prompting</h1>
-        <p class="section-desc">Journey: 0% &mdash; effective prompting that produces real, production-quality results.</p>
+        <p class="section-desc">Level: Low &mdash; effective prompting that produces real, production-quality results.</p>
     </div>
 
     <!-- Slide 11: Your First Prompt -->
@@ -397,8 +406,8 @@ todoapp/
         </div>
     </div>
 
-    <!-- Slide 12: Good vs Bad Prompts (+5%) -->
-    <div class="slide" data-slide="12" data-weight="5">
+    <!-- Slide 12: Good vs Bad Prompts -->
+    <div class="slide" data-slide="12">
         <h1>Good vs Bad Prompts</h1>
         <p>The difference between vibe coding and professional usage &mdash; shown on our TodoApp:</p>
         <div class="two-col">
@@ -420,8 +429,8 @@ todoapp/
         </div>
     </div>
 
-    <!-- Slide 13: Providing Context (+5%) -->
-    <div class="slide" data-slide="13" data-weight="5">
+    <!-- Slide 13: Providing Context -->
+    <div class="slide" data-slide="13">
         <h1>Providing Context</h1>
         <div class="trigger-box">
             <h4>Key Rule</h4>
@@ -441,8 +450,8 @@ todoapp/
         </div>
     </div>
 
-    <!-- Slide 14: Context Window & /compact (+5%) [MERGED] -->
-    <div class="slide" data-slide="14" data-weight="5">
+    <!-- Slide 14: Context Window & /compact -->
+    <div class="slide" data-slide="14">
         <h1>Context Window &amp; /compact</h1>
         <div class="trigger-box">
             <h4>Key Concept</h4>
@@ -468,8 +477,8 @@ todoapp/
         </div>
     </div>
 
-    <!-- Slide 15: /plan mode (+5%) [MERGED with Why Plan First] -->
-    <div class="slide" data-slide="15" data-weight="5">
+    <!-- Slide 15: /plan mode -->
+    <div class="slide" data-slide="15">
         <h1>/plan &mdash; Plan Before Code</h1>
         <div class="how-to-trigger">
             <h4>Try This</h4>
@@ -537,14 +546,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 18: Section Divider - Project Memory -->
-    <div class="slide section-slide" data-slide="18">
+    <div class="slide section-slide" data-slide="18" data-level="medium">
         <p class="section-number">Part 3</p>
         <h1>Project Memory</h1>
-        <p class="section-desc">Journey: 20% &mdash; make Claude remember your project, conventions, and preferences.</p>
+        <p class="section-desc">Level: Medium &mdash; make Claude remember your project, conventions, and preferences.</p>
     </div>
 
-    <!-- Slide 19: CLAUDE.md & /init (+5%) [MERGED] -->
-    <div class="slide" data-slide="19" data-weight="5">
+    <!-- Slide 19: CLAUDE.md & /init -->
+    <div class="slide" data-slide="19">
         <h1>CLAUDE.md &amp; /init</h1>
         <div class="trigger-box">
             <h4>Key Concept</h4>
@@ -577,8 +586,8 @@ TodoApp monorepo: FastAPI backend + Next.js frontend.
 - Always add tests for new endpoints</div>
     </div>
 
-    <!-- Slide 20: What to Include in CLAUDE.md (+5%) -->
-    <div class="slide" data-slide="20" data-weight="5">
+    <!-- Slide 20: What to Include in CLAUDE.md -->
+    <div class="slide" data-slide="20">
         <h1>What to Include in CLAUDE.md</h1>
         <div class="two-col">
             <div class="col-card good">
@@ -620,8 +629,8 @@ TodoApp monorepo: FastAPI backend + Next.js frontend.
         </div>
     </div>
 
-    <!-- Slide 22: Rules (+10%) -->
-    <div class="slide" data-slide="22" data-weight="10">
+    <!-- Slide 22: Rules -->
+    <div class="slide" data-slide="22">
         <h1>Rules (.claude/rules/)</h1>
         <div class="trigger-box">
             <h4>What Are Rules?</h4>
@@ -683,11 +692,11 @@ When writing tests for the backend:
     <div class="slide section-slide" data-slide="25">
         <p class="section-number">Part 4</p>
         <h1>Structured Workflows</h1>
-        <p class="section-desc">Journey: 40% &mdash; systematic approaches that prevent wasted effort.</p>
+        <p class="section-desc">Level: Medium &mdash; systematic approaches that prevent wasted effort.</p>
     </div>
 
-    <!-- Slide 26: Task Lists (+5%) -->
-    <div class="slide" data-slide="26" data-weight="5">
+    <!-- Slide 26: Task Lists -->
+    <div class="slide" data-slide="26">
         <h1>Task Lists</h1>
         <p>For complex tasks, Claude creates a <strong>task list</strong> to track progress:</p>
         <div class="code-block"><span class="cmd">&gt;</span> Add user authentication to the TodoApp:
@@ -703,8 +712,8 @@ When writing tests for the backend:
         </div>
     </div>
 
-    <!-- Slide 27: /model Selection (+5%) -->
-    <div class="slide" data-slide="27" data-weight="5">
+    <!-- Slide 27: /model Selection -->
+    <div class="slide" data-slide="27">
         <h1>/model &mdash; Model Selection</h1>
         <div class="how-to-trigger">
             <h4>Try This</h4>
@@ -739,14 +748,14 @@ When writing tests for the backend:
     <!-- ============================================================ -->
 
     <!-- Slide 29: Section Divider - Domain Knowledge -->
-    <div class="slide section-slide" data-slide="29">
+    <div class="slide section-slide" data-slide="29" data-level="high">
         <p class="section-number">Part 5</p>
         <h1>Domain Knowledge</h1>
-        <p class="section-desc">Journey: 50% &mdash; reusable knowledge that Claude loads on-demand.</p>
+        <p class="section-desc">Level: High &mdash; reusable knowledge that Claude loads on-demand.</p>
     </div>
 
-    <!-- Slide 30: What Are Skills (+5%) -->
-    <div class="slide" data-slide="30" data-weight="5">
+    <!-- Slide 30: What Are Skills -->
+    <div class="slide" data-slide="30">
         <h1>What Are Skills?</h1>
         <div class="trigger-box">
             <h4>Key Concept</h4>
@@ -764,8 +773,8 @@ When writing tests for the backend:
         </div>
     </div>
 
-    <!-- Slide 31: Creating Skills - TodoApp (+5%) -->
-    <div class="slide" data-slide="31" data-weight="5">
+    <!-- Slide 31: Creating Skills - TodoApp -->
+    <div class="slide" data-slide="31">
         <h1>Creating Skills: TodoApp Frontend</h1>
         <h3>Frontend Conventions Skill</h3>
         <div class="code-block"><span class="comment"># .claude/skills/frontend-conventions/SKILL.md</span>
@@ -795,8 +804,8 @@ When creating or modifying frontend components:
 - Base URL: process.env.NEXT_PUBLIC_API_URL</div>
     </div>
 
-    <!-- Slide 32: Skill Frontmatter & Invocation (+5%) -->
-    <div class="slide" data-slide="32" data-weight="5">
+    <!-- Slide 32: Skill Frontmatter & Invocation -->
+    <div class="slide" data-slide="32">
         <h1>Skill Frontmatter &amp; Invocation</h1>
         <h3>Frontmatter Options</h3>
         <div class="use-cases">
@@ -849,18 +858,18 @@ When creating or modifying frontend components:
     </div>
 
     <!-- ============================================================ -->
-    <!-- PART 6: AGENTIC ENGINEERING (Slides 34-46, 65% -> 100%)     -->
+    <!-- PART 6: AGENTIC ENGINEERING (Slides 34-46, 65% -> 75%)      -->
     <!-- ============================================================ -->
 
     <!-- Slide 34: Section Divider - Agentic Engineering -->
-    <div class="slide section-slide" data-slide="34">
+    <div class="slide section-slide" data-slide="34" data-level="high">
         <p class="section-number">Part 6</p>
         <h1>Agentic Engineering</h1>
-        <p class="section-desc">Journey: 65% &mdash; custom agents that know your codebase and follow your patterns.</p>
+        <p class="section-desc">Level: High &mdash; custom agents that know your codebase and follow your patterns.</p>
     </div>
 
-    <!-- Slide 35: What Are Agents (+5%) -->
-    <div class="slide" data-slide="35" data-weight="5">
+    <!-- Slide 35: What Are Agents -->
+    <div class="slide" data-slide="35">
         <h1>What Are Agents?</h1>
         <div class="trigger-box">
             <h4>Key Concept</h4>
@@ -884,8 +893,8 @@ When creating or modifying frontend components:
         </div>
     </div>
 
-    <!-- Slide 36: Frontend Engineer Agent (+5%) -->
-    <div class="slide" data-slide="36" data-weight="5">
+    <!-- Slide 36: Frontend Engineer Agent -->
+    <div class="slide" data-slide="36">
         <h1>Frontend Engineer Agent</h1>
         <div class="two-col">
             <div class="col-card bad">
@@ -922,8 +931,8 @@ Use the existing API client in lib/api.ts.
 Follow TodoList.tsx as your reference component.</div>
     </div>
 
-    <!-- Slide 37: Backend Engineer Agent (+5%) -->
-    <div class="slide" data-slide="37" data-weight="5">
+    <!-- Slide 37: Backend Engineer Agent -->
+    <div class="slide" data-slide="37">
         <h1>Backend Engineer Agent</h1>
         <div class="two-col">
             <div class="col-card bad">
@@ -1032,8 +1041,8 @@ Task(
         </p>
     </div>
 
-    <!-- Slide 41: Commands & Orchestration (+10%) -->
-    <div class="slide" data-slide="41" data-weight="10">
+    <!-- Slide 41: Commands & Orchestration -->
+    <div class="slide" data-slide="41">
         <h1>Commands &amp; Orchestration</h1>
         <p>Commands are the entry points for complex workflows &mdash; the <strong>Command &rarr; Agent &rarr; Skills</strong> pattern:</p>
         <div class="code-block"><span class="comment"># .claude/commands/add-feature.md</span>
@@ -1057,8 +1066,8 @@ Task(
         </div>
     </div>
 
-    <!-- Slide 42: Hooks + MCP (+5%) [MERGED] -->
-    <div class="slide" data-slide="42" data-weight="5">
+    <!-- Slide 42: Hooks + MCP -->
+    <div class="slide" data-slide="42">
         <h1>Hooks &amp; MCP Servers</h1>
         <div class="two-col">
             <div class="col-card">
@@ -1081,8 +1090,8 @@ Task(
         </div>
     </div>
 
-    <!-- Slide 43: Full Architecture (+5%) -->
-    <div class="slide" data-slide="43" data-weight="5">
+    <!-- Slide 43: Full Architecture -->
+    <div class="slide" data-slide="43">
         <h1>Command &rarr; Agent &rarr; Skills</h1>
         <p>The full architecture pattern for complex workflows:</p>
         <div class="code-block"><span class="comment">+-----------------------------------------------+</span>
@@ -1103,10 +1112,10 @@ Task(
         </div>
     </div>
 
-    <!-- Slide 44: The 100% Slide -->
+    <!-- Slide 44: The High Level Slide -->
     <div class="slide section-slide" data-slide="44">
         <p class="celebration">&#127881;</p>
-        <h1>100% &mdash; Agentic Engineering</h1>
+        <h1>High &mdash; Agentic Engineering</h1>
         <p class="section-desc">Your TodoApp now has: CLAUDE.md for project context, Rules for path-scoped conventions, Skills for domain knowledge, Agents for consistent execution, Commands for orchestrated workflows, Hooks for lifecycle automation, and MCP servers for external tools.</p>
     </div>
 
@@ -1688,44 +1697,58 @@ managed-settings.json              <span class="comment"># Organization policy (
         let currentSlide = 1;
         const slides = document.querySelectorAll('[data-slide]');
         const totalSlides = slides.length;
-        // Build weight map and cumulative weights
-        const SLIDE_WEIGHTS = {};
-        const cumulativeWeights = [];
-        let runningSum = 0;
+
+        // Level definitions (order 1=bottom, 4=top)
+        const LEVELS = {
+            'low':    { order: 1, color: 'hsl(0, 70%, 45%)',   height: '25%',  label: 'Low' },
+            'medium': { order: 2, color: 'hsl(40, 70%, 45%)',  height: '50%',  label: 'Medium' },
+            'high':   { order: 3, color: 'hsl(80, 70%, 45%)',  height: '75%',  label: 'High' },
+            'pro':    { order: 4, color: 'hsl(120, 70%, 45%)', height: '100%', label: 'Pro' }
+        };
+
+        // Build slide-to-level map: inherit level from previous data-level slide
+        const SLIDE_LEVELS = {};
+        let lastLevel = null;
         slides.forEach((s) => {
             const num = parseInt(s.dataset.slide);
-            const w = parseInt(s.dataset.weight || 0);
-            SLIDE_WEIGHTS[num] = w;
-            runningSum += w;
-            cumulativeWeights[num] = runningSum;
+            if (s.dataset.level) { lastLevel = s.dataset.level; }
+            SLIDE_LEVELS[num] = lastLevel;
         });
+
+        let prevDisplayedLevel = null;
+
         function updateJourneyBar(slideNum) {
             const bar = document.getElementById('journeyBar');
             const fill = document.getElementById('journeyFill');
-            const pct = document.getElementById('journeyPercent');
-            if (slideNum <= 1) { bar.classList.add('hidden'); return; }
+            const labelEl = document.getElementById('journeyLevelLabel');
+            if (slideNum <= 1) { bar.classList.add('hidden'); prevDisplayedLevel = null; return; }
             bar.classList.remove('hidden');
-            const cumPct = cumulativeWeights[slideNum] || 0;
-            fill.style.height = cumPct + '%';
-            // HSL hue: 0 (red) -> 120 (green) based on cumPct
-            const hue = Math.round((cumPct / 100) * 120);
-            fill.style.backgroundColor = `hsl(${hue}, 70%, 45%)`;
-            pct.textContent = cumPct + '%';
-            pct.style.color = `hsl(${hue}, 70%, 35%)`;
-            // Show weight badge on slide title if this slide has weight
-            document.querySelectorAll('.weight-badge').forEach(b => b.remove());
-            const weight = SLIDE_WEIGHTS[slideNum];
-            if (weight > 0) {
-                const slideEl = document.querySelector(`[data-slide="${slideNum}"]`);
-                const h1 = slideEl ? slideEl.querySelector('h1') : null;
+            const levelKey = SLIDE_LEVELS[slideNum];
+            if (!levelKey || !LEVELS[levelKey]) {
+                fill.style.height = '0%';
+                if (labelEl) { labelEl.innerHTML = ''; }
+                return;
+            }
+            const lvl = LEVELS[levelKey];
+            fill.style.height = lvl.height;
+            fill.style.backgroundColor = lvl.color;
+            if (labelEl) { labelEl.innerHTML = 'Current = <strong style="color:' + lvl.color + '">' + lvl.label + '</strong>'; }
+
+            // Show level badge when level changes
+            document.querySelectorAll('.level-badge').forEach(b => b.remove());
+            const slideEl = document.querySelector(`[data-slide="${slideNum}"]`);
+            if (slideEl && slideEl.dataset.level && slideEl.dataset.level !== prevDisplayedLevel) {
+                const h1 = slideEl.querySelector('h1');
                 if (h1) {
                     const badge = document.createElement('span');
-                    badge.className = 'weight-badge';
-                    badge.textContent = '+' + weight + '%';
+                    badge.className = 'level-badge';
+                    badge.textContent = '\u2192 ' + lvl.label;
                     h1.appendChild(badge);
                 }
             }
+            prevDisplayedLevel = levelKey;
         }
+
         function showSlide(n) {
             slides.forEach(s => s.classList.remove('active'));
             if (n > totalSlides) currentSlide = totalSlides;

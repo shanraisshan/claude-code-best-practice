@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../!/claude-jumping.svg">
+    <title>Claude Code Workflows — Best Practice</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.6; }
+        .slide { display: none; min-height: 100vh; padding: 60px 80px; max-width: 1200px; margin: 0 auto; }
+        .slide.active { display: block; }
+        h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 40px; color: #1a1a1a; border-bottom: 2px solid #e5e5e5; padding-bottom: 20px; }
+        h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #2a2a2a; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin: 24px 0 12px 0; color: #333; }
+        p { font-size: 1.1rem; margin-bottom: 16px; color: #444; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.95rem; }
+        .slide.title-slide.active { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px; }
+        .title-slide h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; border-bottom: none; padding-bottom: 0; }
+        .title-slide .subtitle { font-size: 1.4rem; color: #555; margin-bottom: 50px; font-weight: 400; }
+        .slide.section-slide.active { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px; }
+        .section-slide h1 { font-size: 3rem; font-weight: 700; border-bottom: none; padding-bottom: 0; margin-bottom: 16px; }
+        .section-slide .section-number { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 20px; }
+        .section-slide .section-desc { font-size: 1.2rem; color: #666; max-width: 600px; }
+        .trigger-box { background: #f8f9fa; border-left: 4px solid #1a1a1a; padding: 20px 24px; margin: 24px 0; }
+        .trigger-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; }
+        .trigger-box p { font-size: 1.05rem; color: #333; margin: 0; }
+        .how-to-trigger { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .how-to-trigger h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #2e7d32; margin-bottom: 8px; }
+        .how-to-trigger p { font-size: 1.05rem; color: #1b5e20; margin: 0; }
+        .how-to-trigger code { background: rgba(0,0,0,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.95rem; }
+        .warning-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .warning-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #e65100; margin-bottom: 8px; }
+        .warning-box p { font-size: 1.05rem; color: #bf360c; margin: 0; }
+        .code-block { background: #1a1a1a; color: #e5e5e5; padding: 20px 24px; border-radius: 8px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; white-space: pre; line-height: 1.7; }
+        .code-block .comment { color: #6a9955; }
+        .code-block .key { color: #9cdcfe; }
+        .code-block .string { color: #ce9178; }
+        .code-block .cmd { color: #dcdcaa; }
+        .code-block .claude-file { color: #ff5252; }
+        .use-cases { margin: 24px 0; }
+        .use-case-item { display: flex; align-items: flex-start; margin-bottom: 12px; padding: 14px 20px; background: #fafafa; border-radius: 8px; }
+        .use-case-icon { font-size: 1.5rem; margin-right: 16px; min-width: 32px; }
+        .use-case-text { flex: 1; }
+        .use-case-text strong { display: block; font-size: 1.05rem; color: #1a1a1a; margin-bottom: 4px; }
+        .use-case-text span { font-size: 0.95rem; color: #666; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .col-card { background: #f8f9fa; padding: 24px; border-radius: 8px; }
+        .col-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 12px; }
+        .col-card.good { border-left: 4px solid #4caf50; }
+        .col-card.bad { border-left: 4px solid #f44336; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .info-card { background: #f8f9fa; padding: 24px; border-radius: 8px; }
+        .info-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 12px; }
+        .matcher-tag { display: inline-block; padding: 4px 10px; background: #e9ecef; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; margin: 4px 4px 4px 0; color: #495057; }
+        .toc-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+        .toc-item { display: flex; align-items: center; padding: 16px 20px; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .toc-item:hover { background: #eee; }
+        .toc-number { width: 28px; height: 28px; background: #1a1a1a; color: #fff; border-radius: 50%; text-align: center; line-height: 28px; font-size: 0.85rem; margin-right: 12px; font-weight: 600; flex-shrink: 0; }
+        .toc-name { font-size: 1rem; color: #1a1a1a; }
+        .step-number { display: inline-block; width: 36px; height: 36px; background: #1a1a1a; color: #fff; border-radius: 50%; text-align: center; line-height: 36px; font-weight: 600; font-size: 1rem; margin-right: 12px; }
+        .feature-list { list-style: none; margin: 24px 0; }
+        .feature-list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem; }
+        .feature-list li:last-child { border-bottom: none; }
+        .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 12px; z-index: 100; }
+        .nav-btn { width: 50px; height: 50px; border: 2px solid #1a1a1a; background: #fff; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .nav-btn:hover { background: #1a1a1a; color: #fff; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .progress { position: fixed; top: 0; left: 0; height: 4px; background: #1a1a1a; transition: width 0.3s; z-index: 100; }
+        .slide-counter { position: fixed; bottom: 40px; left: 40px; font-size: 0.9rem; color: #999; }
+        .keyboard-hint { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.85rem; color: #999; }
+        .keyboard-hint kbd { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd; font-family: inherit; }
+        .header-logo { position: fixed; top: 20px; right: 40px; width: 100px; height: 65px; z-index: 50; }
+        .header-logo img { width: 100%; height: 100%; }
+        .title-logo { width: 200px; height: 130px; margin-bottom: 40px; }
+        .title-logo img { width: 100%; height: 100%; }
+        /* Journey Bar — vertical, right side below mascot */
+        .journey-bar { position: fixed; top: 95px; right: 62px; display: flex; flex-direction: column; align-items: center; z-index: 99; gap: 6px; }
+        .journey-bar.hidden { display: none; }
+        .journey-track-wrap { position: relative; display: flex; align-items: stretch; gap: 4px; }
+        .journey-track { width: 20px; height: 280px; background: #e5e5e5; border-radius: 10px; overflow: hidden; position: relative; flex-shrink: 0; }
+        .journey-fill { position: absolute; bottom: 0; width: 100%; border-radius: 10px; transition: height 0.4s ease, background-color 0.4s ease; height: 0%; }
+        .journey-level-label { font-size: 0.65rem; color: #777; font-weight: 400; }
+        /* Level tick marks beside the journey track */
+        .journey-ticks { display: flex; flex-direction: column; justify-content: space-between; height: 280px; padding: 2px 0; }
+        .journey-tick { font-size: 0.45rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; color: #999; white-space: nowrap; line-height: 1; }
+        /* Level badge shown on level-transition slides */
+        .level-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 12px; vertical-align: middle; }
+        /* Shimmer text effect */
+        .shimmer-text { background: linear-gradient(90deg, #888 0%, #444 40%, #ccc 50%, #444 60%, #888 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s ease-in-out infinite; }
+        @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+        /* Celebration slide */
+        .celebration { font-size: 4rem; margin-bottom: 24px; }
+        /* Reference table */
+        .ref-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 1rem; }
+        .ref-table th { background: #1a1a1a; color: #fff; padding: 12px 16px; text-align: left; font-weight: 600; }
+        .ref-table td { padding: 12px 16px; border-bottom: 1px solid #e5e5e5; color: #333; }
+        .ref-table tr:last-child td { border-bottom: none; }
+        .ref-table tr:nth-child(even) td { background: #f8f9fa; }
+        .ref-table code { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="journey-bar hidden" id="journeyBar">
+        <div class="journey-track-wrap">
+            <div class="journey-track"><div class="journey-fill" id="journeyFill"></div></div>
+            <div class="journey-ticks">
+                <span class="journey-tick">Pro</span>
+                <span class="journey-tick">High</span>
+                <span class="journey-tick">Med</span>
+                <span class="journey-tick">Low</span>
+            </div>
+        </div>
+        <span class="journey-level-label" id="journeyLevelLabel">Current = <strong>Low</strong></span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TITLE SLIDE                                                   -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 1: Title -->
+    <div class="slide active title-slide" data-slide="1">
+        <div class="title-logo">
+            <img src="../../!/claude-jumping.svg" alt="Claude Code mascot jumping" />
+        </div>
+        <h1>Claude Code Workflows - Best Practice</h1>
+        <p class="subtitle">From Vibe Coding to Agentic Engineering</p>
+        <p class="shimmer-text" style="margin-top: 60px; font-size: 0.95rem;">Shayan Rais</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- INTRO — THE PROBLEM (0:00 – 0:45)                           -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide section-slide" data-slide="2" data-level="low">
+        <p class="section-number">Intro &mdash; 0:00</p>
+        <h1>The Problem</h1>
+        <p class="section-desc">You're doing vibe coding &mdash; and only using a fraction of what Claude Code can do.</p>
+    </div>
+
+    <!-- Slide 3: Vibe Coding vs Agentic Engineering -->
+    <div class="slide" data-slide="3">
+        <h1>Vibe Coding vs Agentic Engineering</h1>
+        <div class="two-col">
+            <div class="col-card bad">
+                <h4>Vibe Coding</h4>
+                <p>Type prompts, get results, repeat.</p>
+                <p>It works &mdash; but Claude is just <strong>responding to you</strong>.</p>
+                <p>No structure. No repeatability. No workflow.</p>
+                <p style="margin-top: 16px; color: #c62828;">You're always in the loop. Claude never runs on its own.</p>
+            </div>
+            <div class="col-card good">
+                <h4>Agentic Engineering</h4>
+                <p>Define a workflow once.</p>
+                <p>Claude <strong>runs it for you</strong> &mdash; every time, the same way.</p>
+                <p>Commands, Agents, and Skills chain together.</p>
+                <p style="margin-top: 16px; color: #2e7d32;">You kick it off and walk away. Claude handles the rest.</p>
+            </div>
+        </div>
+        <div class="trigger-box">
+            <h4>This Video</h4>
+            <p>Covers the foundation: <strong>Commands, Agents, and Skills</strong> &mdash; and how they chain together into repeatable workflows.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: Agenda -->
+    <div class="slide" data-slide="4">
+        <h1>What We'll Cover</h1>
+        <div class="toc-list" style="margin-top: 24px;">
+            <div class="toc-item" onclick="goToSlide(5)"><span class="toc-number">1</span><span class="toc-name">The Ad-Hoc Way (0:45)</span></div>
+            <div class="toc-item" onclick="goToSlide(7)"><span class="toc-number">2</span><span class="toc-name">The Workflow Way (2:00)</span></div>
+            <div class="toc-item" onclick="goToSlide(9)"><span class="toc-number">3</span><span class="toc-name">How It Works (3:15)</span></div>
+            <div class="toc-item" onclick="goToSlide(14)"><span class="toc-number">4</span><span class="toc-name">Why This Matters (4:30)</span></div>
+        </div>
+        <div class="trigger-box" style="margin-top: 32px;">
+            <h4>Demo Project</h4>
+            <p>We'll use the <strong>weather workflow</strong> from this repo as our running example throughout the video.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PART 1 — THE AD-HOC WAY (0:45 – 2:00)                      -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 5: Section Divider -->
+    <div class="slide section-slide" data-slide="5">
+        <p class="section-number">Part 1 &mdash; 0:45</p>
+        <h1>The Ad-Hoc Way</h1>
+        <p class="section-desc">Vibe coding the weather task &mdash; it works once, but is it a workflow you can trust?</p>
+    </div>
+
+    <!-- Slide 6: The Inconsistency Problem -->
+    <div class="slide" data-slide="6">
+        <h1>The Inconsistency Problem</h1>
+        <div class="how-to-trigger">
+            <h4>The Prompt</h4>
+            <p>Type into a fresh Claude Code terminal:</p>
+        </div>
+        <div class="code-block"><span class="cmd">&gt;</span> What is the weather in Dubai? Write it to an output file and create an SVG card for it.</div>
+        <div class="two-col" style="margin-top: 24px;">
+            <div class="col-card bad">
+                <h4>Run 1 &mdash; SVG Result</h4>
+                <p>Blue gradient background</p>
+                <p>Large serif font, centered layout</p>
+                <p>Output saved to <code>weather.svg</code></p>
+                <p style="margin-top: 12px; color: #666; font-size: 0.9rem;">Looks fine... until you run it again.</p>
+            </div>
+            <div class="col-card bad">
+                <h4>Run 2 &mdash; SVG Result</h4>
+                <p>Orange card-style background</p>
+                <p>Small sans-serif, left-aligned layout</p>
+                <p>Output saved to <code>output/card.svg</code></p>
+                <p style="margin-top: 12px; color: #c62828;">Different design. Different file path. Every time.</p>
+            </div>
+        </div>
+        <div class="warning-box">
+            <h4>The Vibe Coding Problem</h4>
+            <p>It works once. But it's not repeatable. It's not a workflow you can trust. You had to sit and watch it work &mdash; and you'll get a completely different result tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PART 2 — THE WORKFLOW WAY (2:00 – 3:15)                     -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 7: Section Divider -->
+    <div class="slide section-slide" data-slide="7" data-level="medium">
+        <p class="section-number">Part 2 &mdash; 2:00</p>
+        <h1>The Workflow Way</h1>
+        <p class="section-desc">The same task &mdash; but as a repeatable, autonomous workflow.</p>
+    </div>
+
+    <!-- Slide 8: /weather-orchestrator Demo -->
+    <div class="slide" data-slide="8">
+        <h1>/weather-orchestrator</h1>
+        <div class="how-to-trigger">
+            <h4>The Command</h4>
+            <p>Instead of a freeform prompt, type a slash command:</p>
+        </div>
+        <div class="code-block"><span class="cmd">&gt;</span> /weather-orchestrator</div>
+        <h3>What Happens on Screen</h3>
+        <div class="use-cases">
+            <div class="use-case-item"><span class="use-case-icon">1&#65039;&#8419;</span><div class="use-case-text"><strong>It asks you: Celsius or Fahrenheit?</strong><span>Structured user interaction &mdash; not freeform guessing</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">2&#65039;&#8419;</span><div class="use-case-text"><strong>It spawns a weather-agent</strong><span>You see the green agent indicator in the terminal &mdash; a dedicated worker</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">3&#65039;&#8419;</span><div class="use-case-text"><strong>It invokes the SVG skill</strong><span>weather-svg-creator creates a consistent card layout</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">4&#65039;&#8419;</span><div class="use-case-text"><strong>Output: same files, same layout, every time</strong><span><code>orchestration-workflow/weather.svg</code> + <code>orchestration-workflow/output.md</code></span></div></div>
+        </div>
+        <div class="trigger-box">
+            <h4>Run it again tomorrow</h4>
+            <p>Same SVG layout. Same file structure. Same clean result. You can kick this off and walk away &mdash; it runs autonomously.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PART 3 — HOW IT WORKS (3:15 – 4:30)                        -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 9: Section Divider -->
+    <div class="slide section-slide" data-slide="9">
+        <p class="section-number">Part 3 &mdash; 3:15</p>
+        <h1>How It Works</h1>
+        <p class="section-desc">Command &rarr; Agent &rarr; Skill &mdash; the three building blocks.</p>
+    </div>
+
+    <!-- Slide 10: The Flow Diagram -->
+    <div class="slide" data-slide="10">
+        <h1>Command &rarr; Agent &rarr; Skill</h1>
+        <p>The weather workflow chains three building blocks together:</p>
+        <div class="code-block"><span class="comment"># The full orchestration flow</span>
+
+<span class="cmd">/weather-orchestrator</span> (Command)
+    &rarr; <span class="comment">AskUser: C&deg; or F&deg;?</span>
+    &rarr; <span class="key">weather-agent</span> (Agent + weather-fetcher skill)
+    &rarr; <span class="string">weather-svg-creator</span> (Skill)
+    &rarr; <span class="comment">Output: weather.svg + output.md</span></div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>Command</h4>
+                <p>The entry point &mdash; the conductor. Asks the user a question, calls an agent, then calls a skill.</p>
+            </div>
+            <div class="info-card">
+                <h4>Agent</h4>
+                <p>A specialized worker with one job: fetch the temperature. Has a preloaded skill for API knowledge.</p>
+            </div>
+            <div class="info-card">
+                <h4>Agent Skill (preloaded)</h4>
+                <p><code>weather-fetcher</code> is baked into the agent at startup &mdash; domain knowledge about which API to call.</p>
+            </div>
+            <div class="info-card">
+                <h4>Invoked Skill</h4>
+                <p><code>weather-svg-creator</code> is called independently via the Skill tool &mdash; creates a consistent SVG card.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Commands -->
+    <div class="slide" data-slide="11">
+        <h1>Building Block 1: Commands</h1>
+        <div class="trigger-box">
+            <h4>What Is a Command?</h4>
+            <p>A command is the entry point &mdash; like a script. It's a markdown file that tells Claude <strong>what steps to follow</strong>. Think of it as the conductor.</p>
+        </div>
+        <div class="code-block"><span class="comment"># .claude/commands/weather-orchestrator.md</span>
+---
+<span class="key">description</span>: <span class="string">Fetch weather and create an SVG card</span>
+---
+
+<span class="comment"># Weather Orchestrator</span>
+
+1. Ask the user: Celsius or Fahrenheit? (AskUserQuestion)
+2. Invoke weather-agent to fetch the temperature
+   - Task(subagent_type=<span class="string">"weather-agent"</span>, ...)
+3. Invoke weather-svg-creator skill with the result
+   - Skill(<span class="string">"weather-svg-creator"</span>, ...)
+4. Confirm output files are written</div>
+        <h3>How to Use</h3>
+        <div class="use-cases">
+            <div class="use-case-item"><span class="use-case-icon">&#128193;</span><div class="use-case-text"><strong>Location</strong><span><code>.claude/commands/</code> &mdash; one <code>.md</code> file per command</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">&#9881;</span><div class="use-case-text"><strong>Invocation</strong><span>Shows up as a <code>/slash-command</code> in your terminal</span></div></div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Agents -->
+    <div class="slide" data-slide="12">
+        <h1>Building Block 2: Agents</h1>
+        <div class="trigger-box">
+            <h4>What Is an Agent?</h4>
+            <p>An agent is a specialized worker. Our <code>weather-agent</code> has one job: fetch the temperature. It has its own tools, model, and permissions &mdash; an isolated worker.</p>
+        </div>
+        <div class="code-block"><span class="comment"># .claude/agents/weather-agent.md</span>
+---
+<span class="key">name</span>: <span class="string">weather-agent</span>
+<span class="key">description</span>: <span class="string">Fetches weather data using wttr.in API</span>
+<span class="key">tools</span>: <span class="string">Bash, WebFetch</span>
+<span class="key">model</span>: <span class="string">haiku</span>
+<span class="key">skills</span>:
+  - weather-fetcher
+---
+You are a weather data fetcher.
+Use the weather-fetcher skill for API details.
+Return the temperature and conditions only.</div>
+        <h3>Key Properties</h3>
+        <div class="use-cases">
+            <div class="use-case-item"><span class="use-case-icon">&#128295;</span><div class="use-case-text"><strong>Isolated context</strong><span>Runs independently, returns a result, context is discarded</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">&#128218;</span><div class="use-case-text"><strong>Preloaded skills</strong><span><code>weather-fetcher</code> is injected at startup &mdash; it already knows the API</span></div></div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Skills -->
+    <div class="slide" data-slide="13">
+        <h1>Building Block 3: Skills</h1>
+        <div class="trigger-box">
+            <h4>What Is a Skill?</h4>
+            <p>A skill is a reusable set of instructions. Think of it as a recipe. Skills can be background knowledge <em>or</em> standalone actions.</p>
+        </div>
+        <div class="two-col">
+            <div class="col-card">
+                <h4>Agent Skill (Preloaded)</h4>
+                <p><code>weather-fetcher</code> is baked into the <code>weather-agent</code>.</p>
+                <p>It's domain knowledge &mdash; which API endpoint to call, how to parse the JSON response.</p>
+                <div class="code-block" style="font-size: 0.8rem;"><span class="key">skills</span>:
+  - weather-fetcher</div>
+            </div>
+            <div class="col-card">
+                <h4>Invoked Skill (Standalone)</h4>
+                <p><code>weather-svg-creator</code> is called via the Skill tool.</p>
+                <p>It creates the SVG card with a consistent template &mdash; same layout every time.</p>
+                <div class="code-block" style="font-size: 0.8rem;">Skill(<span class="string">"weather-svg-creator"</span>, ...)</div>
+            </div>
+        </div>
+        <div class="how-to-trigger">
+            <h4>Location</h4>
+            <p>Skills live in <code>.claude/skills/&lt;name&gt;/SKILL.md</code></p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PART 4 — WHY THIS MATTERS (4:30 – 5:00)                    -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 14: Section Divider -->
+    <div class="slide section-slide" data-slide="14">
+        <p class="section-number">Part 4 &mdash; 4:30</p>
+        <h1>Why This Matters</h1>
+        <p class="section-desc">The difference between vibe coding and agentic engineering is structure.</p>
+    </div>
+
+    <!-- Slide 15: The Core Difference -->
+    <div class="slide" data-slide="15">
+        <h1>Structure Is the Difference</h1>
+        <div class="two-col">
+            <div class="col-card bad">
+                <h4>Vibe Coding</h4>
+                <p>You type.</p>
+                <p>You hope.</p>
+                <p>You get something.</p>
+                <p style="margin-top: 12px; color: #c62828;">Inconsistent. You're always in the loop. Doesn't scale.</p>
+            </div>
+            <div class="col-card good">
+                <h4>Agentic Engineering</h4>
+                <p>You define a workflow once.</p>
+                <p>It runs the same way every time.</p>
+                <p>You kick it off and walk away.</p>
+                <p style="margin-top: 12px; color: #2e7d32;">Consistent. Autonomous. Repeatable. Trustworthy.</p>
+            </div>
+        </div>
+        <div class="trigger-box">
+            <h4>The Building Blocks</h4>
+            <p>Commands, Agents, and Skills are the three building blocks. Once you understand these, you can build any workflow.</p>
+        </div>
+    </div>
+
+    <!-- Slide 16: What's Next -->
+    <div class="slide" data-slide="16">
+        <h1>What's Next</h1>
+        <p>This repo has more patterns &mdash; we'll cover them in upcoming videos:</p>
+        <div class="use-cases">
+            <div class="use-case-item"><span class="use-case-icon">&#128279;</span><div class="use-case-text"><strong>Hooks</strong><span>Custom scripts at lifecycle events &mdash; PreToolUse, PostToolUse, Stop, and more</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">&#128101;</span><div class="use-case-text"><strong>Multi-Agent Teams</strong><span>Commands that orchestrate multiple specialized agents working in parallel</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">&#128203;</span><div class="use-case-text"><strong>CLAUDE.md Configuration</strong><span>Project memory, path-scoped rules, and keeping instructions under 150 lines</span></div></div>
+            <div class="use-case-item"><span class="use-case-icon">&#128295;</span><div class="use-case-text"><strong>MCP Servers</strong><span>Connect Claude to databases, browsers, and external APIs</span></div></div>
+        </div>
+        <div class="how-to-trigger">
+            <h4>Get Started</h4>
+            <p>Link in the description. Star it, clone it, and start building your own workflows.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- QUICK REFERENCE                                              -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 17: Quick Reference -->
+    <div class="slide" data-slide="17">
+        <h1>Quick Reference</h1>
+        <table class="ref-table">
+            <thead>
+                <tr>
+                    <th>Concept</th>
+                    <th>Location</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Command</strong></td>
+                    <td><code>.claude/commands/</code></td>
+                    <td>Entry point, orchestration, <code>/slash-command</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Agent</strong></td>
+                    <td><code>.claude/agents/</code></td>
+                    <td>Specialized worker with own tools &amp; model</td>
+                </tr>
+                <tr>
+                    <td><strong>Skill</strong></td>
+                    <td><code>.claude/skills/</code></td>
+                    <td>Reusable instructions (preloaded or invoked)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="info-grid" style="margin-top: 32px;">
+            <div class="info-card">
+                <h4>Two Skill Patterns</h4>
+                <p><strong>Preloaded</strong> &mdash; baked into agent via <code>skills:</code> frontmatter</p>
+                <p><strong>Invoked</strong> &mdash; called via <code>Skill()</code> tool at runtime</p>
+            </div>
+            <div class="info-card">
+                <h4>The Chain</h4>
+                <p><code>/command</code> &rarr; orchestrates</p>
+                <p><code>agent</code> + preloaded skill &rarr; executes</p>
+                <p>invoked <code>skill</code> &rarr; produces output</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 18: Thank You -->
+    <div class="slide title-slide" data-slide="18">
+        <div class="title-logo">
+            <img src="../../!/claude-jumping.svg" alt="Claude Code mascot jumping" />
+        </div>
+        <h1>Thank You!</h1>
+        <p class="subtitle">Questions?</p>
+        <p style="margin-top: 40px; font-size: 1rem; color: #666;">github.com/shanraisshan/claude-code-best-practice</p>
+    </div>
+
+    <!-- Header Logo -->
+    <div class="header-logo">
+        <img src="../../!/claude-jumping.svg" alt="Claude Code mascot" />
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()">&#8592;</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">&#8594;</button>
+    </div>
+    <div class="slide-counter" id="slideCounter">1 / --</div>
+    <div class="keyboard-hint"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> or <kbd>Space</kbd> to navigate</div>
+
+    <script>
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('[data-slide]');
+        const totalSlides = slides.length;
+
+        // Level definitions (order 1=bottom, 4=top)
+        const LEVELS = {
+            'low':    { order: 1, color: 'hsl(0, 70%, 45%)',   height: '25%',  label: 'Low' },
+            'medium': { order: 2, color: 'hsl(40, 70%, 45%)',  height: '50%',  label: 'Medium' },
+            'high':   { order: 3, color: 'hsl(80, 70%, 45%)',  height: '75%',  label: 'High' },
+            'pro':    { order: 4, color: 'hsl(120, 70%, 45%)', height: '100%', label: 'Pro' }
+        };
+
+        // Build slide-to-level map: inherit level from previous data-level slide
+        const SLIDE_LEVELS = {};
+        let lastLevel = null;
+        slides.forEach((s) => {
+            const num = parseInt(s.dataset.slide);
+            if (s.dataset.level) { lastLevel = s.dataset.level; }
+            SLIDE_LEVELS[num] = lastLevel;
+        });
+
+        let prevDisplayedLevel = null;
+
+        function updateJourneyBar(slideNum) {
+            const bar = document.getElementById('journeyBar');
+            const fill = document.getElementById('journeyFill');
+            const labelEl = document.getElementById('journeyLevelLabel');
+            if (slideNum <= 1) { bar.classList.add('hidden'); prevDisplayedLevel = null; return; }
+            bar.classList.remove('hidden');
+            const levelKey = SLIDE_LEVELS[slideNum];
+            if (!levelKey || !LEVELS[levelKey]) {
+                fill.style.height = '0%';
+                if (labelEl) { labelEl.innerHTML = ''; }
+                return;
+            }
+            const lvl = LEVELS[levelKey];
+            fill.style.height = lvl.height;
+            fill.style.backgroundColor = lvl.color;
+            if (labelEl) { labelEl.innerHTML = 'Current = <strong style="color:' + lvl.color + '">' + lvl.label + '</strong>'; }
+
+            // Show level badge when level changes
+            document.querySelectorAll('.level-badge').forEach(b => b.remove());
+            const slideEl = document.querySelector(`[data-slide="${slideNum}"]`);
+            if (slideEl && slideEl.dataset.level && slideEl.dataset.level !== prevDisplayedLevel) {
+                const h1 = slideEl.querySelector('h1');
+                if (h1) {
+                    const badge = document.createElement('span');
+                    badge.className = 'level-badge';
+                    badge.textContent = '\u2192 ' + lvl.label;
+                    h1.appendChild(badge);
+                }
+            }
+            prevDisplayedLevel = levelKey;
+        }
+
+        function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+            document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+            updateJourneyBar(currentSlide);
+        }
+        function nextSlide() { currentSlide++; showSlide(currentSlide); }
+        function prevSlide() { currentSlide--; showSlide(currentSlide); }
+        function goToSlide(n) { currentSlide = n; showSlide(currentSlide); }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) { if (diff > 0) nextSlide(); else prevSlide(); }
+        });
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
