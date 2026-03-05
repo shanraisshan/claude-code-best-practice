@@ -198,25 +198,20 @@ These are not flags but top-level subcommands run as `claude <subcommand>`:
 
 ## Environment Variables
 
-These environment variables modify Claude Code behavior at startup:
+These startup-only environment variables are set in your shell before launching Claude Code (they cannot be configured via `settings.json`):
 
 | Variable | Description |
 |----------|-------------|
 | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` | Enable experimental agent teams |
-| `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` | Disable experimental beta features |
 | `CLAUDE_CODE_TMPDIR` | Override temp directory for internal files |
-| `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` | Disable background task functionality |
 | `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` | Enable additional directory CLAUDE.md loading |
 | `DISABLE_AUTOUPDATER=1` | Disable auto-updates |
-| `MAX_THINKING_TOKENS` | Limit thinking token budget (set to `0` to disable) |
 | `CLAUDE_CODE_EFFORT_LEVEL` | Control thinking depth: `low`, `medium`, `high` |
 | `USE_BUILTIN_RIPGREP=0` | Use system ripgrep instead of built-in (Alpine Linux) |
-| `CLAUDE_CODE_ENABLE_TASKS=false` | Disable new task management system, revert to old todos |
-| `CLAUDE_CODE_SHELL` | Override automatic shell detection |
-| `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS` | Override default file read token limit |
-| `CLAUDE_CODE_EXIT_AFTER_STOP_DELAY` | Auto-exit SDK mode after idle duration (ms) |
 | `CLAUDE_CODE_SIMPLE` | Enable simple mode (Bash + Edit tools only) |
 | `CLAUDE_BASH_NO_LOGIN=1` | Skip login shell for BashTool |
+
+For environment variables configurable via the `"env"` key in `settings.json` (including `MAX_THINKING_TOKENS`, `CLAUDE_CODE_SHELL`, `CLAUDE_CODE_ENABLE_TASKS`, `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`, `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS`, and more), see the [Claude Settings Reference](./claude-settings.md#environment-variables-via-env).
 
 ---
 

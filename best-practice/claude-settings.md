@@ -1,6 +1,8 @@
 # Claude Code Settings Reference
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of February 2026, Claude Code exposes **38 settings** and **84 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2005%2C%202026%206%3A18%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.69-blue?style=flat&labelColor=555)
+
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.69, Claude Code exposes **55+ settings** and **110+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -38,11 +40,12 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 | 4 | `~/.claude/settings.local.json` | User | N/A | Personal global overrides |
 | 5 | `~/.claude/settings.json` | User | N/A | Global personal defaults |
 
-**Policy layer**: `managed-settings.json` is organization-enforced and cannot be overridden by local settings.
+**Policy layer**: `managed-settings.json` is organization-enforced and cannot be overridden by local settings. On macOS, managed settings can also be delivered via MDM profiles (plist at `com.anthropic.claudecode`). On Windows, managed settings use the Windows Registry.
 
 **Important**:
 - `deny` rules have highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
 - Managed settings may lock or override local behavior even if local files specify different values.
+- Array settings (e.g., `permissions.allow`) are **merged** across scopes — entries from all levels are combined, not replaced.
 
 ---
 
@@ -52,6 +55,7 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `$schema` | string | - | JSON Schema URL for IDE validation and autocompletion (e.g., `"https://www.schemastore.org/claude-code-settings.json"`) |
 | `model` | string | `"default"` | Override default model. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs |
 | `agent` | string | - | Set the default agent for the main conversation. Value is the agent name from `.claude/agents/`. Also available via `--agent` CLI flag |
 | `language` | string | `"english"` | Claude's preferred response language |
@@ -59,6 +63,10 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 | `autoUpdatesChannel` | string | `"latest"` | Release channel: `"stable"` or `"latest"` |
 | `alwaysThinkingEnabled` | boolean | `false` | Enable extended thinking by default for all sessions |
 | `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs |
+| `availableModels` | array | - | Restrict models available to users (managed settings). Each entry has `title`, `modelId`, and optional `effortOptions` |
+| `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
+| `teammateMode` | boolean | `false` | Enable teammate mode for multi-agent collaboration |
+| `includeGitInstructions` | boolean | `true` | Include git-related instructions in system prompt |
 
 **Example:**
 ```json
@@ -188,6 +196,7 @@ Control what tools and operations Claude can perform.
 | `"default"` | Standard permission checking with prompts |
 | `"acceptEdits"` | Auto-accept file edits without asking |
 | `"askEdits"` | Ask before every operation |
+| `"dontAsk"` | Auto-accept all tools without prompting (equivalent to `bypassPermissions` but via settings) |
 | `"viewOnly"` | Read-only mode, no modifications |
 | `"bypassPermissions"` | Skip all permission checks (dangerous) |
 | `"plan"` | Read-only exploration mode |
@@ -204,8 +213,9 @@ Control what tools and operations Claude can perform.
 | `WebFetch` | `WebFetch(domain:pattern)` | `WebFetch(domain:example.com)` |
 | `WebSearch` | `WebSearch` | Global web search |
 | `Task` | `Task(agent-name)` | `Task(Explore)`, `Task(my-agent)` |
+| `Agent` | `Agent(name)` | `Agent(researcher)`, `Agent(*)` — permission scoped to subagent spawning |
 | `Skill` | `Skill(skill-name)` | `Skill(weather-fetcher)` |
-| `MCP` | `mcp__server__tool` | `mcp__memory__*`, `mcp__github__*` |
+| `MCP` | `mcp__server__tool` or `MCP(server:tool)` | `mcp__memory__*`, `MCP(github:*)` |
 
 **Bash wildcard notes:**
 - `*` can appear at **any position**: prefix (`Bash(* install)`), suffix (`Bash(npm *)`), or middle (`Bash(git * main)`)
@@ -242,140 +252,13 @@ Control what tools and operations Claude can perform.
 
 ## Hooks
 
-Execute custom shell commands at various points in Claude Code's lifecycle.
+Hook configuration (events, properties, matchers, exit codes, environment variables, and HTTP hooks) is maintained in a dedicated repository:
 
-### Hook Events (16 total)
+> **[claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks)** — Complete hook reference with sound notification system, all 19 hook events, HTTP hooks, matcher patterns, exit codes, and environment variables.
 
-| Event | When Fired | Matcher Support | Common Use Cases |
-|-------|------------|-----------------|------------------|
-| `SessionStart` | New or resumed session | No | Load context, set environment |
-| `SessionEnd` | Session terminates | No | Cleanup, logging |
-| `UserPromptSubmit` | User submits prompt | No | Validate input, add context |
-| `PreToolUse` | Before tool execution | Yes | Validate commands, modify inputs |
-| `PostToolUse` | After tool succeeds | Yes | Run linters, verify output |
-| `PostToolUseFailure` | After tool fails | Yes | Log failures, recovery |
-| `PermissionRequest` | Permission dialog appears | Yes | Auto-approve/deny patterns |
-| `Notification` | Notification sent | Yes | Sound alerts, logging |
-| `Stop` | Claude finishes responding | No | Block/continue decisions |
-| `SubagentStart` | Subagent spawned | Yes | Per-agent setup |
-| `SubagentStop` | Subagent completes | Yes | Cleanup, validation |
-| `PreCompact` | Before context compaction | Yes | Backup, logging |
-| `Setup` | Repository init (`--init`, `--init-only`, `--maintenance`) | Yes | One-time setup |
-| `TeammateIdle` | Agent Teams teammate goes idle | Yes | Team orchestration, routing |
-| `TaskCompleted` | A tracked task is completed | Yes | Progress automation, notifications |
-| `ConfigChange` | Configuration files change during session | Yes | Enterprise security auditing, blocking settings changes |
+Hook-related settings keys (`hooks`, `disableAllHooks`, `allowManagedHooksOnly`, `allowedHttpHookUrls`, `httpHookAllowedEnvVars`) are documented there.
 
-### Hook Configuration Structure
-
-```json
-{
-  "hooks": {
-    "EventName": [
-      {
-        "matcher": "ToolPattern",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "script.sh",
-            "timeout": 60000,
-            "once": true
-          }
-        ]
-      }
-    ]
-  },
-  "disableAllHooks": false,
-  "allowManagedHooksOnly": false
-}
-```
-
-### Hook Properties
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `matcher` | string | Regex pattern to match tool/event (optional) |
-| `type` | string | `"command"` or `"prompt"` |
-| `command` | string | Shell command to execute (for `type: "command"`) |
-| `prompt` | string | LLM prompt for evaluation (for `type: "prompt"`) |
-| `timeout` | number | Timeout in milliseconds |
-| `once` | boolean | Run only once per session |
-| `model` | string | Custom model for prompt-based stop hooks (for `type: "prompt"`) |
-
-### Hook Matcher Patterns
-
-| Pattern | Matches |
-|---------|---------|
-| `"Bash"` | Exact match only |
-| `"Edit\|Write"` | Multiple tools with regex OR |
-| `"mcp__.*"` | All MCP tools |
-| `"mcp__memory__.*"` | Specific MCP server tools |
-| `"*"` or `""` | All tools |
-
-### Hook Exit Codes
-
-| Exit Code | Behavior |
-|-----------|----------|
-| `0` | Success, continue |
-| `1` | Error (logged, continues) |
-| `2` | Block the operation |
-
-### Environment Variables in Hooks
-
-| Variable | Description |
-|----------|-------------|
-| `${CLAUDE_PROJECT_DIR}` | Project root directory |
-| `CLAUDE_TOOL_NAME` | Current tool name |
-| `CLAUDE_TOOL_INPUT` | Tool input (JSON) |
-| `CLAUDE_TOOL_OUTPUT` | Tool output (PostToolUse only) |
-
-**PreToolUse/PostToolUse Input Fields:**
-
-| Field | Description |
-|-------|-------------|
-| `tool_use_id` | Unique identifier for this specific tool invocation |
-
-**Stop/SubagentStop Input Fields:**
-
-The `Stop` and `SubagentStop` hooks receive additional fields in their JSON input:
-
-| Field | Description |
-|-------|-------------|
-| `last_assistant_message` | The final assistant response text (avoids parsing transcript files) |
-| `agent_id` | Agent identifier (SubagentStop only) |
-| `agent_transcript_path` | Path to agent's transcript file (SubagentStop only) |
-
-**Example:**
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/validate.py",
-            "timeout": 5000
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Session started!'",
-            "timeout": 1000,
-            "once": true
-          }
-        ]
-      }
-    ]
-  },
-  "disableAllHooks": false
-}
-```
+For the official hooks reference, see the [Claude Code Hooks Documentation](https://code.claude.com/docs/en/hooks).
 
 ---
 
@@ -392,6 +275,7 @@ Configure Model Context Protocol servers for extended capabilities.
 | `disabledMcpjsonServers` | array | Any | Blocklist specific server names |
 | `allowedMcpServers` | array | Managed only | Allowlist with name/command/URL matching |
 | `deniedMcpServers` | array | Managed only | Blocklist with matching |
+| `allowManagedMcpServersOnly` | boolean | Managed only | Only allow MCP servers explicitly listed in managed allowlist |
 
 ### MCP Server Matching (Managed Settings)
 
@@ -440,6 +324,11 @@ Configure bash command sandboxing for security.
 | `sandbox.network.deniedDomains` | array | `[]` | Network domain denylist for sandbox |
 | `sandbox.network.httpProxyPort` | number | - | HTTP proxy port 1-65535 (custom proxy) |
 | `sandbox.network.socksProxyPort` | number | - | SOCKS5 proxy port 1-65535 (custom proxy) |
+| `sandbox.network.allowManagedDomainsOnly` | boolean | `false` | Only allow domains in managed allowlist (managed settings) |
+| `sandbox.filesystem.allowWrite` | array | `[]` | Path prefixes where write is allowed. Prefix: `//` (absolute), `~/` (home), `/` (project root), `./` (cwd) |
+| `sandbox.filesystem.denyWrite` | array | `[]` | Path prefixes where write is denied |
+| `sandbox.filesystem.denyRead` | array | `[]` | Path prefixes where read is denied |
+| `sandbox.enableWeakerNetworkIsolation` | boolean | `false` | Weaker network isolation for environments with limited sandboxing |
 
 **Example:**
 ```json
@@ -473,6 +362,8 @@ Configure Claude Code plugins and marketplaces.
 | `skippedMarketplaces` | array | Any | Marketplaces user declined to install |
 | `skippedPlugins` | array | Any | Plugins user declined to install |
 | `pluginConfigs` | object | Any | Per-plugin MCP server configs (keyed by `plugin@marketplace`) |
+| `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces |
+| `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 
 **Example:**
 ```json
@@ -515,14 +406,14 @@ Configure Claude Code plugins and marketplaces.
 }
 ```
 
-### Effort Level (Opus 4.6)
+### Effort Level
 
-When Opus 4.6 is selected, the `/model` command exposes an **effort level** control that adjusts how much reasoning the model applies per response. Use the ← → arrow keys in the `/model` UI to cycle through effort levels.
+The `/model` command exposes an **effort level** control that adjusts how much reasoning the model applies per response. Use the ← → arrow keys in the `/model` UI to cycle through effort levels.
 
 | Effort Level | Description |
 |-------------|-------------|
-| High (default) | Full reasoning depth, best for complex tasks |
-| Medium | Balanced reasoning, good for everyday tasks |
+| High | Full reasoning depth, best for complex tasks |
+| Medium (default) | Balanced reasoning, good for everyday tasks |
 | Low | Minimal reasoning, fastest responses |
 
 **How to use:**
@@ -531,7 +422,7 @@ When Opus 4.6 is selected, the `/model` command exposes an **effort level** cont
 3. Use **← →** arrow keys to adjust the effort level
 4. The setting applies to the current session and future sessions
 
-**Note:** Effort level is only available for Opus 4.6. Other models (Sonnet, Haiku) do not expose this control.
+**Note:** Effort level is available for Opus 4.6 and Sonnet 4.6 on Max and Team plans. The default was changed from High to Medium in v2.1.68.
 
 ### Model Environment Variables
 
@@ -566,6 +457,8 @@ Configure via `env` key:
 | `terminalProgressBarEnabled` | boolean | `true` | Show progress bar in terminal |
 | `showTurnDuration` | boolean | `true` | Show turn duration messages |
 | `respectGitignore` | boolean | `true` | Respect .gitignore in file picker |
+| `prefersReducedMotion` | boolean | `false` | Reduce animations and motion effects in the UI |
+| `fileSuggestion` | object | - | Custom file suggestion command (see File Suggestion Configuration below) |
 
 ### Status Line Configuration
 
@@ -702,6 +595,18 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS` | Override default file read token limit |
 | `CLAUDE_CODE_ENABLE_TASKS` | Set to `false` to disable new task system |
 | `CLAUDE_CODE_EXIT_AFTER_STOP_DELAY` | Auto-exit SDK mode after idle duration (ms) |
+| `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` | Disable adaptive thinking (`1` to disable) |
+| `CLAUDE_CODE_DISABLE_1M_CONTEXT` | Disable 1M token context window (`1` to disable) |
+| `CLAUDE_CODE_ACCOUNT_UUID` | Override account UUID for authentication |
+| `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Disable git-related system prompt instructions |
+| `ENABLE_CLAUDEAI_MCP_SERVERS` | Enable Claude.ai MCP servers |
+| `CLAUDE_CODE_EFFORT_LEVEL` | Set effort level: `high`, `medium`, or `low` |
+| `CLAUDE_CODE_MAX_TURNS` | Maximum agentic turns before stopping |
+| `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | Disable non-essential network traffic |
+| `CLAUDE_CODE_SKIP_SETTINGS_SETUP` | Skip first-run settings setup flow |
+| `CLAUDE_CODE_PROMPT_CACHING_ENABLED` | Override prompt caching behavior |
+| `CLAUDE_CODE_DISABLE_TOOLS` | Comma-separated list of tools to disable |
+| `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) |
 
 ---
 
@@ -728,12 +633,14 @@ Set environment variables for all Claude Code sessions.
 
 ```json
 {
+  "$schema": "https://www.schemastore.org/claude-code-settings.json",
   "model": "sonnet",
   "agent": "code-reviewer",
   "language": "english",
   "cleanupPeriodDays": 30,
   "autoUpdatesChannel": "stable",
   "alwaysThinkingEnabled": true,
+  "includeGitInstructions": true,
   "plansDirectory": "./plans",
 
   "permissions": {
@@ -743,35 +650,26 @@ Set environment variables for all Claude Code sessions.
       "Bash(npm run *)",
       "Bash(git *)",
       "WebFetch(domain:*)",
-      "mcp__*"
+      "mcp__*",
+      "Agent(*)"
     ],
     "deny": [
       "Read(.env)",
       "Read(./secrets/**)"
     ],
-    "additionalDirectories": ["../shared/"]
+    "additionalDirectories": ["../shared/"],
+    "defaultMode": "acceptEdits"
   },
 
   "enableAllProjectMcpServers": true,
 
-  "hooks": {
-    "PreToolUse": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Tool starting'",
-            "timeout": 5000
-          }
-        ]
-      }
-    ]
-  },
-  "disableAllHooks": false,
-
   "sandbox": {
     "enabled": true,
-    "excludedCommands": ["git", "docker"]
+    "excludedCommands": ["git", "docker"],
+    "filesystem": {
+      "denyRead": ["./secrets/"],
+      "denyWrite": ["./.env"]
+    }
   },
 
   "attribution": {
@@ -790,9 +688,11 @@ Set environment variables for all Claude Code sessions.
     "excludeDefault": false
   },
   "showTurnDuration": false,
+  "prefersReducedMotion": false,
 
   "env": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "CLAUDE_CODE_EFFORT_LEVEL": "medium"
   }
 }
 ```
