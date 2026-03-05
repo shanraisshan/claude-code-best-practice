@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_05%2C_2026_1%3A06_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_05%2C_2026_4%3A28_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -150,6 +150,7 @@ claude
 |[**Skills / Plugins**](https://code.claude.com/docs/en/plugins)|YC AI wrapper startups ([reddit](https://reddit.com/r/ClaudeAI/comments/1r6bh4d/claude_code_skills_are_basically_yc_ai_startup/))|
 
 ![Billion-Dollar Questions](!/tags/billion-dollar-questions.svg)
+
 **Memory & Instructions (4)**
 
 1. What exactly should you put inside your CLAUDE.md — and what should you leave out?
