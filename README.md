@@ -129,12 +129,12 @@ claude
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
-- [Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25]() ● [Tweet](https://x.com/trq212/status/2005315275026260309)
-- [Boris setup - 5 tips | 03/Jan/26]() ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
-- [10 tips for using claude code by team itself | 01/Feb/26]() ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
+- [Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25](https://x.com/trq212/status/2005315275026260309) ● [Tweet](https://x.com/trq212/status/2005315275026260309)
+- [Boris setup - 5 tips | 03/Jan/26](https://x.com/bcherny/status/2007179832300581177) ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
+- [10 tips for using claude code by team itself | 01/Feb/26](https://x.com/bcherny/status/2017742741636321619) ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
 - [12 ways how people are customizing their claudes | 12/Feb/26](tips/claude-boris-tips-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
-- [Git Worktrees - 5 ways how boris is using | 21 Feb 2026]() ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
-- [Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026]() ● [Article](https://x.com/trq212/status/2027463795355095314)
+- [Git Worktrees - 5 ways how boris is using | 21 Feb 2026](https://x.com/bcherny/status/2025007393290272904) ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
+- [Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027463795355095314) ● [Article](https://x.com/trq212/status/2027463795355095314)
 
 ## ☠️ STARTUPS / BUSINESSES
 
