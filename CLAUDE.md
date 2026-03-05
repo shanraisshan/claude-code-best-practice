@@ -88,7 +88,7 @@ Set `"disableAllHooks": true` in `.claude/settings.local.json`, or disable indiv
 
 From experience with this repository:
 
-- Keep CLAUDE.md under 150 lines for reliable adherence
+- Keep CLAUDE.md under 200 lines per file for reliable adherence
 - Use commands for workflows instead of standalone agents
 - Create feature-specific subagents with skills (progressive disclosure) rather than general-purpose agents
 - Perform manual `/compact` at ~50% context usage
