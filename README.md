@@ -127,7 +127,7 @@ claude
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
 - provide screenshots of the issue
-- use a different model for QA — e.g. [Codex](https://chatgpt.com/codex) for plan and implementation review
+- use a different model for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
@@ -149,6 +149,7 @@ claude
 |[**Plan Mode**](https://code.claude.com/docs/en/common-workflows)|[Agent OS](https://github.com/buildermethods/agent-os)|
 |[**Skills / Plugins**](https://code.claude.com/docs/en/plugins)|YC AI wrapper startups ([reddit](https://reddit.com/r/ClaudeAI/comments/1r6bh4d/claude_code_skills_are_basically_yc_ai_startup/))|
 
+<a id="billion-dollar-questions"></a>
 ![Billion-Dollar Questions](!/tags/billion-dollar-questions.svg)
 
 **Memory & Instructions (4)**
