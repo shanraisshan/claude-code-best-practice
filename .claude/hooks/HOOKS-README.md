@@ -1,7 +1,7 @@
 # HOOKS-README
 contains all the details, scripts, and instructions for the hooks
 
-## Hook Events Overview - [Official 18 Hooks](https://code.claude.com/docs/en/hooks)
+## Hook Events Overview - [Official 19 Hooks](https://code.claude.com/docs/en/hooks)
 Claude Code provides several hook events that run at different points in the workflow:
 
 | # | Hook | Description | Options |
@@ -24,6 +24,7 @@ Claude Code provides several hook events that run at different points in the wor
 | 16 | `ConfigChange` | Runs when a configuration file changes during a session | `async`, `timeout: 5000`, `file_path`, `source` |
 | 17 | `WorktreeCreate` | Runs when agent worktree isolation creates worktrees for custom VCS setup | `async`, `timeout: 5000`, `name` |
 | 18 | `WorktreeRemove` | Runs when agent worktree isolation removes worktrees for custom VCS teardown | `async`, `timeout: 5000`, `worktree_path` |
+| 19 | `InstructionsLoaded` | Runs when CLAUDE.md or `.claude/rules/*.md` files are loaded into context | `async`, `timeout: 5000` |
 
 > **Note:** Hooks 14-15 (`TeammateIdle` and `TaskCompleted`) require the experimental agent teams feature. Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` when launching Claude Code to enable them.
 
@@ -34,6 +35,7 @@ The following items exist in the [Claude Code Changelog](https://github.com/anth
 | Item | Added In | Changelog Reference | Notes |
 |------|----------|-------------------|-------|
 | `Setup` hook | [v2.1.10](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2110) | "Added new Setup hook event that can be triggered via `--init`, `--init-only`, or `--maintenance` CLI flags for repository setup and maintenance operations" | Not listed in official hooks reference page (17 hooks listed, Setup excluded) |
+| `InstructionsLoaded` hook | [v2.1.69](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2169) | "Added `InstructionsLoaded` hook event that fires when CLAUDE.md or `.claude/rules/*.md` files are loaded into context" | Not listed in official hooks reference page. This hook is introduced in v2.1.69 and not v2.1.64 |
 | Agent frontmatter hooks | [v2.1.0](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210) | "Added hooks support to agent frontmatter, allowing agents to define PreToolUse, PostToolUse, and Stop hooks scoped to the agent's lifecycle" | Changelog only mentions 3 hooks, but testing confirms **6 hooks** actually fire in agent sessions: PreToolUse, PostToolUse, PermissionRequest, PostToolUseFailure, Stop, SubagentStop. Not all 16 hooks are supported. |
 
 ## Prerequisites
@@ -124,7 +126,8 @@ Edit `.claude/hooks/config/hooks-config.json` for team-wide defaults:
   "disableTaskCompletedHook": false,
   "disableConfigChangeHook": false,
   "disableWorktreeCreateHook": false,
-  "disableWorktreeRemoveHook": false
+  "disableWorktreeRemoveHook": false,
+  "disableInstructionsLoadedHook": false
 }
 ```
 
@@ -296,7 +299,7 @@ This project sets `statusMessage` to the hook event name on all hooks, so the sp
 
 ## Hook Types
 
-Claude Code supports three hook handler types. This project uses `command` hooks for all sound playback.
+Claude Code supports four hook handler types. This project uses `command` hooks for all sound playback.
 
 ### `type: "command"` (used by this project)
 
@@ -323,7 +326,7 @@ Sends a prompt to a Claude model for single-turn evaluation. The model returns a
 }
 ```
 
-**Supported events:** PreToolUse, PostToolUse, PostToolUseFailure, PermissionRequest, UserPromptSubmit, Stop, SubagentStop, TaskCompleted. **Command-only events (not supported for prompt/agent types):** ConfigChange, Notification, PreCompact, SessionEnd, SessionStart, SubagentStart, TeammateIdle, WorktreeCreate, WorktreeRemove.
+**Supported events:** PreToolUse, PostToolUse, PostToolUseFailure, PermissionRequest, UserPromptSubmit, Stop, SubagentStop, TaskCompleted. **Command-only events (not supported for prompt/agent types):** ConfigChange, InstructionsLoaded, Notification, PreCompact, SessionEnd, SessionStart, Setup, SubagentStart, TeammateIdle, WorktreeCreate, WorktreeRemove.
 
 ### `type: "agent"`
 
@@ -336,6 +339,24 @@ Spawns a subagent with multi-turn tool access (Read, Grep, Glob) to verify condi
   "timeout": 120
 }
 ```
+
+### `type: "http"` (since v2.1.63)
+
+POSTs JSON to a URL and receives a JSON response, instead of running a shell command. Useful for integrating with external services or webhooks. HTTP hooks are routed through the sandbox network proxy when sandboxing is enabled.
+
+```json
+{
+  "type": "http",
+  "url": "http://localhost:8080/hooks/pre-tool-use",
+  "timeout": 30,
+  "headers": {
+    "Authorization": "Bearer $MY_TOKEN"
+  },
+  "allowedEnvVars": ["MY_TOKEN"]
+}
+```
+
+**Not supported for:** SessionStart, Setup events. Headers support environment variable interpolation with `$VAR_NAME`, but only for variables explicitly listed in `allowedEnvVars`.
 
 ## Environment Variables
 
@@ -360,6 +381,8 @@ Every hook receives a JSON object on stdin containing these common fields, in ad
 | `transcript_path` | string | Path to the conversation transcript JSON file |
 | `cwd` | string | Current working directory |
 | `permission_mode` | string | Current permission mode: `default`, `plan`, `acceptEdits`, `dontAsk`, or `bypassPermissions` |
+| `agent_id` | string | Unique subagent identifier. Present when the hook fires inside a subagent context (since v2.1.69) |
+| `agent_type` | string | Agent type name (e.g. `Bash`, `Explore`, `Plan`, or custom). Present when using `--agent <name>` flag or inside a subagent (since v2.1.69) |
 
 > **Note:** Hook-specific fields (e.g., `tool_name` for PreToolUse, `last_assistant_message` for Stop) are listed in the Options column of the [Hook Events Overview](#hook-events-overview---official-18-hooks) table above.
 
@@ -410,6 +433,7 @@ Matchers filter which events trigger a hook. Not all hooks support matchers — 
 | `TaskCompleted` | — | No matcher support | Always fires |
 | `WorktreeCreate` | — | No matcher support | Always fires |
 | `WorktreeRemove` | — | No matcher support | Always fires |
+| `InstructionsLoaded` | — | No matcher support | Always fires |
 | `Setup` | — | No matcher support | Always fires |
 
 ## Known Issues & Workarounds
@@ -448,7 +472,7 @@ Different hooks use different output schemas for blocking or controlling executi
 | PreToolUse | `hookSpecificOutput.permissionDecision` | `allow`, `deny`, `ask` |
 | PreToolUse | `hookSpecificOutput.autoAllow` | `true` — auto-approve future uses of this tool (since v2.0.76) |
 | PermissionRequest | `hookSpecificOutput.decision.behavior` | `allow`, `deny` |
-| PostToolUse, Stop, SubagentStop, ConfigChange | Top-level `decision` | `block` |
+| PostToolUse, PostToolUseFailure, Stop, SubagentStop, ConfigChange | Top-level `decision` | `block` |
 | TeammateIdle, TaskCompleted | Exit code 2 only | No JSON decision control |
 | UserPromptSubmit | Can modify `prompt` field | Returns modified prompt via stdout |
 | WorktreeCreate | Non-zero exit + stdout path | Non-zero exit fails creation; stdout provides worktree path |

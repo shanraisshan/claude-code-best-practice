@@ -17,5 +17,6 @@
   "disableConfigChangeHook": false,
   "disableWorktreeCreateHook": false,
   "disableWorktreeRemoveHook": false,
+  "disableInstructionsLoadedHook": false,
   "disableLogging": true
 }
