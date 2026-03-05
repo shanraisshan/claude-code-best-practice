@@ -149,6 +149,26 @@ claude
 |[**Plan Mode**](https://code.claude.com/docs/en/common-workflows)|[Agent OS](https://github.com/buildermethods/agent-os)|
 |[**Skills / Plugins**](https://code.claude.com/docs/en/plugins)|YC AI wrapper startups ([reddit](https://reddit.com/r/ClaudeAI/comments/1r6bh4d/claude_code_skills_are_basically_yc_ai_startup/))|
 
+![Billion-Dollar Questions](!/tags/billion-dollar-questions.svg)
+**Memory & Instructions (4)**
+
+1. What exactly should you put inside your CLAUDE.md — and what should you leave out?
+2. If you already have a CLAUDE.md, is a separate constitution.md or rules.md actually needed?
+3. How often should you update your CLAUDE.md, and how do you know when it's become stale?
+4. Why does Claude still ignore CLAUDE.md instructions — even when they say MUST in all caps? ([reddit](https://reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/))
+
+**Agents, Skills & Workflows (3)**
+
+1. When should you use a command vs an agent vs a skill — and when is vanilla Claude Code just better?
+2. How often should you update your agents, commands, and workflows as models improve?
+3. Does giving your subagent a detailed persona improve quality? What does a "perfect persona/prompt" for research/QA subagent look like?
+
+**Specs & Documentation (3)**
+
+1. Should every feature in your repo have a spec as a markdown file?
+2. How often do you need to update specs so they don't become obsolete when a new feature is implemented?
+3. When implementing a new feature, how do you handle the ripple effect on specs for other features?
+
 ## REPORTS
 
 | Report | Description |

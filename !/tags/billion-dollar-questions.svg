@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="44" role="img" aria-label="Billion-Dollar Questions">
+  <title>Billion-Dollar Questions</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b8860b"/>
+      <stop offset="30%" stop-color="#daa520"/>
+      <stop offset="50%" stop-color="#ffd700"/>
+      <stop offset="70%" stop-color="#daa520"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity=".45"/>
+      <stop offset="0.65" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="depth" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".2"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="r">
+      <rect width="360" height="44" rx="6" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <style>
+    @keyframes shimmer {
+      0% { transform: translateX(-360px); }
+      100% { transform: translateX(360px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: .6; }
+      50% { opacity: 1; }
+    }
+    .sweep { animation: shimmer 3s ease-in-out infinite; }
+    .diamond { animation: pulse 2s ease-in-out infinite; }
+  </style>
+  <g clip-path="url(#r)">
+    <!-- base gold gradient -->
+    <rect width="360" height="44" fill="url(#bg)"/>
+    <!-- depth overlay -->
+    <rect width="360" height="44" fill="url(#depth)"/>
+    <!-- top highlight line -->
+    <rect width="360" height="1" fill="#fff" fill-opacity=".25"/>
+    <!-- bottom shadow line -->
+    <rect y="43" width="360" height="1" fill="#000" fill-opacity=".3"/>
+    <!-- animated shine sweep -->
+    <rect class="sweep" width="360" height="44" fill="url(#shine)"/>
+  </g>
+  <!-- diamond accents -->
+  <text class="diamond" x="16" y="29" font-size="16" fill="#fff" fill-opacity=".9" filter="url(#glow)">&#9670;</text>
+  <text class="diamond" x="336" y="29" font-size="16" fill="#fff" fill-opacity=".9" filter="url(#glow)">&#9670;</text>
+  <!-- main text with shadow -->
+  <g font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" text-anchor="middle">
+    <text x="181" y="29" font-size="19" font-weight="bold" fill="#000" fill-opacity=".3">Billion-Dollar Questions</text>
+    <text x="180" y="28" font-size="19" font-weight="bold" fill="#fff" filter="url(#glow)">Billion-Dollar Questions</text>
+  </g>
+</svg>
