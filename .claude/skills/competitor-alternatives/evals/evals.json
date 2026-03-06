@@ -1,0 +1,93 @@
+{
+  "skill_name": "competitor-alternatives",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a 'Best Asana Alternatives' page for our project management tool. We compete mainly on price (we're $8/user vs their $24/user) and simplicity (they've become bloated). Target audience is small teams (5-20 people).",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify this as the plural alternatives format ([Competitor] Alternatives). Should include the essential sections: TL;DR comparison, brief paragraphs on each alternative (including the user's product positioned first or prominently), feature comparison table, pricing comparison, who each alternative is best for. Should use the modular content architecture approach. Should address SEO considerations for the target keyword 'Asana alternatives.' Should position the user's product with the stated differentiators (price, simplicity).",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Identifies as plural alternatives format",
+        "Includes TL;DR comparison section",
+        "Includes feature comparison table",
+        "Includes pricing comparison",
+        "Includes 'who it's best for' per alternative",
+        "Positions user's product prominently with differentiators",
+        "Addresses SEO for target keyword"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write a 'HubSpot vs Salesforce' comparison page. We're HubSpot and want to show why we're the better choice for SMBs.",
+      "expected_output": "Should identify this as the 'you vs competitor' format. Should include structured comparison sections: overview of both, feature-by-feature comparison, pricing comparison, pros/cons of each, who each is best for, and migration path. Should be factually accurate about the competitor while strategically positioning the user's product. Should include a TL;DR at the top. Should address the SMB angle throughout. Should use the centralized competitor data architecture pattern.",
+      "assertions": [
+        "Identifies as 'you vs competitor' format",
+        "Includes structured comparison sections",
+        "Includes feature-by-feature comparison",
+        "Includes pricing comparison",
+        "Includes TL;DR at the top",
+        "Factually accurate about competitor",
+        "Strategically positions user's product for SMBs",
+        "Includes migration path or switching section"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we need a page targeting 'mailchimp alternative' (singular). we're an email marketing platform focused on e-commerce brands.",
+      "expected_output": "Should trigger on casual phrasing. Should identify this as the singular alternative format ([Competitor] Alternative — positioning your product as THE alternative). Should focus the entire page on why the user's product is the best Mailchimp alternative for e-commerce. Should include: why people switch from Mailchimp, what the user's product does better (e-commerce specific features), feature comparison, pricing comparison, migration guide, customer testimonials. Should optimize for the singular keyword 'Mailchimp alternative.'",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Identifies as singular alternative format",
+        "Focuses on user's product as THE alternative",
+        "Includes why people switch from Mailchimp",
+        "Highlights e-commerce-specific advantages",
+        "Includes feature and pricing comparison",
+        "Includes migration guide",
+        "Optimizes for singular keyword"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Can you create a comparison page for 'Notion vs Coda'? We're a third-party review site, not affiliated with either product.",
+      "expected_output": "Should identify this as the 'competitor vs competitor' format (third-party perspective). Should maintain objectivity since the user isn't either product. Should include balanced comparison: overview of both, feature comparison, pricing, pros/cons, use case recommendations. Should use the essential page sections from the skill. Should suggest how to monetize the page (affiliate links, CTA to the user's own product if relevant). Should address SEO for the 'Notion vs Coda' keyword.",
+      "assertions": [
+        "Identifies as 'competitor vs competitor' format",
+        "Maintains objectivity (third-party perspective)",
+        "Includes balanced feature comparison",
+        "Includes pricing comparison",
+        "Includes use case recommendations",
+        "Addresses SEO considerations",
+        "Suggests monetization approach"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "We want to build a whole competitor comparison hub. We have 5 main competitors and want to create alternative pages for each, plus head-to-head comparisons. How should we structure this?",
+      "expected_output": "Should apply the centralized competitor data architecture. Should recommend a hub structure with: individual alternative pages for each competitor (5 singular pages), a 'best alternatives' roundup page, head-to-head comparison pages for key matchups. Should address internal linking strategy between these pages. Should recommend the research process for gathering competitive data. Should address URL structure and site architecture for the hub.",
+      "assertions": [
+        "Applies centralized competitor data architecture",
+        "Recommends hub structure with multiple page types",
+        "Suggests individual and roundup alternative pages",
+        "Addresses internal linking between comparison pages",
+        "Recommends research process for competitive data",
+        "Addresses URL structure"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I need to create a battle card for our sales team comparing us to Zendesk. It should help reps handle competitive objections during sales calls.",
+      "expected_output": "Should recognize this as internal sales enablement material, not a public comparison page. Should defer to or cross-reference the sales-enablement skill, which handles battle cards, objection handling docs, and internal competitive collateral. May provide some competitive positioning advice but should make clear that sales-enablement is the right skill for internal sales materials.",
+      "assertions": [
+        "Recognizes this as internal sales enablement material",
+        "References or defers to sales-enablement skill",
+        "Does not attempt to create internal battle card using public comparison page patterns"
+      ],
+      "files": []
+    }
+  ]
+}

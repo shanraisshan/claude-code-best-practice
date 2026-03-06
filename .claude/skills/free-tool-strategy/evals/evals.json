@@ -1,0 +1,90 @@
+{
+  "skill_name": "free-tool-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We want to build a free tool to drive leads for our SEO software. We're thinking about an SEO audit tool or a keyword research tool. Which would be better and how should we approach it?",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the evaluation scorecard to compare both tool ideas across dimensions (audience alignment, lead quality, build effort, SEO value, maintenance burden, competitive differentiation). Should reference the tool types from the skill (analyzers, testers). Should recommend the stronger option with rationale. Should discuss lead capture gating strategy (what's free vs what requires email). Should address MVP scope — what's the minimum valuable version. Should provide implementation recommendations.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Applies evaluation scorecard to compare options",
+        "References tool types from the skill",
+        "Recommends one option with clear rationale",
+        "Discusses lead capture gating strategy",
+        "Addresses MVP scope",
+        "Provides implementation recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I want to build a free ROI calculator for our HR software. Users input their company size and current processes, and it shows how much time and money they'd save.",
+      "expected_output": "Should identify this as a calculator tool type. Should apply the ideation framework to validate the concept. Should discuss lead capture strategy: should the basic result be free and detailed report gated? Should address the build vs buy decision. Should recommend MVP scope (what inputs, what outputs, what formula). Should discuss SEO considerations for the tool page. Should reference the evaluation scorecard to score the idea.",
+      "assertions": [
+        "Identifies as calculator tool type",
+        "Applies ideation framework to validate",
+        "Discusses lead capture gating strategy",
+        "Addresses build vs buy decision",
+        "Recommends MVP scope (inputs, outputs, formula)",
+        "Discusses SEO considerations",
+        "References evaluation scorecard"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "give me some ideas for free tools we could build. we sell email marketing software for e-commerce brands.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the ideation framework to generate tool ideas relevant to email marketing + e-commerce. Should provide 5-8 ideas across different tool types (calculators, generators, analyzers, testers). Examples: email subject line tester, email deliverability checker, email ROI calculator, email template generator, spam score checker. Should briefly score each against the evaluation dimensions. Should recommend top 2-3 to pursue.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies ideation framework",
+        "Generates ideas across multiple tool types",
+        "Ideas are relevant to email marketing + e-commerce",
+        "Provides 5-8 ideas",
+        "Briefly evaluates each idea",
+        "Recommends top 2-3 to pursue"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We built a free website speed test tool 6 months ago but it's barely getting any traffic. What went wrong and how do we fix it?",
+      "expected_output": "Should diagnose why the tool isn't getting traffic. Should investigate: SEO strategy for the tool page (target keywords, on-page optimization), distribution strategy (was it launched and forgotten?), competitive landscape (are there dominant free tools already?), tool quality and UX (does it provide unique value?). Should apply the engineering as marketing principles. Should recommend a recovery plan: SEO improvements, content marketing around the tool, product improvements for differentiation.",
+      "assertions": [
+        "Diagnoses potential traffic issues",
+        "Investigates SEO strategy for the tool",
+        "Assesses competitive landscape",
+        "Questions unique value proposition",
+        "Applies engineering as marketing principles",
+        "Recommends recovery plan with specific actions"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Should we gate our free tool behind an email capture or make it completely free? We want leads but don't want to kill usage.",
+      "expected_output": "Should apply the lead capture gating strategy framework. Should present the spectrum: fully ungated → partial gating (basic results free, detailed report gated) → fully gated. Should recommend partial gating as the typical best approach — give enough value to demonstrate the tool's worth, gate the detailed/actionable output. Should discuss tradeoffs: ungated = more SEO value and usage, gated = more leads but fewer users. Should provide specific gating recommendations based on tool type.",
+      "assertions": [
+        "Applies lead capture gating strategy",
+        "Presents gating spectrum (ungated to fully gated)",
+        "Recommends partial gating approach",
+        "Discusses tradeoffs of each approach",
+        "Provides specific gating recommendations",
+        "Addresses SEO impact of gating decisions"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "How do I optimize the landing page for our free tool to get more signups? The tool itself is great but nobody finds it.",
+      "expected_output": "Should recognize this is a landing page conversion optimization task, not a free tool strategy task. Should defer to or cross-reference the page-cro skill for optimizing the tool's landing page conversion rate. May provide free-tool-specific context (gating strategy, value demonstration) but should make clear that page-cro is the right skill for page conversion optimization.",
+      "assertions": [
+        "Recognizes this as page CRO, not free tool strategy",
+        "References or defers to page-cro skill",
+        "May provide free-tool-specific context",
+        "Does not attempt full page CRO using free tool strategy patterns"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "skill_name": "ab-test-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to A/B test our homepage headline. We currently say 'The All-in-One Project Management Tool' and want to test something benefit-focused. We get about 15,000 visitors/month and our current signup rate is 3.2%.",
+      "expected_output": "Should check for product-marketing-context.md first. Should build a proper hypothesis using the framework: 'Because [observation], we believe [change] will cause [outcome], which we'll measure by [metric].' Should identify this as an A/B test (two variants). Should calculate or reference sample size needs based on 15,000 monthly visitors and 3.2% baseline. Should define primary metric (signup rate), secondary metrics, and guardrail metrics. Should warn about the peeking problem and recommend a fixed test duration. Should provide the test plan in the structured output format.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Uses the hypothesis framework with observation, belief, outcome, and metric",
+        "Identifies as A/B test type",
+        "Addresses sample size calculation based on traffic and baseline rate",
+        "Defines primary metric (signup rate)",
+        "Defines secondary and guardrail metrics",
+        "Warns about the peeking problem",
+        "Provides structured test plan output"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we want to test like 4 different CTA button colors on our pricing page. is that a good idea?",
+      "expected_output": "Should trigger on casual phrasing. Should identify this as an A/B/n test (multiple variants). Should caution that testing 4 variants requires significantly more traffic than a simple A/B test. Should reference the sample size quick reference showing traffic multipliers for multiple variants. Should question whether button color alone is likely to produce meaningful lift vs testing CTA copy, placement, or surrounding context. Should recommend either reducing to 2 variants or ensuring sufficient traffic. Should still provide hypothesis framework and test setup if proceeding.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Identifies as A/B/n test (multiple variants)",
+        "Cautions about increased traffic needs for 4 variants",
+        "References sample size requirements",
+        "Questions whether button color alone is high-impact",
+        "Suggests alternative higher-impact elements to test",
+        "Provides hypothesis framework"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our test has been running for 3 days and Variant B is winning with 95% confidence. Should we call it?",
+      "expected_output": "Should immediately address the peeking problem. Should explain that checking results early inflates false positive rates. Should recommend running for the full pre-calculated duration regardless of early results. Should explain why early significance can be misleading (regression to the mean, day-of-week effects, audience mix shifts). Should provide guidance on when it IS appropriate to stop early (sequential testing methods). Should recommend the pre-test commitment to duration.",
+      "assertions": [
+        "Addresses the peeking problem directly",
+        "Explains why early significance is misleading",
+        "Recommends running for full pre-calculated duration",
+        "Mentions day-of-week effects or audience mix shifts",
+        "Explains false positive rate inflation from peeking",
+        "Mentions sequential testing as alternative approach"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Help me set up a multivariate test on our landing page. I want to test the headline, hero image, and CTA button simultaneously.",
+      "expected_output": "Should identify this as a Multivariate Test (MVT). Should explain that MVT tests combinations of elements and requires much more traffic than A/B tests. Should calculate or reference traffic needs (combinations multiply: e.g., 2 headlines × 2 images × 2 CTAs = 8 combinations). Should recommend MVT only if traffic supports it, otherwise suggest sequential A/B tests. Should build hypotheses for each element being tested. Should define interaction effects to watch for. Should provide structured test plan.",
+      "assertions": [
+        "Identifies as multivariate test (MVT)",
+        "Explains MVT tests combinations of elements",
+        "Addresses dramatically higher traffic requirements",
+        "Calculates number of combinations",
+        "Suggests sequential A/B tests as alternative if traffic insufficient",
+        "Builds hypotheses for each element",
+        "Provides structured test plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "What metrics should I track for an A/B test on our trial signup page? We're testing a longer form (adds company size and role fields) against the current short form.",
+      "expected_output": "Should apply the metrics selection framework with three tiers: primary, secondary, and guardrail metrics. Primary: form completion rate (the direct conversion metric). Secondary: lead quality metrics (SQL conversion rate, activation rate post-signup). Guardrail: overall signup volume (ensure longer form doesn't tank total signups below acceptable threshold). Should explain the tradeoff between conversion quantity and lead quality. Should note that this test needs longer observation window to measure downstream metrics.",
+      "assertions": [
+        "Applies three-tier metric framework (primary, secondary, guardrail)",
+        "Identifies form completion rate as primary metric",
+        "Identifies lead quality as secondary metric",
+        "Defines guardrail metrics to protect against negative outcomes",
+        "Explains quantity vs quality tradeoff",
+        "Notes need for longer observation window for downstream metrics"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you help me write copy for our new landing page? We want to test it against the current version.",
+      "expected_output": "Should recognize this is primarily a copywriting task, not a test setup task. Should defer to or cross-reference the copywriting skill for writing the actual copy. May help frame the test hypothesis and setup, but should make clear that copywriting is the right skill for creating the page copy itself.",
+      "assertions": [
+        "Recognizes this as primarily a copywriting task",
+        "References or defers to copywriting skill",
+        "Does not attempt to write full page copy using test setup patterns",
+        "May offer to help with test hypothesis and setup"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "We ran an A/B test on our pricing page for 4 weeks. Control: 2.1% conversion. Variant: 2.4% conversion. 12,000 visitors per variant. Is this statistically significant? Should we ship it?",
+      "expected_output": "Should evaluate the results against statistical significance criteria. Should calculate or estimate whether the sample size is sufficient to detect a 0.3 percentage point lift from a 2.1% baseline (this is a ~14% relative lift). Should reference the 95% confidence threshold. Should discuss practical significance vs statistical significance. Should recommend whether to ship, continue testing, or iterate. Should consider segment analysis if results are borderline.",
+      "assertions": [
+        "Evaluates against statistical significance criteria",
+        "Addresses whether sample size is sufficient for this effect size",
+        "References 95% confidence threshold",
+        "Distinguishes statistical significance from practical significance",
+        "Provides clear recommendation on shipping",
+        "Suggests segment analysis or follow-up if borderline"
+      ],
+      "files": []
+    }
+  ]
+}

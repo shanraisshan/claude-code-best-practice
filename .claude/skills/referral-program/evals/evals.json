@@ -1,0 +1,89 @@
+{
+  "skill_name": "referral-program",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me design a referral program for our SaaS product. We're a $49/month project management tool with about 1,000 customers. We want to encourage word-of-mouth growth.",
+      "expected_output": "Should check for product-marketing-context.md first. Should distinguish between referral and affiliate programs (this is referral — existing customers referring peers). Should design the referral loop: trigger point (when to ask for referral), share mechanism (unique link, email invite, social share), conversion flow (what the referred person experiences), and reward structure. Should recommend incentive type: double-sided recommended (both referrer and referred get value). Should suggest specific incentives appropriate for $49/month SaaS (e.g., free month for both). Should include the launch checklist. Should recommend tool integrations (Rewardful, Tolt, etc.).",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Distinguishes referral from affiliate",
+        "Designs the referral loop (trigger, share, convert, reward)",
+        "Recommends double-sided incentive structure",
+        "Suggests specific incentives for the price point",
+        "Includes launch checklist",
+        "Recommends tool integrations"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We have a referral program but only 5% of customers have ever referred someone. How do we increase participation?",
+      "expected_output": "Should apply the program optimization guidance. Should diagnose low participation: are customers aware of the program? Is the trigger point well-timed? Is the incentive compelling enough? Is sharing easy? Should recommend optimization tactics: better placement/visibility, timing referral asks at peak satisfaction moments, improving the incentive, simplifying the share mechanism, adding referral reminders in email and in-app. Should provide specific experiment ideas to test improvements.",
+      "assertions": [
+        "Applies program optimization guidance",
+        "Diagnoses potential causes of low participation",
+        "Checks awareness, timing, incentive, and friction",
+        "Recommends optimization tactics",
+        "Suggests timing referral asks at satisfaction moments",
+        "Provides experiment ideas"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "should we do referral or affiliate? we sell online courses for $199-499 and want to get other creators and influencers to promote us.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the referral vs affiliate distinction clearly. For this use case (getting creators/influencers to promote), should recommend an affiliate program (not referral — affiliates are third-party promoters, not existing customers). Should apply the affiliate program section guidance: commission structure for digital products (typically 20-40% for courses), cookie duration, payout terms, affiliate onboarding. Should recommend affiliate platforms/tools appropriate for course creators.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Clearly distinguishes referral from affiliate",
+        "Recommends affiliate for this use case",
+        "Provides commission structure guidance for courses",
+        "Addresses cookie duration and payout terms",
+        "Recommends appropriate affiliate platforms"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "What incentive structure works best? We've been offering $10 off for referrers but it's not working. Our product is $29/month.",
+      "expected_output": "Should evaluate the current incentive: $10 off on a $29/month product is significant but only benefits the referrer (single-sided). Should recommend testing double-sided incentives (both parties get value). Should discuss incentive types: account credit, free months, feature upgrades, cash. Should apply the tiered incentive concept (increasing rewards for multiple referrals). Should provide specific alternative incentive structures to test. Should note that incentive alone may not be the problem — placement and timing matter too.",
+      "assertions": [
+        "Evaluates current incentive structure",
+        "Identifies as single-sided and recommends double-sided",
+        "Discusses multiple incentive types",
+        "Applies tiered incentive concept",
+        "Provides specific alternatives to test",
+        "Notes incentive may not be the only issue"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "How do we measure the success of our referral program? What metrics should we track?",
+      "expected_output": "Should apply the measuring success framework. Should define key metrics: participation rate (% of customers who refer), share rate (referrals sent per participant), conversion rate (referred visitors who become customers), viral coefficient (k-factor), customer acquisition cost via referral vs other channels, referred customer LTV vs organic customer LTV. Should recommend tracking tools and dashboards. Should provide benchmark ranges for each metric.",
+      "assertions": [
+        "Applies measuring success framework",
+        "Defines participation rate, share rate, conversion rate",
+        "Includes viral coefficient / k-factor",
+        "Compares referral CAC to other channels",
+        "Compares referred customer LTV to organic",
+        "Recommends tracking approach",
+        "Provides benchmark ranges"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you write the referral invitation emails? I need the email that goes out when someone shares their referral link.",
+      "expected_output": "Should recognize this overlaps with email writing. Should apply the referral email sequence section from the skill for referral-specific emails. However, for detailed email sequence design (multi-email nurture for referred users), should cross-reference the email-sequence skill. Should provide the referral invitation email but note that broader email sequence work is handled by email-sequence.",
+      "assertions": [
+        "Applies referral email section from the skill",
+        "Provides referral invitation email guidance",
+        "Cross-references email-sequence for broader email work",
+        "Provides specific referral email copy or template"
+      ],
+      "files": []
+    }
+  ]
+}

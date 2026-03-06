@@ -1,0 +1,90 @@
+{
+  "skill_name": "ad-creative",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Generate ad creative for our Meta (Facebook/Instagram) campaign. We sell an AI writing assistant for content marketers. Main value prop: write blog posts 5x faster. Target audience: content marketing managers at B2B SaaS companies. Budget: $5k/month.",
+      "expected_output": "Should check for product-marketing-context.md first. Should generate creative following the angle-based approach: identify 3-5 angles (speed, quality, ROI, pain of blank page, competitive edge). For each angle, should generate primary text (≤125 chars), headline (≤40 chars), and description (≤30 chars) respecting Meta character limits. Should provide multiple variations per angle. Should suggest image/visual direction for each. Should organize output with angle name, hook, body, CTA for each variation. Should recommend which angles to test first.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Uses angle-based generation approach",
+        "Identifies multiple angles (3-5)",
+        "Respects Meta character limits (125/40/30)",
+        "Generates multiple variations per angle",
+        "Suggests image or visual direction",
+        "Includes hook, body, and CTA for each",
+        "Recommends which angles to test first"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need Google Ads copy for our CRM product. We're targeting the keyword 'best CRM for small business'. Need responsive search ads.",
+      "expected_output": "Should generate Google RSA creative respecting character limits: headlines (≤30 chars each, need 10-15 variations) and descriptions (≤90 chars each, need 4+ variations). Should note that pinning should be used sparingly as it reduces optimization. Should include the target keyword in headlines. Should provide multiple angle-based variations. Should suggest ad extensions (sitelinks, callouts, structured snippets). Should follow Google Ads best practices for RSA.",
+      "assertions": [
+        "Respects Google RSA character limits (30 char headlines, 90 char descriptions)",
+        "Generates 10-15 headline variations",
+        "Generates 4+ description variations",
+        "Includes target keyword in headlines",
+        "Notes pinning should be used sparingly per skill guidance",
+        "Suggests ad extensions",
+        "Uses angle-based variation approach"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Here's our ad performance data: Ad A (pain point angle) - CTR 2.1%, CPC $3.20, Conv rate 4.5%. Ad B (social proof angle) - CTR 1.4%, CPC $4.10, Conv rate 6.2%. Ad C (feature angle) - CTR 0.8%, CPC $5.50, Conv rate 2.1%. Help me iterate on these.",
+      "expected_output": "Should activate the iteration-from-performance mode (not generate-from-scratch). Should analyze the data: Ad A has best CTR, Ad B has best conversion rate (highest efficiency despite lower CTR), Ad C is underperforming on all metrics. Should recommend doubling down on the pain point angle (high CTR) and social proof angle (high conversion), while pausing or reworking the feature angle. Should generate new variations that combine winning elements (pain point hook + social proof). Should suggest specific iterations on Ad A and Ad B.",
+      "assertions": [
+        "Activates iteration mode based on performance data",
+        "Analyzes CTR, CPC, and conversion rate for each ad",
+        "Identifies winning angles from the data",
+        "Recommends pausing or reworking underperforming creative",
+        "Generates new variations combining winning elements",
+        "Provides specific iterations on top performers"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "we need linkedin ads for our enterprise security product. audience is CISOs and IT directors.",
+      "expected_output": "Should trigger on casual phrasing. Should generate LinkedIn ad creative respecting character limits: introductory text (≤150 chars), headline (≤70 chars), description (≤100 chars). Should adapt tone and messaging for enterprise security audience (CISOs, IT directors) — more formal, compliance-focused, risk-reduction language. Should provide multiple angles relevant to security buyers (risk reduction, compliance, incident response time, cost of breaches). Should suggest ad format recommendations for LinkedIn (sponsored content, message ads, etc.).",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Respects LinkedIn character limits (150/70/100)",
+        "Adapts tone for enterprise security audience",
+        "Uses risk-reduction and compliance language",
+        "Provides multiple angles relevant to security buyers",
+        "Suggests LinkedIn ad format recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I need to generate a big batch of ad variations for a multi-platform campaign launching next week. We're a meal delivery service targeting busy professionals. Need ads for Google, Meta, and TikTok.",
+      "expected_output": "Should activate the batch generation workflow. Should generate creative for all three platforms respecting each platform's character limits: Google RSA (30/90), Meta (125/40/30), TikTok (80 chars recommended, 100 max). Should identify 3-5 angles that work across platforms (convenience, health, time savings, variety, cost vs eating out). Should generate variations per angle per platform. Should note platform-specific creative considerations (TikTok needs video concepts, not just text). Should organize output clearly by platform.",
+      "assertions": [
+        "Activates batch generation workflow",
+        "Generates for all three platforms",
+        "Respects each platform's character limits",
+        "Identifies angles that work across platforms",
+        "Notes TikTok needs video concepts",
+        "Organizes output by platform",
+        "Generates multiple variations per angle per platform"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Help me plan our overall paid advertising strategy. We have a $20k monthly budget and want to figure out which platforms to use and how to allocate spend.",
+      "expected_output": "Should recognize this is a paid advertising strategy task, not ad creative generation. Should defer to or cross-reference the paid-ads skill, which handles campaign strategy, platform selection, and budget allocation. May briefly mention creative considerations but should make clear that paid-ads is the right skill for strategy.",
+      "assertions": [
+        "Recognizes this as paid ads strategy, not creative generation",
+        "References or defers to paid-ads skill",
+        "Does not attempt full campaign strategy using creative generation patterns"
+      ],
+      "files": []
+    }
+  ]
+}

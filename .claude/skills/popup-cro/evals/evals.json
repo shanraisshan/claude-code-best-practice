@@ -1,0 +1,94 @@
+{
+  "skill_name": "popup-cro",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me create an exit-intent popup for our SaaS landing page. We want to capture emails from visitors who are about to leave without signing up. Our product is a social media scheduling tool.",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify the popup type as exit-intent email capture. Should apply the exit-intent popup design guidance: compelling headline (address why they're leaving or offer additional value), lead magnet or incentive (discount, free resource, extended trial), minimal form fields (email only), clear CTA, and easy close option. Should apply copy formulas from the skill. Should address trigger configuration (exit intent detection). Should recommend frequency rules (don't show again if dismissed). Should include benchmarks (exit intent popups typically 3-10% conversion).",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Identifies as exit-intent popup type",
+        "Includes compelling headline",
+        "Includes lead magnet or incentive",
+        "Minimal form fields (email only)",
+        "Applies copy formulas from the skill",
+        "Addresses trigger configuration",
+        "Recommends frequency rules",
+        "Includes conversion benchmarks"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We want to offer a 10% discount to first-time visitors via a popup. When should we show it and what should it say?",
+      "expected_output": "Should identify this as a discount/offer popup type. Should apply trigger strategy guidance: recommend against showing immediately on page load (too aggressive). Should suggest time-based delay (30-60 seconds), scroll-based trigger (50%+ page scroll), or exit intent as better alternatives. Should apply the copy formula for discount popups: headline that frames the value, clear offer terms, urgency element, email capture, and CTA. Should address compliance (GDPR cookie consent if applicable). Should recommend frequency capping.",
+      "assertions": [
+        "Identifies as discount popup type",
+        "Recommends against immediate page load trigger",
+        "Suggests better trigger alternatives (time, scroll, exit)",
+        "Applies copy formula for discount popups",
+        "Includes urgency element",
+        "Addresses frequency capping",
+        "Addresses compliance considerations"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our popups are annoying everyone. we keep getting complaints but we also get a lot of email signups from them. how do we balance this?",
+      "expected_output": "Should trigger on casual phrasing. Should apply the frequency and rules guidance. Should address the balance: reduce annoyance while preserving conversions. Should recommend: frequency capping (once per session or once per X days), don't show to returning visitors who already dismissed, don't show to existing subscribers, respect 'close' action, consider less intrusive formats (slide-in instead of full modal, announcement bar instead of overlay). Should address compliance and accessibility requirements. Should suggest A/B testing different triggers and formats to find the best balance.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies frequency and rules guidance",
+        "Addresses balance between conversions and UX",
+        "Recommends frequency capping",
+        "Suggests excluding existing subscribers",
+        "Recommends less intrusive alternatives",
+        "Suggests A/B testing to optimize"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "What types of popups should we use on our blog? We publish content about email marketing and want to grow our email list.",
+      "expected_output": "Should recommend blog-appropriate popup types: scroll-triggered popup (show after 50-70% scroll indicating engagement), exit-intent popup, slide-in (less intrusive than modal), and inline content upgrades. Should recommend lead magnets relevant to the blog topic (email marketing templates, checklist, swipe file). Should address different popup placements: mid-content, end of post, sidebar slide-in. Should recommend behavior-based triggers over time-based for blog content. Should apply copy formulas with blog-specific hooks.",
+      "assertions": [
+        "Recommends blog-appropriate popup types",
+        "Includes scroll-triggered and exit-intent",
+        "Suggests less intrusive formats (slide-in)",
+        "Recommends relevant lead magnets",
+        "Addresses popup placement on blog pages",
+        "Recommends behavior-based triggers for blog",
+        "Applies copy formulas"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Design an announcement banner for our new feature launch. We want it to show at the top of the site for 2 weeks.",
+      "expected_output": "Should identify this as an announcement banner popup type. Should apply banner design guidance: short, clear headline announcing the feature, brief description of benefit, CTA to learn more or try it, dismiss option. Should recommend banner positioning (top of page, sticky or static). Should address duration (2 weeks as stated). Should recommend targeting (show to existing users who'd benefit, not just everyone). Should provide copy recommendations.",
+      "assertions": [
+        "Identifies as announcement banner type",
+        "Provides short, clear headline",
+        "Includes brief benefit description and CTA",
+        "Includes dismiss option",
+        "Addresses banner positioning",
+        "Recommends audience targeting",
+        "Provides copy recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "We need to optimize the lead capture form inside our popup. It currently asks for name, email, company, and phone number. Too many fields?",
+      "expected_output": "Should recognize this overlaps with form optimization. Should defer to or cross-reference the form-cro skill, which handles form field optimization, layout, and conversion. May provide popup-specific context (popups need minimal fields due to fleeting attention) but should make clear that form-cro is the right skill for detailed form optimization.",
+      "assertions": [
+        "Recognizes overlap with form optimization",
+        "References or defers to form-cro skill",
+        "Notes popups need minimal fields due to context",
+        "Does not attempt detailed form redesign"
+      ],
+      "files": []
+    }
+  ]
+}

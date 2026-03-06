@@ -1,0 +1,91 @@
+{
+  "skill_name": "revops",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me set up our lead lifecycle stages. We're a B2B SaaS company selling to mid-market. We use HubSpot as our CRM and have marketing and sales teams that aren't aligned on lead definitions.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the lead lifecycle framework: Subscriber → Lead → MQL → SQL → Opportunity → Customer → Evangelist. Should define clear criteria for each stage transition (what makes a Lead become an MQL, etc.). Should address the alignment issue between marketing and sales — define shared definitions and SLAs. Should recommend CRM implementation steps for HubSpot. Should include lead scoring setup. Should provide a handoff process between marketing and sales.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Applies lead lifecycle framework with all stages",
+        "Defines criteria for each stage transition",
+        "Addresses marketing-sales alignment",
+        "Provides CRM implementation guidance for HubSpot",
+        "Includes lead scoring setup",
+        "Provides handoff process between teams"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set up lead scoring for us. We want to prioritize which leads sales should call first. We sell enterprise software ($50k+ ACV).",
+      "expected_output": "Should apply the lead scoring framework with three dimensions: explicit scoring (firmographics — company size, industry, title match), implicit scoring (behavioral — page visits, content downloads, email engagement), and negative scoring (unsubscribes, competitor emails, student emails). Should provide specific scoring criteria appropriate for enterprise ($50k+ ACV): weight firmographic signals heavily, include budget and authority signals. Should define score thresholds for MQL and SQL. Should recommend lead routing based on scores.",
+      "assertions": [
+        "Applies lead scoring with explicit, implicit, and negative dimensions",
+        "Provides specific scoring criteria for enterprise",
+        "Weights firmographic signals appropriately",
+        "Includes behavioral scoring signals",
+        "Includes negative scoring signals",
+        "Defines MQL and SQL score thresholds",
+        "Recommends lead routing based on scores"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our pipeline is a mess. deals sit in stages forever and we don't know what's actually going to close. how do we fix this?",
+      "expected_output": "Should trigger on casual phrasing. Should apply the pipeline stage management guidance. Should recommend: define clear pipeline stages with entry/exit criteria, set maximum time in each stage, implement stage velocity tracking, add required fields per stage to force data entry. Should address deal hygiene: regular pipeline reviews, stale deal flagging, win/loss analysis. Should recommend CRM automation to enforce stage rules. Should provide a practical cleanup plan for the current mess.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies pipeline stage management",
+        "Defines stages with entry/exit criteria",
+        "Recommends maximum time per stage",
+        "Addresses deal hygiene and pipeline reviews",
+        "Recommends CRM automation for enforcement",
+        "Provides practical cleanup plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "What RevOps metrics should we be tracking? We want to build a dashboard for our leadership team.",
+      "expected_output": "Should apply the RevOps metrics dashboard framework. Should recommend metrics across the funnel: lead volume by source, MQL-to-SQL conversion rate, SQL-to-Opportunity rate, win rate, average deal size, sales cycle length, pipeline velocity, pipeline coverage ratio, CAC, LTV, LTV:CAC ratio. Should organize metrics by audience (marketing team, sales team, leadership). Should recommend dashboard structure and cadence for reviews.",
+      "assertions": [
+        "Applies RevOps metrics dashboard",
+        "Covers full-funnel metrics",
+        "Includes conversion rates between stages",
+        "Includes pipeline velocity and coverage",
+        "Includes CAC, LTV, LTV:CAC",
+        "Organizes by audience",
+        "Recommends dashboard structure and review cadence"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Our CRM data is a disaster. Duplicate records, missing fields, inconsistent naming. How do we clean it up and keep it clean?",
+      "expected_output": "Should apply the data hygiene guidance. Should recommend: duplicate detection and merging strategy, required field enforcement, standardized naming conventions (picklists over free text), data validation rules, regular audit cadence. Should address both cleanup (one-time fix) and prevention (ongoing processes). Should recommend CRM automation for data hygiene. Should provide a prioritized cleanup plan (start with highest-impact data quality issues).",
+      "assertions": [
+        "Applies data hygiene guidance",
+        "Recommends duplicate detection and merging",
+        "Recommends required field enforcement",
+        "Addresses standardized naming conventions",
+        "Covers both cleanup and prevention",
+        "Recommends CRM automation for hygiene",
+        "Provides prioritized cleanup plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you help me write cold outreach emails to prospects in our pipeline?",
+      "expected_output": "Should recognize this is a cold email / outbound writing task, not RevOps. Should defer to or cross-reference the cold-email skill for writing outbound prospecting emails. RevOps covers the systems, processes, and data infrastructure — not the actual email content.",
+      "assertions": [
+        "Recognizes this as cold email writing, not RevOps",
+        "References or defers to cold-email skill",
+        "Explains RevOps covers systems and processes, not email content"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "skill_name": "paid-ads",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me plan a paid advertising strategy. We're a B2B SaaS tool for HR teams, selling at $99/month per seat. We have $15k/month to spend on ads and want to generate demo requests. Where should we advertise?",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the platform selection guide based on B2B, HR audience, $99/month price point. Should recommend LinkedIn (B2B targeting by job title/industry), Google Ads (search intent for HR software keywords), and potentially Meta (retargeting). Should recommend campaign structure with naming conventions. Should define audience targeting strategy for each platform. Should set budget allocation across platforms. Should define success metrics and attribution approach. Should recommend starting structure and scaling plan.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Applies platform selection guide",
+        "Recommends platforms appropriate for B2B HR audience",
+        "Recommends campaign structure with naming conventions",
+        "Defines audience targeting per platform",
+        "Sets budget allocation across platforms",
+        "Defines success metrics",
+        "Recommends starting structure and scaling plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our Google Ads CPC is $12 and our cost per lead is $180. Is that good? We're getting about 80 leads/month from a $15k budget.",
+      "expected_output": "Should evaluate the metrics in context. Should assess: $12 CPC for B2B (reasonable depending on industry), $180 CPL (depends on LTV — need to compare against customer lifetime value), 80 leads/month from $15k (math checks out). Should apply the campaign optimization framework: check quality score, search term relevance, landing page conversion rate, negative keywords. Should recommend specific optimization levers to reduce CPC and CPL. Should frame performance against industry benchmarks if applicable. Should ask about downstream conversion rates (lead → demo → customer).",
+      "assertions": [
+        "Evaluates metrics in context",
+        "Compares CPL against LTV considerations",
+        "Applies campaign optimization framework",
+        "Recommends specific optimization levers",
+        "Asks about downstream conversion rates",
+        "Provides industry context for benchmarking"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we want to run retargeting ads for people who visited our site but didn't convert. how should we set this up?",
+      "expected_output": "Should trigger on casual phrasing. Should apply the retargeting strategies section, specifically the funnel-based approach. Should recommend audience segments: all visitors (broad), pricing page visitors (high intent), blog readers (lower intent), and cart/signup abandoners (highest intent). Should recommend different messaging and offers for each segment. Should address frequency capping to avoid ad fatigue. Should recommend retargeting platforms (Meta, Google Display, LinkedIn). Should include duration windows for each audience.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies funnel-based retargeting approach",
+        "Recommends audience segments by intent level",
+        "Recommends different messaging per segment",
+        "Addresses frequency capping",
+        "Recommends retargeting platforms",
+        "Includes audience duration windows"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Should we advertise on TikTok? We sell accounting software to small businesses. Our current ads are on Google and Meta.",
+      "expected_output": "Should apply the platform selection guide for TikTok specifically. Should evaluate TikTok fit for accounting software + small business audience: likely a weaker fit than Google/Meta for this category (lower purchase intent, younger skewing audience, less B2B targeting). Should discuss when TikTok CAN work for B2B (brand awareness, creative content, younger business owners). Should provide an honest recommendation with caveats. Should suggest a small test budget approach if they want to try.",
+      "assertions": [
+        "Applies platform selection guide for TikTok",
+        "Evaluates fit for accounting + small business audience",
+        "Provides honest assessment of likely weaker fit",
+        "Discusses when TikTok can work for B2B",
+        "Suggests small test budget if proceeding",
+        "Compares to their existing Google/Meta performance"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "How do we structure our Google Ads campaigns? We have 50+ keywords we want to target for our CRM product.",
+      "expected_output": "Should apply the campaign structure and naming conventions framework. Should recommend organizing campaigns by theme/intent (brand, competitor, product features, pain points). Should recommend ad group structure (tightly themed, 5-15 keywords per group). Should define naming conventions for campaigns and ad groups. Should recommend match types strategy. Should include negative keyword lists. Should provide a sample campaign structure.",
+      "assertions": [
+        "Applies campaign structure framework",
+        "Organizes campaigns by theme/intent",
+        "Recommends tight ad group structure",
+        "Defines naming conventions",
+        "Recommends match types strategy",
+        "Includes negative keyword lists",
+        "Provides sample campaign structure"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you write some ad copy for our Facebook ads? We need headlines and descriptions for 5 different angles.",
+      "expected_output": "Should recognize this is an ad creative generation task, not campaign strategy. Should defer to or cross-reference the ad-creative skill, which handles platform-specific ad copy generation with character limits, angle-based variation, and batch generation. May provide brief ad copy framework guidance but should make clear that ad-creative is the right skill for generating ad copy at scale.",
+      "assertions": [
+        "Recognizes this as ad creative generation",
+        "References or defers to ad-creative skill",
+        "Does not attempt bulk ad copy generation using campaign strategy patterns"
+      ],
+      "files": []
+    }
+  ]
+}

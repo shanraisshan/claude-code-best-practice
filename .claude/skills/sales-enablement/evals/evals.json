@@ -1,0 +1,91 @@
+{
+  "skill_name": "sales-enablement",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me create a sales deck for our B2B SaaS product. We sell an employee engagement platform to HR directors at companies with 500-5000 employees. Our main differentiator is real-time pulse surveys with AI-powered insights.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the 10-12 slide sales deck framework: Title, Problem/Stakes, Current Solutions Failing, Vision, Product/Solution, How It Works, Proof (case studies/metrics), Pricing, Why Now, and Next Steps. Should tailor the deck to the HR director audience and employee engagement space. Should incorporate the differentiator (real-time pulse surveys + AI insights). Should provide slide-by-slide content recommendations with speaker notes. Should recommend visual direction.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Applies 10-12 slide framework",
+        "Includes Problem, Solution, Proof, Pricing, Next Steps slides",
+        "Tailors to HR director audience",
+        "Incorporates stated differentiator",
+        "Provides slide-by-slide content",
+        "Includes speaker notes or talking points"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our sales team keeps getting the same objections. The top ones are: 'we already use SurveyMonkey,' 'we don't have budget right now,' and 'our team is too small to need this.' Help me create an objection handling doc.",
+      "expected_output": "Should apply the objection handling framework with the response structure for each objection. Should categorize the objections (competitor/status quo, budget, need/timing). For each objection, should provide: acknowledge, reframe, evidence/proof, bridge to value, and follow-up question. Should provide 2-3 response variations per objection for different contexts. Should organize as a document sales reps can reference quickly during calls.",
+      "assertions": [
+        "Applies objection handling framework",
+        "Categorizes the three objections",
+        "Provides structured response for each (acknowledge, reframe, evidence, bridge)",
+        "Provides 2-3 response variations per objection",
+        "Organizes for quick reference during calls",
+        "Categorizes objections using the skill's framework (competitor, budget, need/timing)"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "i need a one-pager we can leave behind after sales meetings. something that summarizes our product and key benefits.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the one-pager/leave-behind framework. Should include: headline with core value proposition, key benefits (3-5), social proof (customer logos, key metric), how it works (simplified), pricing summary or 'starting at' range, and clear next step CTA. Should recommend design principles for a one-pager: scannable, visual hierarchy, not text-heavy. Should note this should fit on one page (front, or front and back).",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies one-pager/leave-behind framework",
+        "Includes headline, benefits, social proof, how it works, CTA",
+        "Keeps to one page format",
+        "Recommends scannable design",
+        "Provides specific content for each section"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Create a demo script for our analytics dashboard product. Typical demo is 30 minutes with a VP of Marketing.",
+      "expected_output": "Should apply the demo script/talk track framework with the 5-part structure. Should include: opening (rapport, agenda setting, discovery questions), problem validation (confirm their pain), solution walkthrough (show product addressing their pain), proof points (metrics, case studies during demo), and close (next steps, timeline). Should time-box each section for 30 minutes. Should include key questions to ask during discovery. Should note when to customize based on prospect's answers.",
+      "assertions": [
+        "Applies 5-part demo script structure",
+        "Includes opening with discovery questions",
+        "Includes problem validation",
+        "Includes solution walkthrough",
+        "Includes proof points",
+        "Includes close with next steps",
+        "Time-boxes for 30 minutes",
+        "Notes customization based on prospect responses"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Help me build an ROI calculator we can use during sales calls. We need to show prospects how much money they'll save by switching to our product.",
+      "expected_output": "Should apply the ROI calculator framework. Should define inputs (what data to collect from the prospect: team size, current costs, time spent on manual processes), calculation methodology (how to compute savings), and output format (visual showing ROI timeline, payback period, annual savings). Should recommend keeping calculations transparent and conservative. Should suggest validating assumptions during the sales call. Should provide the calculator structure and formula logic.",
+      "assertions": [
+        "Applies ROI calculator framework",
+        "Defines required inputs",
+        "Provides calculation methodology",
+        "Recommends conservative assumptions",
+        "Includes ROI timeline and payback period",
+        "Suggests validating assumptions during calls",
+        "Provides calculator structure"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "We need a public comparison page showing how we stack up against Zendesk and Intercom.",
+      "expected_output": "Should recognize this is a public-facing competitor comparison page, not internal sales collateral. Should defer to or cross-reference the competitor-alternatives skill, which handles public comparison and alternatives pages. Sales-enablement covers internal materials (battle cards, objection handling) while competitor-alternatives handles SEO-focused public comparison content.",
+      "assertions": [
+        "Recognizes this as a public comparison page",
+        "References or defers to competitor-alternatives skill",
+        "Explains the distinction between internal and public collateral",
+        "Does not attempt public SEO comparison page using sales enablement patterns"
+      ],
+      "files": []
+    }
+  ]
+}

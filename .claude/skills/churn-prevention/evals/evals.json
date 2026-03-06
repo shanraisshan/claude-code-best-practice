@@ -1,0 +1,93 @@
+{
+  "skill_name": "churn-prevention",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Our SaaS product has a 7% monthly churn rate and we need to bring it down. We're a $49/month project management tool with about 2,000 paying customers. Can you help us design a churn prevention strategy?",
+      "expected_output": "Should check for product-marketing-context.md first. Should address both voluntary and involuntary churn. Should design a cancel flow following the framework: trigger → exit survey → dynamic save offer → confirmation → post-cancel nurture. Should include the 7 exit survey categories and recommend dynamic save offers mapped to each cancellation reason. Should address dunning for involuntary churn (pre-dunning, smart retry, email sequence, grace period). Should recommend a health score model. Should provide prioritized implementation plan.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Addresses both voluntary and involuntary churn",
+        "Designs cancel flow with proper stages",
+        "Includes exit survey with multiple categories",
+        "Maps save offers to cancellation reasons",
+        "Addresses dunning stack for payment recovery",
+        "Recommends health score model",
+        "Provides prioritized implementation plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We keep losing customers because their credit cards expire. About 15% of our churn is from failed payments. How do we fix this?",
+      "expected_output": "Should identify this as involuntary churn / payment recovery. Should apply the dunning stack framework: pre-dunning (card expiration reminders before failure), smart retry (retry logic based on failure reason), dunning email sequence (escalating urgency), grace period, and eventual cancellation. Should provide specific timing for each stage. Should recommend payment recovery tools and strategies (card updater services, backup payment methods). Should include recovery rate benchmarks.",
+      "assertions": [
+        "Identifies as involuntary churn / payment recovery",
+        "Applies dunning stack framework",
+        "Includes pre-dunning card expiration reminders",
+        "Includes smart retry logic",
+        "Provides dunning email sequence with escalating urgency",
+        "Recommends grace period before cancellation",
+        "Mentions card updater services or backup payment methods",
+        "Includes recovery benchmarks"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "what should we show users when they click the cancel button? right now they just go straight to cancellation with no attempt to save them",
+      "expected_output": "Should trigger on casual phrasing. Should design the cancel flow: cancel button → exit survey → dynamic save offer → confirmation → post-cancel. Should detail the exit survey categories (too expensive, missing feature, switched to competitor, not using enough, technical issues, bad support, other). Should provide dynamic save offers matched to each reason (e.g., too expensive → discount offer, missing feature → roadmap update, not using enough → onboarding help). Should include copy recommendations for each screen. Should warn against dark patterns (making it impossible to cancel).",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Designs multi-step cancel flow",
+        "Includes exit survey with 7 categories",
+        "Provides dynamic save offers mapped to reasons",
+        "Includes copy recommendations",
+        "Warns against dark patterns",
+        "Includes confirmation and post-cancel steps"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "How do we identify which customers are at risk of churning before they actually cancel? We want to be proactive.",
+      "expected_output": "Should apply the health score model framework. Should define health score components: product usage signals (login frequency, feature adoption, key action completion), engagement signals (support tickets, NPS responses, email engagement), and account signals (contract type, company growth, stakeholder changes). Should recommend scoring methodology (0-100 scale). Should define risk tiers and recommended interventions for each tier. Should suggest data sources and implementation approach.",
+      "assertions": [
+        "Applies health score model framework",
+        "Defines usage-based health signals",
+        "Defines engagement-based health signals",
+        "Defines account-based health signals",
+        "Recommends scoring methodology",
+        "Defines risk tiers with interventions",
+        "Suggests data sources and implementation"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Our exit survey shows that 40% of cancellations say 'too expensive' as the reason. What save offers should we try?",
+      "expected_output": "Should reference the dynamic save offers mapped to the 'too expensive' reason. Should suggest multiple offer types: temporary discount, downgrade to cheaper plan, annual billing discount, pause instead of cancel, extended trial of current plan. Should recommend testing different offers to find what works best. Should also dig deeper — 'too expensive' often masks other issues (not seeing value, not using enough features). Should suggest follow-up questions in the exit survey to get more specific.",
+      "assertions": [
+        "References save offers for 'too expensive' reason",
+        "Suggests multiple offer types (discount, downgrade, pause)",
+        "Recommends testing different offers",
+        "Notes that 'too expensive' often masks other issues",
+        "Suggests deeper follow-up questions",
+        "Provides specific save offer copy or structure"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "We want to set up a win-back email sequence for customers who already cancelled. Can you help write those emails?",
+      "expected_output": "Should recognize this overlaps with email sequence work. Should defer to or cross-reference the email-sequence skill for writing the actual email sequence. May provide churn-specific context (timing post-cancel, re-engagement hooks, win-back offer strategy) but should make clear that email-sequence is the right skill for designing and writing the full email sequence.",
+      "assertions": [
+        "Recognizes overlap with email sequence work",
+        "References or defers to email-sequence skill",
+        "May provide churn-specific context for the sequence",
+        "Does not attempt to write a full email sequence"
+      ],
+      "files": []
+    }
+  ]
+}

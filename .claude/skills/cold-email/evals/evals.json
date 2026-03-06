@@ -1,0 +1,94 @@
+{
+  "skill_name": "cold-email",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a cold email to VP of Marketing at mid-size B2B SaaS companies. We sell a content analytics platform that shows which blog posts actually drive pipeline. Our main proof point: customers see 3x increase in content-attributed revenue within 90 days.",
+      "expected_output": "Should check for product-marketing-context.md first. Should write like a peer, not a vendor. Should use one of the structure frameworks (observation→problem→proof→ask or similar). Subject line should be 2-4 words, lowercase, internal-looking. Every sentence should earn its place. Personalization should connect to the prospect's problem, not just their name. Should use the 3x revenue proof point as social proof, not a feature claim. CTA should be low-friction (not 'book a demo'). Should provide 2-3 variations. Should include a quality check against the guidelines.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Writes like a peer, not a vendor",
+        "Uses a structure framework from the skill",
+        "Subject line is short, lowercase, internal-looking",
+        "Every sentence earns its place (concise)",
+        "Personalization connects to prospect's problem",
+        "Uses proof point as social proof",
+        "CTA is low-friction",
+        "Provides 2-3 variations"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Help me write a cold email to CTOs at enterprise companies. I sell cybersecurity training. My current email has a 2% open rate and 0% reply rate.",
+      "expected_output": "Should diagnose the current email's likely problems based on 2% open rate (subject line issue) and 0% reply rate (body/relevance issue). Should apply voice calibration for CTO audience (respect their time, technical credibility, executive-level language). Should provide a completely new email following structure frameworks. Subject line should be 2-4 words, look internal. Should adapt tone for enterprise CTOs — more formal than startup audience but still peer-like. Should provide the email plus analysis of why each element works.",
+      "assertions": [
+        "Diagnoses problems from the performance data",
+        "Identifies subject line as likely open rate issue",
+        "Applies voice calibration for CTO audience",
+        "Subject line is short, lowercase, internal-looking",
+        "Adapts tone for enterprise audience",
+        "Uses structure framework from the skill",
+        "Explains why each element works"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "write me a follow-up sequence. prospect didn't reply to my first email about our HR software. how many should I send and how far apart?",
+      "expected_output": "Should trigger on casual phrasing. Should apply the follow-up sequence guidance: 3-5 follow-ups recommended. Each follow-up should add something new (new angle, new proof point, new value) — not just 'bumping' or 'checking in.' Should provide timing recommendations between emails. Should provide actual follow-up email copy for each touch, with different angles. Should include a breakup email at the end. Should note that each follow-up should be shorter than the previous.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Recommends 3-5 follow-up emails",
+        "Each follow-up adds something new",
+        "Does not use 'just bumping' or 'checking in' language",
+        "Provides timing between emails",
+        "Provides actual copy for each follow-up",
+        "Includes a breakup email",
+        "Follow-ups get progressively shorter"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Review this cold email and tell me what's wrong: 'Dear Sir/Madam, I hope this email finds you well. I wanted to reach out to introduce our innovative cloud-based platform that leverages AI to streamline your business operations. We have helped over 500 companies transform their workflows. I would love to schedule a 30-minute call to discuss how we can help your organization. Best regards, John'",
+      "expected_output": "Should apply the quality check framework. Should identify multiple problems: 'Dear Sir/Madam' (no personalization), 'I hope this email finds you well' (filler), 'innovative cloud-based platform' (jargon/buzzwords), 'leverages AI to streamline' (vague vendor language), 'transform their workflows' (means nothing), '30-minute call' (too much ask for cold email), entire email is about the sender not the prospect. Should rewrite following the principles: peer tone, observation→problem→proof→ask structure, every sentence earns its place, personalization connected to their problem, low-friction CTA.",
+      "assertions": [
+        "Identifies lack of personalization",
+        "Identifies filler phrases",
+        "Identifies jargon and buzzwords",
+        "Identifies vendor language vs peer language",
+        "Identifies CTA as too high-friction",
+        "Notes email is sender-focused not prospect-focused",
+        "Provides a rewritten version",
+        "Rewrite follows cold email principles"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "What are the best subject lines for cold emails? I want to maximize open rates.",
+      "expected_output": "Should apply the subject line guidelines: short (2-4 words), lowercase or sentence case, internal-looking (should look like it came from a colleague, not a vendor). Should provide examples following these principles. Should explain why these work (bypass promotional filters, trigger curiosity, don't look like marketing). Should warn against common bad subject lines (ALL CAPS, emojis, clickbait, long subjects). Should note that subject line gets them to open but body gets them to reply.",
+      "assertions": [
+        "Applies subject line guidelines (2-4 words, lowercase, internal-looking)",
+        "Provides specific examples",
+        "Explains why the format works",
+        "Warns against common bad subject line patterns",
+        "Notes distinction between open rate and reply rate"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you help me set up an automated email drip campaign for leads who download our whitepaper?",
+      "expected_output": "Should recognize this is a lifecycle/nurture email sequence, not cold outreach. Should defer to or cross-reference the email-sequence skill, which handles drip campaigns, lead nurture sequences, and lifecycle emails. Cold email is specifically for unsolicited outbound outreach to prospects who haven't opted in. Should make this distinction clear.",
+      "assertions": [
+        "Recognizes this as lifecycle/nurture email, not cold outreach",
+        "References or defers to email-sequence skill",
+        "Explains the distinction between cold email and lifecycle email",
+        "Does not attempt to design a nurture sequence using cold email patterns"
+      ],
+      "files": []
+    }
+  ]
+}

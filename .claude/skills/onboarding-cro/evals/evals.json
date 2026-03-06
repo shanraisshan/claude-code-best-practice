@@ -1,0 +1,92 @@
+{
+  "skill_name": "onboarding-cro",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me optimize our onboarding flow. We have a project management tool and only 30% of trial users create their first project within the first week. We need to get them to value faster.",
+      "expected_output": "Should check for product-marketing-context.md first. Should start by defining the activation/aha moment — in this case, creating a first project. Should evaluate the current time-to-value and identify friction points. Should recommend an onboarding flow approach (product-first, guided setup, or value-first). Should apply the checklist pattern (3-7 items for onboarding completion). Should address empty states as opportunities to guide users. Should provide experiment ideas for testing improvements. Should include measurement metrics.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Defines the activation/aha moment",
+        "Evaluates time-to-value",
+        "Recommends onboarding flow approach",
+        "Applies checklist pattern with 3-7 items",
+        "Addresses empty states as opportunities",
+        "Provides experiment ideas",
+        "Includes measurement metrics"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "What should our onboarding checklist include? We're a design collaboration tool. Users need to upload a design, invite a team member, and leave a comment to get full value.",
+      "expected_output": "Should apply the checklist pattern. Should include the 3 stated activation actions (upload design, invite team, leave comment). Should recommend 3-7 total items ordered by increasing commitment. Should suggest starting with the quickest win to build momentum. Should recommend progress indicators and completion rewards. Should address what happens when users skip items. Should provide specific UX recommendations for the checklist implementation.",
+      "assertions": [
+        "Applies checklist pattern",
+        "Includes the 3 stated activation actions",
+        "Limits to 3-7 total items",
+        "Orders by increasing commitment",
+        "Starts with quickest win",
+        "Recommends progress indicators",
+        "Addresses skipped items",
+        "Provides UX recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our users sign up but then never come back. like 50% don't even log in a second time. what do we do?",
+      "expected_output": "Should trigger on casual phrasing. Should address this as a stalled users problem. Should apply the handling stalled users framework: identify drop-off points, re-engagement triggers, multi-channel outreach (email, in-app, push). Should investigate root causes: is the first-run experience too complex? Is value not immediately apparent? Is the setup too long? Should recommend immediate improvements to the first session experience. Should suggest multi-channel onboarding (email sequences to bring them back). Should cross-reference email-sequence for re-engagement emails.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies stalled users framework",
+        "Identifies potential root causes for drop-off",
+        "Recommends first-session experience improvements",
+        "Suggests multi-channel onboarding",
+        "Cross-references email-sequence for re-engagement",
+        "Provides specific re-engagement triggers"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "How do we handle the empty state when a new user first logs in? Right now they just see a blank dashboard.",
+      "expected_output": "Should apply the empty states as opportunities guidance. Should recommend turning the blank dashboard into a guided experience: sample data to show what the product looks like populated, a clear first action CTA, contextual tips, or a quick-start wizard. Should provide specific recommendations for empty state design: what to show, what action to prompt, how to reduce the 'blank canvas paralysis.' Should reference patterns by product type if applicable.",
+      "assertions": [
+        "Applies empty states as opportunities guidance",
+        "Recommends alternatives to blank dashboard",
+        "Suggests sample data or templates",
+        "Provides clear first action CTA",
+        "Addresses blank canvas paralysis",
+        "Provides specific empty state design recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Should we use tooltips, a product tour, or a setup wizard for onboarding? What works best?",
+      "expected_output": "Should apply the tooltips/guided tours guidance. Should compare the approaches: tooltips (contextual, on-demand, less intrusive), product tours (guided walkthrough, can overwhelm), setup wizards (structured, ensures key setup steps). Should recommend based on product complexity and onboarding goals. Should note that the best approach often combines elements. Should provide best practices for each: tooltip fatigue avoidance, tour length limits, wizard step count. Should recommend testing different approaches.",
+      "assertions": [
+        "Compares tooltips, product tours, and setup wizards",
+        "Explains when each works best",
+        "Notes that combination approaches often work",
+        "Provides best practices for each",
+        "Addresses tooltip fatigue and tour length",
+        "Recommends testing different approaches"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Our signup form has 8 fields and people keep dropping off. Can you help us fix the signup flow?",
+      "expected_output": "Should recognize this is a signup flow optimization task, not post-signup onboarding. Should defer to or cross-reference the signup-flow-cro skill, which handles signup form optimization, field reduction, and registration flow design. Onboarding-cro covers what happens after signup. Should make this distinction clear.",
+      "assertions": [
+        "Recognizes this as signup flow optimization, not onboarding",
+        "References or defers to signup-flow-cro skill",
+        "Explains that onboarding-cro covers post-signup",
+        "Does not attempt signup form redesign using onboarding patterns"
+      ],
+      "files": []
+    }
+  ]
+}

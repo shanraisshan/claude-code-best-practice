@@ -1,0 +1,93 @@
+{
+  "skill_name": "paywall-upgrade-cro",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me design the upgrade paywall for our project management tool. Free users can have 3 projects, and we want to show an upgrade screen when they try to create a 4th project.",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify this as a usage limit trigger point. Should apply the paywall screen components: headline (communicate the value of upgrading, not just the limit), value demonstration (show what they get with paid plan), plan comparison (free vs paid), social proof, CTA (specific and action-oriented), and escape hatch (option to go back). Should provide specific copy recommendations. Should address the emotional state of the user at this moment (frustrated by the limit). Should warn against anti-patterns.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Identifies as usage limit trigger",
+        "Applies paywall screen components framework",
+        "Includes headline, value demo, comparison, social proof, CTA",
+        "Provides specific copy recommendations",
+        "Addresses user's emotional state at the limit",
+        "Includes escape hatch option",
+        "Warns against anti-patterns"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our free trial expires in 14 days and users see a generic 'Your trial has expired' screen. Upgrade rate from this screen is only 2%. How do we improve it?",
+      "expected_output": "Should identify this as a trial expiration trigger. Should apply the trial expiration paywall type guidance. Should recommend: show what they've built/accomplished during the trial (endowment effect), highlight specific features they used, show the value they'd lose, provide clear plan options, include social proof from similar users who upgraded. Should diagnose why 2% is low: likely a weak value prop, no personalization, no urgency or loss framing. Should provide specific redesign recommendations.",
+      "assertions": [
+        "Identifies as trial expiration trigger",
+        "Applies trial expiration paywall guidance",
+        "Recommends showing user's accomplishments during trial",
+        "Uses loss framing (what they'd lose)",
+        "Provides clear plan options",
+        "Includes social proof",
+        "Diagnoses why current 2% rate is low",
+        "Provides specific redesign recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "when should we show upgrade prompts? we don't want to be annoying but we also need to convert free users to paid.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the timing and frequency rules. Should recommend trigger points from the skill: feature gates (when they try a paid feature), usage limits (when they hit a threshold), value moments (when they've just experienced success), and natural transition points. Should address frequency capping to avoid being annoying. Should recommend the anti-patterns to avoid (blocking basic functionality, too frequent popups, dark patterns). Should provide a balanced approach that respects user experience while driving upgrades.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies timing and frequency rules",
+        "Recommends specific trigger points",
+        "Addresses frequency capping",
+        "Warns against anti-patterns",
+        "Balances user experience with conversion goals",
+        "Provides specific recommendations for each trigger type"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Design a feature gate paywall. When free users click on 'Advanced Analytics' in our dashboard, we want to show them an upgrade prompt.",
+      "expected_output": "Should identify this as a feature gate trigger. Should apply the feature lock paywall type guidance. Should recommend: show a preview or screenshot of the advanced analytics feature, explain the specific benefit (not just 'this is a paid feature'), include a plan comparison relevant to analytics, provide a clear CTA to upgrade, and include an escape hatch to go back to basic analytics. Should recommend showing what insights they're missing. Should provide copy recommendations for the paywall screen.",
+      "assertions": [
+        "Identifies as feature gate trigger",
+        "Applies feature lock paywall guidance",
+        "Recommends showing preview of the feature",
+        "Explains specific benefit of the feature",
+        "Includes relevant plan comparison",
+        "Provides clear CTA and escape hatch",
+        "Provides copy recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "What are common mistakes to avoid with in-app paywalls? I don't want to be pushy or make users feel tricked.",
+      "expected_output": "Should apply the anti-patterns section. Should cover: dark patterns (making it hard to find the close button, confusing opt-out language), conversion killers (blocking basic functionality, showing paywalls too early before value is demonstrated, no escape hatch), frequency issues (too many prompts, showing the same paywall repeatedly). Should provide positive alternatives for each anti-pattern. Should emphasize that good paywalls feel helpful, not pushy.",
+      "assertions": [
+        "Applies anti-patterns section",
+        "Covers dark patterns to avoid",
+        "Covers conversion killers",
+        "Covers frequency issues",
+        "Provides positive alternatives for each",
+        "Emphasizes helpful over pushy approach"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you help me optimize our public pricing page? We want more visitors to choose the Pro plan over the Basic plan.",
+      "expected_output": "Should recognize this is a public pricing page optimization task, not an in-app paywall task. Should defer to or cross-reference the page-cro skill for pricing page CRO. Paywall-upgrade-cro specifically handles in-app upgrade prompts for existing users, not public-facing pricing pages.",
+      "assertions": [
+        "Recognizes this as public pricing page optimization",
+        "References or defers to page-cro skill",
+        "Explains that paywall-upgrade-cro is for in-app upgrade prompts",
+        "Does not attempt public pricing page optimization"
+      ],
+      "files": []
+    }
+  ]
+}
