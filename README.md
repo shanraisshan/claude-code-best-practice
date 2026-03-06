@@ -1,63 +1,124 @@
 # claude-code-best-practice
-practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_05%2C_2026_1%3A06_PM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+Practice makes Claude perfect — **62 skills**, **2 agents**, **130+ marketing tool integrations**
 
-[![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
-[![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
-[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Click on this badge to see the Command → Agent → Skill orchestration workflow*
+> Forked from [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) and extended with community skills and a full marketing toolkit.
 
-<p align="center">
-  <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
-</p>
+[![Best Practice](!/tags/best-practice.svg)](best-practice/) *Best practices*
+[![Implemented](!/tags/implemented.svg)](implementation/) *Implementation*
+[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Command → Agent → Skill workflow*
 
-<p align="center">
-  <img src="!/slider/boris-slider.gif" alt="Boris Cherny on Claude Code" width="600"><br>
-  Boris Cherny on X (<a href="https://x.com/bcherny/status/2007179832300581177">tweet 1</a> · <a href="https://x.com/bcherny/status/2017742741636321619">tweet 2</a> · <a href="https://x.com/bcherny/status/2021699851499798911">tweet 3</a>)
-</p>
+---
 
+## SKILLS LIBRARY (62 skills)
+
+All skills live in `.claude/skills/<name>/SKILL.md` and are auto-discovered by Claude Code.
+
+### Development & Engineering (25)
+
+| Skill | Description |
+|-------|-------------|
+| `fix` | Lint and formatting fixes before CI |
+| `github` | GitHub CLI (`gh`) for issues, PRs, CI runs |
+| `create-pr` | Create PRs with validated title format |
+| `docstring` | PyTorch docstring conventions |
+| `coding-agent` | Run Codex, Claude Code, OpenCode via background process |
+| `gog` | Google Workspace CLI (Gmail, Calendar, Drive, Sheets) |
+| `use-ai-sdk` | Build AI features with Vercel AI SDK |
+| `update-docs` | Next.js documentation updater workflow |
+| `add-malli-schemas` | Malli schemas for Metabase API endpoints |
+| `angular-migration` | AngularJS to Angular migration |
+| `backend-patterns` | Node.js/Express/Next.js API architecture |
+| `implementing-jsc-classes-cpp` | JavaScriptCore C++ bindings |
+| `implementing-jsc-classes-zig` | Bun Zig bindings for JSC |
+| `develop-ai-functions-example` | AI SDK function examples |
+| `workflow-orchestration-patterns` | Temporal durable workflows |
+| `rag-implementation` | RAG systems with vector databases |
+| `python-code-style` | Python linting, formatting, naming |
+| `python-error-handling` | Exception hierarchies, validation |
+| `python-type-safety` | Type hints, generics, protocols |
+| `python-project-structure` | Module architecture, public API |
+| `python-resource-management` | Context managers, cleanup, streaming |
+| `python-background-jobs` | Task queues, workers, event-driven |
+| `creating-financial-models` | DCF analysis, Monte Carlo, sensitivity |
+| `startup-financial-modeling` | Revenue forecasting, burn rate, runway |
+| `gtm-planning` | Go-to-market strategy and budget |
+
+### Marketing (32)
+
+| Skill | Description |
+|-------|-------------|
+| **Copy & Content** | |
+| `copywriting` | Landing page, homepage, feature page copy |
+| `copy-editing` | Review and improve existing marketing copy |
+| `content-strategy` | Content planning and topic selection |
+| `social-content` | LinkedIn, Twitter/X, Instagram, TikTok posts |
+| `cold-email` | B2B cold outreach and follow-up sequences |
+| `email-sequence` | Drip campaigns and lifecycle emails |
+| **SEO** | |
+| `seo-audit` | Technical SEO diagnosis and fixes |
+| `ai-seo` | Optimize for AI search engines (AEO/GEO) |
+| `programmatic-seo` | Template pages at scale |
+| `schema-markup` | JSON-LD structured data |
+| `site-architecture` | URL structure, navigation, internal linking |
+| **CRO (Conversion Rate Optimization)** | |
+| `page-cro` | Landing page and homepage optimization |
+| `form-cro` | Lead capture and contact forms |
+| `signup-flow-cro` | Registration and trial activation |
+| `onboarding-cro` | Post-signup activation and time-to-value |
+| `paywall-upgrade-cro` | In-app upsell and feature gates |
+| `popup-cro` | Exit intent, modals, slide-ins |
+| **Ads & Growth** | |
+| `paid-ads` | Google, Meta, LinkedIn, TikTok campaigns |
+| `ad-creative` | Headlines, descriptions, ad variations at scale |
+| `ab-test-setup` | Experiment design and sample sizing |
+| `marketing-ideas` | Growth ideas and strategies for SaaS |
+| `marketing-psychology` | Cognitive biases and persuasion principles |
+| `free-tool-strategy` | Engineering as marketing |
+| `launch-strategy` | Product Hunt, beta, feature launches |
+| **Sales & Revenue** | |
+| `pricing-strategy` | Tiers, freemium, packaging decisions |
+| `sales-enablement` | Pitch decks, one-pagers, objection handling |
+| `competitor-alternatives` | Vs pages and comparison content |
+| `referral-program` | Affiliate and word-of-mouth programs |
+| `revops` | Lead scoring, routing, lifecycle management |
+| `churn-prevention` | Cancel flows, dunning, retention |
+| `product-marketing-context` | Positioning and audience context doc |
+
+### Marketing Tools Registry (130+ integrations)
+
+The `marketing-tools` skill provides a reference library for connecting to marketing SaaS platforms:
+
+- **68 integration guides** — Auth, API endpoints, common operations for GA4, HubSpot, Salesforce, Stripe, Mailchimp, Semrush, Meta Ads, and more
+- **62 CLI wrappers** — Node.js scripts for direct API automation
+- **REGISTRY.md** — Master index with capability matrix (API/MCP/CLI/SDK)
+
+### Demo Skills (5)
+
+| Skill | Description |
+|-------|-------------|
+| `weather-fetcher` | Fetch weather data from Open-Meteo API |
+| `weather-svg-creator` | Generate SVG weather card |
+| `agent-browser` | Browser automation CLI for AI agents |
+| `presentation/*` | Self-evolving presentation system (3 sub-skills) |
+
+---
 
 ## CONCEPTS
 
 | Feature | Location | Description |
 |---------|----------|-------------|
-| [**Commands**](https://code.claude.com/docs/en/skills) | `.claude/commands/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-commands-implementation.md) Entry-point prompts for workflows — invoke with `/command-name` |
-| [**Sub-Agents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Custom agents with their own name, color, tools, permissions, and model |
-| [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/<name>/SKILL.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-skills.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-skills-implementation.md) Reusable knowledge, workflows, and slash commands — load on-demand or invoke with `/skill-name` |
-| [**Workflows**](https://code.claude.com/docs/en/common-workflows) | [`.claude/commands/weather-orchestrator.md`](.claude/commands/weather-orchestrator.md) | [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) |
-| [**Hooks**](https://code.claude.com/docs/en/hooks) | `.claude/hooks/` | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-voice-hooks) [![Implemented](!/tags/implemented.svg)](.claude/hooks/) Deterministic scripts that run outside the agentic loop on specific events |
-| [**MCP Servers**](https://code.claude.com/docs/en/mcp) | `.claude/settings.json`, `.mcp.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-mcp.md) [![Implemented](!/tags/implemented.svg)](.mcp.json) Model Context Protocol connections to external tools, databases, and APIs |
-| [**Plugins**](https://code.claude.com/docs/en/plugins) | distributable packages | Bundles of skills, subagents, hooks, and MCP servers · [Marketplaces](https://code.claude.com/docs/en/discover-plugins) |
-| [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-settings.md) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Hierarchical configuration system · [Permissions](https://code.claude.com/docs/en/permissions) · [Model Config](https://code.claude.com/docs/en/model-config) · [Output Styles](https://code.claude.com/docs/en/output-styles) · [Sandboxing](https://code.claude.com/docs/en/sandboxing) · [Keybindings](https://code.claude.com/docs/en/keybindings) · [Fast Mode](https://code.claude.com/docs/en/fast-mode) |
-| [**Status Line**](https://code.claude.com/docs/en/statusline) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-status-line) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Customizable status bar showing context usage, model, cost, and session info |
-| [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md`, `~/.claude/projects/<project>/memory/` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-memory.md) [![Implemented](!/tags/implemented.svg)](CLAUDE.md) Persistent context via CLAUDE.md files and `@path` imports · [Auto Memory](https://code.claude.com/docs/en/memory) · [Rules](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) |
-| [**Checkpointing**](https://code.claude.com/docs/en/checkpointing) | automatic (git-based) | Automatic tracking of file edits with rewind (`Esc Esc` or `/rewind`) and targeted summarization |
-| [**CLI Startup Flags**](https://code.claude.com/docs/en/cli-reference) | `claude [flags]` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-cli-startup-flags.md) Command-line flags, subcommands, and environment variables for launching Claude Code |
-| **AI Terms** | | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-codex-cursor-gemini/blob/main/reports/ai-terms.md) Agentic Engineering · Context Engineering · Vibe Coding |
-| [**Best Practices**](https://code.claude.com/docs/en/best-practices) | | Official best practices · [Prompt Engineering](https://github.com/anthropics/prompt-eng-interactive-tutorial) · [Extend Claude Code](https://code.claude.com/docs/en/features-overview) |
+| [**Commands**](https://code.claude.com/docs/en/skills) | `.claude/commands/` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-commands-implementation.md) Entry-point prompts — invoke with `/command-name` |
+| [**Sub-Agents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Custom agents with tools, permissions, and model |
+| [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-skills.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-skills-implementation.md) Reusable knowledge and workflows — auto-discovered or invoked with `/skill-name` |
+| [**Hooks**](https://code.claude.com/docs/en/hooks) | `.claude/hooks/` | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-voice-hooks) [![Implemented](!/tags/implemented.svg)](.claude/hooks/) Deterministic scripts on specific events |
+| [**MCP Servers**](https://code.claude.com/docs/en/mcp) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-mcp.md) [![Implemented](!/tags/implemented.svg)](.mcp.json) External tools, databases, and APIs |
+| [**Settings**](https://code.claude.com/docs/en/settings) | `.claude/settings.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-settings.md) [![Implemented](!/tags/implemented.svg)](.claude/settings.json) Configuration, permissions, output styles |
+| [**Memory**](https://code.claude.com/docs/en/memory) | `CLAUDE.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-memory.md) [![Implemented](!/tags/implemented.svg)](CLAUDE.md) Persistent context via CLAUDE.md files |
 
-### 🔥 Hot
+## ORCHESTRATION WORKFLOW
 
-| Feature | Location | Description |
-|---------|----------|-------------|
-| [**Agent Teams**](https://code.claude.com/docs/en/agent-teams) | `.claude/agents/<name>.md` | Multiple agents working in parallel on the same codebase with shared task coordination |
-| [**Voice Mode**](https://x.com/trq212/status/2028628570692890800) | built-in command | speak to prompt - /voice to activate|
-| [**Remote Control**](https://code.claude.com/docs/en/remote-control) | built-in command | Continue local sessions from any device — phone, tablet, or browser · [Headless Mode](https://code.claude.com/docs/en/headless) |
-| [**Git Worktrees**](https://code.claude.com/docs/en/common-workflows) | built-in | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2025007393290272904) Isolated git branches for parallel development — each agent gets its own working copy |
-| [**Ralph Wiggum Loop**](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum) | plugin | [![Best Practice](!/tags/best-practice.svg)](https://github.com/ghuntley/how-to-ralph-wiggum) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26) Autonomous development loop for long-running tasks — iterates until completion |
-
-<a id="orchestration-workflow"></a>
-
-## <a href="orchestration-workflow/orchestration-workflow.md"><img src="!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
-
-See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for implementation details of **Command → Agent → Skill** pattern.
-
-
-<p align="center">
-  <img src="!/command-skill-agent-flow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
-</p>
-
-![How to Use](!/tags/how-to-use.svg)
+See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for the **Command → Agent → Skill** pattern.
 
 ```bash
 claude
@@ -66,96 +127,46 @@ claude
 
 | Component | Role | Example |
 |-----------|------|---------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](.claude/commands/weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](.claude/agents/weather-agent.md) with [`weather-fetcher`](.claude/skills/weather-fetcher/SKILL.md) |
-| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](.claude/skills/weather-svg-creator/SKILL.md) |
+| **Command** | Entry point | [`/weather-orchestrator`](.claude/commands/weather-orchestrator.md) |
+| **Agent** | Fetches data (preloaded skill) | [`weather-agent`](.claude/agents/weather-agent.md) + [`weather-fetcher`](.claude/skills/weather-fetcher/SKILL.md) |
+| **Skill** | Creates output | [`weather-svg-creator`](.claude/skills/weather-svg-creator/SKILL.md) |
 
 ## DEVELOPMENT WORKFLOWS
-- [Cross-Model Claude Code + Codex](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md)
-- [RPI](development-workflows/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/rpi/rpi-workflow.md)
+
+- [Cross-Model Claude Code + Codex](development-workflows/cross-model-workflow/cross-model-workflow.md)
+- [RPI](development-workflows/rpi/rpi-workflow.md)
 - [Boris Feb26 workflow](https://x.com/bcherny/status/2017742741636321619)
-- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26)
-- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
-- [AgentOs - 2026 its overkill (Brian Casel)](https://www.youtube.com/watch?v=0hdFJA-ho3c)
+- [Ralph plugin with sandbox](https://www.youtube.com/watch?v=eAtvoGlpeRU)
+- [Human Layer RPI](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
 - [Github Speckit](https://github.com/github/spec-kit)
 - [GSD - Get Shit Done](https://github.com/glittercowboy/get-shit-done)
-- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md)
-- [Superpower](https://github.com/obra/superpowers)
-- [Andrej Karpathy Workflow](https://github.com/forrestchang/andrej-karpathy-skills)
-- [Creator of Clawd Bot Workflow](https://www.youtube.com/watch?v=8lF7HmQ_RgY)
-
-## TIPS AND TRICKS
-
-![Shayan](!/tags/shayan.svg)
-
-■ **Workflows**
-- [CLAUDE.md](https://code.claude.com/docs/en/memory) should not exceed 150+ lines. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) (still not 100% guaranteed)
-- use [multiple CLAUDE.md](best-practice/claude-memory.md) for monorepos — ancestor + descendant loading
-- use [commands](https://code.claude.com/docs/en/skills) for your workflows instead of [agents](https://code.claude.com/docs/en/sub-agents)
-- have feature specific [subagents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer.
-- [/memory](https://code.claude.com/docs/en/memory), [/rules](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules), constitution.md does not guarantee anything
-- avoid agent dumb zone, do manual /compact at max 50%
-- always start with [plan mode](https://code.claude.com/docs/en/common-workflows)
-- vanilla cc is better than any workflows with smaller tasks
-- use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
-- [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
-- use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks
-- use `ultrathink` keyword in prompts for [high effort reasoning](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-and-best-practices)
-- use [/model](https://code.claude.com/docs/en/model-configuration) to select model and reasoning, [/context](https://code.claude.com/docs/en/context-management) to see context usage, [/usage](https://code.claude.com/docs/en/usage-billing) to set a weekly limit, [/config](https://code.claude.com/docs/en/settings) to configure settings
-
-■ **Daily**
-- [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
-- follow [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/), [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/) on Reddit
-- follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie) on X
-
-■ **Hourly**
-- commit often, as soon as task is completed, commit.
-
-■ **Utilities**
-- [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
-- [Wispr Flow](https://wisprflow.ai) for voice prompting (10x productivity)
-- [claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks) for claude feedback
-- [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting
-- [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (`Bash(npm run *)`, `Edit(/docs/**)`) instead of dangerously-skip-permissions
-- [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation
-- explore [settings.json](best-practice/claude-settings.md) features like [Output Styles](best-practice/claude-settings.md#display--ux) (e.g. Explanatory when learning a new codebase), [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience
-- [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [todo refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
-
-■ **Debugging**
-- [/doctor](https://code.claude.com/docs/en/cli-reference)
-- always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
-- use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
-- provide screenshots of the issue
-- use a different model for QA — e.g. [Codex](https://chatgpt.com/codex) for plan and implementation review
-
-![Boris Cherny + Team](!/tags/boris-team.svg)
-
-- [Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25](https://x.com/trq212/status/2005315275026260309) ● [Tweet](https://x.com/trq212/status/2005315275026260309)
-- [Boris setup - 5 tips | 03/Jan/26](https://x.com/bcherny/status/2007179832300581177) ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
-- [10 tips for using claude code by team itself | 01/Feb/26](https://x.com/bcherny/status/2017742741636321619) ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
-- [12 ways how people are customizing their claudes | 12/Feb/26](tips/claude-boris-tips-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
-- [Git Worktrees - 5 ways how boris is using | 21 Feb 2026](https://x.com/bcherny/status/2025007393290272904) ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
-- [Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027463795355095314) ● [Article](https://x.com/trq212/status/2027463795355095314)
-
-## ☠️ STARTUPS / BUSINESSES
-
-| Claude | Replaced |
-|-|-|
-|[**Voice Mode**](https://x.com/trq212/status/2028628570692890800)|[Wispr Flow](https://wisprflow.ai), [SuperWhisper](https://superwhisper.com/)|
-|[**Remote Control**](https://code.claude.com/docs/en/remote-control)|[OpenClaw](https://openclaw.ai/)
-|[**Cowork**](https://code.claude.com/docs/en/cowork)|[OpenAI Operator](https://openai.com/operator), [AgentShadow](https://agentshadow.ai)
-|[**Tasks**](https://x.com/trq212/status/2014480496013803643)|[Beads](https://github.com/steveyegge/beads)
-|[**Plan Mode**](https://code.claude.com/docs/en/common-workflows)|[Agent OS](https://github.com/buildermethods/agent-os)|
-|[**Skills / Plugins**](https://code.claude.com/docs/en/plugins)|YC AI wrapper startups ([reddit](https://reddit.com/r/ClaudeAI/comments/1r6bh4d/claude_code_skills_are_basically_yc_ai_startup/))|
 
 ## REPORTS
 
 | Report | Description |
 |--------|-------------|
-| [Agent SDK vs CLI System Prompts](reports/claude-agent-sdk-vs-cli-system-prompts.md) | Why Claude CLI and Agent SDK outputs may differ—system prompt architecture and determinism |
-| [Browser Automation MCP Comparison](reports/claude-in-chrome-v-chrome-devtools-mcp.md) | Comparison of Playwright, Chrome DevTools, and Claude in Chrome for automated testing |
-| [Global vs Project Settings](reports/claude-global-vs-project-settings.md) | Which features are global-only (`~/.claude/`) vs dual-scope, including Tasks and Agent Teams |
-| [Skills Discovery in Monorepos](reports/claude-skills-for-larger-mono-repos.md) | How skills are discovered and loaded in large monorepo projects |
-| [Agent Memory Frontmatter](reports/claude-agent-memory.md) | Persistent memory scopes (`user`, `project`, `local`) for subagents — enabling agents to learn across sessions |
-| [Advanced Tool Use Patterns](reports/claude-advanced-tool-use.md) | Programmatic Tool Calling (PTC), Tool Search, and Tool Use Examples |
-| [Usage, Rate Limits & Extra Usage](reports/claude-usage-and-rate-limits.md) | Usage commands (`/usage`, `/extra-usage`, `/cost`), rate limits, and pay-as-you-go overflow billing |
+| [Agent SDK vs CLI System Prompts](reports/claude-agent-sdk-vs-cli-system-prompts.md) | System prompt architecture differences |
+| [Browser Automation MCP](reports/claude-in-chrome-v-chrome-devtools-mcp.md) | Playwright vs Chrome DevTools vs Claude in Chrome |
+| [Global vs Project Settings](reports/claude-global-vs-project-settings.md) | Global-only vs dual-scope features |
+| [Skills in Monorepos](reports/claude-skills-for-larger-mono-repos.md) | Skills discovery in large projects |
+| [Agent Memory](reports/claude-agent-memory.md) | Persistent memory scopes for subagents |
+| [Advanced Tool Use](reports/claude-advanced-tool-use.md) | PTC, Tool Search, Tool Use Examples |
+| [Usage & Rate Limits](reports/claude-usage-and-rate-limits.md) | `/usage`, `/cost`, overflow billing |
+
+## TIPS
+
+**Workflows** — Keep CLAUDE.md under 150 lines. Use commands over standalone agents. Feature-specific subagents with skills (progressive disclosure). Manual `/compact` at 50%. Start with plan mode. `ultrathink` for complex reasoning.
+
+**Daily** — Update Claude Code daily. Read the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Follow [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/).
+
+**Utilities** — [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/)/tmux over IDE. [Wispr Flow](https://wisprflow.ai) for voice. Wildcard permissions (`Bash(npm run *)`). `/sandbox` for isolation. Output Styles (Explanatory for learning).
+
+**Debugging** — `/doctor`. Background tasks for logs. Browser MCPs for console inspection. Screenshots for visual issues.
+
+---
+
+## Credits
+
+- Original repo: [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)
+- Marketing skills: [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
+- Dev skills: Community contributions via [skillfish](https://skillfish.dev)
