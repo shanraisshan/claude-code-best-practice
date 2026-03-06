@@ -98,9 +98,12 @@ claude
 - use [.claude/rules/](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) to split large instructions
 - use [commands](https://code.claude.com/docs/en/skills) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents)
 - have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer.
-- [/memory](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything
-- avoid agent dumb zone, do manual /compact at max 50%
-- always start with [plan mode](https://code.claude.com/docs/en/common-workflows)
+- [memory.md](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything
+- avoid agent dumb zone, do manual [/compact](https://code.claude.com/docs/en/context-management) at max 50%. Use [/clear](https://code.claude.com/docs/en/cli-reference) to reset context mid-session if switching to a new task
+- always start with [plan mode](https://code.claude.com/docs/en/common-workflows). ask Claude to interview you; [ask the user a question](https://code.claude.com/docs/en/cli-reference)
+- always make a phase-wise gated plan, with each phase having multiple tests (unit, automation, integration). use [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) to review your plan
+- use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
+- use ASCII diagrams a lot to understand your architecture
 - vanilla cc is better than any workflows with smaller tasks
 - use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
 - [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
@@ -124,14 +127,14 @@ claude
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (`Bash(npm run *)`, `Edit(/docs/**)`) instead of dangerously-skip-permissions
 - [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation
 - explore [settings.json](best-practice/claude-settings.md) features like [Output Styles](best-practice/claude-settings.md#display--ux) (e.g. Explanatory when learning a new codebase), [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience
-- [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [todo refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
+- [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [TODO - refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
 
 ■ **Debugging**
-- [/doctor](https://code.claude.com/docs/en/cli-reference)
-- always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
+- make it a habit to take screenshots and share with Claude whenever you are stuck with any issue
 - use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
-- provide screenshots of the issue
-- use a different model for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
+- always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
+- [/doctor](https://code.claude.com/docs/en/cli-reference) to diagnose installation, authentication, and configuration issues
+- use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
