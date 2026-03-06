@@ -20,7 +20,7 @@ based on [claude-code-best-practice](https://github.com/shanraisshan/claude-code
 │                              ▼                                          │
 │                                                                         │
 │  STEP 2: QA REVIEW                                     Codex CLI        │
-│  ──────────────────                                    GPT-5.3          │
+│  ──────────────────                                    GPT-5.4          │
 │  Open Codex CLI in another terminal (Terminal 2).                       │
 │  Codex reviews plan against the actual codebase.                        │
 │  Inserts intermediate phases ("Phase 2.5")                              │
@@ -40,7 +40,7 @@ based on [claude-code-best-practice](https://github.com/shanraisshan/claude-code
 │                              ▼                                          │
 │                                                                         │
 │  STEP 4: VERIFY                                        Codex CLI        │
-│  ────────────────                                      GPT-5.3          │
+│  ────────────────                                      GPT-5.4          │
 │  Start a new Codex CLI session (Terminal 2).                            │
 │  Codex verifies the implementation                                      │
 │  against the plan.                                                      │
@@ -52,4 +52,4 @@ based on [claude-code-best-practice](https://github.com/shanraisshan/claude-code
 
 ![Cross-Model Workflow](assets/cross-model-workflow.png)
 
-*Last Updated: 2026-03-05*
+*Last Updated: 2026-03-06*

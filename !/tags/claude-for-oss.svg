@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="32" role="img" aria-label="Claude for Open Source">
+  <title>Claude for Open Source — Apply before June 30, 2026</title>
+  <defs>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.4" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity=".12"/>
+      <stop offset="0.6" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="r">
+      <rect width="780" height="32" rx="6" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <style>
+    @keyframes shimmer {
+      0% { transform: translateX(-780px); }
+      100% { transform: translateX(780px); }
+    }
+    .sweep { animation: shimmer 1.8s ease-in-out infinite; }
+  </style>
+  <g clip-path="url(#r)">
+    <rect width="780" height="32" fill="#0a0a0a"/>
+    <rect width="780" height="1" fill="#fff" fill-opacity=".08"/>
+    <rect y="31" width="780" height="1" fill="#fff" fill-opacity=".05"/>
+    <rect class="sweep" width="780" height="32" fill="url(#shine)"/>
+  </g>
+  <g font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" text-anchor="start">
+    <text x="14" y="20" font-size="10" font-weight="bold" fill="#fff" fill-opacity=".9">Note: Building Open Source? Get <tspan fill="#ff4444">6 months of Claude Max 20x</tspan> ($1,200 value) free — Claude for OSS · Apply before June 30, 2026</text>
+  </g>
+</svg>
