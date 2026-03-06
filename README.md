@@ -111,7 +111,7 @@ claude
 - vanilla cc is better than any workflows with smaller tasks
 - use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
 - use [/model](https://code.claude.com/docs/en/model-configuration) to select model and reasoning, [/context](https://code.claude.com/docs/en/context-management) to see context usage, [/usage](https://code.claude.com/docs/en/usage-billing) to set a weekly limit, [/config](https://code.claude.com/docs/en/settings) to configure settings
-- always use [thinking mode](https://code.claude.com/docs/en/model-configuration) true (to see reasoning) and [Output Style](https://code.claude.com/docs/en/output-styles) Explanatory (to see detailed output with ★ Insight boxes) in /config for better understanding of Claude's decisions
+- always use [thinking mode](https://code.claude.com/docs/en/model-configuration) true (to see reasoning) and [Output Style](https://code.claude.com/docs/en/output-styles) Explanatory (to see detailed output with ★ Insight boxes) in [/config](https://code.claude.com/docs/en/settings) for better understanding of Claude's decisions
 - use ultrathink keyword in prompts for [high effort reasoning](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-and-best-practices)
 - [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [TODO - refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
 - use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
@@ -129,6 +129,7 @@ claude
 - use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - [/doctor](https://code.claude.com/docs/en/cli-reference) to diagnose installation, authentication, and configuration issues
+- error during compaction can be resolved by using [/model](https://code.claude.com/docs/en/model-configuration) to select a 1M token model, then running [/compact](https://code.claude.com/docs/en/context-management)
 - use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
 
 ■ **Utilities (5)**

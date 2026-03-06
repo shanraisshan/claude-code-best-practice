@@ -31,12 +31,7 @@ Skills in `.claude/skills/<name>/SKILL.md` use YAML frontmatter:
 - `hooks`: Lifecycle hooks scoped to this skill
 
 ### Presentation System
-Any request to update, modify, or fix the presentation (`presentation/index.html`) must be handled by the `presentation-curator` agent (`.claude/agents/presentation-curator.md`). Always delegate presentation work to this agent via the Task tool — never edit the presentation directly.
-
-The agent is **self-evolving**: after every execution, it updates its own skills to stay in sync with the presentation. It has three preloaded skills:
-- `vibe-to-agentic-framework`: The conceptual framework ("Vibe Coding → Agentic Engineering"), weight rationale, and journey narrative. Updated after every slide change.
-- `presentation-structure`: Slide format, weight system, navigation, section ranges. Updated when slides are added/removed/reordered.
-- `presentation-styling`: CSS classes, component patterns, syntax highlighting. Updated when new styling patterns are introduced.
+See `.claude/rules/presentation.md` — all presentation work is delegated to the `presentation-curator` agent.
 
 ### Hooks System
 Cross-platform sound notification system in `.claude/hooks/`:
@@ -105,15 +100,7 @@ From experience with this repository:
 
 ## Documentation
 
+See `.claude/rules/markdown-docs.md` for documentation standards. Key docs:
 - `docs/AGENTS.md`: Subagent orchestration troubleshooting
-- `orchestration-workflow/orchestration-workflow.md`: Weather system flow diagram
 - `docs/COMPARISION.md`: Commands vs Agents vs Skills invocation patterns
-
-## Reports
-
-- `reports/claude-in-chrome-v-chrome-devtools-mcp.md`: Browser automation MCP comparison (Playwright vs Chrome DevTools vs Claude in Chrome)
-- `best-practice/claude-memory.md`: CLAUDE.md loading behavior in monorepos (ancestor vs descendant loading)
-- `reports/claude-skills-for-larger-mono-repos.md`: Skills discovery and loading behavior in monorepos (static vs dynamic discovery)
-- `reports/claude-agent-memory.md`: Agent memory frontmatter — persistent memory scopes (user, project, local) for subagents
-- `reports/claude-advanced-tool-use.md`: Advanced tool use patterns — Programmatic Tool Calling (PTC), Tool Search, Tool Use Examples
-- `reports/claude-usage-and-rate-limits.md`: Usage commands (`/usage`, `/extra-usage`, `/cost`), rate limits, and pay-as-you-go overflow billing
+- `orchestration-workflow/orchestration-workflow.md`: Weather system flow diagram
