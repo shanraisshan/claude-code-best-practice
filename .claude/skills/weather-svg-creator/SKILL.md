@@ -32,11 +32,11 @@ Replace `[Celsius/Fahrenheit]`, `[value]`, and `[C/F]` with actual values.
 
 ### 2. Write SVG File
 
-Write the SVG content to `orchestration-workflow/weather.svg`.
+First, read the existing `orchestration-workflow/weather.svg` file (if it exists). Then write the SVG content to `orchestration-workflow/weather.svg`.
 
 ### 3. Write Output Summary
 
-Write to `orchestration-workflow/output.md`:
+First, read the existing `orchestration-workflow/output.md` file (if it exists). Then write to `orchestration-workflow/output.md`:
 
 ```markdown
 # Weather Result
