@@ -1,0 +1,66 @@
+import { render } from 'react-email';
+import { {{COMPONENT_NAME}} } from '../src/emails/{{component-slug}}';
+
+describe('{{COMPONENT_NAME}}', () => {
+  it('renders with required props', () => {
+    const html = render(
+      <{{COMPONENT_NAME}}
+        {{PROP_NAME_1}}="test-value"
+        {{PROP_NAME_2}}="test-value"
+      />,
+    );
+
+    expect(html).toBeTruthy();
+    expect(typeof html).toBe('string');
+  });
+
+  it('includes key content sections', () => {
+    const html = render(
+      <{{COMPONENT_NAME}}
+        {{PROP_NAME_1}}="test-value"
+        {{PROP_NAME_2}}="test-value"
+      />,
+    );
+
+    // Add assertions for key content
+    expect(html).toContain('test-value');
+  });
+
+  it('renders with all optional props', () => {
+    const html = render(
+      <{{COMPONENT_NAME}}
+        {{PROP_NAME_1}}="test-value"
+        {{PROP_NAME_2}}="test-value"
+        {{OPTIONAL_PROP}}="optional-value"
+      />,
+    );
+
+    expect(html).toBeTruthy();
+    expect(html).toContain('optional-value');
+  });
+
+  it('renders proper HTML structure', () => {
+    const html = render(
+      <{{COMPONENT_NAME}}
+        {{PROP_NAME_1}}="test-value"
+        {{PROP_NAME_2}}="test-value"
+      />,
+    );
+
+    expect(html).toContain('<html');
+    expect(html).toContain('<body');
+    expect(html).toContain('</body>');
+    expect(html).toContain('</html>');
+  });
+
+  it('includes mobile viewport meta tag', () => {
+    const html = render(
+      <{{COMPONENT_NAME}}
+        {{PROP_NAME_1}}="test-value"
+        {{PROP_NAME_2}}="test-value"
+      />,
+    );
+
+    expect(html).toContain('viewport');
+  });
+});

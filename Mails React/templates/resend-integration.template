@@ -1,0 +1,184 @@
+import { Resend } from 'resend';
+import { render } from 'react-email';
+import { {{COMPONENT_NAME}} } from './{{component-slug}}';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+/**
+ * Send {{COMPONENT_NAME}} email via Resend
+ *
+ * @param to - Recipient email address
+ * @param props - Component props
+ * @returns Resend response with email ID or error
+ */
+export async function send{{COMPONENT_NAME}}(
+  to: string,
+  props: {{COMPONENT_NAME}}Props,
+) {
+  try {
+    // Render React component to HTML
+    const html = render(<{{COMPONENT_NAME}} {...props} />);
+
+    // Send via Resend
+    const { data, error } = await resend.emails.send({
+      from: `{{FROM_ADDRESS}}@${process.env.RESEND_DOMAIN}`,
+      to,
+      subject: '{{SUBJECT_LINE}}',
+      html,
+      // Optional: Add tags for analytics
+      tags: [
+        { name: 'category', value: '{{EMAIL_CATEGORY}}' },
+      ],
+    });
+
+    if (error) {
+      console.error('Failed to send {{COMPONENT_NAME}}:', error);
+      throw new Error(`Email send failed: ${error.message}`);
+    }
+
+    console.log(`{{COMPONENT_NAME}} sent to ${to}. ID: ${data?.id}`);
+    return data;
+  } catch (error) {
+    console.error('Error sending {{COMPONENT_NAME}}:', error);
+    throw error;
+  }
+}
+
+/**
+ * Send batch {{COMPONENT_NAME}} emails via Resend
+ *
+ * @param recipients - Array of recipient objects
+ * @param propsGenerator - Function to generate props per recipient
+ * @returns Array of send results
+ */
+export async function send{{COMPONENT_NAME}}Batch(
+  recipients: Array<{ email: string; name: string }>,
+  propsGenerator: (recipient: typeof recipients[0]) => {{COMPONENT_NAME}}Props,
+) {
+  try {
+    // Generate email payload for each recipient
+    const emails = recipients.map(recipient => {
+      const props = propsGenerator(recipient);
+      const html = render(<{{COMPONENT_NAME}} {...props} />);
+
+      return {
+        from: `{{FROM_ADDRESS}}@${process.env.RESEND_DOMAIN}`,
+        to: recipient.email,
+        subject: '{{SUBJECT_LINE}}',
+        html,
+        tags: [
+          { name: 'category', value: '{{EMAIL_CATEGORY}}' },
+          { name: 'recipient_name', value: recipient.name },
+        ],
+      };
+    });
+
+    // Send in batches of 100 (Resend batch API limit)
+    const batchSize = 100;
+    const results = [];
+
+    for (let i = 0; i < emails.length; i += batchSize) {
+      const batch = emails.slice(i, i + batchSize);
+      const batchNumber = Math.floor(i / batchSize) + 1;
+
+      console.log(`Sending batch ${batchNumber} of ${Math.ceil(emails.length / batchSize)}...`);
+
+      const { data, error } = await resend.batch.send(batch);
+
+      if (error) {
+        console.error(`Batch ${batchNumber} failed:`, error);
+        results.push({
+          batchNumber,
+          success: false,
+          error: error.message,
+        });
+      } else {
+        console.log(`Batch ${batchNumber} sent successfully`);
+        results.push({
+          batchNumber,
+          success: true,
+          data,
+        });
+      }
+
+      // Rate limiting: wait between batches
+      if (i + batchSize < emails.length) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+    }
+
+    return results;
+  } catch (error) {
+    console.error('Error sending {{COMPONENT_NAME}} batch:', error);
+    throw error;
+  }
+}
+
+/**
+ * Schedule {{COMPONENT_NAME}} email for future delivery
+ *
+ * @param to - Recipient email address
+ * @param props - Component props
+ * @param scheduledAt - ISO 8601 datetime string
+ * @returns Resend response with email ID
+ */
+export async function schedule{{COMPONENT_NAME}}(
+  to: string,
+  props: {{COMPONENT_NAME}}Props,
+  scheduledAt: string,
+) {
+  try {
+    const html = render(<{{COMPONENT_NAME}} {...props} />);
+
+    const { data, error } = await resend.emails.send({
+      from: `{{FROM_ADDRESS}}@${process.env.RESEND_DOMAIN}`,
+      to,
+      subject: '{{SUBJECT_LINE}}',
+      html,
+      scheduled_at: scheduledAt,
+      tags: [
+        { name: 'category', value: '{{EMAIL_CATEGORY}}' },
+        { name: 'scheduled', value: 'true' },
+      ],
+    });
+
+    if (error) {
+      throw new Error(`Schedule failed: ${error.message}`);
+    }
+
+    console.log(`{{COMPONENT_NAME}} scheduled for ${scheduledAt}. ID: ${data?.id}`);
+    return data;
+  } catch (error) {
+    console.error('Error scheduling {{COMPONENT_NAME}}:', error);
+    throw error;
+  }
+}
+
+/**
+ * Example usage:
+ *
+ * // Single email
+ * await send{{COMPONENT_NAME}}('user@example.com', {
+ *   recipientName: 'John Doe',
+ *   recipientEmail: 'user@example.com',
+ *   // ... other props
+ * });
+ *
+ * // Batch emails
+ * await send{{COMPONENT_NAME}}Batch(
+ *   [
+ *     { email: 'user1@example.com', name: 'User 1' },
+ *     { email: 'user2@example.com', name: 'User 2' },
+ *   ],
+ *   (recipient) => ({
+ *     recipientName: recipient.name,
+ *     recipientEmail: recipient.email,
+ *     // ... other props
+ *   })
+ * );
+ *
+ * // Scheduled email
+ * await schedule{{COMPONENT_NAME}}('user@example.com', {
+ *   // ... props
+ * }, new Date(Date.now() + 3600000).toISOString());
+ */

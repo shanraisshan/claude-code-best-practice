@@ -1,0 +1,76 @@
+# Contabo Infrastructure Configuration
+# Copy to .env.local and fill in your values
+
+# =============================================================================
+# Authentication
+# =============================================================================
+
+# API Credentials - Get from: https://my.contabo.com/api/details
+# OAuth2 Client ID
+CNTB_OAUTH2_CLIENT_ID=your_client_id_here
+
+# OAuth2 Client Secret
+CNTB_OAUTH2_CLIENT_SECRET=your_client_secret_here
+
+# API User (your email)
+CNTB_OAUTH2_USER=your_email_here
+
+# API Password (your account password)
+CNTB_OAUTH2_PASS=your_password_here
+
+# =============================================================================
+# Server Configuration
+# =============================================================================
+
+# Region
+# Options: EU, US-central, US-east, US-west, SIN, JPN, AUS
+# Run `cntb get datacenters` for full list
+CONTABO_REGION=EU
+
+# Product ID
+# IMPORTANT: Some product IDs may not work (V45 returns "No offer found")
+# Verified working: V48 (VPS M, 6vCPU/16GB €14), V12 (VPS S NVMe, 4vCPU/8GB €5)
+# Run `cntb get products --productType vps` for current list
+CONTABO_PRODUCT_ID=V48
+
+# Image ID
+# Options: ubuntu-22.04, ubuntu-24.04, debian-12, debian-11
+CONTABO_IMAGE_ID=ubuntu-22.04
+
+# Server Name
+SERVER_NAME=my-server
+
+# =============================================================================
+# SSH Configuration
+# =============================================================================
+
+# Local SSH Key Paths
+SSH_PUBLIC_KEY_PATH=~/.ssh/id_rsa.pub
+SSH_PRIVATE_KEY_PATH=~/.ssh/id_rsa
+
+# =============================================================================
+# Outputs (set after deployment)
+# =============================================================================
+
+# These will be set by the deployment process
+# SERVER_IP=
+# SSH_USER=root
+# SSH_KEY_PATH=~/.ssh/id_rsa
+# SERVER_ARCH=amd64
+# INSTANCE_ID=
+
+# =============================================================================
+# Service-Specific (for downstream skills)
+# =============================================================================
+
+# These will be set to SERVER_IP after deployment
+# COOLIFY_SERVER_IP=
+# KASM_SERVER_IP=
+
+# =============================================================================
+# Object Storage (optional)
+# =============================================================================
+
+# For object storage with auto-scaling
+# CONTABO_STORAGE_SIZE_TB=0.5
+# CONTABO_STORAGE_AUTOSCALE_LIMIT_TB=2
