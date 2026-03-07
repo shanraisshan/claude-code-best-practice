@@ -1,0 +1,88 @@
+{
+  "skill_name": "signup-flow-cro",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit our signup flow. We have a 3-step process: Step 1 asks for email, password, and full name. Step 2 asks for company name, company size, role, and industry. Step 3 asks for use case and how they heard about us. Current completion rate is 45%.",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify the flow type (likely B2B SaaS trial). Should apply the core principles: minimize required fields (which of these are genuinely needed before they can use the product?). Should evaluate each step: Step 1 is reasonable, Step 2 fields are mostly deferrable to progressive profiling, Step 3 is entirely deferrable. Should recommend cutting to Step 1 only or at most 2 steps. Should provide audit findings in structured format (Issue, Impact, Fix, Priority). Should include Quick Wins, High-Impact Changes, and Test Hypotheses.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Identifies flow type",
+        "Applies minimize required fields principle",
+        "Evaluates each field for necessity",
+        "Recommends deferring most Step 2 and all Step 3 fields",
+        "Provides findings in structured format",
+        "Includes Quick Wins, High-Impact Changes, Test Hypotheses"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Should we add Google and Microsoft SSO to our signup page? We're a B2B project management tool and currently only have email/password signup.",
+      "expected_output": "Should apply the social auth options guidance. For B2B, should recommend Google and Microsoft as the primary SSO options (matching the B2B recommendation). Should explain benefits: higher conversion (less friction), pre-verified email, faster onboarding. Should recommend placing SSO prominently (often higher conversion than email). Should address implementation considerations: clear visual separation from email signup, button copy ('Sign up with Google' not just Google icon), consider which option to emphasize based on audience.",
+      "assertions": [
+        "Applies social auth options guidance",
+        "Recommends Google and Microsoft for B2B",
+        "Explains conversion benefits of SSO",
+        "Recommends prominent placement",
+        "Addresses visual separation from email signup",
+        "Provides implementation recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our signup form is just email and password but we still only get 35% of visitors to complete it. what else could be wrong?",
+      "expected_output": "Should trigger on casual phrasing. Should investigate beyond just form fields since the form is already minimal. Should apply trust and friction reduction guidance: is there a 'No credit card required' message? Privacy assurance? Testimonial near the form? Should check form-level issues: error handling, password requirements clarity, submit button copy. Should also look at pre-form factors: is the value proposition clear? Is the page optimized? (cross-reference page-cro). Should provide diagnostic checklist and recommendations.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Investigates beyond form fields",
+        "Applies trust and friction reduction",
+        "Checks for 'No credit card required' messaging",
+        "Checks error handling and password UX",
+        "Considers pre-form factors (value prop, page CRO)",
+        "Provides diagnostic checklist"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We require email verification before users can access the product. Is that hurting our conversion? Should we change it?",
+      "expected_output": "Should apply the verification flows guidance. Should explain that requiring verification before product access does create friction and likely reduces activation. Should recommend alternatives: delay verification until needed (let users explore first), magic link as alternative to password, let users start while verification is pending. Should discuss when email verification IS required (compliance, preventing abuse). Should provide specific recommendations for improving the verification experience if kept.",
+      "assertions": [
+        "Applies verification flows guidance",
+        "Explains verification friction impact",
+        "Recommends delaying verification",
+        "Suggests letting users explore while pending",
+        "Discusses when verification is required",
+        "Provides improvements if verification is kept"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "What experiments should we run on our signup page? We want to improve our trial signup rate.",
+      "expected_output": "Should apply the experiment ideas section. Should provide experiments across categories: form design experiments (layout, field count, SSO), copy and messaging experiments (headline, CTA text, trust elements), trial and commitment experiments (credit card required vs not, trial length), and post-submit experiments. Should prioritize experiments by likely impact. Should cross-reference ab-test-setup for proper experiment design.",
+      "assertions": [
+        "Applies experiment ideas section",
+        "Covers form design experiments",
+        "Covers copy and messaging experiments",
+        "Covers trial and commitment experiments",
+        "Prioritizes by likely impact",
+        "Cross-references ab-test-setup skill"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Users sign up fine but then never activate. Only 20% complete onboarding. What do we do?",
+      "expected_output": "Should recognize this is a post-signup onboarding problem, not a signup flow problem. Should defer to or cross-reference the onboarding-cro skill, which handles post-signup activation and onboarding optimization. Signup-flow-cro covers getting users through the signup form, not what happens after.",
+      "assertions": [
+        "Recognizes this as post-signup onboarding, not signup flow",
+        "References or defers to onboarding-cro skill",
+        "Explains signup-flow-cro covers the signup form, not post-signup"
+      ],
+      "files": []
+    }
+  ]
+}

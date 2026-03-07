@@ -1,0 +1,93 @@
+{
+  "skill_name": "email-sequence",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a welcome email sequence for new users who sign up for our project management tool's free trial. The trial is 14 days. We want to get them to their aha moment (creating their first project and inviting a team member).",
+      "expected_output": "Should check for product-marketing-context.md first. Should create a welcome sequence (5-7 emails) following the core principles: one email one job, value before ask. Should map each email to a specific goal in the 14-day trial journey. Should include timing/delays between emails. Each email should follow the email copy structure: hook → context → value → CTA → sign-off. Should include subject lines following the subject line strategy. Should align sequence with the aha moment (first project + team invite). Output should follow the structured format with sequence overview and per-email specs.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Creates 5-7 email welcome sequence",
+        "Follows one email one job principle",
+        "Maps emails to trial timeline (14 days)",
+        "Includes timing between emails",
+        "Each email has hook, context, value, CTA",
+        "Includes subject lines for each email",
+        "Aligns with stated aha moment",
+        "Output follows structured per-email format"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We need a lead nurture sequence for people who download our 'State of DevOps 2024' report. Goal is to get them to book a demo of our CI/CD platform.",
+      "expected_output": "Should create a lead nurture sequence (6-8 emails). Should follow value before ask — first emails should provide related value, not immediately push for demo. Should map the sequence from awareness (report download) through consideration (related content, case studies) to decision (demo request). Should include timing between emails. Each email should have clear subject line, hook, single CTA. Should gradually increase commitment asks across the sequence.",
+      "assertions": [
+        "Creates 6-8 email lead nurture sequence",
+        "Follows value before ask principle",
+        "Maps from awareness through consideration to decision",
+        "Includes timing between emails",
+        "Each email has clear subject line and single CTA",
+        "Gradually increases commitment asks",
+        "Connects to original download topic"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our email open rates have tanked. used to be 35% now we're at 18%. what's going on and how do we fix our subject lines?",
+      "expected_output": "Should trigger on casual phrasing. Should diagnose potential causes of declining open rates: sender reputation, list hygiene, subject line quality, sending frequency, deliverability issues. Should apply the subject line strategy from the skill: test curiosity vs benefit vs urgency patterns, personalization, optimal length. Should recommend a re-engagement campaign to clean the list. Should provide specific subject line formulas and examples. Should suggest testing framework for subject lines.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Diagnoses potential causes beyond just subject lines",
+        "Addresses sender reputation and deliverability",
+        "Recommends list hygiene or re-engagement",
+        "Applies subject line strategy with specific patterns",
+        "Provides subject line formulas and examples",
+        "Suggests testing framework"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Build a re-engagement sequence for subscribers who haven't opened any emails in 90 days. We have about 5,000 inactive subscribers.",
+      "expected_output": "Should create a re-engagement sequence (3-4 emails). Should follow the re-engagement pattern: first email acknowledges absence and offers value, middle emails escalate with compelling reasons to re-engage, final email is a clear 'last chance' before removal. Should recommend aggressive subject lines to break through. Should include a sunset policy (remove non-responders after sequence completes). Should address the impact on deliverability of keeping inactive subscribers.",
+      "assertions": [
+        "Creates 3-4 email re-engagement sequence",
+        "Acknowledges absence in first email",
+        "Escalates through the sequence",
+        "Includes 'last chance' final email",
+        "Recommends sunset policy for non-responders",
+        "Addresses deliverability impact of inactive subscribers",
+        "Uses compelling subject lines"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "What's the ideal timing for our onboarding email sequence? We send the first email immediately after signup, but we're not sure about the rest.",
+      "expected_output": "Should provide timing guidance for onboarding sequences. Should reference the timing and delays framework: immediate first email (welcome/confirmation), then suggest data-driven timing based on user behavior triggers vs fixed time delays. Should recommend behavior-triggered emails when possible (user completed action → next email) with time-based fallbacks. Should provide typical timing patterns for SaaS onboarding (day 0, day 1, day 3, day 5, day 7, etc.). Should note that optimal timing depends on product complexity and trial length.",
+      "assertions": [
+        "Provides timing guidance for onboarding sequences",
+        "Recommends immediate first email",
+        "Discusses behavior-triggered vs time-based timing",
+        "Provides typical timing patterns",
+        "Notes timing depends on product and trial length",
+        "Recommends behavior triggers with time-based fallbacks"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Help me optimize our post-signup onboarding experience. Users sign up but 60% never complete setup.",
+      "expected_output": "Should recognize this is an in-app onboarding optimization task, not an email sequence task. Should defer to or cross-reference the onboarding-cro skill, which handles in-app onboarding flows, checklists, and activation optimization. May offer to help with the email component of onboarding but should make clear that onboarding-cro is the primary skill for this task.",
+      "assertions": [
+        "Recognizes this as in-app onboarding optimization",
+        "References or defers to onboarding-cro skill",
+        "Does not attempt full onboarding redesign using email patterns",
+        "May offer email component support"
+      ],
+      "files": []
+    }
+  ]
+}

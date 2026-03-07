@@ -1,0 +1,91 @@
+{
+  "skill_name": "launch-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're launching a new B2B SaaS product for design teams in 6 weeks. It's a design review tool. We have a small audience (500 email subscribers, 2k Twitter followers). Help us plan the launch.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the ORB Framework (Owned, Rented, Borrowed channels) with the user's specific resources. Owned: email list (500 subscribers), website. Rented: Twitter (2k followers). Borrowed: partnerships, communities, Product Hunt. Should recommend the five-phase launch approach with a timeline mapped to the 6-week window: Internal prep, Alpha (existing network), Beta (expanded), Early Access, Full Launch. Should provide specific tactics for each phase. Should recommend building up the audience before launch day. Should include a launch day checklist.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Applies ORB Framework (Owned, Rented, Borrowed)",
+        "Maps to user's specific channels and audience sizes",
+        "Recommends five-phase launch approach",
+        "Provides timeline mapped to 6-week window",
+        "Provides specific tactics for each phase",
+        "Recommends audience building before launch",
+        "Includes launch day checklist"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We want to launch on Product Hunt. Any tips? We've never done it before.",
+      "expected_output": "Should apply the Product Hunt strategy section. Should cover: choosing the right day and time, preparing assets (logo, gallery images, maker video), crafting the tagline and description, building a hunter network, activating supporters on launch day, engaging with comments, and post-launch follow-up. Should recommend preparation timeline (start 2-4 weeks before). Should mention common mistakes to avoid. Should set realistic expectations about outcomes.",
+      "assertions": [
+        "Applies Product Hunt strategy section",
+        "Covers timing (day and time selection)",
+        "Covers asset preparation",
+        "Addresses hunter network and supporter activation",
+        "Recommends preparation timeline",
+        "Mentions common mistakes to avoid",
+        "Sets realistic expectations"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we just shipped a major feature update. how should we announce it? it's not a full product launch, just a big new feature.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the ongoing launch strategy section, specifically the major/medium/minor update matrix. Should identify this as a major feature update. Should recommend appropriate channels and tactics for a feature launch (less than a full product launch but more than a changelog entry). Should include: announcement email, blog post, social media push, in-app notification, and possibly a mini Product Hunt launch. Should provide a feature announcement framework.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies ongoing launch strategy / update matrix",
+        "Identifies as major feature update",
+        "Scales tactics appropriately (not full launch)",
+        "Recommends announcement channels",
+        "Includes email, blog, social, and in-app notification",
+        "Provides feature announcement framework"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Our launch flopped. We launched 3 weeks ago and only got 50 signups. We expected at least 500. What went wrong and what can we do now?",
+      "expected_output": "Should apply the post-launch product marketing section. Should diagnose potential failure causes: insufficient audience building pre-launch, wrong channels, weak value proposition messaging, poor launch execution, targeting the wrong audience. Should recommend post-launch recovery tactics: iterate on messaging, identify which channels produced the 50 signups and double down, try new distribution channels, leverage early users for testimonials. Should provide a specific 30-day recovery plan.",
+      "assertions": [
+        "Applies post-launch product marketing guidance",
+        "Diagnoses potential failure causes",
+        "Addresses pre-launch audience building gap",
+        "Recommends post-launch recovery tactics",
+        "Suggests analyzing which channels produced signups",
+        "Provides specific recovery plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "How do we leverage partnerships and borrowed audiences for our launch? We don't have a big audience of our own.",
+      "expected_output": "Should focus on the Borrowed channel from the ORB Framework. Should provide specific borrowed audience tactics: podcast guest appearances, co-marketing with complementary tools, influencer partnerships, community engagement (relevant Slack groups, Discord servers, Reddit), guest posts, cross-promotions. Should recommend how to identify and approach potential partners. Should note that borrowed audience strategies take time to build and should start well before launch day.",
+      "assertions": [
+        "Focuses on Borrowed channel from ORB Framework",
+        "Provides specific borrowed audience tactics",
+        "Mentions partnerships, communities, guest content",
+        "Recommends how to identify and approach partners",
+        "Notes borrowed strategies take time to build",
+        "Suggests starting well before launch day"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Give me some creative marketing ideas to promote our product. We're bootstrapped and don't have a big budget.",
+      "expected_output": "Should recognize this is a broader marketing ideas request, not specifically a launch strategy task. Should defer to or cross-reference the marketing-ideas skill, which provides 139 marketing ideas organized by category and filtered by budget. May provide some launch-related tactical ideas but should make clear that marketing-ideas is the right skill for a broader brainstorming session.",
+      "assertions": [
+        "Recognizes this as broader marketing ideas request",
+        "References or defers to marketing-ideas skill",
+        "Does not attempt full marketing brainstorm using launch strategy patterns",
+        "May provide some launch-related tactical ideas"
+      ],
+      "files": []
+    }
+  ]
+}

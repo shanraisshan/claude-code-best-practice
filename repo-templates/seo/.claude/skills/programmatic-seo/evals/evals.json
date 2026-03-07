@@ -1,0 +1,94 @@
+{
+  "skill_name": "programmatic-seo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We want to create programmatic SEO pages for our CRM. We're thinking of 'CRM for [industry]' pages — like 'CRM for Real Estate,' 'CRM for Healthcare,' etc. How should we approach this?",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify this as the Personas playbook (industry-specific pages). Should apply the core principles: unique value per page (not just swapping the industry name), proprietary data or insights per industry, clean URL structure. Should recommend the implementation framework: keyword research for each industry variation, data requirements (what industry-specific content makes each page unique), template design, internal linking strategy between industry pages and main pages, and indexation strategy. Should warn against thin content (just template + keyword swap).",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Identifies as Personas playbook",
+        "Applies core principles (unique value, proprietary data, clean URLs)",
+        "Recommends keyword research per variation",
+        "Addresses data requirements for unique content",
+        "Provides template design guidance",
+        "Includes internal linking strategy",
+        "Warns against thin content"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a comparison page strategy. We want pages like 'Notion vs Asana', 'Notion vs Monday', etc. for all our competitors. We have 15 competitors.",
+      "expected_output": "Should identify this as the Comparisons playbook. Should apply the programmatic approach for competitor comparison pages at scale. Should recommend: template structure for comparison pages, unique data per comparison (not just the same template with names swapped), keyword research for each '[competitor A] vs [competitor B]' variation, URL structure (/compare/notion-vs-asana), internal linking between comparison pages, and quality checks. Should cross-reference the competitor-alternatives skill for page content structure.",
+      "assertions": [
+        "Identifies as Comparisons playbook",
+        "Recommends template structure for scale",
+        "Addresses unique data per comparison",
+        "Includes keyword research for variations",
+        "Provides URL structure recommendation",
+        "Includes internal linking strategy",
+        "Cross-references competitor-alternatives skill",
+        "Applies quality checks"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we want to rank for '[tool name] integration' keywords. we integrate with 50+ tools and want a page for each. like 'Slack integration', 'Salesforce integration' etc.",
+      "expected_output": "Should trigger on casual phrasing. Should identify this as the Integrations playbook. Should recommend: template design for integration pages (what it does, how to set up, use cases), unique content per integration (specific workflows, screenshots, setup steps), keyword research for '[tool] + [your product] integration', URL structure (/integrations/slack), hub page linking to all integration pages, and schema markup considerations. Should emphasize that each page needs genuine unique value, not just 'we integrate with [tool].'",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Identifies as Integrations playbook",
+        "Recommends template with unique content per integration",
+        "Includes setup steps and use cases per page",
+        "Provides URL structure recommendation",
+        "Recommends hub page for all integrations",
+        "Emphasizes genuine unique value per page"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We built 500 programmatic pages but Google isn't indexing most of them. Only 80 are in the index. What's going wrong?",
+      "expected_output": "Should diagnose the indexation problem. Should apply the quality checks and indexation strategy guidance. Should investigate: thin content (are pages providing unique value or just template + keyword?), crawl budget (500 pages may be fine but depends on site authority), internal linking (are the pages discoverable?), XML sitemap inclusion, duplicate/near-duplicate content issues. Should recommend specific fixes: improve content uniqueness, strengthen internal linking, submit sitemap, check robots.txt, use Search Console for indexation requests. Should warn that Google may choose not to index thin pages regardless.",
+      "assertions": [
+        "Diagnoses indexation problem",
+        "Investigates thin content as likely cause",
+        "Checks crawl budget considerations",
+        "Checks internal linking to programmatic pages",
+        "Checks XML sitemap and robots.txt",
+        "Recommends specific fixes for indexation",
+        "Warns about Google's thin content policies"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Help me create a glossary section for our marketing automation platform. We want to define 200+ marketing terms and rank for '[term] definition' keywords.",
+      "expected_output": "Should identify this as the Glossary playbook. Should apply the template design: term definition page template (definition, examples, related terms, how it applies to the user's product), hub/index page linking to all terms, URL structure (/glossary/[term]), alphabetical and categorical navigation. Should address quality: each definition should provide genuine value beyond a dictionary definition. Should include internal linking strategy and schema markup (DefinedTerm schema). Should recommend starting with highest-volume terms.",
+      "assertions": [
+        "Identifies as Glossary playbook",
+        "Provides template design for term pages",
+        "Recommends hub/index page",
+        "Provides URL structure",
+        "Addresses content quality beyond dictionary definitions",
+        "Includes internal linking strategy",
+        "Recommends starting with highest-volume terms"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you audit our existing programmatic SEO pages for technical issues? We have crawl errors and some pages return 404s.",
+      "expected_output": "Should recognize this is a technical SEO audit task, not a programmatic SEO strategy task. Should defer to or cross-reference the seo-audit skill, which handles crawlability, indexation, and technical SEO issues. Programmatic-seo focuses on strategy, template design, and content planning for scaled pages.",
+      "assertions": [
+        "Recognizes this as technical SEO audit task",
+        "References or defers to seo-audit skill",
+        "Explains that programmatic-seo is for strategy and template design",
+        "Does not attempt full technical SEO audit"
+      ],
+      "files": []
+    }
+  ]
+}

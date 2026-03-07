@@ -1,0 +1,111 @@
+{
+  "skill_name": "page-cro",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's my SaaS landing page: https://example.com/product. We get about 5,000 visitors/month from Google Ads but only 1.2% convert to free trial signups. Can you help me figure out what's wrong?",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify page type (landing page) and conversion goal (free trial signup). Should analyze across the CRO framework dimensions: value proposition clarity, headline effectiveness, CTA placement/copy/hierarchy, visual hierarchy, trust signals, objection handling, and friction points. Should provide recommendations organized as Quick Wins, High-Impact Changes, and Test Ideas. Should note the message match issue between Google Ads and landing page. Should provide 2-3 headline and CTA copy alternatives with rationale.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Identifies page type as landing page",
+        "Identifies conversion goal as free trial signup",
+        "Analyzes value proposition clarity",
+        "Analyzes CTA placement and copy",
+        "Notes message match between ads and landing page",
+        "Output has Quick Wins section",
+        "Output has High-Impact Changes section",
+        "Output has Test Ideas section",
+        "Provides 2-3 headline or CTA alternatives"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our pricing page has three tiers but nobody picks the middle one. 60% choose the cheapest plan and 30% bounce entirely. What should we change?",
+      "expected_output": "Should apply the Pricing Page CRO framework. Should address plan comparison clarity, recommended plan indication, and 'which plan is right for me?' anxiety. Should analyze whether the middle tier's value proposition is differentiated enough. Should recommend trust signals and social proof near pricing. Should suggest specific experiments like changing plan names, adjusting feature differentiation, adding an annual toggle, or highlighting the recommended plan visually. Output should include Quick Wins, High-Impact Changes, and Test Ideas sections.",
+      "assertions": [
+        "Applies Pricing Page CRO framework",
+        "Addresses recommended plan indication",
+        "Addresses 'which plan is right for me' anxiety",
+        "Analyzes middle tier differentiation",
+        "Suggests specific experiments",
+        "Output has Quick Wins section",
+        "Output has High-Impact Changes section",
+        "Output has Test Ideas section"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "this page isn't converting. can you take a look? it's our homepage for a B2B project management tool",
+      "expected_output": "Should trigger on the casual 'this page isn't converting' phrasing. Should identify this as a Homepage CRO analysis. Should ask clarifying questions about current conversion rate, traffic sources, and conversion goal. Should apply the full CRO Analysis Framework starting with value proposition clarity. Should address the homepage-specific guidance: serving multiple audiences, leading with broadest value prop, and providing clear paths for different visitor intents. Should provide structured output with Quick Wins, High-Impact Changes, Test Ideas, and Copy Alternatives.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Identifies as Homepage CRO",
+        "Asks about current conversion rate",
+        "Asks about traffic sources",
+        "Applies CRO Analysis Framework",
+        "Addresses serving multiple audiences",
+        "Addresses clear paths for different visitor intents",
+        "Output has structured sections"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We have a blog that gets 20k organic visits/month but almost nobody clicks through to our product. How do we get more conversions from blog readers?",
+      "expected_output": "Should apply the Blog Post CRO framework. Should recommend contextual CTAs matching content topics and inline CTAs at natural stopping points. Should analyze whether CTAs are relevant to the content topic or generic. Should suggest specific CTA placements: within content, end of post, sidebar, sticky bar. Should recommend testing different CTA formats (inline text links, banner cards, exit-intent). Should cross-reference copywriting skill for CTA copy improvement.",
+      "assertions": [
+        "Applies Blog Post CRO framework",
+        "Recommends contextual CTAs matching content",
+        "Recommends inline CTAs at natural stopping points",
+        "Suggests specific CTA placements",
+        "Suggests testing different CTA formats",
+        "Cross-references copywriting or related skill"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "We redesigned our landing page and conversions dropped from 4.2% to 2.8%. Here's the new page. What went wrong?",
+      "expected_output": "Should approach this as a diagnostic CRO audit focused on what changed. Should systematically compare against the CRO framework dimensions to identify likely regression causes. Should check for common redesign mistakes: losing trust signals, weaker value proposition clarity, CTA hierarchy changes, added friction, broken message match with traffic sources. Should provide specific fixes organized by likely impact. Should recommend reverting high-risk changes while testing others.",
+      "assertions": [
+        "Approaches as diagnostic audit",
+        "Checks for lost trust signals",
+        "Checks for weakened value proposition",
+        "Checks for CTA hierarchy changes",
+        "Checks for added friction",
+        "Checks for broken message match with traffic sources",
+        "Provides fixes organized by impact",
+        "Recommends reverting high-risk changes"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Our signup form has too many fields and people keep abandoning it halfway through. Can you help optimize it?",
+      "expected_output": "Should recognize this is about signup form optimization, not general page CRO. Should defer to or cross-reference the signup-flow-cro skill, which specifically handles signup, registration, and account creation flows. May provide some general friction reduction advice but should make clear that signup-flow-cro is the right skill for this task.",
+      "assertions": [
+        "Recognizes this as signup flow optimization",
+        "References or defers to signup-flow-cro skill",
+        "Does not attempt full page-cro analysis on a form"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Review this feature page for our API monitoring tool. Most traffic comes from organic search for 'API monitoring tools'. We want them to start a free trial.",
+      "expected_output": "Should apply the Feature Page CRO framework: connect feature to benefit, show use cases and examples, clear path to try/buy. Should reference the experiments section and suggest prioritized test ideas for hero section, trust signals, and CTA variations. Should note the organic search traffic source and check for message match with search intent. Should cross-reference ab-test-setup skill for proper test implementation.",
+      "assertions": [
+        "Applies Feature Page CRO framework",
+        "Connects features to benefits",
+        "Suggests use cases and examples",
+        "Provides clear path to try/buy",
+        "Notes organic traffic source and search intent match",
+        "Suggests specific experiment hypotheses",
+        "Cross-references ab-test-setup skill"
+      ],
+      "files": []
+    }
+  ]
+}

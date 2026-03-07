@@ -1,0 +1,90 @@
+{
+  "skill_name": "content-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me build a content strategy for our B2B SaaS product. We sell expense management software to finance teams at companies with 50-500 employees. We currently have no blog and want to start from scratch.",
+      "expected_output": "Should check for product-marketing-context.md first. Should establish content pillars (3-5 core topic areas). Should map content types by buyer stage (awareness → consideration → decision → implementation). Should identify keyword research opportunities by buyer stage. Should recommend a mix of searchable (SEO-driven) and shareable (thought leadership, data) content. Should use the prioritization scoring framework (customer impact 40%, content-market fit 30%, search potential 20%, resources 10%). Should provide an initial content calendar or publishing cadence. Should recommend content types appropriate for starting from scratch.",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Establishes 3-5 content pillars",
+        "Maps content by buyer stage (awareness through implementation)",
+        "Includes keyword research by buyer stage",
+        "Recommends mix of searchable and shareable content",
+        "Uses prioritization scoring framework",
+        "Provides publishing cadence or calendar",
+        "Recommends appropriate starting content types"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We have 200+ blog posts but traffic has been flat for a year. Our content feels random — no clear strategy. How do we fix this?",
+      "expected_output": "Should diagnose the 'random content' problem. Should recommend a content audit process to evaluate existing posts. Should introduce content pillars and topical clustering to organize the existing library. Should identify hub-and-spoke opportunities from existing content. Should recommend which posts to update, consolidate, or retire. Should use the prioritization framework to plan next steps. Should address topical authority building through clusters.",
+      "assertions": [
+        "Diagnoses the 'random content' problem",
+        "Recommends content audit for existing posts",
+        "Introduces content pillars and topical clustering",
+        "Identifies hub-and-spoke opportunities",
+        "Recommends update, consolidate, or retire decisions",
+        "Uses prioritization framework",
+        "Addresses topical authority building"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "what kind of content should we be creating? we're a developer tool (API testing platform) and our audience is backend developers and QA engineers",
+      "expected_output": "Should trigger on casual phrasing. Should recommend content types appropriate for a developer audience: technical tutorials, documentation-style guides, use-case content, template/example libraries, data-driven benchmarks. Should note that developer audiences prefer depth, accuracy, and practical value over marketing fluff. Should suggest content pillars aligned with developer interests. Should use the ideation sources framework (keyword data, community forums like Stack Overflow/Reddit, competitor gaps).",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Recommends content types for developer audience",
+        "Emphasizes technical depth and practical value",
+        "Notes developers prefer substance over marketing",
+        "Suggests content pillars for developer tool",
+        "Uses ideation sources framework",
+        "Mentions developer community channels"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "How should we prioritize which content to create first? We have a list of 50 blog post ideas but limited resources — one content marketer writing 2 posts per week.",
+      "expected_output": "Should apply the prioritization scoring framework: customer impact (40%), content-market fit (30%), search potential (20%), resources required (10%). Should help score or rank the content ideas using this framework. Should recommend focusing on high-impact, lower-effort content first. Should consider the buyer stage distribution (don't write only top-of-funnel). Should provide a practical workflow for the single content marketer to use going forward.",
+      "assertions": [
+        "Applies prioritization scoring framework with weights",
+        "Explains each scoring dimension",
+        "Recommends focusing on high-impact, lower-effort first",
+        "Considers buyer stage distribution",
+        "Provides practical workflow for limited resources"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "We want to build topical authority in 'employee engagement.' What does a content cluster look like for this topic?",
+      "expected_output": "Should apply the hub-and-spoke content cluster model. Should design a pillar page for 'employee engagement' (comprehensive, 3000+ word guide). Should identify 8-15 supporting spoke articles targeting long-tail keywords related to employee engagement. Should map the internal linking structure between hub and spokes. Should address keyword research for the cluster. Should recommend content types for each piece (guide, how-to, template, data-driven, etc.).",
+      "assertions": [
+        "Applies hub-and-spoke content cluster model",
+        "Designs a pillar page for the core topic",
+        "Identifies 8-15 supporting spoke articles",
+        "Maps internal linking between hub and spokes",
+        "Addresses keyword research for the cluster",
+        "Recommends content types for each piece"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Can you write a blog post about remote work best practices for our HR software blog?",
+      "expected_output": "Should recognize this is a copywriting/content creation task, not a content strategy task. Should defer to or cross-reference the copywriting skill for writing individual pieces of content. May provide strategic context (where this fits in the content strategy, keyword targeting, audience) but should make clear that copywriting is the right skill for writing the actual content.",
+      "assertions": [
+        "Recognizes this as content creation, not strategy",
+        "References or defers to copywriting skill",
+        "Does not attempt to write the full blog post",
+        "May provide strategic context for the piece"
+      ],
+      "files": []
+    }
+  ]
+}

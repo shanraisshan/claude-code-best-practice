@@ -1,0 +1,111 @@
+{
+  "skill_name": "copywriting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write homepage copy for a SaaS tool that automates employee onboarding. Target audience is HR directors at mid-size companies (200-2000 employees). Main differentiator is that it integrates with all major HRIS systems and cuts onboarding time from 2 weeks to 2 days.",
+      "expected_output": "Should check for product-marketing-context.md first. Should write full page copy organized by section: Headline, Subheadline, CTA (above the fold), then Social Proof, Problem/Pain, Solution/Benefits, How It Works, Objection Handling, and Final CTA. Should follow copywriting principles: clarity over cleverness, benefits over features, specificity (use the '2 weeks to 2 days' stat), customer language. Headline should communicate core value proposition. CTAs should be action-oriented ('Start Free Trial' not 'Submit'). Should provide 2-3 headline alternatives with rationale. Should include annotations explaining key copy choices. Should include meta content (SEO page title and meta description).",
+      "assertions": [
+        "Checks for product-marketing-context.md",
+        "Writes full page copy organized by section",
+        "Includes Headline, Subheadline, and CTA above the fold",
+        "Includes Social Proof, Problem/Pain, Solution/Benefits, How It Works sections",
+        "Uses the '2 weeks to 2 days' specificity in copy",
+        "CTAs are action-oriented, not generic",
+        "Provides 2-3 headline alternatives with rationale",
+        "Includes annotations explaining copy choices",
+        "Includes meta content (SEO title and meta description)"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Rewrite this headline: 'An Innovative AI-Powered Platform for Streamlined Business Operations' — it's for a B2B SaaS tool that helps small businesses manage invoicing and payments.",
+      "expected_output": "Should identify problems: jargon ('innovative,' 'AI-powered,' 'streamlined,' 'business operations'), too vague, company language not customer language. Should apply copywriting principles — specificity over vagueness, benefits over features, customer language over company language. Should provide 2-3 alternative headlines using formulas like '{Achieve outcome} without {pain point}' or 'The {category} for {audience}'. Each alternative should include rationale. Should also suggest a subheadline that adds specificity.",
+      "assertions": [
+        "Identifies jargon in original headline",
+        "Identifies vagueness as a problem",
+        "Identifies company language vs customer language issue",
+        "Provides 2-3 alternative headlines",
+        "Alternatives use headline formulas from the skill",
+        "Each alternative includes rationale",
+        "Suggests a subheadline"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "i need copy for my pricing page. we have three plans: starter ($29/mo), pro ($79/mo), business ($199/mo). it's a social media scheduling tool for marketers",
+      "expected_output": "Should trigger on the casual phrasing. Should ask or infer audience context. Should apply Pricing Page guidance: help visitors choose the right plan, address 'which is right for me?' anxiety, make recommended plan obvious. Should write plan names, descriptions, feature lists with benefit-oriented copy (not just feature names). Should include a page headline that addresses the pricing decision. CTAs should be specific per plan. Should handle objection handling (FAQ copy). Should provide alternatives for key elements.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Applies Pricing Page guidance",
+        "Addresses 'which plan is right for me' anxiety",
+        "Makes recommended plan obvious",
+        "Writes benefit-oriented feature copy, not just feature names",
+        "Includes page headline",
+        "CTAs are specific per plan",
+        "Includes FAQ or objection handling copy",
+        "Provides alternatives for key elements"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Write copy for our About page. We're a 3-person startup that built a developer tool for database migrations. Founded because we kept losing data during migrations at our last jobs. Tone should be professional but human.",
+      "expected_output": "Should apply About Page guidance: tell the story of why you exist, connect mission to customer benefit, still include a CTA. Should adapt voice and tone to 'professional but human' as specified. Should tell the founder origin story authentically. Should connect the personal pain to the customer's pain. Should include a CTA even on the About page. Copy should follow style rules: active voice, confident, specific. Should NOT be overly corporate or generic.",
+      "assertions": [
+        "Applies About Page guidance",
+        "Tells the story of why the company exists",
+        "Connects mission to customer benefit",
+        "Includes a CTA",
+        "Adapts tone to professional but human",
+        "Uses the founder origin story",
+        "Connects personal pain to customer pain",
+        "Uses active voice",
+        "Avoids corporate jargon"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Can you improve this CTA? We currently have 'Learn More' on our feature page for our analytics dashboard product.",
+      "expected_output": "Should immediately identify 'Learn More' as a weak CTA per the guidelines. Should apply the CTA formula: [Action Verb] + [What They Get] + [Qualifier]. Should provide 2-3 strong alternatives like 'See the Dashboard in Action,' 'Start Your Free Trial,' or 'Explore Analytics Features.' Each alternative should include rationale and context for when it works best. Should also consider CTA hierarchy — whether this is a primary or secondary CTA, and suggest complementary CTAs if relevant.",
+      "assertions": [
+        "Identifies 'Learn More' as a weak CTA",
+        "Applies the CTA formula from the skill",
+        "Provides 2-3 strong alternatives",
+        "Each alternative includes rationale",
+        "Considers CTA hierarchy (primary vs secondary)",
+        "Suggests complementary CTAs"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Write me a 5-email welcome sequence for new trial users of our project management tool.",
+      "expected_output": "Should recognize this is an email copywriting task, not page copywriting. Should defer to or cross-reference the email-sequence skill, which specifically handles email sequences, drip campaigns, and lifecycle emails. May provide brief general guidance but should make clear that email-sequence is the right skill for this task.",
+      "assertions": [
+        "Recognizes this as email sequence work",
+        "References or defers to email-sequence skill",
+        "Does not attempt to write a full email sequence using page copywriting patterns"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Review this copy and tell me what's wrong: 'We are extremely excited to announce our revolutionary, cutting-edge platform that will totally transform how businesses optimize their workflows! Sign up now!!'",
+      "expected_output": "Should apply the Quick Quality Check. Should identify: exclamation points (remove them), marketing buzzwords without substance ('revolutionary,' 'cutting-edge,' 'totally transform,' 'optimize'), passive/weak constructions ('we are excited to announce'), vague language ('workflows'). Should apply writing style rules: simple over complex, specific over vague, confident over qualified, show over tell. Should rewrite the copy following these principles. Should provide 2-3 alternatives.",
+      "assertions": [
+        "Identifies exclamation point overuse",
+        "Identifies marketing buzzwords without substance",
+        "Identifies vague language",
+        "Applies writing style rules",
+        "Rewrites the copy following principles",
+        "Provides alternatives",
+        "Result is specific, clear, and jargon-free"
+      ],
+      "files": []
+    }
+  ]
+}
