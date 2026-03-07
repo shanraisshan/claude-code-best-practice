@@ -23,11 +23,12 @@ Backend API repository. Claude Code is configured with skills for API design, da
 - `ruff check .` — Lint
 - `docker compose up` — Start local services
 
-## Skills Available (~8)
+## Skills Available (~9)
 - **fix** — Lint/format fixes before commits
 - **github** — PR/issue management via `gh` CLI
 - **create-pr** — Formatted PR creation
 - **backend-patterns** — API design, DB optimization, server-side best practices
+- **stripe-integration** — Checkout, subscriptions, webhooks, customer portal, metered billing
 - **python-code-style** — Linting, formatting, naming conventions
 - **python-type-safety** — Type hints, generics, protocols, mypy config
 - **python-error-handling** — Validation, exception hierarchies, partial failures
