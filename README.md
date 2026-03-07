@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_06%2C_2026_11%3A13_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_07%2C_2026_08%3A21_AM_PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -94,7 +94,7 @@ claude
 
 ## TIPS AND TRICKS
 
-![Shayan](!/tags/shayan.svg)
+![Community](!/tags/community.svg)
 
 ■ **Planning (2)**
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows). ask Claude to interview you; [ask the user a question](https://code.claude.com/docs/en/cli-reference)
@@ -142,7 +142,7 @@ claude
 ■ **Daily (3)**
 - [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 - follow [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/), [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/) on Reddit
-- follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie) on X
+- follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie), [Noah](https://x.com/noahzweben) on X
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
@@ -177,11 +177,14 @@ claude
 3. How often should you update your CLAUDE.md, and how do you know when it's become stale?
 4. Why does Claude still ignore CLAUDE.md instructions — even when they say MUST in all caps? ([reddit](https://reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/))
 
-**Agents, Skills & Workflows (3)**
+**Agents, Skills & Workflows (6)**
 
 1. When should you use a command vs an agent vs a skill — and when is vanilla Claude Code just better?
 2. How often should you update your agents, commands, and workflows as models improve?
 3. Does giving your subagent a detailed persona improve quality? What does a "perfect persona/prompt" for research/QA subagent look like?
+4. Should you rely on Claude Code's built-in plan mode — or build your own planning command/agent that enforces your team's workflow?
+5. If you have a personal skill (e.g., /implement with your coding style), how do you incorporate community skills (e.g., /simplify) without conflicts — and who wins when they disagree?
+6. Are we there yet? Can we convert an existing codebase into specs, delete the code, and have AI regenerate the exact same code from those specs alone?
 
 **Specs & Documentation (3)**
 
@@ -203,3 +206,4 @@ claude
 | [LLM Day-to-Day Degradation](reports/llm-day-to-day-degradation.md) | Why LLM performance varies day-to-day — infrastructure bugs, MoE routing variance, and psychology |
 
 [![Claude for OSS](!/tags/claude-for-oss.svg)](https://claude.com/contact-sales/claude-for-oss)
+[![Claude Community Ambassador](!/tags/claude-community-ambassador.svg)](https://claude.com/community/ambassadors)
