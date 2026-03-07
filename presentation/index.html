@@ -884,7 +884,7 @@ When creating or modifying frontend components:
             </div>
             <div class="col-card">
                 <h4>As Subagent</h4>
-                <p>Spawned in an isolated context via Task tool.</p>
+                <p>Spawned in an isolated context via Agent tool.</p>
                 <div class="code-block">Task(
   subagent_type=<span class="string">"frontend-engineer"</span>
   prompt=<span class="string">"Add a settings page"</span>
@@ -1027,7 +1027,7 @@ Review your memory for patterns you've seen before.</div>
         <div class="code-block"><span class="comment"># Claude spawns a subagent automatically or you can ask:</span>
 <span class="cmd">&gt;</span> Use the frontend-engineer agent to add a settings page
 
-<span class="comment"># Claude uses the Task tool internally:</span>
+<span class="comment"># Claude uses the Agent tool internally:</span>
 Task(
   subagent_type=<span class="string">"frontend-engineer"</span>,
   prompt=<span class="string">"Add a user settings page to the TodoApp"</span>
@@ -1152,7 +1152,7 @@ Task(
             <div class="info-card">
                 <h4>Using Agents</h4>
                 <p><strong>Main agent:</strong> <code>"agent"</code> in settings.json</p>
-                <p><strong>Subagent:</strong> Task tool spawns it</p>
+                <p><strong>Subagent:</strong> Agent tool spawns it</p>
                 <p><strong>CLI:</strong> <code>--agent name</code></p>
             </div>
             <div class="info-card">

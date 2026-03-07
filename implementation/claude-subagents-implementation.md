@@ -25,11 +25,13 @@ The weather agent is implemented in this repo as an example of the **Command →
 ---
 name: weather-agent
 description: Use this agent PROACTIVELY when you need to fetch weather data for
-  Dubai, UAE. This agent fetches real-time temperature from wttr.in API
+  Dubai, UAE. This agent fetches real-time temperature from Open-Meteo
   using its preloaded weather-fetcher skill.
-tools: WebFetch, Read
+tools: WebFetch, Read, Write, Edit
 model: sonnet
 color: green
+maxTurns: 5
+permissionMode: acceptEdits
 memory: project
 skills:
   - weather-fetcher
@@ -38,7 +40,7 @@ skills:
 # Weather Agent
 
 You are a specialized weather agent that fetches weather data for Dubai,
-Pakistan.
+UAE.
 
 ## Your Task
 
@@ -54,7 +56,7 @@ skill:
 ...
 ```
 
-The agent has one preloaded skill (`weather-fetcher`) that provides instructions for fetching from the wttr.in API. It returns the temperature value and unit to the calling command.
+The agent has one preloaded skill (`weather-fetcher`) that provides instructions for fetching from Open-Meteo. It returns the temperature value and unit to the calling command.
 
 ---
 

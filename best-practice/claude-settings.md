@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2005%2C%202026%206%3A18%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.69-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2007%2C%202026%202%3A31%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.71-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.69, Claude Code exposes **55+ settings** and **110+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.71, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -65,7 +65,7 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 | `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs |
 | `availableModels` | array | - | Restrict models available to users (managed settings). Each entry has `title`, `modelId`, and optional `effortOptions` |
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
-| `teammateMode` | boolean | `false` | Enable teammate mode for multi-agent collaboration |
+| `teammateMode` | string | `"auto"` | Agent team display mode: `"auto"` (split panes in tmux/iTerm2, in-process otherwise), `"in-process"`, or `"tmux"` |
 | `includeGitInstructions` | boolean | `true` | Include git-related instructions in system prompt |
 
 **Example:**
@@ -86,7 +86,7 @@ Store plan files in a custom location relative to project root.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `plansDirectory` | string | `.claude/plans/` | Directory where `/plan` outputs are stored |
+| `plansDirectory` | string | `~/.claude/plans` | Directory where `/plan` outputs are stored |
 
 **Example:**
 ```json
@@ -188,6 +188,7 @@ Control what tools and operations Claude can perform.
 | `permissions.additionalDirectories` | array | Extra directories Claude can access |
 | `permissions.defaultMode` | string | Default permission mode |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
+| `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
 
 ### Permission Modes
 
@@ -328,7 +329,7 @@ Configure bash command sandboxing for security.
 | `sandbox.filesystem.allowWrite` | array | `[]` | Path prefixes where write is allowed. Prefix: `//` (absolute), `~/` (home), `/` (project root), `./` (cwd) |
 | `sandbox.filesystem.denyWrite` | array | `[]` | Path prefixes where write is denied |
 | `sandbox.filesystem.denyRead` | array | `[]` | Path prefixes where read is denied |
-| `sandbox.enableWeakerNetworkIsolation` | boolean | `false` | Weaker network isolation for environments with limited sandboxing |
+| `sandbox.enableWeakerNetworkIsolation` | boolean | `false` | (macOS only) Allow access to system TLS trust (`com.apple.trustd.agent`); reduces security |
 
 **Example:**
 ```json
@@ -357,7 +358,7 @@ Configure Claude Code plugins and marketplaces.
 | Key | Type | Scope | Description |
 |-----|------|-------|-------------|
 | `enabledPlugins` | object | Any | Enable/disable specific plugins |
-| `extraKnownMarketplaces` | object | Any | Add custom plugin marketplaces |
+| `extraKnownMarketplaces` | object | Project | Add custom plugin marketplaces (team sharing via `.claude/settings.json`) |
 | `strictKnownMarketplaces` | array | Managed only | Allowlist of permitted marketplaces |
 | `skippedMarketplaces` | array | Any | Marketplaces user declined to install |
 | `skippedPlugins` | array | Any | Plugins user declined to install |
@@ -607,6 +608,36 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_PROMPT_CACHING_ENABLED` | Override prompt caching behavior |
 | `CLAUDE_CODE_DISABLE_TOOLS` | Comma-separated list of tools to disable |
 | `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) |
+| `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens per response (default: 32000, max: 64000) |
+| `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
+| `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Disable auto memory (`1` to disable) |
+| `CLAUDE_CODE_USER_EMAIL` | Provide user email synchronously for authentication |
+| `CLAUDE_CODE_ORGANIZATION_UUID` | Provide organization UUID synchronously for authentication |
+| `CLAUDE_CONFIG_DIR` | Custom config directory (overrides default `~/.claude`) |
+| `ANTHROPIC_CUSTOM_HEADERS` | Custom headers for API requests (JSON string) |
+| `ANTHROPIC_FOUNDRY_API_KEY` | API key for Microsoft Foundry authentication |
+| `ANTHROPIC_FOUNDRY_BASE_URL` | Base URL for Foundry resource |
+| `ANTHROPIC_FOUNDRY_RESOURCE` | Foundry resource name |
+| `AWS_BEARER_TOKEN_BEDROCK` | Bedrock API key for authentication |
+| `ANTHROPIC_SMALL_FAST_MODEL` | **DEPRECATED** — Use `ANTHROPIC_DEFAULT_HAIKU_MODEL` instead |
+| `ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION` | AWS region for deprecated Haiku-class model override |
+| `CLAUDE_CODE_SHELL_PREFIX` | Command prefix prepended to bash commands |
+| `BASH_DEFAULT_TIMEOUT_MS` | Default bash command timeout in ms |
+| `CLAUDE_CODE_SKIP_BEDROCK_AUTH` | Skip AWS auth for Bedrock (`1` to skip) |
+| `CLAUDE_CODE_SKIP_FOUNDRY_AUTH` | Skip Azure auth for Foundry (`1` to skip) |
+| `CLAUDE_CODE_SKIP_VERTEX_AUTH` | Skip Google auth for Vertex (`1` to skip) |
+| `CLAUDE_CODE_PROXY_RESOLVES_HOSTS` | Allow proxy to perform DNS resolution |
+| `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` | Credential refresh interval in ms for `apiKeyHelper` |
+| `CLAUDE_CODE_CLIENT_CERT` | Client certificate path for mTLS |
+| `CLAUDE_CODE_CLIENT_KEY` | Client private key path for mTLS |
+| `CLAUDE_CODE_CLIENT_KEY_PASSPHRASE` | Passphrase for encrypted mTLS key |
+| `CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS` | Plugin marketplace git clone timeout in ms (default: 120000) |
+| `CLAUDE_CODE_HIDE_ACCOUNT_INFO` | Hide email/org info from UI |
+| `CLAUDE_CODE_DISABLE_CRON` | Disable scheduled/cron tasks (`1` to disable) |
+| `DISABLE_INSTALLATION_CHECKS` | Disable installation warnings |
+| `DISABLE_BUG_COMMAND` | Disable the `/bug` command |
+| `DISABLE_NON_ESSENTIAL_MODEL_CALLS` | Disable flavor text and non-essential model calls |
+| `DISABLE_COST_WARNINGS` | Disable cost warning messages |
 
 ---
 

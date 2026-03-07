@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Feb%2028%2C%202026%203%3A22%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2007%2C%202026%208%3A35%20AM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Complete reference for Claude Code subagents — built-in agent types, custom agent definitions, and frontmatter fields.
@@ -20,14 +20,14 @@ Complete reference for Claude Code subagents — built-in agent types, custom ag
 |-------|------|----------|-------------|
 | `name` | string | Yes | Unique identifier using lowercase letters and hyphens |
 | `description` | string | Yes | When to invoke. Use `"PROACTIVELY"` for auto-invocation by Claude |
-| `tools` | string/list | No | Comma-separated allowlist of tools (e.g., `Read, Write, Edit, Bash`). Inherits all tools if omitted. Supports `Task(agent_type)` syntax to restrict spawnable subagents |
+| `tools` | string/list | No | Comma-separated allowlist of tools (e.g., `Read, Write, Edit, Bash`). Inherits all tools if omitted. Supports `Agent(agent_type)` syntax to restrict spawnable subagents; the older `Task(agent_type)` alias still works |
 | `disallowedTools` | string/list | No | Tools to deny, removed from inherited or specified list |
 | `model` | string | No | Model alias: `haiku`, `sonnet`, `opus`, or `inherit` (default: `inherit`) |
 | `permissionMode` | string | No | Permission mode: `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, or `plan` |
 | `maxTurns` | integer | No | Maximum number of agentic turns before the subagent stops |
 | `skills` | list | No | Skill names to preload into agent context at startup (full content injected, not just made available) |
 | `mcpServers` | list | No | MCP servers for this subagent — server name strings or inline `{name: config}` objects |
-| `hooks` | object | No | Lifecycle hooks scoped to this subagent: `PreToolUse`, `PostToolUse`, `Stop` (converted to `SubagentStop` at runtime) |
+| `hooks` | object | No | Lifecycle hooks scoped to this subagent. All hook events are supported; `PreToolUse`, `PostToolUse`, and `Stop` are the most common |
 | `memory` | string | No | Persistent memory scope: `user`, `project`, or `local` |
 | `background` | boolean | No | Set to `true` to always run as a background task (default: `false`) |
 | `isolation` | string | No | Set to `"worktree"` to run in a temporary git worktree (auto-cleaned if no changes) |
@@ -43,22 +43,23 @@ Complete reference for Claude Code subagents — built-in agent types, custom ag
 | `project` | `.claude/agent-memory/<name>/` | Yes | Yes |
 | `local` | `.claude/agent-memory-local/<name>/` | No | No |
 
-See [claude-agent-memory.md](../claude-agent-memory.md) for full details.
+See [claude-agent-memory.md](../reports/claude-agent-memory.md) for full details.
 
 ---
 
 ## Invocation
 
-Agents are invoked via the **Task tool**, never via bash commands:
+Agents are invoked via the **Agent tool** (renamed from Task in v2.1.63; `Task(...)` still works as an alias):
 
 ```
-Task(subagent_type="agent-name", description="...", prompt="...", model="haiku")
+Agent(subagent_type="agent-name", description="...", prompt="...", model="haiku")
 ```
 
 Other invocation and management methods:
 
 | Method | Description |
 |--------|-------------|
+| `--agent <name>` CLI flag | Run Claude Code as a specific agent for the entire session (overrides the `agent` setting) |
 | `--agents '{...}'` CLI flag | Define session-scoped agents via JSON (accepts `description`, `prompt`, `tools`, `model`, etc.) |
 | `claude agents` CLI command | List all configured agents grouped by source (added v2.1.51) |
 | `/agents` interactive command | Create, edit, and manage agents interactively |
@@ -86,7 +87,7 @@ Review the code for quality issues and report findings.
 ---
 name: deploy-manager
 description: Use this agent PROACTIVELY for deployment pipelines and release management
-tools: Read, Write, Edit, Bash, Grep, Glob, Task(monitor, rollback)
+tools: Read, Write, Edit, Bash, Grep, Glob, Agent(monitor, rollback)
 disallowedTools: NotebookEdit
 model: sonnet
 permissionMode: acceptEdits
@@ -144,15 +145,15 @@ When multiple subagents share the same name, the higher-priority location wins:
 
 ### Official Claude Agents
 
-Built-in agent types available via `subagent_type` in the Task tool:
+Built-in agent types available in current Claude Code installs:
 
 | Agent | Model | Tools | Description |
 |-------|-------|-------|-------------|
 | `general-purpose` | inherit | All | Complex multi-step tasks — the default agent type for research, code search, and autonomous work |
 | `Explore` | haiku | Read-only (no Write, Edit) | Fast codebase search and exploration — optimized for finding files, searching code, and answering codebase questions |
 | `Plan` | inherit | Read-only (no Write, Edit) | Pre-planning research in plan mode — explores the codebase and designs implementation approaches before writing code |
-| `claude-code-guide` | inherit | Glob, Grep, Read, WebFetch, WebSearch | Answers questions about Claude Code features, hooks, slash commands, MCP servers, settings, IDE integrations, and keyboard shortcuts |
-| `statusline-setup` | inherit | Read, Edit | Configures the user's Claude Code status line setting |
+| `Bash` | inherit | Bash | Running terminal commands in a separate context |
+| `statusline-setup` | sonnet | Read, Edit | Configures the user's Claude Code status line setting |
 
 ### Agents in This Repository
 
@@ -161,8 +162,10 @@ Custom agents defined in `.claude/agents/` for this project:
 | Agent | Model | Color | Tools | Skills | Memory |
 |-------|-------|-------|-------|--------|--------|
 | [`presentation-curator`](../.claude/agents/presentation-curator.md) | sonnet | magenta | Read, Write, Edit, Grep, Glob | presentation/vibe-to-agentic-framework, presentation/presentation-structure, presentation/presentation-styling | — |
-| [`weather-agent`](../.claude/agents/weather-agent.md) | sonnet | teal | WebFetch, Read, Write, Edit | weather-fetcher | project |
+| [`weather-agent`](../.claude/agents/weather-agent.md) | sonnet | green | WebFetch, Read, Write, Edit | weather-fetcher | project |
+| [`workflow-claude-settings-agent`](../.claude/agents/workflows/best-practice/workflow-claude-settings-agent.md) | opus | yellow | All (inherited) | — | — |
 | [`workflow-claude-subagents-agent`](../.claude/agents/workflows/best-practice/workflow-claude-subagents-agent.md) | opus | blue | All (inherited) | — | — |
+| [`workflow-concepts-agent`](../.claude/agents/workflows/best-practice/workflow-concepts-agent.md) | opus | green | All (inherited) | — | — |
 
 ---
 

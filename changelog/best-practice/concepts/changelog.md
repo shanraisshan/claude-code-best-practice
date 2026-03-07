@@ -44,3 +44,16 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 5 | MED | Merged Concept | Fold Auto Memory and Rules into Memory row as inline links | COMPLETE (linked to /memory and /memory#organize-rules-with-clauderules) |
 | 6 | MED | Merged Concept | Fold Headless Mode into Remote Control row as inline link | COMPLETE (linked to /headless) |
 | 7 | LOW | Reorder | Reorder table by logical grouping: building blocks → extension → config → context → runtime | COMPLETE (grouped by concern, not chronology) |
+
+---
+
+## [2026-03-07 08:40 AM PKT] Claude Code v2.1.71
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Broken URL | Fix `context-management` → `interactive-mode` in TIPS (lines 112, 115, 135) | COMPLETE (3 occurrences replaced with interactive-mode) |
+| 2 | HIGH | Broken URL | Fix `model-configuration` → `model-config` in TIPS (lines 115, 116, 135) | COMPLETE (3 occurrences replaced with model-config) |
+| 3 | HIGH | Broken URL | Fix `usage-billing` → `costs` in TIPS (line 115) | COMPLETE (replaced with costs) |
+| 4 | HIGH | Broken URL | Remove `cowork` URL in STARTUPS (line 167) — page does not exist | COMPLETE (hyperlink removed, plain text kept) |
+| 5 | HIGH | Missing Concept | Add Scheduled Tasks row to CONCEPTS and Hot section (`/loop`, cron tools) | COMPLETE (added by user to both tables + /loop tip + Boris tweet) |
+| 6 | MED | Changed Location | Update Agent Teams location from `.claude/agents/<name>.md` to `built-in (env var)` | COMPLETE (location updated to built-in env var) |

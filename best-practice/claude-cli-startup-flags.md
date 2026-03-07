@@ -2,7 +2,7 @@
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2002%2C%202026-white?style=flat&labelColor=555)
 
-Complete reference of all available command-line flags, subcommands, and environment variables when launching Claude Code from the terminal.
+Reference for Claude Code startup flags, top-level subcommands, and startup environment variables when launching Claude Code from the terminal.
 
 <table width="100%">
 <tr>
@@ -184,15 +184,21 @@ Complete reference of all available command-line flags, subcommands, and environ
 
 ## Subcommands
 
-These are not flags but top-level subcommands run as `claude <subcommand>`:
+These are top-level commands run as `claude <subcommand>`:
 
 | Subcommand | Description |
 |------------|-------------|
 | `claude` | Start interactive REPL |
 | `claude "query"` | Start REPL with initial prompt |
-| `claude update` | Update to latest version |
-| `claude mcp` | Configure MCP servers (`add`, `remove`, `list`, `get`, `enable`) |
+| `claude agents` | List configured agents |
+| `claude auth` | Manage Claude Code authentication |
 | `claude doctor` | Run diagnostics from the command line |
+| `claude install` | Install or switch Claude Code native builds |
+| `claude mcp` | Configure MCP servers (`add`, `remove`, `list`, `get`, `enable`) |
+| `claude plugin` | Manage Claude Code plugins |
+| `claude remote-control` | Manage remote control sessions |
+| `claude setup-token` | Create a long-lived token for subscription usage |
+| `claude update` / `claude upgrade` | Update to the latest version |
 
 ---
 
@@ -206,7 +212,7 @@ These startup-only environment variables are set in your shell before launching 
 | `CLAUDE_CODE_TMPDIR` | Override temp directory for internal files |
 | `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` | Enable additional directory CLAUDE.md loading |
 | `DISABLE_AUTOUPDATER=1` | Disable auto-updates |
-| `CLAUDE_CODE_EFFORT_LEVEL` | Control thinking depth: `low`, `medium`, `high` |
+| `CLAUDE_CODE_EFFORT_LEVEL` | Control thinking depth — see [Settings Reference](./claude-settings.md#environment-variables-via-env) |
 | `USE_BUILTIN_RIPGREP=0` | Use system ripgrep instead of built-in (Alpine Linux) |
 | `CLAUDE_CODE_SIMPLE` | Enable simple mode (Bash + Edit tools only) |
 | `CLAUDE_BASH_NO_LOGIN=1` | Skip login shell for BashTool |

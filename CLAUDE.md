@@ -12,7 +12,7 @@ This is a best practices repository for Claude Code configuration, demonstrating
 A demonstration of two distinct skill patterns via the **Command → Agent → Skill** architecture:
 - `/weather-orchestrator` command (`.claude/commands/weather-orchestrator.md`): Entry point — asks user for C/F, invokes agent, then invokes SVG skill
 - `weather-agent` agent (`.claude/agents/weather-agent.md`): Fetches temperature using its preloaded `weather-fetcher` skill (agent skill pattern)
-- `weather-fetcher` skill (`.claude/skills/weather-fetcher/SKILL.md`): Preloaded into agent — instructions for fetching temperature from wttr.in API
+- `weather-fetcher` skill (`.claude/skills/weather-fetcher/SKILL.md`): Preloaded into agent — instructions for fetching temperature from Open-Meteo
 - `weather-svg-creator` skill (`.claude/skills/weather-svg-creator/SKILL.md`): Skill — creates SVG weather card, writes `orchestration-workflow/weather.svg` and `orchestration-workflow/output.md`
 
 Two skill patterns: agent skills (preloaded via `skills:` field) vs skills (invoked via `Skill` tool). See `orchestration-workflow/orchestration-workflow.md` for the complete flow diagram.
@@ -47,9 +47,9 @@ Special handling: git commits trigger `pretooluse-git-committing` sound.
 ## Critical Patterns
 
 ### Subagent Orchestration
-Subagents **cannot** invoke other subagents via bash commands. Use the Task tool:
+Subagents **cannot** invoke other subagents via bash commands. Use the Agent tool (renamed from Task in v2.1.63; `Task(...)` still works as an alias):
 ```
-Task(subagent_type="agent-name", description="...", prompt="...", model="haiku")
+Agent(subagent_type="agent-name", description="...", prompt="...", model="haiku")
 ```
 
 Be explicit about tool usage in subagent definitions. Avoid vague terms like "launch" that could be misinterpreted as bash commands.
@@ -58,23 +58,26 @@ Be explicit about tool usage in subagent definitions. Avoid vague terms like "la
 Subagents in `.claude/agents/*.md` use YAML frontmatter:
 - `name`: Subagent identifier
 - `description`: When to invoke (use "PROACTIVELY" for auto-invocation)
-- `tools`: Comma-separated allowlist of tools (inherits all if omitted). Supports `Task(agent_type)` syntax
+- `tools`: Comma-separated allowlist of tools (inherits all if omitted). Supports `Agent(agent_type)` syntax
 - `disallowedTools`: Tools to deny, removed from inherited or specified list
 - `model`: Model alias: `haiku`, `sonnet`, `opus`, or `inherit` (default: `inherit`)
 - `permissionMode`: Permission mode (e.g., `"acceptEdits"`, `"plan"`, `"bypassPermissions"`)
 - `maxTurns`: Maximum agentic turns before the subagent stops
 - `skills`: List of skill names to preload into agent context
 - `mcpServers`: MCP servers for this subagent (server names or inline configs)
-- `hooks`: Lifecycle hooks scoped to this subagent (`PreToolUse`, `PostToolUse`, `Stop`)
+- `hooks`: Lifecycle hooks scoped to this subagent (all hook events are supported; `PreToolUse`, `PostToolUse`, and `Stop` are the most common)
 - `memory`: Persistent memory scope — `user`, `project`, or `local` (see `reports/claude-agent-memory.md`)
 - `background`: Set to `true` to always run as a background task
 - `isolation`: Set to `"worktree"` to run in a temporary git worktree
 - `color`: CLI output color for visual distinction
 
 ### Configuration Hierarchy
-1. `.claude/settings.local.json`: Personal settings (git-ignored)
-2. `.claude/settings.json`: Team-shared settings
-3. `hooks-config.local.json` overrides `hooks-config.json`
+1. **Managed** (`managed-settings.json` / MDM plist / Registry): Organization-enforced, cannot be overridden
+2. Command line arguments: Single-session overrides
+3. `.claude/settings.local.json`: Personal project settings (git-ignored)
+4. `.claude/settings.json`: Team-shared settings
+5. `~/.claude/settings.json`: Global personal defaults
+6. `hooks-config.local.json` overrides `hooks-config.json`
 
 ### Disable Hooks
 Set `"disableAllHooks": true` in `.claude/settings.local.json`, or disable individual hooks in `hooks-config.json`.
@@ -101,6 +104,6 @@ From experience with this repository:
 ## Documentation
 
 See `.claude/rules/markdown-docs.md` for documentation standards. Key docs:
-- `docs/AGENTS.md`: Subagent orchestration troubleshooting
-- `docs/COMPARISION.md`: Commands vs Agents vs Skills invocation patterns
+- `best-practice/claude-subagents.md`: Subagent frontmatter, hooks, and repository agents
+- `best-practice/claude-commands.md`: Slash command patterns and built-in command reference
 - `orchestration-workflow/orchestration-workflow.md`: Weather system flow diagram

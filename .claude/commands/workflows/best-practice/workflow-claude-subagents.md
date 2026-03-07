@@ -15,7 +15,7 @@ This is a **read-then-report** workflow. Launch agents, merge results, and produ
 
 ## Phase 0: Launch Both Agents in Parallel
 
-**Immediately** spawn both agents using the Task tool **in the same message** (parallel launch):
+**Immediately** spawn both agents using the Agent tool **in the same message** (parallel launch):
 
 ### Agent 1: workflow-claude-subagents-agent
 
@@ -39,7 +39,7 @@ Spawn using `subagent_type: "claude-code-guide"`. Give it this prompt:
 > 2. Any new agent frontmatter fields introduced in recent Claude Code versions
 > 3. Changes to existing field behavior (e.g. new model aliases, new permission modes, new tool syntax)
 > 4. Changes to agent memory scopes or memory behavior
-> 5. Changes to agent invocation patterns (Task tool syntax, --agents CLI flag)
+> 5. Changes to agent invocation patterns (Agent tool syntax, --agents CLI flag)
 > 6. New agent features (isolation, background, hooks, mcpServers, skills preloading)
 > 7. Changes to agent scope/priority resolution order
 > 8. Any deprecations or removals of agent frontmatter fields
@@ -97,7 +97,7 @@ Produce a structured report with these sections:
 2. **Changed Field Behavior** — Fields whose type, description, or behavior has changed
 3. **Deprecated/Removed Fields** — Fields in report but no longer in official docs
 4. **Memory Scope Changes** — Updates to memory scope storage, behavior, or new scopes
-5. **Invocation Pattern Changes** — Updates to Task tool syntax, CLI flags, or invocation methods
+5. **Invocation Pattern Changes** — Updates to Agent tool syntax, CLI flags, or invocation methods
 6. **Scope & Priority Changes** — Updates to resolution order or new scope locations
 7. **Example Accuracy** — Whether minimal and full-featured examples reflect current field set
 8. **Field Type/Description Accuracy** — Per-field verification against official docs
@@ -115,7 +115,7 @@ Priority Actions:
 3  | Deprecated Field      | Remove <field> from table                  | RECURRING (first seen: 2026-02-20)
 4  | Memory Scope          | Update memory scope table                  | NEW
 5  | Example Update        | Update full-featured example               | NEW
-6  | Invocation Change     | Update Task tool syntax                    | NEW
+6  | Invocation Change     | Update Agent tool syntax                    | NEW
 7  | Scope/Priority        | Update resolution order table              | NEW
 ```
 
@@ -172,7 +172,7 @@ Update the "Last Updated" badge at the top of `best-practice/claude-subagents.md
 
 Scan `best-practice/claude-subagents.md` for every hyperlink (both markdown `[text](url)` and inline URLs). For each link:
 
-1. **Local file links** (relative paths like `../.claude/agents/weather-agent.md`, `../claude-agent-memory.md`): Verify the file exists at the resolved path using the Read tool. Flag any broken links.
+1. **Local file links** (relative paths like `../.claude/agents/weather-agent.md`, `../reports/claude-agent-memory.md`): Verify the file exists at the resolved path using the Read tool. Flag any broken links.
 2. **External URLs** (e.g., `https://code.claude.com/docs/en/sub-agents`): Fetch each URL using WebFetch and verify it returns a valid page (not a 404 or redirect to an error page). Flag any dead or moved links.
 3. **Anchor links** (e.g., `#section-name`): Verify the target heading exists within the same file.
 
@@ -183,7 +183,7 @@ Hyperlink Validation Log:
 #  | Type     | Link                                          | Status | Notes
 1  | Local    | ../.claude/agents/weather-agent.md              | OK     |
 2  | External | https://code.claude.com/docs/en/sub-agents     | OK     |
-3  | Local    | ../claude-agent-memory.md                      | BROKEN | File not found
+3  | Local    | ../reports/claude-agent-memory.md              | OK     |
 ...
 ```
 

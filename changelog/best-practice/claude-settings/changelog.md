@@ -27,3 +27,20 @@
 | 11 | LOW | CLAUDE.md Sync | Update CLAUDE.md configuration hierarchy (add managed/CLI/user levels) | ON HOLD (awaiting user approval) |
 | 12 | LOW | Example Update | Update Quick Reference example with `$schema`, sandbox filesystem, `Agent(*)`, remove hooks example | COMPLETE (updated example) |
 | 13 | MED | Hooks Redirect | Replace hooks section with redirect to claude-code-voice-hooks repo | COMPLETE (hooks externalized to dedicated repo) |
+
+---
+
+## [2026-03-07 02:17 PM PKT] Claude Code v2.1.71
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Behavior | Fix `teammateMode`: type `boolean` → `string`, default `false` → `"auto"`, description → "Agent team display: auto, in-process, tmux" | COMPLETE (type, default, and description updated) |
+| 2 | HIGH | New Setting | Add `allowManagedPermissionRulesOnly` to Permissions table (boolean, managed only) | COMPLETE (added to Permission Keys table) |
+| 3 | HIGH | Missing Env Vars | Add ~31 missing env vars including confirmed (`CLAUDE_CODE_MAX_OUTPUT_TOKENS`, `CLAUDE_CODE_DISABLE_FAST_MODE`, `CLAUDE_CODE_DISABLE_AUTO_MEMORY`, `CLAUDE_CODE_USER_EMAIL`, `CLAUDE_CODE_ORGANIZATION_UUID`, `CLAUDE_CONFIG_DIR`) and agent-reported (Foundry, Bedrock, mTLS, shell prefix, etc.) | COMPLETE (added 31 env vars to table) |
+| 4 | MED | Changed Default | Fix `plansDirectory` default from `.claude/plans/` to `~/.claude/plans` | COMPLETE (default updated) |
+| 5 | MED | Changed Description | Fix `sandbox.enableWeakerNetworkIsolation` description to "(macOS only) Allow access to system TLS trust; reduces security" | COMPLETE (description updated) |
+| 6 | MED | Scope Fix | Fix `extraKnownMarketplaces` scope from "Any" to "Project" | COMPLETE (scope and description updated) |
+| 7 | MED | Boundary Violation | Replace `CLAUDE_CODE_EFFORT_LEVEL` in `claude-cli-startup-flags.md` with cross-reference to settings report | COMPLETE (replaced with link) |
+| 8 | MED | Version Badge | Update report version from v2.1.69 to v2.1.71 | COMPLETE (badge and header updated) |
+| 9 | LOW | Suspect Keys | Verify `skipWebFetchPreflight`, `sandbox.ignoreViolations`, `sandbox.network.deniedDomains`, `skippedMarketplaces`, `skippedPlugins`, `pluginConfigs` | ON HOLD (kept in report pending verification — recurring from 2026-03-05) |
+| 10 | LOW | CLAUDE.md Sync | Update CLAUDE.md configuration hierarchy (3 levels → 5+) | COMPLETE (updated to 5-level hierarchy with managed layer) |

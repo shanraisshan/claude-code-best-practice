@@ -147,7 +147,7 @@ Skills defined in `.claude/skills/` for this project:
 | Skill | User-Invocable | Preloaded Into | Description |
 |-------|----------------|----------------|-------------|
 | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) | Yes | — | Creates SVG weather card and writes output files |
-| [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) | No | `weather-agent` | Fetches current temperature from wttr.in API |
+| [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) | No | `weather-agent` | Fetches current temperature from Open-Meteo |
 | [`agent-browser`](../.claude/skills/agent-browser/SKILL.md) | Yes | — | Browser automation CLI for AI agents |
 | [`presentation/vibe-to-agentic-framework`](../.claude/skills/presentation/vibe-to-agentic-framework/SKILL.md) | Yes | `presentation-curator` | Conceptual framework behind the presentation |
 | [`presentation/presentation-structure`](../.claude/skills/presentation/presentation-structure/SKILL.md) | Yes | `presentation-curator` | Slide format, weight system, and section structure |

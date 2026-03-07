@@ -38,7 +38,7 @@ Use the AskUserQuestion tool to ask the user whether they want the temperature
 in Celsius or Fahrenheit.
 
 ### Step 2: Fetch Weather Data
-Use the Task tool to invoke the weather agent:
+Use the Agent tool to invoke the weather agent:
 - subagent_type: weather-agent
 - prompt: Fetch the current temperature for Dubai, UAE in [unit]...
 
@@ -49,7 +49,7 @@ Use the Skill tool to invoke the weather-svg-creator skill:
 ...
 ```
 
-The command orchestrates the entire workflow: it asks the user for their temperature unit preference, invokes the `weather-agent` via the Task tool, and then invokes the `weather-svg-creator` skill via the Skill tool.
+The command orchestrates the entire workflow: it asks the user for their temperature unit preference, invokes the `weather-agent` via the Agent tool, and then invokes the `weather-svg-creator` skill via the Skill tool.
 
 ---
 

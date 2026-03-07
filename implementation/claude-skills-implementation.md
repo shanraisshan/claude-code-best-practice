@@ -65,7 +65,7 @@ This is a **skill** — invoked directly by the command via the Skill tool. It r
 ---
 name: weather-fetcher
 description: Instructions for fetching current weather temperature data
-  for Dubai, UAE from wttr.in API
+  for Dubai, UAE from Open-Meteo API
 user-invocable: false
 ---
 
@@ -79,8 +79,9 @@ Fetch the current temperature for Dubai, UAE in the requested unit
 
 ## Instructions
 1. Fetch Weather Data: Use the WebFetch tool to get current weather data
-   - URL: https://wttr.in/Dubai?format=j1
-2. Extract Temperature: From the JSON response, extract temp_C or temp_F
+   - Celsius URL: https://api.open-meteo.com/v1/forecast?latitude=25.2048&longitude=55.2708&current=temperature_2m&temperature_unit=celsius
+   - Fahrenheit URL: https://api.open-meteo.com/v1/forecast?latitude=25.2048&longitude=55.2708&current=temperature_2m&temperature_unit=fahrenheit
+2. Extract Temperature: From the JSON response, extract `current.temperature_2m`
 3. Return Result: Return the temperature value and unit clearly.
 
 ...

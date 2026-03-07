@@ -44,7 +44,7 @@ This showcases the **Command → Agent → Skill** architecture pattern, where:
                       │  AskUser — C° or F°?   │
                       └────────────┬───────────┘
                                    │
-                         Step 2 — Task tool
+                         Step 2 — Agent tool
                                    │
                                    ▼
          ┌─────────────────────────────────────────────────────┐
@@ -77,7 +77,7 @@ This showcases the **Command → Agent → Skill** architecture pattern, where:
 - **Purpose**: Entry point — orchestrates the workflow and handles user interaction
 - **Actions**:
   1. Asks user for temperature unit preference (Celsius/Fahrenheit)
-  2. Invokes weather-agent via Task tool
+  2. Invokes weather-agent via Agent tool
   3. Invokes weather-svg-creator via Skill tool
 - **Model**: haiku
 
@@ -109,7 +109,7 @@ The agent has `weather-fetcher` preloaded into its context at startup. It follow
 #### `weather-fetcher` (Skill)
 - **Location**: `.claude/skills/weather-fetcher/SKILL.md`
 - **Purpose**: Instructions for fetching real-time temperature data
-- **Data Source**: wttr.in API for Dubai, UAE
+- **Data Source**: Open-Meteo API for Dubai, UAE
 - **Output**: Temperature value and unit (Celsius or Fahrenheit)
 - **Note**: This is an agent skill — preloaded into `weather-agent`, not invoked directly
 
@@ -117,9 +117,9 @@ The agent has `weather-fetcher` preloaded into its context at startup. It follow
 
 1. **User Invocation**: User runs `/weather-orchestrator` command
 2. **User Prompt**: Command asks user for preferred temperature unit (Celsius/Fahrenheit)
-3. **Agent Invocation**: Command invokes `weather-agent` via Task tool
+3. **Agent Invocation**: Command invokes `weather-agent` via Agent tool
 4. **Skill Execution** (within agent context):
-   - Agent follows `weather-fetcher` skill instructions to fetch temperature from wttr.in
+   - Agent follows `weather-fetcher` skill instructions to fetch temperature from Open-Meteo
    - Agent returns the temperature value and unit to the command
 5. **SVG Creation**: Command invokes `weather-svg-creator` via Skill tool
    - Skill creates SVG weather card at `orchestration-workflow/weather.svg`
@@ -136,10 +136,10 @@ The agent has `weather-fetcher` preloaded into its context at startup. It follow
 Input: /weather-orchestrator
 ├─ Step 1: Asks: Celsius or Fahrenheit?
 │  └─ User: Celsius
-├─ Step 2: Task tool → weather-agent
+├─ Step 2: Agent tool → weather-agent
 │  ├─ Preloaded Skill:
 │  │  └─ weather-fetcher (domain knowledge)
-│  ├─ Fetches from wttr.in → 26°C
+│  ├─ Fetches from Open-Meteo → 26°C
 │  └─ Returns: temperature=26, unit=Celsius
 ├─ Step 3: Skill tool → /weather-svg-creator
 │  ├─ Creates: orchestration-workflow/weather.svg

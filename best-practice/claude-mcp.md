@@ -66,6 +66,19 @@ MCP servers are configured in `.mcp.json` at the project root (project-scoped) o
 }
 ```
 
+Use environment variable expansion for secrets instead of committing API keys in `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "remote-api": {
+      "type": "http",
+      "url": "https://mcp.example.com/mcp?token=${MCP_API_TOKEN}"
+    }
+  }
+}
+```
+
 ### Settings for MCP Servers
 
 These settings in `.claude/settings.json` control MCP server approval:

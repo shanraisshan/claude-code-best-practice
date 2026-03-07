@@ -38,7 +38,7 @@
   <text x="633" y="174" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" opacity="0.9">weather-fetcher</text>
   <!-- Agent description -->
   <text x="633" y="218" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Fetches temperature from</text>
-  <text x="633" y="233" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">wttr.in API for Dubai</text>
+  <text x="633" y="233" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Open-Meteo API for Dubai</text>
 
   <!-- Arrow 3 -->
   <line x1="758" y1="135" x2="823" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
