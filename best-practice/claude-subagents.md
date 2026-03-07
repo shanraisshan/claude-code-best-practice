@@ -1,9 +1,9 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2007%2C%202026%208%3A35%20AM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2007%2C%202026%203%3A14%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
-Complete reference for Claude Code subagents — built-in agent types, custom agent definitions, and frontmatter fields.
+Claude Code subagents — frontmatter fields and official built-in agent types.
 
 <table width="100%">
 <tr>
@@ -35,137 +35,16 @@ Complete reference for Claude Code subagents — built-in agent types, custom ag
 
 ---
 
-## Memory Scopes
+![Official](../!/tags/official.svg)
 
-| Scope | Storage Location | Shared | Version Controlled |
-|-------|-----------------|--------|--------------------|
-| `user` | `~/.claude/agent-memory/<name>/` | No | No |
-| `project` | `.claude/agent-memory/<name>/` | Yes | Yes |
-| `local` | `.claude/agent-memory-local/<name>/` | No | No |
-
-See [claude-agent-memory.md](../reports/claude-agent-memory.md) for full details.
-
----
-
-## Invocation
-
-Agents are invoked via the **Agent tool** (renamed from Task in v2.1.63; `Task(...)` still works as an alias):
-
-```
-Agent(subagent_type="agent-name", description="...", prompt="...", model="haiku")
-```
-
-Other invocation and management methods:
-
-| Method | Description |
-|--------|-------------|
-| `--agent <name>` CLI flag | Run Claude Code as a specific agent for the entire session (overrides the `agent` setting) |
-| `--agents '{...}'` CLI flag | Define session-scoped agents via JSON (accepts `description`, `prompt`, `tools`, `model`, etc.) |
-| `claude agents` CLI command | List all configured agents grouped by source (added v2.1.51) |
-| `/agents` interactive command | Create, edit, and manage agents interactively |
-| Command delegation | A command file (`.claude/commands/`) can delegate to an agent |
-| Agent resumption | Completed subagents can be resumed with their agent ID for follow-up work |
-
----
-
-## Example: Minimal Agent
-
-```yaml
----
-name: code-reviewer
-description: Reviews code for quality issues
-tools: Read, Grep, Glob
-model: haiku
----
-
-Review the code for quality issues and report findings.
-```
-
-## Example: Full-Featured Agent (All Fields)
-
-```yaml
----
-name: deploy-manager
-description: Use this agent PROACTIVELY for deployment pipelines and release management
-tools: Read, Write, Edit, Bash, Grep, Glob, Agent(monitor, rollback)
-disallowedTools: NotebookEdit
-model: sonnet
-permissionMode: acceptEdits
-maxTurns: 25
-skills:
-  - deploy-checklist
-  - rollback-procedures
-mcpServers:
-  - slack
-  - name: pagerduty
-    command: npx
-    args: ["-y", "@pagerduty/mcp-server"]
-hooks:
-  PreToolUse:
-    - matcher: "Bash"
-      hooks:
-        - type: command
-          command: "./scripts/validate-deploy-command.sh"
-  PostToolUse:
-    - matcher: "Write"
-      hooks:
-        - type: command
-          command: "./scripts/log-file-changes.sh"
-  Stop:
-    - hooks:
-        - type: command
-          command: "./scripts/notify-deploy-complete.sh"
-memory: project
-background: false
-isolation: worktree
-color: blue
----
-
-You are a deployment manager. Follow the deploy-checklist skill for
-pre-flight checks and use rollback-procedures if any step fails.
-Notify the team via Slack when deployment completes.
-```
-
----
-
-## Scope and Priority
-
-When multiple subagents share the same name, the higher-priority location wins:
-
-| Location | Scope | Priority |
-|----------|-------|----------|
-| `--agents` CLI flag | Current session | 1 (highest) |
-| `.claude/agents/` | Current project | 2 |
-| `~/.claude/agents/` | All your projects | 3 |
-| Plugin's `agents/` directory | Where plugin is enabled | 4 (lowest) |
-
----
-
-## Claude Agents
-
-### Official Claude Agents
-
-Built-in agent types available in current Claude Code installs:
-
-| Agent | Model | Tools | Description |
-|-------|-------|-------|-------------|
-| `general-purpose` | inherit | All | Complex multi-step tasks — the default agent type for research, code search, and autonomous work |
-| `Explore` | haiku | Read-only (no Write, Edit) | Fast codebase search and exploration — optimized for finding files, searching code, and answering codebase questions |
-| `Plan` | inherit | Read-only (no Write, Edit) | Pre-planning research in plan mode — explores the codebase and designs implementation approaches before writing code |
-| `Bash` | inherit | Bash | Running terminal commands in a separate context |
-| `statusline-setup` | sonnet | Read, Edit | Configures the user's Claude Code status line setting |
-
-### Agents in This Repository
-
-Custom agents defined in `.claude/agents/` for this project:
-
-| Agent | Model | Color | Tools | Skills | Memory |
-|-------|-------|-------|-------|--------|--------|
-| [`presentation-curator`](../.claude/agents/presentation-curator.md) | sonnet | magenta | Read, Write, Edit, Grep, Glob | presentation/vibe-to-agentic-framework, presentation/presentation-structure, presentation/presentation-styling | — |
-| [`weather-agent`](../.claude/agents/weather-agent.md) | sonnet | green | WebFetch, Read, Write, Edit | weather-fetcher | project |
-| [`workflow-claude-settings-agent`](../.claude/agents/workflows/best-practice/workflow-claude-settings-agent.md) | opus | yellow | All (inherited) | — | — |
-| [`workflow-claude-subagents-agent`](../.claude/agents/workflows/best-practice/workflow-claude-subagents-agent.md) | opus | blue | All (inherited) | — | — |
-| [`workflow-concepts-agent`](../.claude/agents/workflows/best-practice/workflow-concepts-agent.md) | opus | green | All (inherited) | — | — |
+| # | Agent | Model | Tools | Description |
+|---|-------|-------|-------|-------------|
+| 1 | `general-purpose` | inherit | All | Complex multi-step tasks — the default agent type for research, code search, and autonomous work |
+| 2 | `Explore` | haiku | Read-only (no Write, Edit) | Fast codebase search and exploration — optimized for finding files, searching code, and answering codebase questions |
+| 3 | `Plan` | inherit | Read-only (no Write, Edit) | Pre-planning research in plan mode — explores the codebase and designs implementation approaches before writing code |
+| 4 | `Bash` | inherit | Bash | Running terminal commands in a separate context |
+| 5 | `statusline-setup` | sonnet | Read, Edit | Configures the user's Claude Code status line setting |
+| 6 | `claude-code-guide` | haiku | Glob, Grep, Read, WebFetch, WebSearch | Answers questions about Claude Code features, Agent SDK, and Claude API |
 
 ---
 
