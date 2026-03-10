@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2010%2C%202026%204%3A03%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2010%2C%202026%208%3A16%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -159,7 +159,7 @@ claude
 - [Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027463795355095314) ● [Tweet](https://x.com/trq212/status/2027463795355095314)
 - [AskUserQuestion + ASCII Markdowns (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027543858289250472) ● [Tweet](https://x.com/trq212/status/2027543858289250472)
 - [/loop — schedule recurring tasks for up to 3 days | 07 Mar 2026](https://x.com/bcherny/status/2030193932404150413) ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
-- [Code Review — multi-agent PR review mode | 09 Mar 2026](https://x.com/bcherny/status/2031089411820228645) ● [Tweet](https://x.com/bcherny/status/2031089411820228645)
+- [Code Review — why fresh context windows catch bugs the original agent missed | 10 Mar 2026](https://x.com/bcherny/status/2031151689219321886) ● [Tweet](https://x.com/bcherny/status/2031151689219321886)
 
 ## ☠️ STARTUPS / BUSINESSES
 
