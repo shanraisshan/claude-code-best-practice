@@ -41,9 +41,10 @@ practice makes claude perfect
 | Feature | Location | Description |
 |---------|----------|-------------|
 | [**Code Review**](https://code.claude.com/docs/en/code-review) ![beta](!/tags/beta.svg) | GitHub App (managed) | [![Best Practice](!/tags/best-practice.svg)](https://x.com/claudeai/status/2031088171262554195) Multi-agent PR analysis that catches bugs, security vulnerabilities, and regressions · [Blog](https://claude.com/blog/code-review) |
-| [**Scheduled Tasks**](https://code.claude.com/docs/en/scheduled-tasks) | `/loop`, cron tools | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2030193932404150413) Run prompts on a recurring schedule (up to 3 days), set one-time reminders, poll deployments and builds |
-| [**Voice Mode**](https://x.com/trq212/status/2028628570692890800) ![beta](!/tags/beta.svg) | `/voice` | speak to prompt - /voice to activate|
-| [**Agent Teams**](https://code.claude.com/docs/en/agent-teams) ![beta](!/tags/beta.svg) | built-in (env var) | Multiple agents working in parallel on the same codebase with shared task coordination |
+| [**Scheduled Tasks**](https://code.claude.com/docs/en/scheduled-tasks) | `/loop`, cron tools | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2030193932404150413) [![Implemented](!/tags/implemented.svg)](implementation/claude-scheduled-tasks-implementation.md) Run prompts on a recurring schedule (up to 3 days), set one-time reminders, poll deployments and builds |
+| [**Voice Mode**](https://x.com/trq212/status/2028628570692890800) ![beta](!/tags/beta.svg) | `/voice` | [![Best Practice](!/tags/best-practice.svg)](https://x.com/trq212/status/2028628570692890800) speak to prompt - /voice to activate|
+| [**Simplify & Batch**](https://x.com/bcherny/status/2027534984534544489) | `/simplify`, `/batch` | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2027534984534544489) Built-in skills for code quality and bulk operations — simplify refactors for reuse and efficiency, batch runs commands across files |
+| [**Agent Teams**](https://code.claude.com/docs/en/agent-teams) ![beta](!/tags/beta.svg) | built-in (env var) | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2019472394696683904) Multiple agents working in parallel on the same codebase with shared task coordination |
 | [**Remote Control**](https://code.claude.com/docs/en/remote-control) | `/remote-control`, `/rc` | Continue local sessions from any device — phone, tablet, or browser · [Headless Mode](https://code.claude.com/docs/en/headless) |
 | [**Git Worktrees**](https://code.claude.com/docs/en/common-workflows) | built-in | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2025007393290272904) Isolated git branches for parallel development — each agent gets its own working copy |
 | [**Ralph Wiggum Loop**](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum) | plugin | [![Best Practice](!/tags/best-practice.svg)](https://github.com/ghuntley/how-to-ralph-wiggum) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26) Autonomous development loop for long-running tasks — iterates until completion |
@@ -88,9 +89,9 @@ claude
 - [obra/superpowers](https://github.com/obra/superpowers) · ★ 72k
 - [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md) · ★ 28k
 - [get-shit-done (GSD)](https://github.com/gsd-build/get-shit-done) · ★ 25k
-- [Andrej Karpathy (Founding Member, OpenAI) Workflow](https://github.com/forrestchang/andrej-karpathy-skills) · ★ 7k
 - [Brian Casel (Creator of Agent OS) - 2026 Workflow](https://github.com/buildermethods/agent-os) · ★ 4k - [it's overkill in 2026](https://www.youtube.com/watch?v=0hdFJA-ho3c)
 - [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md) · ★ 1.5k
+- [Andrej Karpathy (Founding Member, OpenAI) Workflow](https://x.com/karpathy/status/2015883857489522876)
 - [Boris Cherny (Creator of Claude Code) - Feb 2026 Workflow](https://x.com/bcherny/status/2017742741636321619)
 - [Peter Steinberger (Creator of OpenClaw) Workflow](https://youtu.be/8lF7HmQ_RgY?t=2582)
 
@@ -156,6 +157,7 @@ claude
 - [12 ways how people are customizing their claudes | 12/Feb/26](tips/claude-boris-tips-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
 - [Git Worktrees - 5 ways how boris is using | 21 Feb 2026](https://x.com/bcherny/status/2025007393290272904) ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
 - [Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027463795355095314) ● [Tweet](https://x.com/trq212/status/2027463795355095314)
+- [AskUserQuestion + ASCII Markdowns (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027543858289250472) ● [Tweet](https://x.com/trq212/status/2027543858289250472)
 - [/loop — schedule recurring tasks for up to 3 days | 07 Mar 2026](https://x.com/bcherny/status/2030193932404150413) ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
 - [Code Review — multi-agent PR review mode | 09 Mar 2026](https://x.com/bcherny/status/2031089411820228645) ● [Tweet](https://x.com/bcherny/status/2031089411820228645)
 
