@@ -57,3 +57,18 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 4 | HIGH | Broken URL | Remove `cowork` URL in STARTUPS (line 167) — page does not exist | COMPLETE (hyperlink removed, plain text kept) |
 | 5 | HIGH | Missing Concept | Add Scheduled Tasks row to CONCEPTS and Hot section (`/loop`, cron tools) | COMPLETE (added by user to both tables + /loop tip + Boris tweet) |
 | 6 | MED | Changed Location | Update Agent Teams location from `.claude/agents/<name>.md` to `built-in (env var)` | COMPLETE (location updated to built-in env var) |
+
+---
+
+## [2026-03-10 01:18 PM PKT] Claude Code v2.1.72
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` serves Skills page content; docs say "commands merged into skills" | INVALID (URL still resolves; user chose to keep as-is) |
+| 2 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in TIPS section (line 108) — same stale URL | INVALID (URL still resolves; user chose to keep as-is) |
+| 3 | MED | Missing Inline Link | Add Interactive Mode (`/interactive-mode`) as inline link to CLI Startup Flags row — covers /compact, /clear, /context, /extra-usage | COMPLETE (inline link added to CLI Startup Flags description) |
+| 4 | MED | Missing Inline Link | Add Costs (`/costs`) as inline link to Settings row — covers /usage, billing, pay-as-you-go | INVALID (user chose to skip) |
+| 5 | LOW | Missing Concept | Consider adding IDE Integrations row (VS Code, JetBrains, Desktop App, Web) or inline links to Best Practices | INVALID (user chose to skip — platform surfaces, not configuration concepts) |
+| 6 | HIGH | Missing Concept | Add Code Review row to Hot table — multi-agent PR analysis (research preview, Teams & Enterprise) | COMPLETE (row added as first Hot entry with blog link and best practice tweet) |
+| 7 | MED | New Badge | Create `!/tags/beta.svg` tag (yellow, 38x20px) and add to Code Review and Agent Teams in Hot table | COMPLETE (beta.svg created; added to Code Review and Agent Teams rows) |
+| 8 | MED | Reorder | Sort Hot table by release date (most recent first): Code Review → Scheduled Tasks → Voice Mode → Agent Teams → Remote Control → Git Worktrees → Ralph Wiggum | COMPLETE (Voice Mode and Agent Teams swapped to match chronological order) |
