@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2010%2C%202026%208%3A16%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2011%2C%202026-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -40,6 +40,7 @@ practice makes claude perfect
 
 | Feature | Location | Description |
 |---------|----------|-------------|
+| [**/btw**](https://x.com/trq212/status/2031506296697131352) | `/btw` | [![Best Practice](!/tags/best-practice.svg)](https://x.com/trq212/status/2031506296697131352) Side chain conversations while Claude is working |
 | [**Code Review**](https://code.claude.com/docs/en/code-review) ![beta](!/tags/beta.svg) | GitHub App (managed) | [![Best Practice](!/tags/best-practice.svg)](https://x.com/claudeai/status/2031088171262554195) Multi-agent PR analysis that catches bugs, security vulnerabilities, and regressions · [Blog](https://claude.com/blog/code-review) |
 | [**Scheduled Tasks**](https://code.claude.com/docs/en/scheduled-tasks) | `/loop`, cron tools | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2030193932404150413) [![Implemented](!/tags/implemented.svg)](implementation/claude-scheduled-tasks-implementation.md) Run prompts on a recurring schedule (up to 3 days), set one-time reminders, poll deployments and builds |
 | [**Voice Mode**](https://x.com/trq212/status/2028628570692890800) ![beta](!/tags/beta.svg) | `/voice` | [![Best Practice](!/tags/best-practice.svg)](https://x.com/trq212/status/2028628570692890800) speak to prompt - /voice to activate|
@@ -160,6 +161,7 @@ claude
 - [AskUserQuestion + ASCII Markdowns (Thariq) | 28 Feb 2026](https://x.com/trq212/status/2027543858289250472) ● [Tweet](https://x.com/trq212/status/2027543858289250472)
 - [/loop — schedule recurring tasks for up to 3 days | 07 Mar 2026](https://x.com/bcherny/status/2030193932404150413) ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
 - [Code Review — why fresh context windows catch bugs the original agent missed | 10 Mar 2026](https://x.com/bcherny/status/2031151689219321886) ● [Tweet](https://x.com/bcherny/status/2031151689219321886)
+- [/btw — side chain conversations while Claude works (Thariq) | 10 Mar 2026](https://x.com/trq212/status/2031506296697131352) ● [Tweet](https://x.com/trq212/status/2031506296697131352)
 
 ## ☠️ STARTUPS / BUSINESSES
 
