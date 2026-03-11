@@ -57,3 +57,18 @@
 | 4 | HIGH | 损坏 URL | 移除 STARTUPS 中的 `cowork` URL（第 167 行）— 页面不存在 | COMPLETE (已移除超链接，保留纯文本) |
 | 5 | HIGH | 缺失概念 | 添加 Scheduled Tasks 行到 CONCEPTS 和 Hot 部分（`/loop`、cron 工具） | COMPLETE (由用户添加到两个表 + /loop 技巧 + Boris 推文) |
 | 6 | MED | 位置变更 | 更新 Agent Teams 位置从 `.claude/agents/<name>.md` 到 `built-in (env var)` | COMPLETE (位置已更新为内置环境变量) |
+
+---
+
+## [2026-03-10 01:18 PM PKT] Claude Code v2.1.72
+
+| # | 优先级 | 类型 | 操作 | 状态 |
+|---|----------|------|--------|--------|
+| 1 | HIGH | 损坏 URL | 修复 CONCEPTS 表中 Commands URL 从 `/slash-commands` 到 `/skills`（第 24 行）— `/slash-commands` 实际指向 Skills 页面；文档称「commands 已合并到 skills」 | INVALID (URL 仍可访问；用户选择保持现状) |
+| 2 | HIGH | 损坏 URL | 修复 TIPS 部分中 Commands URL 从 `/slash-commands` 到 `/skills`（第 108 行）— 同一过时 URL | INVALID (URL 仍可访问；用户选择保持现状) |
+| 3 | MED | 缺失内联链接 | 为 CLI Startup Flags 行添加 Interactive Mode（`/interactive-mode`）内联链接 — 涵盖 /compact、/clear、/context、/extra-usage | COMPLETE (已为 CLI Startup Flags 描述添加内联链接) |
+| 4 | MED | 缺失内联链接 | 为 Settings 行添加 Costs（`/costs`）内联链接 — 涵盖 /usage、计费、按量付费 | INVALID (用户选择跳过) |
+| 5 | LOW | 缺失概念 | 考虑添加 IDE Integrations 行（VS Code、JetBrains、Desktop App、Web）或到 Best Practices 的内联链接 | INVALID (用户选择跳过 — 属于平台表面，非配置概念) |
+| 6 | HIGH | 缺失概念 | 在 Hot 表中添加 Code Review 行 — 多代理 PR 分析（研究预览，Teams 与 Enterprise） | COMPLETE (已作为 Hot 首条添加，含博客链接与最佳实践推文) |
+| 7 | MED | 新徽章 | 创建 `!/tags/beta.svg` 标签（黄色，38x20px）并添加到 Hot 表中的 Code Review 和 Agent Teams | COMPLETE (已创建 beta.svg；已添加到 Code Review 和 Agent Teams 行) |
+| 8 | MED | 重排序 | 按发布日期对 Hot 表排序（最新在前）：Code Review → Scheduled Tasks → Voice Mode → Agent Teams → Remote Control → Git Worktrees → Ralph Wiggum | COMPLETE (已交换 Voice Mode 与 Agent Teams 以匹配时间顺序) |
