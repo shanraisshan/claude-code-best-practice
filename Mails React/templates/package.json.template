@@ -1,0 +1,47 @@
+{
+  "name": "react-email-templates",
+  "version": "1.0.0",
+  "description": "React Email templates with Resend integration",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "preview:generate": "ts-node scripts/preview.ts",
+    "preview:dev": "ts-node scripts/dev-server.ts",
+    "email:validate": "bash scripts/validate-component.sh",
+    "email:generate": "bash scripts/generate-component.sh",
+    "email:setup": "bash scripts/setup-preview-server.sh"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-email": "^0.0.20",
+    "@react-email/components": "0.0.20",
+    "resend": "^4.0.0",
+    "next": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@testing-library/jest-dom": "^6.4.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/jest": "^29.5.0",
+    "express": "^4.19.0",
+    "@types/express": "^4.17.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
