@@ -19,6 +19,15 @@
     "deepwiki": {
       "command": "npx",
       "args": ["-y", "deepwiki-mcp"]
+    },
+    "n8n-mcp": {
+      "command": "npx",
+      "args": ["n8n-mcp"],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true"
+      }
     }
   }
 }
