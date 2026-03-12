@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#bg)"/>
+  <text x="200" y="50" text-anchor="middle" fill="#8892b0" font-family="sans-serif" font-size="16" font-weight="600">Dubai Time</text>
+  <text x="200" y="120" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="52" font-weight="bold">17:24:20</text>
+  <text x="200" y="160" text-anchor="middle" fill="#64ffda" font-family="sans-serif" font-size="16">GST (UTC+4)</text>
+  <text x="200" y="195" text-anchor="middle" fill="#ccd6f6" font-family="sans-serif" font-size="14">Dubai, UAE</text>
+  <text x="200" y="225" text-anchor="middle" fill="#8892b0" font-family="sans-serif" font-size="12">2026-03-12</text>
+</svg>
