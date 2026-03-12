@@ -5,66 +5,25 @@ description: Creates an SVG weather card showing the current temperature for Dub
 
 # Weather SVG Creator Skill
 
-This skill creates a visual SVG weather card and writes the output files.
+Creates a visual SVG weather card for Dubai, UAE and writes the output files.
 
 ## Task
 
-Create an SVG weather card displaying the temperature for Dubai, UAE, and write it along with a summary to output files.
+You will receive a temperature value and unit (Celsius or Fahrenheit) from the calling context. Create an SVG weather card and write both the SVG and a markdown summary.
 
 ## Instructions
 
-You will receive the temperature value and unit (Celsius or Fahrenheit) from the calling context.
+1. **Create SVG** — Use the SVG template from [reference.md](reference.md), replacing placeholders with actual values
+2. **Write SVG file** — Read then write to `orchestration-workflow/weather.svg`
+3. **Write summary** — Read then write to `orchestration-workflow/output.md` using the markdown template from [reference.md](reference.md)
 
-### 1. Create SVG Weather Card
+## Rules
 
-Generate a clean SVG weather card with the following structure:
-
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="300" height="160">
-  <rect width="300" height="160" rx="12" fill="#1a1a2e"/>
-  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">Unit: [Celsius/Fahrenheit]</text>
-  <text x="150" y="100" text-anchor="middle" fill="#ccd6f6" font-family="system-ui" font-size="42" font-weight="bold">[value]°[C/F]</text>
-  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">Dubai, UAE</text>
-</svg>
-```
-
-Replace `[Celsius/Fahrenheit]`, `[value]`, and `[C/F]` with actual values.
-
-### 2. Write SVG File
-
-First, read the existing `orchestration-workflow/weather.svg` file (if it exists). Then write the SVG content to `orchestration-workflow/weather.svg`.
-
-### 3. Write Output Summary
-
-First, read the existing `orchestration-workflow/output.md` file (if it exists). Then write to `orchestration-workflow/output.md`:
-
-```markdown
-# Weather Result
-
-## Temperature
-[value]°[C/F]
-
-## Location
-Dubai, UAE
-
-## Unit
-[Celsius/Fahrenheit]
-
-## SVG Card
-![Weather Card](weather.svg)
-```
-
-## Expected Input
-
-Temperature value and unit from the weather-agent:
-```
-Temperature: [X]°[C/F]
-Unit: [Celsius/Fahrenheit]
-```
-
-## Notes
-
-- Use the exact temperature value and unit provided - do not re-fetch or modify
-- The SVG should be a self-contained, valid SVG file
-- Keep the design minimal and clean
+- Use the exact temperature value and unit provided — do not re-fetch or modify
+- The SVG must be self-contained and valid
 - Both output files go in the `orchestration-workflow/` directory
+
+## Additional resources
+
+- For SVG template, output template, and design specs, see [reference.md](reference.md)
+- For example input/output pairs, see [examples.md](examples.md)
