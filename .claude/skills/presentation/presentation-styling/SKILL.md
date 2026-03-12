@@ -1,6 +1,10 @@
 ---
 name: presentation-styling
-description: Knowledge about CSS classes, component patterns, and syntax highlighting in the presentation
+description: Documents CSS classes, component patterns, and syntax highlighting conventions used in the presentation. Use when styling new slides, adding visual components, creating code blocks, or troubleshooting layout issues in presentation/index.html.
+metadata:
+  author: claude-code-best-practice
+  version: 1.0.0
+  category: presentation
 ---
 
 # Presentation Styling Skill

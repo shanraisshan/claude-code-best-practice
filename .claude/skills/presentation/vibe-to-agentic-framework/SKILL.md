@@ -1,6 +1,10 @@
 ---
 name: vibe-to-agentic-framework
-description: The conceptual framework behind the presentation — what "Vibe Coding to Agentic Engineering" means, why the journey is structured the way it is, and how every slide fits the narrative arc
+description: Provides the conceptual framework behind the presentation — what "Vibe Coding to Agentic Engineering" means, the 4-level journey system, and how every slide fits the narrative arc. Use when creating, modifying, or reordering slides to ensure they align with the journey structure and level assignments.
+metadata:
+  author: claude-code-best-practice
+  version: 1.0.0
+  category: presentation
 ---
 
 # The "Vibe Coding to Agentic Engineering" Framework

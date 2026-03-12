@@ -1,6 +1,10 @@
 ---
 name: presentation-structure
-description: Knowledge about the presentation slide format, weight system, navigation, and section structure
+description: Defines the presentation slide format, weight system, navigation, and section structure. Use when adding, removing, reordering, or renumbering slides, updating the journey bar, or modifying section boundaries in presentation/index.html.
+metadata:
+  author: claude-code-best-practice
+  version: 1.0.0
+  category: presentation
 ---
 
 # Presentation Structure Skill
