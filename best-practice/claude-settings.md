@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2007%2C%202026%202%3A31%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.71-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2012%2C%202026%2012%3A23%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.74-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.71, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.74, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -55,7 +55,7 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `$schema` | string | - | JSON Schema URL for IDE validation and autocompletion (e.g., `"https://www.schemastore.org/claude-code-settings.json"`) |
+| `$schema` | string | - | JSON Schema URL for IDE validation and autocompletion (e.g., `"https://json.schemastore.org/claude-code-settings.json"`) |
 | `model` | string | `"default"` | Override default model. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs |
 | `agent` | string | - | Set the default agent for the main conversation. Value is the agent name from `.claude/agents/`. Also available via `--agent` CLI flag |
 | `language` | string | `"english"` | Claude's preferred response language |
@@ -80,13 +80,14 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 }
 ```
 
-### Plans Directory
+### Plans & Memory Directories
 
-Store plan files in a custom location relative to project root.
+Store plan and auto-memory files in custom locations.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `plansDirectory` | string | `~/.claude/plans` | Directory where `/plan` outputs are stored |
+| `autoMemoryDirectory` | string | - | Custom directory for auto-memory storage. Overrides the default memory location |
 
 **Example:**
 ```json
@@ -189,6 +190,7 @@ Control what tools and operations Claude can perform.
 | `permissions.defaultMode` | string | Default permission mode |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
+| `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access |
 
 ### Permission Modes
 
@@ -196,9 +198,9 @@ Control what tools and operations Claude can perform.
 |------|----------|
 | `"default"` | Standard permission checking with prompts |
 | `"acceptEdits"` | Auto-accept file edits without asking |
-| `"askEdits"` | Ask before every operation |
-| `"dontAsk"` | Auto-accept all tools without prompting (equivalent to `bypassPermissions` but via settings) |
-| `"viewOnly"` | Read-only mode, no modifications |
+| `"askEdits"` | Ask before every operation *(not in official docs — unverified)* |
+| `"dontAsk"` | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
+| `"viewOnly"` | Read-only mode, no modifications *(not in official docs — unverified)* |
 | `"bypassPermissions"` | Skip all permission checks (dangerous) |
 | `"plan"` | Read-only exploration mode |
 
@@ -404,6 +406,24 @@ Configure Claude Code plugins and marketplaces.
 ```json
 {
   "model": "opus"
+}
+```
+
+### Model Overrides
+
+Map Anthropic model IDs to provider-specific model IDs for Bedrock, Vertex, or Foundry deployments.
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| `modelOverrides` | object | - | Map model picker entries to provider-specific IDs (e.g., Bedrock inference profile ARNs). Each key is a model picker entry name, each value is the provider model ID |
+
+**Example:**
+```json
+{
+  "modelOverrides": {
+    "claude-opus-4-6": "arn:aws:bedrock:us-east-1:123456789:inference-profile/anthropic.claude-opus-4-6-v1:0",
+    "claude-sonnet-4-6": "arn:aws:bedrock:us-east-1:123456789:inference-profile/anthropic.claude-sonnet-4-6-v1:0"
+  }
 }
 ```
 
@@ -614,7 +634,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_USER_EMAIL` | Provide user email synchronously for authentication |
 | `CLAUDE_CODE_ORGANIZATION_UUID` | Provide organization UUID synchronously for authentication |
 | `CLAUDE_CONFIG_DIR` | Custom config directory (overrides default `~/.claude`) |
-| `ANTHROPIC_CUSTOM_HEADERS` | Custom headers for API requests (JSON string) |
+| `ANTHROPIC_CUSTOM_HEADERS` | Custom headers for API requests (`Name: Value` format, newline-separated for multiple headers) |
 | `ANTHROPIC_FOUNDRY_API_KEY` | API key for Microsoft Foundry authentication |
 | `ANTHROPIC_FOUNDRY_BASE_URL` | Base URL for Foundry resource |
 | `ANTHROPIC_FOUNDRY_RESOURCE` | Foundry resource name |
@@ -638,6 +658,12 @@ Set environment variables for all Claude Code sessions.
 | `DISABLE_BUG_COMMAND` | Disable the `/bug` command |
 | `DISABLE_NON_ESSENTIAL_MODEL_CALLS` | Disable flavor text and non-essential model calls |
 | `DISABLE_COST_WARNINGS` | Disable cost warning messages |
+| `CLAUDE_CODE_SUBAGENT_MODEL` | Override model for subagents (e.g., `haiku`, `sonnet`) |
+| `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS` | SessionEnd hook timeout in ms (replaces hard 1.5s limit) |
+| `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY` | Disable feedback survey prompts (`1` to disable) |
+| `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` | Disable terminal title updates (`1` to disable) |
+| `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL` | Skip automatic IDE extension installation (`1` to skip) |
+| `CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS` | Debounce interval in ms for OTel headers helper script |
 
 ---
 
@@ -664,7 +690,7 @@ Set environment variables for all Claude Code sessions.
 
 ```json
 {
-  "$schema": "https://www.schemastore.org/claude-code-settings.json",
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "model": "sonnet",
   "agent": "code-reviewer",
   "language": "english",
@@ -673,6 +699,10 @@ Set environment variables for all Claude Code sessions.
   "alwaysThinkingEnabled": true,
   "includeGitInstructions": true,
   "plansDirectory": "./plans",
+
+  "modelOverrides": {
+    "claude-opus-4-6": "arn:aws:bedrock:us-east-1:123456789:inference-profile/anthropic.claude-opus-4-6-v1:0"
+  },
 
   "permissions": {
     "allow": [
@@ -733,7 +763,7 @@ Set environment variables for all Claude Code sessions.
 ## Sources
 
 - [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
-- [Claude Code Settings JSON Schema](https://www.schemastore.org/claude-code-settings.json)
+- [Claude Code Settings JSON Schema](https://json.schemastore.org/claude-code-settings.json)
 - [Claude Code Configuration Guide](https://claudelog.com/configuration/)
 - [Claude Code GitHub Settings Examples](https://github.com/feiskyer/claude-code-settings)
 - [Eesel AI - Developer's Guide to settings.json](https://www.eesel.ai/blog/settings-json-claude-code)

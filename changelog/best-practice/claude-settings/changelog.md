@@ -44,3 +44,21 @@
 | 8 | MED | Version Badge | Update report version from v2.1.69 to v2.1.71 | COMPLETE (badge and header updated) |
 | 9 | LOW | Suspect Keys | Verify `skipWebFetchPreflight`, `sandbox.ignoreViolations`, `sandbox.network.deniedDomains`, `skippedMarketplaces`, `skippedPlugins`, `pluginConfigs` | ON HOLD (kept in report pending verification — recurring from 2026-03-05) |
 | 10 | LOW | CLAUDE.md Sync | Update CLAUDE.md configuration hierarchy (3 levels → 5+) | COMPLETE (updated to 5-level hierarchy with managed layer) |
+
+---
+
+## [2026-03-12 12:23 PM PKT] Claude Code v2.1.74
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Behavior | Fix `dontAsk` permission mode description: "Auto-accept all tools" → "Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules" | COMPLETE (description corrected per official permissions docs) |
+| 2 | HIGH | New Setting | Add `modelOverrides` to Model Configuration section (object, maps Anthropic model IDs to provider-specific IDs like Bedrock ARNs) | COMPLETE (added with example and description) |
+| 3 | HIGH | New Setting | Add `allow_remote_sessions` to managed-only settings list (boolean, defaults `true`, controls Remote Control/web session access) | COMPLETE (added to Permission Keys table) |
+| 4 | HIGH | Changed Default | Fix `$schema` URL from `https://www.schemastore.org/...` to `https://json.schemastore.org/...` per official docs | COMPLETE (updated in description, example, and Sources) |
+| 5 | MED | Changed Description | Fix `ANTHROPIC_CUSTOM_HEADERS` format description from "JSON string" to "Name: Value format, newline-separated" | COMPLETE (description updated per official docs) |
+| 6 | MED | Unverified Modes | `askEdits` and `viewOnly` permission modes not in official docs — only 5 modes documented (default, acceptEdits, plan, dontAsk, bypassPermissions) | COMPLETE (marked as "not in official docs — unverified" in table) |
+| 7 | MED | Missing Env Vars | Add `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS`, `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY`, `CLAUDE_CODE_DISABLE_TERMINAL_TITLE`, `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL`, `CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS` | COMPLETE (added 5 env vars plus `CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS`) |
+| 8 | MED | New Setting | Add `autoMemoryDirectory` to Core Configuration (string, custom auto-memory directory) — version uncertain (agents disagree: v2.1.68 vs v2.1.74), not on settings page | COMPLETE (added near plansDirectory — version unresolved) |
+| 9 | LOW | Suspect Keys | Verify `skipWebFetchPreflight`, `sandbox.ignoreViolations`, `sandbox.network.deniedDomains`, `skippedMarketplaces`, `skippedPlugins`, `pluginConfigs` — still not in official docs | ON HOLD (kept in report pending verification — recurring from 2026-03-05) |
+| 10 | LOW | Missing Env Var | Add `CLAUDE_CODE_SUBAGENT_MODEL` to env vars table (already in Model env example block but missing from table) | COMPLETE (added to env vars table) |
+| 11 | LOW | Example Update | Update Quick Reference example to include `modelOverrides` and corrected `$schema` URL | COMPLETE (example updated with both) |

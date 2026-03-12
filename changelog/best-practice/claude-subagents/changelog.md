@@ -38,3 +38,9 @@
 | 11 | MED | Invocation | Add `--agent <name>` CLI flag to invocation methods table | COMPLETE (added as first row in invocation methods table) |
 | 12 | MED | Changed Behavior | Update line 147 text: "Task tool" → "Agent tool" in Official Claude Agents table header | COMPLETE (user rewrote header text) |
 | 13 | MED | Cross-File | Update CLAUDE.md: `Task(...)` → `Agent(...)` references (lines 50-53, 61) | COMPLETE (updated orchestration section and tools field description) |
+
+---
+
+## [2026-03-12 12:17 PM PKT] Claude Code v2.1.74
+
+No drift detected — report is fully in sync with official docs. All 13 frontmatter fields and 6 built-in agents match.

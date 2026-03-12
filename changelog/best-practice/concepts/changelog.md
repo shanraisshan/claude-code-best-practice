@@ -72,3 +72,15 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 6 | HIGH | Missing Concept | Add Code Review row to Hot table — multi-agent PR analysis (research preview, Teams & Enterprise) | COMPLETE (row added as first Hot entry with blog link and best practice tweet) |
 | 7 | MED | New Badge | Create `!/tags/beta.svg` tag (yellow, 38x20px) and add to Code Review and Agent Teams in Hot table | COMPLETE (beta.svg created; added to Code Review and Agent Teams rows) |
 | 8 | MED | Reorder | Sort Hot table by release date (most recent first): Code Review → Scheduled Tasks → Voice Mode → Agent Teams → Remote Control → Git Worktrees → Ralph Wiggum | COMPLETE (Voice Mode and Agent Teams swapped to match chronological order) |
+
+---
+
+## [2026-03-12 12:22 PM PKT] Claude Code v2.1.74
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` redirects to `/skills` page | INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
+| 2 | LOW | Verification | All external docs URLs validated — no broken links found | COMPLETE (all 20+ URLs return valid pages) |
+| 3 | LOW | Verification | All local badge file paths validated — no missing files | COMPLETE (all badge targets exist on filesystem) |
+| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` validated on target page | COMPLETE (heading exists on /memory page) |
+| 5 | LOW | Verification | All CONCEPTS descriptions checked against official docs | COMPLETE (no description drift detected) |
