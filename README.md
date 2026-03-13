@@ -12,7 +12,7 @@ practice makes claude perfect
 </p>
 
 <p align="center">
-  <img src="!/slider/boris-slider.gif" alt="Boris Cherny on Claude Code" width="600"><br>
+  <img src="!/root/boris-slider.gif" alt="Boris Cherny on Claude Code" width="600"><br>
   Boris Cherny on X (<a href="https://x.com/bcherny/status/2007179832300581177">tweet 1</a> · <a href="https://x.com/bcherny/status/2017742741636321619">tweet 2</a> · <a href="https://x.com/bcherny/status/2021699851499798911">tweet 3</a>)
 </p>
 
@@ -222,6 +222,11 @@ claude
 | [Usage, Rate Limits & Extra Usage](reports/claude-usage-and-rate-limits.md) | Usage commands (`/usage`, `/extra-usage`, `/cost`), rate limits, and pay-as-you-go overflow billing |
 | [LLM Day-to-Day Degradation](reports/llm-day-to-day-degradation.md) | Why LLM performance varies day-to-day — infrastructure bugs, MoE routing variance, and psychology |
 | [Agents vs Commands vs Skills](reports/claude-agent-command-skill.md) | When to use each extension mechanism — comparison table, resolution order, and worked example |
+
+<p align="center">
+  <a href="https://github.com/trending?since=monthly"><img src="!/root/github-trending.png" alt="GitHub Trending" width="1200"></a><br>
+  ✨Trending on Github in March 2026✨
+</p>
 
 [![Claude for OSS](!/tags/claude-for-oss.svg)](https://claude.com/contact-sales/claude-for-oss)
 [![Claude Community Ambassador](!/tags/claude-community-ambassador.svg)](https://claude.com/community/ambassadors)
