@@ -50,17 +50,15 @@ A comparison of the three extension mechanisms in Claude Code: subagents, comman
 
 - You need a **user-initiated entry point** — a workflow the user explicitly triggers
 - The workflow involves **orchestrating** other agents or skills
-- You want **dynamic context injection** (`` !`git diff` ``, `` !`gh issue view $0` ``) to pull live data into the prompt
-- The task should run **inline** in the main conversation so the user sees everything
+- You want to **keep context lean** — command content is not injected into the session context until the user triggers it
 
 **Example**: `weather-orchestrator` — the user triggers it, it asks for C/F preference, invokes the agent, then invokes the SVG skill.
 
 ### Use a Skill when:
 
-- You want **Claude to auto-invoke** based on user intent (semantic matching via `description`)
+- You want **Claude to auto-invoke** based on user intent — skill descriptions are injected into the session context for semantic matching
 - The task is a **reusable procedure** that can be invoked from multiple places (commands, agents, or Claude itself)
 - You need **agent preloading** — baking domain knowledge into a specific agent at startup
-- The task is **lightweight** and doesn't need a separate context window
 
 **Example**: `weather-svg-creator` — Claude auto-invokes it when the user asks for a weather card; also callable from commands.
 

@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2012%2C%202026%2006%3A29%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2013%2C%202026%2001%3A27%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -138,7 +138,7 @@ claude
 - use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
 
 ■ **Utilities (5)**
-- [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
+- [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/) ([Boris tweet](https://x.com/bcherny/status/2017742753971769626))/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
 - [Wispr Flow](https://wisprflow.ai) for voice prompting (10x productivity)
 - [claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks) for claude feedback
 - [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting
