@@ -100,34 +100,41 @@ claude
 
 ![Community](!/tags/community.svg)
 
-■ **Planning (2)**
-- always start with [plan mode](https://code.claude.com/docs/en/common-workflows). ask Claude to interview you; [ask the user a question](https://code.claude.com/docs/en/cli-reference)
-- always make a phase-wise gated plan, with each phase having multiple tests (unit, automation, integration). use [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) to review your plan
+■ **Prompting (2)**
+- challenge Claude — "grill me on these changes and don't make a PR until I pass your test." or "prove to me this works" and have Claude diff between main and your branch [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742752566632544)
+- after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742752566632544)
+
+■ **Planning/Specs (5)**
+- always start with [plan mode](https://code.claude.com/docs/en/common-workflows) [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179845336527000)
+- start with a minimal spec or prompt and ask Claude to interview you using [AskUserQuestion](https://code.claude.com/docs/en/cli-reference) tool, then make a new session to execute the spec [![Thariq](https://img.shields.io/badge/Thariq-3b82f6?style=flat)](https://x.com/trq212/status/2005315275026260309)
+- always make a phase-wise gated plan, with each phase having multiple tests (unit, automation, integration)
+- spin up a second Claude to review your plan as a staff engineer, or use [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for review [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742745365057733)
+- write detailed specs and reduce ambiguity before handing work off — the more specific you are, the better the output [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742752566632544)
 
 ■ **Workflows (12)**
-- [CLAUDE.md](https://code.claude.com/docs/en/memory) should target under [200 lines](https://code.claude.com/docs/en/memory#write-effective-instructions) per file. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) ([still not 100% guaranteed](https://www.reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/)).
+- [CLAUDE.md](https://code.claude.com/docs/en/memory) should target under [200 lines](https://code.claude.com/docs/en/memory#write-effective-instructions) per file. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) ([still not 100% guaranteed](https://www.reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/)). [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179840848597422)
 - use [multiple CLAUDE.md](best-practice/claude-memory.md) for monorepos — ancestor + descendant loading
 - use [.claude/rules/](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) to split large instructions
-- use [commands](https://code.claude.com/docs/en/slash-commands) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents)
-- have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer.
+- use [commands](https://code.claude.com/docs/en/slash-commands) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents) [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179847949500714)
+- have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer. [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179850139000872)
 - [memory.md](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything
 - avoid agent dumb zone, do manual [/compact](https://code.claude.com/docs/en/interactive-mode) at max 50%. Use [/clear](https://code.claude.com/docs/en/cli-reference) to reset context mid-session if switching to a new task
 - vanilla cc is better than any workflows with smaller tasks
 - use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
 - use [/model](https://code.claude.com/docs/en/model-config) to select model and reasoning, [/context](https://code.claude.com/docs/en/interactive-mode) to see context usage, [/usage](https://code.claude.com/docs/en/costs) to check plan limits, [/extra-usage](https://code.claude.com/docs/en/interactive-mode) to configure overflow billing, [/config](https://code.claude.com/docs/en/settings) to configure settings
-- always use [thinking mode](https://code.claude.com/docs/en/model-config) true (to see reasoning) and [Output Style](https://code.claude.com/docs/en/output-styles) Explanatory (to see detailed output with ★ Insight boxes) in [/config](https://code.claude.com/docs/en/settings) for better understanding of Claude's decisions
+- always use [thinking mode](https://code.claude.com/docs/en/model-config) true (to see reasoning) and [Output Style](https://code.claude.com/docs/en/output-styles) Explanatory (to see detailed output with ★ Insight boxes) in [/config](https://code.claude.com/docs/en/settings) for better understanding of Claude's decisions [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179838864666847)
 - use ultrathink keyword in prompts for [high effort reasoning](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-and-best-practices)
 - [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [TODO - refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
 - use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
 - commit often — try to commit at least once per hour, as soon as task is completed, commit.
 
 ■ **Workflows Advanced (6)**
-- use ASCII diagrams a lot to understand your architecture
+- use ASCII diagrams a lot to understand your architecture [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742759218794768)
 - [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
 - use [/loop](https://code.claude.com/docs/en/scheduled-tasks) for recurring monitoring — poll deployments, babysit PRs, check builds (runs up to 3 days)
-- use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks
-- [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (Bash(npm run *), Edit(/docs/**)) instead of dangerously-skip-permissions
-- [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation
+- use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179858435281082)
+- [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (Bash(npm run *), Edit(/docs/**)) instead of dangerously-skip-permissions [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179854077407667)
+- [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2021700506465579443)
 
 ■ **Debugging (5)**
 - make it a habit to take screenshots and share with Claude whenever you are stuck with any issue
@@ -138,11 +145,11 @@ claude
 - use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
 
 ■ **Utilities (5)**
-- [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/) ([Boris tweet](https://x.com/bcherny/status/2017742753971769626))/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
+- [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/) [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742753971769626)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
 - [Wispr Flow](https://wisprflow.ai) for voice prompting (10x productivity)
 - [claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks) for claude feedback
-- [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting
-- explore [settings.json](best-practice/claude-settings.md) features like [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience
+- [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2021700784019452195)
+- explore [settings.json](best-practice/claude-settings.md) features like [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2021701145023197516)
 
 ■ **Daily (3)**
 - [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)

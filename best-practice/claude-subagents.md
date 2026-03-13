@@ -14,7 +14,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 
 ---
 
-## Frontmatter Fields
+## Frontmatter Fields (14)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -35,7 +35,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 
 ---
 
-![Official](../!/tags/official.svg)
+## ![Official](../!/tags/official.svg) **(6)**
 
 | # | Agent | Model | Tools | Description |
 |---|-------|-------|-------|-------------|
