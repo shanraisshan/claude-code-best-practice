@@ -95,6 +95,7 @@ claude
 - [Andrej Karpathy (Founding Member, OpenAI) Workflow](https://x.com/karpathy/status/2015883857489522876)
 - [Boris Cherny (Creator of Claude Code) - Feb 2026 Workflow](https://x.com/bcherny/status/2017742741636321619)
 - [Peter Steinberger (Creator of OpenClaw) Workflow](https://youtu.be/8lF7HmQ_RgY?t=2582)
+- [Carmack Council](https://github.com/SamJHudson01/Carmack-Council)
 
 ## TIPS AND TRICKS
 
