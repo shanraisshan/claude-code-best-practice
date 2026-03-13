@@ -154,7 +154,7 @@ claude
 - Always use plan mode, give Claude a way to verify, use /code-review (Boris) | 27/Dec/25 ● [Tweet](https://x.com/bcherny/status/2004711722926616680)
 - Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25 ● [Tweet](https://x.com/trq212/status/2005315275026260309)
 - [How I use Claude Code — 13 tips from my surprisingly vanilla setup (Boris) | 03/Jan/26](tips/claude-boris-13-tips-03-jan-26.md) ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
-- 10 tips for using claude code by team itself (Boris) | 01/Feb/26 ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
+- [10 tips for using Claude Code from the team (Boris) | 01/Feb/26](tips/claude-boris-10-tips-01-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
 - [12 ways how people are customizing their claudes (Boris) | 12/Feb/26](tips/claude-boris-12-tips-12-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
 - Git Worktrees - 5 ways how boris is using | 21 Feb 2026 ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
 - Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026 ● [Tweet](https://x.com/trq212/status/2027463795355095314)
