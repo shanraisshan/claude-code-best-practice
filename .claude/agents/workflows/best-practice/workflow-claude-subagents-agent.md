@@ -3,6 +3,18 @@ name: workflow-claude-subagents-agent
 description: Research agent that fetches Claude Code docs, reads the local subagents report, and analyzes drift
 model: opus
 color: blue
+allowedTools:
+  - "Bash(*)"
+  - "Read"
+  - "Write"
+  - "Edit"
+  - "Glob"
+  - "Grep"
+  - "WebFetch(*)"
+  - "WebSearch(*)"
+  - "Agent"
+  - "NotebookEdit"
+  - "mcp__*"
 ---
 
 # Workflow Changelog — Subagents Research Agent

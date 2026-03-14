@@ -22,7 +22,7 @@
     <rect width="276" height="40" rx="5" fill="#fff"/>
   </clipPath>
   <g clip-path="url(#r)">
-    <rect width="276" height="40" fill="#e67e22"/>
+    <rect width="276" height="40" fill="#3b82f6"/>
     <rect width="276" height="40" fill="url(#s)"/>
     <rect class="shine" width="276" height="40" fill="url(#shimmer)"/>
   </g>

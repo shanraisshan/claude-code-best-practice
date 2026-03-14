@@ -3,6 +3,18 @@ name: workflow-claude-commands-agent
 description: Research agent that fetches Claude Code docs, reads the local commands report, and analyzes drift
 model: opus
 color: green
+allowedTools:
+  - "Bash(*)"
+  - "Read"
+  - "Write"
+  - "Edit"
+  - "Glob"
+  - "Grep"
+  - "WebFetch(*)"
+  - "WebSearch(*)"
+  - "Agent"
+  - "NotebookEdit"
+  - "mcp__*"
 ---
 
 # Workflow Changelog — Commands Research Agent

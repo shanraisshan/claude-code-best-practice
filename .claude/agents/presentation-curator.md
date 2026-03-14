@@ -1,7 +1,18 @@
 ---
 name: presentation-curator
 description: PROACTIVELY use this agent whenever the user wants to update, modify, or fix the presentation slides, structure, styling, or weights
-tools: Read, Write, Edit, Grep, Glob
+allowedTools:
+  - "Bash(*)"
+  - "Read"
+  - "Write"
+  - "Edit"
+  - "Glob"
+  - "Grep"
+  - "WebFetch(*)"
+  - "WebSearch(*)"
+  - "Agent"
+  - "NotebookEdit"
+  - "mcp__*"
 model: sonnet
 color: magenta
 skills:

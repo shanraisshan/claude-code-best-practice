@@ -24,7 +24,7 @@ A well-structured CLAUDE.md is the single most impactful way to improve Claude C
 When working with Claude Code in a monorepo, understanding how CLAUDE.md files are loaded into context is crucial for organizing your project instructions effectively.
 
 <p align="center">
-  <img src="assets/claude-memory/claude-memory-monorepo.jpg" alt="CLAUDE.md loading in monorepos" width="600">
+  <a href="https://x.com/bcherny/status/2016339448863355206"><img src="assets/claude-memory/claude-memory-monorepo.jpg" alt="CLAUDE.md loading in monorepos" width="600"></a>
 </p>
 
 ### The Two Loading Mechanisms

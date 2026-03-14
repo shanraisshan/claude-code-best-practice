@@ -16,7 +16,7 @@
   <line x1="118" y1="135" x2="183" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <!-- Command Box -->
-  <rect x="193" y="90" width="240" height="90" rx="8" fill="#4A90D9" stroke="#3A7BC8" stroke-width="2.5"/>
+  <rect x="193" y="90" width="240" height="90" rx="8" fill="#2C3E50" stroke="#1A252F" stroke-width="2.5"/>
   <text x="313" y="124" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Command</text>
   <text x="313" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">commands/weather-orchestrator</text>
   <!-- Command description -->
