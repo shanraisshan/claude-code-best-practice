@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2012%2C%202026%2012%3A23%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.74-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2014%2C%202026%201%3A36%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.75-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.74, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.75, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -30,22 +30,30 @@ A comprehensive guide to all available configuration options in Claude Code's `s
 
 ## Settings Hierarchy
 
-Claude Code settings use a 5-level user-writable override chain plus an enforced policy layer:
+Settings apply in order of precedence (highest to lowest):
 
-| Priority | Location | Scope | Version Control | Purpose |
-|----------|----------|-------|-----------------|---------|
-| 1 | Command line arguments | Session | N/A | Single-session overrides |
-| 2 | `.claude/settings.local.json` | Project | No (git-ignored) | Personal project-specific |
-| 3 | `.claude/settings.json` | Project | Yes (committed) | Team-shared settings |
-| 4 | `~/.claude/settings.local.json` | User | N/A | Personal global overrides |
+| Priority | Location | Scope | Shared? | Purpose |
+|----------|----------|-------|---------|---------|
+| 1 | Managed settings | Organization | Yes (deployed by IT) | Security policies that cannot be overridden |
+| 2 | Command line arguments | Session | N/A | Temporary single-session overrides |
+| 3 | `.claude/settings.local.json` | Project | No (git-ignored) | Personal project-specific |
+| 4 | `.claude/settings.json` | Project | Yes (committed) | Team-shared settings |
 | 5 | `~/.claude/settings.json` | User | N/A | Global personal defaults |
 
-**Policy layer**: `managed-settings.json` is organization-enforced and cannot be overridden by local settings. On macOS, managed settings can also be delivered via MDM profiles (plist at `com.anthropic.claudecode`). On Windows, managed settings use the Windows Registry.
+**Managed settings** are organization-enforced and cannot be overridden by any other level, including command line arguments. Delivery methods:
+- **Server-managed** settings (remote delivery)
+- **MDM profiles** — macOS plist at `com.anthropic.claudecode`
+- **Registry policies** — Windows HKLM/HKCU at `Software\Anthropic\ClaudeCode`
+- **File** — `managed-settings.json` (macOS: `/Library/Application Support/ClaudeCode/`, Linux/WSL: `/etc/claude-code/`, Windows: `C:\Program Files\ClaudeCode\`)
+
+Within the managed tier, precedence is: server-managed > MDM/OS-level policies > `managed-settings.json` > HKCU registry (Windows only). Only one managed source is used; sources do not merge.
+
+> **Note:** As of v2.1.75, the deprecated Windows fallback path `C:\ProgramData\ClaudeCode\managed-settings.json` has been removed. Use `C:\Program Files\ClaudeCode\managed-settings.json` instead.
 
 **Important**:
 - `deny` rules have highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
 - Managed settings may lock or override local behavior even if local files specify different values.
-- Array settings (e.g., `permissions.allow`) are **merged** across scopes — entries from all levels are combined, not replaced.
+- Array settings (e.g., `permissions.allow`) are **concatenated and deduplicated** across scopes — entries from all levels are combined, not replaced.
 
 ---
 
@@ -59,11 +67,11 @@ Claude Code settings use a 5-level user-writable override chain plus an enforced
 | `model` | string | `"default"` | Override default model. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs |
 | `agent` | string | - | Set the default agent for the main conversation. Value is the agent name from `.claude/agents/`. Also available via `--agent` CLI flag |
 | `language` | string | `"english"` | Claude's preferred response language |
-| `cleanupPeriodDays` | number | `30` | Sessions inactive longer than this are deleted at startup |
+| `cleanupPeriodDays` | number | `30` | Sessions inactive longer than this are deleted at startup. Setting to `0` deletes all existing transcripts and disables session persistence entirely (no `.jsonl` files written, `/resume` shows no conversations) |
 | `autoUpdatesChannel` | string | `"latest"` | Release channel: `"stable"` or `"latest"` |
 | `alwaysThinkingEnabled` | boolean | `false` | Enable extended thinking by default for all sessions |
 | `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs |
-| `availableModels` | array | - | Restrict models available to users (managed settings). Each entry has `title`, `modelId`, and optional `effortOptions` |
+| `availableModels` | array | - | Restrict which models users can select via `/model`, `--model`, or `ANTHROPIC_MODEL`. Does not affect the Default option. Example: `["sonnet", "haiku"]` |
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
 | `teammateMode` | string | `"auto"` | Agent team display mode: `"auto"` (split panes in tmux/iTerm2, in-process otherwise), `"in-process"`, or `"tmux"` |
 | `includeGitInstructions` | boolean | `true` | Include git-related instructions in system prompt |
@@ -87,7 +95,7 @@ Store plan and auto-memory files in custom locations.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `plansDirectory` | string | `~/.claude/plans` | Directory where `/plan` outputs are stored |
-| `autoMemoryDirectory` | string | - | Custom directory for auto-memory storage. Overrides the default memory location |
+| `autoMemoryDirectory` | string | - | Custom directory for auto-memory storage. Accepts `~/`-expanded paths. Not accepted in project settings (`.claude/settings.json`) to prevent redirecting memory writes to sensitive locations; accepted from policy, local, and user settings |
 
 **Example:**
 ```json
@@ -187,7 +195,7 @@ Control what tools and operations Claude can perform.
 | `permissions.ask` | array | Rules requiring user confirmation |
 | `permissions.deny` | array | Rules blocking tool use (highest precedence) |
 | `permissions.additionalDirectories` | array | Extra directories Claude can access |
-| `permissions.defaultMode` | string | Default permission mode |
+| `permissions.defaultMode` | string | Default permission mode. In Remote environments, only `acceptEdits` and `plan` are honored (v2.1.70+) |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
 | `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access |
@@ -219,6 +227,8 @@ Control what tools and operations Claude can perform.
 | `Agent` | `Agent(name)` | `Agent(researcher)`, `Agent(*)` — permission scoped to subagent spawning |
 | `Skill` | `Skill(skill-name)` | `Skill(weather-fetcher)` |
 | `MCP` | `mcp__server__tool` or `MCP(server:tool)` | `mcp__memory__*`, `MCP(github:*)` |
+
+**Evaluation order:** Rules are evaluated in order: deny rules first, then ask, then allow. The first matching rule wins.
 
 **Bash wildcard notes:**
 - `*` can appear at **any position**: prefix (`Bash(* install)`), suffix (`Bash(npm *)`), or middle (`Bash(git * main)`)
@@ -443,7 +453,7 @@ The `/model` command exposes an **effort level** control that adjusts how much r
 3. Use **← →** arrow keys to adjust the effort level
 4. The setting applies to the current session and future sessions
 
-**Note:** Effort level is available for Opus 4.6 and Sonnet 4.6 on Max and Team plans. The default was changed from High to Medium in v2.1.68.
+**Note:** Effort level is available for Opus 4.6 and Sonnet 4.6 on Max and Team plans. The default was changed from High to Medium in v2.1.68. As of v2.1.75, 1M context window for Opus 4.6 is available by default on Max, Team, and Enterprise plans.
 
 ### Model Environment Variables
 
@@ -506,6 +516,8 @@ The status line command receives a JSON object on stdin with these notable field
 | `exceeds_200k_tokens` | Whether context exceeds 200k tokens |
 
 ### File Suggestion Configuration
+
+The file suggestion script receives a JSON object on stdin (e.g., `{"query": "src/comp"}`) and must output up to 15 file paths (one per line).
 
 ```json
 {
