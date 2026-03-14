@@ -20,6 +20,14 @@ This showcases the **Command → Agent → Skill** architecture pattern, where:
 - An agent fetches data using its preloaded skill
 - A skill creates the visual output independently
 
+## Component Summary
+
+| Component | Role | Example |
+|-----------|------|---------|
+| **Command** | Entry point, user interaction | [`/weather-orchestrator`](../.claude/commands/weather-orchestrator.md) |
+| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](../.claude/agents/weather-agent.md) with [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) |
+| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) |
+
 ## Flow Diagram
 
 ```

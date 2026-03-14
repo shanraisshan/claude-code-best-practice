@@ -17,7 +17,7 @@ practice makes claude perfect
 </p>
 
 
-## CONCEPTS
+## 🧠 CONCEPTS
 
 | Feature | Location | Description |
 |---------|----------|-------------|
@@ -72,13 +72,7 @@ claude
 /weather-orchestrator
 ```
 
-| Component | Role | Example |
-|-----------|------|---------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](.claude/commands/weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](.claude/agents/weather-agent.md) with [`weather-fetcher`](.claude/skills/weather-fetcher/SKILL.md) |
-| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](.claude/skills/weather-svg-creator/SKILL.md) |
-
-## DEVELOPMENT WORKFLOWS
+## ⚙️ DEVELOPMENT WORKFLOWS
 
 ### 🔥 Hot
 - [Cross-Model (Claude Code + Codex) Workflow](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md)
@@ -96,13 +90,15 @@ claude
 - [Boris Cherny (Creator of Claude Code) - Feb 2026 Workflow](https://x.com/bcherny/status/2017742741636321619)
 - [Peter Steinberger (Creator of OpenClaw) Workflow](https://youtu.be/8lF7HmQ_RgY?t=2582)
 
-## TIPS AND TRICKS
+## 💡 TIPS AND TRICKS
 
 ![Community](!/tags/community.svg)
 
-■ **Prompting (2)**
+■ **Prompting (4)**
 - challenge Claude — "grill me on these changes and don't make a PR until I pass your test." or "prove to me this works" and have Claude diff between main and your branch [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742752566632544)
 - after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742752566632544)
+- Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 👶 [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742750473720121)
+- say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 👶 [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2017742755737555434)
 
 ■ **Planning/Specs (5)**
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows) [![Boris](https://img.shields.io/badge/Boris-3b82f6?style=flat)](https://x.com/bcherny/status/2007179845336527000)
@@ -211,17 +207,19 @@ claude
 
 ## REPORTS
 
-| Report | Description |
-|--------|-------------|
-| [Agent SDK vs CLI System Prompts](reports/claude-agent-sdk-vs-cli-system-prompts.md) | Why Claude CLI and Agent SDK outputs may differ—system prompt architecture and determinism |
-| [Browser Automation MCP Comparison](reports/claude-in-chrome-v-chrome-devtools-mcp.md) | Comparison of Playwright, Chrome DevTools, and Claude in Chrome for automated testing |
-| [Global vs Project Settings](reports/claude-global-vs-project-settings.md) | Which features are global-only (`~/.claude/`) vs dual-scope, including Tasks and Agent Teams |
-| [Skills Discovery in Monorepos](reports/claude-skills-for-larger-mono-repos.md) | How skills are discovered and loaded in large monorepo projects |
-| [Agent Memory Frontmatter](reports/claude-agent-memory.md) | Persistent memory scopes (`user`, `project`, `local`) for subagents — enabling agents to learn across sessions |
-| [Advanced Tool Use Patterns](reports/claude-advanced-tool-use.md) | Programmatic Tool Calling (PTC), Tool Search, and Tool Use Examples |
-| [Usage, Rate Limits & Extra Usage](reports/claude-usage-and-rate-limits.md) | Usage commands (`/usage`, `/extra-usage`, `/cost`), rate limits, and pay-as-you-go overflow billing |
-| [LLM Day-to-Day Degradation](reports/llm-day-to-day-degradation.md) | Why LLM performance varies day-to-day — infrastructure bugs, MoE routing variance, and psychology |
-| [Agents vs Commands vs Skills](reports/claude-agent-command-skill.md) | When to use each extension mechanism — comparison table, resolution order, and worked example |
+<p align="center">
+  <a href="reports/claude-agent-sdk-vs-cli-system-prompts.md"><img src="https://img.shields.io/badge/Agent_SDK_vs_CLI-555?style=for-the-badge" alt="Agent SDK vs CLI"></a>
+  <a href="reports/claude-in-chrome-v-chrome-devtools-mcp.md"><img src="https://img.shields.io/badge/Browser_Automation_MCP-555?style=for-the-badge" alt="Browser Automation MCP"></a>
+  <a href="reports/claude-global-vs-project-settings.md"><img src="https://img.shields.io/badge/Global_vs_Project_Settings-555?style=for-the-badge" alt="Global vs Project Settings"></a>
+  <a href="reports/claude-skills-for-larger-mono-repos.md"><img src="https://img.shields.io/badge/Skills_in_Monorepos-555?style=for-the-badge" alt="Skills in Monorepos"></a>
+  <br>
+  <a href="reports/claude-agent-memory.md"><img src="https://img.shields.io/badge/Agent_Memory-555?style=for-the-badge" alt="Agent Memory"></a>
+  <a href="reports/claude-advanced-tool-use.md"><img src="https://img.shields.io/badge/Advanced_Tool_Use-555?style=for-the-badge" alt="Advanced Tool Use"></a>
+  <a href="reports/claude-usage-and-rate-limits.md"><img src="https://img.shields.io/badge/Usage_&_Rate_Limits-555?style=for-the-badge" alt="Usage & Rate Limits"></a>
+  <a href="reports/claude-agent-command-skill.md"><img src="https://img.shields.io/badge/Agents_vs_Commands_vs_Skills-555?style=for-the-badge" alt="Agents vs Commands vs Skills"></a>
+  <br>
+  <a href="reports/llm-day-to-day-degradation.md"><img src="https://img.shields.io/badge/LLM_Degradation-555?style=for-the-badge" alt="LLM Degradation"></a>
+</p>
 
 <p align="center">
   <a href="https://github.com/trending?since=monthly"><img src="!/root/github-trending.png" alt="GitHub Trending" width="1200"></a><br>
@@ -236,6 +234,19 @@ claude
 3. Go to your own project and ask Claude to suggest what best practices from this repo you should add, give it this repo as a reference so it knows what's possible.
 ```
 
+## Developed by
+
+![Developed by](!/tags/developed-by.svg)
+
+> | Workflow | Description |
+> |----------|-------------|
+> | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
+> | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
+> | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |
+> | /workflows:best-practice:workflow-claude-commands | Track Claude Code commands report changes and find what needs updating |
+> | /workflows:best-practice:workflow-claude-skills | Track Claude Code skills report changes and find what needs updating |
+
 [![Claude for OSS](!/tags/claude-for-oss.svg)](https://claude.com/contact-sales/claude-for-oss)
 [![Claude Community Ambassador](!/tags/claude-community-ambassador.svg)](https://claude.com/community/ambassadors)
 [![Claude Certified Architect](!/tags/claude-certified-architect.svg)](https://anthropic.skilljar.com/claude-certified-architect-foundations-access-request)
+[![Anthropic Academy](!/tags/anthropic-academy.svg)](https://anthropic.skilljar.com/)
