@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 980">
+  <defs>
+    <linearGradient id="prereqGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4b5563;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#111827;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4b5563;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <style>
+      .title { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: 600; fill: #111827; letter-spacing: -0.5px; }
+      .subtitle { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #6b7280; letter-spacing: 2px; text-transform: uppercase; }
+      .box-title { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #f9fafb; letter-spacing: 0.5px; }
+      .box-text { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #e5e7eb; }
+      .output-text { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 11px; fill: #374151; }
+      .arrow-text { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 11px; fill: #9ca3af; font-weight: 500; }
+      .step-number { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #9ca3af; }
+      .gate-text { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-transform: uppercase; letter-spacing: 0.5px; }
+      .agent-text { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 10px; fill: #9ca3af; }
+      .clickable { cursor: pointer; transition: all 0.2s ease; }
+      .clickable:hover { filter: brightness(1.15); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="980" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" class="title">RPI Workflow</text>
+  <text x="450" y="60" text-anchor="middle" class="subtitle">Research → Plan → Implement</text>
+
+  <!-- Prerequisites Box: y=80, height=115, ends at 195 -->
+  <g class="clickable" transform="translate(100, 80)">
+    <rect width="700" height="115" rx="8" fill="url(#prereqGrad)" filter="url(#shadow)"/>
+    <rect width="700" height="36" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <rect y="28" width="700" height="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="24" y="24" class="box-title">PREREQUISITES</text>
+    <g transform="translate(24, 50)">
+      <text x="0" y="12" class="step-number">01</text>
+      <text x="28" y="12" class="box-text">Create constitution.md at project root</text>
+    </g>
+    <g transform="translate(24, 72)">
+      <text x="0" y="12" class="step-number">02</text>
+      <text x="28" y="12" class="box-text">Add { "plansDirectory": "./rpi/plans" } to .claude/settings.json</text>
+    </g>
+    <g transform="translate(24, 94)">
+      <text x="0" y="12" class="step-number">03</text>
+      <text x="28" y="12" class="box-text">Create rpi/plans directory</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1: between 195 and 210 -->
+  <g transform="translate(450, 198)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#d1d5db" stroke-width="2"/>
+    <polygon points="0,16 -5,8 5,8" fill="#d1d5db"/>
+  </g>
+
+  <!-- Step 1: y=218, height=175, ends at 393 -->
+  <g class="clickable" transform="translate(100, 218)">
+    <rect width="700" height="175" rx="8" fill="url(#step1Grad)" filter="url(#shadow)"/>
+    <rect width="700" height="36" rx="8" fill="rgba(0,0,0,0.3)"/>
+    <rect y="28" width="700" height="8" fill="rgba(0,0,0,0.3)"/>
+    <text x="24" y="24" class="box-title">STEP 1 — DESCRIBE</text>
+    <g transform="translate(24, 50)">
+      <text x="0" y="12" class="step-number">01</text>
+      <text x="28" y="12" class="box-text">Open Claude Code in plan mode and describe your feature</text>
+    </g>
+    <rect x="24" y="70" width="300" height="24" rx="4" fill="#f3f4f6"/>
+    <text x="34" y="86" class="output-text">→ Output: rpi/plans/{plan}.md</text>
+    <g transform="translate(24, 105)">
+      <text x="0" y="12" class="step-number">02</text>
+      <text x="28" y="12" class="box-text">Create a feature folder inside rpi/ with your feature name</text>
+    </g>
+    <g transform="translate(24, 127)">
+      <text x="0" y="12" class="step-number">03</text>
+      <text x="28" y="12" class="box-text">Copy the plan into the feature folder and rename to REQUEST.md</text>
+    </g>
+    <rect x="24" y="148" width="340" height="24" rx="4" fill="#f3f4f6"/>
+    <text x="34" y="164" class="output-text">→ Final: rpi/{feature-slug}/REQUEST.md</text>
+  </g>
+
+  <!-- Arrow 2: between 393 and 408 -->
+  <g transform="translate(450, 396)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#d1d5db" stroke-width="2"/>
+    <polygon points="0,16 -5,8 5,8" fill="#d1d5db"/>
+  </g>
+
+  <!-- Step 2: y=416, height=130, ends at 546 -->
+  <g class="clickable" transform="translate(100, 416)">
+    <rect width="700" height="130" rx="8" fill="url(#step2Grad)" filter="url(#shadow)"/>
+    <rect width="700" height="36" rx="8" fill="rgba(255,255,255,0.08)"/>
+    <rect y="28" width="700" height="8" fill="rgba(255,255,255,0.08)"/>
+    <text x="24" y="24" class="box-title">STEP 2 — RESEARCH</text>
+    <rect x="580" y="8" width="100" height="20" rx="10" fill="#fbbf24"/>
+    <text x="630" y="22" text-anchor="middle" class="gate-text">GO / NO-GO</text>
+    <rect x="24" y="48" width="420" height="26" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <text x="34" y="66" class="box-text" style="font-family: 'JetBrains Mono', monospace; font-size: 11px;">/rpi:research rpi/{feature-slug}/REQUEST.md</text>
+    <rect x="24" y="82" width="400" height="24" rx="4" fill="#f3f4f6"/>
+    <text x="34" y="98" class="output-text">→ Output: rpi/{feature-slug}/research/RESEARCH.md</text>
+    <text x="460" y="62" class="agent-text">Agents: requirement-parser, product-manager,</text>
+    <text x="460" y="76" class="agent-text">Explore, senior-software-engineer,</text>
+    <text x="460" y="90" class="agent-text">technical-cto-advisor, documentation-analyst-writer</text>
+  </g>
+
+  <!-- Arrow 3: between 546 and 561 -->
+  <g transform="translate(450, 549)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#d1d5db" stroke-width="2"/>
+    <polygon points="0,16 -5,8 5,8" fill="#d1d5db"/>
+    <text x="15" y="12" class="arrow-text">if GO</text>
+  </g>
+
+  <!-- Step 3: y=569, height=120, ends at 689 -->
+  <g class="clickable" transform="translate(100, 569)">
+    <rect width="700" height="120" rx="8" fill="url(#step3Grad)" filter="url(#shadow)"/>
+    <rect width="700" height="36" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <rect y="28" width="700" height="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="24" y="24" class="box-title">STEP 3 — PLAN</text>
+    <rect x="24" y="48" width="260" height="26" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <text x="34" y="66" class="box-text" style="font-family: 'JetBrains Mono', monospace; font-size: 11px;">/rpi:plan "{feature-slug}"</text>
+    <rect x="24" y="82" width="500" height="24" rx="4" fill="#f3f4f6"/>
+    <text x="34" y="98" class="output-text">→ Output: rpi/{feature-slug}/plan/ [pm.md, ux.md, eng.md, PLAN.md]</text>
+    <text x="310" y="66" class="agent-text">Agents: senior-software-engineer, product-manager, ux-designer</text>
+  </g>
+
+  <!-- Arrow 4: between 689 and 704 -->
+  <g transform="translate(450, 692)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#d1d5db" stroke-width="2"/>
+    <polygon points="0,16 -5,8 5,8" fill="#d1d5db"/>
+  </g>
+
+  <!-- Step 4: y=712, height=170, ends at 882 -->
+  <g class="clickable" transform="translate(100, 712)">
+    <rect width="700" height="170" rx="8" fill="url(#step4Grad)" filter="url(#shadow)"/>
+    <rect width="700" height="36" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <rect y="28" width="700" height="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="24" y="24" class="box-title">STEP 4 — IMPLEMENT</text>
+    <rect x="530" y="8" width="150" height="20" rx="10" fill="#10b981"/>
+    <text x="605" y="22" text-anchor="middle" class="gate-text" style="fill: white;">PER-PHASE VALIDATION</text>
+    <rect x="24" y="48" width="300" height="26" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <text x="34" y="66" class="box-text" style="font-family: 'JetBrains Mono', monospace; font-size: 11px;">/rpi:implement "{feature-slug}"</text>
+    <rect x="24" y="82" width="652" height="50" rx="4" fill="rgba(0,0,0,0.15)"/>
+    <text x="34" y="100" class="box-text" style="font-size: 11px; font-weight: 500;">Phase Loop:</text>
+    <text x="110" y="100" class="agent-text">Discovery → Implementation → Self-Validation → Code Review → User Validation → Docs</text>
+    <text x="34" y="120" class="agent-text">Status:  [ ] Not Started   [~] In Progress   [x] PASS   [!] Conditional   [-] Failed</text>
+    <text x="350" y="66" class="agent-text">Agents: Explore, senior-software-engineer, code-reviewer</text>
+    <rect x="24" y="140" width="350" height="22" rx="4" fill="#f3f4f6"/>
+    <text x="34" y="155" class="output-text">→ Output: rpi/{feature-slug}/implement/IMPLEMENT.md</text>
+  </g>
+
+  <!-- Arrow to final: between 882 and 897 -->
+  <g transform="translate(450, 885)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#d1d5db" stroke-width="2"/>
+    <polygon points="0,16 -5,8 5,8" fill="#d1d5db"/>
+  </g>
+
+  <!-- Final Output: y=905, height=45, ends at 950 -->
+  <g transform="translate(100, 905)">
+    <rect width="700" height="45" rx="8" fill="#111827" filter="url(#shadow)"/>
+    <text x="350" y="28" text-anchor="middle" class="box-text" style="font-size: 13px; font-weight: 500;">✓  Feature Complete — Working Code + Documentation → Ready for PR</text>
+  </g>
+
+</svg>
