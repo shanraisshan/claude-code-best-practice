@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2015%2C%202026%2012%3A52%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.76-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2015%2C%202026%201%3A10%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.76-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.76, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.76, Claude Code exposes **60+ settings** and **160+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -67,7 +67,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `model` | string | `"default"` | Override default model. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs |
 | `agent` | string | - | Set the default agent for the main conversation. Value is the agent name from `.claude/agents/`. Also available via `--agent` CLI flag |
 | `language` | string | `"english"` | Claude's preferred response language |
-| `cleanupPeriodDays` | number | `30` | Sessions inactive longer than this are deleted at startup. Setting to `0` deletes all existing transcripts and disables session persistence entirely (no `.jsonl` files written, `/resume` shows no conversations) |
+| `cleanupPeriodDays` | number | `30` | Sessions inactive longer than this are deleted at startup. Setting to `0` deletes all existing transcripts and disables session persistence entirely (no `.jsonl` files written, `/resume` shows no conversations, hooks receive an empty `transcript_path`) |
 | `autoUpdatesChannel` | string | `"latest"` | Release channel: `"stable"` or `"latest"` |
 | `alwaysThinkingEnabled` | boolean | `false` | Enable extended thinking by default for all sessions |
 | `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs |
@@ -75,6 +75,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
 | `teammateMode` | string | `"auto"` | Agent team display mode: `"auto"` (split panes in tmux/iTerm2, in-process otherwise), `"in-process"`, or `"tmux"` |
 | `includeGitInstructions` | boolean | `true` | Include git-related instructions in system prompt |
+| `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 
 **Example:**
 ```json
@@ -105,6 +106,25 @@ Store plan and auto-memory files in custom locations.
 ```
 
 **Use Case:** Useful for organizing planning artifacts separately from Claude's internal files, or for keeping plans in a shared team location.
+
+### Worktree Settings
+
+Configure how `--worktree` creates and manages git worktrees. Useful for reducing disk usage and startup time in large monorepos.
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| `worktree.symlinkDirectories` | array | `[]` | Directories to symlink from the main repository into each worktree to avoid duplicating large directories on disk |
+| `worktree.sparsePaths` | array | `[]` | Directories to check out in each worktree via git sparse-checkout (cone mode). Only the listed paths are written to disk |
+
+**Example:**
+```json
+{
+  "worktree": {
+    "symlinkDirectories": ["node_modules", ".cache"],
+    "sparsePaths": ["packages/my-app", "shared/utils"]
+  }
+}
+```
 
 ### Attribution Settings
 
@@ -230,10 +250,21 @@ Control what tools and operations Claude can perform.
 
 **Evaluation order:** Rules are evaluated in order: deny rules first, then ask, then allow. The first matching rule wins.
 
+**Read/Edit path patterns:** Permission rules for `Read`, `Edit`, and `Write` support gitignore-style patterns with four prefix types:
+
+| Prefix | Meaning | Example |
+|--------|---------|---------|
+| `//` | Absolute path from filesystem root | `Read(//Users/alice/file)` |
+| `~/` | Relative to home directory | `Read(~/.zshrc)` |
+| `/` | Relative to project root | `Edit(/src/**)` |
+| `./` or none | Relative path (current directory) | `Read(.env)`, `Read(*.ts)` |
+
 **Bash wildcard notes:**
 - `*` can appear at **any position**: prefix (`Bash(* install)`), suffix (`Bash(npm *)`), or middle (`Bash(git * main)`)
+- **Word boundary:** `Bash(ls *)` (space before `*`) matches `ls -la` but NOT `lsof`; `Bash(ls*)` (no space) matches both
 - `Bash(*)` is treated as equivalent to `Bash` (matches all bash commands)
 - Permission rules support output redirections: `Bash(python:*)` matches `python script.py > output.txt`
+- The legacy `:*` suffix syntax (e.g., `Bash(npm:*)`) is equivalent to ` *` but is deprecated
 
 **Example:**
 ```json
@@ -425,6 +456,7 @@ Map Anthropic model IDs to provider-specific model IDs for Bedrock, Vertex, or F
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `effortLevel` | string | - | Persist the effort level across sessions. Accepts `"low"`, `"medium"`, or `"high"`. Written automatically when you run `/effort low`, `/effort medium`, or `/effort high`. Supported on Opus 4.6 and Sonnet 4.6 |
 | `modelOverrides` | object | - | Map model picker entries to provider-specific IDs (e.g., Bedrock inference profile ARNs). Each key is a model picker entry name, each value is the provider model ID |
 
 **Example:**
@@ -448,10 +480,9 @@ The `/model` command exposes an **effort level** control that adjusts how much r
 | Low | Minimal reasoning, fastest responses |
 
 **How to use:**
-1. Run `/model` in Claude Code
-2. Select **Default (recommended)** — Opus 4.6
-3. Use **← →** arrow keys to adjust the effort level
-4. The setting applies to the current session and future sessions
+1. Run `/effort low`, `/effort medium`, or `/effort high` to set directly (v2.1.76+)
+2. Or run `/model` → select a model → use **← →** arrow keys to adjust
+3. The setting persists via the `effortLevel` key in `settings.json`
 
 **Note:** Effort level is available for Opus 4.6 and Sonnet 4.6 on Max and Team plans. The default was changed from High to Medium in v2.1.68. As of v2.1.75, 1M context window for Opus 4.6 is available by default on Max, Team, and Enterprise plans.
 
@@ -634,12 +665,12 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Disable git-related system prompt instructions |
 | `ENABLE_CLAUDEAI_MCP_SERVERS` | Enable Claude.ai MCP servers |
 | `CLAUDE_CODE_EFFORT_LEVEL` | Set effort level: `high`, `medium`, or `low` |
-| `CLAUDE_CODE_MAX_TURNS` | Maximum agentic turns before stopping |
+| `CLAUDE_CODE_MAX_TURNS` | Maximum agentic turns before stopping *(not in official docs — unverified)* |
 | `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | Disable non-essential network traffic |
-| `CLAUDE_CODE_SKIP_SETTINGS_SETUP` | Skip first-run settings setup flow |
-| `CLAUDE_CODE_PROMPT_CACHING_ENABLED` | Override prompt caching behavior |
-| `CLAUDE_CODE_DISABLE_TOOLS` | Comma-separated list of tools to disable |
-| `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) |
+| `CLAUDE_CODE_SKIP_SETTINGS_SETUP` | Skip first-run settings setup flow *(not in official docs — unverified)* |
+| `CLAUDE_CODE_PROMPT_CACHING_ENABLED` | Override prompt caching behavior *(not in official docs — unverified)* |
+| `CLAUDE_CODE_DISABLE_TOOLS` | Comma-separated list of tools to disable *(not in official docs — unverified)* |
+| `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) *(not in official docs — unverified)* |
 | `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens per response (default: 32000, max: 64000) |
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Disable auto memory (`1` to disable) |
@@ -664,11 +695,11 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_CLIENT_KEY` | Client private key path for mTLS |
 | `CLAUDE_CODE_CLIENT_KEY_PASSPHRASE` | Passphrase for encrypted mTLS key |
 | `CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS` | Plugin marketplace git clone timeout in ms (default: 120000) |
-| `CLAUDE_CODE_HIDE_ACCOUNT_INFO` | Hide email/org info from UI |
+| `CLAUDE_CODE_HIDE_ACCOUNT_INFO` | Hide email/org info from UI *(not in official docs — unverified)* |
 | `CLAUDE_CODE_DISABLE_CRON` | Disable scheduled/cron tasks (`1` to disable) |
 | `DISABLE_INSTALLATION_CHECKS` | Disable installation warnings |
 | `DISABLE_BUG_COMMAND` | Disable the `/bug` command |
-| `DISABLE_NON_ESSENTIAL_MODEL_CALLS` | Disable flavor text and non-essential model calls |
+| `DISABLE_NON_ESSENTIAL_MODEL_CALLS` | Disable flavor text and non-essential model calls *(not in official docs — unverified)* |
 | `DISABLE_COST_WARNINGS` | Disable cost warning messages |
 | `CLAUDE_CODE_SUBAGENT_MODEL` | Override model for subagents (e.g., `haiku`, `sonnet`) |
 | `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS` | SessionEnd hook timeout in ms (replaces hard 1.5s limit) |
@@ -676,6 +707,29 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` | Disable terminal title updates (`1` to disable) |
 | `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL` | Skip automatic IDE extension installation (`1` to skip) |
 | `CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS` | Debounce interval in ms for OTel headers helper script |
+| `ANTHROPIC_DEFAULT_OPUS_MODEL` | Override Opus model alias (e.g., `claude-opus-4-6[1m]`) |
+| `ANTHROPIC_DEFAULT_SONNET_MODEL` | Override Sonnet model alias (e.g., `claude-sonnet-4-6`) |
+| `MAX_THINKING_TOKENS` | Maximum extended thinking tokens per response |
+| `CLAUDE_CODE_AUTO_COMPACT_WINDOW` | Auto-compact window behavior configuration |
+| `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION` | Enable prompt suggestions |
+| `CLAUDE_CODE_PLAN_MODE_REQUIRED` | Require plan mode for sessions |
+| `CLAUDE_CODE_TEAM_NAME` | Team name for agent teams |
+| `CLAUDE_CODE_TASK_LIST_ID` | Task list ID for task integration |
+| `CLAUDE_ENV_FILE` | Custom environment file path |
+| `FORCE_AUTOUPDATE_PLUGINS` | Force plugin auto-updates (`1` to enable) |
+| `HTTP_PROXY` | HTTP proxy URL for network requests |
+| `HTTPS_PROXY` | HTTPS proxy URL for network requests |
+| `NO_PROXY` | Comma-separated list of hosts that bypass proxy |
+| `MCP_TOOL_TIMEOUT` | MCP tool execution timeout in ms |
+| `MCP_CLIENT_SECRET` | MCP OAuth client secret |
+| `MCP_OAUTH_CALLBACK_PORT` | MCP OAuth callback port |
+| `IS_DEMO` | Enable demo mode |
+| `SLASH_COMMAND_TOOL_CHAR_BUDGET` | Character budget for slash command tool output |
+| `VERTEX_REGION_CLAUDE_3_5_HAIKU` | Vertex AI region override for Claude 3.5 Haiku |
+| `VERTEX_REGION_CLAUDE_3_7_SONNET` | Vertex AI region override for Claude 3.7 Sonnet |
+| `VERTEX_REGION_CLAUDE_4_0_OPUS` | Vertex AI region override for Claude 4.0 Opus |
+| `VERTEX_REGION_CLAUDE_4_0_SONNET` | Vertex AI region override for Claude 4.0 Sonnet |
+| `VERTEX_REGION_CLAUDE_4_1_OPUS` | Vertex AI region override for Claude 4.1 Opus |
 
 ---
 
@@ -684,6 +738,7 @@ Set environment variables for all Claude Code sessions.
 | Command | Description |
 |---------|-------------|
 | `/model` | Switch models and adjust Opus 4.6 effort level |
+| `/effort` | Set effort level directly: `low`, `medium`, `high` (v2.1.76+) |
 | `/config` | Interactive configuration UI |
 | `/memory` | View/edit all memory files |
 | `/agents` | Manage subagents |
@@ -711,6 +766,12 @@ Set environment variables for all Claude Code sessions.
   "alwaysThinkingEnabled": true,
   "includeGitInstructions": true,
   "plansDirectory": "./plans",
+  "effortLevel": "medium",
+
+  "worktree": {
+    "symlinkDirectories": ["node_modules"],
+    "sparsePaths": ["packages/my-app", "shared/utils"]
+  },
 
   "modelOverrides": {
     "claude-opus-4-6": "arn:aws:bedrock:us-east-1:123456789:inference-profile/anthropic.claude-opus-4-6-v1:0"
@@ -780,3 +841,5 @@ Set environment variables for all Claude Code sessions.
 - [Claude Code GitHub Settings Examples](https://github.com/feiskyer/claude-code-settings)
 - [Eesel AI - Developer's Guide to settings.json](https://www.eesel.ai/blog/settings-json-claude-code)
 - [Shipyard - Claude Code CLI Cheatsheet](https://shipyard.build/blog/claude-code-cheat-sheet/)
+- [Claude Code Environment Variables Reference](https://code.claude.com/docs/en/env-vars)
+- [Claude Code Permissions Reference](https://code.claude.com/docs/en/permissions)
