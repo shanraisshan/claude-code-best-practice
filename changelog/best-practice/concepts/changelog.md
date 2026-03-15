@@ -6,9 +6,9 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 | Status | Meaning |
 |--------|---------|
-| `COMPLETE (reason)` | Action was taken and resolved successfully |
-| `INVALID (reason)` | Finding was incorrect, not applicable, or intentional |
-| `ON HOLD (reason)` | Action deferred, waiting on external dependency or user decision |
+| ✅ `COMPLETE (reason)` | Action was taken and resolved successfully |
+| ❌ `INVALID (reason)` | Finding was incorrect, not applicable, or intentional |
+| ✋ `ON HOLD (reason)` | Action deferred — waiting on external dependency or user decision |
 
 ---
 
@@ -16,20 +16,20 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix Permissions URL from `/iam` to `/permissions` | COMPLETE (URL updated to /permissions) |
-| 2 | HIGH | Missing Concept | Add Agent Teams row to CONCEPTS table | COMPLETE (row added with ~\/\.claude\/teams\/ location) |
-| 3 | HIGH | Missing Concept | Add Keybindings row to CONCEPTS table | COMPLETE (row added with ~\/\.claude\/keybindings\.json location) |
-| 4 | HIGH | Missing Concept | Add Model Configuration row to CONCEPTS table | COMPLETE (row added with \.claude\/settings\.json location) |
-| 5 | HIGH | Missing Concept | Add Auto Memory row to CONCEPTS table | COMPLETE (row added with ~\/\.claude\/projects\/<project>\/memory\/ location) |
-| 6 | HIGH | Stale Anchor | Fix Rules URL anchor from `#modular-rules-with-clauderules` to `#organize-rules-with-clauderules` | COMPLETE (anchor updated) |
-| 7 | MED | Missing Concept | Add Checkpointing row to CONCEPTS table | COMPLETE (row added with automatic git-based location) |
-| 8 | MED | Missing Concept | Add Status Line row to CONCEPTS table | COMPLETE (row added with ~\/\.claude\/settings\.json location) |
-| 9 | MED | Missing Concept | Add Remote Control row to CONCEPTS table | COMPLETE (row added with CLI \/ claude\.ai location) |
-| 10 | MED | Missing Concept | Add Fast Mode row to CONCEPTS table | COMPLETE (row added with \.claude\/settings\.json location) |
-| 11 | MED | Missing Concept | Add Headless Mode row to CONCEPTS table | COMPLETE (row added with CLI flag -p location) |
-| 12 | LOW | Changed Description | Update Memory description to mention auto memory | COMPLETE (description and location updated) |
-| 13 | LOW | Changed Location | Update MCP Servers location to include `.mcp.json` | COMPLETE (location updated to include .mcp.json) |
-| 14 | LOW | Missing Badge | Add Implemented badge to Hooks row | COMPLETE (Implemented badge added linking to .claude/hooks/) |
+| 1 | HIGH | Broken URL | Fix Permissions URL from `/iam` to `/permissions` | ✅ COMPLETE (URL updated to /permissions) |
+| 2 | HIGH | Missing Concept | Add Agent Teams row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/teams\/ location) |
+| 3 | HIGH | Missing Concept | Add Keybindings row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/keybindings\.json location) |
+| 4 | HIGH | Missing Concept | Add Model Configuration row to CONCEPTS table | ✅ COMPLETE (row added with \.claude\/settings\.json location) |
+| 5 | HIGH | Missing Concept | Add Auto Memory row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/projects\/<project>\/memory\/ location) |
+| 6 | HIGH | Stale Anchor | Fix Rules URL anchor from `#modular-rules-with-clauderules` to `#organize-rules-with-clauderules` | ✅ COMPLETE (anchor updated) |
+| 7 | MED | Missing Concept | Add Checkpointing row to CONCEPTS table | ✅ COMPLETE (row added with automatic git-based location) |
+| 8 | MED | Missing Concept | Add Status Line row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/settings\.json location) |
+| 9 | MED | Missing Concept | Add Remote Control row to CONCEPTS table | ✅ COMPLETE (row added with CLI \/ claude\.ai location) |
+| 10 | MED | Missing Concept | Add Fast Mode row to CONCEPTS table | ✅ COMPLETE (row added with \.claude\/settings\.json location) |
+| 11 | MED | Missing Concept | Add Headless Mode row to CONCEPTS table | ✅ COMPLETE (row added with CLI flag -p location) |
+| 12 | LOW | Changed Description | Update Memory description to mention auto memory | ✅ COMPLETE (description and location updated) |
+| 13 | LOW | Changed Location | Update MCP Servers location to include `.mcp.json` | ✅ COMPLETE (location updated to include .mcp.json) |
+| 14 | LOW | Missing Badge | Add Implemented badge to Hooks row | ✅ COMPLETE (Implemented badge added linking to .claude/hooks/) |
 
 ---
 
@@ -37,13 +37,13 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Table Consolidation | Consolidate CONCEPTS table from 22 rows to 10 rows — fold related concepts as inline doc links | COMPLETE (22 → 10 rows) |
-| 2 | MED | Merged Concept | Fold Marketplaces into Plugins row as inline link | COMPLETE (linked to /discover-plugins) |
-| 3 | MED | Merged Concept | Fold Agent Teams into Sub-Agents row as inline link | COMPLETE (linked to /agent-teams) |
-| 4 | MED | Merged Concept | Fold Permissions, Model Config, Output Styles, Sandboxing, Keybindings, Status Line, Fast Mode into Settings row as inline links | COMPLETE (7 concepts folded with doc links) |
-| 5 | MED | Merged Concept | Fold Auto Memory and Rules into Memory row as inline links | COMPLETE (linked to /memory and /memory#organize-rules-with-clauderules) |
-| 6 | MED | Merged Concept | Fold Headless Mode into Remote Control row as inline link | COMPLETE (linked to /headless) |
-| 7 | LOW | Reorder | Reorder table by logical grouping: building blocks → extension → config → context → runtime | COMPLETE (grouped by concern, not chronology) |
+| 1 | HIGH | Table Consolidation | Consolidate CONCEPTS table from 22 rows to 10 rows — fold related concepts as inline doc links | ✅ COMPLETE (22 → 10 rows) |
+| 2 | MED | Merged Concept | Fold Marketplaces into Plugins row as inline link | ✅ COMPLETE (linked to /discover-plugins) |
+| 3 | MED | Merged Concept | Fold Agent Teams into Sub-Agents row as inline link | ✅ COMPLETE (linked to /agent-teams) |
+| 4 | MED | Merged Concept | Fold Permissions, Model Config, Output Styles, Sandboxing, Keybindings, Status Line, Fast Mode into Settings row as inline links | ✅ COMPLETE (7 concepts folded with doc links) |
+| 5 | MED | Merged Concept | Fold Auto Memory and Rules into Memory row as inline links | ✅ COMPLETE (linked to /memory and /memory#organize-rules-with-clauderules) |
+| 6 | MED | Merged Concept | Fold Headless Mode into Remote Control row as inline link | ✅ COMPLETE (linked to /headless) |
+| 7 | LOW | Reorder | Reorder table by logical grouping: building blocks → extension → config → context → runtime | ✅ COMPLETE (grouped by concern, not chronology) |
 
 ---
 
@@ -51,12 +51,12 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix `context-management` → `interactive-mode` in TIPS (lines 112, 115, 135) | COMPLETE (3 occurrences replaced with interactive-mode) |
-| 2 | HIGH | Broken URL | Fix `model-configuration` → `model-config` in TIPS (lines 115, 116, 135) | COMPLETE (3 occurrences replaced with model-config) |
-| 3 | HIGH | Broken URL | Fix `usage-billing` → `costs` in TIPS (line 115) | COMPLETE (replaced with costs) |
-| 4 | HIGH | Broken URL | Remove `cowork` URL in STARTUPS (line 167) — page does not exist | COMPLETE (hyperlink removed, plain text kept) |
-| 5 | HIGH | Missing Concept | Add Scheduled Tasks row to CONCEPTS and Hot section (`/loop`, cron tools) | COMPLETE (added by user to both tables + /loop tip + Boris tweet) |
-| 6 | MED | Changed Location | Update Agent Teams location from `.claude/agents/<name>.md` to `built-in (env var)` | COMPLETE (location updated to built-in env var) |
+| 1 | HIGH | Broken URL | Fix `context-management` → `interactive-mode` in TIPS (lines 112, 115, 135) | ✅ COMPLETE (3 occurrences replaced with interactive-mode) |
+| 2 | HIGH | Broken URL | Fix `model-configuration` → `model-config` in TIPS (lines 115, 116, 135) | ✅ COMPLETE (3 occurrences replaced with model-config) |
+| 3 | HIGH | Broken URL | Fix `usage-billing` → `costs` in TIPS (line 115) | ✅ COMPLETE (replaced with costs) |
+| 4 | HIGH | Broken URL | Remove `cowork` URL in STARTUPS (line 167) — page does not exist | ✅ COMPLETE (hyperlink removed, plain text kept) |
+| 5 | HIGH | Missing Concept | Add Scheduled Tasks row to CONCEPTS and Hot section (`/loop`, cron tools) | ✅ COMPLETE (added by user to both tables + /loop tip + Boris tweet) |
+| 6 | MED | Changed Location | Update Agent Teams location from `.claude/agents/<name>.md` to `built-in (env var)` | ✅ COMPLETE (location updated to built-in env var) |
 
 ---
 
@@ -64,14 +64,14 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` serves Skills page content; docs say "commands merged into skills" | INVALID (URL still resolves; user chose to keep as-is) |
-| 2 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in TIPS section (line 108) — same stale URL | INVALID (URL still resolves; user chose to keep as-is) |
-| 3 | MED | Missing Inline Link | Add Interactive Mode (`/interactive-mode`) as inline link to CLI Startup Flags row — covers /compact, /clear, /context, /extra-usage | COMPLETE (inline link added to CLI Startup Flags description) |
-| 4 | MED | Missing Inline Link | Add Costs (`/costs`) as inline link to Settings row — covers /usage, billing, pay-as-you-go | INVALID (user chose to skip) |
-| 5 | LOW | Missing Concept | Consider adding IDE Integrations row (VS Code, JetBrains, Desktop App, Web) or inline links to Best Practices | INVALID (user chose to skip — platform surfaces, not configuration concepts) |
-| 6 | HIGH | Missing Concept | Add Code Review row to Hot table — multi-agent PR analysis (research preview, Teams & Enterprise) | COMPLETE (row added as first Hot entry with blog link and best practice tweet) |
-| 7 | MED | New Badge | Create `!/tags/beta.svg` tag (yellow, 38x20px) and add to Code Review and Agent Teams in Hot table | COMPLETE (beta.svg created; added to Code Review and Agent Teams rows) |
-| 8 | MED | Reorder | Sort Hot table by release date (most recent first): Code Review → Scheduled Tasks → Voice Mode → Agent Teams → Remote Control → Git Worktrees → Ralph Wiggum | COMPLETE (Voice Mode and Agent Teams swapped to match chronological order) |
+| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` serves Skills page content; docs say "commands merged into skills" | ❌ INVALID (URL still resolves; user chose to keep as-is) |
+| 2 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in TIPS section (line 108) — same stale URL | ❌ INVALID (URL still resolves; user chose to keep as-is) |
+| 3 | MED | Missing Inline Link | Add Interactive Mode (`/interactive-mode`) as inline link to CLI Startup Flags row — covers /compact, /clear, /context, /extra-usage | ✅ COMPLETE (inline link added to CLI Startup Flags description) |
+| 4 | MED | Missing Inline Link | Add Costs (`/costs`) as inline link to Settings row — covers /usage, billing, pay-as-you-go | ❌ INVALID (user chose to skip) |
+| 5 | LOW | Missing Concept | Consider adding IDE Integrations row (VS Code, JetBrains, Desktop App, Web) or inline links to Best Practices | ❌ INVALID (user chose to skip — platform surfaces, not configuration concepts) |
+| 6 | HIGH | Missing Concept | Add Code Review row to Hot table — multi-agent PR analysis (research preview, Teams & Enterprise) | ✅ COMPLETE (row added as first Hot entry with blog link and best practice tweet) |
+| 7 | MED | New Badge | Create `!/tags/beta.svg` tag (yellow, 38x20px) and add to Code Review and Agent Teams in Hot table | ✅ COMPLETE (beta.svg created; added to Code Review and Agent Teams rows) |
+| 8 | MED | Reorder | Sort Hot table by release date (most recent first): Code Review → Scheduled Tasks → Voice Mode → Agent Teams → Remote Control → Git Worktrees → Ralph Wiggum | ✅ COMPLETE (Voice Mode and Agent Teams swapped to match chronological order) |
 
 ---
 
@@ -79,8 +79,22 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` redirects to `/skills` page | INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | LOW | Verification | All external docs URLs validated — no broken links found | COMPLETE (all 20+ URLs return valid pages) |
-| 3 | LOW | Verification | All local badge file paths validated — no missing files | COMPLETE (all badge targets exist on filesystem) |
-| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` validated on target page | COMPLETE (heading exists on /memory page) |
-| 5 | LOW | Verification | All CONCEPTS descriptions checked against official docs | COMPLETE (no description drift detected) |
+| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` redirects to `/skills` page | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
+| 2 | LOW | Verification | All external docs URLs validated — no broken links found | ✅ COMPLETE (all 20+ URLs return valid pages) |
+| 3 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all badge targets exist on filesystem) |
+| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` validated on target page | ✅ COMPLETE (heading exists on /memory page) |
+| 5 | LOW | Verification | All CONCEPTS descriptions checked against official docs | ✅ COMPLETE (no description drift detected) |
+
+---
+
+## [2026-03-15 12:48 PM PKT] Claude Code v2.1.76
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
+| 2 | MED | Missing Badges | Remote Control (Hot) has zero badges — only Hot item without any BP or Impl badge | ✅ COMPLETE (BP badge added linking to official docs page) |
+| 3 | LOW | Naming | "Sub-Agents" in README vs "subagents" (one word) in official docs — cosmetic inconsistency | ✅ COMPLETE (renamed to "Subagents" in CONCEPTS table) |
+| 4 | LOW | Verification | All 27 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages) |
+| 5 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all badge targets exist on filesystem) |
+| 6 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
+| 7 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (descriptions accurate for all 13 CONCEPTS + 9 Hot rows) |

@@ -4,9 +4,9 @@
 
 | Status | Meaning |
 |--------|---------|
-| `COMPLETE (reason)` | Action was taken and resolved successfully |
-| `INVALID (reason)` | Finding was incorrect, not applicable, or intentional |
-| `ON HOLD (reason)` | Action deferred, waiting on external dependency or user decision |
+| ✅ `COMPLETE (reason)` | Action was taken and resolved successfully |
+| ❌ `INVALID (reason)` | Finding was incorrect, not applicable, or intentional |
+| ✋ `ON HOLD (reason)` | Action deferred — waiting on external dependency or user decision |
 
 ---
 
@@ -14,4 +14,12 @@
 
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
-| 1 | MED | Extra Bundled Skill | `keybindings-help` is in local report but absent from official docs bundled skills list — investigate whether to remove or keep | COMPLETE (removed from bundled skills table — it is a local custom skill in this repo, not an official bundled skill; `/keybindings` is a built-in CLI command) |
+| 1 | MED | Extra Bundled Skill | `keybindings-help` is in local report but absent from official docs bundled skills list — investigate whether to remove or keep | ✅ COMPLETE (removed from bundled skills table — it is a local custom skill in this repo, not an official bundled skill; `/keybindings` is a built-in CLI command) |
+
+---
+
+## [2026-03-15 12:49 PM PKT] Claude Code v2.1.76
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Field Accuracy | `name` field Required column reads "Recommended" in local report but official docs now list it as "No" (optional) — update to match | ✅ COMPLETE (updated `name` Required from "Recommended" to "No" to match official docs) |

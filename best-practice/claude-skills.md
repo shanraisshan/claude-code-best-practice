@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2013%2C%202026%204%3A22%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2015%2C%202026%2012%3A49%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -18,7 +18,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | string | Recommended | Display name and `/slash-command` identifier. Defaults to the directory name if omitted |
+| `name` | string | No | Display name and `/slash-command` identifier. Defaults to the directory name if omitted |
 | `description` | string | Recommended | What the skill does. Shown in autocomplete and used by Claude for auto-discovery |
 | `argument-hint` | string | No | Hint shown during autocomplete (e.g., `[issue-number]`, `[filename]`) |
 | `disable-model-invocation` | boolean | No | Set `true` to prevent Claude from automatically invoking this skill |

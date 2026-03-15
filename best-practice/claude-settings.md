@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2014%2C%202026%201%3A36%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.75-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2015%2C%202026%2012%3A52%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.76-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.75, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.76, Claude Code exposes **55+ settings** and **140+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
