@@ -1,12 +1,11 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2016%2C%202026%2001%3A18%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2016%2C%202026%2002%3A10%20PM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/badge/%E2%98%85-17%2C484-white?style=flat&labelColor=555" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
-[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Click on this badge to see the Command → Agent → Skill orchestration workflow*<br>
-[![Billion-Dollar Questions](!/tags/billion-dollar-questions.svg)](#billion-dollar-questions) *Click on this badge to navigate to the Billion Dollar Questions*
+[![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) *Click on this badge to see the Command → Agent → Skill orchestration workflow*
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
@@ -79,13 +78,13 @@ claude
 - [Cross-Model (Claude Code + Codex) Workflow](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md)
 - [RPI](development-workflows/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/rpi/rpi-workflow.md)
 - [Ralph Wiggum Loop](https://www.youtube.com/watch?v=eAtvoGlpeRU) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26)
+- [Garry Tan (CEO of Y Combinator) - gstack](https://github.com/garrytan/gstack) · ★ 15k
 
 ### Others
-- [Github Speckit](https://github.com/github/spec-kit) · ★ 74k
-- [obra/superpowers](https://github.com/obra/superpowers) · ★ 72k
-- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md) · ★ 28k
-- [get-shit-done (GSD)](https://github.com/gsd-build/get-shit-done) · ★ 25k
-- [Garry Tan (CEO of Y Combinator) - gstack](https://github.com/garrytan/gstack) · ★ 11.5k
+- [obra/superpowers](https://github.com/obra/superpowers) · ★ 87k
+- [Github Speckit](https://github.com/github/spec-kit) · ★ 77k
+- [get-shit-done (GSD)](https://github.com/gsd-build/get-shit-done) · ★ 31k
+- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md) · ★ 31k
 - [Brian Casel (Creator of Agent OS) - 2026 Workflow](https://github.com/buildermethods/agent-os) · ★ 4k - [it's overkill in 2026](https://www.youtube.com/watch?v=0hdFJA-ho3c)
 - [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md) · ★ 1.5k
 - [Andrej Karpathy (Founding Member, OpenAI) Workflow](https://x.com/karpathy/status/2015883857489522876)
