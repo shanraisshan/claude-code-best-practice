@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 170" width="140" height="170">
+  <defs>
+    <!-- Purple-to-cyan body gradient -->
+    <linearGradient id="cxBodyGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="30%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#5B6CF0"/>
+      <stop offset="80%" stop-color="#3B9AEE"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- Arm left gradient -->
+    <linearGradient id="cxArmL" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <!-- Arm right gradient -->
+    <linearGradient id="cxArmR" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <!-- Leg gradient -->
+    <linearGradient id="cxLimbGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <!-- Eye white gradient -->
+    <radialGradient id="cxEyeGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0F0F0"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+
+    <!-- Ground shadow -->
+    <radialGradient id="cxShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4C1D95" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#4C1D95" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4C1D95" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="cxDropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="2" dy="3.5" stdDeviation="2.5" flood-color="#4C1D95" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Inner depth for body -->
+    <filter id="cxInnerDepth" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feOffset dx="0" dy="2" result="off"/>
+      <feFlood flood-color="#3B0764" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="off" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cloud clip path -->
+    <clipPath id="cxCloudClip">
+      <circle cx="128" cy="68" r="56"/>
+      <circle cx="192" cy="100" r="54"/>
+      <circle cx="188" cy="168" r="54"/>
+      <circle cx="128" cy="192" r="54"/>
+      <circle cx="68" cy="168" r="54"/>
+      <circle cx="64" cy="100" r="54"/>
+      <circle cx="128" cy="130" r="60"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    /* Jump animation - matching Claude's 0.5s timing */
+    .codex-body {
+      animation: jump 0.5s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    @keyframes jump {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); }
+      50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); }
+      80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); }
+    }
+
+    /* Shadow scale - synced with jump */
+    .shadow {
+      animation: shadow-scale 0.5s ease-in-out infinite;
+    }
+    @keyframes shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.25; }
+      50% { transform: scaleX(0.4); opacity: 0.08; }
+    }
+
+    /* Left arm wave */
+    .left-arm {
+      animation: wave-left 0.5s ease-in-out infinite;
+      transform-origin: right center;
+    }
+    @keyframes wave-left {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-25deg); }
+    }
+
+    /* Right arm wave */
+    .right-arm {
+      animation: wave-right 0.5s ease-in-out infinite;
+      transform-origin: left center;
+    }
+    @keyframes wave-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(25deg); }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse class="shadow" cx="70" cy="158" rx="28" ry="6" fill="url(#cxShadowGrad)"/>
+
+  <!-- Codex Character Group - jumping -->
+  <g class="codex-body">
+    <g filter="url(#cxDropShadow)">
+      <!-- Cloud body -->
+      <g transform="translate(14, 16) scale(0.44)" filter="url(#cxInnerDepth)">
+        <rect x="0" y="0" width="256" height="256" fill="url(#cxBodyGrad)" clip-path="url(#cxCloudClip)"/>
+      </g>
+
+      <!-- Specular highlight on cloud body -->
+      <rect x="24" y="26" width="22" height="12" fill="#C4B5FD" opacity="0.2" rx="3"/>
+      <rect x="27" y="29" width="12" height="6" fill="#DDD6FE" opacity="0.15" rx="2"/>
+
+      <!-- Terminal chevron ">" on belly -->
+      <line x1="48" y1="88" x2="57" y2="98" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+      <line x1="57" y1="98" x2="48" y2="108" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+      <!-- Underscore "_" on belly -->
+      <line x1="64" y1="108" x2="82" y2="108" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+      <!-- Eyes -->
+      <rect x="38" y="58" width="14" height="20" rx="4" fill="url(#cxEyeGrad)" stroke="#4C1D95" stroke-width="2"/>
+      <rect x="40" y="60" width="4" height="4" fill="#fff" opacity="0.8" rx="1"/>
+      <rect x="46" y="70" width="2" height="2" fill="#fff" opacity="0.35" rx="0.5"/>
+      <circle cx="45" cy="70" r="3.5" fill="#4C1D95" opacity="0.7"/>
+
+      <rect x="72" y="58" width="14" height="20" rx="4" fill="url(#cxEyeGrad)" stroke="#4C1D95" stroke-width="2"/>
+      <rect x="74" y="60" width="4" height="4" fill="#fff" opacity="0.8" rx="1"/>
+      <rect x="80" y="70" width="2" height="2" fill="#fff" opacity="0.35" rx="0.5"/>
+      <circle cx="79" cy="70" r="3.5" fill="#4C1D95" opacity="0.7"/>
+    </g>
+
+    <!-- Left arm - waving -->
+    <g class="left-arm">
+      <rect x="6" y="72" width="20" height="10" rx="4" fill="url(#cxArmL)"/>
+      <rect x="8" y="74" width="7" height="3.5" fill="#A78BFA" opacity="0.25" rx="1"/>
+    </g>
+
+    <!-- Right arm - waving -->
+    <g class="right-arm">
+      <rect x="112" y="72" width="20" height="10" rx="4" fill="url(#cxArmR)"/>
+      <rect x="114" y="74" width="7" height="3.5" fill="#A78BFA" opacity="0.25" rx="1"/>
+    </g>
+
+    <!-- Left leg -->
+    <rect x="42" y="128" width="14" height="24" rx="4" fill="url(#cxLimbGrad)"/>
+    <rect x="44" y="130" width="5" height="12" fill="#A78BFA" opacity="0.25" rx="1"/>
+
+    <!-- Right leg -->
+    <rect x="84" y="128" width="14" height="24" rx="4" fill="url(#cxLimbGrad)"/>
+    <rect x="86" y="130" width="5" height="12" fill="#A78BFA" opacity="0.25" rx="1"/>
+  </g>
+</svg>

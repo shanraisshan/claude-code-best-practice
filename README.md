@@ -235,6 +235,10 @@ claude
 3. Go to your own project and ask Claude to suggest what best practices from this repo you should add, give it this repo as a reference so it knows what's possible.
 ```
 
+## Other Best Practices
+
+<a href="https://github.com/shanraisshan/codex-cli-best-practice"><img src="!/codex-jumping.svg" alt="Codex CLI" width="40" height="40"></a> <a href="https://github.com/shanraisshan/codex-cli-best-practice"><strong>codex-cli-best-practice</strong></a>
+
 ## Developed by
 
 ![Developed by](!/tags/developed-by.svg)
