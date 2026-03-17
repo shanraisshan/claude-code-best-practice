@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 435" width="1200" height="435">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
       <path d="M0,0 L0,8 L8,4 z" fill="#666"/>
@@ -6,58 +6,73 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="380" fill="#fafafa" rx="10"/>
+  <rect width="1200" height="435" fill="#fafafa" rx="10"/>
+
+  <!-- Header: Claude mascot + title -->
+  <g transform="translate(390, 8) scale(0.38)">
+    <rect x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+    <rect x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+    <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
+    <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
+    <rect x="30" y="34" width="8" height="10" fill="#000"/>
+    <rect x="62" y="34" width="8" height="10" fill="#000"/>
+    <rect x="2" y="36" width="12" height="8" fill="#E07C4C"/>
+    <rect x="86" y="36" width="12" height="8" fill="#E07C4C"/>
+    <rect x="24" y="60" width="12" height="14" fill="#E07C4C"/>
+    <rect x="64" y="60" width="12" height="14" fill="#E07C4C"/>
+  </g>
+  <text x="435" y="33" text-anchor="start" fill="#333" font-family="system-ui" font-size="18" font-weight="bold">Claude Code Orchestration Workflow</text>
 
   <!-- User -->
-  <circle cx="75" cy="135" r="38" fill="#E07C4C"/>
-  <text x="75" y="141" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">User</text>
+  <circle cx="75" cy="190" r="38" fill="#E07C4C"/>
+  <text x="75" y="196" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">User</text>
 
   <!-- Arrow 1 -->
-  <line x1="118" y1="135" x2="183" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="118" y1="190" x2="183" y2="190" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <!-- Command Box -->
-  <rect x="193" y="90" width="240" height="90" rx="8" fill="#2C3E50" stroke="#1A252F" stroke-width="2.5"/>
-  <text x="313" y="124" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Command</text>
-  <text x="313" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">commands/weather-orchestrator</text>
+  <rect x="193" y="145" width="240" height="90" rx="8" fill="#2C3E50" stroke="#1A252F" stroke-width="2.5"/>
+  <text x="313" y="179" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Command</text>
+  <text x="313" y="207" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">commands/weather-orchestrator</text>
   <!-- Command description -->
-  <text x="313" y="210" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Asks user for C°/F°, invokes</text>
-  <text x="313" y="225" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">agent and SVG creator skill</text>
+  <text x="313" y="265" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Asks user for C°/F°, invokes</text>
+  <text x="313" y="280" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">agent and SVG creator skill</text>
 
   <!-- Arrow 2 -->
-  <line x1="438" y1="135" x2="503" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text x="470" y="125" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">Task</text>
+  <line x1="438" y1="190" x2="503" y2="190" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="470" y="180" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">Task</text>
 
   <!-- Agent Box -->
-  <rect x="513" y="72" width="240" height="126" rx="8" fill="#2BA5A5" stroke="#1E8F8F" stroke-width="2.5"/>
-  <text x="633" y="100" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Agent</text>
-  <text x="633" y="118" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.85">agents/weather-agent</text>
+  <rect x="513" y="127" width="240" height="126" rx="8" fill="#2BA5A5" stroke="#1E8F8F" stroke-width="2.5"/>
+  <text x="633" y="155" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Agent</text>
+  <text x="633" y="173" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.85">agents/weather-agent</text>
 
   <!-- Skills inside Agent -->
-  <rect x="527" y="128" width="212" height="56" rx="5" fill="white" opacity="0.2"/>
-  <text x="633" y="150" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.7">(preloaded skill)</text>
-  <text x="633" y="174" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" opacity="0.9">weather-fetcher</text>
+  <rect x="527" y="183" width="212" height="56" rx="5" fill="white" opacity="0.2"/>
+  <text x="633" y="205" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.7">(preloaded skill)</text>
+  <text x="633" y="229" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" opacity="0.9">weather-fetcher</text>
   <!-- Agent description -->
-  <text x="633" y="218" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Fetches temperature from</text>
-  <text x="633" y="233" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Open-Meteo API for Dubai</text>
+  <text x="633" y="273" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Fetches temperature from</text>
+  <text x="633" y="288" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Open-Meteo API for Dubai</text>
 
   <!-- Arrow 3 -->
-  <line x1="758" y1="135" x2="823" y2="135" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text x="790" y="125" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">Skill</text>
+  <line x1="758" y1="190" x2="823" y2="190" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="790" y="180" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">Skill</text>
 
   <!-- SVG Creator Skill Box -->
-  <rect x="833" y="90" width="280" height="90" rx="8" fill="#9B59B6" stroke="#8E44AD" stroke-width="2.5"/>
-  <text x="973" y="124" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Skill</text>
-  <text x="973" y="152" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">skills/weather-svg-creator</text>
+  <rect x="833" y="145" width="280" height="90" rx="8" fill="#9B59B6" stroke="#8E44AD" stroke-width="2.5"/>
+  <text x="973" y="179" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Skill</text>
+  <text x="973" y="207" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">skills/weather-svg-creator</text>
   <!-- Skill description -->
-  <text x="973" y="210" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Creates SVG weather card at</text>
-  <text x="973" y="225" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">orchestration-workflow/weather.svg</text>
+  <text x="973" y="265" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Creates SVG weather card at</text>
+  <text x="973" y="280" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">orchestration-workflow/weather.svg</text>
 
   <!-- Arrow 4 (back to user) -->
-  <path d="M 1113 135 Q 1160 135 1160 270 Q 1160 305 75 305 Q 40 305 40 200 L 40 180"
+  <path d="M 1113 190 Q 1160 190 1160 325 Q 1160 360 75 360 Q 40 360 40 255 L 40 235"
         stroke="#666" stroke-width="2.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
 
   <!-- Legend -->
-  <text x="600" y="352" text-anchor="middle" fill="#888" font-family="system-ui" font-size="12">
+  <text x="600" y="407" text-anchor="middle" fill="#888" font-family="system-ui" font-size="12">
     commands/weather-orchestrator → agents/weather-agent (preloaded skill) → skills/weather-svg-creator (skill)
   </text>
 </svg>
