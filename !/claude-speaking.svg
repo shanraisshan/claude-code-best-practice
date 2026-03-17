@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90" width="196" height="126">
+  <style>
+    .claude-body {
+      animation: bob 0.8s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .shadow {
+      animation: shadow-pulse 0.8s ease-in-out infinite;
+    }
+    .mouth {
+      animation: talk 0.3s ease-in-out infinite;
+      transform-origin: center center;
+    }
+    .left-ear {
+      animation: ear-tilt-left 0.8s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .right-ear {
+      animation: ear-tilt-right 0.8s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .wave-1 {
+      animation: wave-expand 0.8s ease-out infinite;
+      transform-origin: left center;
+    }
+    .wave-2 {
+      animation: wave-expand 0.8s ease-out infinite 0.2s;
+      transform-origin: left center;
+    }
+    .wave-3 {
+      animation: wave-expand 0.8s ease-out infinite 0.4s;
+      transform-origin: left center;
+    }
+    .note-1 {
+      animation: float-note-1 1.5s ease-out infinite;
+    }
+    .note-2 {
+      animation: float-note-2 1.5s ease-out infinite 0.3s;
+    }
+    .note-3 {
+      animation: float-note-3 1.5s ease-out infinite 0.6s;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes shadow-pulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.25; }
+      50% { transform: scaleX(0.9); opacity: 0.2; }
+    }
+    @keyframes talk {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.5); }
+    }
+    @keyframes ear-tilt-left {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-5deg); }
+    }
+    @keyframes ear-tilt-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+    }
+    @keyframes wave-expand {
+      0% { opacity: 0.8; transform: scaleX(0.3) scaleY(0.8); }
+      100% { opacity: 0; transform: scaleX(1.2) scaleY(1); }
+    }
+    @keyframes float-note-1 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(15px, -25px) rotate(15deg); }
+    }
+    @keyframes float-note-2 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(20px, -30px) rotate(-10deg); }
+    }
+    @keyframes float-note-3 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(10px, -35px) rotate(20deg); }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse class="shadow" cx="50" cy="82" rx="22" ry="5" fill="#000"/>
+
+  <!-- Sound Waves (curved arcs) -->
+  <g class="wave-1">
+    <path d="M 92 44 Q 100 44, 100 52 Q 100 60, 92 60" fill="none" stroke="#E07C4C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g class="wave-2">
+    <path d="M 96 38 Q 108 38, 108 52 Q 108 66, 96 66" fill="none" stroke="#E07C4C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g class="wave-3">
+    <path d="M 100 32 Q 116 32, 116 52 Q 116 72, 100 72" fill="none" stroke="#E07C4C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Musical Notes -->
+  <!-- Note 1 - Eighth note -->
+  <g class="note-1">
+    <ellipse cx="108" cy="28" rx="4" ry="3" fill="#E07C4C" transform="rotate(-20, 108, 28)"/>
+    <rect x="111" y="12" width="2" height="16" fill="#E07C4C"/>
+    <path d="M 113 12 Q 118 14, 118 18 Q 118 22, 113 20" fill="#E07C4C"/>
+  </g>
+
+  <!-- Note 2 - Quarter note -->
+  <g class="note-2">
+    <ellipse cx="122" cy="22" rx="4" ry="3" fill="#E07C4C" transform="rotate(-20, 122, 22)"/>
+    <rect x="125" y="6" width="2" height="16" fill="#E07C4C"/>
+  </g>
+
+  <!-- Note 3 - Double eighth note (beamed) -->
+  <g class="note-3">
+    <ellipse cx="115" cy="42" rx="3" ry="2.5" fill="#E07C4C" transform="rotate(-20, 115, 42)"/>
+    <ellipse cx="125" cy="40" rx="3" ry="2.5" fill="#E07C4C" transform="rotate(-20, 125, 40)"/>
+    <rect x="117" y="26" width="2" height="16" fill="#E07C4C"/>
+    <rect x="127" y="24" width="2" height="16" fill="#E07C4C"/>
+    <rect x="117" y="26" width="12" height="2" fill="#E07C4C"/>
+  </g>
+
+  <!-- Claude Character Group -->
+  <g class="claude-body">
+    <!-- Claude Orange: #E07C4C -->
+
+    <!-- Left ear -->
+    <rect class="left-ear" x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+
+    <!-- Right ear -->
+    <rect class="right-ear" x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+
+    <!-- Main body - top row (narrower) -->
+    <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
+
+    <!-- Main body - full block -->
+    <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
+
+    <!-- Left eye (smaller, positioned higher) -->
+    <rect x="30" y="34" width="8" height="10" fill="#000000"/>
+
+    <!-- Right eye (smaller, positioned higher) -->
+    <rect x="62" y="34" width="8" height="10" fill="#000000"/>
+
+    <!-- Mouth (animated open/close) -->
+    <rect class="mouth" x="44" y="50" width="12" height="6" fill="#000000"/>
+
+    <!-- Left arm (resting) -->
+    <rect x="2" y="40" width="12" height="8" fill="#E07C4C"/>
+
+    <!-- Right arm (resting) -->
+    <rect x="86" y="40" width="12" height="8" fill="#E07C4C"/>
+
+    <!-- Left leg -->
+    <rect x="24" y="60" width="12" height="14" fill="#E07C4C"/>
+
+    <!-- Right leg -->
+    <rect x="64" y="60" width="12" height="14" fill="#E07C4C"/>
+  </g>
+</svg>

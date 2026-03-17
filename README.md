@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.77%20(Mar%2017%2C%202026%2012%3A45%20PM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
+![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.77%20(Mar%2017%2C%202026%207%3A35%20PM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) *Click on this badge to show the latest best practice*<br>
 [![Implemented](!/tags/implemented.svg)](implementation/) *Click on this badge to show implementation in this repo*<br>
@@ -235,9 +235,9 @@ claude
 3. Go to your own project and ask Claude to suggest what best practices from this repo you should add, give it this repo as a reference so it knows what's possible.
 ```
 
-## Other Best Practices
+## Other Repos
 
-<a href="https://github.com/shanraisshan/codex-cli-best-practice"><img src="!/codex-jumping.svg" alt="Codex CLI" width="40" height="40"></a> <a href="https://github.com/shanraisshan/codex-cli-best-practice"><strong>codex-cli-best-practice</strong></a>
+<a href="https://github.com/shanraisshan/claude-code-voice-hooks"><img src="!/claude-speaking.svg" alt="Claude Code Voice Hooks" width="40" height="40" align="center"></a> <a href="https://github.com/shanraisshan/claude-code-voice-hooks"><strong>claude-code-voice-hooks</strong></a> · <a href="https://github.com/shanraisshan/codex-cli-best-practice"><img src="!/codex-jumping.svg" alt="Codex CLI" width="40" height="40" align="center"></a> <a href="https://github.com/shanraisshan/codex-cli-best-practice"><strong>codex-cli-best-practice</strong></a> · <a href="https://github.com/shanraisshan/codex-cli-voice-hooks"><img src="!/codex-speaking.svg" alt="Codex CLI Voice Hooks" width="40" height="40" align="center"></a> <a href="https://github.com/shanraisshan/codex-cli-voice-hooks"><strong>codex-cli-voice-hooks</strong></a>
 
 ## Developed by
 

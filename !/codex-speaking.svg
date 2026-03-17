@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" width="360" height="324">
+  <defs>
+    <!-- Purple-to-cyan body gradient -->
+    <linearGradient id="cxBodyGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="30%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#5B6CF0"/>
+      <stop offset="80%" stop-color="#3B9AEE"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- Arm left gradient -->
+    <linearGradient id="cxArmL" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <!-- Arm right gradient -->
+    <linearGradient id="cxArmR" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <!-- Leg gradient -->
+    <linearGradient id="cxLimbGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <!-- Eye white gradient -->
+    <radialGradient id="cxEyeGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0F0F0"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+
+    <!-- Ground shadow -->
+    <radialGradient id="cxShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4C1D95" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#4C1D95" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4C1D95" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="cxDropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="2" dy="3.5" stdDeviation="2.5" flood-color="#4C1D95" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Inner depth for body -->
+    <filter id="cxInnerDepth" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feOffset dx="0" dy="2" result="off"/>
+      <feFlood flood-color="#3B0764" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="off" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cloud clip path -->
+    <clipPath id="cxCloudClip">
+      <circle cx="128" cy="68" r="56"/>
+      <circle cx="192" cy="100" r="54"/>
+      <circle cx="188" cy="168" r="54"/>
+      <circle cx="128" cy="192" r="54"/>
+      <circle cx="68" cy="168" r="54"/>
+      <circle cx="64" cy="100" r="54"/>
+      <circle cx="128" cy="130" r="60"/>
+    </clipPath>
+
+    <!-- Glow filter for sound waves -->
+    <filter id="soundGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for music notes -->
+    <filter id="noteGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* Body bob - matches Claude 0.8s timing */
+    .codex-body {
+      animation: bob 0.8s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* Shadow pulse - synced with body bob */
+    .shadow {
+      animation: shadow-pulse 0.8s ease-in-out infinite;
+    }
+    @keyframes shadow-pulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.25; }
+      50% { transform: scaleX(0.9); opacity: 0.2; }
+    }
+
+    /* Mouth talk - matches Claude 0.3s timing */
+    .mouth {
+      animation: talk 0.3s ease-in-out infinite;
+      transform-origin: 68px 95px;
+    }
+    @keyframes talk {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.5); }
+    }
+
+    /* Sound wave arcs - matches Claude 0.8s with 0.2s stagger */
+    .sound-wave-1 {
+      animation: wave-expand 0.8s ease-out infinite;
+      transform-origin: left center;
+    }
+    .sound-wave-2 {
+      animation: wave-expand 0.8s ease-out infinite 0.2s;
+      transform-origin: left center;
+    }
+    .sound-wave-3 {
+      animation: wave-expand 0.8s ease-out infinite 0.4s;
+      transform-origin: left center;
+    }
+    @keyframes wave-expand {
+      0% { opacity: 0.8; transform: scaleX(0.3) scaleY(0.8); }
+      100% { opacity: 0; transform: scaleX(1.2) scaleY(1); }
+    }
+
+    /* Music notes - matches Claude 1.5s with 0.3s stagger */
+    .music-note-1 {
+      animation: float-note-1 1.5s ease-out infinite;
+    }
+    .music-note-2 {
+      animation: float-note-2 1.5s ease-out infinite 0.3s;
+    }
+    .music-note-3 {
+      animation: float-note-3 1.5s ease-out infinite 0.6s;
+    }
+    @keyframes float-note-1 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(15px, -25px) rotate(15deg); }
+    }
+    @keyframes float-note-2 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(20px, -30px) rotate(-10deg); }
+    }
+    @keyframes float-note-3 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(10px, -35px) rotate(20deg); }
+    }
+
+    /* Voice ring pulse - gentle */
+    .voice-ring {
+      animation: ring-pulse 0.8s ease-in-out infinite;
+      transform-origin: 100px 80px;
+    }
+    .voice-ring-2 {
+      animation: ring-pulse 0.8s ease-in-out infinite 0.2s;
+      transform-origin: 100px 80px;
+    }
+    @keyframes ring-pulse {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.25; transform: scale(1.05); }
+    }
+
+    /* Orbiting particles - not in Claude, keep subtle */
+    .voice-orbit-1, .voice-orbit-2, .voice-orbit-3, .voice-orbit-4, .voice-orbit-5 {
+      display: none;
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse class="shadow" cx="68" cy="162" rx="28" ry="6" fill="url(#cxShadowGrad)"/>
+
+  <!-- Codex Character Group - stable standing -->
+  <g class="codex-body" filter="url(#cxDropShadow)">
+    <!-- Cloud body scaled larger -->
+    <g transform="translate(12, 20) scale(0.44)" filter="url(#cxInnerDepth)">
+      <rect x="0" y="0" width="256" height="256" fill="url(#cxBodyGrad)" clip-path="url(#cxCloudClip)"/>
+    </g>
+
+    <!-- Specular highlight on cloud body -->
+    <rect x="22" y="30" width="22" height="12" fill="#C4B5FD" opacity="0.2" rx="3"/>
+    <rect x="25" y="33" width="12" height="6" fill="#DDD6FE" opacity="0.15" rx="2"/>
+
+    <!-- Terminal chevron ">" on belly -->
+    <line x1="46" y1="92" x2="55" y2="102" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+    <line x1="55" y1="102" x2="46" y2="112" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Underscore "_" on belly -->
+    <line x1="62" y1="112" x2="80" y2="112" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Eyes - stable, wide open -->
+    <rect x="36" y="62" width="14" height="20" rx="4" fill="url(#cxEyeGrad)" stroke="#4C1D95" stroke-width="2"/>
+    <!-- Left eye highlights -->
+    <rect x="38" y="64" width="4" height="4" fill="#fff" opacity="0.8" rx="1"/>
+    <rect x="44" y="74" width="2" height="2" fill="#fff" opacity="0.35" rx="0.5"/>
+    <!-- Left pupil -->
+    <circle cx="43" cy="74" r="3.5" fill="#4C1D95" opacity="0.7"/>
+
+    <rect x="70" y="62" width="14" height="20" rx="4" fill="url(#cxEyeGrad)" stroke="#4C1D95" stroke-width="2"/>
+    <!-- Right eye highlights -->
+    <rect x="72" y="64" width="4" height="4" fill="#fff" opacity="0.8" rx="1"/>
+    <rect x="78" y="74" width="2" height="2" fill="#fff" opacity="0.35" rx="0.5"/>
+    <!-- Right pupil -->
+    <circle cx="77" cy="74" r="3.5" fill="#4C1D95" opacity="0.7"/>
+
+    <!-- Mouth - open, speaking -->
+    <ellipse class="mouth" cx="68" cy="95" rx="8" ry="5" fill="#3B0764" opacity="0.8"/>
+    <ellipse cx="68" cy="93.5" rx="5" ry="1.5" fill="#6D28D9" opacity="0.3"/>
+  </g>
+
+  <!-- Left arm - stable -->
+  <rect x="4" y="76" width="20" height="10" rx="4" fill="url(#cxArmL)"/>
+  <rect x="6" y="78" width="7" height="3.5" fill="#A78BFA" opacity="0.25" rx="1"/>
+
+  <!-- Right arm - stable -->
+  <rect x="110" y="76" width="20" height="10" rx="4" fill="url(#cxArmR)"/>
+  <rect x="112" y="78" width="7" height="3.5" fill="#A78BFA" opacity="0.25" rx="1"/>
+
+  <!-- Left leg - stable -->
+  <rect x="40" y="132" width="14" height="24" rx="4" fill="url(#cxLimbGrad)"/>
+  <rect x="42" y="134" width="5" height="12" fill="#A78BFA" opacity="0.25" rx="1"/>
+
+  <!-- Right leg - stable -->
+  <rect x="82" y="132" width="14" height="24" rx="4" fill="url(#cxLimbGrad)"/>
+  <rect x="84" y="134" width="5" height="12" fill="#A78BFA" opacity="0.25" rx="1"/>
+
+  <!-- ========== VOICE / MUSIC EFFECTS ========== -->
+
+  <!-- Pulsing glow rings around voice emission area -->
+  <circle class="voice-ring" cx="100" cy="80" r="32" fill="none" stroke="#A78BFA" stroke-width="1.2" opacity="0.12"/>
+  <circle class="voice-ring-2" cx="100" cy="80" r="40" fill="none" stroke="#8B5CF6" stroke-width="0.8" opacity="0.08"/>
+
+  <!-- Sound wave arcs emanating from mouth to the right -->
+  <g filter="url(#soundGlow)">
+    <path class="sound-wave-1" d="M84,88 Q96,80 84,72" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="sound-wave-2" d="M88,92 Q104,80 88,68" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linecap="round"/>
+    <path class="sound-wave-3" d="M92,96 Q112,80 92,64" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Music notes floating out from mouth area -->
+  <!-- Note 1: ♪ -->
+  <g class="music-note-1" filter="url(#noteGlow)" opacity="0">
+    <circle cx="96" cy="84" r="3" fill="#C4B5FD"/>
+    <line x1="99" y1="84" x2="99" y2="74" stroke="#C4B5FD" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M99,74 Q103,72.5 101.5,76" fill="#C4B5FD" stroke="none"/>
+  </g>
+
+  <!-- Note 2: ♪ -->
+  <g class="music-note-2" filter="url(#noteGlow)" opacity="0">
+    <circle cx="93" cy="88" r="2.5" fill="#A78BFA"/>
+    <line x1="95.5" y1="88" x2="95.5" y2="80" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M95.5,80 Q99,78.5 97.5,82" fill="#A78BFA" stroke="none"/>
+  </g>
+
+  <!-- Note 3: ♫ double note -->
+  <g class="music-note-3" filter="url(#noteGlow)" opacity="0">
+    <circle cx="98" cy="90" r="2.5" fill="#8B5CF6"/>
+    <circle cx="105" cy="88" r="2.5" fill="#8B5CF6"/>
+    <line x1="100.5" y1="90" x2="100.5" y2="81" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="107.5" y1="88" x2="107.5" y2="79" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="100.5" y1="81" x2="107.5" y2="79" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Orbiting voice particles -->
+  <circle class="voice-orbit-1" cx="100" cy="80" r="3" fill="#C4B5FD" opacity="0"/>
+  <circle class="voice-orbit-2" cx="100" cy="80" r="2.2" fill="#A78BFA" opacity="0"/>
+  <circle class="voice-orbit-3" cx="100" cy="80" r="2.8" fill="#8B5CF6" opacity="0"/>
+  <circle class="voice-orbit-4" cx="100" cy="80" r="2" fill="#DDD6FE" opacity="0"/>
+  <circle class="voice-orbit-5" cx="100" cy="80" r="2.5" fill="#7C3AED" opacity="0"/>
+</svg>
