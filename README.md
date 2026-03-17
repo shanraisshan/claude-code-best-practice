@@ -93,13 +93,15 @@ claude
 
 ## 💡 TIPS AND TRICKS
 
+🚫👶 = do not babysit
+
 ![Community](!/tags/community.svg)
 
 ■ **Prompting (4)**
 - challenge Claude — "grill me on these changes and don't make a PR until I pass your test." or "prove to me this works" and have Claude diff between main and your branch [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
 - after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
-- Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742750473720121)
-- say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434)
+- Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742750473720121)
+- say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434)
 
 ■ **Planning/Specs (5)**
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179845336527000)

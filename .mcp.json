@@ -4,10 +4,6 @@
       "command": "npx",
       "args": ["-y", "@playwright/mcp"]
     },
-    "tavily-web-search": {
-      "type": "http",
-      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey=${TAVILY_API_KEY}"
-    },
     "context7": {
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"]
