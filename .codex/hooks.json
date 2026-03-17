@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^startup$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/scripts/hooks.py --hook SessionStart",
+            "timeout": 10,
+            "statusMessage": "Loading project context"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/scripts/hooks.py --hook Stop",
+            "timeout": 10,
+            "statusMessage": "Running session stop hook"
+          }
+        ]
+      }
+    ]
+  }
+}
