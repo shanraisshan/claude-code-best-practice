@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2015%2C%202026%201%3A10%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.76-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2017%2C%202026%2012%3A55%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.77-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.76, Claude Code exposes **60+ settings** and **160+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.77, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -70,7 +70,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `cleanupPeriodDays` | number | `30` | Sessions inactive longer than this are deleted at startup. Setting to `0` deletes all existing transcripts and disables session persistence entirely (no `.jsonl` files written, `/resume` shows no conversations, hooks receive an empty `transcript_path`) |
 | `autoUpdatesChannel` | string | `"latest"` | Release channel: `"stable"` or `"latest"` |
 | `alwaysThinkingEnabled` | boolean | `false` | Enable extended thinking by default for all sessions |
-| `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs |
+| `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs *(in JSON schema, not on official settings page)* |
 | `availableModels` | array | - | Restrict which models users can select via `/model`, `--model`, or `ANTHROPIC_MODEL`. Does not affect the Default option. Example: `["sonnet", "haiku"]` |
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
 | `teammateMode` | string | `"auto"` | Agent team display mode: `"auto"` (split panes in tmux/iTerm2, in-process otherwise), `"in-process"`, or `"tmux"` |
@@ -218,7 +218,7 @@ Control what tools and operations Claude can perform.
 | `permissions.defaultMode` | string | Default permission mode. In Remote environments, only `acceptEdits` and `plan` are honored (v2.1.70+) |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
-| `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access |
+| `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access *(not in official docs — unverified)* |
 
 ### Permission Modes
 
@@ -359,19 +359,20 @@ Configure bash command sandboxing for security.
 | `sandbox.autoAllowBashIfSandboxed` | boolean | `true` | Auto-approve bash when sandboxed |
 | `sandbox.excludedCommands` | array | `[]` | Commands to run outside sandbox |
 | `sandbox.allowUnsandboxedCommands` | boolean | `true` | Allow `dangerouslyDisableSandbox` |
-| `sandbox.ignoreViolations` | object | `{}` | Map of command patterns to path arrays — suppress violation warnings |
+| `sandbox.ignoreViolations` | object | `{}` | Map of command patterns to path arrays — suppress violation warnings *(in JSON schema, not on official settings page)* |
 | `sandbox.enableWeakerNestedSandbox` | boolean | `false` | Weaker sandbox for Docker (reduces security) |
 | `sandbox.network.allowUnixSockets` | array | `[]` | Specific Unix socket paths accessible in sandbox |
 | `sandbox.network.allowAllUnixSockets` | boolean | `false` | Allow all Unix sockets (overrides allowUnixSockets) |
 | `sandbox.network.allowLocalBinding` | boolean | `false` | Allow binding to localhost ports (macOS) |
 | `sandbox.network.allowedDomains` | array | `[]` | Network domain allowlist for sandbox |
-| `sandbox.network.deniedDomains` | array | `[]` | Network domain denylist for sandbox |
+| `sandbox.network.deniedDomains` | array | `[]` | Network domain denylist for sandbox *(not in official docs — unverified)* |
 | `sandbox.network.httpProxyPort` | number | - | HTTP proxy port 1-65535 (custom proxy) |
 | `sandbox.network.socksProxyPort` | number | - | SOCKS5 proxy port 1-65535 (custom proxy) |
 | `sandbox.network.allowManagedDomainsOnly` | boolean | `false` | Only allow domains in managed allowlist (managed settings) |
 | `sandbox.filesystem.allowWrite` | array | `[]` | Path prefixes where write is allowed. Prefix: `//` (absolute), `~/` (home), `/` (project root), `./` (cwd) |
 | `sandbox.filesystem.denyWrite` | array | `[]` | Path prefixes where write is denied |
 | `sandbox.filesystem.denyRead` | array | `[]` | Path prefixes where read is denied |
+| `sandbox.filesystem.allowRead` | array | `[]` | Path prefixes to re-allow read access within `denyRead` regions. Use to carve out exceptions inside broadly denied paths |
 | `sandbox.enableWeakerNetworkIsolation` | boolean | `false` | (macOS only) Allow access to system TLS trust (`com.apple.trustd.agent`); reduces security |
 
 **Example:**
@@ -403,9 +404,9 @@ Configure Claude Code plugins and marketplaces.
 | `enabledPlugins` | object | Any | Enable/disable specific plugins |
 | `extraKnownMarketplaces` | object | Project | Add custom plugin marketplaces (team sharing via `.claude/settings.json`) |
 | `strictKnownMarketplaces` | array | Managed only | Allowlist of permitted marketplaces |
-| `skippedMarketplaces` | array | Any | Marketplaces user declined to install |
-| `skippedPlugins` | array | Any | Plugins user declined to install |
-| `pluginConfigs` | object | Any | Per-plugin MCP server configs (keyed by `plugin@marketplace`) |
+| `skippedMarketplaces` | array | Any | Marketplaces user declined to install *(in JSON schema, not on official settings page)* |
+| `skippedPlugins` | array | Any | Plugins user declined to install *(in JSON schema, not on official settings page)* |
+| `pluginConfigs` | object | Any | Per-plugin MCP server configs (keyed by `plugin@marketplace`) *(in JSON schema, not on official settings page)* |
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 
@@ -636,6 +637,10 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_API_KEY` | API key for authentication |
 | `ANTHROPIC_AUTH_TOKEN` | OAuth token |
 | `ANTHROPIC_BASE_URL` | Custom API endpoint |
+| `ANTHROPIC_MODEL` | Name of the model to use. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs. Overrides the `model` setting |
+| `ANTHROPIC_DEFAULT_HAIKU_MODEL` | Override the Haiku model alias with a custom model ID (e.g., for third-party deployments) |
+| `CLAUDECODE` | Set to `1` in shell environments Claude Code spawns (Bash tool, tmux sessions). Not set in hooks or status line commands. Use to detect when a script is running inside a Claude Code shell |
+| `CLAUDE_CODE_SKIP_FAST_MODE_NETWORK_ERRORS` | Set to `1` to allow fast mode when the organization status check fails due to a network error. Useful when a corporate proxy blocks the status endpoint |
 | `CLAUDE_CODE_USE_BEDROCK` | Use AWS Bedrock (`1` to enable) |
 | `CLAUDE_CODE_USE_VERTEX` | Use Google Vertex AI (`1` to enable) |
 | `CLAUDE_CODE_USE_FOUNDRY` | Use Microsoft Foundry (`1` to enable) |
@@ -671,7 +676,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_PROMPT_CACHING_ENABLED` | Override prompt caching behavior *(not in official docs — unverified)* |
 | `CLAUDE_CODE_DISABLE_TOOLS` | Comma-separated list of tools to disable *(not in official docs — unverified)* |
 | `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) *(not in official docs — unverified)* |
-| `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens per response (default: 32000, max: 64000) |
+| `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens per response. Default: 32,000 (64,000 for Opus 4.6 as of v2.1.77). Upper bound: 64,000 (128,000 for Opus 4.6 and Sonnet 4.6 as of v2.1.77) |
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Disable auto memory (`1` to disable) |
 | `CLAUDE_CODE_USER_EMAIL` | Provide user email synchronously for authentication |

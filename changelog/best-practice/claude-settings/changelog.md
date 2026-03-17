@@ -119,3 +119,20 @@
 | 10 | MED | Example Update | Update Quick Reference example to include `effortLevel` and `worktree` settings | ✅ COMPLETE (added effortLevel and worktree block to example) |
 | 11 | LOW | Suspect Keys | `sandbox.ignoreViolations`, `sandbox.network.deniedDomains` still not in official docs sandbox table | ✋ ON HOLD (kept in report pending verification — recurring from 2026-03-05) |
 | 12 | LOW | Suspect Keys | `skipWebFetchPreflight`, `skippedMarketplaces`, `skippedPlugins`, `pluginConfigs` — still in JSON schema but not on official settings page | ✋ ON HOLD (kept in report — valid per schema, recurring from 2026-03-05) |
+
+---
+
+## [2026-03-17 12:54 PM PKT] Claude Code v2.1.77
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `sandbox.filesystem.allowRead` to Sandbox Settings table — re-allows read access within `denyRead` regions (array, default `[]`). Confirmed in v2.1.77 changelog | ✅ COMPLETE (added to Sandbox Settings table after denyRead row) |
+| 2 | HIGH | Changed Description | Update `CLAUDE_CODE_MAX_OUTPUT_TOKENS` description: default for Opus 4.6 increased to 64k, upper bound for Opus 4.6 and Sonnet 4.6 increased to 128k (v2.1.77 changelog) | ✅ COMPLETE (description updated with model-specific defaults and bounds) |
+| 3 | HIGH | Missing Env Var | Add `CLAUDECODE` to Common Environment Variables table — set to `1` in spawned shell environments. Confirmed on official /en/env-vars page | ✅ COMPLETE (added to env var table) |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_CODE_SKIP_FAST_MODE_NETWORK_ERRORS` to Common Environment Variables table — allows fast mode when org status check fails. Confirmed on official /en/env-vars page | ✅ COMPLETE (added to env var table) |
+| 5 | MED | Env Var Table | Move `ANTHROPIC_MODEL` and `ANTHROPIC_DEFAULT_HAIKU_MODEL` from code-block-only to Common Environment Variables table. Both confirmed on official /en/env-vars page | ✅ COMPLETE (added both to env var table near other ANTHROPIC_ vars) |
+| 6 | MED | Suspect Key Escalation | `sandbox.network.deniedDomains` — 8 consecutive ON HOLD runs (since 2026-03-05). NOT in official docs page or JSON schema. Per Rule 10B: mark as "not in official docs — unverified" | ✅ COMPLETE (added unverified annotation to description) |
+| 7 | MED | Suspect Key Escalation | `allow_remote_sessions` — NOT in official docs page or JSON schema. Mark as "not in official docs — unverified" | ✅ COMPLETE (added unverified annotation to description) |
+| 8 | LOW | Suspect Key Resolution | `sandbox.ignoreViolations` — 8 consecutive ON HOLD runs. Confirmed in JSON schema. Annotate: "in JSON schema, not on official settings page" | ✅ COMPLETE (added schema annotation to description) |
+| 9 | LOW | Suspect Key Resolution | `skipWebFetchPreflight`, `skippedMarketplaces`, `skippedPlugins`, `pluginConfigs` — 8 consecutive ON HOLD runs. All confirmed in JSON schema. Annotate: "in JSON schema, not on official settings page" | ✅ COMPLETE (added schema annotation to all 4 descriptions) |
+| 10 | LOW | Header Count | Update header env var count from "160+" to "100+" — actual table has 97 env vars | ✅ COMPLETE (header updated to "100+ environment variables", version to v2.1.77) |
