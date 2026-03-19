@@ -167,6 +167,7 @@ claude
 - /loop — schedule recurring tasks for up to 3 days (Boris) | 07 Mar 2026 ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
 - [Code Review & Test Time Compute (Boris) | 10/Mar/26](tips/claude-boris-2-tips-10-mar-26.md) ● [Tweet](https://x.com/bcherny/status/2031089411820228645)
 - /btw — side chain conversations while Claude works (Thariq) | 10 Mar 2026 ● [Tweet](https://x.com/trq212/status/2031506296697131352)
+- [Lessons from Building Claude Code: How We Use Skills (Thariq) | 17/Mar/26](tips/claude-thariq-tips-17-mar-26.md) ● [Tweet](https://x.com/trq212/status/2033949937936085378)
 
 ## ☠️ STARTUPS / BUSINESSES
 
