@@ -1,8 +1,9 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.79%20(Mar%2019%2C%202026%204%3A19%20PM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
+![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.79%20(Mar%2019%2C%202026%207%3A25%20PM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) [![Implemented](!/tags/implemented.svg)](implementation/) [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) [![Boris](!/tags/boris-cherny.svg)](#-tips-and-tricks) ![Click on these badges below to see the actual sources](!/tags/click-badges.svg)<br>
+<img src="a.svg" height="14"> = Agents · <img src="c.svg" height="14"> = Commands · <img src="s.svg" height="14"> = Skills<br>
 [![GitHub Trending #1 Repository Of The Day](!/root/github-trending-day.svg)](https://github.com/trending)
 
 <p align="center">
@@ -19,9 +20,9 @@ practice makes claude perfect
 
 | Feature | Location | Description |
 |---------|----------|-------------|
-| [**Commands**](https://code.claude.com/docs/en/slash-commands) | `.claude/commands/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-commands-implementation.md) Knowledge injected into existing context — simple user-invoked prompt templates for workflow orchestration |
-| [**Subagents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Autonomous actor in fresh isolated context — custom tools, permissions, model, memory, and persistent identity |
-| [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/<name>/SKILL.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-skills.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-skills-implementation.md) Knowledge injected into existing context — configurable, preloadable, auto-discoverable, with context forking and progressive disclosure · [Official Skills](https://github.com/anthropics/skills/tree/main/skills) |
+| <img src="c.svg" height="14"> [**Commands**](https://code.claude.com/docs/en/slash-commands) | `.claude/commands/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-commands.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-commands-implementation.md) Knowledge injected into existing context — simple user-invoked prompt templates for workflow orchestration |
+| <img src="a.svg" height="14"> [**Subagents**](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/<name>.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-subagents.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-subagents-implementation.md) Autonomous actor in fresh isolated context — custom tools, permissions, model, memory, and persistent identity |
+| <img src="s.svg" height="14"> [**Skills**](https://code.claude.com/docs/en/skills) | `.claude/skills/<name>/SKILL.md` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-skills.md) [![Implemented](!/tags/implemented.svg)](implementation/claude-skills-implementation.md) Knowledge injected into existing context — configurable, preloadable, auto-discoverable, with context forking and progressive disclosure · [Official Skills](https://github.com/anthropics/skills/tree/main/skills) |
 | [**Workflows**](https://code.claude.com/docs/en/common-workflows) | [`.claude/commands/weather-orchestrator.md`](.claude/commands/weather-orchestrator.md) | [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) |
 | [**Hooks**](https://code.claude.com/docs/en/hooks) | `.claude/hooks/` | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-hooks) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/claude-code-hooks) User-defined handlers (scripts, HTTP, prompts, agents) that run outside the agentic loop on specific events · [Guide](https://code.claude.com/docs/en/hooks-guide) |
 | [**MCP Servers**](https://code.claude.com/docs/en/mcp) | `.claude/settings.json`, `.mcp.json` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-mcp.md) [![Implemented](!/tags/implemented.svg)](.mcp.json) Model Context Protocol connections to external tools, databases, and APIs |
@@ -52,7 +53,7 @@ practice makes claude perfect
 
 ## <a href="orchestration-workflow/orchestration-workflow.md"><img src="!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
 
-See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for implementation details of **Command → Agent → Skill** pattern.
+See [orchestration-workflow](orchestration-workflow/orchestration-workflow.md) for implementation details of <img src="c.svg" height="14"> **Command** → <img src="a.svg" height="14"> **Agent** → <img src="s.svg" height="14"> **Skill** pattern.
 
 
 <p align="center">
@@ -72,21 +73,22 @@ claude
 
 ## ⚙️ DEVELOPMENT WORKFLOWS
 
-### 🔥 Hot
+All major workflows converge on the same architectural pattern: **Research → Plan → Execute → Review → Ship**
+
+| Name | ★ | Uniqueness | Plan | <img src="a.svg" height="14"> | <img src="c.svg" height="14"> | <img src="s.svg" height="14"> |
+|------|---|------------|------|---|---|---|
+| [Spec Kit](https://github.com/github/spec-kit) | 79k | ![spec-driven](https://img.shields.io/badge/spec--driven-ddf4ff) ![constitution](https://img.shields.io/badge/constitution-ddf4ff) ![22+ tools](https://img.shields.io/badge/22%2B_tools-ddf4ff) | <img src="c.svg" height="14"> [speckit.plan](https://github.com/github/spec-kit/blob/main/templates/commands/plan.md) | 0 | 9+ | 0 |
+| [OpenSpec](https://github.com/Fission-AI/OpenSpec) | 32k | ![delta specs](https://img.shields.io/badge/delta_specs-ddf4ff) ![brownfield](https://img.shields.io/badge/brownfield-ddf4ff) ![artifact DAG](https://img.shields.io/badge/artifact_DAG-ddf4ff) | <img src="c.svg" height="14"> [opsx:propose](https://github.com/Fission-AI/OpenSpec/blob/main/src/commands/workflow/new-change.ts) | 0 | 11 | 11 |
+| [HumanLayer](https://github.com/humanlayer/humanlayer) | 10k | ![RPI](https://img.shields.io/badge/RPI-ddf4ff) ![context engineering](https://img.shields.io/badge/context_engineering-ddf4ff) ![300k+ LOC](https://img.shields.io/badge/300k%2B_LOC-ddf4ff) | <img src="c.svg" height="14"> [create_plan](https://github.com/humanlayer/humanlayer/blob/main/.claude/commands/create_plan.md) | 6 | 27 | 0 |
+| [Everything Claude Code](https://github.com/affaan-m/everything-claude-code) | 87k | ![instinct scoring](https://img.shields.io/badge/instinct_scoring-ddf4ff) ![AgentShield](https://img.shields.io/badge/AgentShield-ddf4ff) ![multi-lang rules](https://img.shields.io/badge/multi--lang_rules-ddf4ff) | <img src="a.svg" height="14"> [planner](https://github.com/affaan-m/everything-claude-code/blob/main/agents/planner.md) | 25 | 57 | 108+ |
+| [Get Shit Done](https://github.com/gsd-build/get-shit-done) | 35k | ![fresh 200K contexts](https://img.shields.io/badge/fresh_200K_contexts-ddf4ff) ![wave execution](https://img.shields.io/badge/wave_execution-ddf4ff) ![XML plans](https://img.shields.io/badge/XML_plans-ddf4ff) | <img src="a.svg" height="14"> [gsd-planner](https://github.com/gsd-build/get-shit-done/blob/main/agents/gsd-planner.md) | 16 | 46 | 0 |
+| [Superpowers](https://github.com/obra/superpowers) | 98k | ![TDD-first](https://img.shields.io/badge/TDD--first-ddf4ff) ![Iron Laws](https://img.shields.io/badge/Iron_Laws-ddf4ff) ![whole-plan review](https://img.shields.io/badge/whole--plan_review-ddf4ff) | <img src="s.svg" height="14"> [writing-plans](https://github.com/obra/superpowers/tree/main/skills/writing-plans) | 5 | 3 | 14 |
+| [gstack](https://github.com/garrytan/gstack) | 26k | ![role personas](https://img.shields.io/badge/role_personas-ddf4ff) ![/codex review](https://img.shields.io/badge/%2Fcodex_review-ddf4ff) ![parallel sprints](https://img.shields.io/badge/parallel_sprints-ddf4ff) | <img src="s.svg" height="14"> [plan-eng-review](https://github.com/garrytan/gstack/tree/main/plan-eng-review) | 0 | 0 | 21 |
+
+### Others
 - [Cross-Model (Claude Code + Codex) Workflow](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md)
 - [RPI](development-workflows/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/rpi/rpi-workflow.md)
 - [Ralph Wiggum Loop](https://www.youtube.com/watch?v=eAtvoGlpeRU) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26)
-- [Garry Tan (CEO of Y Combinator) - gstack](https://github.com/garrytan/gstack) · ★ 26k
-- [Andrew Ng (Founder of DeepLearning.AI) - context-hub](https://github.com/andrewyng/context-hub) · ★ 10k
-
-### Others
-- [obra/superpowers](https://github.com/obra/superpowers) · ★ 98k
-- [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) · ★ 87k
-- [Github Speckit](https://github.com/github/spec-kit) · ★ 78k
-- [get-shit-done (GSD)](https://github.com/gsd-build/get-shit-done) · ★ 35k
-- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md) · ★ 32k
-- [Brian Casel (Creator of Agent OS) - 2026 Workflow](https://github.com/buildermethods/agent-os) · ★ 4.1k - [it's overkill in 2026](https://www.youtube.com/watch?v=0hdFJA-ho3c)
-- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md) · ★ 1.6k
 - [Andrej Karpathy (Founding Member, OpenAI) Workflow](https://x.com/karpathy/status/2015883857489522876)
 - [Peter Steinberger (Creator of OpenClaw) Workflow](https://youtu.be/8lF7HmQ_RgY?t=2582)
 - Boris Cherny (Creator of Claude Code) Workflow — [13 Tips](tips/claude-boris-13-tips-03-jan-26.md) · [10 Tips](tips/claude-boris-10-tips-01-feb-26.md) · [12 Tips](tips/claude-boris-12-tips-12-feb-26.md) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny)
@@ -103,21 +105,23 @@ claude
 - Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742750473720121)
 - say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434)
 
-■ **Planning/Specs (5)**
+■ **Planning/Specs (6)**
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179845336527000)
 - start with a minimal spec or prompt and ask Claude to interview you using [AskUserQuestion](https://code.claude.com/docs/en/cli-reference) tool, then make a new session to execute the spec [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2005315275026260309)
 - always make a phase-wise gated plan, with each phase having multiple tests (unit, automation, integration)
 - spin up a second Claude to review your plan as a staff engineer, or use [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for review [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742745365057733)
 - write detailed specs and reduce ambiguity before handing work off — the more specific you are, the better the output [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
+- prototype > PRD — build 20-30 versions instead of writing specs, the cost of building is low so take many shots [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3630) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3630)
 
-■ **CLAUDE.md (5)**
+■ **CLAUDE.md (6)**
 - [CLAUDE.md](https://code.claude.com/docs/en/memory) should target under [200 lines](https://code.claude.com/docs/en/memory#write-effective-instructions) per file. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) ([still not 100% guaranteed](https://www.reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/)). [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179840848597422) [![Dex](!/tags/dex.svg)](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - wrap domain-specific CLAUDE.md rules in [\<important if="..."\> tags](https://www.hlyr.dev/blog/stop-claude-from-ignoring-your-claude-md) to stop Claude from ignoring them as files grow longer [![Dex](!/tags/dex.svg)](https://www.hlyr.dev/blog/stop-claude-from-ignoring-your-claude-md)
 - use [multiple CLAUDE.md](best-practice/claude-memory.md) for monorepos — ancestor + descendant loading
 - use [.claude/rules/](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) to split large instructions
 - [memory.md](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything
+- keep codebases clean and finish migrations — partially migrated frameworks confuse models that might pick the wrong pattern [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=1112) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=1112)
 
-■ **Skills (10)**
+■ <img src="s.svg" height="14"> **Skills (10)**
 - have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer. [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179850139000872)
 - use [context: fork](https://code.claude.com/docs/en/skills) to run a skill in an isolated subagent — main context only sees the final result, not intermediate tool calls. The agent field lets you set the subagent type [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2033603164398883042)
 - use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
@@ -140,24 +144,26 @@ claude
 - use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
 - commit often — try to commit at least once per hour, as soon as task is completed, commit.
 
-■ **Workflows Advanced (9)**
+■ **Workflows Advanced (10)**
 - use ASCII diagrams a lot to understand your architecture [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742759218794768)
 - [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
 - use [/loop](https://code.claude.com/docs/en/scheduled-tasks) for recurring monitoring — poll deployments, babysit PRs, check builds (runs up to 3 days)
 - use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179858435281082)
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (Bash(npm run *), Edit(/docs/**)) instead of dangerously-skip-permissions [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179854077407667)
 - [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation — 84% reduction internally [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700506465579443) [![Cat](!/tags/cat-wu.svg)](https://creatoreconomy.so/p/inside-claude-code-how-an-ai-native-actually-works-cat-wu)
+- tag [@claude](https://github.com/apps/claude) on a coworker's PR to auto-generate lint rules for recurring review feedback — automate yourself out of code review 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=2715) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=2715)
 - use [on-demand hooks](https://code.claude.com/docs/en/skills) in skills — /careful blocks destructive commands, /freeze blocks edits outside a directory [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - invest in [product verification](https://code.claude.com/docs/en/skills) skills (signup-flow-driver, checkout-verifier) — worth spending a week to perfect [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - [measure skill usage](https://code.claude.com/docs/en/skills) with a PreToolUse hook to find popular or undertriggering skills [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 
-■ **Debugging (5)**
+■ **Debugging (6)**
 - make it a habit to take screenshots and share with Claude whenever you are stuck with any issue
 - use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
 - [/doctor](https://code.claude.com/docs/en/cli-reference) to diagnose installation, authentication, and configuration issues
 - error during compaction can be resolved by using [/model](https://code.claude.com/docs/en/model-config) to select a 1M token model, then running [/compact](https://code.claude.com/docs/en/interactive-mode)
 - use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
+- agentic search (glob + grep) beats RAG — Claude Code tried and discarded vector databases because code drifts out of sync and permissions are complex [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3095) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3095)
 
 ■ **Utilities (5)**
 - [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742753971769626)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
@@ -272,6 +278,7 @@ claude
 
 > | Workflow | Description |
 > |----------|-------------|
+> | /workflows:development-workflows | Update the DEVELOPMENT WORKFLOWS table and cross-workflow analysis report by researching all 9 workflow repos in parallel |
 > | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
 > | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
 > | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |

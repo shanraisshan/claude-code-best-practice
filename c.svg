@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Black rounded square background -->
+  <rect x="0" y="0" width="200" height="200" rx="24" ry="24" fill="#1a1a1a"/>
+
+  <!-- Stylized C lettermark -->
+  <path d="
+    M 132 62
+    C 122 44, 108 38, 92 38
+    C 64 38, 48 60, 48 100
+    C 48 140, 64 162, 92 162
+    C 108 162, 122 156, 132 138
+  " fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
