@@ -76,18 +76,20 @@ claude
 - [Cross-Model (Claude Code + Codex) Workflow](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md)
 - [RPI](development-workflows/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/rpi/rpi-workflow.md)
 - [Ralph Wiggum Loop](https://www.youtube.com/watch?v=eAtvoGlpeRU) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26)
-- [Garry Tan (CEO of Y Combinator) - gstack](https://github.com/garrytan/gstack) · ★ 15k
+- [Garry Tan (CEO of Y Combinator) - gstack](https://github.com/garrytan/gstack) · ★ 26k
+- [Andrew Ng (Founder of DeepLearning.AI) - context-hub](https://github.com/andrewyng/context-hub) · ★ 10k
 
 ### Others
-- [obra/superpowers](https://github.com/obra/superpowers) · ★ 87k
-- [Github Speckit](https://github.com/github/spec-kit) · ★ 77k
-- [get-shit-done (GSD)](https://github.com/gsd-build/get-shit-done) · ★ 31k
-- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md) · ★ 31k
-- [Brian Casel (Creator of Agent OS) - 2026 Workflow](https://github.com/buildermethods/agent-os) · ★ 4k - [it's overkill in 2026](https://www.youtube.com/watch?v=0hdFJA-ho3c)
-- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md) · ★ 1.5k
+- [obra/superpowers](https://github.com/obra/superpowers) · ★ 98k
+- [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) · ★ 87k
+- [Github Speckit](https://github.com/github/spec-kit) · ★ 78k
+- [get-shit-done (GSD)](https://github.com/gsd-build/get-shit-done) · ★ 35k
+- [OpenSpec OPSX](https://github.com/Fission-AI/OpenSpec/blob/main/docs/opsx.md) · ★ 32k
+- [Brian Casel (Creator of Agent OS) - 2026 Workflow](https://github.com/buildermethods/agent-os) · ★ 4.1k - [it's overkill in 2026](https://www.youtube.com/watch?v=0hdFJA-ho3c)
+- [Human Layer RPI - Research Plan Implement](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md) · ★ 1.6k
 - [Andrej Karpathy (Founding Member, OpenAI) Workflow](https://x.com/karpathy/status/2015883857489522876)
-- [Boris Cherny (Creator of Claude Code) - Feb 2026 Workflow](https://x.com/bcherny/status/2017742741636321619)
 - [Peter Steinberger (Creator of OpenClaw) Workflow](https://youtu.be/8lF7HmQ_RgY?t=2582)
+- Boris Cherny (Creator of Claude Code) Workflow — [13 Tips](tips/claude-boris-13-tips-03-jan-26.md) · [10 Tips](tips/claude-boris-10-tips-01-feb-26.md) · [12 Tips](tips/claude-boris-12-tips-12-feb-26.md) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny)
 
 ## 💡 TIPS AND TRICKS
 
@@ -96,8 +98,8 @@ claude
 ![Community](!/tags/community.svg)
 
 ■ **Prompting (4)**
-- challenge Claude — "grill me on these changes and don't make a PR until I pass your test." or "prove to me this works" and have Claude diff between main and your branch [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
-- after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
+- challenge Claude — "grill me on these changes and don't make a PR until I pass your test." or "prove to me this works" and have Claude diff between main and your branch 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
+- after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
 - Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742750473720121)
 - say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434)
 
@@ -108,17 +110,28 @@ claude
 - spin up a second Claude to review your plan as a staff engineer, or use [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for review [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742745365057733)
 - write detailed specs and reduce ambiguity before handing work off — the more specific you are, the better the output [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
 
-■ **Workflows (13)**
+■ **CLAUDE.md (5)**
 - [CLAUDE.md](https://code.claude.com/docs/en/memory) should target under [200 lines](https://code.claude.com/docs/en/memory#write-effective-instructions) per file. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) ([still not 100% guaranteed](https://www.reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/)). [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179840848597422) [![Dex](!/tags/dex.svg)](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - wrap domain-specific CLAUDE.md rules in [\<important if="..."\> tags](https://www.hlyr.dev/blog/stop-claude-from-ignoring-your-claude-md) to stop Claude from ignoring them as files grow longer [![Dex](!/tags/dex.svg)](https://www.hlyr.dev/blog/stop-claude-from-ignoring-your-claude-md)
 - use [multiple CLAUDE.md](best-practice/claude-memory.md) for monorepos — ancestor + descendant loading
 - use [.claude/rules/](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) to split large instructions
-- use [commands](https://code.claude.com/docs/en/slash-commands) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179847949500714)
-- have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer. [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179850139000872)
 - [memory.md](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything
+
+■ **Skills (9)**
+- have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer. [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179850139000872)
+- use [context: fork](https://code.claude.com/docs/en/skills) to run a skill in an isolated subagent — main context only sees the final result, not intermediate tool calls. The agent field lets you set the subagent type [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2033603164398883042)
+- use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
+- skills are folders, not files — use references/, scripts/, examples/ subdirectories for [progressive disclosure](https://code.claude.com/docs/en/skills) [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- build a Gotchas section in every skill — highest-signal content, add Claude's failure points over time [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- skill description field is a trigger, not a summary — write it for the model ("when should I fire?") [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- don't state the obvious in skills — focus on what pushes Claude out of its default behavior 🚫👶 [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- don't railroad Claude in skills — give goals and constraints, not prescriptive step-by-step instructions 🚫👶 [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- include scripts and libraries in skills so Claude composes rather than reconstructs boilerplate [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+
+■ **Workflows (9)**
+- use [commands](https://code.claude.com/docs/en/slash-commands) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179847949500714)
 - avoid agent dumb zone, do manual [/compact](https://code.claude.com/docs/en/interactive-mode) at max 50%. Use [/clear](https://code.claude.com/docs/en/cli-reference) to reset context mid-session if switching to a new task
 - vanilla cc is better than any workflows with smaller tasks
-- use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
 - use [/model](https://code.claude.com/docs/en/model-config) to select model and reasoning, [/context](https://code.claude.com/docs/en/interactive-mode) to see context usage, [/usage](https://code.claude.com/docs/en/costs) to check plan limits, [/extra-usage](https://code.claude.com/docs/en/interactive-mode) to configure overflow billing, [/config](https://code.claude.com/docs/en/settings) to configure settings
 - always use [thinking mode](https://code.claude.com/docs/en/model-config) true (to see reasoning) and [Output Style](https://code.claude.com/docs/en/output-styles) Explanatory (to see detailed output with ★ Insight boxes) in [/config](https://code.claude.com/docs/en/settings) for better understanding of Claude's decisions [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179838864666847)
 - use ultrathink keyword in prompts for [high effort reasoning](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-and-best-practices)
@@ -126,13 +139,16 @@ claude
 - use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
 - commit often — try to commit at least once per hour, as soon as task is completed, commit.
 
-■ **Workflows Advanced (6)**
+■ **Workflows Advanced (9)**
 - use ASCII diagrams a lot to understand your architecture [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742759218794768)
 - [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
 - use [/loop](https://code.claude.com/docs/en/scheduled-tasks) for recurring monitoring — poll deployments, babysit PRs, check builds (runs up to 3 days)
 - use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179858435281082)
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (Bash(npm run *), Edit(/docs/**)) instead of dangerously-skip-permissions [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179854077407667)
 - [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700506465579443)
+- use [on-demand hooks](https://code.claude.com/docs/en/skills) in skills — /careful blocks destructive commands, /freeze blocks edits outside a directory [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- invest in [product verification](https://code.claude.com/docs/en/skills) skills (signup-flow-driver, checkout-verifier) — worth spending a week to perfect [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- [measure skill usage](https://code.claude.com/docs/en/skills) with a PreToolUse hook to find popular or undertriggering skills [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 
 ■ **Debugging (5)**
 - make it a habit to take screenshots and share with Claude whenever you are stuck with any issue
@@ -152,7 +168,7 @@ claude
 ■ **Daily (3)**
 - [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 - follow [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/), [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/) ![Reddit](https://img.shields.io/badge/-FF4500?style=flat&logo=reddit&logoColor=white)
-- follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie), [Noah](https://x.com/noahzweben), [Anthony](https://x.com/amorriscode), [Claude](https://x.com/claudeai), [Alex](https://x.com/alexalbert__) ![X](https://img.shields.io/badge/-000?style=flat&logo=x&logoColor=white)
+- follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie), [Noah](https://x.com/noahzweben), [Anthony](https://x.com/amorriscode), [Alex](https://x.com/alexalbert__), [Claude](https://x.com/claudeai) ![X](https://img.shields.io/badge/-000?style=flat&logo=x&logoColor=white)
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
@@ -161,13 +177,14 @@ claude
 - [How I use Claude Code — 13 tips from my surprisingly vanilla setup (Boris) | 03/Jan/26](tips/claude-boris-13-tips-03-jan-26.md) ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
 - [10 tips for using Claude Code from the team (Boris) | 01/Feb/26](tips/claude-boris-10-tips-01-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
 - [12 ways how people are customizing their claudes (Boris) | 12/Feb/26](tips/claude-boris-12-tips-12-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
+- Lessons from Building Claude Code: Prompt Caching Is Everything (Thariq) | 20 Feb 2026 ● [Article](https://x.com/trq212/status/2024574133011673516)
 - Git Worktrees - 5 ways how boris is using | 21 Feb 2026 ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
-- Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026 ● [Tweet](https://x.com/trq212/status/2027463795355095314)
+- Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026 ● [Article](https://x.com/trq212/status/2027463795355095314)
 - AskUserQuestion + ASCII Markdowns (Thariq) | 28 Feb 2026 ● [Tweet](https://x.com/trq212/status/2027543858289250472)
 - /loop — schedule recurring tasks for up to 3 days (Boris) | 07 Mar 2026 ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
 - [Code Review & Test Time Compute (Boris) | 10/Mar/26](tips/claude-boris-2-tips-10-mar-26.md) ● [Tweet](https://x.com/bcherny/status/2031089411820228645)
 - /btw — side chain conversations while Claude works (Thariq) | 10 Mar 2026 ● [Tweet](https://x.com/trq212/status/2031506296697131352)
-- [Lessons from Building Claude Code: How We Use Skills (Thariq) | 17/Mar/26](tips/claude-thariq-tips-17-mar-26.md) ● [Tweet](https://x.com/trq212/status/2033949937936085378)
+- [Lessons from Building Claude Code: How We Use Skills (Thariq) | 17/Mar/26](tips/claude-thariq-tips-17-mar-26.md) ● [Article](https://x.com/trq212/status/2033949937936085378)
 
 ## ☠️ STARTUPS / BUSINESSES
 
