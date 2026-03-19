@@ -155,3 +155,14 @@
 | 10 | MED | Changed Description | Update `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` to note: "Equivalent of setting DISABLE_AUTOUPDATER, DISABLE_FEEDBACK_COMMAND, DISABLE_ERROR_REPORTING, and DISABLE_TELEMETRY" | ✅ COMPLETE (description updated with equivalent vars list) |
 | 11 | MED | Example Update | Remove `showTurnDuration` from Quick Reference example — doesn't belong in settings.json per official docs | ✅ COMPLETE (removed from Quick Reference example and Display & UX example) |
 | 12 | LOW | Env Var Default | Verify `MCP_TIMEOUT` default (report says 10000) — official docs don't specify a default value | ✅ COMPLETE (removed unverified default — official docs omit it) |
+
+---
+
+## [2026-03-19 12:38 PM PKT] Claude Code v2.1.79
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Vars | Add `ANTHROPIC_CUSTOM_MODEL_OPTION`, `ANTHROPIC_CUSTOM_MODEL_OPTION_NAME`, `ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION` to Common Environment Variables table — model-config vars for adding custom entries to `/model` picker. Confirmed on official /en/env-vars page | ✅ COMPLETE (added 3 env vars after ANTHROPIC_BASE_URL in table) |
+| 2 | HIGH | Changed Description | Update `CLAUDE_CODE_PLUGIN_SEED_DIR` from singular to plural: "Path to one or more read-only plugin seed directories, separated by `:` on Unix or `;` on Windows". Changed in v2.1.79 changelog. Confirmed on official /en/env-vars page | ✅ COMPLETE (description updated to multi-directory support) |
+| 3 | HIGH | Sandbox Path Prefixes | Fix sandbox.filesystem path prefix documentation: `/` = absolute (standard Unix), `./` = project-relative, `//` = legacy still works. Report currently shows reversed convention. Official docs explicitly note: "This syntax differs from Read and Edit permission rules" | ✅ COMPLETE (updated all 4 sandbox.filesystem entries with correct prefix convention, added cross-reference note to Read/Edit permission rules, added merge-across-scopes detail) |
+| 4 | MED | Changed Description | Expand `CLAUDE_CODE_AUTO_COMPACT_WINDOW` description — current "Auto-compact window behavior configuration" is too minimal. Official docs describe: token capacity, defaults (200K standard / 1M extended), interaction with `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`, status line decoupling | ✅ COMPLETE (expanded description with token capacity, model defaults, AUTOCOMPACT_PCT interaction, and status line decoupling) |
