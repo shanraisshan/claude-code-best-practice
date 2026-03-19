@@ -59,11 +59,11 @@ Rules that verify permission configuration accuracy.
 
 ## 4. Hooks (REDIRECTED)
 
-Hook analysis is excluded from this workflow. Hooks are maintained in the [claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks) repo. Only verify the redirect link is still valid.
+Hook analysis is excluded from this workflow. Hooks are maintained in the [claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks) repo. Only verify the redirect link is still valid.
 
 | # | Category | Check | Depth | Compare Against | Added | Origin |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 4A | Hooks Redirect | Verify the hooks section in the report contains a valid redirect link to the claude-code-voice-hooks repo | exists | report file | 2026-03-05 | Hooks externalized to dedicated repo — only check redirect link validity |
+| 4A | Hooks Redirect | Verify the hooks section in the report contains a valid redirect link to the claude-code-hooks repo | exists | report file | 2026-03-05 | Hooks externalized to dedicated repo — only check redirect link validity |
 
 ---
 

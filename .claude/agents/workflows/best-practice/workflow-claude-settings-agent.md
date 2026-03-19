@@ -80,7 +80,7 @@ Verify the Tool Permission Syntax table:
 - Any new permission tools or syntax?
 
 ### Hook Event Accuracy
-> **SKIP** — Hook analysis is excluded from this workflow. Hooks are maintained in the [claude-code-voice-hooks](https://github.com/shanraisshan/claude-code-voice-hooks) repo. Only verify that the hooks redirect section in the report still points to the correct repo URL.
+> **SKIP** — Hook analysis is excluded from this workflow. Hooks are maintained in the [claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks) repo. Only verify that the hooks redirect section in the report still points to the correct repo URL.
 
 ### MCP Setting Accuracy
 Verify MCP Settings:
@@ -150,7 +150,7 @@ Return your findings as a structured report with these sections:
 4. **Changed Setting Behavior** — Per-key type/default/description discrepancies
 5. **Deprecated/Removed Settings** — Keys in report but not in official docs
 6. **Permission Syntax Accuracy** — Tool pattern and mode comparison results
-7. **Hook Event Accuracy** — SKIP (hooks externalized to claude-code-voice-hooks repo; only verify redirect link)
+7. **Hook Event Accuracy** — SKIP (hooks externalized to claude-code-hooks repo; only verify redirect link)
 8. **MCP Setting Accuracy** — MCP configuration comparison results
 9. **Sandbox Setting Accuracy** — Sandbox table comparison results
 10. **Plugin Setting Accuracy** — Plugin configuration comparison results
