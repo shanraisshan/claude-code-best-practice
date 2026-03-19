@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="20" role="img" aria-label="Videos / Podcasts">
+  <title>Videos / Podcasts</title>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r">
+    <rect width="148" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="148" height="20" fill="#FF0000"/>
+    <rect width="148" height="20" fill="url(#s)"/>
+  </g>
+  <!-- YouTube play button icon -->
+  <g>
+    <rect x="3" y="4" width="17" height="12" rx="3" fill="#fff"/>
+    <polygon points="10,7 10,13 15,10" fill="#FF0000"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
+    <text x="86" y="14">Videos / Podcasts</text>
+  </g>
+</svg>

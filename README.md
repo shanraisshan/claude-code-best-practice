@@ -1,7 +1,7 @@
 # claude-code-best-practice
 practice makes claude perfect
 
-![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.79%20(Mar%2019%2C%202026%2011%3A59%20AM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
+![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.79%20(Mar%2019%2C%202026%204%3A19%20PM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) [![Implemented](!/tags/implemented.svg)](implementation/) [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) [![Boris](!/tags/boris-cherny.svg)](#-tips-and-tricks) ![Click on these badges below to see the actual sources](!/tags/click-badges.svg)<br>
 [![GitHub Trending #1 Repository Of The Day](!/root/github-trending-day.svg)](https://github.com/trending)
 
@@ -117,7 +117,7 @@ claude
 - use [.claude/rules/](https://code.claude.com/docs/en/memory#organize-rules-with-clauderules) to split large instructions
 - [memory.md](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything
 
-■ **Skills (9)**
+■ **Skills (10)**
 - have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer. [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179850139000872)
 - use [context: fork](https://code.claude.com/docs/en/skills) to run a skill in an isolated subagent — main context only sees the final result, not intermediate tool calls. The agent field lets you set the subagent type [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2033603164398883042)
 - use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
@@ -127,15 +127,16 @@ claude
 - don't state the obvious in skills — focus on what pushes Claude out of its default behavior 🚫👶 [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - don't railroad Claude in skills — give goals and constraints, not prescriptive step-by-step instructions 🚫👶 [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - include scripts and libraries in skills so Claude composes rather than reconstructs boilerplate [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
+- embed `` !`command` `` in SKILL.md to inject dynamic shell output into the prompt — Claude runs it on invocation and the model only sees the result [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2034337963820327017)
 
 ■ **Workflows (9)**
 - use [commands](https://code.claude.com/docs/en/slash-commands) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179847949500714)
 - avoid agent dumb zone, do manual [/compact](https://code.claude.com/docs/en/interactive-mode) at max 50%. Use [/clear](https://code.claude.com/docs/en/cli-reference) to reset context mid-session if switching to a new task
 - vanilla cc is better than any workflows with smaller tasks
-- use [/model](https://code.claude.com/docs/en/model-config) to select model and reasoning, [/context](https://code.claude.com/docs/en/interactive-mode) to see context usage, [/usage](https://code.claude.com/docs/en/costs) to check plan limits, [/extra-usage](https://code.claude.com/docs/en/interactive-mode) to configure overflow billing, [/config](https://code.claude.com/docs/en/settings) to configure settings
+- use [/model](https://code.claude.com/docs/en/model-config) to select model and reasoning, [/context](https://code.claude.com/docs/en/interactive-mode) to see context usage, [/usage](https://code.claude.com/docs/en/costs) to check plan limits, [/extra-usage](https://code.claude.com/docs/en/interactive-mode) to configure overflow billing, [/config](https://code.claude.com/docs/en/settings) to configure settings — use Opus for plan mode and Sonnet for code to get the best of both [![Cat](!/tags/cat-wu.svg)](https://x.com/_catwu/status/1955694117264261609)
 - always use [thinking mode](https://code.claude.com/docs/en/model-config) true (to see reasoning) and [Output Style](https://code.claude.com/docs/en/output-styles) Explanatory (to see detailed output with ★ Insight boxes) in [/config](https://code.claude.com/docs/en/settings) for better understanding of Claude's decisions [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179838864666847)
 - use ultrathink keyword in prompts for [high effort reasoning](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#tips-and-best-practices)
-- [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [TODO - refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later
+- [/rename](https://code.claude.com/docs/en/cli-reference) important sessions (e.g. [TODO - refactor task]) and [/resume](https://code.claude.com/docs/en/cli-reference) them later — label each instance when running multiple Claudes simultaneously [![Cat](!/tags/cat-wu.svg)](https://every.to/podcast/how-to-use-claude-code-like-the-people-who-built-it)
 - use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
 - commit often — try to commit at least once per hour, as soon as task is completed, commit.
 
@@ -145,7 +146,7 @@ claude
 - use [/loop](https://code.claude.com/docs/en/scheduled-tasks) for recurring monitoring — poll deployments, babysit PRs, check builds (runs up to 3 days)
 - use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179858435281082)
 - [/permissions](https://code.claude.com/docs/en/permissions) with wildcard syntax (Bash(npm run *), Edit(/docs/**)) instead of dangerously-skip-permissions [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179854077407667)
-- [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700506465579443)
+- [/sandbox](https://code.claude.com/docs/en/sandboxing) to reduce permission prompts with file and network isolation — 84% reduction internally [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700506465579443) [![Cat](!/tags/cat-wu.svg)](https://creatoreconomy.so/p/inside-claude-code-how-an-ai-native-actually-works-cat-wu)
 - use [on-demand hooks](https://code.claude.com/docs/en/skills) in skills — /careful blocks destructive commands, /freeze blocks edits outside a directory [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - invest in [product verification](https://code.claude.com/docs/en/skills) skills (signup-flow-driver, checkout-verifier) — worth spending a week to perfect [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - [measure skill usage](https://code.claude.com/docs/en/skills) with a PreToolUse hook to find popular or undertriggering skills [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
@@ -172,19 +173,26 @@ claude
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
-- Always use plan mode, give Claude a way to verify, use /code-review (Boris) | 27/Dec/25 ● [Tweet](https://x.com/bcherny/status/2004711722926616680)
-- Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25 ● [Tweet](https://x.com/trq212/status/2005315275026260309)
-- [How I use Claude Code — 13 tips from my surprisingly vanilla setup (Boris) | 03/Jan/26](tips/claude-boris-13-tips-03-jan-26.md) ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
-- [10 tips for using Claude Code from the team (Boris) | 01/Feb/26](tips/claude-boris-10-tips-01-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
-- [12 ways how people are customizing their claudes (Boris) | 12/Feb/26](tips/claude-boris-12-tips-12-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
-- Lessons from Building Claude Code: Prompt Caching Is Everything (Thariq) | 20 Feb 2026 ● [Article](https://x.com/trq212/status/2024574133011673516)
-- Git Worktrees - 5 ways how boris is using | 21 Feb 2026 ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
-- Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026 ● [Article](https://x.com/trq212/status/2027463795355095314)
-- AskUserQuestion + ASCII Markdowns (Thariq) | 28 Feb 2026 ● [Tweet](https://x.com/trq212/status/2027543858289250472)
-- /loop — schedule recurring tasks for up to 3 days (Boris) | 07 Mar 2026 ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
-- [Code Review & Test Time Compute (Boris) | 10/Mar/26](tips/claude-boris-2-tips-10-mar-26.md) ● [Tweet](https://x.com/bcherny/status/2031089411820228645)
-- /btw — side chain conversations while Claude works (Thariq) | 10 Mar 2026 ● [Tweet](https://x.com/trq212/status/2031506296697131352)
 - [Lessons from Building Claude Code: How We Use Skills (Thariq) | 17/Mar/26](tips/claude-thariq-tips-17-mar-26.md) ● [Article](https://x.com/trq212/status/2033949937936085378)
+- [Code Review & Test Time Compute (Boris) | 10/Mar/26](tips/claude-boris-2-tips-10-mar-26.md) ● [Tweet](https://x.com/bcherny/status/2031089411820228645)
+- /loop — schedule recurring tasks for up to 3 days (Boris) | 07 Mar 2026 ● [Tweet](https://x.com/bcherny/status/2030193932404150413)
+- AskUserQuestion + ASCII Markdowns (Thariq) | 28 Feb 2026 ● [Tweet](https://x.com/trq212/status/2027543858289250472)
+- Seeing like an Agent - lessons from building Claude Code (Thariq) | 28 Feb 2026 ● [Article](https://x.com/trq212/status/2027463795355095314)
+- Git Worktrees - 5 ways how boris is using | 21 Feb 2026 ● [Tweet](https://x.com/bcherny/status/2025007393290272904)
+- Lessons from Building Claude Code: Prompt Caching Is Everything (Thariq) | 20 Feb 2026 ● [Article](https://x.com/trq212/status/2024574133011673516)
+- [12 ways how people are customizing their claudes (Boris) | 12/Feb/26](tips/claude-boris-12-tips-12-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2021699851499798911)
+- [10 tips for using Claude Code from the team (Boris) | 01/Feb/26](tips/claude-boris-10-tips-01-feb-26.md) ● [Tweet](https://x.com/bcherny/status/2017742741636321619)
+- [How I use Claude Code — 13 tips from my surprisingly vanilla setup (Boris) | 03/Jan/26](tips/claude-boris-13-tips-03-jan-26.md) ● [Tweet](https://x.com/bcherny/status/2007179832300581177)
+- Ask Claude to interview you using AskUserQuestion tool (Thariq) | 28/Dec/25 ● [Tweet](https://x.com/trq212/status/2005315275026260309)
+- Always use plan mode, give Claude a way to verify, use /code-review (Boris) | 27/Dec/25 ● [Tweet](https://x.com/bcherny/status/2004711722926616680)
+
+![Videos / Podcasts](!/tags/videos-podcasts.svg)
+
+- Building Claude Code with Boris Cherny (Boris) | 04 Mar 2026 | The Pragmatic Engineer ● [YouTube](https://youtu.be/julbw1JuAz0)
+- Head of Claude Code: What happens after coding is solved (Boris) | 19 Feb 2026 | Lenny's Podcast ● [YouTube](https://youtu.be/We7BZVKbCVw)
+- Inside Claude Code With Its Creator Boris Cherny (Boris) | 17 Feb 2026 | Y Combinator ● [YouTube](https://youtu.be/PQU9o_5rHC4)
+- Boris Cherny (Creator of Claude Code) On What Grew His Career (Boris) | 15 Dec 2025 | Ryan Peterman ● [YouTube](https://youtu.be/AmdLVWMdjOk)
+- The Secrets of Claude Code From the Engineers Who Built It (Cat) | 29 Oct 2025 | Every ● [YouTube](https://youtu.be/IDSAMqip6ms)
 
 ## ☠️ STARTUPS / BUSINESSES
 
