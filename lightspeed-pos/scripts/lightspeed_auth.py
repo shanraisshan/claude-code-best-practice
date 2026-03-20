@@ -24,7 +24,6 @@ import time
 import urllib.request
 import urllib.parse
 import urllib.error
-import base64
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
@@ -33,7 +32,13 @@ ENV_FILE = PROJECT_DIR / ".env"
 TOKEN_CACHE = PROJECT_DIR / ".token-cache.json"
 
 # Lightspeed R-Series OAuth endpoints
+# Authorization page: https://cloud.lightspeedapp.com/oauth/authorize.php
+# Token exchange/refresh: https://cloud.merchantos.com/oauth/access_token.php
+AUTHORIZE_URL = "https://cloud.lightspeedapp.com/oauth/authorize.php"
 TOKEN_URL = "https://cloud.merchantos.com/oauth/access_token.php"
+
+# Default token lifetime is 30 minutes (1800s)
+DEFAULT_EXPIRES_IN = 1800
 
 
 def load_env():
@@ -125,7 +130,7 @@ def refresh_token(env):
             result = json.loads(resp.read().decode())
 
         access_token = result["access_token"]
-        expires_in = int(result.get("expires_in", 3600))
+        expires_in = int(result.get("expires_in", DEFAULT_EXPIRES_IN))
 
         # If a new refresh token was issued, update the .env file
         if "refresh_token" in result and result["refresh_token"] != env.get(
@@ -199,16 +204,91 @@ def show_status():
         print("Cached Token: NONE")
 
 
+def exchange_code(env, auth_code):
+    """Exchange an authorization code for access + refresh tokens (initial setup)."""
+    required = ["LIGHTSPEED_CLIENT_ID", "LIGHTSPEED_CLIENT_SECRET"]
+    missing = [k for k in required if k not in env]
+    if missing:
+        print(f"ERROR: Missing: {', '.join(missing)}", file=sys.stderr)
+        sys.exit(1)
+
+    data = urllib.parse.urlencode(
+        {
+            "grant_type": "authorization_code",
+            "client_id": env["LIGHTSPEED_CLIENT_ID"],
+            "client_secret": env["LIGHTSPEED_CLIENT_SECRET"],
+            "code": auth_code,
+            "redirect_uri": "https://oauth.pstmn.io/v1/browser-callback",
+        }
+    ).encode()
+
+    req = urllib.request.Request(
+        TOKEN_URL,
+        data=data,
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            result = json.loads(resp.read().decode())
+
+        print("=== OAuth Setup Complete ===", file=sys.stderr)
+        print(f"Account ID:    {result.get('account_id', 'N/A')}", file=sys.stderr)
+        print(f"Refresh Token: {result.get('refresh_token', 'N/A')}", file=sys.stderr)
+        print(f"Expires In:    {result.get('expires_in', 'N/A')}s", file=sys.stderr)
+        print("", file=sys.stderr)
+        print("Add these to your .env file:", file=sys.stderr)
+        print(f"LIGHTSPEED_ACCOUNT_ID={result.get('account_id', '')}", file=sys.stderr)
+        print(
+            f"LIGHTSPEED_REFRESH_TOKEN={result.get('refresh_token', '')}",
+            file=sys.stderr,
+        )
+
+        # Cache the initial access token
+        access_token = result["access_token"]
+        expires_in = int(result.get("expires_in", DEFAULT_EXPIRES_IN))
+        save_cached_token(access_token, expires_in)
+        return access_token
+
+    except urllib.error.HTTPError as e:
+        body = e.read().decode() if e.fp else ""
+        print(f"ERROR: Code exchange failed (HTTP {e.code}): {body}", file=sys.stderr)
+        sys.exit(1)
+
+
+def show_auth_url(env):
+    """Print the authorization URL for the user to visit."""
+    client_id = env.get("LIGHTSPEED_CLIENT_ID", "")
+    if not client_id:
+        print("ERROR: LIGHTSPEED_CLIENT_ID not set in .env", file=sys.stderr)
+        sys.exit(1)
+
+    scope = env.get("LIGHTSPEED_SCOPE", "employee:all")
+    redirect_uri = "https://oauth.pstmn.io/v1/browser-callback"
+    params = urllib.parse.urlencode(
+        {
+            "response_type": "code",
+            "client_id": client_id,
+            "scope": scope,
+            "redirect_uri": redirect_uri,
+        }
+    )
+    print(f"{AUTHORIZE_URL}?{params}")
+
+
 def main():
     if len(sys.argv) < 2:
-        print("Usage: lightspeed_auth.py [get-token|refresh|status]", file=sys.stderr)
+        print(
+            "Usage: lightspeed_auth.py [get-token|refresh|status|auth-url|exchange CODE]",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     command = sys.argv[1]
 
     if command == "get-token":
         token = get_token()
-        # Print only the token for script consumption
         print(token, end="")
     elif command == "refresh":
         env = load_env()
@@ -216,6 +296,16 @@ def main():
         print(token, end="")
     elif command == "status":
         show_status()
+    elif command == "auth-url":
+        env = load_env()
+        show_auth_url(env)
+    elif command == "exchange":
+        if len(sys.argv) < 3:
+            print("Usage: lightspeed_auth.py exchange AUTH_CODE", file=sys.stderr)
+            sys.exit(1)
+        env = load_env()
+        token = exchange_code(env, sys.argv[2])
+        print(token, end="")
     else:
         print(f"Unknown command: {command}", file=sys.stderr)
         sys.exit(1)

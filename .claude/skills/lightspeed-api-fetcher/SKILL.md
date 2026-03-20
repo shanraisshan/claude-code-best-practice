@@ -1,12 +1,12 @@
 ---
 name: lightspeed-api-fetcher
-description: Instructions for querying the Lightspeed Retail R-Series POS API (V3) — items, sales, customers, employees, inventory, and more
+description: Instructions for querying the Lightspeed Retail R-Series POS API — items, sales, customers, employees, inventory, and more
 user-invocable: false
 ---
 
 # Lightspeed API Fetcher Skill
 
-This skill provides instructions for querying the Lightspeed Retail R-Series API (V3). It is preloaded into the `lightspeed-agent` — follow these instructions when fetching POS data.
+This skill provides instructions for querying the Lightspeed Retail R-Series API. It is preloaded into the `lightspeed-agent` — follow these instructions when fetching POS data.
 
 ## Authentication
 
@@ -34,14 +34,14 @@ These must be set in `lightspeed-pos/.env` (see `.env.example`):
 ## Base URL Pattern
 
 ```
-https://api.lightspeedapp.com/API/V3/Account/{ACCOUNT_ID}/{Resource}.json
+https://api.lightspeedapp.com/API/Account/{ACCOUNT_ID}/{Resource}.json
 ```
 
 All requests use JSON format (append `.json`). Include the access token as a Bearer token:
 
 ```bash
 curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-  "https://api.lightspeedapp.com/API/V3/Account/${ACCOUNT_ID}/{Resource}.json"
+  "https://api.lightspeedapp.com/API/Account/${ACCOUNT_ID}/{Resource}.json"
 ```
 
 ## Available Endpoints
@@ -143,26 +143,26 @@ Load related resources inline:
 ### Today's Sales
 ```bash
 curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-  "https://api.lightspeedapp.com/API/V3/Account/${ACCOUNT_ID}/Sale.json?Sale.completed=true&Sale.timeStamp=%3E%3D,$(date -u +%Y-%m-%dT00:00:00)&load_relations=[\"SaleLines\",\"SalePayments\"]&limit=100"
+  "https://api.lightspeedapp.com/API/Account/${ACCOUNT_ID}/Sale.json?Sale.completed=true&Sale.timeStamp=%3E%3D,$(date -u +%Y-%m-%dT00:00:00)&load_relations=[\"SaleLines\",\"SalePayments\"]&limit=100"
 ```
 
 ### Low Stock Items
 ```bash
 curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-  "https://api.lightspeedapp.com/API/V3/Account/${ACCOUNT_ID}/Item.json?load_relations=[\"ItemShops\"]&limit=100"
+  "https://api.lightspeedapp.com/API/Account/${ACCOUNT_ID}/Item.json?load_relations=[\"ItemShops\"]&limit=100"
 ```
 Then filter items where `ItemShops.ItemShop.qoh` <= `ItemShops.ItemShop.reorderPoint`.
 
 ### Top Customers
 ```bash
 curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-  "https://api.lightspeedapp.com/API/V3/Account/${ACCOUNT_ID}/Customer.json?sort=-creditAccount.balance&limit=20"
+  "https://api.lightspeedapp.com/API/Account/${ACCOUNT_ID}/Customer.json?sort=-creditAccount.balance&limit=20"
 ```
 
 ### Employee Hours This Week
 ```bash
 curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-  "https://api.lightspeedapp.com/API/V3/Account/${ACCOUNT_ID}/EmployeeHours.json?EmployeeHours.checkIn=%3E%3D,$(date -u -d 'last monday' +%Y-%m-%dT00:00:00)&load_relations=[\"Employee\"]&limit=100"
+  "https://api.lightspeedapp.com/API/Account/${ACCOUNT_ID}/EmployeeHours.json?EmployeeHours.checkIn=%3E%3D,$(date -u -d 'last monday' +%Y-%m-%dT00:00:00)&load_relations=[\"Employee\"]&limit=100"
 ```
 
 ## Rate Limits

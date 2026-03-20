@@ -1,8 +1,8 @@
 # Lightspeed R-Series API Reference
 
-## Full Endpoint List (V3)
+## Full Endpoint List
 
-All endpoints follow: `https://api.lightspeedapp.com/API/V3/Account/{ID}/{Resource}.json`
+All endpoints follow: `https://api.lightspeedapp.com/API/Account/{ID}/{Resource}.json`
 
 ### Core Resources
 | Resource | GET | POST | PUT | DELETE | Notes |
