@@ -1,14 +1,14 @@
 ---
-description: Update the DEVELOPMENT WORKFLOWS table by researching all 7 workflow repos in parallel
+description: Update the DEVELOPMENT WORKFLOWS table by researching all 8 workflow repos in parallel
 ---
 
 # Workflow — Development Workflows
 
-Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 7 repos in parallel. Launch agents, merge results, present changes, update table if approved.
+Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 8 repos in parallel. Launch agents, merge results, present changes, update table if approved.
 
 ---
 
-## The 7 Repos
+## The 8 Repos
 
 | # | Repo | Owner |
 |---|------|-------|
@@ -19,6 +19,7 @@ Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 7 repos in 
 | 5 | `gsd-build/get-shit-done` | Lex Christopherson |
 | 6 | `obra/superpowers` | Jesse Vincent |
 | 7 | `garrytan/gstack` | Garry Tan (YC CEO) |
+| 8 | `bmad-code-org/BMAD-METHOD` | BMAD Code Org |
 
 ---
 
@@ -83,21 +84,22 @@ Read these files:
 > CHANGES: <changes or "No significant changes">
 > ```
 
-### Agent 2 (4 repos)
+### Agent 2 (5 repos)
 
-> Research these 4 Claude Code workflow repositories:
+> Research these 5 Claude Code workflow repositories:
 >
 > **Repo 1: Fission-AI/OpenSpec** (https://github.com/Fission-AI/OpenSpec)
 > **Repo 2: humanlayer/humanlayer** (https://github.com/humanlayer/humanlayer)
 > **Repo 3: gsd-build/get-shit-done** (https://github.com/gsd-build/get-shit-done)
 > **Repo 4: garrytan/gstack** (https://github.com/garrytan/gstack)
+> **Repo 5: bmad-code-org/BMAD-METHOD** (https://github.com/bmad-code-org/BMAD-METHOD)
 >
 > For EACH repo, return:
 >
 > 1. **Stars** — use GitHub API `https://api.github.com/repos/{owner}/{repo}`, read `stargazers_count`. Round to `k`.
-> 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`.
-> 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For gstack, skills are root-level directories with SKILL.md.
-> 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For GSD, count in `commands/gsd/`. For OpenSpec, count `/opsx:*` commands.
+> 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For BMAD, count agent-persona skills in `src/bmm-skills/`.
+> 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For gstack, skills are root-level directories with SKILL.md. For BMAD, count all skills in `src/bmm-skills/` and `src/core-skills/`.
+> 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For GSD, count in `commands/gsd/`. For OpenSpec, count `/opsx:*` commands. For BMAD, count is 0 (commands generated at install time).
 > 5. **Plan implementation** — find the Plan/planning agent, skill, or command. Return its name, type (agent/skill/command), and file path.
 > 6. **Uniqueness tags** — 2-3 short tags (2-3 words each) capturing what makes this workflow unique.
 > 7. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?

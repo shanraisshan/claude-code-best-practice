@@ -88,6 +88,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 | [Superpowers](https://github.com/obra/superpowers) | 98k | ![TDD-first](https://img.shields.io/badge/TDD--first-ddf4ff) ![Iron Laws](https://img.shields.io/badge/Iron_Laws-ddf4ff) ![whole-plan review](https://img.shields.io/badge/whole--plan_review-ddf4ff) | <img src="s.svg" height="14"> [writing-plans](https://github.com/obra/superpowers/tree/main/skills/writing-plans) | 5 | 3 | 14 |
 | [Everything Claude Code](https://github.com/affaan-m/everything-claude-code) | 87k | ![instinct scoring](https://img.shields.io/badge/instinct_scoring-ddf4ff) ![AgentShield](https://img.shields.io/badge/AgentShield-ddf4ff) ![multi-lang rules](https://img.shields.io/badge/multi--lang_rules-ddf4ff) | <img src="a.svg" height="14"> [planner](https://github.com/affaan-m/everything-claude-code/blob/main/agents/planner.md) | 25 | 57 | 108+ |
 | [Spec Kit](https://github.com/github/spec-kit) | 79k | ![spec-driven](https://img.shields.io/badge/spec--driven-ddf4ff) ![constitution](https://img.shields.io/badge/constitution-ddf4ff) ![22+ tools](https://img.shields.io/badge/22%2B_tools-ddf4ff) | <img src="c.svg" height="14"> [speckit.plan](https://github.com/github/spec-kit/blob/main/templates/commands/plan.md) | 0 | 9+ | 0 |
+| [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) | 41k | ![full SDLC](https://img.shields.io/badge/full_SDLC-ddf4ff) ![agent personas](https://img.shields.io/badge/agent_personas-ddf4ff) ![22+ platforms](https://img.shields.io/badge/22%2B_platforms-ddf4ff) | <img src="s.svg" height="14"> [bmad-create-prd](https://github.com/bmad-code-org/BMAD-METHOD/tree/main/src/bmm-skills/2-plan-workflows/bmad-create-prd) | 9 | 0 | 43 |
 | [Get Shit Done](https://github.com/gsd-build/get-shit-done) | 35k | ![fresh 200K contexts](https://img.shields.io/badge/fresh_200K_contexts-ddf4ff) ![wave execution](https://img.shields.io/badge/wave_execution-ddf4ff) ![XML plans](https://img.shields.io/badge/XML_plans-ddf4ff) | <img src="a.svg" height="14"> [gsd-planner](https://github.com/gsd-build/get-shit-done/blob/main/agents/gsd-planner.md) | 16 | 46 | 0 |
 | [OpenSpec](https://github.com/Fission-AI/OpenSpec) | 32k | ![delta specs](https://img.shields.io/badge/delta_specs-ddf4ff) ![brownfield](https://img.shields.io/badge/brownfield-ddf4ff) ![artifact DAG](https://img.shields.io/badge/artifact_DAG-ddf4ff) | <img src="c.svg" height="14"> [opsx:propose](https://github.com/Fission-AI/OpenSpec/blob/main/src/commands/workflow/new-change.ts) | 0 | 11 | 11 |
 | [gstack](https://github.com/garrytan/gstack) | 26k | ![role personas](https://img.shields.io/badge/role_personas-ddf4ff) ![/codex review](https://img.shields.io/badge/%2Fcodex_review-ddf4ff) ![parallel sprints](https://img.shields.io/badge/parallel_sprints-ddf4ff) | <img src="s.svg" height="14"> [plan-eng-review](https://github.com/garrytan/gstack/tree/main/plan-eng-review) | 0 | 0 | 21 |
@@ -109,14 +110,16 @@ All major workflows converge on the same architectural pattern: **Research → P
 
 🚫👶 = do not babysit
 
+[Prompting](#tips-prompting) · [Planning](#tips-planning) · [CLAUDE.md](#tips-claudemd) · [Agents](#tips-agents) · [Commands](#tips-commands) · [Skills](#tips-skills) · [Hooks](#tips-hooks) · [Workflows](#tips-workflows) · [Advanced](#tips-workflows-advanced) · [Debugging](#tips-debugging) · [Utilities](#tips-utilities) · [Daily](#tips-daily)
+
 ![Community](!/tags/community.svg)
 
-■ **Prompting (3)**
+<a id="tips-prompting"></a>■ **Prompting (3)**
 - challenge Claude — "grill me on these changes and don't make a PR until I pass your test." or "prove to me this works" and have Claude diff between main and your branch 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
 - after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
 - Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742750473720121)
 
-■ **Planning/Specs (6)**
+<a id="tips-planning"></a>■ **Planning/Specs (6)**
 - always start with [plan mode](https://code.claude.com/docs/en/common-workflows) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179845336527000)
 - start with a minimal spec or prompt and ask Claude to interview you using [AskUserQuestion](https://code.claude.com/docs/en/cli-reference) tool, then make a new session to execute the spec [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2005315275026260309)
 - always make a phase-wise gated plan, with each phase having multiple tests (unit, automation, integration)
@@ -124,7 +127,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 - write detailed specs and reduce ambiguity before handing work off — the more specific you are, the better the output [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544)
 - prototype > PRD — build 20-30 versions instead of writing specs, the cost of building is low so take many shots [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3630) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3630)
 
-■ **CLAUDE.md (7)**
+<a id="tips-claudemd"></a>■ **CLAUDE.md (7)**
 - [CLAUDE.md](https://code.claude.com/docs/en/memory) should target under [200 lines](https://code.claude.com/docs/en/memory#write-effective-instructions) per file. [60 lines in humanlayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md) ([still not 100% guaranteed](https://www.reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/)). [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179840848597422) [![Dex](!/tags/dex.svg)](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 - wrap domain-specific CLAUDE.md rules in [\<important if="..."\> tags](https://www.hlyr.dev/blog/stop-claude-from-ignoring-your-claude-md) to stop Claude from ignoring them as files grow longer [![Dex](!/tags/dex.svg)](https://www.hlyr.dev/blog/stop-claude-from-ignoring-your-claude-md)
 - use [multiple CLAUDE.md](best-practice/claude-memory.md) for monorepos — ancestor + descendant loading
@@ -133,18 +136,18 @@ All major workflows converge on the same architectural pattern: **Research → P
 - any developer should be able to launch Claude, say "run the tests" and it works on the first try — if it doesn't, your CLAUDE.md is missing essential setup/build/test commands [![Dex](!/tags/dex.svg)](https://x.com/dexhorthy/status/2034713765401551053)
 - keep codebases clean and finish migrations — partially migrated frameworks confuse models that might pick the wrong pattern [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=1112) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=1112)
 
-<img src="a.svg" height="14"> **Agents (4)**
+<a id="tips-agents"></a><img src="a.svg" height="14"> **Agents (4)**
 - have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179850139000872)
 - say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434)
 - [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development
 - use [test time compute](https://code.claude.com/docs/en/sub-agents) — separate context windows make results better; one agent can cause bugs and another (same model) can find them [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2031151689219321886)
 
-<img src="c.svg" height="14"> **Commands (3)**
+<a id="tips-commands"></a><img src="c.svg" height="14"> **Commands (3)**
 - use [commands](https://code.claude.com/docs/en/slash-commands) for your workflows instead of [sub-agents](https://code.claude.com/docs/en/sub-agents) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179847949500714)
 - use [slash commands](https://code.claude.com/docs/en/slash-commands) for every "inner loop" workflow you do many times a day — saves repeated prompting, commands live in `.claude/commands/` and are checked into git [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179847949500714)
 - if you do something more than once a day, turn it into a [skill](https://code.claude.com/docs/en/skills) or [command](https://code.claude.com/docs/en/slash-commands) — build `/techdebt`, context-dump, or analytics commands [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742748984742078)
 
-<img src="s.svg" height="14"> **Skills (9)**
+<a id="tips-skills"></a><img src="s.svg" height="14"> **Skills (9)**
 - use [context: fork](https://code.claude.com/docs/en/skills) to run a skill in an isolated subagent — main context only sees the final result, not intermediate tool calls. The agent field lets you set the subagent type [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2033603164398883042)
 - use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos
 - skills are folders, not files — use references/, scripts/, examples/ subdirectories for [progressive disclosure](https://code.claude.com/docs/en/skills) [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
@@ -155,14 +158,14 @@ All major workflows converge on the same architectural pattern: **Research → P
 - include scripts and libraries in skills so Claude composes rather than reconstructs boilerplate [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - embed `` !`command` `` in SKILL.md to inject dynamic shell output into the prompt — Claude runs it on invocation and the model only sees the result [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2034337963820327017)
 
-■ **Hooks (5)**
+<a id="tips-hooks"></a>■ **Hooks (5)**
 - use [on-demand hooks](https://code.claude.com/docs/en/skills) in skills — /careful blocks destructive commands, /freeze blocks edits outside a directory [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - [measure skill usage](https://code.claude.com/docs/en/skills) with a PreToolUse hook to find popular or undertriggering skills [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 - use a [PostToolUse hook](https://code.claude.com/docs/en/hooks) to auto-format code — Claude generates well-formatted code, the hook handles the last 10% to avoid CI failures [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179852047335529)
 - route [permission requests](https://code.claude.com/docs/en/hooks) to Opus via a hook — let it scan for attacks and auto-approve safe ones 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434)
 - use a [Stop hook](https://code.claude.com/docs/en/hooks) to nudge Claude to keep going or verify its work at the end of a turn [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021701059253874861)
 
-■ **Workflows (8)**
+<a id="tips-workflows"></a>■ **Workflows (8)**
 - avoid agent dumb zone, do manual [/compact](https://code.claude.com/docs/en/interactive-mode) at max 50%. Use [/clear](https://code.claude.com/docs/en/cli-reference) to reset context mid-session if switching to a new task
 - vanilla cc is better than any workflows with smaller tasks
 - use [/model](https://code.claude.com/docs/en/model-config) to select model and reasoning, [/context](https://code.claude.com/docs/en/interactive-mode) to see context usage, [/usage](https://code.claude.com/docs/en/costs) to check plan limits, [/extra-usage](https://code.claude.com/docs/en/interactive-mode) to configure overflow billing, [/config](https://code.claude.com/docs/en/settings) to configure settings — use Opus for plan mode and Sonnet for code to get the best of both [![Cat](!/tags/cat-wu.svg)](https://x.com/_catwu/status/1955694117264261609)
@@ -172,7 +175,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 - use [Esc Esc or /rewind](https://code.claude.com/docs/en/checkpointing) to undo when Claude goes off-track instead of trying to fix it in the same context
 - commit often — try to commit at least once per hour, as soon as task is completed, commit.
 
-■ **Workflows Advanced (7)**
+<a id="tips-workflows-advanced"></a>■ **Workflows Advanced (7)**
 - use ASCII diagrams a lot to understand your architecture [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742759218794768)
 - use [/loop](https://code.claude.com/docs/en/scheduled-tasks) for recurring monitoring — poll deployments, babysit PRs, check builds (runs up to 3 days)
 - use [Ralph Wiggum plugin](https://github.com/shanraisshan/novel-llm-26) for long-running autonomous tasks [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179858435281082)
@@ -181,7 +184,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 - tag [@claude](https://github.com/apps/claude) on a coworker's PR to auto-generate lint rules for recurring review feedback — automate yourself out of code review 🚫👶 [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=2715) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=2715)
 - invest in [product verification](https://code.claude.com/docs/en/skills) skills (signup-flow-driver, checkout-verifier) — worth spending a week to perfect [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378)
 
-■ **Debugging (7)**
+<a id="tips-debugging"></a>■ **Debugging (7)**
 - make it a habit to take screenshots and share with Claude whenever you are stuck with any issue
 - use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own
 - always ask claude to run the terminal (you want to see logs of) as a background task for better debugging
@@ -190,14 +193,14 @@ All major workflows converge on the same architectural pattern: **Research → P
 - use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review
 - agentic search (glob + grep) beats RAG — Claude Code tried and discarded vector databases because code drifts out of sync and permissions are complex [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3095) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3095)
 
-■ **Utilities (5)**
+<a id="tips-utilities"></a>■ **Utilities (5)**
 - [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742753971769626)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/))
 - [Wispr Flow](https://wisprflow.ai) for voice prompting (10x productivity)
 - [claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks) for claude feedback
 - [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700784019452195)
 - explore [settings.json](best-practice/claude-settings.md) features like [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021701145023197516)
 
-■ **Daily (3)**
+<a id="tips-daily"></a>■ **Daily (3)**
 - [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 - follow [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/), [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/) ![Reddit](https://img.shields.io/badge/-FF4500?style=flat&logo=reddit&logoColor=white)
 - follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie), [Noah](https://x.com/noahzweben), [Anthony](https://x.com/amorriscode), [Alex](https://x.com/alexalbert__), [Claude](https://x.com/claudeai) ![X](https://img.shields.io/badge/-000?style=flat&logo=x&logoColor=white)
@@ -323,7 +326,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 
 > | Workflow | Description |
 > |----------|-------------|
-> | /workflows:development-workflows | Update the DEVELOPMENT WORKFLOWS table and cross-workflow analysis report by researching all 9 workflow repos in parallel |
+> | /workflows:development-workflows | Update the DEVELOPMENT WORKFLOWS table and cross-workflow analysis report by researching all 8 workflow repos in parallel |
 > | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
 > | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
 > | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |
