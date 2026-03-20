@@ -37,7 +37,7 @@ The README table has these columns:
 - **Plan**: Icon + linked name of the Plan implementation. Icon is `<img src="c.svg" height="14">` for command, `<img src="a.svg" height="14">` for agent, `<img src="s.svg" height="14">` for skill. Name links to the actual file in the repo
 - **Agent/Command/Skill counts**: Just the number (e.g., `25`, `0`, `108+`)
 
-**Sort order**: Rows grouped by Plan type — commands first, agents second, skills third. Within each group, sorted by stars descending.
+**Sort order**: Sorted by stars descending (highest first). Do NOT group by Plan type.
 
 ---
 
@@ -186,7 +186,7 @@ Ask user: **(1) Execute all** | **(2) Execute specific** | **(3) Skip**
 
 When executing, edit the `## ⚙️ DEVELOPMENT WORKFLOWS` table in `README.md`:
 - Update stars, tags, Plan links, counts per row
-- Maintain sort order: command plans → agent plans → skill plans, then by stars descending within each group
+- Maintain sort order: stars descending (highest first). Do NOT group by Plan type
 - Match existing format exactly (icons, badge URLs, link style)
 
 ---
@@ -197,7 +197,7 @@ When executing, edit the `## ⚙️ DEVELOPMENT WORKFLOWS` table in `README.md`:
 2. **Never guess** — use data from agents only
 3. **Don't auto-execute** — present report first, wait for approval
 4. **ALWAYS append changelog** and **ALWAYS update badge** — mandatory
-5. **Sort by Plan type** — commands first, agents second, skills third; stars descending within each group
+5. **Sort by stars descending** — highest stars first, do NOT group by Plan type
 6. **Tags use shields.io** — `![tag](https://img.shields.io/badge/TAG-ddf4ff)` with `_` for spaces, `--` for hyphens
 7. **Plan links must point to actual files** — not repo root
 8. **Agents, commands, skills are different** — count from their respective directories, don't conflate
