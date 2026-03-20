@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2019%2C%202026%2011%3A56%20AM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2020%2C%202026%208%3A35%20AM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Claude Code subagents — frontmatter fields and official built-in agent types.
@@ -14,7 +14,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 
 ---
 
-## Frontmatter Fields (14)
+## Frontmatter Fields (15)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -30,6 +30,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 | `hooks` | object | No | Lifecycle hooks scoped to this subagent. All hook events are supported; `PreToolUse`, `PostToolUse`, and `Stop` are the most common |
 | `memory` | string | No | Persistent memory scope: `user`, `project`, or `local` |
 | `background` | boolean | No | Set to `true` to always run as a background task (default: `false`) |
+| `effort` | string | No | Effort level override when this subagent is active: `low`, `medium`, `high`, `max`. Default: inherits from session |
 | `isolation` | string | No | Set to `"worktree"` to run in a temporary git worktree (auto-cleaned if no changes) |
 | `color` | string | No | CLI output color for visual distinction (e.g., `green`, `magenta`). Functional but absent from official frontmatter table — documented in interactive quickstart only |
 

@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2019%2C%202026%2011%3A54%20AM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2020%2C%202026%208%3A33%20AM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -14,14 +14,21 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 
 ---
 
-## Frontmatter Fields (4)
+## Frontmatter Fields (11)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `name` | string | No | Display name and `/slash-command` identifier. Defaults to the directory name if omitted |
 | `description` | string | Recommended | What the command does. Shown in autocomplete and used by Claude for auto-discovery |
 | `argument-hint` | string | No | Hint shown during autocomplete (e.g., `[issue-number]`, `[filename]`) |
+| `disable-model-invocation` | boolean | No | Set `true` to prevent Claude from automatically invoking this command |
+| `user-invocable` | boolean | No | Set `false` to hide from the `/` menu — command becomes background knowledge only |
 | `allowed-tools` | string | No | Tools allowed without permission prompts when this command is active |
 | `model` | string | No | Model to use when this command runs (e.g., `haiku`, `sonnet`, `opus`) |
+| `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `max`) |
+| `context` | string | No | Set to `fork` to run the command in an isolated subagent context |
+| `agent` | string | No | Subagent type when `context: fork` is set (default: `general-purpose`) |
+| `hooks` | object | No | Lifecycle hooks scoped to this command |
 
 ---
 

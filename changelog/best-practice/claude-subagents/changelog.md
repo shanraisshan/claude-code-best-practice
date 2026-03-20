@@ -74,3 +74,11 @@ No drift detected — report is fully in sync with official docs. All 13 frontma
 ## [2026-03-19 11:56 AM PKT] Claude Code v2.1.79
 
 No drift detected — report is fully in sync with official docs. All 13 frontmatter fields and 6 built-in agents match.
+
+---
+
+## [2026-03-20 08:35 AM PKT] Claude Code v2.1.80
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `effort` field to Frontmatter Fields table (string, optional — effort level override: `low`, `medium`, `high`, `max`) | ✅ COMPLETE (added between `background` and `isolation`, count updated 14→15) |

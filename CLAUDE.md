@@ -68,6 +68,7 @@ Subagents in `.claude/agents/*.md` use YAML frontmatter:
 - `hooks`: Lifecycle hooks scoped to this subagent (all hook events are supported; `PreToolUse`, `PostToolUse`, and `Stop` are the most common)
 - `memory`: Persistent memory scope — `user`, `project`, or `local` (see `reports/claude-agent-memory.md`)
 - `background`: Set to `true` to always run as a background task
+- `effort`: Effort level override: `low`, `medium`, `high`, `max` (default: inherits from session)
 - `isolation`: Set to `"worktree"` to run in a temporary git worktree
 - `color`: CLI output color for visual distinction
 
