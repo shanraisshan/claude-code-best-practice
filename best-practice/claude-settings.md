@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2020%2C%202026%208%3A41%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.80-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2021%2C%202026%209%3A17%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.81-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.80, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.81, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -219,7 +219,7 @@ Control what tools and operations Claude can perform.
 | `permissions.defaultMode` | string | Default permission mode. In Remote environments, only `acceptEdits` and `plan` are honored (v2.1.70+) |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
-| `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access |
+| `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access *(not in official docs — official permissions page states "Access to Remote Control and web sessions is not controlled by a managed settings key." On Team and Enterprise plans, admins enable/disable via [Claude Code admin settings](https://claude.ai/admin-settings/claude-code))* |
 
 ### Permission Modes
 
@@ -413,6 +413,8 @@ Configure Claude Code plugins and marketplaces.
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 
+**Marketplace source types:** `github`, `git`, `directory`, `hostPattern`, `settings`, `url`, `npm`, `file`. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository.
+
 **Example:**
 ```json
 {
@@ -426,6 +428,18 @@ Configure Claude Code plugins and marketplaces.
       "source": {
         "source": "github",
         "repo": "acme-corp/claude-plugins"
+      }
+    },
+    "inline-tools": {
+      "source": {
+        "source": "settings",
+        "name": "inline-tools",
+        "plugins": [
+          {
+            "name": "code-formatter",
+            "source": { "source": "github", "repo": "acme-corp/code-formatter" }
+          }
+        ]
       }
     }
   }
@@ -530,6 +544,9 @@ These display preferences are stored in `~/.claude.json`, **not** `settings.json
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `autoConnectIde` | boolean | `false` | Automatically connect to a running IDE when Claude Code starts from an external terminal. Appears in `/config` as **Auto-connect to IDE (external terminal)** when running outside a VS Code or JetBrains terminal |
+| `autoInstallIdeExtension` | boolean | `true` | Automatically install the Claude Code IDE extension when running from a VS Code terminal. Appears in `/config` as **Auto-install IDE extension**. Can also be disabled via `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL` env var |
+| `showClearContextOnPlanAccept` | boolean | `false` | When `true`, restores the "clear context" option on plan accept (hidden by default since v2.1.81). *(Source: v2.1.81 changelog — not yet on official settings page; file location unconfirmed)* |
 | `showTurnDuration` | boolean | `true` | Show turn duration messages after responses (e.g., "Cooked for 1m 6s"). Edit `~/.claude.json` directly to change |
 | `terminalProgressBarEnabled` | boolean | `true` | Show the terminal progress bar in supported terminals (Windows Terminal, iTerm2). Appears in `/config` as **Terminal progress bar** |
 
@@ -556,6 +573,10 @@ The status line command receives a JSON object on stdin with these notable field
 | `context_window.remaining_percentage` | Context window remaining percentage |
 | `current_usage` | Current context window token count |
 | `exceeds_200k_tokens` | Whether context exceeds 200k tokens |
+| `rate_limits.five_hour.used_percentage` | Five-hour rate limit usage percentage (v2.1.80+) |
+| `rate_limits.five_hour.resets_at` | Five-hour rate limit reset timestamp |
+| `rate_limits.seven_day.used_percentage` | Seven-day rate limit usage percentage |
+| `rate_limits.seven_day.resets_at` | Seven-day rate limit reset timestamp |
 
 ### File Suggestion Configuration
 
