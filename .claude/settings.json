@@ -41,7 +41,6 @@
       "Bash(kubectl *)",
       "Bash(firebase *)",
       "Bash(gcloud *)",
-      "Bash(curl *)",
       "Bash(wget *)",
       "Bash(kill *)",
       "Bash(killall *)",

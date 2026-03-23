@@ -88,3 +88,9 @@ No drift detected — report is fully in sync with official docs. All 13 frontma
 ## [2026-03-21 09:07 PM PKT] Claude Code v2.1.81
 
 No drift detected — report is fully in sync with official docs. All 15 frontmatter fields and 6 built-in agents match.
+
+---
+
+## [2026-03-23 09:49 PM PKT] Claude Code v2.1.81
+
+No drift detected — report is fully in sync with official docs. All 15 frontmatter fields (14 official + 1 unofficial `color`) and 6 built-in agents match.
