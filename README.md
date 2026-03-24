@@ -145,6 +145,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 | [memory.md](https://code.claude.com/docs/en/memory), constitution.md does not guarantee anything | |
 | any developer should be able to launch Claude, say "run the tests" and it works on the first try — if it doesn't, your CLAUDE.md is missing essential setup/build/test commands | [![Dex](!/tags/dex.svg)](https://x.com/dexhorthy/status/2034713765401551053) |
 | keep codebases clean and finish migrations — partially migrated frameworks confuse models that might pick the wrong pattern | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=1112) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=1112) |
+| use [settings.json](best-practice/claude-settings.md) for harness-enforced behavior (attribution, permissions, model) — don't put "NEVER add Co-Authored-By" in CLAUDE.md when `attribution.commit: ""` is deterministic | [![davila7](!/tags/davila7.svg)](https://x.com/dani_avila7/status/2036182734310195550) |
 
 <a id="tips-agents"></a><img src="!/tags/a.svg" height="14"> **Agents (4)**
 
