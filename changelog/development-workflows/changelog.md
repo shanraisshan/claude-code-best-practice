@@ -90,3 +90,19 @@
 | 10 | MED | Plan Update | Update gstack Plan from plan-eng-review to autoplan (higher-level orchestrator that reads CEO, design, eng review sequentially) | COMPLETE (updated README table) |
 | 11 | LOW | Count Update | Update OpenSpec commands 11→10 (recount: /opsx:propose, apply, archive, new, continue, ff, verify, sync, bulk-archive, onboard) | COMPLETE (updated README table) |
 | 12 | LOW | Count Correction | Correct OpenSpec skills 11→0 (no skills/ or .claude/skills/ directory exists — OpenSpec is a CLI tool, not skills-based) | COMPLETE (updated README table) |
+
+---
+
+## [2026-03-24 08:12 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 107k to 110k (109,846 actual) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update ECC ★ from 101k to 104k (103,960 actual) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 41k to 44k (44,300 actual — v0.11.x triple-voice multi-model review) | COMPLETE (updated README table) |
+| 4 | HIGH | Sort Order | Move gstack (44k) above BMAD (42k) — stars descending order | COMPLETE (updated README table) |
+| 5 | HIGH | Count Update | Update BMAD skills from 42 to 44 (recount: 32 bmm-skills + 12 core-skills, including 3 nested research sub-skills) | COMPLETE (updated README table) |
+| 6 | HIGH | Count Update | Update gstack skills from 27 to 28 (README states 28; 27 confirmed individually) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update Spec Kit ★ from 81k to 82k (81,780 actual) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update GSD ★ from 40k to 41k (40,500 actual) | COMPLETE (updated README table) |
+| 9 | MED | Star Update | Update OpenSpec ★ from 33k to 34k (33,800 actual) | COMPLETE (updated README table) |
