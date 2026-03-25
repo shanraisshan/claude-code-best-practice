@@ -100,3 +100,11 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-03-23 09:48 PM PKT] Claude Code v2.1.81
 
 No priority action items — report is fully in sync with official documentation (11 frontmatter fields, 63 built-in commands).
+
+---
+
+## [2026-03-25 08:07 PM PKT] Claude Code v2.1.83
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/schedule [description]` to Remote tag — Create, update, list, or run Cloud scheduled tasks | ✅ COMPLETE (added as #56 in Remote tag, count updated 63 → 64) |

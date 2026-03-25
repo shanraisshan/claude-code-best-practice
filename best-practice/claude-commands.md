@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2023%2C%202026%209%3A48%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2025%2C%202026%208%3A07%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -32,7 +32,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 
 ---
 
-## ![Official](../!/tags/official.svg) **(63)**
+## ![Official](../!/tags/official.svg) **(64)**
 
 | # | Command | Tag | Description |
 |---|---------|-----|-------------|
@@ -91,14 +91,15 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | 53 | `/mobile` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Show QR code to download the Claude mobile app. Aliases: `/ios`, `/android` |
 | 54 | `/remote-control` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Make this session available for remote control from claude.ai. Alias: `/rc` |
 | 55 | `/remote-env` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Inspect or copy the remote-control environment setup |
-| 56 | `/branch` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Fork the current conversation into a new session. Alias: `/fork` |
-| 57 | `/btw <question>` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Ask a quick side question without adding to the conversation |
-| 58 | `/clear` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Clear conversation history and free up context. Aliases: `/reset`, `/new` |
-| 59 | `/compact [prompt]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Compress conversation to free context window. Optional prompt focuses the compaction |
-| 60 | `/exit` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Exit the CLI. Alias: `/quit` |
-| 61 | `/rename <name>` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rename the current session for easier identification |
-| 62 | `/resume [session]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Resume a previous conversation by ID or name, or open the session picker. Alias: `/continue` |
-| 63 | `/rewind` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rewind the conversation and/or code to a previous point, or summarize from a selected message. Alias: `/checkpoint` |
+| 56 | `/schedule [description]` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Create, update, list, or run Cloud scheduled tasks. Claude walks you through the setup conversationally |
+| 57 | `/branch` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Fork the current conversation into a new session. Alias: `/fork` |
+| 58 | `/btw <question>` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Ask a quick side question without adding to the conversation |
+| 59 | `/clear` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Clear conversation history and free up context. Aliases: `/reset`, `/new` |
+| 60 | `/compact [prompt]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Compress conversation to free context window. Optional prompt focuses the compaction |
+| 61 | `/exit` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Exit the CLI. Alias: `/quit` |
+| 62 | `/rename <name>` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rename the current session for easier identification |
+| 63 | `/resume [session]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Resume a previous conversation by ID or name, or open the session picker. Alias: `/continue` |
+| 64 | `/rewind` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rewind the conversation and/or code to a previous point, or summarize from a selected message. Alias: `/checkpoint` |
 
 Bundled skills such as `/debug` can also appear in the slash-command menu, but they are not built-in commands.
 

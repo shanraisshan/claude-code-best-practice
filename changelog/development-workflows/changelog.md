@@ -106,3 +106,16 @@
 | 7 | MED | Star Update | Update Spec Kit ★ from 81k to 82k (81,780 actual) | COMPLETE (updated README table) |
 | 8 | MED | Star Update | Update GSD ★ from 40k to 41k (40,500 actual) | COMPLETE (updated README table) |
 | 9 | MED | Star Update | Update OpenSpec ★ from 33k to 34k (33,800 actual) | COMPLETE (updated README table) |
+
+---
+
+## [2026-03-25 08:12 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 110k to 112k (112,163 actual) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update ECC ★ from 104k to 107k (106,913 actual) | COMPLETE (updated README table) |
+| 3 | HIGH | Count Update | Update ECC commands from 60 to 63 (3 new in .claude/commands/: add-language-rules, database-migration, feature-development) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update gstack ★ from 44k to 47k (46,703 actual — infrastructure hardening, test coverage gates) | COMPLETE (updated README table) |
+| 5 | MED | Count Update | Update BMAD skills from 44 to 42 (recount: 30 bmm-skills + 12 core-skills; v6.2.1 consolidated 2 sub-skills) | COMPLETE (updated README table) |
+| 6 | LOW | Count Update | Update gstack skills from 28 to 27 (27 root-level dirs confirmed; 28th may be root SKILL.md template) | COMPLETE (updated README table) |

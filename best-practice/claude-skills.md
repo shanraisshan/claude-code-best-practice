@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2023%2C%202026%209%3A48%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2025%2C%202026%208%3A06%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.

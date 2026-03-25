@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2023%2C%202026%2010%3A02%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.81-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2025%2C%202026%208%3A16%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.83-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.81, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.83, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -43,8 +43,9 @@ Settings apply in order of precedence (highest to lowest):
 **Managed settings** are organization-enforced and cannot be overridden by any other level, including command line arguments. Delivery methods:
 - **Server-managed** settings (remote delivery)
 - **MDM profiles** — macOS plist at `com.anthropic.claudecode`
-- **Registry policies** — Windows HKLM/HKCU at `Software\Anthropic\ClaudeCode`
+- **Registry policies** — Windows `HKLM\SOFTWARE\Policies\ClaudeCode` (admin) and `HKCU\SOFTWARE\Policies\ClaudeCode` (user-level, lowest policy priority)
 - **File** — `managed-settings.json` (macOS: `/Library/Application Support/ClaudeCode/`, Linux/WSL: `/etc/claude-code/`, Windows: `C:\Program Files\ClaudeCode\`)
+- **Drop-in directory** — `managed-settings.d/` alongside `managed-settings.json` for independent policy fragments that merge alphabetically (v2.1.83). Each `.json` file in the directory is a self-contained policy fragment
 
 Within the managed tier, precedence is: server-managed > MDM/OS-level policies > `managed-settings.json` > HKCU registry (Windows only). Only one managed source is used; sources do not merge.
 
@@ -77,6 +78,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `includeGitInstructions` | boolean | `true` | Include git-related instructions in system prompt |
 | `voiceEnabled` | boolean | - | Enable push-to-talk voice dictation. Written automatically when you run `/voice`. Requires a Claude.ai account |
 | `showClearContextOnPlanAccept` | boolean | `false` | Show the "clear context" option on the plan accept screen. Set to `true` to restore the option (hidden by default since v2.1.81) |
+| `disableDeepLinkRegistration` | boolean | - | Prevent `claude-cli://` protocol handler registration at startup (v2.1.83) |
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 
 **Example:**
@@ -221,6 +223,8 @@ Control what tools and operations Claude can perform.
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
 | `allow_remote_sessions` | boolean | **(Managed only)** Allow users to start Remote Control and web sessions. Defaults to `true`. Set to `false` to prevent remote session access *(not in official docs — official permissions page states "Access to Remote Control and web sessions is not controlled by a managed settings key." On Team and Enterprise plans, admins enable/disable via [Claude Code admin settings](https://claude.ai/admin-settings/claude-code))* |
+| `autoMode` | object | Customize what the [auto mode](/en/permission-modes#eliminate-prompts-with-auto-mode) classifier blocks and allows. Contains `environment` (trusted infrastructure descriptions), `allow` (exceptions to block rules), and `soft_deny` (block rules) — all arrays of prose strings. **Not read from shared project settings** (`.claude/settings.json`) to prevent repo injection. Available in user, local, and managed settings. Setting `allow` or `soft_deny` **replaces** the entire default list for that section. Run `claude auto-mode defaults` to see built-in rules before customizing |
+| `disableAutoMode` | string | Set to `"disable"` to prevent [auto mode](/en/permission-modes#eliminate-prompts-with-auto-mode) from being activated. Removes `auto` from the `Shift+Tab` cycle and rejects `--permission-mode auto` at startup. Can be set at any settings level; most useful in managed settings where users cannot override it |
 
 ### Permission Modes
 
@@ -232,6 +236,7 @@ Control what tools and operations Claude can perform.
 | `"dontAsk"` | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
 | `"viewOnly"` | Read-only mode, no modifications *(not in official docs — unverified)* |
 | `"bypassPermissions"` | Skip all permission checks (dangerous) |
+| `"auto"` | Background classifier replaces manual prompts. Research preview — requires Team plan + Sonnet/Opus 4.6. Classifier auto-approves read-only and file edits; sends everything else through a safety check. Falls back to prompting after 3 consecutive or 20 total blocks. Configure with `autoMode` setting |
 | `"plan"` | Read-only exploration mode |
 
 ### Tool Permission Syntax
@@ -359,6 +364,7 @@ Configure bash command sandboxing for security.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `sandbox.enabled` | boolean | `false` | Enable bash sandboxing |
+| `sandbox.failIfUnavailable` | boolean | `false` | Exit with error when sandbox is enabled but cannot start, instead of running unsandboxed. Useful for enterprise policies that require strict sandboxing (v2.1.83) |
 | `sandbox.autoAllowBashIfSandboxed` | boolean | `true` | Auto-approve bash when sandboxed |
 | `sandbox.excludedCommands` | array | `[]` | Commands to run outside sandbox |
 | `sandbox.allowUnsandboxedCommands` | boolean | `true` | Allow `dangerouslyDisableSandbox` |
@@ -460,6 +466,7 @@ Configure Claude Code plugins and marketplaces.
 | `"opus"` | Latest Opus model (Claude Opus 4.6) |
 | `"haiku"` | Fast Haiku model |
 | `"sonnet[1m]"` | Sonnet with 1M token context |
+| `"opus[1m]"` | Opus with 1M token context (default on Max, Team, and Enterprise since v2.1.75) |
 | `"opusplan"` | Opus for planning, Sonnet for execution |
 
 **Example:**
@@ -742,6 +749,7 @@ Set environment variables for all Claude Code sessions.
 | `DISABLE_NON_ESSENTIAL_MODEL_CALLS` | Disable flavor text and non-essential model calls *(not in official docs — unverified)* |
 | `DISABLE_COST_WARNINGS` | Disable cost warning messages |
 | `CLAUDE_CODE_SUBAGENT_MODEL` | Override model for subagents (e.g., `haiku`, `sonnet`) |
+| `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` | Set to `1` to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers). Use for defense-in-depth when subprocesses should not inherit API keys (v2.1.83) |
 | `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS` | SessionEnd hook timeout in ms (replaces hard 1.5s limit) |
 | `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY` | Disable feedback survey prompts (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` | Disable terminal title updates (`1` to disable) |
@@ -817,6 +825,13 @@ Set environment variables for all Claude Code sessions.
     "claude-opus-4-6": "arn:aws:bedrock:us-east-1:123456789:inference-profile/anthropic.claude-opus-4-6-v1:0"
   },
 
+  "autoMode": {
+    "environment": [
+      "Source control: github.example.com/acme-corp and all repos under it",
+      "Trusted internal domains: *.internal.example.com"
+    ]
+  },
+
   "permissions": {
     "allow": [
       "Edit(*)",
@@ -876,7 +891,7 @@ Set environment variables for all Claude Code sessions.
 
 - [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
 - [Claude Code Settings JSON Schema](https://json.schemastore.org/claude-code-settings.json)
-- [Claude Code Configuration Guide](https://claudelog.com/configuration/)
+- [Claude Code Changelog](https://claudelog.com/claude-code-changelog/)
 - [Claude Code GitHub Settings Examples](https://github.com/feiskyer/claude-code-settings)
 - [Eesel AI - Developer's Guide to settings.json](https://www.eesel.ai/blog/settings-json-claude-code)
 - [Shipyard - Claude Code CLI Cheatsheet](https://shipyard.build/blog/claude-code-cheat-sheet/)

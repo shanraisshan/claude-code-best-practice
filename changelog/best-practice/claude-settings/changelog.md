@@ -199,3 +199,22 @@
 | 2 | HIGH | File Scope Fix | Move `showClearContextOnPlanAccept` from Global Config Settings (~/.claude.json) to General Settings (settings.json). Official docs now list it in the main Available settings table, not the Global config table. Remove stale annotation "not yet on official settings page" | ✅ COMPLETE (moved to General Settings table before feedbackSurveyRate, removed stale annotation) |
 | 3 | MED | Changed Description | Fix `terminalProgressBarEnabled` supported terminals from "Windows Terminal, iTerm2" to "ConEmu, Ghostty 1.2.0+, and iTerm2 3.6.6+" per official docs | ✅ COMPLETE (terminal list updated) |
 | 4 | MED | Changed Description | Add "Config tool" to `availableModels` description — official docs say "via `/model`, `--model`, Config tool, or `ANTHROPIC_MODEL`". Report currently omits "Config tool" | ✅ COMPLETE (added "Config tool" to description) |
+
+---
+
+## [2026-03-25 08:16 PM PKT] Claude Code v2.1.83
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `autoMode` to Permissions section — object with `environment`, `allow`, `soft_deny` arrays for configuring auto mode classifier. Not read from shared project settings (`.claude/settings.json`). Available in user, local, and managed settings. Confirmed on official settings + permissions pages | ✅ COMPLETE (added to Permission Keys table with full description, scope restrictions, and `claude auto-mode defaults` note) |
+| 2 | HIGH | New Setting | Add `disableAutoMode` to Permissions section — string, set to `"disable"` to prevent auto mode activation. Removes `auto` from Shift+Tab cycle. Can be set at any settings level, most useful in managed settings. Confirmed on official settings + permissions pages | ✅ COMPLETE (added to Permission Keys table after `autoMode`) |
+| 3 | HIGH | New Permission Mode | Add `auto` to Permission Modes table — background classifier replaces manual prompts. Research preview. Requires Team plan + Sonnet/Opus 4.6. Confirmed on official permission-modes page | ✅ COMPLETE (added to Permission Modes table with classifier details and fallback behavior) |
+| 4 | HIGH | New Setting | Add `sandbox.failIfUnavailable` to Sandbox Settings table — boolean, default `false`, exit with error when sandbox enabled but cannot start instead of running unsandboxed. Confirmed in v2.1.83 changelog | ✅ COMPLETE (added to Sandbox Settings table after `sandbox.enabled`) |
+| 5 | HIGH | New Setting | Add `disableDeepLinkRegistration` to General Settings table — boolean, prevent `claude-cli://` protocol handler registration. Confirmed in v2.1.83 changelog | ✅ COMPLETE (added to General Settings table before `feedbackSurveyRate`) |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` to Common Environment Variables table — set to `1` to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers). Confirmed in v2.1.83 changelog | ✅ COMPLETE (added to env vars table after `CLAUDE_CODE_SUBAGENT_MODEL`) |
+| 7 | HIGH | Settings Hierarchy | Add `managed-settings.d/` drop-in directory to Managed Settings section — independent policy fragments alongside `managed-settings.json` that merge alphabetically. Confirmed in v2.1.83 changelog | ✅ COMPLETE (added as bullet under managed settings delivery methods) |
+| 8 | HIGH | Broken Link | Fix `https://claudelog.com/configuration/` in Sources — returns 403 Forbidden. Remove or replace with working source | ✅ COMPLETE (replaced with `https://claudelog.com/claude-code-changelog/` which was verified working) |
+| 9 | MED | Version Badge | Update report version from v2.1.81 to v2.1.83 | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 10 | MED | Example Update | Add `autoMode` to Quick Reference example to demonstrate auto mode classifier configuration | ✅ COMPLETE (added `autoMode` block with `environment` array before `permissions` block) |
+| 11 | MED | Changed Path | Fix Windows registry path from `Software\Anthropic\ClaudeCode` to `SOFTWARE\Policies\ClaudeCode` (HKLM and HKCU). Official docs updated to use `Policies` subkey | ✅ COMPLETE (updated to `HKLM\SOFTWARE\Policies\ClaudeCode` and `HKCU\SOFTWARE\Policies\ClaudeCode` with priority note) |
+| 12 | LOW | Missing Alias | Add `opus[1m]` to Model Aliases table — Opus 4.6 with 1M context, available by default on Max/Team/Enterprise since v2.1.75 | ✅ COMPLETE (added to Model Aliases table after `sonnet[1m]`) |

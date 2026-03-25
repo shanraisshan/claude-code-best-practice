@@ -94,3 +94,11 @@ No drift detected — report is fully in sync with official docs. All 15 frontma
 ## [2026-03-23 09:49 PM PKT] Claude Code v2.1.81
 
 No drift detected — report is fully in sync with official docs. All 15 frontmatter fields (14 official + 1 unofficial `color`) and 6 built-in agents match.
+
+---
+
+## [2026-03-25 08:07 PM PKT] Claude Code v2.1.83
+
+No drift detected — report is fully in sync with official docs. All 15 frontmatter fields (14 official + 1 unofficial `color`) and 6 built-in agents match.
+
+**Watch item:** `initialPrompt` was added in v2.1.83 changelog but has not yet appeared in the official docs' supported frontmatter fields table. When it does, the report will need updating.
