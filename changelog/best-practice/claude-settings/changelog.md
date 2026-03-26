@@ -218,3 +218,21 @@
 | 10 | MED | Example Update | Add `autoMode` to Quick Reference example to demonstrate auto mode classifier configuration | ✅ COMPLETE (added `autoMode` block with `environment` array before `permissions` block) |
 | 11 | MED | Changed Path | Fix Windows registry path from `Software\Anthropic\ClaudeCode` to `SOFTWARE\Policies\ClaudeCode` (HKLM and HKCU). Official docs updated to use `Policies` subkey | ✅ COMPLETE (updated to `HKLM\SOFTWARE\Policies\ClaudeCode` and `HKCU\SOFTWARE\Policies\ClaudeCode` with priority note) |
 | 12 | LOW | Missing Alias | Add `opus[1m]` to Model Aliases table — Opus 4.6 with 1M context, available by default on Max/Team/Enterprise since v2.1.75 | ✅ COMPLETE (added to Model Aliases table after `sonnet[1m]`) |
+
+---
+
+## [2026-03-26 01:04 PM PKT] Claude Code v2.1.84
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `defaultShell` to General Settings — string, default `"bash"`, accepts `"bash"` or `"powershell"`. Routes interactive `!` commands through PowerShell on Windows. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1`. Confirmed on official settings page | ✅ COMPLETE (added to General Settings table after teammateMode) |
+| 2 | HIGH | New Setting | Add `allowedChannelPlugins` to MCP Settings — array, managed-only. Allowlist of channel plugins that may push messages. Replaces default Anthropic allowlist when set. Requires `channelsEnabled: true`. Confirmed on official settings page | ✅ COMPLETE (added to MCP Settings table after channelsEnabled) |
+| 3 | HIGH | New Setting | Add `useAutoModeDuringPlan` to Permission Keys — boolean, default `true`. Plan mode uses auto mode semantics when auto mode is available. Not read from shared project settings. Confirmed on official settings page | ✅ COMPLETE (added to Permission Keys table after disableAutoMode) |
+| 4 | HIGH | Missing Env Vars | Add 9 model customization env vars: `ANTHROPIC_DEFAULT_{OPUS,SONNET,HAIKU}_MODEL_{NAME,DESCRIPTION,SUPPORTED_CAPABILITIES}` for `/model` picker customization on Bedrock/Vertex/Foundry. Confirmed on official /en/env-vars page | ✅ COMPLETE (added 3 vars after each base model var: Haiku, Opus, Sonnet) |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` — disable non-streaming fallback when streaming fails. Prevents duplicate tool execution via proxy. Confirmed on official /en/env-vars page (added v2.1.83, missed in previous run) | ✅ COMPLETE (added after CLAUDE_CODE_DISABLE_FAST_MODE) |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_USE_POWERSHELL_TOOL` — enable PowerShell tool on Windows (opt-in preview). Native Windows only, not WSL. Confirmed on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_CODE_USE_FOUNDRY) |
+| 7 | HIGH | Broken Link | Fix `https://claudelog.com/claude-code-changelog/` in Sources — returns 403 Forbidden. Replace with official GitHub changelog URL | ✅ COMPLETE (replaced with github.com/anthropics/claude-code/blob/main/CHANGELOG.md) |
+| 8 | MED | Settings Hierarchy | Update managed tier precedence: "file-based (`managed-settings.d/*.json` + `managed-settings.json`)" and add "across tiers" qualifier. Add within-tier merge note per official docs | ✅ COMPLETE (updated precedence description with file-based tier and cross-tier qualifier) |
+| 9 | MED | Settings Hierarchy | Expand drop-in directory merge semantics: systemd convention, scalar override, array concat+dedup, deep merge, hidden file exclusion, numeric prefix tip. Per official settings page | ✅ COMPLETE (expanded with full systemd convention details and numeric prefix tip) |
+| 10 | MED | Annotation | Add "in changelog, not on official settings page" annotation to `disableDeepLinkRegistration` per Rule 1F inverse completeness check | ✅ COMPLETE (added annotation to description) |
+| 11 | MED | Example Update | Add `defaultShell` to Quick Reference example to demonstrate PowerShell configuration | ✅ COMPLETE (added "defaultShell": "bash" to example) |
