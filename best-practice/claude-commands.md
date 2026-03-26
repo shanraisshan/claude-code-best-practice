@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2025%2C%202026%208%3A07%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2026%2C%202026%201%3A01%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -14,7 +14,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 
 ---
 
-## Frontmatter Fields (11)
+## Frontmatter Fields (12)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -28,6 +28,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `max`) |
 | `context` | string | No | Set to `fork` to run the command in an isolated subagent context |
 | `agent` | string | No | Subagent type when `context: fork` is set (default: `general-purpose`) |
+| `shell` | string | No | Shell for `` !`command` `` blocks — accepts `bash` (default) or `powershell`. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` |
 | `hooks` | object | No | Lifecycle hooks scoped to this command |
 
 ---
@@ -75,7 +76,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | 37 | `/skills` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | List available skills |
 | 38 | `/memory` | ![Memory](https://img.shields.io/badge/Memory-3498DB?style=flat) | Edit CLAUDE.md memory files, enable or disable auto-memory, and view auto-memory entries |
 | 39 | `/effort [low\|medium\|high\|max\|auto]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Set the model effort level |
-| 40 | `/fast` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Toggle fast mode — same Opus 4.6 model with faster output |
+| 40 | `/fast [on\|off]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Toggle fast mode — same Opus 4.6 model with faster output |
 | 41 | `/model` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Switch models (haiku, sonnet, opus) and adjust effort level |
 | 42 | `/passes [number]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Share a free week of Claude Code with friends. Only visible if your account is eligible |
 | 43 | `/plan` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Enter read-only planning mode — suggests approaches without making changes |

@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2025%2C%202026%208%3A07%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2026%2C%202026%201%3A01%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Claude Code subagents — frontmatter fields and official built-in agent types.
@@ -14,7 +14,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 
 ---
 
-## Frontmatter Fields (15)
+## Frontmatter Fields (16)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -32,6 +32,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 | `background` | boolean | No | Set to `true` to always run as a background task (default: `false`) |
 | `effort` | string | No | Effort level override when this subagent is active: `low`, `medium`, `high`, `max`. Default: inherits from session |
 | `isolation` | string | No | Set to `"worktree"` to run in a temporary git worktree (auto-cleaned if no changes) |
+| `initialPrompt` | string | No | Auto-submitted as the first user turn when this agent runs as the main session agent (via `--agent` or the `agent` setting). Commands and skills are processed. Prepended to any user-provided prompt |
 | `color` | string | No | CLI output color for visual distinction (e.g., `green`, `magenta`). Functional but absent from official frontmatter table — documented in interactive quickstart only |
 
 ---

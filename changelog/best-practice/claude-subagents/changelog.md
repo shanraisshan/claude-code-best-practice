@@ -102,3 +102,11 @@ No drift detected — report is fully in sync with official docs. All 15 frontma
 No drift detected — report is fully in sync with official docs. All 15 frontmatter fields (14 official + 1 unofficial `color`) and 6 built-in agents match.
 
 **Watch item:** `initialPrompt` was added in v2.1.83 changelog but has not yet appeared in the official docs' supported frontmatter fields table. When it does, the report will need updating.
+
+---
+
+## [2026-03-26 01:01 PM PKT] Claude Code v2.1.84
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `initialPrompt` to Frontmatter Fields table (string, optional — auto-submitted as first user turn when agent runs as main session agent via `--agent` or `agent` setting) | ✅ COMPLETE (added between `isolation` and `color`, count updated 15→16) |

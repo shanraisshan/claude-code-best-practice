@@ -65,3 +65,11 @@ No drift detected — frontmatter fields (11) and bundled skills (5) are fully s
 ## [2026-03-25 08:06 PM PKT] Claude Code v2.1.83
 
 No drift detected — frontmatter fields (11) and bundled skills (5) are fully synchronized with official docs.
+
+---
+
+## [2026-03-26 12:59 PM PKT] Claude Code v2.1.84
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `shell` field to frontmatter table — accepts `bash` (default) or `powershell`, controls shell for `!command` blocks in skill content | ✅ COMPLETE (added to frontmatter table, count updated 11→12) |

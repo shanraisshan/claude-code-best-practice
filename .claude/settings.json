@@ -12,12 +12,20 @@
       "mcp__chrome-devtools__*",
       "mcp__claude-in-chrome__*",
       "mcp__playwright__*",
+      "mcp__reddit-mcp-server__search_reddit",
+      "mcp__reddit-mcp-server__get_post_details",
       "mcp__tavily-web-search__tavily_search",
       "mcp__tavily-web-search__tavily_extract",
       "WebFetch(domain:api.open-meteo.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:docs.anthropic.com)",
-      "WebFetch(domain:support.claude.com)"
+      "WebFetch(domain:support.claude.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:json.schemastore.org)",
+      "WebFetch(domain:claudelog.com)",
+      "WebFetch(domain:www.eesel.ai)",
+      "WebFetch(domain:shipyard.build)"
     ],
     "deny": [],
     "ask": [

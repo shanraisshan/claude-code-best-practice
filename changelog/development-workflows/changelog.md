@@ -119,3 +119,15 @@
 | 4 | HIGH | Star Update | Update gstack ★ from 44k to 47k (46,703 actual — infrastructure hardening, test coverage gates) | COMPLETE (updated README table) |
 | 5 | MED | Count Update | Update BMAD skills from 44 to 42 (recount: 30 bmm-skills + 12 core-skills; v6.2.1 consolidated 2 sub-skills) | COMPLETE (updated README table) |
 | 6 | LOW | Count Update | Update gstack skills from 28 to 27 (27 root-level dirs confirmed; 28th may be root SKILL.md template) | COMPLETE (updated README table) |
+
+---
+
+## [2026-03-26 01:05 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 112k to 114k (114,107 actual) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update ECC ★ from 107k to 109k (108,839 actual) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 47k to 48k (48,303 actual) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update GSD ★ from 41k to 42k (42,092 actual) | COMPLETE (updated README table) |
+| 5 | MED | Count Update | Update OpenSpec commands from 10 to 11 (v1.2.0 added /opsx:explore) | COMPLETE (updated README table) |
