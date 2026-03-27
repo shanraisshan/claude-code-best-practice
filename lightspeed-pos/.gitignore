@@ -1,0 +1,7 @@
+# Never commit secrets
+.env
+.token-cache.json
+
+# Reports are generated — keep examples only
+reports/*.md
+!reports/.gitkeep
