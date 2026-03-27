@@ -1,6 +1,6 @@
 # Linux Setup
 
-[Back to Day 0](Day0.md)
+[Back to Day 0](README.md)
 
 ## Prerequisites
 
@@ -108,7 +108,7 @@ npm install -g @anthropic-ai/claude-code
 claude --version
 ```
 
-You should see the Claude Code version printed. Now head back to [Day0.md](Day0.md) for authentication setup.
+You should see the Claude Code version printed. Now head back to [README.md](README.md) for authentication setup.
 
 ---
 

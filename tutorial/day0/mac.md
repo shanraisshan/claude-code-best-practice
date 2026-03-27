@@ -1,6 +1,6 @@
 # macOS Setup
 
-[Back to Day 0](Day0.md)
+[Back to Day 0](README.md)
 
 ---
 
@@ -29,4 +29,4 @@
 
 ---
 
-Now head back to [Day0.md](Day0.md) for authentication setup.
+Now head back to [README.md](README.md) for authentication setup.

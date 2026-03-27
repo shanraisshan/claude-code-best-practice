@@ -39,10 +39,23 @@ Run `claude` in your terminal. On first launch, it will ask you to choose a logi
 - Browser opens — sign in and authorize
 - Return to terminal, you're logged in
 
-### Method 2: API Key (Pay-as-you-go)
+### Method 2a: API Key (Team Invite)
 
-- Go to [console.anthropic.com](https://console.anthropic.com) → **API Keys** → **Create Key**
-- Select **Anthropic API Key** in the prompt
+Your team admin invites you from the Anthropic dashboard.
+
+- You receive an **invite email** — accept it and create your Anthropic account
+- Run `claude` in your terminal
+- Select **Anthropic API Key**
+- Your key is **auto-generated** on the dashboard — no manual setup needed
+- Claude Code starts working immediately
+
+### Method 2b: API Key (You have the key)
+
+If someone shared the key with you (via Slack, email, etc.) or you created your own:
+
+- Run `claude` in your terminal
+- Select **Anthropic API Key**
 - Paste your key (starts with `sk-ant-`)
+- The key is **stored permanently** — you won't be asked again
 
 ---
