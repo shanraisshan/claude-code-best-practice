@@ -236,3 +236,14 @@
 | 9 | MED | Settings Hierarchy | Expand drop-in directory merge semantics: systemd convention, scalar override, array concat+dedup, deep merge, hidden file exclusion, numeric prefix tip. Per official settings page | ✅ COMPLETE (expanded with full systemd convention details and numeric prefix tip) |
 | 10 | MED | Annotation | Add "in changelog, not on official settings page" annotation to `disableDeepLinkRegistration` per Rule 1F inverse completeness check | ✅ COMPLETE (added annotation to description) |
 | 11 | MED | Example Update | Add `defaultShell` to Quick Reference example to demonstrate PowerShell configuration | ✅ COMPLETE (added "defaultShell": "bash" to example) |
+
+---
+
+## [2026-03-27 06:32 PM PKT] Claude Code v2.1.85
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_STREAM_IDLE_TIMEOUT_MS` to Common Environment Variables table — timeout in ms before streaming idle watchdog closes stalled connection (default: 90000). Confirmed on official /en/env-vars page. Added in v2.1.84 but missed in previous run | ✅ COMPLETE (added to env vars table after CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS) |
+| 2 | HIGH | Version Bump | Update report version badge from v2.1.84 to v2.1.85 | ✅ COMPLETE (badge, header version, and header text updated in Phase 2.6) |
+| 3 | MED | New Env Var | Add `OTEL_LOG_TOOL_DETAILS` to env vars table — gates `tool_parameters` in OpenTelemetry events. v2.1.85 changelog only (not yet on official env-vars page). Add with changelog-source annotation | ✅ COMPLETE (added with "in v2.1.85 changelog, not yet on official env-vars page" annotation) |
+| 4 | MED | New Env Vars (Ownership) | Decide ownership for `CLAUDE_CODE_MCP_SERVER_NAME` and `CLAUDE_CODE_MCP_SERVER_URL` — env vars passed to MCP `headersHelper` scripts (v2.1.85 changelog). May belong in hooks repo rather than settings report | ✅ COMPLETE (added to settings report with changelog annotation — these are env-configurable via `env` key, not hook-only) |
