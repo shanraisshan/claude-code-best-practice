@@ -284,6 +284,14 @@ All major workflows converge on the same architectural pattern: **Research → P
 | Boris Cherny (Creator of Claude Code) On What Grew His Career (Boris) \| 15 Dec 2025 \| Ryan Peterman | [YouTube](https://youtu.be/AmdLVWMdjOk) |
 | The Secrets of Claude Code From the Engineers Who Built It (Cat) \| 29 Oct 2025 \| Every | [YouTube](https://youtu.be/IDSAMqip6ms) |
 
+### Safety Hooks
+
+| # | Tip | Reference |
+|---|-----|-----------|
+| 85 | Install safety hooks before autonomous operation: `npx cc-safe-setup` blocks rm -rf, force push, .env commits, and 39 more patterns | [cc-safe-setup](https://github.com/yurukusa/cc-safe-setup) |
+| 86 | Use `npx cc-hook-registry recommend` to find hooks matching your project's tech stack (Node, Python, Docker, etc.) | [cc-hook-registry](https://github.com/yurukusa/cc-hook-registry) |
+| 87 | Test hooks with `npx cc-hook-test <hook.sh>` — auto-detects hook type and generates test cases | [cc-hook-test](https://github.com/yurukusa/cc-hook-test) |
+
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
