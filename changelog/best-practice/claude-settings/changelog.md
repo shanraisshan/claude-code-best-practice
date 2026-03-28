@@ -247,3 +247,13 @@
 | 2 | HIGH | Version Bump | Update report version badge from v2.1.84 to v2.1.85 | ✅ COMPLETE (badge, header version, and header text updated in Phase 2.6) |
 | 3 | MED | New Env Var | Add `OTEL_LOG_TOOL_DETAILS` to env vars table — gates `tool_parameters` in OpenTelemetry events. v2.1.85 changelog only (not yet on official env-vars page). Add with changelog-source annotation | ✅ COMPLETE (added with "in v2.1.85 changelog, not yet on official env-vars page" annotation) |
 | 4 | MED | New Env Vars (Ownership) | Decide ownership for `CLAUDE_CODE_MCP_SERVER_NAME` and `CLAUDE_CODE_MCP_SERVER_URL` — env vars passed to MCP `headersHelper` scripts (v2.1.85 changelog). May belong in hooks repo rather than settings report | ✅ COMPLETE (added to settings report with changelog annotation — these are env-configurable via `env` key, not hook-only) |
+
+---
+
+## [2026-03-28 06:10 PM PKT] Claude Code v2.1.86
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | File Scope | Move `teammateMode` from General Settings (settings.json) to Global Config Settings (~/.claude.json). Official settings page lists it under "Global config settings" — adding to settings.json triggers schema validation error (Rule 1H). Same pattern as v2.1.78 `showTurnDuration` fix | ✅ COMPLETE (removed from General Settings table, added to Global Config Settings table after terminalProgressBarEnabled with agent-teams docs link) |
+| 2 | HIGH | Type + Annotation | Fix `disableDeepLinkRegistration`: change type from `boolean` to `string` (value: `"disable"`), update description to match official docs, remove stale "(in changelog, not on official settings page)" annotation. Now confirmed on official settings page (line 169) | ✅ COMPLETE (type changed to string, description updated to match official docs, changelog annotation removed) |
+| 3 | HIGH | Version Bump | Update report version badge from v2.1.85 to v2.1.86 | ✅ COMPLETE (badge and header updated in Phase 2.6) |

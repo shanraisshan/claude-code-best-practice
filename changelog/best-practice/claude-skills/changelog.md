@@ -81,3 +81,9 @@ No drift detected — frontmatter fields (11) and bundled skills (5) are fully s
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Field | Add `paths` field to frontmatter table — accepts glob patterns (string or YAML list) that limit when a skill auto-activates | ✅ COMPLETE (added to frontmatter table, count updated 12→13) |
+
+---
+
+## [2026-03-28 05:59 PM PKT] Claude Code v2.1.86
+
+No drift detected — frontmatter fields (13) and bundled skills (5) are fully synchronized with official docs.
