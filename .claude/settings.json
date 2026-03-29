@@ -39,7 +39,6 @@
       "Bash(chmod *)",
       "Bash(chown *)",
       "Bash(git *)",
-      "Bash(gh *)",
       "Bash(npm *)",
       "Bash(pip *)",
       "Bash(pip3 *)",
