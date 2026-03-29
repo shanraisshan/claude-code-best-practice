@@ -236,6 +236,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 | [/doctor](https://code.claude.com/docs/en/cli-reference) to diagnose installation, authentication, and configuration issues | |
 | error during compaction can be resolved by using [/model](https://code.claude.com/docs/en/model-config) to select a 1M token model, then running [/compact](https://code.claude.com/docs/en/interactive-mode) | |
 | use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review | |
+| use [claude-debug](https://github.com/krabat-l/claude-debug) hooks to enforce structured debugging — blocks edits until root cause is confirmed. Zero-install: copy one [rules file](https://raw.githubusercontent.com/krabat-l/claude-debug/master/rules/debug.md) to `.claude/rules/` | |
 | agentic search (glob + grep) beats RAG — Claude Code tried and discarded vector databases because code drifts out of sync and permissions are complex | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3095) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3095) |
 
 <a id="tips-utilities"></a>■ **Utilities (5)**
