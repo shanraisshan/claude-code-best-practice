@@ -27,14 +27,6 @@ Get current main HEAD hash: `git log main --oneline -1 | awk '{print $1}'`
 
 ---
 
-### Init: Orientation (output before any question)
-
-**Before asking anything**, output a short orientation paragraph — this is required, not optional:
-
-> "This is a hands-on tour of the Claude Code best-practices repo. One heads-up: this repo's permission settings require confirmation for git commands — you'll see a few prompts during setup and progress tracking, just approve them. I'll run live demos with you, not just explain concepts. To personalize the tour, I have a quick 3-question survey. Your answers tell me which stops to include and how deep to go — concepts you've already used get skipped or condensed; gaps get full treatment."
-
----
-
 ### Init: Pre-survey (1 AskUserQuestion call)
 
 Ask the user their goal:

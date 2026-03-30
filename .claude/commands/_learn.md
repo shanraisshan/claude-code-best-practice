@@ -20,7 +20,11 @@ Read the full `README.md` now. You'll need the CONCEPTS table and the Hot Featur
 
 ---
 
-## Step 2: Branch Setup
+## Step 2: Orientation + Branch Setup
+
+Output this orientation paragraph before running any git commands:
+
+> "This is a hands-on tour of the Claude Code best-practices repo. One heads-up: this repo's permission settings require confirmation for git commands — you'll see a few prompts during setup and progress tracking, just approve them. I'll run live demos with you, not just explain concepts. To personalize the tour, I have a quick 3-question survey. Your answers tell me which stops to include and how deep to go — concepts you've already used get skipped or condensed; gaps get full treatment."
 
 Run these checks in order:
 
