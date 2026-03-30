@@ -112,7 +112,7 @@ All major workflows converge on the same architectural pattern: **Research → P
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
-## 💡 TIPS AND TRICKS (86)
+## 💡 TIPS AND TRICKS (87)
 
 🚫👶 = do not babysit
 
@@ -248,13 +248,14 @@ All major workflows converge on the same architectural pattern: **Research → P
 | [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700784019452195) |
 | explore [settings.json](best-practice/claude-settings.md) features like [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021701145023197516) |
 
-<a id="tips-daily"></a>■ **Daily (3)**
+<a id="tips-daily"></a>■ **Daily (4)**
 
 | Tip | Source |
 |-----|--------|
 | [update](https://code.claude.com/docs/en/setup) Claude Code daily and start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) | |
 | follow [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/), [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/) | ![Reddit](https://img.shields.io/badge/-FF4500?style=flat&logo=reddit&logoColor=white) |
 | follow [Boris](https://x.com/bcherny), [Thariq](https://x.com/trq212), [Cat](https://x.com/_catwu), [Lydia](https://x.com/lydiahallie), [Noah](https://x.com/noahzweben), [Anthony](https://x.com/amorriscode), [Alex](https://x.com/alexalbert__), [Kenneth](https://x.com/neilhtennek), [Claude](https://x.com/claudeai) | ![X](https://img.shields.io/badge/-000?style=flat&logo=x&logoColor=white) |
+| follow [Jesse](https://x.com/obra), [Affaan](https://x.com/affaanmustafa), [Garry](https://x.com/garrytan), [Dex](https://x.com/dexhorthy), [Kieran](https://x.com/kieranklaassen), [Tabish](https://x.com/0xTab), [Brian](https://x.com/BMadCode), [TÂCHES](https://x.com/official_taches), [Dani](https://x.com/dani_avila7), [Dan](https://x.com/danshipper), [Karpathy](https://x.com/karpathy) | ![X](https://img.shields.io/badge/-000?style=flat&logo=x&logoColor=white) |
 
 ![Boris Cherny + Team](!/tags/boris-team.svg)
 
