@@ -29,7 +29,7 @@ git branch --list _learning-tour
 ```
 
 **If the branch does NOT exist:**
-- Run: `git checkout -b _learning-tour main`
+- Run: `git checkout -b _learning-tour` (branches from HEAD — preserves any in-progress work on the current branch)
 - Tell the user: "Created a new `_learning-tour` branch to track your progress."
 - Pass `branch_status=new` to the skill.
 

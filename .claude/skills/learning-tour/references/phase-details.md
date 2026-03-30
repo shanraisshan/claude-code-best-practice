@@ -27,13 +27,21 @@ Get current main HEAD hash: `git log main --oneline -1 | awk '{print $1}'`
 
 ---
 
+### Init: Orientation (output before any question)
+
+**Before asking anything**, output a short orientation paragraph — this is required, not optional:
+
+> "This is a hands-on tour of the Claude Code best-practices repo. One heads-up: this repo's permission settings require confirmation for git commands — you'll see a few prompts during setup and progress tracking, just approve them. I'll run live demos with you, not just explain concepts. To personalize the tour, I have a quick 3-question survey. Your answers tell me which stops to include and how deep to go — concepts you've already used get skipped or condensed; gaps get full treatment."
+
+---
+
 ### Init: Pre-survey (1 AskUserQuestion call)
 
 Ask the user their goal:
 
-> "What's your goal for this tour?"
-> - **Familiarity** — understand what exists, get hands-on with each concept
-> - **Mastery** — go deep on things you've only surface-level tried; focus on gotchas and design decisions
+> "First: what's your goal for this tour?
+> - **Familiarity** — understand what exists, get hands-on with each concept (recommended for most)
+> - **Mastery** — go deep on things you've surface-level tried; adds design-critique prompts after each demo and focuses on gotchas and when NOT to use each pattern"
 
 ---
 
@@ -43,12 +51,13 @@ Both questions are driven by the README.md content you already read in the comma
 
 **Q1 — CONCEPTS checklist** (present rows from README.md CONCEPTS table):
 
-- Familiarity wording: "Which of these have you tried or configured before?"
-- Mastery wording: "Which of these have you created yourself and then had to fix or extend?"
+- Familiarity wording: "Checking a concept means you've already used it — I'll skip or condense that stop. Which of these have you tried or configured before? (check all that apply · use ← → to navigate pages · ignore 'Type something')"
+- Mastery wording: "Checking a concept means you've already extended or debugged it — I'll skip or cover it briefly. Which of these have you created yourself and then had to fix or extend? (check all that apply · use ← → to navigate pages · ignore 'Type something')"
+- **Limit to 8 rows max per message.** If the CONCEPTS table has more than 8 rows, split into two AskUserQuestion calls, grouping by theme (e.g., "core config" then "workflow / orchestration"). Label each group clearly.
 
 **Q2 — Hot Features checklist** (present rows from README.md 🔥 Hot section):
 
-"Which of these have you tried?"
+"Checked = tried, unchecked = we'll demo it. Which of these have you tried? (check all that apply · use ← → to navigate pages · ignore 'Type something')"
 
 Record answers as concept levels and hot feature tried/no status. These drive skip thresholds in Phase 2.
 
@@ -74,7 +83,7 @@ Iterate through stops in file order. For each stop where the top-level checkbox 
 
 **1. Fetch official docs**
 
-WebFetch from `https://code.claude.ai/docs/` — search for the concept page. If that root doesn't work, try `https://docs.anthropic.com/en/docs/claude-code/`. Apply WebFetch fallback rule from SKILL.md Source Rules if fetch fails.
+WebFetch from `https://code.claude.com/docs/en/` — the canonical Claude Code docs domain. Construct URLs as `https://code.claude.com/docs/en/<concept-slug>` (e.g., `https://code.claude.com/docs/en/sub-agents`). Apply WebFetch fallback rule from SKILL.md Source Rules if fetch fails.
 
 **2. Load demo file**
 
