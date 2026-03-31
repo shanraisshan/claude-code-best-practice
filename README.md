@@ -280,6 +280,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 
 | Video / Podcast | YouTube |
 |-----------------|---------|
+| [Everything We Got Wrong About Research-Plan-Implement (Dex) \| 24 Mar 2026 \| MLOps Community](videos/claude-dex-mlops-community-24-mar-26.md) | [YouTube](https://youtu.be/YwZR6tc7qYg) |
 | Building Claude Code with Boris Cherny (Boris) \| 04 Mar 2026 \| The Pragmatic Engineer | [YouTube](https://youtu.be/julbw1JuAz0) |
 | Head of Claude Code: What happens after coding is solved (Boris) \| 19 Feb 2026 \| Lenny's Podcast | [YouTube](https://youtu.be/We7BZVKbCVw) |
 | Inside Claude Code With Its Creator Boris Cherny (Boris) \| 17 Feb 2026 \| Y Combinator | [YouTube](https://youtu.be/PQU9o_5rHC4) |
