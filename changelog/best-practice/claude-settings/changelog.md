@@ -257,3 +257,17 @@
 | 1 | HIGH | File Scope | Move `teammateMode` from General Settings (settings.json) to Global Config Settings (~/.claude.json). Official settings page lists it under "Global config settings" — adding to settings.json triggers schema validation error (Rule 1H). Same pattern as v2.1.78 `showTurnDuration` fix | ✅ COMPLETE (removed from General Settings table, added to Global Config Settings table after terminalProgressBarEnabled with agent-teams docs link) |
 | 2 | HIGH | Type + Annotation | Fix `disableDeepLinkRegistration`: change type from `boolean` to `string` (value: `"disable"`), update description to match official docs, remove stale "(in changelog, not on official settings page)" annotation. Now confirmed on official settings page (line 169) | ✅ COMPLETE (type changed to string, description updated to match official docs, changelog annotation removed) |
 | 3 | HIGH | Version Bump | Update report version badge from v2.1.85 to v2.1.86 | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+
+---
+
+## [2026-03-31 07:02 PM PKT] Claude Code v2.1.88
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_NO_FLICKER` to Common Environment Variables table — enable flicker-free alt-screen rendering (v2.1.88). Confirmed on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_CODE_DISABLE_TERMINAL_TITLE) |
+| 2 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_SCROLL_SPEED` and `CLAUDE_CODE_DISABLE_MOUSE` to Common Environment Variables table — fullscreen UI controls. Confirmed on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_CODE_NO_FLICKER) |
+| 3 | HIGH | Version Bump | Update report version badge from v2.1.86 to v2.1.88 | ✅ COMPLETE (badge, header version, and header text updated in Phase 2.6) |
+| 4 | HIGH | Broken Link | Fix `https://www.eesel.ai/blog/settings-json-claude-code` in Sources — returns CSS-only content, no readable blog post | ✅ COMPLETE (removed broken link from Sources section) |
+| 5 | MED | Settings Hierarchy | Add `managed-mcp.json` to file-based managed delivery methods — official settings page lists it alongside `managed-settings.json` for MCP server configuration | ✅ COMPLETE (added to File delivery method bullet in Settings Hierarchy) |
+| 6 | MED | Plugin Source Types | Annotate `url`, `npm`, `file` marketplace source types as "not in official docs — unverified" (only `github`, `git`, `directory`, `hostPattern`, `settings` confirmed) | ✅ COMPLETE (added unverified annotations to all 3 source types) |
+| 7 | LOW | Header Count | Update header from "60+ settings" to match actual table count after any additions | ❌ INVALID (count is accurate — 60+ settings and 125 env vars, both within stated ranges) |

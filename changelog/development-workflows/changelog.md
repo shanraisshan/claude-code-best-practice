@@ -178,3 +178,20 @@
 | 6 | MED | Count Update | Update BMAD skills from 43 to 40 (recount: 29 bmm-skills + 11 core-skills; consolidation in recent patches) | COMPLETE (updated README table) |
 | 7 | MED | Star Update | Update Compound Engineering ★ from 11k to 12k (11,500 actual) | COMPLETE (updated README table) |
 | 8 | MED | Count Update | Update Compound Eng agents from 47 to 48 (1 new), skills from 43 to 42 (41 compound-eng + 1 coding-tutor) | COMPLETE (updated README table) |
+
+---
+
+## [2026-03-31 07:43 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 122k to 127k (127,473 actual) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update ECC ★ from 116k to 124k (124,279 actual) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 55k to 59k (59,046 actual — v0.14.x Review Army, composable skills, adversarial review) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update GSD ★ from 44k to 46k (45,773 actual) | COMPLETE (updated README table) |
+| 5 | HIGH | Count Update | Update gstack skills from 28 to 32 (4 new: design-html, sidebar CSS inspector, composable skill resolver, scope drift detection) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update Spec Kit ★ from 83k to 84k (84,042 actual) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update OpenSpec ★ from 35k to 36k (35,985 actual) | COMPLETE (updated README table) |
+| 8 | MED | Count Update | Update BMAD skills from 40 to 43 (32 bmm-skills + 11 core-skills; 3 new bmm-skills added including PRFAQ) | COMPLETE (updated README table) |
+| 9 | LOW | Count Verify | ECC commands 63→3, skills 135→30 — research agent only checked .claude/ dirs, missed root commands/ and .agents/skills/ breadth | INVALID (agent undercounting — keeping current values 63 commands, 135 skills) |
+| 10 | LOW | Count Verify | Superpowers agents 5→8 — agent counted 1 explicit + 7 implicit sub-agents, but v5.0.6 replaced subagent review loops with inline self-review | ON HOLD (contradictory signals — v5.0.6 reduced review agents while brainstorm added new ones, needs manual verification) |

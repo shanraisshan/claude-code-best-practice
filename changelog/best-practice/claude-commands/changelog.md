@@ -141,3 +141,11 @@ No priority action items — report is fully in sync with official documentation
 | 7 | MED | Changed Argument | Update `/rename` — change from `<name>` (required) to `[name]` (optional) per official docs | ✅ COMPLETE (updated at #62 in Session tag) |
 | 8 | LOW | Changed Argument | Update `/compact` — change argument label from `[prompt]` to `[instructions]` per official docs | ✅ COMPLETE (updated at #60 in Session tag) |
 | 9 | LOW | Changed Argument | Update `/feedback` — change argument label from `[description]` to `[report]` per official docs | ✅ COMPLETE (updated at #24 in Debug tag) |
+
+---
+
+## [2026-03-31 06:55 PM PKT] Claude Code v2.1.88
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Description Sync | Synced all 43 command descriptions to match official docs — behavioral clarifications (`/vim` toggle, `/sandbox` toggle, `/hooks` view), expanded detail (`/effort` persistence, `/copy` SSH write, `/model` effort arrows), and wording alignment across Auth, Config, Context, Debug, Export, Extensions, Model, Project, Remote, and Session tags | ✅ COMPLETE (all 64 descriptions now match official docs at code.claude.com/docs/en/commands) |

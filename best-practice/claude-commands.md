@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2028%2C%202026%206%3A05%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2031%2C%202026%206%3A55%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -38,70 +38,70 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 
 | # | Command | Tag | Description |
 |---|---------|-----|-------------|
-| 1 | `/login` | ![Auth](https://img.shields.io/badge/Auth-2980B9?style=flat) | Authenticate with Claude Code via OAuth |
-| 2 | `/logout` | ![Auth](https://img.shields.io/badge/Auth-2980B9?style=flat) | Log out from Claude Code |
+| 1 | `/login` | ![Auth](https://img.shields.io/badge/Auth-2980B9?style=flat) | Sign in to your Anthropic account |
+| 2 | `/logout` | ![Auth](https://img.shields.io/badge/Auth-2980B9?style=flat) | Sign out from your Anthropic account |
 | 3 | `/upgrade` | ![Auth](https://img.shields.io/badge/Auth-2980B9?style=flat) | Open the upgrade page to switch to a higher plan tier |
-| 4 | `/color [color\|default]` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Set the prompt bar color for the current session |
+| 4 | `/color [color\|default]` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Set the prompt bar color for the current session. Available colors: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. Use `default` to reset |
 | 5 | `/config` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Open the Settings interface to adjust theme, model, output style, and other preferences. Alias: `/settings` |
-| 6 | `/keybindings` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Customize keyboard shortcuts per context and create chord sequences |
-| 7 | `/permissions` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | View or update tool permissions. Alias: `/allowed-tools` |
-| 8 | `/privacy-settings` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Manage privacy and telemetry preferences |
-| 9 | `/sandbox` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Configure sandboxing with dependency status |
-| 10 | `/statusline` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Set up Claude Code's status line UI |
+| 6 | `/keybindings` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Open or create your keybindings configuration file |
+| 7 | `/permissions` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | View or update permissions. Alias: `/allowed-tools` |
+| 8 | `/privacy-settings` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | View and update your privacy settings. Only available for Pro and Max plan subscribers |
+| 9 | `/sandbox` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Toggle sandbox mode. Available on supported platforms only |
+| 10 | `/statusline` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Configure Claude Code's status line. Describe what you want, or run without arguments to auto-configure from your shell prompt |
 | 11 | `/stickers` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Order Claude Code stickers |
-| 12 | `/terminal-setup` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Enable shift+enter for newlines in IDE terminals |
-| 13 | `/theme` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Change the color theme |
-| 14 | `/vim` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Enable vim-style editing mode |
+| 12 | `/terminal-setup` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Configure terminal keybindings for Shift+Enter and other shortcuts. Only visible in terminals that need it, like VS Code, Alacritty, or Warp |
+| 13 | `/theme` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Change the color theme. Includes light and dark variants, colorblind-accessible (daltonized) themes, and ANSI themes that use your terminal's color palette |
+| 14 | `/vim` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Toggle between Vim and Normal editing modes |
 | 15 | `/voice` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Toggle push-to-talk voice dictation. Requires a Claude.ai account |
-| 16 | `/context` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Visualize current context usage as a colored grid with token counts |
-| 17 | `/cost` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Show token usage statistics for the current session |
-| 18 | `/extra-usage` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Configure pay-as-you-go overflow billing for subscription plans |
+| 16 | `/context` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Visualize current context usage as a colored grid. Shows optimization suggestions for context-heavy tools, memory bloat, and capacity warnings |
+| 17 | `/cost` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Show token usage statistics. See cost tracking guide for subscription-specific details |
+| 18 | `/extra-usage` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Configure extra usage to keep working when rate limits are hit |
 | 19 | `/insights` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Generate a report analyzing your Claude Code sessions, including project areas, interaction patterns, and friction points |
 | 20 | `/stats` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Visualize daily usage, session history, streaks, and model preferences |
-| 21 | `/status` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Open the Settings interface (Status tab) showing version, model, account, and connectivity |
-| 22 | `/usage` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Show plan usage limits and rate limit status (subscription plans only) |
-| 23 | `/doctor` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | Check the health of your Claude Code installation |
+| 21 | `/status` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Open the Settings interface (Status tab) showing version, model, account, and connectivity. Works while Claude is responding, without waiting for the current response to finish |
+| 22 | `/usage` | ![Context](https://img.shields.io/badge/Context-8E44AD?style=flat) | Show plan usage limits and rate limit status |
+| 23 | `/doctor` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | Diagnose and verify your Claude Code installation and settings |
 | 24 | `/feedback [report]` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | Submit feedback about Claude Code. Alias: `/bug` |
-| 25 | `/help` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | Show slash-command help |
-| 26 | `/release-notes` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | Show recent Claude Code release notes |
+| 25 | `/help` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | Show help and available commands |
+| 26 | `/release-notes` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | View the full changelog, with the most recent version closest to your prompt |
 | 27 | `/tasks` | ![Debug](https://img.shields.io/badge/Debug-E74C3C?style=flat) | List and manage background tasks |
-| 28 | `/copy [N]` | ![Export](https://img.shields.io/badge/Export-7F8C8D?style=flat) | Copy the last (or Nth-latest) assistant response to clipboard. Shows interactive picker for code blocks |
-| 29 | `/export [filename]` | ![Export](https://img.shields.io/badge/Export-7F8C8D?style=flat) | Export the current conversation to a file or clipboard |
-| 30 | `/agents` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage custom subagents — view, create, edit, delete |
-| 31 | `/chrome` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage Claude in Chrome browser integration |
-| 32 | `/hooks` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage hook configurations for tool events |
-| 33 | `/ide` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Connect to IDE integration |
-| 34 | `/mcp` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage MCP server connections |
+| 28 | `/copy [N]` | ![Export](https://img.shields.io/badge/Export-7F8C8D?style=flat) | Copy the last assistant response to clipboard. Pass a number `N` to copy the Nth-latest response: `/copy 2` copies the second-to-last. When code blocks are present, shows an interactive picker to select individual blocks or the full response. Press `w` in the picker to write the selection to a file instead of the clipboard, which is useful over SSH |
+| 29 | `/export [filename]` | ![Export](https://img.shields.io/badge/Export-7F8C8D?style=flat) | Export the current conversation as plain text. With a filename, writes directly to that file. Without, opens a dialog to copy to clipboard or save to a file |
+| 30 | `/agents` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage agent configurations |
+| 31 | `/chrome` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Configure Claude in Chrome settings |
+| 32 | `/hooks` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | View hook configurations for tool events |
+| 33 | `/ide` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage IDE integrations and show status |
+| 34 | `/mcp` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage MCP server connections and OAuth authentication |
 | 35 | `/plugin` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Manage Claude Code plugins |
-| 36 | `/reload-plugins` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Reload installed plugins without restarting |
+| 36 | `/reload-plugins` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | Reload all active plugins to apply pending changes without restarting. Reports counts for each reloaded component and flags any load errors |
 | 37 | `/skills` | ![Extensions](https://img.shields.io/badge/Extensions-16A085?style=flat) | List available skills |
-| 38 | `/memory` | ![Memory](https://img.shields.io/badge/Memory-3498DB?style=flat) | Edit CLAUDE.md memory files, enable or disable auto-memory, and view auto-memory entries |
-| 39 | `/effort [low\|medium\|high\|max\|auto]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Set the model effort level |
-| 40 | `/fast [on\|off]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Toggle fast mode — same Opus 4.6 model with faster output |
-| 41 | `/model [model]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Select or change the AI model |
+| 38 | `/memory` | ![Memory](https://img.shields.io/badge/Memory-3498DB?style=flat) | Edit `CLAUDE.md` memory files, enable or disable auto-memory, and view auto-memory entries |
+| 39 | `/effort [low\|medium\|high\|max\|auto]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Set the model effort level. `low`, `medium`, and `high` persist across sessions. `max` applies to the current session only and requires Opus 4.6. `auto` resets to the model default. Without an argument, shows the current level. Takes effect immediately without waiting for the current response to finish |
+| 40 | `/fast [on\|off]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Toggle fast mode on or off |
+| 41 | `/model [model]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Select or change the AI model. For models that support it, use left/right arrows to adjust effort level. The change takes effect immediately without waiting for the current response to finish |
 | 42 | `/passes` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Share a free week of Claude Code with friends. Only visible if your account is eligible |
-| 43 | `/plan [description]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Enter plan mode directly from the prompt. Pass an optional description to start immediately with that task |
+| 43 | `/plan [description]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Enter plan mode directly from the prompt. Pass an optional description to enter plan mode and immediately start with that task, for example `/plan fix the auth bug` |
 | 44 | `/add-dir <path>` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Add a new working directory to the current session |
-| 45 | `/diff` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Open an interactive diff viewer showing uncommitted changes and per-turn diffs |
-| 46 | `/init` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Initialize a new project with a CLAUDE.md guide |
-| 47 | `/pr-comments [PR]` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Fetch and display comments from a GitHub pull request. Auto-detects PR for current branch, or pass a PR URL or number |
-| 48 | `/review` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Deprecated — install the `code-review` plugin instead |
-| 49 | `/security-review` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Run a focused security review on current changes |
+| 45 | `/diff` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files |
+| 46 | `/init` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Initialize project with a `CLAUDE.md` guide. Set `CLAUDE_CODE_NEW_INIT=true` for an interactive flow that also walks through skills, hooks, and personal memory files |
+| 47 | `/pr-comments [PR]` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Fetch and display comments from a GitHub pull request. Automatically detects the PR for the current branch, or pass a PR URL or number. Requires the `gh` CLI |
+| 48 | `/review` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Deprecated. Install the `code-review` plugin instead: `claude plugin install code-review@claude-plugins-official` |
+| 49 | `/security-review` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Analyze pending changes on the current branch for security vulnerabilities. Reviews the git diff and identifies risks like injection, auth issues, and data exposure |
 | 50 | `/desktop` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Continue the current session in the Claude Code Desktop app. macOS and Windows only. Alias: `/app` |
-| 51 | `/install-github-app` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Install the GitHub app for PR-linked workflows |
-| 52 | `/install-slack-app` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Install the Slack app for notifications and sharing |
+| 51 | `/install-github-app` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Set up the Claude GitHub Actions app for a repository. Walks you through selecting a repo and configuring the integration |
+| 52 | `/install-slack-app` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Install the Claude Slack app. Opens a browser to complete the OAuth flow |
 | 53 | `/mobile` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Show QR code to download the Claude mobile app. Aliases: `/ios`, `/android` |
 | 54 | `/remote-control` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Make this session available for remote control from claude.ai. Alias: `/rc` |
-| 55 | `/remote-env` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Inspect or copy the remote-control environment setup |
+| 55 | `/remote-env` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Configure the default remote environment for web sessions started with `--remote` |
 | 56 | `/schedule [description]` | ![Remote](https://img.shields.io/badge/Remote-5D6D7E?style=flat) | Create, update, list, or run Cloud scheduled tasks. Claude walks you through the setup conversationally |
 | 57 | `/branch [name]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Create a branch of the current conversation at this point. Alias: `/fork` |
 | 58 | `/btw <question>` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Ask a quick side question without adding to the conversation |
 | 59 | `/clear` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Clear conversation history and free up context. Aliases: `/reset`, `/new` |
 | 60 | `/compact [instructions]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Compact conversation with optional focus instructions |
 | 61 | `/exit` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Exit the CLI. Alias: `/quit` |
-| 62 | `/rename [name]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rename the current session. Without a name, auto-generates one from conversation history |
-| 63 | `/resume [session]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Resume a previous conversation by ID or name, or open the session picker. Alias: `/continue` |
-| 64 | `/rewind` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rewind the conversation and/or code to a previous point, or summarize from a selected message. Alias: `/checkpoint` |
+| 62 | `/rename [name]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history |
+| 63 | `/resume [session]` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Resume a conversation by ID or name, or open the session picker. Alias: `/continue` |
+| 64 | `/rewind` | ![Session](https://img.shields.io/badge/Session-4A90D9?style=flat) | Rewind the conversation and/or code to a previous point, or summarize from a selected message. See checkpointing. Alias: `/checkpoint` |
 
 Bundled skills such as `/debug` can also appear in the slash-command menu, but they are not built-in commands.
 

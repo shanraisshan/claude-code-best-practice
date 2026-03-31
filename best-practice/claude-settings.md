@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2028%2C%202026%206%3A10%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.86-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2031%2C%202026%207%3A02%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.88-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.86, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.88, Claude Code exposes **60+ settings** and **100+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -44,7 +44,7 @@ Settings apply in order of precedence (highest to lowest):
 - **Server-managed** settings (remote delivery)
 - **MDM profiles** — macOS plist at `com.anthropic.claudecode`
 - **Registry policies** — Windows `HKLM\SOFTWARE\Policies\ClaudeCode` (admin) and `HKCU\SOFTWARE\Policies\ClaudeCode` (user-level, lowest policy priority)
-- **File** — `managed-settings.json` (macOS: `/Library/Application Support/ClaudeCode/`, Linux/WSL: `/etc/claude-code/`, Windows: `C:\Program Files\ClaudeCode\`)
+- **File** — `managed-settings.json` and `managed-mcp.json` (macOS: `/Library/Application Support/ClaudeCode/`, Linux/WSL: `/etc/claude-code/`, Windows: `C:\Program Files\ClaudeCode\`)
 - **Drop-in directory** — `managed-settings.d/` alongside `managed-settings.json` for independent policy fragments (v2.1.83). Following the systemd convention, `managed-settings.json` is merged first as the base, then all `*.json` files in the drop-in directory are sorted alphabetically and merged on top. Later files override earlier ones for scalar values; arrays are concatenated and de-duplicated; objects are deep-merged. Hidden files starting with `.` are ignored. Use numeric prefixes to control merge order (e.g., `10-telemetry.json`, `20-security.json`)
 
 Within the managed tier, precedence is: server-managed > MDM/OS-level policies > file-based (`managed-settings.d/*.json` + `managed-settings.json`) > HKCU registry (Windows only). Only one managed source is used; sources do not merge across tiers. Within the file-based tier, drop-in files and the base file are merged together.
@@ -422,7 +422,7 @@ Configure Claude Code plugins and marketplaces.
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 
-**Marketplace source types:** `github`, `git`, `directory`, `hostPattern`, `settings`, `url`, `npm`, `file`. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository.
+**Marketplace source types:** `github`, `git`, `directory`, `hostPattern`, `settings`, `url` *(not in official docs — unverified)*, `npm` *(not in official docs — unverified)*, `file` *(not in official docs — unverified)*. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository.
 
 **Example:**
 ```json
@@ -761,6 +761,9 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS` | SessionEnd hook timeout in ms (replaces hard 1.5s limit) |
 | `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY` | Disable feedback survey prompts (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` | Disable terminal title updates (`1` to disable) |
+| `CLAUDE_CODE_NO_FLICKER` | Set to `1` to enable flicker-free alt-screen rendering. Eliminates visual flicker during fullscreen redraws (v2.1.88) |
+| `CLAUDE_CODE_SCROLL_SPEED` | Mouse wheel scroll multiplier for fullscreen rendering. Increase for faster scrolling, decrease for finer control |
+| `CLAUDE_CODE_DISABLE_MOUSE` | Set to `1` to disable mouse tracking in fullscreen rendering. Useful when mouse events interfere with terminal multiplexers or accessibility tools |
 | `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL` | Skip automatic IDE extension installation (`1` to skip) |
 | `CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS` | Debounce interval in ms for OTel headers helper script |
 | `CLAUDE_STREAM_IDLE_TIMEOUT_MS` | Timeout in ms before the streaming idle watchdog closes a stalled connection. Default: `90000` (90 seconds). Increase if long-running tools or slow networks cause premature timeout errors |
@@ -912,7 +915,6 @@ Set environment variables for all Claude Code sessions.
 - [Claude Code Settings JSON Schema](https://json.schemastore.org/claude-code-settings.json)
 - [Claude Code Changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 - [Claude Code GitHub Settings Examples](https://github.com/feiskyer/claude-code-settings)
-- [Eesel AI - Developer's Guide to settings.json](https://www.eesel.ai/blog/settings-json-claude-code)
 - [Shipyard - Claude Code CLI Cheatsheet](https://shipyard.build/blog/claude-code-cheat-sheet/)
 - [Claude Code Environment Variables Reference](https://code.claude.com/docs/en/env-vars)
 - [Claude Code Permissions Reference](https://code.claude.com/docs/en/permissions)
