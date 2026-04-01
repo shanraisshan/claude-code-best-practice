@@ -195,3 +195,17 @@
 | 8 | MED | Count Update | Update BMAD skills from 40 to 43 (32 bmm-skills + 11 core-skills; 3 new bmm-skills added including PRFAQ) | COMPLETE (updated README table) |
 | 9 | LOW | Count Verify | ECC commands 63→3, skills 135→30 — research agent only checked .claude/ dirs, missed root commands/ and .agents/skills/ breadth | INVALID (agent undercounting — keeping current values 63 commands, 135 skills) |
 | 10 | LOW | Count Verify | Superpowers agents 5→8 — agent counted 1 explicit + 7 implicit sub-agents, but v5.0.6 replaced subagent review loops with inline self-review | ON HOLD (contradictory signals — v5.0.6 reduced review agents while brainstorm added new ones, needs manual verification) |
+
+---
+
+## [2026-04-01 12:35 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 127k to 129k (128,925 actual) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update ECC ★ from 124k to 129k (128,606 actual — neck-and-neck with Superpowers) | COMPLETE (updated README table) |
+| 3 | HIGH | Count Update | Update ECC agents 30→36, commands 63→71, skills 135→143 (6 new agents incl. gan-evaluator/generator/planner, cpp/kotlin/flutter reviewers; 8 new commands; 8 new skills) | COMPLETE (updated README table) |
+| 4 | MED | Star Update | Update gstack ★ from 59k to 60k (60,036 actual — v0.15.0 /checkpoint, /health, cross-session timeline) | COMPLETE (updated README table) |
+| 5 | MED | Count Update | Update gstack skills 32→33 (v0.15.0 added /checkpoint and /health, but some consolidated — net +1) | COMPLETE (updated README table) |
+| 6 | LOW | Count Update | Update CE commands 4→3 (.claude/commands/ now empty; 3 coding-tutor commands remain), skills 42→40 (39 CE + 1 CT) | COMPLETE (updated README table) |
+| 7 | LOW | Count Verify | BMAD skills 43→34 — agent counted from module-help.csv (25 bmm + 9 core), previous directory counts found 43 (32 bmm + 11 core) | ON HOLD (agent likely undercounting — module-help.csv may not list all skills; keeping 43 until manual verification) |
