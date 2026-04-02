@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2001%2C%202026%2012%3A27%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2002%2C%202026%209%3A13%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Claude Code subagents — frontmatter fields and official built-in agent types.
@@ -33,20 +33,19 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 | `effort` | string | No | Effort level override when this subagent is active: `low`, `medium`, `high`, `max`. Default: inherits from session |
 | `isolation` | string | No | Set to `"worktree"` to run in a temporary git worktree (auto-cleaned if no changes) |
 | `initialPrompt` | string | No | Auto-submitted as the first user turn when this agent runs as the main session agent (via `--agent` or the `agent` setting). Commands and skills are processed. Prepended to any user-provided prompt |
-| `color` | string | No | CLI output color for visual distinction (e.g., `green`, `magenta`). Functional but absent from official frontmatter table — documented in interactive quickstart only |
+| `color` | string | No | CLI output color for visual distinction (e.g., `green`, `magenta`) |
 
 ---
 
-## ![Official](../!/tags/official.svg) **(6)**
+## ![Official](../!/tags/official.svg) **(5)**
 
 | # | Agent | Model | Tools | Description |
 |---|-------|-------|-------|-------------|
 | 1 | `general-purpose` | inherit | All | Complex multi-step tasks — the default agent type for research, code search, and autonomous work |
 | 2 | `Explore` | haiku | Read-only (no Write, Edit) | Fast codebase search and exploration — optimized for finding files, searching code, and answering codebase questions |
 | 3 | `Plan` | inherit | Read-only (no Write, Edit) | Pre-planning research in plan mode — explores the codebase and designs implementation approaches before writing code |
-| 4 | `Bash` | inherit | Bash | Running terminal commands in a separate context |
-| 5 | `statusline-setup` | sonnet | Read, Edit | Configures the user's Claude Code status line setting |
-| 6 | `claude-code-guide` | haiku | Glob, Grep, Read, WebFetch, WebSearch | Answers questions about Claude Code features, Agent SDK, and Claude API |
+| 4 | `statusline-setup` | sonnet | Read, Edit | Configures the user's Claude Code status line setting |
+| 5 | `claude-code-guide` | haiku | Glob, Grep, Read, WebFetch, WebSearch | Answers questions about Claude Code features, Agent SDK, and Claude API |
 
 ---
 

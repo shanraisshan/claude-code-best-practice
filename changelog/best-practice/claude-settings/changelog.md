@@ -286,3 +286,19 @@
 | 6 | MED | New Env Var | Add `MCP_CONNECTION_NONBLOCKING` to env vars table — set to `true` in `-p` mode to skip MCP connection wait. v2.1.89 changelog only, not yet on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_AGENT_SDK_MCP_NO_PREFIX with changelog annotation) |
 | 7 | MED | Ownership Boundary | `CLAUDE_CODE_SIMPLE` is in CLI startup flags file as startup-only, but official /en/env-vars page lists it as configurable. Reconcile ownership | ✅ COMPLETE (added to settings report env table; updated CLI file to cross-reference settings report) |
 | 8 | MED | Example Update | Update Quick Reference example to include `showThinkingSummaries` if added | ✅ COMPLETE (added showThinkingSummaries: true to example) |
+
+---
+
+## [2026-04-02 09:24 PM PKT] Claude Code v2.1.90
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Type + Description | Fix `forceLoginOrgUUID`: type from `string` to `string \| string[]`. Expand description to include array behavior (any listed org accepted without pre-selection), managed settings enforcement (login fails if account not in listed org), and empty array fail-closed behavior | ✅ COMPLETE (type updated to string \| array, description expanded with array behavior, managed enforcement, fail-closed semantics, example updated) |
+| 2 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_OAUTH_TOKEN`, `CLAUDE_CODE_OAUTH_REFRESH_TOKEN`, `CLAUDE_CODE_OAUTH_SCOPES` to Common Environment Variables table. All confirmed on official /en/env-vars page | ✅ COMPLETE (added 3 OAuth env vars after ANTHROPIC_AUTH_TOKEN) |
+| 3 | HIGH | Changed Description + Annotation | Update `showThinkingSummaries`: remove "(in v2.1.89 changelog, not yet on official settings page)" annotation — now confirmed on official settings page. Update description to match official: "When unset or false (default in interactive mode), thinking blocks are redacted by the API and shown as a collapsed stub. Redaction only changes what you see, not what the model generates" | ✅ COMPLETE (annotation removed, description updated to match official docs) |
+| 4 | HIGH | Sandbox Cross-Merge | Update `sandbox.filesystem.allowWrite` description to add "Also merged with paths from `Edit(...)` allow permission rules". Update `denyWrite` to add "Also merged with paths from `Edit(...)` deny permission rules". Update `denyRead` to add "Also merged with paths from `Read(...)` deny permission rules". Confirmed on official settings page | ✅ COMPLETE (cross-merge behavior added to all 3 filesystem entries) |
+| 5 | HIGH | Changed Description | Simplify `cleanupPeriodDays` description: remove contradiction note, align with official docs which now say "minimum 1, Setting to 0 is rejected with a validation error". Old behavior no longer documented on official page | ✅ COMPLETE (contradiction note removed, description aligned with official docs, added --no-session-persistence alternative) |
+| 6 | HIGH | Version Bump | Update report version badge from v2.1.89 to v2.1.90 | ✅ COMPLETE (badge, header version, and header text updated) |
+| 7 | MED | New Env Var | Add `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` to env vars table — keep marketplace cache on git pull failure (v2.1.90 changelog, not yet on official /en/env-vars page) | ✅ COMPLETE (added after CLAUDE_CODE_SYNC_PLUGIN_INSTALL_TIMEOUT_MS with changelog annotation) |
+| 8 | MED | Hook Redirect Count | Update redirect text from "all 19 hook events" to "all 25 hook events" per official hooks page count | ✅ COMPLETE (updated count in hooks redirect section) |
+| 9 | MED | Ownership Boundary | `CLAUDE_CODE_TMPDIR` is on official /en/env-vars page as configurable via `env` key, but CLI startup flags report lists it as startup-only. Reconcile ownership | ✅ COMPLETE (added to settings report env table; updated CLI flags file to cross-reference settings report) |
