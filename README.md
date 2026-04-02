@@ -355,6 +355,7 @@ All major workflows converge on the same architectural pattern: **Research → P
   <a href="reports/claude-agent-command-skill.md"><img src="https://img.shields.io/badge/Agents_vs_Commands_vs_Skills-555?style=for-the-badge" alt="Agents vs Commands vs Skills"></a>
   <br>
   <a href="reports/llm-day-to-day-degradation.md"><img src="https://img.shields.io/badge/LLM_Degradation-555?style=for-the-badge" alt="LLM Degradation"></a>
+  <a href="reports/claude-hooks-patterns.md"><img src="https://img.shields.io/badge/Hooks_Patterns-555?style=for-the-badge" alt="Hooks Patterns"></a>
 </p>
 
 <p align="center">
