@@ -57,6 +57,16 @@ practice makes claude perfect
 | [**Git Worktrees**](https://code.claude.com/docs/en/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees) | built-in | [![Best Practice](!/tags/best-practice.svg)](https://x.com/bcherny/status/2025007393290272904) Isolated git branches for parallel development — each agent gets its own working copy |
 | [**Ralph Wiggum Loop**](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum) | plugin | [![Best Practice](!/tags/best-practice.svg)](https://github.com/ghuntley/how-to-ralph-wiggum) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/novel-llm-26) Autonomous development loop for long-running tasks — iterates until completion |
 
+## Claude Cost / Token Savings
+
+Tools that help reduce Claude Code context usage, token volume, or overall cost.
+
+- [rtk](https://github.com/rtk-ai/rtk) - CLI output filtering and compression to reduce noisy terminal context sent back into Claude Code.
+- [headroom-desktop](https://github.com/gglucass/headroom-desktop) - Local-first macOS desktop app that routes Claude Code through a managed optimization pipeline and surfaces savings analytics.
+- [headroom](https://github.com/chopratejas/headroom) - Prompt and tool-output optimization library focused on preserving usefulness while shrinking token usage.
+- [distill](https://github.com/samuelfaj/distill) - Context distillation utility for compressing and refining information before it reaches the model.
+- [memstack](https://github.com/cwinvestments/memstack) - Memory and context management tooling to keep long-running Claude workflows leaner and more efficient.
+
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
