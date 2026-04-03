@@ -228,3 +228,17 @@
 | 10 | MED | Star Update | Update OpenSpec ★ from 36k to 37k (36,600 actual) | COMPLETE (updated README table) |
 | 11 | MED | Star Update | Update CE ★ from 12k to 13k (12,600 actual) | COMPLETE (updated README table) |
 | 12 | MED | Count Update | Update CE agents 48→49, commands 3→4, skills 40→42 (triage-prs command added; +1 agent, +2 skills) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-03 10:56 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 133k to 136k (135,765 actual — widening lead over Superpowers) | COMPLETE (updated README table) |
+| 2 | HIGH | Count Update | Update ECC agents 36→38, commands 68→75, skills 152→156 (NestJS patterns, Jira integration, C#/Dart support, web frontend rules) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Superpowers ★ from 132k to 134k (133,718 actual — v5.0.7 Copilot CLI support, contributor guardrails) | COMPLETE (updated README table) |
+| 4 | MED | Star Update | Update gstack ★ from 62k to 63k (63,065 actual — Session Intelligence Layer, AquaVoice aliases) | COMPLETE (updated README table) |
+| 5 | MED | Count Update | Update gstack skills from 33 to 31 (31 root-level SKILL.md dirs confirmed; checkpoint/health may be subcommands) | COMPLETE (updated README table) |
+| 6 | LOW | Count Update | Update GSD commands from 59 to 60 (v1.31.0: /gsd:docs-update added) | COMPLETE (updated README table) |
+| 7 | LOW | Count Update | Update BMAD skills from 40 to 39 (28 bmm-skills + 11 core-skills; minor consolidation) | COMPLETE (updated README table) |

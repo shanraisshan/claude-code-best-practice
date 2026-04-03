@@ -137,3 +137,11 @@ No drift detected — report is fully in sync with official docs. All 16 frontma
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Agent | Remove `Bash` from Official Claude Agents table — official docs list 5 built-in agents, `Bash` is not among them | ✅ COMPLETE (removed Bash row, renumbered 6→5 agents) |
 | 2 | LOW | Field Docs | Update `color` field description — remove "absent from official frontmatter table" note; `color` now appears in official supported frontmatter fields table | ✅ COMPLETE (removed unofficial note from color field description) |
+
+---
+
+## [2026-04-03 08:30 PM PKT] Claude Code v2.1.91
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Field Docs | Update `permissionMode` field description — add `auto` as a valid value (official docs now list: `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, `plan`) | ✅ COMPLETE (added `auto` between `acceptEdits` and `dontAsk` in permissionMode description) |

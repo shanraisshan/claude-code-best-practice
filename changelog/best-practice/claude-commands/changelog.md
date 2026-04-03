@@ -166,3 +166,11 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/permissions` — official docs expanded to describe interactive dialog with scope rules, directory management, and auto mode denial review | ✅ COMPLETE (updated description to match official docs) |
 | 2 | MED | New Alias | Add `/bashes` alias to `/tasks` command per official docs | ✅ COMPLETE (added "Alias: /bashes" to /tasks at #27 in Debug tag) |
+
+---
+
+## [2026-04-03 08:34 PM PKT] Claude Code v2.1.91
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/powerup` to Config tag — Discover Claude Code features through quick interactive lessons with animated demos | ✋ ON HOLD (pending user approval) |

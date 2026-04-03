@@ -302,3 +302,13 @@
 | 7 | MED | New Env Var | Add `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` to env vars table — keep marketplace cache on git pull failure (v2.1.90 changelog, not yet on official /en/env-vars page) | ✅ COMPLETE (added after CLAUDE_CODE_SYNC_PLUGIN_INSTALL_TIMEOUT_MS with changelog annotation) |
 | 8 | MED | Hook Redirect Count | Update redirect text from "all 19 hook events" to "all 25 hook events" per official hooks page count | ✅ COMPLETE (updated count in hooks redirect section) |
 | 9 | MED | Ownership Boundary | `CLAUDE_CODE_TMPDIR` is on official /en/env-vars page as configurable via `env` key, but CLI startup flags report lists it as startup-only. Reconcile ownership | ✅ COMPLETE (added to settings report env table; updated CLI flags file to cross-reference settings report) |
+
+---
+
+## [2026-04-03 08:44 PM PKT] Claude Code v2.1.91
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `disableSkillShellExecution` to General Settings table — boolean, disable inline shell execution in skills, custom slash commands, and plugin commands. Confirmed in v2.1.91 changelog. Not yet on official settings page or in JSON schema | ✅ COMPLETE (added after showThinkingSummaries with changelog annotation) |
+| 2 | HIGH | Version Bump | Update report version badge from v2.1.90 to v2.1.91 | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 3 | MED | Changed Default | Fix `teammateMode` default from `"auto"` to `"in-process"` per official settings page. Description unchanged | ✅ COMPLETE (default updated in Global Config Settings table) |

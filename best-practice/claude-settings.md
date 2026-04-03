@@ -1,8 +1,8 @@
 # Claude Code Settings Reference
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2002%2C%202026%209%3A24%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.90-blue?style=flat&labelColor=555)
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2003%2C%202026%208%3A44%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.91-blue?style=flat&labelColor=555)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.90, Claude Code exposes **60+ settings** and **170+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.91, Claude Code exposes **60+ settings** and **170+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -80,6 +80,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `showClearContextOnPlanAccept` | boolean | `false` | Show the "clear context" option on the plan accept screen. Set to `true` to restore the option (hidden by default since v2.1.81) |
 | `disableDeepLinkRegistration` | string | - | Set to `"disable"` to prevent Claude Code from registering the `claude-cli://` protocol handler with the operating system on startup. Deep links let external tools open a Claude Code session with a pre-filled prompt via `claude-cli://open?q=...`. Useful in environments where protocol handler registration is restricted or managed separately |
 | `showThinkingSummaries` | boolean | `false` | Show extended thinking summaries in interactive sessions. When unset or `false` (default in interactive mode), thinking blocks are redacted by the API and shown as a collapsed stub. Redaction only changes what you see, not what the model generates — to reduce thinking spend, lower the budget or disable thinking instead. Non-interactive mode (`-p`) and SDK callers always receive summaries regardless of this setting |
+| `disableSkillShellExecution` | boolean | `false` | Disable inline shell execution in skills, custom slash commands, and plugin commands. When `true`, shell commands embedded in skill/command/plugin markdown are not executed *(in v2.1.91 changelog, not yet on official settings page)* |
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 
 **Example:**
@@ -561,7 +562,7 @@ These display preferences are stored in `~/.claude.json`, **not** `settings.json
 | `editorMode` | string | `"normal"` | Key binding mode for the input prompt: `"normal"` or `"vim"`. Written automatically when you run `/vim`. Appears in `/config` as **Key binding mode** |
 | `showTurnDuration` | boolean | `true` | Show turn duration messages after responses (e.g., "Cooked for 1m 6s"). Edit `~/.claude.json` directly to change |
 | `terminalProgressBarEnabled` | boolean | `true` | Show the terminal progress bar in supported terminals (ConEmu, Ghostty 1.2.0+, and iTerm2 3.6.6+). Appears in `/config` as **Terminal progress bar** |
-| `teammateMode` | string | `"auto"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"`, or `"tmux"`. See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode) |
+| `teammateMode` | string | `"in-process"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"`, or `"tmux"`. See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode) |
 
 ### Status Line Configuration
 

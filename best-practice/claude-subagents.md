@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2002%2C%202026%209%3A13%20PM%20PKT-white?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2003%2C%202026%208%3A30%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Claude Code subagents — frontmatter fields and official built-in agent types.
@@ -23,7 +23,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 | `tools` | string/list | No | Comma-separated allowlist of tools (e.g., `Read, Write, Edit, Bash`). Inherits all tools if omitted. Supports `Agent(agent_type)` syntax to restrict spawnable subagents; the older `Task(agent_type)` alias still works |
 | `disallowedTools` | string/list | No | Tools to deny, removed from inherited or specified list |
 | `model` | string | No | Model alias: `haiku`, `sonnet`, `opus`, or `inherit` (default: `inherit`) |
-| `permissionMode` | string | No | Permission mode: `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, or `plan` |
+| `permissionMode` | string | No | Permission mode: `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, or `plan` |
 | `maxTurns` | integer | No | Maximum number of agentic turns before the subagent stops |
 | `skills` | list | No | Skill names to preload into agent context at startup (full content injected, not just made available) |
 | `mcpServers` | list | No | MCP servers for this subagent — server name strings or inline `{name: config}` objects |
