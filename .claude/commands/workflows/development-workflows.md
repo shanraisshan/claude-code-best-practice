@@ -1,14 +1,14 @@
 ---
-description: Update the DEVELOPMENT WORKFLOWS table by researching all 9 workflow repos in parallel
+description: Update the DEVELOPMENT WORKFLOWS table by researching all 10 workflow repos in parallel
 ---
 
 # Workflow — Development Workflows
 
-Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 9 repos in parallel. Launch agents, merge results, present changes, update table if approved.
+Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 10 repos in parallel. Launch agents, merge results, present changes, update table if approved.
 
 ---
 
-## The 9 Repos
+## The 10 Repos
 
 | # | Repo | Owner |
 |---|------|-------|
@@ -21,6 +21,7 @@ Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 9 repos in 
 | 7 | `garrytan/gstack` | Garry Tan (YC CEO) |
 | 8 | `bmad-code-org/BMAD-METHOD` | BMAD Code Org |
 | 9 | `EveryInc/compound-engineering-plugin` | Every.to |
+| 10 | `Yeachan-Heo/oh-my-claudecode` | Yeachan Heo (@bellman_ych) |
 
 ---
 
@@ -85,9 +86,9 @@ Read these files:
 > CHANGES: <changes or "No significant changes">
 > ```
 
-### Agent 2 (6 repos)
+### Agent 2 (7 repos)
 
-> Research these 6 Claude Code workflow repositories:
+> Research these 7 Claude Code workflow repositories:
 >
 > **Repo 1: Fission-AI/OpenSpec** (https://github.com/Fission-AI/OpenSpec)
 > **Repo 2: humanlayer/humanlayer** (https://github.com/humanlayer/humanlayer)
@@ -95,13 +96,14 @@ Read these files:
 > **Repo 4: garrytan/gstack** (https://github.com/garrytan/gstack)
 > **Repo 5: bmad-code-org/BMAD-METHOD** (https://github.com/bmad-code-org/BMAD-METHOD)
 > **Repo 6: EveryInc/compound-engineering-plugin** (https://github.com/EveryInc/compound-engineering-plugin)
+> **Repo 7: Yeachan-Heo/oh-my-claudecode** (https://github.com/Yeachan-Heo/oh-my-claudecode)
 >
 > For EACH repo, return:
 >
 > 1. **Stars** — use GitHub API `https://api.github.com/repos/{owner}/{repo}`, read `stargazers_count`. Round to `k`.
-> 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For BMAD, count agent-persona skills in `src/bmm-skills/`. For compound-engineering-plugin, count `.md` files across all subdirectories of `plugins/compound-engineering/agents/`.
-> 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For gstack, skills are root-level directories with SKILL.md. For BMAD, count all skills in `src/bmm-skills/` and `src/core-skills/`. For compound-engineering-plugin, count folders in `plugins/compound-engineering/skills/` plus `plugins/coding-tutor/skills/`.
-> 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For GSD, count in `commands/gsd/`. For OpenSpec, count `/opsx:*` commands. For BMAD, count is 0 (commands generated at install time). For compound-engineering-plugin, count `.md` files in `.claude/commands/` plus `plugins/coding-tutor/commands/`.
+> 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For BMAD, count agent-persona skills in `src/bmm-skills/`. For compound-engineering-plugin, count `.md` files across all subdirectories of `plugins/compound-engineering/agents/`. For oh-my-claudecode, count `.md` files in `agents/` at repo root.
+> 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For gstack, skills are root-level directories with SKILL.md. For BMAD, count all skills in `src/bmm-skills/` and `src/core-skills/`. For compound-engineering-plugin, count folders in `plugins/compound-engineering/skills/` plus `plugins/coding-tutor/skills/`. For oh-my-claudecode, count folders in `skills/` at repo root.
+> 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For GSD, count in `commands/gsd/`. For OpenSpec, count `/opsx:*` commands. For BMAD, count is 0 (commands generated at install time). For compound-engineering-plugin, count `.md` files in `.claude/commands/` plus `plugins/coding-tutor/commands/`. For oh-my-claudecode, count is 0 (skills serve as slash commands).
 > 5. **Plan implementation** — find the Plan/planning agent, skill, or command. Return its name, type (agent/skill/command), and file path.
 > 6. **Uniqueness tags** — 2-3 short tags (2-3 words each) capturing what makes this workflow unique.
 > 7. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
