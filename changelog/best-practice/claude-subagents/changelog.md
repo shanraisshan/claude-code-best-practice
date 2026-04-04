@@ -145,3 +145,9 @@ No drift detected — report is fully in sync with official docs. All 16 frontma
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | LOW | Field Docs | Update `permissionMode` field description — add `auto` as a valid value (official docs now list: `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, `plan`) | ✅ COMPLETE (added `auto` between `acceptEdits` and `dontAsk` in permissionMode description) |
+
+---
+
+## [2026-04-04 10:43 PM PKT] Claude Code v2.1.92
+
+No drift detected — report is fully in sync with official docs. All 16 frontmatter fields and 5 built-in agents match.
