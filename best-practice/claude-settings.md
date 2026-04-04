@@ -1,4 +1,4 @@
-# Claude Code Settings Reference
+# Settings Best Practice
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2003%2C%202026%208%3A44%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.91-blue?style=flat&labelColor=555)
 
