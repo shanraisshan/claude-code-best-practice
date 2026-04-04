@@ -242,10 +242,11 @@ All major workflows converge on the same architectural pattern: **Research → P
 | use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review | |
 | agentic search (glob + grep) beats RAG — Claude Code tried and discarded vector databases because code drifts out of sync and permissions are complex | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3095) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3095) |
 
-<a id="tips-utilities"></a>■ **Utilities (5)**
+<a id="tips-utilities"></a>■ **Utilities (6)**
 
 | Tip | Source |
 |-----|--------|
+| [Claude Code Launchpad](https://github.com/noambrand/kivun-terminal) — **the professional suite for Claude Code** — auto-setup, interactive folder selection (skip 'cd'), customized UI with status bar, and desktop shortcut. Zero to working in 2 minutes. | |
 | [iTerm](https://iterm2.com/)/[Ghostty](https://ghostty.org/)/[tmux](https://github.com/tmux/tmux) terminals instead of IDE ([VS Code](https://code.visualstudio.com/)/[Cursor](https://www.cursor.com/)) | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742753971769626) |
 | [/voice](https://code.claude.com/docs/en/voice-dictation) or [Wispr Flow](https://wisprflow.ai) for voice prompting (10x productivity) | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2038454362226467112) |
 | [claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks) for claude feedback | ![Shayan](!/tags/community-shayan.svg) |
