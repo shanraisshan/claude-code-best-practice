@@ -3,14 +3,15 @@
 Codex CLI Hook Handler
 =============================================
 This script handles hooks from Codex CLI and plays sounds.
-Codex CLI supports 3 hooks:
-  1. agent-turn-complete - via config.toml (notify)
-  2. SessionStart - via hooks.json (v0.114.0+)
-  3. Stop - via hooks.json (v0.114.0+)
+Codex CLI supports 5 hooks:
+  1. SessionStart - via hooks.json (v0.114.0+)
+  2. PreToolUse - via hooks.json (v0.117.0+)
+  3. PostToolUse - via hooks.json (v0.117.0+)
+  4. Stop - via hooks.json (v0.114.0+)
+  5. UserPromptSubmit - via hooks.json (v0.116.0+)
 
 Input:
-  - agent-turn-complete hook: JSON payload passed as CLI argument (sys.argv[1])
-  - SessionStart/Stop hooks: --hook <hook-name> flag
+  - All hooks use --hook <hook-name> flag via hooks.json
 """
 
 import sys
@@ -29,16 +30,20 @@ except ImportError:
 # ===== HOOK EVENT TO SOUND MAPPING =====
 # Sound name -> resolves to sounds/<name>/<name>.{mp3|wav}
 HOOK_SOUND_MAP = {
-    "agent-turn-complete": "agent-turn-complete",
     "SessionStart": "SessionStart",
+    "PreToolUse": "PreToolUse",
+    "PostToolUse": "PostToolUse",
     "Stop": "Stop",
+    "UserPromptSubmit": "UserPromptSubmit",
 }
 
 # ===== HOOK EVENT TO CONFIG KEY MAPPING =====
 HOOK_CONFIG_MAP = {
-    "agent-turn-complete": "disableAgentTurnCompleteHook",
     "SessionStart": "disableSessionStartHook",
+    "PreToolUse": "disablePreToolUseHook",
+    "PostToolUse": "disablePostToolUseHook",
     "Stop": "disableStopHook",
+    "UserPromptSubmit": "disableUserPromptSubmitHook",
 }
 
 
@@ -89,7 +94,7 @@ def play_sound(sound_name):
     Play a sound file for the given sound name.
 
     Args:
-        sound_name: Name of the sound file (e.g., "agent-turn-complete")
+        sound_name: Name of the sound file (e.g., "SessionStart")
                    The file should be at .codex/hooks/sounds/{name}/{name}.{mp3|wav}
 
     Returns:
@@ -208,12 +213,12 @@ def is_hook_disabled(event_name):
     Uses fallback logic: hooks-config.local.json -> hooks-config.json
 
     Args:
-        event_name: The event name (e.g., "agent-turn-complete", "SessionStart", "Stop")
+        event_name: The event name (e.g., "SessionStart", "Stop", "UserPromptSubmit")
 
     Returns:
         True if the hook is disabled, False otherwise
     """
-    config_key = HOOK_CONFIG_MAP.get(event_name, "disableAgentTurnCompleteHook")
+    config_key = HOOK_CONFIG_MAP.get(event_name)
     return get_config_value(config_key, default=False)
 
 
@@ -272,9 +277,7 @@ def get_session_context():
 def parse_args(argv):
     """
     Parse command line arguments.
-    Supports two calling conventions:
-      1. agent-turn-complete hook (config.toml): hooks.py '{"type":"agent-turn-complete"}'
-      2. SessionStart/Stop hooks (hooks.json): hooks.py --hook SessionStart
+    All hooks use: hooks.py --hook <hook-name>
 
     Args:
         argv: sys.argv[1:] list
@@ -285,7 +288,7 @@ def parse_args(argv):
     if not argv:
         return None, None
 
-    # New hooks.json calling convention: --hook <event-type>
+    # hooks.json calling convention: --hook <event-type>
     # The hooks engine passes JSON via stdin
     if argv[0] == "--hook" and len(argv) >= 2:
         event_type = argv[1]
@@ -301,24 +304,19 @@ def parse_args(argv):
             pass
         return event_type, input_data
 
-    # agent-turn-complete hook: JSON as CLI argument
-    try:
-        input_data = json.loads(argv[0])
-        event_type = input_data.get("type", "")
-        return event_type, input_data
-    except json.JSONDecodeError as e:
-        print(f"Error parsing JSON input: {e}", file=sys.stderr)
-        return None, None
+    return None, None
 
 
 def main():
     """
     Main program - runs when Codex CLI triggers a hook.
 
-    Supports 3 hooks:
-    1. agent-turn-complete (config.toml): Plays sound on agent-turn-complete
-    2. SessionStart (hooks.json): Outputs context to stdout + plays sound
-    3. Stop (hooks.json): Plays sound on session end
+    Supports 5 hooks:
+    1. SessionStart (hooks.json): Outputs context to stdout + plays sound
+    2. PreToolUse (hooks.json): Plays sound before a tool executes
+    3. PostToolUse (hooks.json): Plays sound after a tool completes
+    4. Stop (hooks.json): Plays sound on session end
+    5. UserPromptSubmit (hooks.json): Plays sound when user submits a prompt
     """
     try:
         event_type, input_data = parse_args(sys.argv[1:])
