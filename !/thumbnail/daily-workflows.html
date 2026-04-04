@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How I Run Daily Workflows</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90' width='140' height='126'%3E%3Cstyle%3E.claude-body%7Banimation:jump .5s ease-in-out infinite;transform-origin:center bottom%7D.shadow%7Banimation:shadow-scale .5s ease-in-out infinite%7D.left-arm%7Banimation:wave-left .5s ease-in-out infinite;transform-origin:right center%7D.right-arm%7Banimation:wave-right .5s ease-in-out infinite;transform-origin:left center%7D.left-ear%7Banimation:ear-bounce .5s ease-in-out infinite;transform-origin:center bottom%7D.right-ear%7Banimation:ear-bounce .5s ease-in-out infinite .1s;transform-origin:center bottom%7D@keyframes jump%7B0%25,100%25%7Btransform:translateY(0) scaleY(1) scaleX(1)%7D30%25%7Btransform:translateY(-16px) scaleY(1.1) scaleX(.95)%7D50%25%7Btransform:translateY(-18px) scaleY(1.05) scaleX(.98)%7D80%25%7Btransform:translateY(-5px) scaleY(.95) scaleX(1.05)%7D%7D@keyframes shadow-scale%7B0%25,100%25%7Btransform:scaleX(1);opacity:.25%7D50%25%7Btransform:scaleX(.4);opacity:.08%7D%7D@keyframes wave-left%7B0%25,100%25%7Btransform:rotate(0)%7D50%25%7Btransform:rotate(-25deg)%7D%7D@keyframes wave-right%7B0%25,100%25%7Btransform:rotate(0)%7D50%25%7Btransform:rotate(25deg)%7D%7D@keyframes ear-bounce%7B0%25,100%25%7Btransform:scaleY(1)%7D40%25%7Btransform:scaleY(1.2)%7D60%25%7Btransform:scaleY(.85)%7D%7D%3C/style%3E%3Cellipse class='shadow' cx='50' cy='82' rx='22' ry='5' fill='%23000'/%3E%3Cg class='claude-body'%3E%3Crect class='left-ear' x='22' y='10' width='8' height='14' fill='%23E07C4C'/%3E%3Crect class='right-ear' x='70' y='10' width='8' height='14' fill='%23E07C4C'/%3E%3Crect x='18' y='24' width='64' height='4' fill='%23E07C4C'/%3E%3Crect x='14' y='28' width='72' height='32' fill='%23E07C4C'/%3E%3Crect x='30' y='34' width='8' height='10' fill='%23000'/%3E%3Crect x='62' y='34' width='8' height='10' fill='%23000'/%3E%3Crect class='left-arm' x='2' y='36' width='12' height='8' fill='%23E07C4C'/%3E%3Crect class='right-arm' x='86' y='36' width='12' height='8' fill='%23E07C4C'/%3E%3Crect x='24' y='60' width='12' height='14' fill='%23E07C4C'/%3E%3Crect x='64' y='60' width='12' height='14' fill='%23E07C4C'/%3E%3C/g%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -23,6 +24,44 @@
             min-height: 100vh;
             text-align: center;
             padding: 40px;
+            position: relative;
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px 30px;
+        }
+
+        .top-bar-left {
+            text-align: left;
+        }
+
+        .top-bar-left .repo-name {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1f2328;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #d1d9e0;
+        }
+
+        .top-bar-left .repo-tagline {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-size: 0.95rem;
+            color: #656d76;
+            margin-top: 6px;
+            font-weight: 400;
+        }
+
+        .trending-badge img {
+            height: 55px;
+            width: auto;
         }
 
         .header-row {
@@ -97,6 +136,15 @@
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="repo-name">claude-code-best-practice</div>
+            <div class="repo-tagline">practice makes claude perfect</div>
+        </div>
+        <div class="trending-badge">
+            <img src="../root/github-trending-day.svg" alt="GitHub Trending #1 Repository Of The Day">
+        </div>
+    </div>
     <div class="header-row">
     <div class="title-logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="160" height="126">
