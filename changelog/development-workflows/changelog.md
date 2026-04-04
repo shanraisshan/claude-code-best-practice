@@ -242,3 +242,16 @@
 | 5 | MED | Count Update | Update gstack skills from 33 to 31 (31 root-level SKILL.md dirs confirmed; checkpoint/health may be subcommands) | COMPLETE (updated README table) |
 | 6 | LOW | Count Update | Update GSD commands from 59 to 60 (v1.31.0: /gsd:docs-update added) | COMPLETE (updated README table) |
 | 7 | LOW | Count Update | Update BMAD skills from 40 to 39 (28 bmm-skills + 11 core-skills; minor consolidation) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-04 10:45 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Star Update | Update ECC ★ from 136k to 137k (137,404 actual) | COMPLETE (updated README table) |
+| 2 | MED | Star Update | Update Superpowers ★ from 134k to 135k (134,933 actual) | COMPLETE (updated README table) |
+| 3 | MED | Star Update | Update gstack ★ from 63k to 64k (63,841 actual — GStack Browser .app with CDP, anti-bot stealth) | COMPLETE (updated README table) |
+| 4 | MED | Star Update | Update GSD ★ from 47k to 48k (47,705 actual — v1.32.0 Trae/Kilo/Augment/Cline runtimes) | COMPLETE (updated README table) |
+| 5 | LOW | Star Update | Update BMAD ★ from 43k to 44k (43,538 actual) | COMPLETE (updated README table) |
+| 6 | LOW | Star Update | Update oh-my-claudecode ★ from 23k to 24k (23,709 actual — v4.10.2 HUD, Bedrock hardening) | COMPLETE (updated README table) |
