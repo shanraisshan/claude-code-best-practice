@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Run Daily Workflows</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .title-logo {
+            width: 160px;
+            height: 126px;
+            flex-shrink: 0;
+        }
+
+        .title-logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pixel-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 2.8rem;
+            color: #E07C4C;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 3.5rem;
+            color: #555;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .project-line {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .subtitle .how-i-run {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .subtitle .workflows {
+            display: inline-block;
+            color: #16a34a;
+            font-weight: 700;
+            background: linear-gradient(90deg, #16a34a 0%, #4ade80 50%, #16a34a 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer-seq 10s ease-in-out infinite;
+        }
+
+        @keyframes shimmer-seq {
+            0% { background-position: 200% 0; }
+            20% { background-position: -200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-row">
+    <div class="title-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="160" height="126">
+            <style>
+                .claude-body { animation: claude-jump 0.5s ease-in-out infinite; transform-origin: center bottom; }
+                .claude-shadow { animation: claude-shadow-scale 0.5s ease-in-out infinite; }
+                .claude-left-arm { animation: claude-wave-left 0.5s ease-in-out infinite; transform-origin: right center; }
+                .claude-right-arm { animation: claude-wave-right 0.5s ease-in-out infinite; transform-origin: left center; }
+                .claude-left-ear { animation: claude-ear-bounce 0.5s ease-in-out infinite; transform-origin: center bottom; }
+                .claude-right-ear { animation: claude-ear-bounce 0.5s ease-in-out infinite 0.1s; transform-origin: center bottom; }
+                @keyframes claude-jump { 0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); } 30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); } 50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); } 80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); } }
+                @keyframes claude-shadow-scale { 0%, 100% { transform: scaleX(1); opacity: 0.25; } 50% { transform: scaleX(0.4); opacity: 0.08; } }
+                @keyframes claude-wave-left { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-25deg); } }
+                @keyframes claude-wave-right { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(25deg); } }
+                @keyframes claude-ear-bounce { 0%, 100% { transform: scaleY(1); } 40% { transform: scaleY(1.2); } 60% { transform: scaleY(0.85); } }
+            </style>
+            <ellipse class="claude-shadow" cx="50" cy="82" rx="22" ry="5" fill="#000"/>
+            <g class="claude-body">
+                <rect class="claude-left-ear" x="22" y="10" width="8" height="14" fill="#E07C4C"/>
+                <rect class="claude-right-ear" x="70" y="10" width="8" height="14" fill="#E07C4C"/>
+                <rect x="18" y="24" width="64" height="4" fill="#E07C4C"/>
+                <rect x="14" y="28" width="72" height="32" fill="#E07C4C"/>
+                <rect x="30" y="34" width="8" height="10" fill="#000000"/>
+                <rect x="62" y="34" width="8" height="10" fill="#000000"/>
+                <rect class="claude-left-arm" x="2" y="36" width="12" height="8" fill="#E07C4C"/>
+                <rect class="claude-right-arm" x="86" y="36" width="12" height="8" fill="#E07C4C"/>
+                <rect x="24" y="60" width="12" height="14" fill="#E07C4C"/>
+                <rect x="64" y="60" width="12" height="14" fill="#E07C4C"/>
+            </g>
+        </svg>
+    </div>
+    <div class="pixel-title">CLAUDE CODE<br>BEST PRACTICE</div>
+    </div>
+    <p class="subtitle"><span class="how-i-run">HOW I RUN DAILY</span> <span class="workflows">WORKFLOWS</span></p>
+    <p class="project-line">Explained using live project <strong>Claude Code Best Practice</strong></p>
+    <p class="footer">As of Claude Code v2.1.91 | April 04, 2026</p>
+</body>
+</html>
