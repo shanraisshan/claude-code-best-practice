@@ -38,7 +38,6 @@
       "Bash(fdisk *)",
       "Bash(chmod *)",
       "Bash(chown *)",
-      "Bash(git *)",
       "Bash(npm *)",
       "Bash(pip *)",
       "Bash(pip3 *)",
@@ -84,7 +83,7 @@
   },
   "enableAllProjectMcpServers": true,
   "disableAllHooks": false,
-"hooks": {
+  "hooks": {
     "PreToolUse": [
       {
         "hooks": [
@@ -283,6 +282,19 @@
         ]
       }
     ],
+    "TaskCreated": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "TaskCreated"
+          }
+        ]
+      }
+    ],
     "TaskCompleted": [
       {
         "hooks": [
@@ -370,6 +382,59 @@
             "timeout": 5000,
             "async": true,
             "statusMessage": "ElicitationResult"
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "StopFailure"
+          }
+        ]
+      }
+    ],
+    "CwdChanged": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "CwdChanged"
+          }
+        ]
+      }
+    ],
+    "FileChanged": [
+      {
+        "matcher": ".envrc|.env|.env.local",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "FileChanged"
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "PermissionDenied"
           }
         ]
       }
