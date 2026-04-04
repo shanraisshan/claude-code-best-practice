@@ -405,14 +405,14 @@ All major workflows converge on the same architectural pattern: **Research → P
 
 ![Developed by](!/tags/developed-by.svg)
 
-> | Workflow | Description |
-> |----------|-------------|
-> | /workflows:development-workflows | Update the DEVELOPMENT WORKFLOWS table and cross-workflow analysis report by researching all 10 workflow repos in parallel |
-> | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
-> | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
-> | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |
-> | /workflows:best-practice:workflow-claude-commands | Track Claude Code commands report changes and find what needs updating |
-> | /workflows:best-practice:workflow-claude-skills | Track Claude Code skills report changes and find what needs updating |
+> | # | Workflow | Description |
+> |---|----------|-------------|
+> | 1 | /workflows:development-workflows | Update the DEVELOPMENT WORKFLOWS table and cross-workflow analysis report by researching all 10 workflow repos in parallel |
+> | 2 | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
+> | 3 | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
+> | 4 | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |
+> | 5 | /workflows:best-practice:workflow-claude-commands | Track Claude Code commands report changes and find what needs updating |
+> | 6 | /workflows:best-practice:workflow-claude-skills | Track Claude Code skills report changes and find what needs updating |
 
 [![Claude for OSS](!/tags/claude-for-oss.svg)](https://claude.com/contact-sales/claude-for-oss)
 [![Claude Community Ambassador](!/tags/claude-community-ambassador.svg)](https://claude.com/community/ambassadors)
