@@ -13,6 +13,30 @@
         ]
       }
     ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/scripts/hooks.py --hook PreToolUse",
+            "timeout": 10,
+            "statusMessage": "Running pre-tool-use hook"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/scripts/hooks.py --hook PostToolUse",
+            "timeout": 10,
+            "statusMessage": "Running post-tool-use hook"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
@@ -21,6 +45,18 @@
             "command": "python3 .codex/hooks/scripts/hooks.py --hook Stop",
             "timeout": 10,
             "statusMessage": "Running session stop hook"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/scripts/hooks.py --hook UserPromptSubmit",
+            "timeout": 10,
+            "statusMessage": "Running user prompt submit hook"
           }
         ]
       }
