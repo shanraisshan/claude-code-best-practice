@@ -21,5 +21,10 @@
   "disablePostCompactHook": false,
   "disableElicitationHook": false,
   "disableElicitationResultHook": false,
+  "disableStopFailureHook": false,
+  "disableCwdChangedHook": false,
+  "disableFileChangedHook": false,
+  "disableTaskCreatedHook": false,
+  "disablePermissionDeniedHook": false,
   "disableLogging": true
 }
