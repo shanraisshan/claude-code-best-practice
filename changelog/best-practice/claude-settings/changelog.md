@@ -311,4 +311,20 @@
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Setting | Add `disableSkillShellExecution` to General Settings table — boolean, disable inline shell execution in skills, custom slash commands, and plugin commands. Confirmed in v2.1.91 changelog. Not yet on official settings page or in JSON schema | ✅ COMPLETE (added after showThinkingSummaries with changelog annotation) |
 | 2 | HIGH | Version Bump | Update report version badge from v2.1.90 to v2.1.91 | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+
+---
+
+## [2026-04-04 10:48 PM PKT] Claude Code v2.1.92
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `forceRemoteSettingsRefresh` to General Settings — boolean, managed-only, blocks CLI startup until remote managed settings are freshly fetched (fail-closed). Confirmed on official settings page | ✅ COMPLETE (added before feedbackSurveyRate in General Settings table) |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX` to Common Environment Variables table — prefix for auto-generated Remote Control session names, defaults to machine hostname. Confirmed on official /en/env-vars page | ✅ COMPLETE (added before CLAUDE_CODE_ENABLE_TELEMETRY) |
+| 3 | MED | Changed Description | Update `disableSkillShellExecution` — remove "(in v2.1.91 changelog, not yet on official settings page)" annotation. Now confirmed on official settings page with expanded description | ✅ COMPLETE (annotation removed, description expanded per official docs) |
+| 4 | MED | Changed Description | Remove "not in official docs — unverified" tags from marketplace source types `url`, `npm`, and `file`. Official settings page now documents all 8 source types | ✅ COMPLETE (unverified annotations removed — recurring from 2026-03-31, now resolved) |
+| 5 | MED | Changed Description | Enrich `cleanupPeriodDays` — add "Also controls the age cutoff for automatic removal of orphaned subagent worktrees at startup" per official settings page | ✅ COMPLETE (worktree cleanup detail added) |
+| 6 | MED | Changed Description | Enrich `disableDeepLinkRegistration` — add multi-line prompt support via `%0A` per official settings page | ✅ COMPLETE (multi-line prompt detail added) |
+| 7 | MED | Changed Description | Enrich `includeGitInstructions` — update to include git status snapshot and env var precedence per official settings page | ✅ COMPLETE (description expanded with git status snapshot and CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS precedence) |
+| 8 | MED | Changed Description | Enrich `language` — add "Also sets the voice dictation language" per official settings page | ✅ COMPLETE (voice dictation detail added) |
+| 9 | MED | Changed Description | Enrich `allowUnsandboxedCommands` — add enterprise policy detail per official settings page | ✅ COMPLETE (expanded with fail-closed behavior and enterprise use case) |
 | 3 | MED | Changed Default | Fix `teammateMode` default from `"auto"` to `"in-process"` per official settings page. Description unchanged | ✅ COMPLETE (default updated in Global Config Settings table) |
