@@ -255,3 +255,20 @@
 | 4 | MED | Star Update | Update GSD ★ from 47k to 48k (47,705 actual — v1.32.0 Trae/Kilo/Augment/Cline runtimes) | COMPLETE (updated README table) |
 | 5 | LOW | Star Update | Update BMAD ★ from 43k to 44k (43,538 actual) | COMPLETE (updated README table) |
 | 6 | LOW | Star Update | Update oh-my-claudecode ★ from 23k to 24k (23,709 actual — v4.10.2 HUD, Bedrock hardening) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-06 09:49 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 137k to 142k (142,218 actual — v1.10.0 Surface Refresh, 10 commits on Apr 6 alone) | COMPLETE (updated README table) |
+| 2 | HIGH | Count Update | Update ECC agents 38→47, commands 75→82, skills 156→182 (agent-introspection-debugging, hookify bundle restored, 26 new skills) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Superpowers ★ from 135k to 137k (137,166 actual) | COMPLETE (updated README table) |
+| 4 | HIGH | Count Update | Update GSD agents 21→24, commands 60→68 (v1.33.0: unified behavioral refs, STATE.md drift detection, autonomous --to N) | COMPLETE (updated README table) |
+| 5 | MED | Star Update | Update gstack ★ from 64k to 65k (65,279 actual — v0.15.15.0 token redaction, team mode) | COMPLETE (updated README table) |
+| 6 | MED | Count Update | Update gstack skills from 31 to 34 (3 new: retro, setup-deploy, learn among others) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update Spec Kit ★ from 85k to 86k (85,617 actual — v0.5.0 native skills arch) | COMPLETE (updated README table) |
+| 8 | LOW | Star Update | Update OpenSpec ★ from 37k to 38k (37,604 actual) | COMPLETE (updated README table) |
+| 9 | LOW | Star Update | Update oh-my-claudecode ★ from 24k to 25k (24,921 actual — v4.10.0 HUD upgrades, LSP diagnostics) | COMPLETE (updated README table) |
+| 10 | LOW | Count Update | Update CE agents from 49 to 50 (1 new agent added) | COMPLETE (updated README table) |
