@@ -289,3 +289,18 @@
 | 8 | MED | Star Update | Update CE ★ from 13k to 14k (13,671 actual — v2.62.0 decision matrices, headless mode) | COMPLETE (updated README table) |
 | 9 | LOW | Count Update | Update CE agents from 50 to 51 (1 new agent added) | COMPLETE (updated README table) |
 | 10 | LOW | Count Update | Update CE skills from 42 to 44 (2 new: onboarding skill, interactive deepening mode) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-10 12:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 146k to 148k (148,000 actual — v1.10.0 momentum, ecc2 alpha) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Superpowers ★ from 141k to 143k (143,000 actual — v5.0.7 Copilot CLI) | COMPLETE (updated README table) |
+| 3 | MED | Star Update | Update Spec Kit ★ from 86k to 87k (86,600 actual — v0.5.1 dev docs) | COMPLETE (updated README table) |
+| 4 | MED | Star Update | Update gstack ★ from 67k to 68k (68,200 actual — v0.16.0.0 browser data platform) | COMPLETE (updated README table) |
+| 5 | MED | Star Update | Update GSD ★ from 49k to 50k (49,900 actual — v1.34.0 persistent learnings, intel queries) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update OpenSpec ★ from 38k to 39k (38,700 actual) | COMPLETE (updated README table) |
+| 7 | LOW | Star Update | Update oh-my-claudecode ★ from 26k to 27k (26,900 actual — v4.11.4 daily releases) | COMPLETE (updated README table) |
+| 8 | LOW | Count Update | Update CE skills from 44 to 43 (42 compound-eng + 1 coding-tutor; minor consolidation) | COMPLETE (updated README table) |
