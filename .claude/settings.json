@@ -4,7 +4,7 @@
       "Edit(*)",
       "Write(*)",
       "NotebookEdit(*)",
-      "Bash",
+      "Bash(*)",
       "WebFetch(domain:*)",
       "WebSearch",
       "mcp__*",
