@@ -161,3 +161,9 @@ No drift detected — report is fully in sync with official docs. All 16 frontma
 | 1 | LOW | Field Docs | Update `model` field description — add full model ID support (e.g., `claude-opus-4-6`) alongside aliases | ✅ COMPLETE (updated description to match official docs wording) |
 | 2 | LOW | Field Docs | Update `effort` field description — add `max (Opus 4.6 only)` qualifier | ✅ COMPLETE (added Opus 4.6 only note to max option) |
 | 3 | LOW | Field Docs | Update `color` field description — replace `(e.g., green, magenta)` with explicit valid values: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan` | ✅ COMPLETE (replaced example-based description with exhaustive valid values list) |
+
+---
+
+## [2026-04-09 11:34 PM PKT] Claude Code v2.1.97
+
+No drift detected — report is fully in sync with official docs. All 16 frontmatter fields and 5 built-in agents match.
