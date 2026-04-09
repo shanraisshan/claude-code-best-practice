@@ -272,3 +272,20 @@
 | 8 | LOW | Star Update | Update OpenSpec ★ from 37k to 38k (37,604 actual) | COMPLETE (updated README table) |
 | 9 | LOW | Star Update | Update oh-my-claudecode ★ from 24k to 25k (24,921 actual — v4.10.0 HUD upgrades, LSP diagnostics) | COMPLETE (updated README table) |
 | 10 | LOW | Count Update | Update CE agents from 49 to 50 (1 new agent added) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-08 09:38 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 142k to 146k (146,462 actual — v1.10.0 Surface Refresh momentum, ecc2 alpha development) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Superpowers ★ from 137k to 141k (141,071 actual) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 65k to 67k (67,178 actual — v0.16.0.0 browser data platform, per-tab state isolation) | COMPLETE (updated README table) |
+| 4 | HIGH | Count Update | Update gstack skills from 34 to 37 (3 new: setup-browser-cookies, pair-agent, open-gstack-browser among confirmed additions) | COMPLETE (updated README table) |
+| 5 | MED | Star Update | Update GSD ★ from 48k to 49k (49,343 actual — v1.34.0 four-category gate taxonomy, post-merge verification) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update oh-my-claudecode ★ from 25k to 26k (26,203 actual — v4.11.1 git status HUD, hostname element) | COMPLETE (updated README table) |
+| 7 | MED | Count Update | Update oh-my-claudecode skills from 36 to 37 (skillify skill added) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update CE ★ from 13k to 14k (13,671 actual — v2.62.0 decision matrices, headless mode) | COMPLETE (updated README table) |
+| 9 | LOW | Count Update | Update CE agents from 50 to 51 (1 new agent added) | COMPLETE (updated README table) |
+| 10 | LOW | Count Update | Update CE skills from 42 to 44 (2 new: onboarding skill, interactive deepening mode) | COMPLETE (updated README table) |

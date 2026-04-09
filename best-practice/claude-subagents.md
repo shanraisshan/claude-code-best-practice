@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2004%2C%202026%2010%3A43%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.92-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2008%2C%202026%209%3A34%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.96-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Claude Code subagents — frontmatter fields and official built-in agent types.
@@ -22,7 +22,7 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 | `description` | string | Yes | When to invoke. Use `"PROACTIVELY"` for auto-invocation by Claude |
 | `tools` | string/list | No | Comma-separated allowlist of tools (e.g., `Read, Write, Edit, Bash`). Inherits all tools if omitted. Supports `Agent(agent_type)` syntax to restrict spawnable subagents; the older `Task(agent_type)` alias still works |
 | `disallowedTools` | string/list | No | Tools to deny, removed from inherited or specified list |
-| `model` | string | No | Model alias: `haiku`, `sonnet`, `opus`, or `inherit` (default: `inherit`) |
+| `model` | string | No | Model to use: `sonnet`, `opus`, `haiku`, a full model ID (e.g., `claude-opus-4-6`), or `inherit` (default: `inherit`) |
 | `permissionMode` | string | No | Permission mode: `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, or `plan` |
 | `maxTurns` | integer | No | Maximum number of agentic turns before the subagent stops |
 | `skills` | list | No | Skill names to preload into agent context at startup (full content injected, not just made available) |
@@ -30,10 +30,10 @@ Claude Code subagents — frontmatter fields and official built-in agent types.
 | `hooks` | object | No | Lifecycle hooks scoped to this subagent. All hook events are supported; `PreToolUse`, `PostToolUse`, and `Stop` are the most common |
 | `memory` | string | No | Persistent memory scope: `user`, `project`, or `local` |
 | `background` | boolean | No | Set to `true` to always run as a background task (default: `false`) |
-| `effort` | string | No | Effort level override when this subagent is active: `low`, `medium`, `high`, `max`. Default: inherits from session |
+| `effort` | string | No | Effort level override when this subagent is active: `low`, `medium`, `high`, `max` (Opus 4.6 only). Default: inherits from session |
 | `isolation` | string | No | Set to `"worktree"` to run in a temporary git worktree (auto-cleaned if no changes) |
 | `initialPrompt` | string | No | Auto-submitted as the first user turn when this agent runs as the main session agent (via `--agent` or the `agent` setting). Commands and skills are processed. Prepended to any user-provided prompt |
-| `color` | string | No | CLI output color for visual distinction (e.g., `green`, `magenta`) |
+| `color` | string | No | Display color for the subagent in the task list and transcript: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan` |
 
 ---
 
