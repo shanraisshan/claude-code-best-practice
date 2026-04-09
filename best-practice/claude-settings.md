@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2008%2C%202026%2010%3A16%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.96-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2009%2C%202026%2011%3A39%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.97-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.96, Claude Code exposes **60+ settings** and **170+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.97, Claude Code exposes **60+ settings** and **170+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -385,6 +385,7 @@ Configure bash command sandboxing for security.
 | `sandbox.network.httpProxyPort` | number | - | HTTP proxy port 1-65535 (custom proxy) |
 | `sandbox.network.socksProxyPort` | number | - | SOCKS5 proxy port 1-65535 (custom proxy) |
 | `sandbox.network.allowManagedDomainsOnly` | boolean | `false` | Only allow domains in managed allowlist (managed settings) |
+| `sandbox.network.allowMachLookup` | array | `[]` | (macOS only) Additional XPC/Mach service names the sandbox may look up. Supports a single trailing `*` for prefix matching. Needed for tools that communicate via XPC such as the iOS Simulator or Playwright. Example: `["com.apple.coresimulator.*"]` |
 | `sandbox.filesystem.allowWrite` | array | `[]` | Additional paths where sandboxed commands can write. Arrays are merged across all settings scopes. Also merged with paths from `Edit(...)` allow permission rules. Prefix: `/` (absolute), `~/` (home), `./` or none (project-relative in project settings, `~/.claude`-relative in user settings). The older `//` prefix for absolute paths still works. **Note:** This differs from [Read/Edit permission rules](#tool-permission-syntax), which use `//` for absolute and `/` for project-relative |
 | `sandbox.filesystem.denyWrite` | array | `[]` | Paths where sandboxed commands cannot write. Arrays are merged across all settings scopes. Also merged with paths from `Edit(...)` deny permission rules. Same path prefix conventions as `allowWrite` |
 | `sandbox.filesystem.denyRead` | array | `[]` | Paths where sandboxed commands cannot read. Arrays are merged across all settings scopes. Also merged with paths from `Read(...)` deny permission rules. Same path prefix conventions as `allowWrite` |
@@ -573,26 +574,56 @@ These display preferences are stored in `~/.claude.json`, **not** `settings.json
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
-    "padding": 0
+    "padding": 2,
+    "refreshInterval": 5
   }
 }
 ```
 
+| Field | Description |
+|-------|-------------|
+| `type` | Set to `"command"` to run a shell script |
+| `command` | Shell command or script path that generates the status line output |
+| `padding` | Extra horizontal spacing (in characters) added to status line content. Defaults to `0`. Controls relative indentation beyond the interface's built-in spacing |
+| `refreshInterval` | Re-run the command every N seconds in addition to event-driven updates. Minimum is `1`. Useful when the status line shows time-based data (e.g., a clock) or when background subagents change git state while the main session is idle. Leave unset to run only on events (v2.1.97) |
+
 **Status Line Input Fields:**
 
-The status line command receives a JSON object on stdin with these notable fields:
+The status line command receives a JSON object on stdin. For the full JSON schema and examples, see the [Status Line Documentation](https://code.claude.com/docs/en/statusline).
 
 | Field | Description |
 |-------|-------------|
-| `workspace.added_dirs` | Directories added via `/add-dir` |
-| `context_window.used_percentage` | Context window usage percentage |
-| `context_window.remaining_percentage` | Context window remaining percentage |
-| `current_usage` | Current context window token count |
-| `exceeds_200k_tokens` | Whether context exceeds 200k tokens |
+| `model.id`, `model.display_name` | Current model identifier and display name |
+| `cwd`, `workspace.current_dir` | Current working directory (both contain the same value; `workspace.current_dir` preferred) |
+| `workspace.project_dir` | Directory where Claude Code was launched (may differ from `cwd` if working directory changes) |
+| `workspace.added_dirs` | Additional directories added via `/add-dir` or `--add-dir` |
+| `workspace.git_worktree` | Git worktree name when inside a linked worktree created with `git worktree add`. Absent in the main working tree (v2.1.97) |
+| `cost.total_cost_usd` | Total session cost in USD |
+| `cost.total_duration_ms` | Total wall-clock time since session started, in milliseconds |
+| `cost.total_api_duration_ms` | Total time spent waiting for API responses, in milliseconds |
+| `cost.total_lines_added`, `cost.total_lines_removed` | Lines of code changed during the session |
+| `context_window.total_input_tokens`, `context_window.total_output_tokens` | Cumulative token counts across the session |
+| `context_window.context_window_size` | Maximum context window size in tokens (200000 default, 1000000 for extended context) |
+| `context_window.used_percentage` | Pre-calculated percentage of context window used |
+| `context_window.remaining_percentage` | Pre-calculated percentage of context window remaining |
+| `context_window.current_usage` | Token counts from the last API call (input, output, cache tokens) |
+| `exceeds_200k_tokens` | Whether total tokens from the most recent API response exceeds 200k (fixed threshold) |
 | `rate_limits.five_hour.used_percentage` | Five-hour rate limit usage percentage (v2.1.80+) |
-| `rate_limits.five_hour.resets_at` | Five-hour rate limit reset timestamp |
+| `rate_limits.five_hour.resets_at` | Five-hour rate limit reset timestamp (Unix epoch seconds) |
 | `rate_limits.seven_day.used_percentage` | Seven-day rate limit usage percentage |
-| `rate_limits.seven_day.resets_at` | Seven-day rate limit reset timestamp |
+| `rate_limits.seven_day.resets_at` | Seven-day rate limit reset timestamp (Unix epoch seconds) |
+| `session_id` | Unique session identifier |
+| `session_name` | Custom session name set with `--name` or `/rename`. Absent if no custom name set |
+| `transcript_path` | Path to conversation transcript file |
+| `version` | Claude Code version |
+| `output_style.name` | Name of the current output style |
+| `vim.mode` | Current vim mode (`NORMAL` or `INSERT`) when vim mode is enabled |
+| `agent.name` | Agent name when running with `--agent` flag or agent settings |
+| `worktree.name` | Name of the active worktree (present only during `--worktree` sessions) |
+| `worktree.path` | Absolute path to the worktree directory |
+| `worktree.branch` | Git branch name for the worktree. Absent for hook-based worktrees |
+| `worktree.original_cwd` | Directory before entering the worktree |
+| `worktree.original_branch` | Git branch checked out before entering the worktree. Absent for hook-based worktrees |
 
 ### File Suggestion Configuration
 
