@@ -304,3 +304,23 @@
 | 6 | MED | Star Update | Update OpenSpec ★ from 38k to 39k (38,700 actual) | COMPLETE (updated README table) |
 | 7 | LOW | Star Update | Update oh-my-claudecode ★ from 26k to 27k (26,900 actual — v4.11.4 daily releases) | COMPLETE (updated README table) |
 | 8 | LOW | Count Update | Update CE skills from 44 to 43 (42 compound-eng + 1 coding-tutor; minor consolidation) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-11 06:14 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 148k to 150k (150,802 actual — ECC2 multi-harness infrastructure push, 35+ commits Apr 10) | COMPLETE (updated README table) |
+| 2 | HIGH | Count Update | Update ECC commands 82→120 (ECC2: multi-harness runner, persistent task scheduling, computer-use dispatch) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Superpowers ★ from 143k to 146k (146,545 actual — v5.0.7 Copilot CLI, contributor guardrails) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update gstack ★ from 68k to 70k (69,560 actual — v0.16.3.0 slop-scan, office-hours persistence, cookie auth fix) | COMPLETE (updated README table) |
+| 5 | HIGH | Count Update | Update GSD agents 24→29, commands 68→119 (v1.35.0: Cline/CodeBuddy/Qwen runtimes, +51 commands for multi-runtime support) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update GSD ★ from 50k to 51k (50,501 actual) | COMPLETE (updated README table) |
+| 7 | MED | Count Update | Update oh-my-claudecode skills 37→46 (9 new skill directories confirmed via API; v4.11.3) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update oh-my-claudecode ★ from 27k to 28k (27,580 actual) | COMPLETE (updated README table) |
+| 9 | MED | Count Update | Update gstack skills 37→35 (35 SKILL.md dirs confirmed individually; 2 consolidated in v0.16.x) | COMPLETE (updated README table) |
+| 10 | MED | Count Update | Update BMAD skills 39→41 (v6.3.0: marketplace plugins, bmad-prfaq added; 31 bmm + 10 core) | COMPLETE (updated README table) |
+| 11 | LOW | Count Update | Update CE skills 43→47 (44 compound-eng + 3 coding-tutor; v2.65.0 demo reel, setup skill) | COMPLETE (updated README table) |
+| 12 | LOW | Count Verify | CE agents 51→48 — agent reported ~48 but confidence 0.72 (403 errors on subdir enumeration) | ON HOLD (low confidence; keeping 51 until manual verification) |
+| 13 | LOW | Count Update | Update ECC skills 182→181 (README self-reports 181; minor consolidation) | COMPLETE (updated README table) |
