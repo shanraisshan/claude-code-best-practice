@@ -354,3 +354,17 @@
 | 6 | MED | Ownership Boundary | Add `CCR_FORCE_BUNDLE` to `claude-cli-startup-flags.md` — startup-only var for `claude --remote` bundling. On official /en/env-vars page but not in either file | ✅ COMPLETE (added to CLI startup flags env vars table) |
 | 7 | MED | Changed Description | Update `CLAUDE_CODE_GLOB_NO_IGNORE` description to match official: "Set to `false` to make the Glob tool respect `.gitignore` patterns. By default, Glob returns all matching files including gitignored ones. Does not affect `@` file autocomplete" | ✅ COMPLETE (description rewritten per official env-vars page) |
 | 8 | MED | Changed Description | Update `editorMode` description — remove stale `/vim` reference (removed in v2.1.94), change config label from "Key binding mode" to "Editor mode" per official docs | ✅ COMPLETE (removed /vim reference, config label updated) |
+
+---
+
+## [2026-04-13 08:10 PM PKT] Claude Code v2.1.101
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_CERT_STORE` to Common Environment Variables table — comma-separated CA certificate sources for TLS (`bundled`, `system`). Default: `bundled,system`. Native binary required for system store. v2.1.101. Confirmed on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_CODE_CLIENT_KEY_PASSPHRASE) |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_PERFORCE_MODE` to Common Environment Variables table — set to `1` to enable Perforce-aware write protection. Edit/Write/NotebookEdit fail with `p4 edit` hint if target file lacks owner-write bit. v2.1.98. Confirmed on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_CODE_SCRIPT_CAPS) |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_SCRIPT_CAPS` to Common Environment Variables table — JSON object limiting script invocation counts per session when `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is set. Keys are substrings matched against command text; values are integer call limits. Confirmed on official /en/env-vars page | ✅ COMPLETE (added after CLAUDE_CODE_SUBPROCESS_ENV_SCRUB) |
+| 4 | HIGH | Version Bump | Update report version badge from v2.1.97 to v2.1.101 | ✅ COMPLETE (badge, header version, and header text updated in Phase 2.6) |
+| 5 | MED | Changed Description | Update `disableSkillShellExecution` — add ` ```! ` (triple-backtick shell) block syntax and "from user, project, plugin, or additional-directory sources" qualifier per official settings page | ✅ COMPLETE (description expanded per official docs) |
+| 6 | MED | Ownership Boundary | Add `DISABLE_AUTOUPDATER` to settings report env vars table — on official /en/env-vars page as configurable via `env` key, currently only in CLI startup flags file. Add with cross-reference to CLI flags file | ✅ COMPLETE (added to settings report before DISABLE_TELEMETRY; CLI flags file updated with cross-ref) |
+| 7 | MED | Ownership Boundary | Add `CCR_FORCE_BUNDLE` to settings report env vars table — on official /en/env-vars page as configurable via `env` key, currently only in CLI startup flags file. Add with cross-reference to CLI flags file | ✅ COMPLETE (added to settings report before CLAUDE_CODE_GIT_BASH_PATH; CLI flags file updated with cross-ref) |
