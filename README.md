@@ -428,6 +428,10 @@ All major workflows converge on the same architectural pattern: **Research → P
 
 [![Star History Chart](https://api.star-history.com/svg?repos=shanraisshan/claude-code-best-practice&type=Date)](https://star-history.com/#shanraisshan/claude-code-best-practice&Date)
 
+<p align="center">
+  <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
+</p>
+
 ## Sponsor My Work
 
 If you like my work, buy me a coffee ☕ on
