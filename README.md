@@ -9,7 +9,7 @@ from vibe coding to agentic engineering - practice makes claude perfect
 <p align="center">
   <img src="!/claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100"><br>
   <a href="https://github.com/trending"><img src="!/root/github-trending-day.svg" alt="GitHub Trending #1 Repository Of The Day"></a><br>
-  🇵🇰 Pakistan's 4th most ★ repo after <a href="https://github.com/kamranahmedse/developer-roadmap">developer-roadmap</a>
+  🇵🇰 Pakistan's 4th most ★ repo
 </p>
 
 <p align="center">
