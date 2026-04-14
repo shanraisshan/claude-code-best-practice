@@ -366,3 +366,16 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 6 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
 | 7 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
 | 8 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+
+---
+
+## [2026-04-14 11:17 PM PKT] Claude Code v2.1.107
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Concept | Add Routines row to Hot table — cloud automation on Anthropic infrastructure with schedule, API, and GitHub event triggers (`/en/routines`) | ✅ COMPLETE (row added after Scheduled Tasks with beta badge, Desktop Tasks inline link) |
+| 2 | HIGH | Stale URL | Update `web-scheduled-tasks` inline link in Claude Code Web row (line 45) to `/en/routines` — URL not in sitemap, redirects to Routines page | ✅ COMPLETE (inline link text changed to "Routines", URL updated to /routines) |
+| 3 | HIGH | Stale URL | Update `web-scheduled-tasks` inline link in Scheduled Tasks row (line 55) to `/en/routines` — same stale URL | ✅ COMPLETE (URL updated to /routines) |
+| 4 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap (119 pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user chose to keep as-is) |
+| 5 | MED | Changed Description | Update Scheduled Tasks description from "up to 3 days" to "up to 7 days" — docs now specify seven-day expiry for recurring tasks | ✅ COMPLETE (description updated to "up to 7 days") |
+| 6 | MED | Missing Concept | Add Devcontainers row to Hot table — preconfigured dev containers with security isolation and firewall rules (`/en/devcontainer`) | ✅ COMPLETE (row added after Routines with .devcontainer/ location) |
