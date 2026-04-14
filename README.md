@@ -427,3 +427,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=shanraisshan/claude-code-best-practice&type=Date)](https://star-history.com/#shanraisshan/claude-code-best-practice&Date)
+
+## Sponsors
+
+<a href="https://buy.polar.sh/polar_cl_R6wjUESl8RiJD0iVaTyStBUV6WNuYvDmLJ0si1XXj4C"><img src="https://polar.sh/embed/brands/polar/logo-icon-blue.svg" alt="Sponsor on Polar" height="40"></a> <a href="https://buy.polar.sh/polar_cl_R6wjUESl8RiJD0iVaTyStBUV6WNuYvDmLJ0si1XXj4C"><strong>Sponsor on Polar</strong></a>
