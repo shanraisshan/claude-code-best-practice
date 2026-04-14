@@ -348,3 +348,16 @@
 | 13 | LOW | Count Update | Update BMAD skills 39→37 (26 bmm-skills + 11 core-skills; Bob Scrum Master consolidated into Developer) | COMPLETE (updated README table) |
 | 14 | LOW | Count Update | Update CE agents 51→49, skills 43→42 (cleanup: several legacy skills removed, ce-debug/ce-demo-reel added) | COMPLETE (updated README table) |
 | 15 | LOW | Count Update | Update OpenSpec commands 11→10 (recount: /opsx:explore may have been removed in v1.3.0) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-14 11:38 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 154k to 156k (155,874 actual — ECC2 alpha, v1.10.0 Surface Refresh momentum) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Superpowers ★ from 150k to 152k (151,979 actual — v5.0.7 Copilot CLI, contributor guardrails) | COMPLETE (updated README table) |
+| 3 | MED | Star Update | Update gstack ★ from 71k to 72k (72,298 actual — v0.17.0.0 ux-audit, UX behavioral foundations) | COMPLETE (updated README table) |
+| 4 | MED | Count Update | Update gstack skills 31→36 (36 SKILL.md confirmed via per-file fetch; v0.17.0.0 additions including ux-audit, guard, gstack-upgrade) | COMPLETE (updated README table) |
+| 5 | MED | Star Update | Update GSD ★ from 52k to 53k (52,871 actual — v1.36.0 graphify, typed SDK query, stale worktree detection) | COMPLETE (updated README table) |
+| 6 | LOW | Star Update | Update oh-my-claudecode ★ from 28k to 29k (28,771 actual — v4.11.6 security hardening, Ralph spoofing fix) | COMPLETE (updated README table) |
