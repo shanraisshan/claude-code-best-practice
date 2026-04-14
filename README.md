@@ -432,7 +432,7 @@ All major workflows converge on the same architectural pattern: **Research → P
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
-## Sponsor My Work
+## ❤️ Sponsor My Work
 
 If you like my work, buy me a doodh patti 🍵 on
 
