@@ -212,3 +212,15 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/setup-vertex` to Auth tag — Configure Google Vertex AI authentication, project, region, and model pins through an interactive wizard. Only visible when `CLAUDE_CODE_USE_VERTEX=1` is set | ✅ COMPLETE (added as #4 in Auth tag, count updated 68 → 69) |
+
+---
+
+## [2026-04-14 11:13 PM PKT] Claude Code v2.1.107
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `when_to_use` to frontmatter table — additional context for when Claude should invoke the skill, appended to `description` in the listing (count 13 → 14) | ✅ COMPLETE (added after `description` field, count updated 13 → 14) |
+| 2 | HIGH | New Command | Add `/team-onboarding` to Project tag — Generate a team onboarding guide from Claude Code usage history (count 69 → 70) | ✅ COMPLETE (added as #52 in Project tag, count updated 69 → 70) |
+| 3 | MED | Scope Decision | 5 bundled skills (`/batch`, `/claude-api`, `/debug`, `/loop`, `/simplify`) listed in official docs unified table but excluded per report's current scoping disclaimer | ❌ INVALID (user chose to keep report scoped to built-in commands only — disclaimer retained) |
+| 4 | MED | Changed Description | Update `/doctor` — add "Press `f` to have Claude fix any reported issues" | ✅ COMPLETE (added status icons and `f` key fix detail to description) |
+| 5 | MED | Changed Description | Update `/schedule` — terminology changed from "Cloud scheduled tasks" to "routines" | ✅ COMPLETE (updated terminology in description) |
