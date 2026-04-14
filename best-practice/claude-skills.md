@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2013%2C%202026%208%3A02%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.101-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2014%2C%202026%2011%3A13%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.107-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -14,12 +14,13 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## Frontmatter Fields (13)
+## Frontmatter Fields (14)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `name` | string | No | Display name and `/slash-command` identifier. Defaults to the directory name if omitted |
 | `description` | string | Recommended | What the skill does. Shown in autocomplete and used by Claude for auto-discovery |
+| `when_to_use` | string | No | Additional context for when Claude should invoke the skill — trigger phrases and example requests. Appended to `description` in the skill listing, counts toward the 1,536-character cap |
 | `argument-hint` | string | No | Hint shown during autocomplete (e.g., `[issue-number]`, `[filename]`) |
 | `disable-model-invocation` | boolean | No | Set `true` to prevent Claude from automatically invoking this skill |
 | `user-invocable` | boolean | No | Set `false` to hide from the `/` menu — skill becomes background knowledge only, intended for agent preloading |
