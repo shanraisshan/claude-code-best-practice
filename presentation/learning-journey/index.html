@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../!/claude-jumping.svg">
+    <title>Claude Code Learning Journey</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.6; }
+        .slide { display: none; min-height: 100vh; padding: 60px 80px; max-width: 1200px; margin: 0 auto; }
+        .slide.active { display: block; }
+        h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 40px; color: #1a1a1a; border-bottom: 2px solid #e5e5e5; padding-bottom: 20px; }
+        h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #2a2a2a; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin: 24px 0 12px 0; color: #333; }
+        p { font-size: 1.1rem; margin-bottom: 16px; color: #444; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.95rem; }
+        .slide.title-slide.active { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px; }
+        .title-slide h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; border-bottom: none; padding-bottom: 0; }
+        .title-slide .subtitle { font-size: 1.4rem; color: #555; margin-bottom: 50px; font-weight: 400; }
+        .slide.section-slide.active { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px; }
+        .section-slide h1 { font-size: 3rem; font-weight: 700; border-bottom: none; padding-bottom: 0; margin-bottom: 16px; }
+        .section-slide .section-number { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 20px; }
+        .section-slide .section-desc { font-size: 1.2rem; color: #666; max-width: 600px; }
+        .trigger-box { background: #f8f9fa; border-left: 4px solid #1a1a1a; padding: 20px 24px; margin: 24px 0; }
+        .trigger-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; }
+        .trigger-box p { font-size: 1.05rem; color: #333; margin: 0; }
+        .analogy-box { background: #f3e5f5; border-left: 4px solid #9c27b0; padding: 20px 24px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+        .analogy-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #7b1fa2; margin-bottom: 8px; }
+        .analogy-box p { font-size: 1.05rem; color: #4a148c; margin: 0; }
+        .how-to-trigger { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .how-to-trigger h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #2e7d32; margin-bottom: 8px; }
+        .how-to-trigger p { font-size: 1.05rem; color: #1b5e20; margin: 0; }
+        .how-to-trigger code { background: rgba(0,0,0,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.95rem; }
+        .warning-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .warning-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #e65100; margin-bottom: 8px; }
+        .warning-box p { font-size: 1.05rem; color: #bf360c; margin: 0; }
+        .info-box { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .info-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #1565c0; margin-bottom: 8px; }
+        .info-box p { font-size: 1.05rem; color: #0d47a1; margin: 0; }
+        .code-block { background: #1a1a1a; color: #e5e5e5; padding: 20px 24px; border-radius: 8px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; white-space: pre; line-height: 1.7; }
+        .code-block .comment { color: #6a9955; }
+        .code-block .key { color: #9cdcfe; }
+        .code-block .string { color: #ce9178; }
+        .code-block .cmd { color: #dcdcaa; }
+        .code-block .claude-file { color: #ff5252; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .col-card { background: #f8f9fa; padding: 24px; border-radius: 8px; }
+        .col-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 12px; }
+        .col-card.good { border-left: 4px solid #4caf50; }
+        .col-card.bad { border-left: 4px solid #f44336; }
+        .use-cases { margin: 24px 0; }
+        .use-case-item { display: flex; align-items: flex-start; margin-bottom: 12px; padding: 14px 20px; background: #fafafa; border-radius: 8px; }
+        .use-case-icon { font-size: 1.5rem; margin-right: 16px; min-width: 32px; }
+        .use-case-text { flex: 1; }
+        .use-case-text strong { display: block; font-size: 1.05rem; color: #1a1a1a; margin-bottom: 4px; }
+        .use-case-text span { font-size: 0.95rem; color: #666; }
+        .toc-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+        .toc-item { display: flex; align-items: center; padding: 16px 20px; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .toc-item:hover { background: #eee; }
+        .toc-number { width: 28px; height: 28px; background: #1a1a1a; color: #fff; border-radius: 50%; text-align: center; line-height: 28px; font-size: 0.85rem; margin-right: 12px; font-weight: 600; flex-shrink: 0; }
+        .toc-name { font-size: 1rem; color: #1a1a1a; }
+        .feature-list { list-style: none; margin: 24px 0; }
+        .feature-list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem; }
+        .feature-list li:last-child { border-bottom: none; }
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        th { background: #f8f9fa; padding: 14px 20px; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #666; border-bottom: 2px solid #e5e5e5; }
+        td { padding: 14px 20px; border-bottom: 1px solid #eee; font-size: 1rem; color: #444; }
+        tr:last-child td { border-bottom: none; }
+        .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 12px; z-index: 100; }
+        .nav-btn { width: 50px; height: 50px; border: 2px solid #1a1a1a; background: #fff; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .nav-btn:hover { background: #1a1a1a; color: #fff; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .progress { position: fixed; top: 0; left: 0; height: 4px; background: #1a1a1a; transition: width 0.3s; z-index: 100; }
+        .slide-counter { position: fixed; bottom: 40px; left: 40px; font-size: 0.9rem; color: #999; }
+        .keyboard-hint { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.85rem; color: #999; }
+        .keyboard-hint kbd { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd; font-family: inherit; }
+        .header-logo { position: fixed; top: 20px; right: 40px; width: 100px; height: 65px; z-index: 50; }
+        .header-logo img { width: 100%; height: 100%; }
+        .title-logo { width: 200px; height: 130px; margin-bottom: 40px; }
+        .title-logo img { width: 100%; height: 100%; }
+        /* Journey Bar */
+        .journey-bar { position: fixed; top: 95px; right: 62px; display: flex; flex-direction: column; align-items: center; z-index: 99; gap: 6px; }
+        .journey-bar.hidden { display: none; }
+        .journey-track-wrap { position: relative; display: flex; align-items: stretch; gap: 4px; }
+        .journey-track { width: 20px; height: 300px; background: #e5e5e5; border-radius: 10px; overflow: hidden; position: relative; flex-shrink: 0; }
+        .journey-fill { position: absolute; bottom: 0; width: 100%; border-radius: 10px; transition: height 0.4s ease, background-color 0.4s ease; height: 0%; }
+        .journey-level-label { font-size: 0.65rem; color: #777; font-weight: 400; }
+        .journey-ticks { display: flex; flex-direction: column; justify-content: space-between; height: 300px; padding: 2px 0; }
+        .journey-tick { font-size: 0.45rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; color: #999; white-space: nowrap; line-height: 1; }
+        .level-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 12px; vertical-align: middle; }
+        /* Day divider */
+        .day-badge { display: inline-block; background: #1a1a1a; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase; }
+        /* Hiring analogy steps */
+        .hiring-steps { margin: 32px 0; }
+        .hiring-step { display: flex; align-items: flex-start; margin-bottom: 20px; padding: 20px 24px; background: #fafafa; border-radius: 8px; border-left: 4px solid #e5e5e5; }
+        .hiring-step.level-1 { border-left-color: #2196f3; }
+        .hiring-step.level-2 { border-left-color: #ff9800; }
+        .hiring-step.level-3 { border-left-color: #4caf50; }
+        .hiring-step-number { font-size: 1.8rem; font-weight: 700; margin-right: 20px; min-width: 40px; color: #1a1a1a; }
+        .hiring-step-content { flex: 1; }
+        .hiring-step-content strong { display: block; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 4px; }
+        .hiring-step-content span { font-size: 0.95rem; color: #666; }
+        /* Frontmatter field rows */
+        .field-row { display: flex; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .field-row:last-child { border-bottom: none; }
+        .field-name { font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; color: #9cdcfe; min-width: 180px; font-weight: 600; }
+        .field-desc { font-size: 0.95rem; color: #555; }
+        .field-required { font-size: 0.7rem; background: #ffcdd2; color: #c62828; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
+        .field-recommended { font-size: 0.7rem; background: #fff9c4; color: #f57f17; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="journey-bar hidden" id="journeyBar">
+        <div class="journey-track-wrap">
+            <div class="journey-track"><div class="journey-fill" id="journeyFill"></div></div>
+            <div class="journey-ticks">
+                <span class="journey-tick">Commands</span>
+                <span class="journey-tick">Build</span>
+                <span class="journey-tick">Memory</span>
+                <span class="journey-tick">Skills</span>
+                <span class="journey-tick">Agents</span>
+                <span class="journey-tick">Prompts</span>
+            </div>
+        </div>
+        <span class="journey-level-label" id="journeyLevelLabel"></span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 1: Title                                                -->
+    <!-- ============================================================ -->
+    <div class="slide active title-slide" data-slide="1">
+        <div class="title-logo">
+            <img src="../../!/claude-jumping.svg" alt="Claude Code mascot jumping" />
+        </div>
+        <h1>Claude Code Learning Journey</h1>
+        <p class="subtitle">From your first conversation to building your first workflow</p>
+        <p style="margin-top: 60px; font-size: 0.95rem; color: #888;">A multi-day onboarding guide for non-engineers &amp; engineers alike.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 2: Days Overview                                        -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="2">
+        <h1>The Learning Journey</h1>
+        <div class="trigger-box">
+            <h4>Two Days, Six Levels</h4>
+            <p>Day 1 builds understanding. Day 2 puts it into practice.</p>
+        </div>
+        <div class="two-col" style="margin-top: 32px;">
+            <div class="col-card" style="border-left: 4px solid #2196f3;">
+                <h4>Day 1 &mdash; Understanding</h4>
+                <div class="toc-list" style="grid-template-columns: 1fr; margin-top: 12px;">
+                    <div class="toc-item" onclick="goToSlide(3)"><span class="toc-number">1</span><span class="toc-name">Prompting &mdash; Just Ask</span></div>
+                    <div class="toc-item" onclick="goToSlide(7)"><span class="toc-number">2</span><span class="toc-name">Agents &mdash; The Specialist</span></div>
+                    <div class="toc-item" onclick="goToSlide(10)"><span class="toc-number">3</span><span class="toc-name">Skills &mdash; The Training</span></div>
+                </div>
+            </div>
+            <div class="col-card" style="border-left: 4px solid #4caf50;">
+                <h4>Day 2 &mdash; Building</h4>
+                <div class="toc-list" style="grid-template-columns: 1fr; margin-top: 12px;">
+                    <div class="toc-item" onclick="goToSlide(16)"><span class="toc-number">4</span><span class="toc-name">Project Memory &mdash; CLAUDE.md</span></div>
+                    <div class="toc-item" onclick="goToSlide(20)"><span class="toc-number">5</span><span class="toc-name">Building Skills &amp; Agents</span></div>
+                    <div class="toc-item" onclick="goToSlide(27)"><span class="toc-number">6</span><span class="toc-name">Commands &amp; Orchestration</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- DAY 1: UNDERSTANDING                                          -->
+    <!-- ============================================================ -->
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 1: PROMPTING (Slides 3-6)                               -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 3: Prompting Intro -->
+    <div class="slide section-slide" data-slide="3" data-level="prompting">
+        <span class="day-badge">Day 1</span>
+        <div class="section-number">Level 1</div>
+        <h1>Prompting (Just Ask)</h1>
+        <p class="section-desc">Like texting a friend who knows a lot &mdash; you ask a question and they'll give you <em>an</em> answer. But you have no idea how they got it.</p>
+    </div>
+
+    <!-- Slide 4: The Big Picture -->
+    <div class="slide" data-slide="4">
+        <h1>The Big Picture</h1>
+        <p>You've installed Claude Code. Now what?</p>
+        <p>Day 1 covers <strong>three foundational levels</strong> &mdash; each one gives you more control over <strong>how</strong> Claude does its work.</p>
+        <div class="analogy-box">
+            <h4>Think of it like hiring someone</h4>
+            <p>Each level is a step up in how much you trust and structure the relationship.</p>
+        </div>
+        <div class="hiring-steps">
+            <div class="hiring-step level-1">
+                <span class="hiring-step-number">1</span>
+                <div class="hiring-step-content">
+                    <strong>Prompting</strong>
+                    <span>Asking a stranger on the street for directions</span>
+                </div>
+            </div>
+            <div class="hiring-step level-2">
+                <span class="hiring-step-number">2</span>
+                <div class="hiring-step-content">
+                    <strong>Agents</strong>
+                    <span>Hiring a specialist who always does things a certain way</span>
+                </div>
+            </div>
+            <div class="hiring-step level-3">
+                <span class="hiring-step-number">3</span>
+                <div class="hiring-step-content">
+                    <strong>Skills</strong>
+                    <span>That specialist having specific training for specific tasks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Prompting In Action -->
+    <div class="slide" data-slide="5">
+        <h1>Prompting In Action</h1>
+        <p>Open your terminal and type <code>claude</code>. You're now in a conversation. Try typing:</p>
+        <div class="code-block"><span class="cmd">what is the weather in Karachi?</span></div>
+        <p>Claude will answer &mdash; but <strong>how</strong> it answers is unpredictable. It might:</p>
+        <ul class="feature-list">
+            <li>Pull from its training data (which could be outdated)</li>
+            <li>Search the web (if web tools are available)</li>
+            <li>Give you a general answer instead of real-time data</li>
+        </ul>
+        <div class="warning-box">
+            <h4>The Limitation</h4>
+            <p>Every time you ask "what's the weather?", Claude might fetch data differently &mdash; or not fetch real data at all. There's no guarantee it uses the same source or method twice.</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: When Prompting Works -->
+    <div class="slide" data-slide="6">
+        <h1>When Prompting Works Great</h1>
+        <p>Prompting is perfectly fine for quick, one-off questions!</p>
+        <div class="use-cases">
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F50D;</span>
+                <div class="use-case-text">
+                    <strong>Asking questions about your codebase</strong>
+                    <span>"what does this file do?"</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x270F;&#xFE0F;</span>
+                <div class="use-case-text">
+                    <strong>Writing or editing documents</strong>
+                    <span>"rewrite this email to sound more professional"</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4A1;</span>
+                <div class="use-case-text">
+                    <strong>Brainstorming ideas</strong>
+                    <span>"give me 5 subject lines for this campaign"</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4AC;</span>
+                <div class="use-case-text">
+                    <strong>Explaining things</strong>
+                    <span>"explain this error message like I'm not a developer"</span>
+                </div>
+            </div>
+        </div>
+        <div class="trigger-box">
+            <h4>Takeaway</h4>
+            <p>For <strong>consistent, reliable results</strong>, prompting alone isn't enough. You need more control.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 2: AGENTS (Slides 7-9)                                  -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 7: Agents Intro -->
+    <div class="slide section-slide" data-slide="7" data-level="agents">
+        <div class="section-number">Level 2</div>
+        <h1>Agents (The Specialist)</h1>
+        <p class="section-desc">An agent is Claude playing a specific role &mdash; like assigning a job title.</p>
+    </div>
+
+    <!-- Slide 8: The Restaurant Kitchen -->
+    <div class="slide" data-slide="8">
+        <h1>The Restaurant Kitchen</h1>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>Without an agent, you walk into a random kitchen and shout "make me pasta!" &mdash; whoever hears you might boil instant noodles or make a five-course Italian meal.</p>
+        </div>
+        <div class="two-col" style="margin-top: 32px;">
+            <div class="col-card bad">
+                <h4>Without an Agent</h4>
+                <p>You ask Claude "What's the weather in Dubai?"</p>
+                <p>It might check its training data, search the web, or make a best guess.</p>
+                <p style="margin-top: 12px; color: #c62828;"><strong>You don't know what it'll do.</strong></p>
+            </div>
+            <div class="col-card good">
+                <h4>With an Agent</h4>
+                <p>A <code>weather-agent</code> has a clear job description:</p>
+                <p><em>"Always check the Open-Meteo API for Dubai. Always return the temperature in a specific format."</em></p>
+                <p style="margin-top: 12px; color: #2e7d32;"><strong>Same question, same approach, every time.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Agents Comparison -->
+    <div class="slide" data-slide="9">
+        <h1>Prompting vs. Agent</h1>
+        <p>Here's what changes when you use an agent &mdash; using the <code>weather-agent</code> from this repo as a real example:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Prompting</th>
+                    <th>Agent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Source</strong></td>
+                    <td>Could be anywhere</td>
+                    <td>Always Open-Meteo API</td>
+                </tr>
+                <tr>
+                    <td><strong>Location</strong></td>
+                    <td>Whatever Claude picks</td>
+                    <td>Always Dubai (lat: 25.2, lon: 55.3)</td>
+                </tr>
+                <tr>
+                    <td><strong>Format</strong></td>
+                    <td>Random paragraph</td>
+                    <td>Clean temperature + unit</td>
+                </tr>
+                <tr>
+                    <td><strong>Consistency</strong></td>
+                    <td>Different every time</td>
+                    <td>Same method, every time</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how-to-trigger">
+            <h4>Takeaway</h4>
+            <p>Agents give you <strong>predictability</strong>. Same question &rarr; same approach &rarr; same quality. Not smarter &mdash; <strong>consistent</strong>.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 3: SKILLS (Slides 10-12)                                -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 10: Skills Intro -->
+    <div class="slide section-slide" data-slide="10" data-level="skills">
+        <div class="section-number">Level 3</div>
+        <h1>Skills (The Training)</h1>
+        <p class="section-desc">A skill is a specific capability that an agent (or Claude itself) can use &mdash; like a training manual for a new employee.</p>
+    </div>
+
+    <!-- Slide 11: The Training Manual -->
+    <div class="slide" data-slide="11">
+        <h1>The Training Manual</h1>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>When someone joins your team, they have a role (agent), but they also go through specific training modules &mdash; how to use the CRM, how to write a proposal, how to run a standup. Each training module is a <strong>skill</strong>.</p>
+        </div>
+        <h3 style="margin-top: 32px;">A Real Person Example</h3>
+        <p><strong>Shayan</strong> has many skills:</p>
+        <div class="use-cases">
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4BB;</span>
+                <div class="use-case-text">
+                    <strong>Engineering skill</strong>
+                    <span>Can write code</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F3AE;</span>
+                <div class="use-case-text">
+                    <strong>Gaming skill</strong>
+                    <span>Knows game mechanics</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4D6;</span>
+                <div class="use-case-text">
+                    <strong>Reading skill</strong>
+                    <span>Can digest and summarize long documents</span>
+                </div>
+            </div>
+        </div>
+        <p>Each skill has its own knowledge and methods. Shayan uses the right skill for the right task. <strong>Claude works the same way.</strong></p>
+    </div>
+
+    <!-- Slide 12: Why Separate Agents and Skills -->
+    <div class="slide" data-slide="12">
+        <h1>Why Separate Agents and Skills?</h1>
+        <div class="two-col">
+            <div>
+                <h3>Agent = The Person</h3>
+                <p>The <code>weather-agent</code> is the person with the job title <strong>"Weather Reporter"</strong>.</p>
+                <p>It defines the <em>role</em> and <em>behavior</em>.</p>
+            </div>
+            <div>
+                <h3>Skill = The Training</h3>
+                <p>The <code>weather-fetcher</code> skill is the specific training on <strong>how</strong> to fetch weather data.</p>
+                <p>It contains exact instructions:</p>
+                <ul class="feature-list">
+                    <li>Call this specific API URL</li>
+                    <li>Extract the temperature from this specific field</li>
+                    <li>Return it in this specific format</li>
+                </ul>
+            </div>
+        </div>
+        <div class="how-to-trigger" style="margin-top: 24px;">
+            <h4>The Power</h4>
+            <p><strong>One agent can have multiple skills</strong>, and <strong>one skill can be used by multiple agents</strong>. Skills are reusable building blocks. Agents are the people who use them.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- DAY 1 SUMMARY (Slides 13-15)                                  -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 13: Day 1 Summary -->
+    <div class="slide section-slide" data-slide="13">
+        <div class="section-number">Day 1 Summary</div>
+        <h1>Putting It All Together</h1>
+        <p class="section-desc">Three levels, each adding more control over how Claude works.</p>
+    </div>
+
+    <!-- Slide 14: The Flow -->
+    <div class="slide" data-slide="14">
+        <h1>The Three Levels</h1>
+        <div class="code-block"><span class="comment">Level 1: PROMPTING</span>
+<span class="key">You</span> <span class="string">&rarr;</span> "What's the weather?" <span class="string">&rarr;</span> Claude figures it out somehow
+                                <span class="comment">(unpredictable method)</span>
+
+<span class="comment">Level 2: AGENTS</span>
+<span class="key">You</span> <span class="string">&rarr;</span> Weather Agent <span class="string">&rarr;</span> Always uses the same approach
+                      <span class="comment">(predictable method)</span>
+
+<span class="comment">Level 3: SKILLS</span>
+<span class="key">You</span> <span class="string">&rarr;</span> Weather Agent <span class="string">&rarr;</span> Uses weather-fetcher skill
+                      <span class="comment">(predictable method with specific instructions)</span></div>
+        <table style="margin-top: 32px;">
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>What You Control</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Prompting</strong></td>
+                    <td>The question</td>
+                    <td>Quick one-off questions</td>
+                </tr>
+                <tr>
+                    <td><strong>Agents</strong></td>
+                    <td>The question + who answers</td>
+                    <td>Repeatable tasks</td>
+                </tr>
+                <tr>
+                    <td><strong>Skills</strong></td>
+                    <td>The question + who answers + how they do it</td>
+                    <td>Critical workflows</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Slide 15: Day 1 End -->
+    <div class="slide title-slide" data-slide="15">
+        <h1>Day 1 Complete</h1>
+        <p class="subtitle">You understand the three levels: Prompting, Agents, Skills.</p>
+        <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 600px;">Spend time at Level 1 &mdash; just prompt. Get comfortable asking Claude questions in the terminal. The more you use it, the more you'll notice tasks that would benefit from an agent.</p>
+        <p style="margin-top: 60px; font-size: 0.95rem; color: #888;">Tomorrow: we build them.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- DAY 2: BUILDING YOUR FIRST WORKFLOW                           -->
+    <!-- ============================================================ -->
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 4: PROJECT MEMORY (Slides 16-19)                        -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 16: Memory Intro -->
+    <div class="slide section-slide" data-slide="16" data-level="memory">
+        <span class="day-badge">Day 2</span>
+        <div class="section-number">Level 4</div>
+        <h1>Project Memory</h1>
+        <p class="section-desc">Before building agents and skills, Claude needs to understand your project. That starts with <code>CLAUDE.md</code>.</p>
+    </div>
+
+    <!-- Slide 17: What is CLAUDE.md -->
+    <div class="slide" data-slide="17">
+        <h1>CLAUDE.md &mdash; Your Project's Brain</h1>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>When a new person joins your team, they don't just start working &mdash; they read the team wiki, the README, the onboarding doc. <code>CLAUDE.md</code> is that onboarding doc for Claude.</p>
+        </div>
+        <img src="../assets/context-window.jpeg" alt="Context window diagram showing how the 1M token limit is divided" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
+        <p>It's a markdown file at your project root that tells Claude:</p>
+        <div class="use-cases">
+            <div class="use-case-item">
+                <span class="use-case-icon">1</span>
+                <div class="use-case-text">
+                    <strong>What the project is</strong>
+                    <span>"This is a FastAPI backend with a React frontend"</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">2</span>
+                <div class="use-case-text">
+                    <strong>How to work in it</strong>
+                    <span>"Use pytest for tests, follow the existing route pattern"</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">3</span>
+                <div class="use-case-text">
+                    <strong>What to avoid</strong>
+                    <span>"Never modify the auth middleware directly"</span>
+                </div>
+            </div>
+        </div>
+        <div class="how-to-trigger">
+            <h4>Quick Start</h4>
+            <p>Run <code>/init</code> in Claude Code to auto-generate a CLAUDE.md for your project.</p>
+        </div>
+    </div>
+
+    <!-- Slide 18: CLAUDE.md Example -->
+    <div class="slide" data-slide="18">
+        <h1>What Goes in CLAUDE.md</h1>
+        <div class="code-block"><span class="comment"># CLAUDE.md</span>
+
+<span class="comment">## Project Overview</span>
+This is a TodoApp with a FastAPI backend and React frontend.
+
+<span class="comment">## Key Commands</span>
+- <span class="cmd">npm run dev</span>      <span class="comment"># Start frontend</span>
+- <span class="cmd">uvicorn main:app</span>  <span class="comment"># Start backend</span>
+- <span class="cmd">pytest</span>            <span class="comment"># Run tests</span>
+
+<span class="comment">## Architecture</span>
+- Routes follow the pattern in <span class="string">routes/todos.py</span>
+- Frontend components use Tailwind CSS
+- Tests mirror the source tree: <span class="string">tests/test_*.py</span>
+
+<span class="comment">## Rules</span>
+- Always write tests for new endpoints
+- Use the existing Sidebar component for navigation
+- Keep CLAUDE.md under 200 lines</div>
+        <div class="warning-box">
+            <h4>Keep It Short</h4>
+            <p>Aim for under 200 lines. Files over 200 lines consume more context and may reduce adherence. Put detailed instructions in <code>.claude/rules/</code> instead.</p>
+        </div>
+    </div>
+
+    <!-- Slide 19: Memory Hierarchy -->
+    <div class="slide" data-slide="19">
+        <h1>How Memory Loads</h1>
+        <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
+        <div class="two-col">
+            <div class="col-card" style="border-left: 4px solid #2196f3;">
+                <h4>Ancestor Loading (UP)</h4>
+                <p>At startup, Claude walks <strong>upward</strong> from your current directory and loads every CLAUDE.md it finds.</p>
+                <p style="margin-top: 12px;"><strong>Always loaded immediately.</strong></p>
+            </div>
+            <div class="col-card" style="border-left: 4px solid #ff9800;">
+                <h4>Descendant Loading (DOWN)</h4>
+                <p>CLAUDE.md files in subdirectories below you are loaded <strong>lazily</strong> &mdash; only when Claude reads files in those folders.</p>
+                <p style="margin-top: 12px;"><strong>Loaded on demand.</strong></p>
+            </div>
+        </div>
+        <div class="code-block"><span class="comment"># Example: running `claude` from /myapp</span>
+/myapp/
+  <span class="claude-file">CLAUDE.md</span>          <span class="comment"># Loaded at startup (current dir)</span>
+  frontend/
+    <span class="key">CLAUDE.md</span>        <span class="comment"># Loaded when you touch frontend/ files</span>
+  backend/
+    <span class="key">CLAUDE.md</span>        <span class="comment"># Loaded when you touch backend/ files</span></div>
+        <div class="info-box">
+            <h4>Rules Directory</h4>
+            <p>For topic-specific instructions, use <code>.claude/rules/*.md</code>. Each rule file can target specific file patterns using <code># Glob: pattern</code> at the top &mdash; they only load when Claude works with matching files.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 5: BUILDING SKILLS & AGENTS (Slides 20-26)              -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 20: Building Intro -->
+    <div class="slide section-slide" data-slide="20" data-level="building">
+        <div class="section-number">Level 5</div>
+        <h1>Building Skills &amp; Agents</h1>
+        <p class="section-desc">Now that Claude knows your project, let's give it specialized capabilities.</p>
+    </div>
+
+    <!-- Slide 21: Creating a Skill -->
+    <div class="slide" data-slide="21">
+        <h1>Creating Your First Skill</h1>
+        <p>A skill lives in <code>.claude/skills/&lt;name&gt;/SKILL.md</code>. It's a markdown file with YAML frontmatter.</p>
+        <div class="code-block"><span class="comment"># File: .claude/skills/weather-fetcher/SKILL.md</span>
+<span class="string">---</span>
+<span class="key">name</span>: <span class="string">weather-fetcher</span>
+<span class="key">description</span>: <span class="string">Fetch current temperature for Dubai from Open-Meteo API</span>
+<span class="key">user-invocable</span>: <span class="string">false</span>
+<span class="string">---</span>
+
+<span class="comment"># Weather Fetcher</span>
+
+To fetch the current temperature for Dubai:
+
+1. Call the Open-Meteo API:
+   <span class="cmd">https://api.open-meteo.com/v1/forecast</span>
+   <span class="cmd">?latitude=25.2048&longitude=55.2708&current=temperature_2m</span>
+
+2. Extract <span class="key">current.temperature_2m</span> from the response
+
+3. Return: <span class="string">"The temperature in Dubai is {value}{unit}"</span></div>
+        <div class="trigger-box">
+            <h4>Key Insight</h4>
+            <p>The skill contains <strong>instructions</strong>, not code. It tells Claude <em>how</em> to do something using its existing tools (like WebFetch). Think of it as a recipe, not a program.</p>
+        </div>
+    </div>
+
+    <!-- Slide 22: Skill Frontmatter -->
+    <div class="slide" data-slide="22">
+        <h1>Skill Frontmatter Fields</h1>
+        <p>The YAML at the top of a SKILL.md controls how the skill behaves:</p>
+        <div style="margin: 24px 0;">
+            <div class="field-row">
+                <span class="field-name">name</span>
+                <span class="field-desc">Display name and <code>/slash-command</code>. Defaults to directory name</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">description <span class="field-recommended">Recommended</span></span>
+                <span class="field-desc">What the skill does &mdash; shown in autocomplete, used for auto-discovery</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">user-invocable</span>
+                <span class="field-desc">Set <code>false</code> to hide from <code>/</code> menu &mdash; becomes background knowledge only</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">allowed-tools</span>
+                <span class="field-desc">Tools allowed without permission prompts when skill is active</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">model</span>
+                <span class="field-desc">Model to use: <code>haiku</code>, <code>sonnet</code>, or <code>opus</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">context</span>
+                <span class="field-desc">Set to <code>fork</code> to run in isolated subagent context</span>
+            </div>
+        </div>
+        <div class="info-box">
+            <h4>Two Ways to Use Skills</h4>
+            <p><strong>User-invocable</strong>: appears in <code>/</code> menu, user runs it directly. <strong>Agent-preloaded</strong>: set <code>user-invocable: false</code>, then list it in an agent's <code>skills:</code> field &mdash; it becomes domain knowledge injected into that agent.</p>
+        </div>
+    </div>
+
+    <!-- Slide 23: Creating an Agent -->
+    <div class="slide" data-slide="23">
+        <h1>Creating Your First Agent</h1>
+        <p>An agent lives in <code>.claude/agents/&lt;name&gt;.md</code>. Same pattern &mdash; markdown with YAML frontmatter.</p>
+        <div class="code-block"><span class="comment"># File: .claude/agents/weather-agent.md</span>
+<span class="string">---</span>
+<span class="key">name</span>: <span class="string">weather-agent</span>
+<span class="key">description</span>: <span class="string">PROACTIVELY fetch weather data for Dubai, UAE</span>
+<span class="key">model</span>: <span class="string">sonnet</span>
+<span class="key">tools</span>: <span class="string">WebFetch, Read</span>
+<span class="key">skills</span>:
+  - <span class="string">weather-fetcher</span>
+<span class="key">color</span>: <span class="string">green</span>
+<span class="string">---</span>
+
+You are a weather data specialist for Dubai.
+Use your preloaded weather-fetcher skill to fetch
+the current temperature and return it cleanly.</div>
+        <div class="how-to-trigger">
+            <h4>What Happened</h4>
+            <p>The agent has: a <strong>role</strong> (weather specialist), <strong>restricted tools</strong> (only WebFetch and Read), a <strong>preloaded skill</strong> (weather-fetcher), and a <strong>specific model</strong> (sonnet for cost efficiency).</p>
+        </div>
+    </div>
+
+    <!-- Slide 24: Agent Frontmatter -->
+    <div class="slide" data-slide="24">
+        <h1>Agent Frontmatter Fields</h1>
+        <p>The YAML at the top of an agent file controls its identity and capabilities:</p>
+        <div style="margin: 24px 0;">
+            <div class="field-row">
+                <span class="field-name">name <span class="field-recommended">Recommended</span></span>
+                <span class="field-desc">Unique identifier &mdash; defaults to filename if omitted</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">description <span class="field-required">Required</span></span>
+                <span class="field-desc">When to invoke. Use <code>"PROACTIVELY"</code> for auto-invocation</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">model</span>
+                <span class="field-desc"><code>haiku</code>, <code>sonnet</code>, <code>opus</code>, or <code>inherit</code> (default)</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">tools</span>
+                <span class="field-desc">Allowlist of tools. Inherits all if omitted</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">skills</span>
+                <span class="field-desc">List of skill names to preload into agent context at startup</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">maxTurns</span>
+                <span class="field-desc">Maximum agentic turns before the agent stops</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">memory</span>
+                <span class="field-desc">Persistent memory: <code>user</code>, <code>project</code>, or <code>local</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">color</span>
+                <span class="field-desc">Visual color in task list: <code>red</code>, <code>blue</code>, <code>green</code>, etc.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 25: Agent vs Skill Side by Side -->
+    <div class="slide" data-slide="25">
+        <h1>Agents vs. Skills &mdash; Where They Live</h1>
+        <div class="code-block"><span class="comment"># Your project structure</span>
+myproject/
+  <span class="claude-file">.claude/</span>
+    <span class="claude-file">agents/</span>                    <span class="comment"># Agent definitions</span>
+      <span class="claude-file">weather-agent.md</span>         <span class="comment"># The person (role + behavior)</span>
+      <span class="claude-file">code-reviewer.md</span>         <span class="comment"># Another agent</span>
+    <span class="claude-file">skills/</span>                    <span class="comment"># Skill definitions</span>
+      <span class="claude-file">weather-fetcher/</span>         <span class="comment"># Each skill is a folder</span>
+        <span class="claude-file">SKILL.md</span>               <span class="comment"># The training (instructions)</span>
+      <span class="claude-file">weather-svg-creator/</span>
+        <span class="claude-file">SKILL.md</span>
+    <span class="claude-file">commands/</span>                  <span class="comment"># Slash commands</span>
+    <span class="claude-file">rules/</span>                     <span class="comment"># Conditional instructions</span>
+    <span class="claude-file">settings.json</span>              <span class="comment"># Team settings</span>
+  <span class="claude-file">CLAUDE.md</span>                    <span class="comment"># Project memory</span></div>
+        <table style="margin-top: 24px;">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Agents</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Location</strong></td>
+                    <td><code>.claude/agents/*.md</code></td>
+                    <td><code>.claude/skills/*/SKILL.md</code></td>
+                </tr>
+                <tr>
+                    <td><strong>What it is</strong></td>
+                    <td>A role with behavior</td>
+                    <td>Instructions for a task</td>
+                </tr>
+                <tr>
+                    <td><strong>Runs in</strong></td>
+                    <td>Its own isolated context</td>
+                    <td>Inline or forked context</td>
+                </tr>
+                <tr>
+                    <td><strong>Has tools?</strong></td>
+                    <td>Yes &mdash; own tool allowlist</td>
+                    <td>Uses parent's tools</td>
+                </tr>
+                <tr>
+                    <td><strong>Analogy</strong></td>
+                    <td>The employee</td>
+                    <td>The training manual</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Slide 26: Invoking an Agent -->
+    <div class="slide" data-slide="26">
+        <h1>How to Use Your Agent</h1>
+        <p>Once you've created an agent file, Claude can invoke it automatically (if the description says <code>PROACTIVELY</code>) or you can ask Claude to use it:</p>
+        <div class="code-block"><span class="comment"># In a Claude Code conversation:</span>
+<span class="cmd">Use the weather-agent to get the current temperature in Dubai</span></div>
+        <p>Behind the scenes, Claude calls the Agent tool:</p>
+        <div class="code-block"><span class="comment"># What Claude does internally</span>
+<span class="cmd">Agent</span>(
+  <span class="key">subagent_type</span> = <span class="string">"weather-agent"</span>,
+  <span class="key">description</span>   = <span class="string">"Fetch Dubai temperature"</span>,
+  <span class="key">prompt</span>        = <span class="string">"Get the current temperature in Celsius"</span>
+)</div>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>You're the manager. You say "get me the weather." Claude dispatches the weather-agent (the specialist) into their own workspace. The agent uses their training (weather-fetcher skill) to do the work. They come back with the answer.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 6: COMMANDS & ORCHESTRATION (Slides 27-31)              -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 27: Orchestration Intro -->
+    <div class="slide section-slide" data-slide="27" data-level="orchestration">
+        <div class="section-number">Level 6</div>
+        <h1>Commands &amp; Orchestration</h1>
+        <p class="section-desc">Commands are the entry points that tie agents and skills into complete workflows.</p>
+    </div>
+
+    <!-- Slide 28: What Are Commands -->
+    <div class="slide" data-slide="28">
+        <h1>Commands &mdash; The Entry Point</h1>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>If agents are employees and skills are their training, a <strong>command</strong> is the manager's playbook &mdash; "when someone asks for a weather report, first ask them Celsius or Fahrenheit, then dispatch the weather team, then create the visual."</p>
+        </div>
+        <p>A command lives in <code>.claude/commands/&lt;name&gt;.md</code>:</p>
+        <div class="code-block"><span class="comment"># File: .claude/commands/weather-orchestrator.md</span>
+<span class="string">---</span>
+<span class="key">description</span>: <span class="string">Fetch weather and create SVG card</span>
+<span class="key">model</span>: <span class="string">haiku</span>
+<span class="string">---</span>
+
+1. Ask the user: Celsius or Fahrenheit?
+2. Use the <span class="key">weather-agent</span> to fetch Dubai's temperature
+3. Use the <span class="key">weather-svg-creator</span> skill to create an SVG card
+4. Show the user the result</div>
+        <div class="how-to-trigger">
+            <h4>How to Run</h4>
+            <p>Type <code>/weather-orchestrator</code> in Claude Code. The command orchestrates the entire workflow.</p>
+        </div>
+    </div>
+
+    <!-- Slide 29: The Full Architecture -->
+    <div class="slide" data-slide="29">
+        <h1>Command &rarr; Agent &rarr; Skill</h1>
+        <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows:</p>
+        <div class="code-block"><span class="comment">The Orchestration Flow</span>
+
+  <span class="key">/weather-orchestrator</span>          <span class="comment">COMMAND (entry point)</span>
+         |
+    Step 1: Ask user C/F?
+         |
+    Step 2: <span class="cmd">Agent tool</span>
+         |
+         v
+  <span class="key">weather-agent</span>                   <span class="comment">AGENT (specialist)</span>
+    skill: <span class="string">weather-fetcher</span>       <span class="comment">SKILL (preloaded training)</span>
+    tools: WebFetch, Read
+         |
+    Returns: temp + unit
+         |
+    Step 3: <span class="cmd">Skill tool</span>
+         |
+         v
+  <span class="key">weather-svg-creator</span>             <span class="comment">SKILL (invoked directly)</span>
+         |
+    Creates: weather.svg + output.md</div>
+    </div>
+
+    <!-- Slide 30: Two Skill Patterns -->
+    <div class="slide" data-slide="30">
+        <h1>Two Ways Skills Are Used</h1>
+        <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
+        <div class="two-col">
+            <div class="col-card" style="border-left: 4px solid #9c27b0;">
+                <h4>Pattern 1: Agent Skill (Preloaded)</h4>
+                <p><code>weather-fetcher</code> is listed in the agent's <code>skills:</code> field.</p>
+                <p style="margin-top: 12px;">Its full content is <strong>injected into the agent's context</strong> at startup. The agent reads it like a reference manual.</p>
+                <div class="code-block" style="font-size: 0.8rem;"><span class="comment"># In weather-agent.md</span>
+<span class="key">skills</span>:
+  - <span class="string">weather-fetcher</span></div>
+            </div>
+            <div class="col-card" style="border-left: 4px solid #2196f3;">
+                <h4>Pattern 2: Direct Invocation</h4>
+                <p><code>weather-svg-creator</code> is called directly by the command via the Skill tool.</p>
+                <p style="margin-top: 12px;">It runs <strong>independently</strong> in the command's context, not inside any agent.</p>
+                <div class="code-block" style="font-size: 0.8rem;"><span class="comment"># In the command prompt</span>
+<span class="cmd">Skill</span>(<span class="key">skill</span>: <span class="string">"weather-svg-creator"</span>)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 31: Day 2 Summary -->
+    <div class="slide" data-slide="31">
+        <h1>Day 2 Summary</h1>
+        <p>Today you learned how to build the pieces and wire them together:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Location</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CLAUDE.md</strong></td>
+                    <td>Project root</td>
+                    <td>Project memory &mdash; tell Claude about your codebase</td>
+                </tr>
+                <tr>
+                    <td><strong>Rules</strong></td>
+                    <td><code>.claude/rules/*.md</code></td>
+                    <td>Conditional instructions triggered by file patterns</td>
+                </tr>
+                <tr>
+                    <td><strong>Skills</strong></td>
+                    <td><code>.claude/skills/*/SKILL.md</code></td>
+                    <td>Reusable instructions &mdash; the training manual</td>
+                </tr>
+                <tr>
+                    <td><strong>Agents</strong></td>
+                    <td><code>.claude/agents/*.md</code></td>
+                    <td>Specialists with roles, tools, and preloaded skills</td>
+                </tr>
+                <tr>
+                    <td><strong>Commands</strong></td>
+                    <td><code>.claude/commands/*.md</code></td>
+                    <td>Orchestrators that tie agents and skills into workflows</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how-to-trigger">
+            <h4>The Architecture</h4>
+            <p><strong>Command</strong> (entry point) &rarr; <strong>Agent</strong> (specialist with skills) &rarr; <strong>Skill</strong> (reusable instructions). Each layer adds structure and predictability.</p>
+        </div>
+    </div>
+
+    <!-- Slide 32: Closing -->
+    <div class="slide title-slide" data-slide="32">
+        <h1>Journey So Far</h1>
+        <p class="subtitle">Day 1: Understand &mdash; Day 2: Build</p>
+        <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 600px;">You've gone from asking Claude a question to building a complete orchestrated workflow with agents, skills, and commands.</p>
+        <p style="margin-top: 40px; font-size: 1rem; color: #888;">The learning journey continues &mdash; hooks, MCP servers, settings, and more.</p>
+        <p style="margin-top: 40px; font-size: 0.95rem; color: #aaa;">github.com/shanraisshan/claude-code-best-practice</p>
+    </div>
+
+    <!-- Header Logo -->
+    <div class="header-logo">
+        <img src="../../!/claude-jumping.svg" alt="Claude Code mascot" />
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()">&#8592;</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">&#8594;</button>
+    </div>
+    <div class="slide-counter" id="slideCounter">1 / --</div>
+    <div class="keyboard-hint"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> or <kbd>Space</kbd> to navigate</div>
+
+    <script>
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('[data-slide]');
+        const totalSlides = slides.length;
+
+        // Level definitions (6 levels across 2 days)
+        const LEVELS = {
+            'prompting':     { order: 1, color: 'hsl(210, 70%, 50%)', height: '17%',  label: 'Prompting',     day: 1 },
+            'agents':        { order: 2, color: 'hsl(35, 80%, 50%)',  height: '33%',  label: 'Agents',        day: 1 },
+            'skills':        { order: 3, color: 'hsl(120, 60%, 40%)', height: '50%',  label: 'Skills',        day: 1 },
+            'memory':        { order: 4, color: 'hsl(270, 60%, 50%)', height: '67%',  label: 'Memory',        day: 2 },
+            'building':      { order: 5, color: 'hsl(180, 60%, 40%)', height: '83%',  label: 'Building',      day: 2 },
+            'orchestration': { order: 6, color: 'hsl(45, 90%, 45%)',  height: '100%', label: 'Orchestration', day: 2 }
+        };
+
+        // Build slide-to-level map
+        const SLIDE_LEVELS = {};
+        let lastLevel = null;
+        slides.forEach((s) => {
+            const num = parseInt(s.dataset.slide);
+            if (s.dataset.level) { lastLevel = s.dataset.level; }
+            SLIDE_LEVELS[num] = lastLevel;
+        });
+
+        let prevDisplayedLevel = null;
+
+        function updateJourneyBar(slideNum) {
+            const bar = document.getElementById('journeyBar');
+            const fill = document.getElementById('journeyFill');
+            const labelEl = document.getElementById('journeyLevelLabel');
+            if (slideNum <= 1) { bar.classList.add('hidden'); prevDisplayedLevel = null; return; }
+            bar.classList.remove('hidden');
+            const levelKey = SLIDE_LEVELS[slideNum];
+            if (!levelKey || !LEVELS[levelKey]) {
+                fill.style.height = '0%';
+                if (labelEl) { labelEl.innerHTML = ''; }
+                return;
+            }
+            const lvl = LEVELS[levelKey];
+            fill.style.height = lvl.height;
+            fill.style.backgroundColor = lvl.color;
+            if (labelEl) { labelEl.innerHTML = 'Day ' + lvl.day + ' &mdash; <strong style="color:' + lvl.color + '">' + lvl.label + '</strong>'; }
+
+            // Show level badge when level changes
+            document.querySelectorAll('.level-badge').forEach(b => b.remove());
+            const slideEl = document.querySelector(`[data-slide="${slideNum}"]`);
+            if (slideEl && slideEl.dataset.level && slideEl.dataset.level !== prevDisplayedLevel) {
+                const h1 = slideEl.querySelector('h1');
+                if (h1) {
+                    const badge = document.createElement('span');
+                    badge.className = 'level-badge';
+                    badge.textContent = '\u2192 ' + lvl.label;
+                    h1.appendChild(badge);
+                }
+            }
+            prevDisplayedLevel = levelKey;
+        }
+
+        function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+            document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+            updateJourneyBar(currentSlide);
+        }
+        function nextSlide() { currentSlide++; showSlide(currentSlide); }
+        function prevSlide() { currentSlide--; showSlide(currentSlide); }
+        function goToSlide(n) { currentSlide = n; showSlide(currentSlide); }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) { if (diff > 0) nextSlide(); else prevSlide(); }
+        });
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
