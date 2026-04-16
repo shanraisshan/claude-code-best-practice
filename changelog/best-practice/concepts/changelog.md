@@ -379,3 +379,20 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 4 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap (119 pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user chose to keep as-is) |
 | 5 | MED | Changed Description | Update Scheduled Tasks description from "up to 3 days" to "up to 7 days" — docs now specify seven-day expiry for recurring tasks | ✅ COMPLETE (description updated to "up to 7 days") |
 | 6 | MED | Missing Concept | Add Devcontainers row to Hot table — preconfigured dev containers with security isolation and firewall rules (`/en/devcontainer`) | ✅ COMPLETE (row added after Routines with .devcontainer/ location) |
+
+---
+
+## [2026-04-16 08:20 PM PKT] Claude Code v2.1.110
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Stale URL | Fix `web-scheduled-tasks` URL in TIPS (line 223) to `/en/routines` — URL not in sitemap; same stale URL fixed in Hot table on 2026-04-14 but TIPS instance was missed | ✅ COMPLETE (URL updated to /routines) |
+| 2 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap (111 pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user chose to keep as-is) |
+| 3 | MED | Changed Description | Update "up to 3 days" to "up to 7 days" in TIPS (line 223) — same description updated in Hot table on 2026-04-14 but TIPS instance was missed | ✅ COMPLETE (description updated to "up to 7 days") |
+| 4 | LOW | Verification | All 45 external docs URLs validated against llms.txt sitemap (111 pages) — 1 broken link found (see #1) | ✅ COMPLETE (web-scheduled-tasks flagged) |
+| 5 | LOW | Verification | All local badge file paths validated — no missing files (20+ badge targets checked) | ✅ COMPLETE (all badge targets exist on filesystem) |
+| 6 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading "Organize rules with `.claude/rules/`" exists) |
+| 7 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
+| 8 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
+| 9 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
+| 10 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
