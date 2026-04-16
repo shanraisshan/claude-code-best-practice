@@ -224,3 +224,11 @@ No priority action items — report is fully in sync with official documentation
 | 3 | MED | Scope Decision | 5 bundled skills (`/batch`, `/claude-api`, `/debug`, `/loop`, `/simplify`) listed in official docs unified table but excluded per report's current scoping disclaimer | ❌ INVALID (user chose to keep report scoped to built-in commands only — disclaimer retained) |
 | 4 | MED | Changed Description | Update `/doctor` — add "Press `f` to have Claude fix any reported issues" | ✅ COMPLETE (added status icons and `f` key fix detail to description) |
 | 5 | MED | Changed Description | Update `/schedule` — terminology changed from "Cloud scheduled tasks" to "routines" | ✅ COMPLETE (updated terminology in description) |
+
+---
+
+## [2026-04-16 08:20 PM PKT] Claude Code v2.1.110
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | New Alias | Add `/undo` alias to `/rewind` entry — added in v2.1.108 | ✅ COMPLETE (added `/undo` alongside existing `/checkpoint` alias at #70 in Session tag) |
