@@ -361,3 +361,24 @@
 | 4 | MED | Count Update | Update gstack skills 31→36 (36 SKILL.md confirmed via per-file fetch; v0.17.0.0 additions including ux-audit, guard, gstack-upgrade) | COMPLETE (updated README table) |
 | 5 | MED | Star Update | Update GSD ★ from 52k to 53k (52,871 actual — v1.36.0 graphify, typed SDK query, stale worktree detection) | COMPLETE (updated README table) |
 | 6 | LOW | Star Update | Update oh-my-claudecode ★ from 28k to 29k (28,771 actual — v4.11.6 security hardening, Ralph spoofing fix) | COMPLETE (updated README table) |
+
+---
+
+## [2026-04-16 08:25 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 152k to 156k (155,753 actual — v5.0.7 Copilot CLI, Codex plugin restructuring) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update ECC ★ from 156k to 158k (158,287 actual — ECC2 alpha, hook schema fixes, CI stability) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 72k to 74k (73,750 actual — v0.17.0.0 UX audit, cookie origin pinning) | COMPLETE (updated README table) |
+| 4 | HIGH | Count Update | Update gstack skills 36→46 (46 root-level SKILL.md dirs confirmed via repo listing; +10 new skill dirs including UX audit, guard, upgrade utilities) | COMPLETE (updated README table) |
+| 5 | HIGH | Star Update | Update GSD ★ from 53k to 54k (53,923 actual — v1.36.0 graphify, TDD pipeline mode, pattern-mapper) | COMPLETE (updated README table) |
+| 6 | HIGH | Count Update | Update CE skills 42→51 (50 compound-engineering + 1 coding-tutor confirmed; v2.66.x auto-research loop, setup skill) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update Spec Kit ★ from 88k to 89k (88,525 actual — v0.7.1 skill chaining, Salesforce/Worktrees extensions) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update OpenSpec ★ from 40k to 41k (40,584 actual — v1.3.0 IBM Bob Shell adapter, Junie/Lingma/ForgeCode) | COMPLETE (updated README table) |
+| 9 | MED | Count Update | Update BMAD skills 37→39 (28 bmm-skills + 11 core-skills confirmed) | COMPLETE (updated README table) |
+| 10 | LOW | Count Update | Update CE commands 4→3 (.claude/commands/ emptied; 3 coding-tutor commands remain) | COMPLETE (updated README table) |
+| 11 | LOW | Count Verify | ECC agents 48→60 — agent found 60 .md files in agents/ but CHANGELOG states 38 published surface | ON HOLD (discrepancy between directory count and published surface; keeping 48) |
+| 12 | LOW | Count Verify | ECC commands 143→133 — agent counted 130 root + 3 .claude; possible pagination undercount | ON HOLD (keeping 143 until verified; decrease seems unlikely given active development) |
+| 13 | LOW | Count Verify | ECC skills 230→156 — CHANGELOG self-reports 156 but previous directory count was 230 | ON HOLD (keeping 230; different counting methodology) |
+| 14 | LOW | Count Verify | GSD commands 122→74 — agent enumerated A-W filenames but dramatic 39% drop seems unlikely | ON HOLD (keeping 122 until verified; may be pagination/multi-runtime directory issue) |
