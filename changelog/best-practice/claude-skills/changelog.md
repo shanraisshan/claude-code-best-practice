@@ -149,3 +149,9 @@ No drift detected — frontmatter fields (13) and bundled skills (5) are fully s
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Field | Add `when_to_use` field to frontmatter table — additional context for when Claude should invoke the skill; appended to `description` in skill listing, counts toward 1,536-char cap | ✅ COMPLETE (added to frontmatter table after `description`, count updated 13→14) |
+
+---
+
+## [2026-04-16 08:17 PM PKT] Claude Code v2.1.110
+
+No drift detected — frontmatter fields (14) and bundled skills (5) are fully synchronized with official docs.
