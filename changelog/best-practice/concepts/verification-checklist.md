@@ -43,3 +43,11 @@ Rules for verifying CONCEPTS table accuracy. Each rule is checked during every w
 - **Source to compare against**: Official docs page content
 - **Date added**: 2026-03-02
 - **Origin**: Memory description missing auto memory; MCP Servers location missing `.mcp.json`
+
+### 6. TIPS Section URL Consistency
+- **Category**: URL Accuracy
+- **What to check**: When a URL is updated in the CONCEPTS or Hot table, also check the TIPS section for the same stale URL
+- **Depth**: Search TIPS section (lines 125–267) for every URL that was flagged in the CONCEPTS/Hot table
+- **Source to compare against**: llms.txt sitemap + CONCEPTS table URLs
+- **Date added**: 2026-04-16
+- **Origin**: `web-scheduled-tasks` URL was fixed in Hot table (2026-04-14) but the same stale URL persisted in TIPS (line 223)
