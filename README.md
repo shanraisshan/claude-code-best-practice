@@ -122,7 +122,7 @@ All major workflows converge on the same architectural pattern: **Research → P
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
-## 💡 TIPS AND TRICKS (69)
+## 💡 TIPS AND TRICKS (70)
 
 🚫👶 = do not babysit
 
@@ -149,7 +149,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 | write detailed specs and reduce ambiguity before handing work off — the more specific you are, the better the output | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544) |
 | prototype > PRD — build 20-30 versions instead of writing specs, the cost of building is low so take many shots | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3630) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3630) |
 
-<a id="tips-claudemd"></a>■ **CLAUDE.md (7)**
+<a id="tips-claudemd"></a>■ **CLAUDE.md (8)**
 
 | Tip | Source |
 |-----|--------|
