@@ -383,3 +383,22 @@
 | 7 | MED | Example Update | Add `viewMode` to Quick Reference example after `showThinkingSummaries` | ✅ COMPLETE (added "viewMode": "default" to example) |
 | 8 | MED | Stale Annotation | `OTEL_LOG_TOOL_DETAILS` still marked "in v2.1.85 changelog, not yet on official env-vars page" — confirmed still absent from official page after 10+ versions and 7 consecutive runs | ✋ ON HOLD (annotation is accurate — keeping as-is pending official docs update) |
 | 7 | MED | Ownership Boundary | Add `CCR_FORCE_BUNDLE` to settings report env vars table — on official /en/env-vars page as configurable via `env` key, currently only in CLI startup flags file. Add with cross-reference to CLI flags file | ✅ COMPLETE (added to settings report before CLAUDE_CODE_GIT_BASH_PATH; CLI flags file updated with cross-ref) |
+
+---
+
+## [2026-04-16 08:25 PM PKT] Claude Code v2.1.110
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `minimumVersion` to General Settings table — string, prevents auto-updater from downgrading below a specific version. Confirmed on official settings page | ✅ COMPLETE (added after autoUpdatesChannel in General Settings table) |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_TMUX_TRUECOLOR` to Common Environment Variables table — set to `1` to allow 24-bit truecolor output inside tmux. Confirmed on official /en/env-vars page | ✅ COMPLETE (added before CLAUDE_CODE_NO_FLICKER) |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_REMOTE` to Common Environment Variables table — read-only, set to `true` in cloud sessions. Confirmed on official /en/env-vars page | ✅ COMPLETE (added before CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX) |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_CODE_REMOTE_SESSION_ID` to Common Environment Variables table — read-only, cloud session ID. Confirmed on official /en/env-vars page | ✅ COMPLETE (added before CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX) |
+| 5 | HIGH | Inverse Env Var Check | Mark `ENABLE_PROMPT_CACHING_1H_BEDROCK` as "not in official docs — unverified". No longer on official /en/env-vars page. Per Rule 5D | ✅ COMPLETE (added unverified annotation with deprecation note) |
+| 6 | MED | New Setting (Changelog) | Add `autoScrollEnabled` to General Settings — boolean, disable conversation auto-scroll in fullscreen mode. v2.1.110 changelog only, not yet on official settings page | ✅ COMPLETE (added before feedbackSurveyRate with changelog annotation) |
+| 7 | MED | New Setting (Changelog) | Add `tui` to General Settings — setting for flicker-free rendering mode (`/tui fullscreen`). v2.1.110 changelog only, not yet on official settings page | ✅ COMPLETE (added before feedbackSurveyRate with changelog annotation) |
+| 8 | MED | New Env Var (Changelog) | Add `ENABLE_PROMPT_CACHING_1H` to env vars table — 1-hour prompt cache TTL (replaces deprecated `ENABLE_PROMPT_CACHING_1H_BEDROCK`). v2.1.108 changelog only, not yet on official /en/env-vars page | ✅ COMPLETE (added before DISABLE_PROMPT_CACHING with changelog annotation) |
+| 9 | MED | New Env Var (Changelog) | Add `FORCE_PROMPT_CACHING_5M` to env vars table — force 5-minute TTL. v2.1.108 changelog only, not yet on official /en/env-vars page | ✅ COMPLETE (added before DISABLE_PROMPT_CACHING with changelog annotation) |
+| 10 | MED | Effort Level Table | Add `Max` row to Effort Level table — Opus 4.6 only, documented in env var but missing from table | ✅ COMPLETE (added as first row in Effort Level table) |
+| 11 | MED | Sandbox Descriptions | Add platform-specific notes: `allowUnixSockets` (macOS only), `allowAllUnixSockets` (Linux/WSL2 detail), `enableWeakerNestedSandbox` (Linux/WSL2 only) | ✅ COMPLETE (all 3 descriptions updated with platform-specific notes per official docs) |
+| 12 | LOW | Changelog-Only Env Vars | Consider adding `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` (v2.1.108), `OTEL_LOG_USER_PROMPTS` (v2.1.101), `OTEL_LOG_TOOL_CONTENT` (v2.1.101) — all changelog-only, not on official env-vars page. Defer per Rule 8A until official docs confirm | ✋ ON HOLD (deferred — changelog-only, not confirmed by official docs) |
