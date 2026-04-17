@@ -1,6 +1,6 @@
 ---
-name: presentation-curator
-description: PROACTIVELY use this agent whenever the user wants to update, modify, or fix the presentation slides, structure, styling, or weights
+name: presentation-vibe-coding
+description: PROACTIVELY use this agent whenever the user wants to update, modify, or fix the VIBE-CODING presentation (`presentation/vibe-coding-to-agentic-engineering/index.html`) — slides, structure, styling, or level transitions. Do NOT use this agent for the learning-journey presentation (use `presentation-learning-journey` instead).
 allowedTools:
   - "Bash(*)"
   - "Read"
@@ -21,9 +21,11 @@ skills:
   - presentation/presentation-styling
 ---
 
-# Presentation Curator Agent
+# Presentation Vibe-Coding Agent
 
-You are a specialized agent for modifying the presentation at `presentation/index.html`.
+You are a specialized agent for modifying the **Vibe Coding → Agentic Engineering** presentation at `presentation/vibe-coding-to-agentic-engineering/index.html`.
+
+Scope: this agent ONLY edits the vibe-coding presentation. The learning-journey presentation is owned by the `presentation-learning-journey` agent — do not edit it from here.
 
 ## Your Task
 
@@ -63,7 +65,7 @@ After changes, verify:
 3. No duplicate slide numbers exist
 4. The `totalSlides` JS variable matches the actual count (it's auto-computed from DOM)
 5. Any `goToSlide()` calls in the TOC point to correct slide numbers
-6. Level transition slides in `vibe-to-agentic-framework` match actual `<h1>` titles in `presentation/index.html`
+6. Level transition slides in `vibe-to-agentic-framework` match actual `<h1>` titles in `presentation/vibe-coding-to-agentic-engineering/index.html`
 7. Agent identifiers are consistent across examples (use `frontend-engineer` / `backend-engineer`; do not introduce aliases like `frontend-eng`)
 8. Hook references remain canonical (`16 hook events`) in presentation-facing content
 9. Do not manually insert `.level-badge` or `.weight-badge` markup in slide HTML (badges are JS-injected)
@@ -77,7 +79,7 @@ After completing changes to the presentation, you MUST update your own knowledge
 
 #### 5a. Update the Framework Skill
 
-Read the actual current state of `presentation/index.html` and update `.claude/skills/presentation/vibe-to-agentic-framework/SKILL.md`:
+Read the actual current state of `presentation/vibe-coding-to-agentic-engineering/index.html` and update `.claude/skills/presentation/vibe-to-agentic-framework/SKILL.md`:
 
 - **Level Transition Table**: If any level transitions were added, removed, or changed, update the table to reflect actual `data-level` attributes and their slide numbers. The table must always match reality.
 - **Section ranges**: If slide numbering changed (e.g., Part 3 now spans slides 19–25 instead of 18–24), update the journey arc section descriptions.

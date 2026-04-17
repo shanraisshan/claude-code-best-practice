@@ -31,7 +31,7 @@ Skills in `.claude/skills/<name>/SKILL.md` use YAML frontmatter:
 - `hooks`: Lifecycle hooks scoped to this skill
 
 ### Presentation System
-See `.claude/rules/presentation.md` — all presentation work is delegated to the `presentation-curator` agent.
+See `.claude/rules/presentation.md` — presentation work is delegated per-presentation to `presentation-vibe-coding` (for `presentation/vibe-coding-to-agentic-engineering/`) or `presentation-learning-journey` (for `presentation/learning-journey/`).
 
 ### Hooks System
 Cross-platform sound notification system in `.claude/hooks/`:
