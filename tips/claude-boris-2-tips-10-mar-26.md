@@ -19,7 +19,7 @@ New in Claude Code: **Code Review**. A team of agents runs a deep review on ever
 - Boris has been using it for a few weeks and found it catches many real bugs he would not have noticed otherwise
 - When a PR opens, Claude dispatches a team of agents to hunt for bugs
 
-<a href="https://x.com/bcherny/status/2031089411820228645"><img src="assets/boris-10-mar-26/0.png" alt="Boris Cherny announcing Code Review" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2031089411820228645"><img src="assets/boris-26-3-10/0.png" alt="Boris Cherny announcing Code Review" width="50%" /></a>
 
 ---
 
@@ -31,7 +31,7 @@ Roughly, the more tokens you throw at a coding problem, the better the result. B
 - Similar to engineering teams: if Boris causes a bug, his coworker reviewing the code might find it more reliably than he can
 - In the limit, agents will probably write perfect bug-free code — until then, **multiple uncorrelated context windows** tends to be a good approach
 
-<a href="https://x.com/bcherny/status/2031151689219321886"><img src="assets/boris-10-mar-26/1.png" alt="Boris Cherny on test time compute" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2031151689219321886"><img src="assets/boris-26-3-10/1.png" alt="Boris Cherny on test time compute" width="50%" /></a>
 
 ---
 
