@@ -376,7 +376,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 
 1. When should you use a command vs an agent vs a skill — and when is vanilla Claude Code just better?
 2. How often should you update your agents, commands, and workflows as models improve?
-3. Does giving your subagent a detailed persona improve quality? What does a "perfect persona/prompt" for research/QA subagent look like?
+3. Should you have a generalist subagent or a feature-specific/role-specific agent? Does giving your subagent a detailed persona improve quality, and what does a "perfect persona prompt" for research/vision look like?
 4. Should you rely on Claude Code's built-in plan mode — or build your own planning command/agent that enforces your team's workflow?
 5. If you have a personal skill (e.g., /implement with your coding style), how do you incorporate community skills (e.g., /simplify) without conflicts — and who wins when they disagree?
 6. Are we there yet? Can we convert an existing codebase into specs, delete the code, and have AI regenerate the exact same code from those specs alone?
