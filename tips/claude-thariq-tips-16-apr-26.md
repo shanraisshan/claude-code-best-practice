@@ -15,9 +15,9 @@ A guide on managing sessions, context windows, and compaction in Claude Code, sh
 
 With the 1M token context window, Claude Code can handle longer tasks more reliably — but it also opens the door to context pollution if you're not deliberate about managing your sessions. Session management matters more than ever: when to start fresh, when to compact, when to rewind, and when to delegate to subagents.
 
-<img src="assets/thariq-16-apr-26/1.png" alt="Thariq intro tweet" width="50%" />
+<img src="assets/thariq-26-4-16/1.png" alt="Thariq intro tweet" width="50%" />
 
-<img src="assets/thariq-16-apr-26/2.png" alt="Session management intro" width="50%" />
+<img src="assets/thariq-26-4-16/2.png" alt="Session management intro" width="50%" />
 
 ---
 
@@ -29,9 +29,9 @@ Unfortunately using context has a slight cost — **context rot**. Model perform
 
 Context windows are a hard cutoff. When you're nearing the end, you need to summarize the task and continue in a new context window — this is **compaction**. You can also trigger compaction yourself.
 
-<img src="assets/thariq-16-apr-26/3.png" alt="Context window diagram" width="50%" />
+<img src="assets/thariq-26-4-16/3.png" alt="Context window diagram" width="50%" />
 
-<img src="assets/thariq-16-apr-26/4.png" alt="Context rot explanation" width="50%" />
+<img src="assets/thariq-26-4-16/4.png" alt="Context rot explanation" width="50%" />
 
 ---
 
@@ -47,9 +47,9 @@ After Claude finishes a turn, you have a surprising number of options for what t
 
 While the most natural is just to continue, the other four options exist to help you manage your context.
 
-<img src="assets/thariq-16-apr-26/5.png" alt="Compaction and branching diagram" width="50%" />
+<img src="assets/thariq-26-4-16/5.png" alt="Compaction and branching diagram" width="50%" />
 
-<img src="assets/thariq-16-apr-26/6.png" alt="Five options after a turn" width="50%" />
+<img src="assets/thariq-26-4-16/6.png" alt="Five options after a turn" width="50%" />
 
 Each option carries a different amount of existing context forward:
 
@@ -58,7 +58,7 @@ Each option carries a different amount of existing context forward:
 | your brief only | lossy summary | all + result | prefix kept, tail cut | everything stays |
 | *none of it* | | | | *all of it* |
 
-<img src="assets/thariq-16-apr-26/7.png" alt="Context carry-forward spectrum" width="50%" />
+<img src="assets/thariq-26-4-16/7.png" alt="Context carry-forward spectrum" width="50%" />
 
 ---
 
@@ -70,7 +70,7 @@ The new 1M context windows means you can now do longer tasks more reliably — f
 
 A grey area is when you may want to do related tasks where some of the context is still necessary, but not all. For example, writing the documentation for a feature you just implemented. While you could start a new session, Claude would have to reread the files, which would be slower and more expensive. Since documentation may not be a highly intelligence-sensitive task, the extra context is probably worth the efficiency gain.
 
-<img src="assets/thariq-16-apr-26/8.png" alt="When to start a new session" width="50%" />
+<img src="assets/thariq-26-4-16/8.png" alt="When to start a new session" width="50%" />
 
 ---
 
@@ -90,9 +90,9 @@ Rewind is often the better approach. For example, Claude reads five files, tries
 
 You can also use **"summarize from here"** to have Claude summarize its learnings and create a handoff message, kind of like a message to the previous iteration of Claude from its future self that tried something and it didn't work.
 
-<img src="assets/thariq-16-apr-26/9.png" alt="Correcting vs rewinding diagram" width="50%" />
+<img src="assets/thariq-26-4-16/9.png" alt="Correcting vs rewinding diagram" width="50%" />
 
-<img src="assets/thariq-16-apr-26/10.png" alt="Rewind with summarize from here" width="50%" />
+<img src="assets/thariq-26-4-16/10.png" alt="Rewind with summarize from here" width="50%" />
 
 ---
 
@@ -110,9 +110,9 @@ Once a session gets long, you have two ways to shed weight: `/compact` or `/clea
 - **High-stakes** next step — found one fact in 100K of exploration
 - More work, more exact
 
-<img src="assets/thariq-16-apr-26/11.png" alt="Compacting vs fresh sessions" width="50%" />
+<img src="assets/thariq-26-4-16/11.png" alt="Compacting vs fresh sessions" width="50%" />
 
-<img src="assets/thariq-16-apr-26/12.png" alt="Compact vs fresh diagram" width="50%" />
+<img src="assets/thariq-26-4-16/12.png" alt="Compact vs fresh diagram" width="50%" />
 
 ---
 
@@ -124,9 +124,9 @@ For example, autocompact fires after a long debugging session and summarizes the
 
 This is particularly difficult, because due to context rot, the model is at its least intelligent point when compacting. With one million context, you have more time to `/compact` proactively with a description of what you want to do.
 
-<img src="assets/thariq-16-apr-26/13.png" alt="Bad compact diagram" width="50%" />
+<img src="assets/thariq-26-4-16/13.png" alt="Bad compact diagram" width="50%" />
 
-<img src="assets/thariq-16-apr-26/14.png" alt="Bad compact explanation" width="50%" />
+<img src="assets/thariq-26-4-16/14.png" alt="Bad compact explanation" width="50%" />
 
 ---
 
@@ -146,11 +146,11 @@ While Claude Code will automatically call subagents, you may want to tell it to 
 - "Spin off a subagent to read through this other codebase and summarize how it implemented the auth flow, then implement it yourself in the same way"
 - "Spin off a subagent to write the docs on this feature based on my git changes"
 
-<img src="assets/thariq-16-apr-26/15.png" alt="Subagent context diagram" width="50%" />
+<img src="assets/thariq-26-4-16/15.png" alt="Subagent context diagram" width="50%" />
 
-<img src="assets/thariq-16-apr-26/16.png" alt="Subagent explanation" width="50%" />
+<img src="assets/thariq-26-4-16/16.png" alt="Subagent explanation" width="50%" />
 
-<img src="assets/thariq-16-apr-26/17.png" alt="When to use subagents" width="50%" />
+<img src="assets/thariq-26-4-16/17.png" alt="When to use subagents" width="50%" />
 
 ---
 
@@ -166,9 +166,9 @@ When Claude has ended a turn and you're about to send a new message, you have a 
 | Starting a genuinely new task | **/clear** | Zero rot; you control exactly what carries forward |
 | Next step will generate lots of output you'll only need the conclusion from | **Subagent** | Intermediate tool noise stays in the child's context; only the result comes back |
 
-<img src="assets/thariq-16-apr-26/18.png" alt="Summary" width="50%" />
+<img src="assets/thariq-26-4-16/18.png" alt="Summary" width="50%" />
 
-<img src="assets/thariq-16-apr-26/19.png" alt="Decision table" width="50%" />
+<img src="assets/thariq-26-4-16/19.png" alt="Decision table" width="50%" />
 
 ---
 
