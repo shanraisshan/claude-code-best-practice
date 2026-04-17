@@ -15,7 +15,7 @@ A summary of tips shared by Boris Cherny ([@bcherny](https://x.com/bcherny)), cr
 
 Boris shared a bunch of his favorite hidden and under-utilized features in Claude Code, focusing on the ones he uses the most.
 
-<a href="https://x.com/bcherny/status/2038454336355999749"><img src="assets/boris-30-mar-26/0.png" alt="Boris Cherny intro tweet" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454336355999749"><img src="assets/boris-26-3-30/0.png" alt="Boris Cherny intro tweet" width="50%" /></a>
 
 ---
 
@@ -27,7 +27,7 @@ Did you know Claude Code has a mobile app? Boris writes a lot of his code from t
 - Navigate to the **Code** tab on the left
 - You can review changes, approve PRs, and write code directly from your phone
 
-<a href="https://x.com/bcherny/status/2038454337811386436"><img src="assets/boris-30-mar-26/1.png" alt="Claude Code mobile app" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454337811386436"><img src="assets/boris-26-3-30/1.png" alt="Claude Code mobile app" width="50%" /></a>
 
 ---
 
@@ -39,7 +39,7 @@ Run `claude --teleport` or `/teleport` to continue a cloud session on your machi
 - **Remote Control**: lets you control a local session from any device
 - Boris has **"Enable Remote Control for all sessions"** set in his `/config`
 
-<a href="https://x.com/bcherny/status/2038454339933548804"><img src="assets/boris-30-mar-26/2.png" alt="Teleport and Remote Control" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454339933548804"><img src="assets/boris-26-3-30/2.png" alt="Teleport and Remote Control" width="50%" /></a>
 
 ---
 
@@ -55,7 +55,7 @@ Use these to schedule Claude to run automatically at a set interval, for up to a
 
 Experiment with turning workflows into skills + loops. It's powerful.
 
-<a href="https://x.com/bcherny/status/2038454341884154269"><img src="assets/boris-30-mar-26/3.png" alt="/loop and /schedule" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454341884154269"><img src="assets/boris-26-3-30/3.png" alt="/loop and /schedule" width="50%" /></a>
 
 ---
 
@@ -68,7 +68,7 @@ Use hooks to run logic as part of the agent lifecycle. For example:
 - **Route permission prompts** to WhatsApp for you to approve/deny (`PermissionRequest`)
 - **Poke Claude** to keep going whenever it stops (`Stop`)
 
-<a href="https://x.com/bcherny/status/2038454343519932844"><img src="assets/boris-30-mar-26/4.png" alt="Use hooks" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454343519932844"><img src="assets/boris-26-3-30/4.png" alt="Use hooks" width="50%" /></a>
 
 ---
 
@@ -80,7 +80,7 @@ Boris uses Dispatch every day to catch up on Slack and emails, manage files, and
 - It can use your MCPs, browser, and computer, with your permission
 - Think of it as a way to delegate non-coding tasks to Claude from anywhere
 
-<a href="https://x.com/bcherny/status/2038454345419936040"><img src="assets/boris-30-mar-26/5.png" alt="Cowork Dispatch" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454345419936040"><img src="assets/boris-26-3-30/5.png" alt="Cowork Dispatch" width="50%" /></a>
 
 ---
 
@@ -92,7 +92,7 @@ The most important tip for using Claude Code: **give Claude a way to verify its 
 - Give Claude a browser and it will write code and iterate until it looks good
 - Boris uses the Chrome extension every time he works on web code — it tends to work more reliably than other similar MCPs
 
-<a href="https://x.com/bcherny/status/2038454347156398333"><img src="assets/boris-30-mar-26/6.png" alt="Chrome extension for frontend" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454347156398333"><img src="assets/boris-26-3-30/6.png" alt="Chrome extension for frontend" width="50%" /></a>
 
 ---
 
@@ -103,7 +103,7 @@ Along the same vein, the Desktop app bundles in the ability for Claude to **auto
 - You can set up something similar in CLI or VSCode using the Chrome extension
 - Or just use the Desktop app for the integrated experience
 
-<a href="https://x.com/bcherny/status/2038454348804714642"><img src="assets/boris-30-mar-26/7.png" alt="Desktop app web server testing" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454348804714642"><img src="assets/boris-26-3-30/7.png" alt="Desktop app web server testing" width="50%" /></a>
 
 ---
 
@@ -116,7 +116,7 @@ People often ask how to fork an existing session. Two ways:
 
 `/branch` creates a branched conversation — you are now in the branch. To resume the original, use `claude -r <original-session-id>`.
 
-<a href="https://x.com/bcherny/status/2038454350214041740"><img src="assets/boris-30-mar-26/8.png" alt="Fork your session" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454350214041740"><img src="assets/boris-26-3-30/8.png" alt="Fork your session" width="50%" /></a>
 
 ---
 
@@ -131,7 +131,7 @@ Example:
 ↑/↓ to scroll · Space, Enter, or Escape to dismiss
 ```
 
-<a href="https://x.com/bcherny/status/2038454351849787485"><img src="assets/boris-30-mar-26/9.png" alt="/btw for side queries" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454351849787485"><img src="assets/boris-26-3-30/9.png" alt="/btw for side queries" width="50%" /></a>
 
 ---
 
@@ -143,7 +143,7 @@ Claude Code ships with deep support for git worktrees. Worktrees are essential f
 - Or hit the **"worktree" checkbox** in the Claude Desktop app
 - For non-git VCS users, use the `WorktreeCreate` hook to add your own logic for worktree creation
 
-<a href="https://x.com/bcherny/status/2038454353787519164"><img src="assets/boris-30-mar-26/10.png" alt="Git worktrees" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454353787519164"><img src="assets/boris-26-3-30/10.png" alt="Git worktrees" width="50%" /></a>
 
 ---
 
@@ -154,7 +154,7 @@ Claude Code ships with deep support for git worktrees. Worktrees are essential f
 - Use it for large code migrations and other kinds of parallelizable work
 - Each worktree agent works independently on its own copy of the codebase
 
-<a href="https://x.com/bcherny/status/2038454355469484142"><img src="assets/boris-30-mar-26/11.png" alt="/batch for massive changesets" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454355469484142"><img src="assets/boris-26-3-30/11.png" alt="/batch for massive changesets" width="50%" /></a>
 
 ---
 
@@ -173,7 +173,7 @@ claude -p "summarize this codebase" \
     --bare
 ```
 
-<a href="https://x.com/bcherny/status/2038454357088457168"><img src="assets/boris-30-mar-26/12.png" alt="--bare flag for SDK startup" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454357088457168"><img src="assets/boris-26-3-30/12.png" alt="--bare flag for SDK startup" width="50%" /></a>
 
 ---
 
@@ -184,7 +184,7 @@ When working across multiple repositories, Boris usually starts Claude in one re
 - This not only tells Claude about the repo, but also **gives it permissions** to work in the repo
 - Or, add `"additionalDirectories"` to your team's `settings.json` to always load in additional folders when starting Claude Code
 
-<a href="https://x.com/bcherny/status/2038454359047156203"><img src="assets/boris-30-mar-26/13.png" alt="--add-dir for multiple repos" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454359047156203"><img src="assets/boris-26-3-30/13.png" alt="--add-dir for multiple repos" width="50%" /></a>
 
 ---
 
@@ -199,7 +199,7 @@ claude --agent=<your agent's name>
 - Agents can have restricted tools, custom descriptions, and specific models
 - They're great for creating read-only agents, specialized review agents, or domain-specific tools
 
-<a href="https://x.com/bcherny/status/2038454360418787764"><img src="assets/boris-30-mar-26/14.png" alt="--agent for custom system prompts" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454360418787764"><img src="assets/boris-26-3-30/14.png" alt="--agent for custom system prompts" width="50%" /></a>
 
 ---
 
@@ -211,7 +211,7 @@ Fun fact: Boris does most of his coding by speaking to Claude, rather than typin
 - Press the voice button on Desktop
 - Or enable dictation in your iOS settings
 
-<a href="https://x.com/bcherny/status/2038454362226467112"><img src="assets/boris-30-mar-26/15.png" alt="/voice for voice input" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038454362226467112"><img src="assets/boris-26-3-30/15.png" alt="/voice for voice input" width="50%" /></a>
 
 ---
 
