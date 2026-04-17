@@ -15,7 +15,7 @@ A summary of team tips shared by Boris Cherny ([@bcherny](https://x.com/bcherny)
 
 Boris shared tips for using Claude Code sourced directly from the Claude Code team. The way the team uses Claude is different than how Boris uses it personally. Remember: there is no one right way to use Claude Code — everyone's setup is different. You should experiment to see what works for you!
 
-<a href="https://x.com/bcherny/status/2017742741636321619"><img src="assets/boris-1-feb-26/0.png" alt="Boris Cherny intro tweet" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742741636321619"><img src="assets/boris-26-2-1/0.png" alt="Boris Cherny intro tweet" width="50%" /></a>
 
 ---
 
@@ -27,7 +27,7 @@ Some people also name their worktrees and set up shell aliases (`2a`, `2b`, `2c`
 
 See: [Worktrees Docs](https://code.claude.com/docs/en/common...)
 
-<a href="https://x.com/bcherny/status/2017742743125299476"><img src="assets/boris-1-feb-26/1.png" alt="Do more in parallel" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742743125299476"><img src="assets/boris-26-2-1/1.png" alt="Do more in parallel" width="50%" /></a>
 
 ---
 
@@ -39,7 +39,7 @@ One person has one Claude write the plan, then they spin up a second Claude to r
 
 Another says the moment something goes sideways, they switch back to plan mode and re-plan. Don't keep pushing. They also explicitly tell Claude to enter plan mode for verification steps, not just for the build.
 
-<a href="https://x.com/bcherny/status/2017742745365057733"><img src="assets/boris-1-feb-26/2.png" alt="Start every complex task in plan mode" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742745365057733"><img src="assets/boris-26-2-1/2.png" alt="Start every complex task in plan mode" width="50%" /></a>
 
 ---
 
@@ -51,7 +51,7 @@ Ruthlessly edit your `CLAUDE.md` over time. Keep iterating until Claude's mistak
 
 One engineer tells Claude to maintain a notes directory for every task/project, updated after every PR. They then point `CLAUDE.md` at it.
 
-<a href="https://x.com/bcherny/status/2017742747067945390"><img src="assets/boris-1-feb-26/3.png" alt="Invest in your CLAUDE.md" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742747067945390"><img src="assets/boris-26-2-1/3.png" alt="Invest in your CLAUDE.md" width="50%" /></a>
 
 ---
 
@@ -66,7 +66,7 @@ Reuse across every project. Tips from the team:
 
 See: [Extend Claude with Skills — Claude Code Docs](https://code.claude.com/docs/en/skills)
 
-<a href="https://x.com/bcherny/status/2017742748984742078"><img src="assets/boris-1-feb-26/4.png" alt="Create your own skills" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742748984742078"><img src="assets/boris-26-2-1/4.png" alt="Create your own skills" width="50%" /></a>
 
 ---
 
@@ -80,7 +80,7 @@ Or, just say "Go fix the failing CI tests." Don't micromanage how.
 
 Point Claude at docker logs to troubleshoot distributed systems — it's surprisingly capable at this.
 
-<a href="https://x.com/bcherny/status/2017742750473720121"><img src="assets/boris-1-feb-26/5.png" alt="Claude fixes most bugs by itself" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742750473720121"><img src="assets/boris-26-2-1/5.png" alt="Claude fixes most bugs by itself" width="50%" /></a>
 
 ---
 
@@ -92,7 +92,7 @@ b. **After a mediocre fix,** say: "Knowing everything you know now, scrap this a
 
 c. **Write detailed specs** and reduce ambiguity before handing work off. The more specific you are, the better the output.
 
-<a href="https://x.com/bcherny/status/2017742752566632544"><img src="assets/boris-1-feb-26/6.png" alt="Level up your prompting" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742752566632544"><img src="assets/boris-26-2-1/6.png" alt="Level up your prompting" width="50%" /></a>
 
 ---
 
@@ -106,7 +106,7 @@ Use voice dictation. You speak 3x faster than you type, and your prompts get way
 
 See: [Terminal Setup Docs](https://code.claude.com/docs/en/termin...)
 
-<a href="https://x.com/bcherny/status/2017742753971769626"><img src="assets/boris-1-feb-26/7.png" alt="Terminal and environment setup" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742753971769626"><img src="assets/boris-26-2-1/7.png" alt="Terminal and environment setup" width="50%" /></a>
 
 ---
 
@@ -118,7 +118,7 @@ b. Offload individual tasks to subagents to keep your main agent's context windo
 
 c. Route permission requests to Opus 4.5 via a hook — let it scan for attacks and auto-approve the safe ones. See: [Hooks Docs](https://code.claude.com/docs/en/hooks#...)
 
-<a href="https://x.com/bcherny/status/2017742755737555434"><img src="assets/boris-1-feb-26/8.png" alt="Use subagents" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742755737555434"><img src="assets/boris-26-2-1/8.png" alt="Use subagents" width="50%" /></a>
 
 ---
 
@@ -128,7 +128,7 @@ Ask Claude Code to use the "bq" CLI to pull and analyze metrics on the fly. The 
 
 This works for any database that has a CLI, MCP, or API.
 
-<a href="https://x.com/bcherny/status/2017742757666902374"><img src="assets/boris-1-feb-26/9.png" alt="Use Claude for data and analytics" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742757666902374"><img src="assets/boris-26-2-1/9.png" alt="Use Claude for data and analytics" width="50%" /></a>
 
 ---
 
@@ -144,7 +144,7 @@ c. Ask Claude to draw ASCII diagrams of new protocols and codebases to help you 
 
 d. Build a spaced-repetition learning skill: you explain your understanding, Claude asks follow-ups to fill gaps, stores the result.
 
-<a href="https://x.com/bcherny/status/2017742759218794768"><img src="assets/boris-1-feb-26/10.png" alt="Learning with Claude" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2017742759218794768"><img src="assets/boris-26-2-1/10.png" alt="Learning with Claude" width="50%" /></a>
 
 ---
 
