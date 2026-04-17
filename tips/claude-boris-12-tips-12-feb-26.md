@@ -15,7 +15,7 @@ A summary of customization tips shared by Boris Cherny ([@bcherny](https://x.com
 
 Boris Cherny highlighted that customizability is one of the things engineers love most about Claude Code — hooks, plugins, LSPs, MCPs, skills, effort, custom agents, status lines, output styles, and more. He shared 12 practical ways developers and teams are customizing their setups.
 
-<a href="https://x.com/bcherny/status/2021699851499798911"><img src="assets/boris-12-feb-26/0.webp" alt="Boris Cherny intro tweet" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021699851499798911"><img src="assets/boris-26-2-12/0.webp" alt="Boris Cherny intro tweet" width="50%" /></a>
 
 ---
 
@@ -28,7 +28,7 @@ Set up your terminal for the best Claude Code experience:
 - **Newlines**: If using Claude Code in an IDE terminal, Apple Terminal, Warp, or Alacritty, run `/terminal-setup` to enable shift+enter for newlines (so you don't need to type `\`)
 - **Vim mode**: Run `/vim`
 
-<a href="https://x.com/bcherny/status/2021699859359883608"><img src="assets/boris-12-feb-26/1.webp" alt="Configure your terminal" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021699859359883608"><img src="assets/boris-26-2-12/1.webp" alt="Configure your terminal" width="50%" /></a>
 
 ---
 
@@ -42,7 +42,7 @@ Run `/model` to pick your preferred effort level:
 
 Boris's preference: High for everything.
 
-<a href="https://x.com/bcherny/status/2021699860869902424"><img src="assets/boris-12-feb-26/2.webp" alt="Adjust effort level" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021699860869902424"><img src="assets/boris-26-2-12/2.webp" alt="Adjust effort level" width="50%" /></a>
 
 ---
 
@@ -54,7 +54,7 @@ Install from the official Anthropic plugin marketplace, or create your own marke
 
 Run `/plugin` to get started.
 
-<a href="https://x.com/bcherny/status/2021699862522364149"><img src="assets/boris-12-feb-26/3.webp" alt="Install Plugins, MCPs, and Skills" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021699862522364149"><img src="assets/boris-26-2-12/3.webp" alt="Install Plugins, MCPs, and Skills" width="50%" /></a>
 
 ---
 
@@ -66,7 +66,7 @@ You can also set the default agent for the main conversation using the `"agent"`
 
 Run `/agents` to get started.
 
-<a href="https://x.com/bcherny/status/2021700144039903699"><img src="assets/boris-12-feb-26/4.webp" alt="Create custom agents" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021700144039903699"><img src="assets/boris-26-2-12/4.webp" alt="Create custom agents" width="50%" /></a>
 
 ---
 
@@ -78,7 +78,7 @@ Out of the box, a small set of safe commands are pre-approved. To pre-approve mo
 
 Full wildcard syntax is supported — e.g., `Bash(bun run *)` or `Edit(/docs/**)`.
 
-<a href="https://x.com/bcherny/status/2021700332292911228"><img src="assets/boris-12-feb-26/5.webp" alt="Pre-approve common permissions" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021700332292911228"><img src="assets/boris-26-2-12/5.webp" alt="Pre-approve common permissions" width="50%" /></a>
 
 ---
 
@@ -88,7 +88,7 @@ Opt into Claude Code's open source sandbox runtime to improve safety while reduc
 
 Run `/sandbox` to enable it. Sandboxing runs on your machine and supports both file and network isolation.
 
-<a href="https://x.com/bcherny/status/2021700506465579443"><img src="assets/boris-12-feb-26/6.webp" alt="Enable sandboxing" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021700506465579443"><img src="assets/boris-26-2-12/6.webp" alt="Enable sandboxing" width="50%" /></a>
 
 ---
 
@@ -98,7 +98,7 @@ Custom status lines show up right below the composer, displaying model, director
 
 Every team member can have a different statusline. Use `/statusline` to have Claude generate one based on your `.bashrc`/`.zshrc`.
 
-<a href="https://x.com/bcherny/status/2021700784019452195"><img src="assets/boris-12-feb-26/7.webp" alt="Add a status line" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021700784019452195"><img src="assets/boris-26-2-12/7.webp" alt="Add a status line" width="50%" /></a>
 
 ---
 
@@ -106,7 +106,7 @@ Every team member can have a different statusline. Use `/statusline` to have Cla
 
 Every key binding in Claude Code is customizable. Run `/keybindings` to re-map any key. Settings live reload so you can see how it feels immediately.
 
-<a href="https://x.com/bcherny/status/2021700883873165435"><img src="assets/boris-12-feb-26/8.webp" alt="Customize your keybindings" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021700883873165435"><img src="assets/boris-26-2-12/8.webp" alt="Customize your keybindings" width="50%" /></a>
 
 ---
 
@@ -120,7 +120,7 @@ Hooks let you deterministically hook into Claude's lifecycle:
 
 Ask Claude to add a hook to get started.
 
-<a href="https://x.com/bcherny/status/2021701059253874861"><img src="assets/boris-12-feb-26/9.webp" alt="Set up hooks" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021701059253874861"><img src="assets/boris-26-2-12/9.webp" alt="Set up hooks" width="50%" /></a>
 
 ---
 
@@ -128,7 +128,7 @@ Ask Claude to add a hook to get started.
 
 Customize your spinner verbs to add or replace the default list with your own verbs. Check the `settings.json` into source control to share verbs with your team.
 
-<a href="https://x.com/bcherny/status/2021701145023197516"><img src="assets/boris-12-feb-26/10.webp" alt="Customize your spinner verbs" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021701145023197516"><img src="assets/boris-26-2-12/10.webp" alt="Customize your spinner verbs" width="50%" /></a>
 
 ---
 
@@ -140,7 +140,7 @@ Run `/config` and set an output style to have Claude respond using a different t
 - **Learning** — to have Claude coach you through making code changes
 - **Custom** — create custom output styles to adjust Claude's voice
 
-<a href="https://x.com/bcherny/status/2021701379409273093"><img src="assets/boris-12-feb-26/11.webp" alt="Use output styles" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021701379409273093"><img src="assets/boris-26-2-12/11.webp" alt="Use output styles" width="50%" /></a>
 
 ---
 
@@ -155,7 +155,7 @@ Claude Code works great out of the box, but when you do customize, check your `s
 
 With 37 settings and 84 environment variables (use the `"env"` field in your `settings.json` to avoid wrapper scripts), there's a good chance any behavior you want is configurable.
 
-<a href="https://x.com/bcherny/status/2021701636075458648"><img src="assets/boris-12-feb-26/12.webp" alt="Customize all the things" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2021701636075458648"><img src="assets/boris-26-2-12/12.webp" alt="Customize all the things" width="50%" /></a>
 
 ---
 
