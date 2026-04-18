@@ -166,43 +166,71 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- SLIDE 3: Vibe Coding → Agentic Engineering                   -->
+    <!-- SLIDE 3: Vibe Coding vs Agentic Engineering                   -->
     <!-- ============================================================ -->
     <div class="slide" data-slide="3">
-        <h1>From Vibe Coding to Agentic Engineering</h1>
-        <p>Most people start by describing what they want in natural language. That works &mdash; but it's only the beginning. The next level is giving Claude a <strong>structure</strong> so it behaves the same way every time.</p>
-        <div class="two-col" style="margin-top: 32px;">
+        <h1>Vibe Coding vs Agentic Engineering</h1>
+        <div class="two-col">
             <div>
-                <h3>Before &mdash; Vibe Coding</h3>
-                <div class="file-tree">
-<span class="dir">my-project/</span>
-  <span class="file">README.md</span>
-  <span class="file">main.py</span>
-  <span class="file">utils.py</span>
-</div>
-                <p style="margin-top: 12px; color: #888; font-size: 0.95rem;">Plain folder. Claude starts from zero every conversation. No memory, no structure, no specialist roles.</p>
+                <h3 style="text-align: center; color: #c62828; margin-bottom: 16px;">Before (Vibe Coding)</h3>
+                <div class="code-block"><span class="comment"># Plain TodoApp</span>
+todoapp/
+  <span class="key">backend/</span>
+    main.py
+    routes/
+      todos.py
+      users.py
+    models/
+      todo.py
+      user.py
+    tests/
+      test_todos.py
+  <span class="key">frontend/</span>
+    components/
+      TodoList.tsx
+      Sidebar.tsx
+    pages/
+      index.tsx
+      todos.tsx
+    lib/
+      api.ts</div>
             </div>
             <div>
-                <h3>After &mdash; Agentic Engineering</h3>
-                <div class="file-tree">
-<span class="dir">my-project/</span>
-  <span class="highlight">CLAUDE.md</span>         <span class="dim"># standing rules</span>
-  <span class="dir">.claude/</span>
-    <span class="dir">agents/</span>
-      <span class="highlight">weather-agent.md</span>  <span class="dim"># specialist</span>
-    <span class="dir">skills/</span>
-      <span class="highlight">weather-fetcher/</span>   <span class="dim"># training</span>
-      <span class="highlight">weather-svg-creator/</span>
-    <span class="dir">commands/</span>
-      <span class="highlight">weather-orchestrator.md</span>
-  <span class="file">main.py</span>
-</div>
-                <p style="margin-top: 12px; color: #2e7d32; font-size: 0.95rem;">Structure added. Claude walks in knowing the rules, the specialists, and the playbooks.</p>
+                <h3 style="text-align: center; color: #2e7d32; margin-bottom: 16px;">After (Agentic Engineering)</h3>
+                <div class="code-block"><span class="comment"># With Claude Code Best Practices</span>
+todoapp/
+  <span class="claude-file">.claude/</span>                  <span class="claude-file comment"># Claude Code config</span>
+    <span class="claude-file">agents/</span>               <span class="claude-file comment"># Custom subagents</span>
+    <span class="claude-file">skills/</span>               <span class="claude-file comment"># Domain knowledge</span>
+    <span class="claude-file">commands/</span>             <span class="claude-file comment"># Slash commands</span>
+    <span class="claude-file">hooks/</span>                <span class="claude-file comment"># Lifecycle scripts</span>
+    <span class="claude-file">rules/</span>                <span class="claude-file comment"># Modular instructions</span>
+    <span class="claude-file">settings.json</span>         <span class="claude-file comment"># Team settings</span>
+    <span class="claude-file">settings.local.json</span>   <span class="claude-file comment"># Personal settings</span>
+  <span class="key">backend/</span>
+    main.py
+    routes/
+      todos.py
+      users.py
+    models/
+      todo.py
+      user.py
+    tests/
+      test_todos.py
+    <span class="claude-file">CLAUDE.md</span>             <span class="claude-file comment"># Backend instructions</span>
+  <span class="key">frontend/</span>
+    components/
+      TodoList.tsx
+      Sidebar.tsx
+    pages/
+      index.tsx
+      todos.tsx
+    lib/
+      api.ts
+    <span class="claude-file">CLAUDE.md</span>             <span class="claude-file comment"># Frontend instructions</span>
+  <span class="claude-file">.mcp.json</span>               <span class="claude-file comment"># Managed MCP servers</span>
+  <span class="claude-file">CLAUDE.md</span>               <span class="claude-file comment"># Project instructions</span></div>
             </div>
-        </div>
-        <div class="trigger-box" style="margin-top: 24px;">
-            <h4>The Shift</h4>
-            <p>You stop <em>describing</em> what you want every time and start <em>configuring</em> how Claude should behave. This session teaches you the five pieces that make the "After" column work.</p>
         </div>
     </div>
 
