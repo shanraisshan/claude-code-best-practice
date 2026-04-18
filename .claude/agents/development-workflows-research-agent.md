@@ -6,10 +6,15 @@ color: cyan
 allowedTools:
   - "Bash(*)"
   - "Read"
+  - "Write"
+  - "Edit"
   - "Glob"
   - "Grep"
   - "WebFetch(*)"
   - "WebSearch(*)"
+  - "Agent"
+  - "NotebookEdit"
+  - "mcp__*"
 maxTurns: 30
 permissionMode: bypassPermissions
 ---
