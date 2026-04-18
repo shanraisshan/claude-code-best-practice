@@ -232,3 +232,20 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | MED | New Alias | Add `/undo` alias to `/rewind` entry — added in v2.1.108 | ✅ COMPLETE (added `/undo` alongside existing `/checkpoint` alias at #70 in Session tag) |
+
+---
+
+## [2026-04-18 07:54 PM PKT] Claude Code v2.1.114
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/recap` to Session tag — Generate a one-line summary of the current session on demand (v2.1.108) | ✅ COMPLETE (added as #72 in Session tag, count updated 70 → 75) |
+| 2 | HIGH | New Command | Add `/focus` to Config tag — Toggle the focus view showing only last prompt, tool-call summary, and final response (v2.1.110) | ✅ COMPLETE (added as #8 in Config tag) |
+| 3 | HIGH | New Command | Add `/tui [default\|fullscreen]` to Config tag — Set the terminal UI renderer and relaunch with conversation intact (v2.1.110) | ✅ COMPLETE (added as #17 in Config tag) |
+| 4 | HIGH | New Command | Add `/ultrareview [PR]` to Project tag — Run a deep, multi-agent code review in a cloud sandbox (v2.1.111) | ✅ COMPLETE (added as #56 in Project tag) |
+| 5 | HIGH | New Command | Add `/heapdump` to Debug tag — Write a JavaScript heap snapshot and memory breakdown to `~/Desktop` for diagnosing high memory usage | ✅ COMPLETE (added as #28 in Debug tag) |
+| 6 | HIGH | Changed Description | Revert `/review` from deprecated → live built-in per official docs ("Review a pull request locally in your current session. For a deeper cloud-based review, see `/ultrareview`") — reverses v2.1.74 update | ✅ COMPLETE (updated description at #53 in Project tag, now references `/ultrareview`) |
+| 7 | MED | Changed Description | Update `/effort` description — official now lists `xhigh` level and opens interactive slider with no args (v2.1.111) | ✅ COMPLETE (updated arg hint to include `xhigh` and description to mention interactive slider) |
+| 8 | MED | Changed Description | Update `/theme` description — official adds "Auto (match terminal)" option (v2.1.111) | ✅ COMPLETE (added "Auto (match terminal)" to description at #16 in Config tag) |
+| 9 | MED | Changed Description | Update `/model` description — official notes it warns before switching mid-conversation (v2.1.108) | ✅ COMPLETE (added mid-conversation warning detail at #46 in Model tag) |
+| 10 | MED | New Alias | Add `/routines` alias to `/schedule` command per official docs | ✅ COMPLETE (added `Alias: /routines` at #64 in Remote tag) |
