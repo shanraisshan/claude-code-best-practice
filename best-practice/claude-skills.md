@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2016%2C%202026%208%3A17%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.110-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2018%2C%202026%207%3A53%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.114-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -26,7 +26,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | `user-invocable` | boolean | No | Set `false` to hide from the `/` menu — skill becomes background knowledge only, intended for agent preloading |
 | `allowed-tools` | string | No | Tools allowed without permission prompts when this skill is active |
 | `model` | string | No | Model to use when this skill runs (e.g., `haiku`, `sonnet`, `opus`) |
-| `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `max`) |
+| `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `xhigh`, `max`) |
 | `context` | string | No | Set to `fork` to run the skill in an isolated subagent context |
 | `agent` | string | No | Subagent type when `context: fork` is set (default: `general-purpose`) |
 | `hooks` | object | No | Lifecycle hooks scoped to this skill |
