@@ -106,6 +106,19 @@
         .field-desc { font-size: 0.95rem; color: #555; }
         .field-required { font-size: 0.7rem; background: #ffcdd2; color: #c62828; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
         .field-recommended { font-size: 0.7rem; background: #fff9c4; color: #f57f17; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
+        /* TOC vertical list for Meet the Person */
+        .toc-vertical { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; max-width: 700px; }
+        .toc-vertical .toc-item { display: flex; align-items: flex-start; padding: 18px 24px; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .toc-vertical .toc-item:hover { background: #eee; }
+        .toc-vertical .toc-badge { font-size: 0.7rem; font-weight: 700; background: #e5e5e5; color: #777; border-radius: 10px; padding: 2px 8px; margin-left: 10px; white-space: nowrap; }
+        .toc-vertical .toc-name { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+        .toc-vertical .toc-sub { font-size: 0.9rem; color: #666; }
+        /* File tree */
+        .file-tree { font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; background: #f8f9fa; padding: 24px; border-radius: 8px; line-height: 1.9; }
+        .file-tree .dir { color: #1565c0; font-weight: 600; }
+        .file-tree .file { color: #444; }
+        .file-tree .highlight { color: #2e7d32; font-weight: 600; }
+        .file-tree .dim { color: #aaa; }
     </style>
 </head>
 <body>
@@ -116,10 +129,10 @@
             <div class="journey-ticks">
                 <span class="journey-tick">&#x1F3BC; Workflow</span>
                 <span class="journey-tick">&#x26A1; Commands</span>
-                <span class="journey-tick">&#x1F393; Skills</span>
-                <span class="journey-tick">&#x1F464; Agents</span>
                 <span class="journey-tick">&#x1F4CB; CLAUDE.md</span>
                 <span class="journey-tick">&#x1F9E0; Context</span>
+                <span class="journey-tick">&#x1F393; Skills</span>
+                <span class="journey-tick">&#x1F464; Agents</span>
             </div>
         </div>
         <span class="journey-level-label" id="journeyLevelLabel"></span>
@@ -133,49 +146,577 @@
             <img src="../../!/claude-jumping.svg" alt="Claude Code mascot jumping" />
         </div>
         <h1>Claude Code Learning Journey</h1>
-        <p class="subtitle">From your first conversation to wiring your first workflow</p>
+        <p class="subtitle">There is no one correct way of using Claude Code</p>
         <p style="margin-top: 60px; font-size: 0.95rem; color: #888;">An onboarding guide for non-engineers &amp; engineers alike.</p>
     </div>
 
     <!-- ============================================================ -->
-    <!-- SLIDE 2: Topics Overview                                      -->
+    <!-- SLIDE 2: Boris Three-Tweets GIF                               -->
     <!-- ============================================================ -->
     <div class="slide" data-slide="2">
-        <h1>The Learning Journey</h1>
-        <div class="trigger-box">
-            <h4>Six Topics, One Continuous Arc</h4>
-            <p>Built from the inside out: what Claude sees, what it always knows, who it becomes, what it's trained to do, how you trigger it, and how it all wires together.</p>
-        </div>
-        <div class="toc-list" style="margin-top: 32px;">
-            <div class="toc-item" onclick="goToSlide(3)"><span class="toc-number">1</span><span class="toc-name">&#x1F9E0; Context &mdash; What Claude Sees</span></div>
-            <div class="toc-item" onclick="goToSlide(8)"><span class="toc-number">2</span><span class="toc-name">&#x1F4CB; CLAUDE.md &mdash; Standing Instructions</span></div>
-            <div class="toc-item" onclick="goToSlide(14)"><span class="toc-number">3</span><span class="toc-name">&#x1F464; Agents &mdash; The Specialist</span></div>
-            <div class="toc-item" onclick="goToSlide(20)"><span class="toc-number">4</span><span class="toc-name">&#x1F393; Skills &mdash; The Training</span></div>
-            <div class="toc-item" onclick="goToSlide(26)"><span class="toc-number">5</span><span class="toc-name">&#x26A1; Commands &mdash; Your Shortcuts</span></div>
-            <div class="toc-item" onclick="goToSlide(29)"><span class="toc-number">6</span><span class="toc-name">&#x1F3BC; Workflow &mdash; All Together</span></div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; text-align: center;">
+            <figure style="max-width: 900px; width: 100%;">
+                <img src="../../!/root/boris-slider.gif" alt="Boris Cherny slides showing the spectrum of Claude Code usage styles" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+                <figcaption style="margin-top: 20px; font-size: 1rem; color: #666; font-style: italic;">
+                    Boris Cherny (creator of Claude Code) &mdash; different teams use Claude Code completely differently.<br />
+                    There is no single &ldquo;correct&rdquo; way. But there <em>are</em> patterns worth understanding.
+                </figcaption>
+            </figure>
         </div>
     </div>
 
     <!-- ============================================================ -->
-    <!-- TOPIC 1: CONTEXT (Slides 3-7)                                 -->
+    <!-- SLIDE 3: Vibe Coding → Agentic Engineering                   -->
     <!-- ============================================================ -->
-
-    <!-- Slide 3: Context Intro -->
-    <div class="slide section-slide" data-slide="3" data-level="context">
-        <div class="section-number">Topic 1</div>
-        <h1>&#x1F9E0; Context (What Claude Sees)</h1>
-        <p class="section-desc">Before anything else &mdash; before agents, before skills &mdash; there's <strong>Claude's brain</strong>. Everything Claude can see, remember, and reason about right now lives in that brain. If it's not in there, Claude doesn't know about it.</p>
+    <div class="slide" data-slide="3">
+        <h1>From Vibe Coding to Agentic Engineering</h1>
+        <p>Most people start by describing what they want in natural language. That works &mdash; but it's only the beginning. The next level is giving Claude a <strong>structure</strong> so it behaves the same way every time.</p>
+        <div class="two-col" style="margin-top: 32px;">
+            <div>
+                <h3>Before &mdash; Vibe Coding</h3>
+                <div class="file-tree">
+<span class="dir">my-project/</span>
+  <span class="file">README.md</span>
+  <span class="file">main.py</span>
+  <span class="file">utils.py</span>
+</div>
+                <p style="margin-top: 12px; color: #888; font-size: 0.95rem;">Plain folder. Claude starts from zero every conversation. No memory, no structure, no specialist roles.</p>
+            </div>
+            <div>
+                <h3>After &mdash; Agentic Engineering</h3>
+                <div class="file-tree">
+<span class="dir">my-project/</span>
+  <span class="highlight">CLAUDE.md</span>         <span class="dim"># standing rules</span>
+  <span class="dir">.claude/</span>
+    <span class="dir">agents/</span>
+      <span class="highlight">weather-agent.md</span>  <span class="dim"># specialist</span>
+    <span class="dir">skills/</span>
+      <span class="highlight">weather-fetcher/</span>   <span class="dim"># training</span>
+      <span class="highlight">weather-svg-creator/</span>
+    <span class="dir">commands/</span>
+      <span class="highlight">weather-orchestrator.md</span>
+  <span class="file">main.py</span>
+</div>
+                <p style="margin-top: 12px; color: #2e7d32; font-size: 0.95rem;">Structure added. Claude walks in knowing the rules, the specialists, and the playbooks.</p>
+            </div>
+        </div>
+        <div class="trigger-box" style="margin-top: 24px;">
+            <h4>The Shift</h4>
+            <p>You stop <em>describing</em> what you want every time and start <em>configuring</em> how Claude should behave. This session teaches you the five pieces that make the "After" column work.</p>
+        </div>
     </div>
 
-    <!-- Slide 4: Context = Brain -->
+    <!-- ============================================================ -->
+    <!-- SLIDE 4: What is Vibe Coding?                                 -->
+    <!-- ============================================================ -->
     <div class="slide" data-slide="4">
+        <h1>What is Vibe Coding?</h1>
+        <div class="analogy-box">
+            <h4>The Brilliant but Forgetful Stranger</h4>
+            <p>Claude is like a <strong>brilliant stranger</strong> you meet at a coffee shop &mdash; incredibly capable, but they know nothing about you, your project, or your preferences. Every conversation, you're re-introducing yourself. Vibe coding is just <em>talking</em> to this stranger and hoping they get it right.</p>
+        </div>
+        <div class="two-col" style="margin-top: 28px;">
+            <div class="col-card bad">
+                <h4>Vibe Coding (ad-hoc)</h4>
+                <p>"Write me a weather report for Dubai."</p>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: #888;">No source specified. No format agreed. No memory of last time. The output varies every run.</p>
+                <p style="margin-top: 12px; color: #c62828;"><strong>Unpredictable. Hard to share. Hard to repeat.</strong></p>
+            </div>
+            <div class="col-card good">
+                <h4>Agentic Engineering (structured)</h4>
+                <p>"<code>/weather-orchestrator</code>"</p>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: #888;">One keystroke. Claude knows the source (Open-Meteo), the format (SVG card), the agent (weather-reporter).</p>
+                <p style="margin-top: 12px; color: #2e7d32;"><strong>Repeatable. Shareable. Same every time.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 5: Good vs Bad Prompts                                  -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="5">
+        <h1>Good vs Bad Prompts</h1>
+        <p>Even before you set up any structure, <strong>how you prompt</strong> matters. Specific beats vague. Context beats assumption.</p>
+        <div class="two-col" style="margin-top: 28px;">
+            <div class="col-card bad">
+                <h4>Weak Prompt</h4>
+                <p>"Give me the weather."</p>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: #888;">Which city? Celsius or Fahrenheit? From a live API or training data? Claude guesses.</p>
+            </div>
+            <div class="col-card good">
+                <h4>Strong Prompt</h4>
+                <p>"Fetch the current temperature for Dubai from Open-Meteo and return it in Celsius."</p>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: #888;">Source named. Location named. Unit specified. No guessing needed.</p>
+            </div>
+        </div>
+        <div class="two-col">
+            <div class="col-card bad">
+                <h4>Weak Prompt</h4>
+                <p>"Make this better."</p>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: #888;">Better how? Shorter? More formal? Better structured? Claude will pick one at random.</p>
+            </div>
+            <div class="col-card good">
+                <h4>Strong Prompt</h4>
+                <p>"Rewrite this in a warmer, less formal tone. Keep it under 100 words."</p>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: #888;">Tone named. Length constrained. Unambiguous.</p>
+            </div>
+        </div>
+        <div class="trigger-box">
+            <h4>But Here's the Bigger Move</h4>
+            <p>You can encode good prompts permanently so you never have to write them again. That's what the next five topics are about.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6: Meet the Person — TOC                                -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="6">
+        <h1>Meet the Person</h1>
+        <p>We're going to learn five concepts using <strong>one running example</strong>: a weather reporter agent that fetches Dubai's temperature and renders a weather card. Same person &mdash; five different angles.</p>
+        <div class="toc-vertical">
+            <div class="toc-item" onclick="goToSlide(7)">
+                <span class="toc-number">1</span>
+                <div style="flex: 1;">
+                    <div class="toc-name">&#x1F464; Agents &mdash; The Person</div>
+                    <div class="toc-sub">A specialist with a job title: the weather reporter</div>
+                </div>
+            </div>
+            <div class="toc-item" onclick="goToSlide(13)">
+                <span class="toc-number">2</span>
+                <div style="flex: 1;">
+                    <div class="toc-name">&#x1F393; Skills &mdash; What the Person Knows</div>
+                    <div class="toc-sub">fetch temperature &bull; render SVG card &bull; write the script</div>
+                </div>
+            </div>
+            <div class="toc-item" onclick="goToSlide(19)">
+                <span class="toc-number">3</span>
+                <div style="flex: 1;">
+                    <div class="toc-name">&#x1F9E0; Context &mdash; The Person's Brain</div>
+                    <div class="toc-sub">finite working memory &mdash; ~1M tokens, resets each session</div>
+                </div>
+            </div>
+            <div class="toc-item" onclick="goToSlide(24)">
+                <span class="toc-number">4</span>
+                <div style="flex: 1;">
+                    <div class="toc-name">&#x1F4CB; CLAUDE.md &mdash; The Pocket Rulebook</div>
+                    <div class="toc-sub">standing instructions read at the start of every shift</div>
+                </div>
+            </div>
+            <div class="toc-item" onclick="goToSlide(30)">
+                <span class="toc-number">5</span>
+                <div style="flex: 1;">
+                    <div class="toc-name">&#x1F3BC; Workflow &mdash; The Trigger</div>
+                    <div class="toc-sub">one command kicks off the whole chain &mdash; commands are the entry point</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TOPIC 1: AGENTS (Slides 7-12)                                 -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 7: Agents Section Divider -->
+    <div class="slide section-slide" data-slide="7" data-level="agents">
+        <div class="section-number">Topic 1</div>
+        <h1>&#x1F464; Agents &mdash; The Weather Reporter</h1>
+        <p class="section-desc">An agent is Claude playing a specific role. Meet the <strong>weather reporter</strong> &mdash; a specialist hired to fetch and report weather data for Dubai. Same Claude, different hat.</p>
+    </div>
+
+    <!-- Slide 8: The Restaurant Kitchen -->
+    <div class="slide" data-slide="8">
+        <h1>The Restaurant Kitchen</h1>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>Without an agent, you walk into a random kitchen and shout "make me pasta!" &mdash; whoever happens to hear you might boil instant noodles or make a five-course Italian meal. <strong>With an agent</strong>, you're walking up to a specific person with a specific job title. The Italian chef makes pasta the Italian-chef way. Every time.</p>
+        </div>
+        <div class="two-col" style="margin-top: 32px;">
+            <div class="col-card bad">
+                <h4>Plain Prompting (asking a stranger)</h4>
+                <p>You ask Claude "What's the weather in Dubai?"</p>
+                <p>It might guess from training data, search the web, or make something up.</p>
+                <p style="margin-top: 12px; color: #c62828;"><strong>You don't know what it'll do.</strong></p>
+            </div>
+            <div class="col-card good">
+                <h4>With an Agent (your specialist)</h4>
+                <p>The <code>weather-agent</code> has a clear job description:</p>
+                <p><em>"Always check the Open-Meteo weather service. Always return temperature in a clean, consistent format."</em></p>
+                <p style="margin-top: 12px; color: #2e7d32;"><strong>Same question, same approach, every time.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Prompting vs Agent table -->
+    <div class="slide" data-slide="9">
+        <h1>Prompting vs. Agent &mdash; Side by Side</h1>
+        <p>The difference in one picture: <strong>prompting is asking a stranger on the street; using an agent is asking your dedicated specialist.</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Prompting (stranger)</th>
+                    <th>Agent (specialist)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Who answers</strong></td>
+                    <td>Whoever happens to be there</td>
+                    <td>The person you hired for this exact job</td>
+                </tr>
+                <tr>
+                    <td><strong>Source of truth</strong></td>
+                    <td>Could be anywhere</td>
+                    <td>Always the official Open-Meteo weather service</td>
+                </tr>
+                <tr>
+                    <td><strong>Format</strong></td>
+                    <td>Whatever comes out</td>
+                    <td>Clean, consistent temperature + unit</td>
+                </tr>
+                <tr>
+                    <td><strong>Twice in a row?</strong></td>
+                    <td>Different each time</td>
+                    <td>Same method, same shape</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how-to-trigger">
+            <h4>Takeaway</h4>
+            <p>Agents don't make Claude <em>smarter</em> &mdash; they make it <strong>predictable</strong>. Same question &rarr; same approach &rarr; same quality. That's what you need for anything you'll do more than once.</p>
+        </div>
+    </div>
+
+    <!-- Slide 10: Agents Get Their Own Brain -->
+    <div class="slide" data-slide="10">
+        <h1>Agents Get Their Own Brain</h1>
+        <div class="info-box">
+            <h4>Tip from Thariq (Anthropic) &mdash; Apr 16, 2026</h4>
+            <p>"When Claude spawns an agent, that agent gets its own fresh brain. It can do as much work as it needs, then synthesize its results &mdash; only the final report comes back to you."</p>
+        </div>
+        <p>This connects directly to the weather reporter: the <code>weather-agent</code> works in <strong>its own brain</strong> &mdash; all that web fetching, JSON parsing, and failed attempts stay out of yours. You just get the temperature back.</p>
+        <div class="use-cases">
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F9F9;</span>
+                <div class="use-case-text">
+                    <strong>Messy work stays in the agent's brain</strong>
+                    <span>API calls, retries, JSON wrangling &mdash; all of it in <em>the weather-agent's</em> brain, not yours.</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4E6;</span>
+                <div class="use-case-text">
+                    <strong>Only the result comes back</strong>
+                    <span>The agent hands you "32°C". Your brain stays clear for the next task.</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4A1;</span>
+                <div class="use-case-text">
+                    <strong>Mental test: "Do I need the working, or just the answer?"</strong>
+                    <span>If just the answer &rarr; send an agent. If you need every step &rarr; do it yourself.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: How to Create an Agent -->
+    <div class="slide" data-slide="11">
+        <h1>How to Create Your Own Agent</h1>
+        <p>You don't write an agent from scratch &mdash; Claude helps you build one. Type <code>/agents</code> inside Claude Code and a guided menu opens.</p>
+        <div class="how-to-trigger">
+            <h4>The Command</h4>
+            <p>Type <code>/agents</code> in Claude Code. A menu appears with your existing agents and an option to create a new one.</p>
+        </div>
+        <div class="hiring-steps">
+            <div class="hiring-step level-1">
+                <span class="hiring-step-number">1</span>
+                <div class="hiring-step-content">
+                    <strong>Type <code>/agents</code></strong>
+                    <span>A menu opens listing your existing agents (including <code>weather-agent</code>) plus "Create new agent".</span>
+                </div>
+            </div>
+            <div class="hiring-step level-2">
+                <span class="hiring-step-number">2</span>
+                <div class="hiring-step-content">
+                    <strong>Tell Claude what the agent should do, in one sentence</strong>
+                    <span>e.g., "A weather reporter that fetches Dubai temperature from Open-Meteo."</span>
+                </div>
+            </div>
+            <div class="hiring-step level-3">
+                <span class="hiring-step-number">3</span>
+                <div class="hiring-step-content">
+                    <strong>Claude writes the agent file for you</strong>
+                    <span>Creates <code>.claude/agents/weather-agent.md</code> &mdash; job description, allowed tools, model. Edit it like any document.</span>
+                </div>
+            </div>
+        </div>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>Creating an agent is like <strong>writing a job description for a new hire</strong>. You say what the role is, what tools they get, and how they should behave. Claude drafts the JD; you review and adjust.</p>
+        </div>
+        <div class="code-block"><span class="comment"># Where the weather reporter lives</span>
+<span class="claude-file">.claude/agents/weather-agent.md</span>     <span class="comment"># A plain markdown file</span></div>
+        <div class="trigger-box">
+            <h4>Takeaway</h4>
+            <p>Agents are just text files. Anyone on your team can create, share, or edit one. No coding required.</p>
+        </div>
+    </div>
+
+    <!-- Slide 12: Agent Config Fields -->
+    <div class="slide" data-slide="12">
+        <h1>Agent Config Fields</h1>
+        <p>The config block at the top of an agent file controls its identity and capabilities. Here's what the real <code>weather-agent.md</code> uses:</p>
+        <div style="margin: 24px 0;">
+            <div class="field-row">
+                <span class="field-name">name <span class="field-recommended">Recommended</span></span>
+                <span class="field-desc">Unique identifier &mdash; e.g. <code>weather-agent</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">description <span class="field-required">Required</span></span>
+                <span class="field-desc">When to invoke. Use <code>"PROACTIVELY"</code> for auto-invocation</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">model</span>
+                <span class="field-desc"><code>haiku</code>, <code>sonnet</code>, <code>opus</code>, or <code>inherit</code> (default). weather-agent uses <code>sonnet</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">tools</span>
+                <span class="field-desc">Allowlist of tools. weather-agent allows <code>WebFetch</code>, <code>Read</code>, <code>Write</code>, etc.</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">skills</span>
+                <span class="field-desc">Skills preloaded into agent context at startup &mdash; <strong>weather-agent preloads <code>weather-fetcher</code></strong></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">maxTurns</span>
+                <span class="field-desc">Maximum agentic turns before the agent stops. weather-agent uses <code>5</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">memory</span>
+                <span class="field-desc">Persistent memory: <code>user</code>, <code>project</code>, or <code>local</code>. weather-agent uses <code>project</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">color</span>
+                <span class="field-desc">Visual color in task list. weather-agent uses <code>green</code></span>
+            </div>
+        </div>
+        <div class="info-box">
+            <h4>The Key Field for This Workshop</h4>
+            <p>The <code>skills:</code> field is what makes the weather-agent special. It preloads <code>weather-fetcher</code> directly into the agent's brain at startup &mdash; before the agent has received a single instruction. The agent doesn't need to be told how to fetch weather; it already knows.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TOPIC 2: SKILLS (Slides 13-18)                                -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 13: Skills Section Divider -->
+    <div class="slide section-slide" data-slide="13" data-level="skills">
+        <div class="section-number">Topic 2</div>
+        <h1>&#x1F393; Skills &mdash; What the Weather Reporter Knows</h1>
+        <p class="section-desc">Skills are the specific things the reporter has been trained to do. Our reporter has two: <strong>fetch the data</strong>, and <strong>render it as a card</strong>.</p>
+    </div>
+
+    <!-- Slide 14: The Training Manual -->
+    <div class="slide" data-slide="14">
+        <h1>The Training Manual</h1>
+        <div class="analogy-box">
+            <h4>Think of it like this</h4>
+            <p>When someone joins your team, they have a role (agent), but they also go through specific training modules &mdash; how to use the CRM, how to write a proposal, how to run a standup. Each training module is a <strong>skill</strong>.</p>
+        </div>
+        <h3 style="margin-top: 32px;">The Weather Reporter's Two Skills</h3>
+        <div class="use-cases">
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F321;&#xFE0F;</span>
+                <div class="use-case-text">
+                    <strong>weather-fetcher</strong>
+                    <span>Knows exactly how to query Open-Meteo, extract the temperature value, and return it in the right format. This skill is <strong>preloaded into the agent's brain</strong> at startup.</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F5BC;&#xFE0F;</span>
+                <div class="use-case-text">
+                    <strong>weather-svg-creator</strong>
+                    <span>Takes a temperature value and renders a visual SVG weather card. Writes the output file to <code>orchestration-workflow/weather.svg</code>. This skill is invoked directly by the command.</span>
+                </div>
+            </div>
+        </div>
+        <p>Each skill has its own knowledge and methods. The reporter uses the right skill for the right step. <strong>Claude works the same way.</strong></p>
+    </div>
+
+    <!-- Slide 15: When to Turn Something Into a Skill -->
+    <div class="slide" data-slide="15">
+        <h1>When to Turn Something Into a Skill</h1>
+        <div class="info-box">
+            <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
+            <p>"If you do something <strong>more than once a day</strong>, turn it into a skill."</p>
+        </div>
+        <p>The rule is simple: anything you're explaining to Claude over and over is a skill waiting to be written down. The weather reporter's skills are a perfect example:</p>
+        <div class="use-cases">
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F321;&#xFE0F;</span>
+                <div class="use-case-text">
+                    <strong>Fetch Dubai's temperature</strong>
+                    <span>Same API, same parameters, same format every time. That's <code>weather-fetcher</code>.</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F5BC;&#xFE0F;</span>
+                <div class="use-case-text">
+                    <strong>Render the weather card</strong>
+                    <span>Same SVG template, same output path, same design every time. That's <code>weather-svg-creator</code>.</span>
+                </div>
+            </div>
+            <div class="use-case-item">
+                <span class="use-case-icon">&#x1F4DD;</span>
+                <div class="use-case-text">
+                    <strong>"Format my weekly update"</strong>
+                    <span>Same sections, same tone, same length every Monday. That's a skill waiting to be written.</span>
+                </div>
+            </div>
+        </div>
+        <div class="how-to-trigger">
+            <h4>Takeaway</h4>
+            <p>Skills are how <strong>repetition becomes reliability</strong>. Write it down once, and Claude does it the same way forever &mdash; or until you update the skill.</p>
+        </div>
+    </div>
+
+    <!-- Slide 16: Why Separate Agents and Skills? -->
+    <div class="slide" data-slide="16">
+        <h1>Why Separate Agents and Skills?</h1>
+        <div class="two-col">
+            <div>
+                <h3>Agent = The Person</h3>
+                <p>The <code>weather-agent</code> is the person with the job title <strong>"Weather Reporter"</strong>.</p>
+                <p>It defines the <em>role</em> and <em>behavior</em>: use Open-Meteo, return temperature, track history in memory.</p>
+            </div>
+            <div>
+                <h3>Skill = The Training</h3>
+                <p>The <code>weather-fetcher</code> skill is the specific training on <strong>how</strong> to fetch weather data.</p>
+                <p>It contains exact instructions:</p>
+                <ul class="feature-list">
+                    <li>Call this specific API URL</li>
+                    <li>Extract <code>current.temperature_2m</code> from the response</li>
+                    <li>Return value + unit in this exact format</li>
+                </ul>
+            </div>
+        </div>
+        <div class="how-to-trigger" style="margin-top: 24px;">
+            <h4>The Power</h4>
+            <p><strong>One agent can have multiple skills</strong>, and <strong>one skill can be used by multiple agents</strong>. Skills are reusable building blocks. Agents are the people who use them.</p>
+        </div>
+    </div>
+
+    <!-- Slide 17: How to Create Your Own Skill -->
+    <div class="slide" data-slide="17">
+        <h1>How to Create Your Own Skill</h1>
+        <p>Skills are plain markdown files. If you can write a recipe, you can write a skill.</p>
+        <div class="how-to-trigger">
+            <h4>The File</h4>
+            <p>Create <code>.claude/skills/&lt;your-skill-name&gt;/SKILL.md</code> in your project. That's it.</p>
+        </div>
+        <div class="hiring-steps">
+            <div class="hiring-step level-1">
+                <span class="hiring-step-number">1</span>
+                <div class="hiring-step-content">
+                    <strong>Pick a repeated task</strong>
+                    <span>Something you explain to Claude more than once. "Fetch Dubai weather" is a perfect first skill.</span>
+                </div>
+            </div>
+            <div class="hiring-step level-2">
+                <span class="hiring-step-number">2</span>
+                <div class="hiring-step-content">
+                    <strong>Make a folder and a SKILL.md</strong>
+                    <span>Path: <code>.claude/skills/weather-fetcher/SKILL.md</code>. Or ask Claude: "Turn this into a skill."</span>
+                </div>
+            </div>
+            <div class="hiring-step level-3">
+                <span class="hiring-step-number">3</span>
+                <div class="hiring-step-content">
+                    <strong>Write the recipe in plain English</strong>
+                    <span>Same words you'd use to explain it to a coworker. Skills are instructions, not code.</span>
+                </div>
+            </div>
+        </div>
+        <div class="code-block"><span class="comment"># File: .claude/skills/weather-fetcher/SKILL.md</span>
+<span class="string">---</span>
+<span class="key">name</span>: <span class="string">weather-fetcher</span>
+<span class="key">description</span>: <span class="string">Fetch current temperature for Dubai from Open-Meteo API</span>
+<span class="key">user-invocable</span>: <span class="string">false</span>
+<span class="string">---</span>
+
+Fetch the current temperature for Dubai, UAE.
+
+1. Call the Open-Meteo API:
+   <span class="cmd">https://api.open-meteo.com/v1/forecast</span>
+   <span class="cmd">?latitude=25.2048&longitude=55.2708&current=temperature_2m</span>
+
+2. Extract <span class="key">current.temperature_2m</span> from the response
+
+3. Return: <span class="string">"The temperature in Dubai is {value}{unit}"</span></div>
+        <div class="trigger-box">
+            <h4>Takeaway</h4>
+            <p>The skill contains <strong>instructions, not code</strong>. It tells Claude <em>how</em> to do something using its existing tools.</p>
+        </div>
+    </div>
+
+    <!-- Slide 18: Skill Config Fields -->
+    <div class="slide" data-slide="18">
+        <h1>Skill Config Fields</h1>
+        <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
+        <div style="margin: 24px 0;">
+            <div class="field-row">
+                <span class="field-name">name</span>
+                <span class="field-desc">Display name and <code>/slash-command</code>. Defaults to directory name</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">description <span class="field-recommended">Recommended</span></span>
+                <span class="field-desc">What the skill does &mdash; shown in autocomplete, used for auto-discovery</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">user-invocable</span>
+                <span class="field-desc">Set <code>false</code> to hide from <code>/</code> menu &mdash; <strong>weather-fetcher uses this</strong> because it's agent-only</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">allowed-tools</span>
+                <span class="field-desc">Tools allowed without permission prompts when skill is active</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">model</span>
+                <span class="field-desc">Model to use: <code>haiku</code>, <code>sonnet</code>, or <code>opus</code></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">context</span>
+                <span class="field-desc">Set to <code>fork</code> to run in isolated subagent context</span>
+            </div>
+        </div>
+        <div class="info-box">
+            <h4>Two Ways to Use Skills</h4>
+            <p><strong>User-invocable</strong>: appears in <code>/</code> menu, user runs it directly (like <code>weather-svg-creator</code>). <strong>Agent-preloaded</strong>: set <code>user-invocable: false</code>, then list it in an agent's <code>skills:</code> field &mdash; it becomes domain knowledge injected into that agent (like <code>weather-fetcher</code>).</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TOPIC 3: CONTEXT (Slides 19-23)                               -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 19: Context Section Divider -->
+    <div class="slide section-slide" data-slide="19" data-level="context">
+        <div class="section-number">Topic 3</div>
+        <h1>&#x1F9E0; Context &mdash; The Reporter's Brain</h1>
+        <p class="section-desc">Now that you've met the reporter and know their skills, let's understand what they can actually hold in mind at once. Every agent &mdash; including the weather reporter &mdash; gets its own fresh brain.</p>
+    </div>
+
+    <!-- Slide 20: Claude's Brain -->
+    <div class="slide" data-slide="20">
         <h1>Claude's Brain</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
-            <p>Imagine Claude has a <strong>brain</strong> that holds everything it's aware of right now &mdash; your question, every file it's opened, every tool result, every word it's said back to you. Inside that brain is a small working area (picture a desk) where the actual thinking happens. If a thought isn't in the brain, Claude can't use it. Simple as that.</p>
+            <p>Imagine Claude has a <strong>brain</strong> that holds everything it's aware of right now &mdash; your question, every file it's opened, every tool result, every word it's said back to you. If a thought isn't in the brain, Claude can't use it. Simple as that.</p>
         </div>
         <img src="../assets/context-window.jpeg" alt="Context window diagram showing how the 1M token limit is divided across system prompt, tools, files, and conversation" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
-        <p>Everything you give Claude in a conversation lands in its brain:</p>
+        <p>When the <code>weather-agent</code> is dispatched, it gets its own fresh brain &mdash; and <code>weather-fetcher</code> is pinned into it at startup via the <code>skills:</code> field. Everything you give Claude in a conversation lands in its brain:</p>
         <div class="use-cases">
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F4AC;</span>
@@ -198,13 +739,6 @@
                     <span>Web searches, command output, screenshots &mdash; all held in memory</span>
                 </div>
             </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F5E8;&#xFE0F;</span>
-                <div class="use-case-text">
-                    <strong>Claude's own previous replies</strong>
-                    <span>Everything Claude has said so far in this chat</span>
-                </div>
-            </div>
         </div>
         <div class="warning-box">
             <h4>Two Things Every Non-Engineer Should Know</h4>
@@ -212,53 +746,42 @@
         </div>
     </div>
 
-    <!-- Slide 5: What Loads at Session Start -->
-    <div class="slide" data-slide="5">
+    <!-- Slide 21: What Loads at Session Start -->
+    <div class="slide" data-slide="21">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
-        <img src="../assets/context.jpg" alt="Diagram showing what loads into Claude's context window at session start — system prompt, CLAUDE.md, skill descriptions, agent descriptions, MCP tools" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
+        <img src="../assets/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
         <div class="use-cases" style="margin-top: 24px;">
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F4CB;</span>
                 <div class="use-case-text">
                     <strong>CLAUDE.md &mdash; full content</strong>
-                    <span>Your standing instructions, every line. Always pinned in the brain at startup.</span>
+                    <span>Standing instructions, every line. Always pinned in the brain at startup.</span>
                 </div>
             </div>
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F393;</span>
                 <div class="use-case-text">
                     <strong>Skills &mdash; descriptions only</strong>
-                    <span>Claude knows which skills exist and what each does. The full instructions for a skill load only when that skill is invoked.</span>
+                    <span>Claude knows which skills exist and what each does. At startup, Claude knows <em>about</em> <code>weather-fetcher</code>; the full content loads when the agent runs.</span>
                 </div>
             </div>
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F464;</span>
                 <div class="use-case-text">
                     <strong>Agents &mdash; descriptions only</strong>
-                    <span>The roster of specialists and when to use each one. Each agent's full system prompt loads when it's dispatched.</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F50C;</span>
-                <div class="use-case-text">
-                    <strong>MCP tools &mdash; on-demand (when configured)</strong>
-                    <span>External tool definitions can be deferred so they're only fetched when Claude actually needs them &mdash; keeping the brain light at startup.</span>
+                    <span>The roster of specialists. The weather-agent's full system prompt loads when it's dispatched.</span>
                 </div>
             </div>
         </div>
         <div class="trigger-box">
             <h4>The One-Liner</h4>
-            <p>Only the <strong>descriptions</strong> of skills and agents are loaded at startup &mdash; the rest is fetched on-demand. That's <strong>progressive disclosure</strong>. MCPs work the same way when set up for deferred loading.</p>
-        </div>
-        <div class="info-box">
-            <h4>Why It Matters</h4>
-            <p>The brain has a fixed budget (~1M tokens). Loading every skill, agent, and external tool upfront would burn the budget before you've typed a word. Progressive disclosure keeps the brain light. Run <code>/context</code> any time to see exactly what's currently loaded.</p>
+            <p>Only <strong>descriptions</strong> of skills and agents are loaded at startup &mdash; the rest is fetched on-demand. That's <strong>progressive disclosure</strong>. It keeps the brain light.</p>
         </div>
     </div>
 
-    <!-- Slide 6: Context Tips (from Thariq) -->
-    <div class="slide" data-slide="6">
+    <!-- Slide 22: Keep the Brain Clear -->
+    <div class="slide" data-slide="22">
         <h1>Keep the Brain Clear</h1>
         <p>The more stuff crammed into Claude's brain, the harder it is to focus on what matters. This is called <strong>context rot</strong> &mdash; performance drops as the brain gets crowded.</p>
         <div class="info-box">
@@ -279,19 +802,19 @@
                 </tr>
                 <tr>
                     <td><strong>Rewind</strong> (tap Esc twice)</td>
-                    <td>Claude went down a wrong path &mdash; jump back and try again with what you learned</td>
+                    <td>Claude went down a wrong path &mdash; jump back and try again</td>
                 </tr>
                 <tr>
                     <td><strong>/compact</strong></td>
-                    <td>The brain is bloated &mdash; ask Claude to summarize and keep going on top of the summary</td>
+                    <td>The brain is bloated &mdash; summarize and keep going</td>
                 </tr>
                 <tr>
                     <td><strong>/clear</strong> (fresh chat)</td>
-                    <td>Starting a truly new task &mdash; wipe the brain clean, start with a fresh brief</td>
+                    <td>Starting a truly new task &mdash; wipe the brain clean</td>
                 </tr>
                 <tr>
                     <td><strong>Subagent</strong></td>
-                    <td>The next step will make a mess &mdash; send a helper to do it in <em>their own</em> brain and only bring back the answer</td>
+                    <td>Next step will make a mess &mdash; send a helper to do it in <em>their own</em> brain</td>
                 </tr>
             </tbody>
         </table>
@@ -301,8 +824,8 @@
         </div>
     </div>
 
-    <!-- Slide 6: How to Reset Your Context (NEW — context how-to) -->
-    <div class="slide" data-slide="7">
+    <!-- Slide 23: How to Manage Your Context -->
+    <div class="slide" data-slide="23">
         <h1>How to Manage Your Context</h1>
         <p>You can't <em>create</em> the context &mdash; it's just there, the moment you open a chat. But you can <strong>see</strong> how full it is, <strong>trim</strong> it down, or <strong>wipe</strong> it clean. Three commands give you full control.</p>
         <div class="how-to-trigger">
@@ -332,10 +855,6 @@
                 </div>
             </div>
         </div>
-        <div class="analogy-box">
-            <h4>Think of it like this</h4>
-            <p><code>/context</code> is <strong>checking how cluttered the desk is</strong>. <code>/compact</code> is <strong>filing the paperwork into a one-page summary</strong>. <code>/clear</code> is <strong>walking the assistant out of the room and back in for a fresh one</strong>. Same person, same skills &mdash; just a tidier workspace.</p>
-        </div>
         <div class="code-block"><span class="comment"># The three context commands</span>
 <span class="cmd">/context</span>    <span class="comment"># Check how full the brain is right now</span>
 <span class="cmd">/compact</span>    <span class="comment"># Summarize what's there and keep going on top</span>
@@ -347,24 +866,24 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- TOPIC 2: CLAUDE.md (Slides 8-13)                              -->
+    <!-- TOPIC 4: CLAUDE.md (Slides 24-29)                             -->
     <!-- ============================================================ -->
 
-    <!-- Slide 7: CLAUDE.md Intro -->
-    <div class="slide section-slide" data-slide="8" data-level="claude-md">
-        <div class="section-number">Topic 2</div>
-        <h1>&#x1F4CB; CLAUDE.md (Standing Instructions)</h1>
-        <p class="section-desc">If context is Claude's brain, <code>CLAUDE.md</code> is the <strong>standing instructions</strong> pinned in that brain at the start of every chat &mdash; rules Claude has memorized before you've said a word.</p>
+    <!-- Slide 24: CLAUDE.md Section Divider -->
+    <div class="slide section-slide" data-slide="24" data-level="claude-md">
+        <div class="section-number">Topic 4</div>
+        <h1>&#x1F4CB; CLAUDE.md &mdash; The Reporter's Pocket Rulebook</h1>
+        <p class="section-desc">The weather reporter consults this at the start of every shift &mdash; even though their brain resets overnight. It's the standing instructions pinned in that brain before you've said a word.</p>
     </div>
 
-    <!-- Slide 8: CLAUDE.md analogy + example -->
-    <div class="slide" data-slide="9">
+    <!-- Slide 25: The Employee Handbook -->
+    <div class="slide" data-slide="25">
         <h1>The Employee Handbook</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
             <p>Imagine hiring a brilliant new assistant every single morning &mdash; someone who forgets everything at 5pm. You'd get tired of re-explaining "we say <em>clients</em>, not <em>customers</em>" and "always CC my manager" over and over. So you pin those rules into their brain before the day starts. That's <code>CLAUDE.md</code>: a short list of standing instructions Claude reads first, every time.</p>
         </div>
-        <p>It's just a plain-text file at the top of your project. Here's a CLAUDE.md a <strong>non-engineer</strong> might write:</p>
+        <p>For the weather reporter, CLAUDE.md might contain: "Always report in Celsius unless asked. Always cite Open-Meteo as the source." Here's a non-technical example:</p>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
 <span class="comment">## About this project</span>
@@ -385,8 +904,8 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
         </div>
     </div>
 
-    <!-- Slide 9: How to Create CLAUDE.md -->
-    <div class="slide" data-slide="10">
+    <!-- Slide 26: How to Create CLAUDE.md -->
+    <div class="slide" data-slide="26">
         <h1>How to Create Your CLAUDE.md</h1>
         <p>You don't need to write CLAUDE.md by hand. Claude can look at your project and draft one for you.</p>
         <div class="how-to-trigger">
@@ -426,12 +945,12 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
 open, edit, save           <span class="comment"># Tweak it like any doc</span></div>
         <div class="trigger-box">
             <h4>Takeaway</h4>
-            <p>You'll keep improving it over time (Boris's tip on the next slide). But <code>/init</code> gets you to a working draft in under a minute.</p>
+            <p>You'll keep improving it over time. But <code>/init</code> gets you to a working draft in under a minute.</p>
         </div>
     </div>
 
-    <!-- Slide 10: CLAUDE.md Tips (from Boris) -->
-    <div class="slide" data-slide="11">
+    <!-- Slide 27: Grow CLAUDE.md With Every Mistake -->
+    <div class="slide" data-slide="27">
         <h1>Grow CLAUDE.md With Every Mistake</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -467,8 +986,8 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
         </div>
     </div>
 
-    <!-- Slide 11: What Goes in CLAUDE.md -->
-    <div class="slide" data-slide="12">
+    <!-- Slide 28: What Goes in CLAUDE.md -->
+    <div class="slide" data-slide="28">
         <h1>What Goes in CLAUDE.md</h1>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
@@ -495,8 +1014,8 @@ This is a TodoApp with a FastAPI backend and React frontend.
         </div>
     </div>
 
-    <!-- Slide 12: How CLAUDE.md Loads -->
-    <div class="slide" data-slide="13">
+    <!-- Slide 29: How CLAUDE.md Loads -->
+    <div class="slide" data-slide="29">
         <h1>How CLAUDE.md Loads</h1>
         <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
         <div class="two-col">
@@ -525,450 +1044,51 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- ============================================================ -->
-    <!-- TOPIC 3: AGENTS (Slides 14-19)                                -->
+    <!-- TOPIC 5: COMMANDS (Slides 30-32)                              -->
     <!-- ============================================================ -->
 
-    <!-- Slide 13: Agents Intro -->
-    <div class="slide section-slide" data-slide="14" data-level="agents">
-        <div class="section-number">Topic 3</div>
-        <h1>&#x1F464; Agents (The Specialist)</h1>
-        <p class="section-desc">An agent is Claude playing a specific role, with a specific job title &mdash; a weather reporter, a copy editor, a research analyst. Same Claude, different hat.</p>
-    </div>
-
-    <!-- Slide 14: The Restaurant Kitchen -->
-    <div class="slide" data-slide="15">
-        <h1>The Restaurant Kitchen</h1>
-        <div class="analogy-box">
-            <h4>Think of it like this</h4>
-            <p>Without an agent, you walk into a random kitchen and shout "make me pasta!" &mdash; whoever happens to hear you might boil instant noodles or make a five-course Italian meal. <strong>With an agent</strong>, you're walking up to a specific person with a specific job title. The Italian chef makes pasta the Italian-chef way. Every time.</p>
-        </div>
-        <div class="two-col" style="margin-top: 32px;">
-            <div class="col-card bad">
-                <h4>Plain Prompting (asking a stranger)</h4>
-                <p>You ask Claude "What's the weather in Dubai?"</p>
-                <p>It might guess from its training data, search the web, or make something up.</p>
-                <p style="margin-top: 12px; color: #c62828;"><strong>You don't know what it'll do.</strong></p>
-            </div>
-            <div class="col-card good">
-                <h4>With an Agent (your specialist)</h4>
-                <p>A <code>weather-agent</code> has a clear job description:</p>
-                <p><em>"Always check the official Open-Meteo weather service. Always return the temperature in a clean, consistent format."</em></p>
-                <p style="margin-top: 12px; color: #2e7d32;"><strong>Same question, same approach, every time.</strong></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 15: Prompting vs Agent table -->
-    <div class="slide" data-slide="16">
-        <h1>Prompting vs. Agent &mdash; Side by Side</h1>
-        <p>The difference in one picture: <strong>prompting is asking a stranger on the street; using an agent is asking your dedicated specialist.</strong></p>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Prompting (stranger)</th>
-                    <th>Agent (specialist)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Who answers</strong></td>
-                    <td>Whoever happens to be there</td>
-                    <td>The person you hired for this exact job</td>
-                </tr>
-                <tr>
-                    <td><strong>Source of truth</strong></td>
-                    <td>Could be anywhere</td>
-                    <td>Always the official weather service</td>
-                </tr>
-                <tr>
-                    <td><strong>Format</strong></td>
-                    <td>Whatever comes out</td>
-                    <td>Clean, consistent temperature + unit</td>
-                </tr>
-                <tr>
-                    <td><strong>Twice in a row?</strong></td>
-                    <td>Different each time</td>
-                    <td>Same method, same shape</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="how-to-trigger">
-            <h4>Takeaway</h4>
-            <p>Agents don't make Claude <em>smarter</em> &mdash; they make it <strong>predictable</strong>. Same question &rarr; same approach &rarr; same quality. That's what you need for anything you'll do more than once.</p>
-        </div>
-    </div>
-
-    <!-- Slide 16: Agent Tips (from Thariq) -->
-    <div class="slide" data-slide="17">
-        <h1>Agents Get Their Own Brain</h1>
-        <div class="info-box">
-            <h4>Tip from Thariq (Anthropic) &mdash; Apr 16, 2026</h4>
-            <p>"When Claude spawns an agent, that agent gets its own fresh brain. It can do as much work as it needs, then synthesize its results &mdash; only the final report comes back to you."</p>
-        </div>
-        <p>This is quietly one of the most useful things about agents, and it connects directly to what we learned about context:</p>
-        <div class="use-cases">
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F9F9;</span>
-                <div class="use-case-text">
-                    <strong>Messy work stays in the agent's brain</strong>
-                    <span>Twenty file reads, a dozen failed attempts, three dead ends &mdash; all of it stays in <em>the agent's</em> brain, not yours.</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F4E6;</span>
-                <div class="use-case-text">
-                    <strong>Only the conclusion comes back</strong>
-                    <span>The agent hands you a tidy summary. Your brain stays clear.</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F4A1;</span>
-                <div class="use-case-text">
-                    <strong>Mental test: "Do I need the working, or just the answer?"</strong>
-                    <span>If just the answer &rarr; send an agent. If you need to see every step &rarr; do it yourself.</span>
-                </div>
-            </div>
-        </div>
-        <div class="how-to-trigger">
-            <h4>How to Use It</h4>
-            <p>Just ask. "Spin up an agent to read through these ten PDFs and summarize them." Claude will dispatch a specialist, they'll churn through the work in their own brain, and come back with just the summary.</p>
-        </div>
-    </div>
-
-    <!-- Slide 17: How to Create an Agent -->
-    <div class="slide" data-slide="18">
-        <h1>How to Create Your Own Agent</h1>
-        <p>You don't write an agent from scratch &mdash; Claude helps you build one. Type <code>/agents</code> inside Claude Code and a guided menu opens.</p>
-        <div class="how-to-trigger">
-            <h4>The Command</h4>
-            <p>Type <code>/agents</code> in Claude Code. A menu appears with your existing agents and an option to create a new one.</p>
-        </div>
-        <div class="hiring-steps">
-            <div class="hiring-step level-1">
-                <span class="hiring-step-number">1</span>
-                <div class="hiring-step-content">
-                    <strong>Type <code>/agents</code></strong>
-                    <span>A menu opens listing your existing agents plus "Create new agent".</span>
-                </div>
-            </div>
-            <div class="hiring-step level-2">
-                <span class="hiring-step-number">2</span>
-                <div class="hiring-step-content">
-                    <strong>Tell Claude what the agent should do, in one sentence</strong>
-                    <span>e.g., "Research analyst that summarizes competitor pricing from their websites."</span>
-                </div>
-            </div>
-            <div class="hiring-step level-3">
-                <span class="hiring-step-number">3</span>
-                <div class="hiring-step-content">
-                    <strong>Claude writes the agent file for you</strong>
-                    <span>It creates a file with a job description, allowed tools, and model. You can edit it like any document.</span>
-                </div>
-            </div>
-        </div>
-        <div class="analogy-box">
-            <h4>Think of it like this</h4>
-            <p>Creating an agent is like <strong>writing a job description for a new hire</strong>. You say what the role is, what tools they get, and how they should behave. Claude drafts the JD; you review and adjust.</p>
-        </div>
-        <div class="code-block"><span class="comment"># Where your new agent lives</span>
-<span class="claude-file">.claude/agents/your-agent.md</span>     <span class="comment"># A plain markdown file</span></div>
-        <div class="trigger-box">
-            <h4>Takeaway</h4>
-            <p>Agents are just text files. Anyone on your team can create, share, or edit one. No coding required.</p>
-        </div>
-    </div>
-
-    <!-- Slide 18: Agent Frontmatter -->
-    <div class="slide" data-slide="19">
-        <h1>Agent Config Fields</h1>
-        <p>The config block at the top of an agent file controls its identity and capabilities:</p>
-        <div style="margin: 24px 0;">
-            <div class="field-row">
-                <span class="field-name">name <span class="field-recommended">Recommended</span></span>
-                <span class="field-desc">Unique identifier &mdash; defaults to filename if omitted</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">description <span class="field-required">Required</span></span>
-                <span class="field-desc">When to invoke. Use <code>"PROACTIVELY"</code> for auto-invocation</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">model</span>
-                <span class="field-desc"><code>haiku</code>, <code>sonnet</code>, <code>opus</code>, or <code>inherit</code> (default)</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">tools</span>
-                <span class="field-desc">Allowlist of tools. Inherits all if omitted</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">skills</span>
-                <span class="field-desc">List of skill names to preload into agent context at startup</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">maxTurns</span>
-                <span class="field-desc">Maximum agentic turns before the agent stops</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">memory</span>
-                <span class="field-desc">Persistent memory: <code>user</code>, <code>project</code>, or <code>local</code></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">color</span>
-                <span class="field-desc">Visual color in task list: <code>red</code>, <code>blue</code>, <code>green</code>, etc.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================ -->
-    <!-- TOPIC 4: SKILLS (Slides 20-25)                                -->
-    <!-- ============================================================ -->
-
-    <!-- Slide 19: Skills Intro -->
-    <div class="slide section-slide" data-slide="20" data-level="skills">
-        <div class="section-number">Topic 4</div>
-        <h1>&#x1F393; Skills (The Training)</h1>
-        <p class="section-desc">If an agent is a person with a job title, a <strong>skill</strong> is a specific thing they've been trained to do &mdash; a certification, a how-to, a recipe.</p>
-    </div>
-
-    <!-- Slide 20: The Training Manual / Shayan -->
-    <div class="slide" data-slide="21">
-        <h1>The Training Manual</h1>
-        <div class="analogy-box">
-            <h4>Think of it like this</h4>
-            <p>When someone joins your team, they have a role (agent), but they also go through specific training modules &mdash; how to use the CRM, how to write a proposal, how to run a standup. Each training module is a <strong>skill</strong>.</p>
-        </div>
-        <h3 style="margin-top: 32px;">A Real Person Example</h3>
-        <p><strong>Shayan</strong> has many skills:</p>
-        <div class="use-cases">
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F4BB;</span>
-                <div class="use-case-text">
-                    <strong>Engineering skill</strong>
-                    <span>Can write code</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F3AE;</span>
-                <div class="use-case-text">
-                    <strong>Gaming skill</strong>
-                    <span>Knows game mechanics</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F4D6;</span>
-                <div class="use-case-text">
-                    <strong>Reading skill</strong>
-                    <span>Can digest and summarize long documents</span>
-                </div>
-            </div>
-        </div>
-        <p>Each skill has its own knowledge and methods. Shayan uses the right skill for the right task. <strong>Claude works the same way.</strong></p>
-    </div>
-
-    <!-- Slide 21: Skills Tips (from Boris) -->
-    <div class="slide" data-slide="22">
-        <h1>When to Turn Something Into a Skill</h1>
-        <div class="info-box">
-            <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
-            <p>"If you do something <strong>more than once a day</strong>, turn it into a skill."</p>
-        </div>
-        <p>The rule is simple: anything you're explaining to Claude over and over is a skill waiting to be written down. A few examples from real teams:</p>
-        <div class="use-cases">
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F4DD;</span>
-                <div class="use-case-text">
-                    <strong>"Format my weekly update"</strong>
-                    <span>Same sections, same tone, same length every Monday. That's a skill.</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x1F4CA;</span>
-                <div class="use-case-text">
-                    <strong>"Pull this week's numbers from the dashboard"</strong>
-                    <span>Same login, same filters, same chart. That's a skill.</span>
-                </div>
-            </div>
-            <div class="use-case-item">
-                <span class="use-case-icon">&#x2709;&#xFE0F;</span>
-                <div class="use-case-text">
-                    <strong>"Draft the client email the way we always do it"</strong>
-                    <span>Same opening, same structure, same sign-off. That's a skill.</span>
-                </div>
-            </div>
-        </div>
-        <div class="how-to-trigger">
-            <h4>Takeaway</h4>
-            <p>Skills are how <strong>repetition becomes reliability</strong>. Write it down once, and Claude does it the same way forever &mdash; or until you update the skill.</p>
-        </div>
-    </div>
-
-    <!-- Slide 22: Why Separate Agents and Skills -->
-    <div class="slide" data-slide="23">
-        <h1>Why Separate Agents and Skills?</h1>
-        <div class="two-col">
-            <div>
-                <h3>Agent = The Person</h3>
-                <p>The <code>weather-agent</code> is the person with the job title <strong>"Weather Reporter"</strong>.</p>
-                <p>It defines the <em>role</em> and <em>behavior</em>.</p>
-            </div>
-            <div>
-                <h3>Skill = The Training</h3>
-                <p>The <code>weather-fetcher</code> skill is the specific training on <strong>how</strong> to fetch weather data.</p>
-                <p>It contains exact instructions:</p>
-                <ul class="feature-list">
-                    <li>Go to this specific weather service</li>
-                    <li>Read the temperature from this specific place</li>
-                    <li>Return it in this specific format</li>
-                </ul>
-            </div>
-        </div>
-        <div class="how-to-trigger" style="margin-top: 24px;">
-            <h4>The Power</h4>
-            <p><strong>One agent can have multiple skills</strong>, and <strong>one skill can be used by multiple agents</strong>. Skills are reusable building blocks. Agents are the people who use them.</p>
-        </div>
-    </div>
-
-    <!-- Slide 23: How to Create a Skill (NEW — skills how-to) -->
-    <div class="slide" data-slide="24">
-        <h1>How to Create Your Own Skill</h1>
-        <p>Skills don't have a slash-command creator &mdash; they're plain markdown files you create directly. The pattern is simple enough that you can write your first one in a minute.</p>
-        <div class="how-to-trigger">
-            <h4>The File</h4>
-            <p>Create <code>.claude/skills/&lt;your-skill-name&gt;/SKILL.md</code> in your project. That's it.</p>
-        </div>
-        <div class="hiring-steps">
-            <div class="hiring-step level-1">
-                <span class="hiring-step-number">1</span>
-                <div class="hiring-step-content">
-                    <strong>Pick a repeated task</strong>
-                    <span>Something you explain to Claude more than once. "Format my weekly update" is a perfect first skill.</span>
-                </div>
-            </div>
-            <div class="hiring-step level-2">
-                <span class="hiring-step-number">2</span>
-                <div class="hiring-step-content">
-                    <strong>Make a folder and a SKILL.md</strong>
-                    <span>Path: <code>.claude/skills/weekly-update/SKILL.md</code>. Or ask Claude: "Turn this into a skill called weekly-update."</span>
-                </div>
-            </div>
-            <div class="hiring-step level-3">
-                <span class="hiring-step-number">3</span>
-                <div class="hiring-step-content">
-                    <strong>Write the recipe in plain English</strong>
-                    <span>Same words you'd use to explain it to a coworker. Skills are instructions, not code.</span>
-                </div>
-            </div>
-        </div>
-        <div class="analogy-box">
-            <h4>Think of it like this</h4>
-            <p>Writing a skill is like <strong>writing a page in a recipe book</strong>. Title at the top, ingredients, steps. Anyone on the team can open it and follow along &mdash; Claude included.</p>
-        </div>
-        <div class="code-block"><span class="comment"># File: .claude/skills/weather-fetcher/SKILL.md</span>
-<span class="string">---</span>
-<span class="key">name</span>: <span class="string">weather-fetcher</span>
-<span class="key">description</span>: <span class="string">Fetch current temperature for Dubai from Open-Meteo API</span>
-<span class="key">user-invocable</span>: <span class="string">false</span>
-<span class="string">---</span>
-
-<span class="comment"># Weather Fetcher</span>
-
-To fetch the current temperature for Dubai:
-
-1. Call the Open-Meteo API:
-   <span class="cmd">https://api.open-meteo.com/v1/forecast</span>
-   <span class="cmd">?latitude=25.2048&longitude=55.2708&current=temperature_2m</span>
-
-2. Extract <span class="key">current.temperature_2m</span> from the response
-
-3. Return: <span class="string">"The temperature in Dubai is {value}{unit}"</span></div>
-        <div class="trigger-box">
-            <h4>Takeaway</h4>
-            <p>The skill contains <strong>instructions, not code</strong>. It tells Claude <em>how</em> to do something using its existing tools. The next slide shows the small config block at the top.</p>
-        </div>
-    </div>
-
-    <!-- Slide 24: Skill Frontmatter -->
-    <div class="slide" data-slide="25">
-        <h1>Skill Config Fields</h1>
-        <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
-        <div style="margin: 24px 0;">
-            <div class="field-row">
-                <span class="field-name">name</span>
-                <span class="field-desc">Display name and <code>/slash-command</code>. Defaults to directory name</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">description <span class="field-recommended">Recommended</span></span>
-                <span class="field-desc">What the skill does &mdash; shown in autocomplete, used for auto-discovery</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">user-invocable</span>
-                <span class="field-desc">Set <code>false</code> to hide from <code>/</code> menu &mdash; becomes background knowledge only</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">allowed-tools</span>
-                <span class="field-desc">Tools allowed without permission prompts when skill is active</span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">model</span>
-                <span class="field-desc">Model to use: <code>haiku</code>, <code>sonnet</code>, or <code>opus</code></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">context</span>
-                <span class="field-desc">Set to <code>fork</code> to run in isolated subagent context</span>
-            </div>
-        </div>
-        <div class="info-box">
-            <h4>Two Ways to Use Skills</h4>
-            <p><strong>User-invocable</strong>: appears in <code>/</code> menu, user runs it directly. <strong>Agent-preloaded</strong>: set <code>user-invocable: false</code>, then list it in an agent's <code>skills:</code> field &mdash; it becomes domain knowledge injected into that agent.</p>
-        </div>
-    </div>
-
-    <!-- ============================================================ -->
-    <!-- TOPIC 5: COMMANDS (Slides 26-28)                              -->
-    <!-- ============================================================ -->
-
-    <!-- Slide 25: Commands Intro -->
-    <div class="slide section-slide" data-slide="26" data-level="commands">
+    <!-- Slide 30: Commands Section Divider -->
+    <div class="slide section-slide" data-slide="30" data-level="commands">
         <div class="section-number">Topic 5</div>
-        <h1>&#x26A1; Commands (Your Shortcuts)</h1>
-        <p class="section-desc">If <code>CLAUDE.md</code> is what Claude always knows, a <strong>command</strong> is what Claude does when you press one specific button. Slash commands turn a multi-step workflow into a single keystroke.</p>
+        <h1>&#x26A1; Commands &mdash; The Trigger</h1>
+        <p class="section-desc">One word kicks off the whole chain. <code>/weather-orchestrator</code> &rarr; agent &rarr; skill &rarr; SVG card. Commands are the entry point into any workflow.</p>
     </div>
 
-    <!-- Slide 26: What Are Commands -->
-    <div class="slide" data-slide="27">
+    <!-- Slide 31: Commands — The Entry Point -->
+    <div class="slide" data-slide="31">
         <h1>Commands &mdash; The Entry Point</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
             <p>If agents are employees and skills are their training, a <strong>command</strong> is the manager's playbook &mdash; "when someone asks for a weather report, first ask them Celsius or Fahrenheit, then dispatch the weather team, then create the visual."</p>
         </div>
-        <p>You've already seen five built-in commands in this presentation:</p>
+        <p>You've already seen built-in commands in this presentation:</p>
         <div class="use-cases">
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F4CB;</span>
                 <div class="use-case-text">
                     <strong><code>/init</code></strong>
-                    <span>Drafts a CLAUDE.md for your project (Topic 2)</span>
+                    <span>Drafts a CLAUDE.md for your project (Topic 4)</span>
                 </div>
             </div>
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F464;</span>
                 <div class="use-case-text">
                     <strong><code>/agents</code></strong>
-                    <span>Opens the agent creator menu (Topic 3)</span>
+                    <span>Opens the agent creator menu (Topic 1)</span>
                 </div>
             </div>
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F9E0;</span>
                 <div class="use-case-text">
                     <strong><code>/context</code></strong>
-                    <span>Shows how full Claude's brain is right now (Topic 1)</span>
+                    <span>Shows how full Claude's brain is right now (Topic 3)</span>
                 </div>
             </div>
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F9F9;</span>
                 <div class="use-case-text">
                     <strong><code>/clear</code> &amp; <code>/compact</code></strong>
-                    <span>Reset or summarize the brain (Topic 1)</span>
+                    <span>Reset or summarize the brain (Topic 3)</span>
                 </div>
             </div>
         </div>
@@ -978,8 +1098,8 @@ To fetch the current temperature for Dubai:
         </div>
     </div>
 
-    <!-- Slide 27: How to Create a Command (NEW — commands how-to) -->
-    <div class="slide" data-slide="28">
+    <!-- Slide 32: How to Create Your Own Command -->
+    <div class="slide" data-slide="32">
         <h1>How to Create Your Own Command</h1>
         <p>Commands are markdown files too. If you can write a recipe, you can write a command.</p>
         <div class="how-to-trigger">
@@ -991,14 +1111,14 @@ To fetch the current temperature for Dubai:
                 <span class="hiring-step-number">1</span>
                 <div class="hiring-step-content">
                     <strong>Pick a workflow you trigger often</strong>
-                    <span>"Generate this week's status report." "Open Monday's standup template." Anything you'd want one keystroke for.</span>
+                    <span>"Generate this week's status report." Anything you'd want one keystroke for.</span>
                 </div>
             </div>
             <div class="hiring-step level-2">
                 <span class="hiring-step-number">2</span>
                 <div class="hiring-step-content">
                     <strong>Create the file</strong>
-                    <span>Path: <code>.claude/commands/status-report.md</code>. The filename becomes the command name.</span>
+                    <span>Path: <code>.claude/commands/weather-orchestrator.md</code>. The filename becomes the command name.</span>
                 </div>
             </div>
             <div class="hiring-step level-3">
@@ -1015,7 +1135,7 @@ To fetch the current temperature for Dubai:
         </div>
         <div class="code-block"><span class="comment"># File: .claude/commands/weather-orchestrator.md</span>
 <span class="string">---</span>
-<span class="key">description</span>: <span class="string">Fetch weather and create SVG card</span>
+<span class="key">description</span>: <span class="string">Fetch weather data for Dubai and create an SVG weather card</span>
 <span class="key">model</span>: <span class="string">haiku</span>
 <span class="string">---</span>
 
@@ -1030,18 +1150,18 @@ To fetch the current temperature for Dubai:
     </div>
 
     <!-- ============================================================ -->
-    <!-- TOPIC 6: WORKFLOW (Slides 29-32)                              -->
+    <!-- TOPIC 6: WORKFLOW (Slides 33-36)                              -->
     <!-- ============================================================ -->
 
-    <!-- Slide 28: Workflow Intro -->
-    <div class="slide section-slide" data-slide="29" data-level="workflow">
-        <div class="section-number">Topic 6</div>
-        <h1>&#x1F3BC; Workflow (How They All Fit)</h1>
-        <p class="section-desc">Five pieces, one orchestrated flow: a <strong>command</strong> kicks it off, an <strong>agent</strong> does the work using its preloaded <strong>skill</strong>, then another <strong>skill</strong> takes the result and turns it into output.</p>
+    <!-- Slide 33: Workflow Sub-Section (Putting It All Together) -->
+    <div class="slide section-slide" data-slide="33" data-level="workflow">
+        <div class="section-number">Putting It All Together</div>
+        <h1>&#x1F3BC; Workflow &mdash; All Five Pieces Together</h1>
+        <p class="section-desc">Watch the weather reporter example run from one keystroke to SVG card output. Five concepts, one orchestrated flow.</p>
     </div>
 
-    <!-- Slide 29: The Full Architecture -->
-    <div class="slide" data-slide="30">
+    <!-- Slide 34: Command → Agent → Skill -->
+    <div class="slide" data-slide="34">
         <h1>Command &rarr; Agent &rarr; Skill</h1>
         <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows &mdash; demonstrated in this very repo by the weather example:</p>
         <div class="code-block"><span class="comment">The Orchestration Flow</span>
@@ -1067,8 +1187,8 @@ To fetch the current temperature for Dubai:
     Creates: weather.svg + output.md</div>
     </div>
 
-    <!-- Slide 30: Two Skill Patterns -->
-    <div class="slide" data-slide="31">
+    <!-- Slide 35: Two Ways Skills Are Used -->
+    <div class="slide" data-slide="35">
         <h1>Two Ways Skills Are Used</h1>
         <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
         <div class="two-col">
@@ -1090,10 +1210,10 @@ To fetch the current temperature for Dubai:
         </div>
     </div>
 
-    <!-- Slide 31: How to Wire a Workflow (NEW — workflow how-to) -->
-    <div class="slide" data-slide="32">
+    <!-- Slide 36: How to Wire Your Own Workflow -->
+    <div class="slide" data-slide="36">
         <h1>How to Wire Your Own Workflow</h1>
-        <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls one or more agents and skills in sequence. Here's how the weather workflow in this repo wires itself together &mdash; your own can follow the same shape.</p>
+        <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls agents and skills in sequence.</p>
         <div class="how-to-trigger">
             <h4>The Recipe</h4>
             <p>One <strong>command</strong> at the top. One <strong>agent</strong> with a <strong>skill</strong> preloaded for fetching. One <strong>skill</strong> at the end for output. Wire them in the command file.</p>
@@ -1139,12 +1259,20 @@ To fetch the current temperature for Dubai:
         </div>
     </div>
 
-    <!-- Slide 32: Closing -->
-    <div class="slide title-slide" data-slide="33">
+    <!-- ============================================================ -->
+    <!-- SLIDE 37: Closing                                             -->
+    <!-- ============================================================ -->
+    <div class="slide title-slide" data-slide="37">
         <h1>Journey So Far</h1>
-        <p class="subtitle">Six topics, one continuous arc</p>
-        <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 600px;">From understanding Claude's brain to wiring a complete <strong>Command &rarr; Agent &rarr; Skill</strong> workflow. The same six pieces compose every workflow you'll ever build.</p>
-        <p style="margin-top: 40px; font-size: 1rem; color: #888;">The learning continues &mdash; hooks, MCP servers, settings, and more.</p>
+        <p class="subtitle">Five concepts, one running example</p>
+        <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 640px;">From meeting the weather reporter to wiring the full <strong>Command &rarr; Agent &rarr; Skill</strong> chain. The same five pieces compose every workflow you'll ever build.</p>
+        <div style="margin-top: 40px; text-align: left; max-width: 500px;">
+            <p style="font-size: 1rem; color: #888; margin-bottom: 8px;">&#x1F464; Agents &mdash; the specialist with a job title</p>
+            <p style="font-size: 1rem; color: #888; margin-bottom: 8px;">&#x1F393; Skills &mdash; the training they carry</p>
+            <p style="font-size: 1rem; color: #888; margin-bottom: 8px;">&#x1F9E0; Context &mdash; the brain that resets each session</p>
+            <p style="font-size: 1rem; color: #888; margin-bottom: 8px;">&#x1F4CB; CLAUDE.md &mdash; the pocket rulebook that survives resets</p>
+            <p style="font-size: 1rem; color: #888; margin-bottom: 8px;">&#x26A1; Commands &amp; &#x1F3BC; Workflow &mdash; the trigger that wires it all</p>
+        </div>
         <p style="margin-top: 40px; font-size: 0.95rem; color: #aaa;">github.com/shanraisshan/claude-code-best-practice</p>
     </div>
 
@@ -1165,12 +1293,12 @@ To fetch the current temperature for Dubai:
         const slides = document.querySelectorAll('[data-slide]');
         const totalSlides = slides.length;
 
-        // Level definitions (6 topics, one continuous arc — no day separation)
+        // Level definitions — arc order: Agents → Skills → Context → CLAUDE.md → Commands → Workflow
         const LEVELS = {
-            'context':   { order: 1, color: 'hsl(340, 50%, 55%)', height: '17%',  label: 'Context'   },
-            'claude-md': { order: 2, color: 'hsl(25, 75%, 50%)',  height: '33%',  label: 'CLAUDE.md' },
-            'agents':    { order: 3, color: 'hsl(35, 80%, 50%)',  height: '50%',  label: 'Agents'    },
-            'skills':    { order: 4, color: 'hsl(140, 60%, 45%)', height: '67%',  label: 'Skills'    },
+            'agents':    { order: 1, color: 'hsl(35, 80%, 50%)',  height: '17%',  label: 'Agents'    },
+            'skills':    { order: 2, color: 'hsl(140, 60%, 45%)', height: '33%',  label: 'Skills'    },
+            'context':   { order: 3, color: 'hsl(340, 50%, 55%)', height: '50%',  label: 'Context'   },
+            'claude-md': { order: 4, color: 'hsl(25, 75%, 50%)',  height: '67%',  label: 'CLAUDE.md' },
             'commands':  { order: 5, color: 'hsl(195, 65%, 50%)', height: '83%',  label: 'Commands'  },
             'workflow':  { order: 6, color: 'hsl(45, 90%, 45%)',  height: '100%', label: 'Workflow'  }
         };
