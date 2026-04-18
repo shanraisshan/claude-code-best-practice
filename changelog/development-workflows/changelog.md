@@ -382,3 +382,25 @@
 | 12 | LOW | Count Verify | ECC commands 143→133 — agent counted 130 root + 3 .claude; possible pagination undercount | ON HOLD (keeping 143 until verified; decrease seems unlikely given active development) |
 | 13 | LOW | Count Verify | ECC skills 230→156 — CHANGELOG self-reports 156 but previous directory count was 230 | ON HOLD (keeping 230; different counting methodology) |
 | 14 | LOW | Count Verify | GSD commands 122→74 — agent enumerated A-W filenames but dramatic 39% drop seems unlikely | ON HOLD (keeping 122 until verified; may be pagination/multi-runtime directory issue) |
+
+---
+
+## [2026-04-18 07:59 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update ECC ★ from 158k to 160k (160,162 actual — v1.10.0 Surface Refresh momentum, ecc2 alpha) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Superpowers ★ from 156k to 159k (158,523 actual — v5.0.7 Copilot CLI, no new release in 18 days) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 74k to 76k (75,773 actual — v1.0.0.0 released today: simpler prompts, real LOC receipts, typed question registry) | COMPLETE (updated README table) |
+| 4 | HIGH | Count Update | Update gstack skills 46→37 (37 root-level SKILL.md dirs confirmed by name; v1.0.0.0 consolidation removed 9 skill dirs) | COMPLETE (updated README table) |
+| 5 | HIGH | Star Update | Update GSD ★ from 54k to 55k (54,605 actual — v1.37.1 released 2026-04-17: ingest-docs command, UI-phase researcher fix) | COMPLETE (updated README table) |
+| 6 | HIGH | Count Update | Update GSD agents 31→33 (2 new gsd-* agents in agents/ dir) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update oh-my-claudecode ★ from 29k to 30k (29,773 actual — v4.12.1 released today: 8 bug fixes across 24 PRs, Opus 4.7 default, Gemini lane fix) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update CE ★ from 14k to 15k (14,681 actual — v2.68.1 released today: ce-compound-refresh and ce-pr-description handoff fixes) | COMPLETE (updated README table) |
+| 9 | MED | Count Update | Update CE agents 49→50, commands 3→4, skills 51→44 (triage-prs.md added to .claude/commands/; 43 compound-engineering + 1 coding-tutor skills) | COMPLETE (updated README table) |
+| 10 | MED | Count Update | Update OpenSpec commands 10→11 (/opsx:explore present alongside /opsx:new, /continue, /ff, /verify, /sync, /bulk-archive, /onboard, /propose, /apply, /archive) | COMPLETE (updated README table) |
+| 11 | LOW | Count Verify | ECC commands 143→79 — Apr 18 agent confirmed 79 command .md files via git tree; Apr 16 had 143 via directory count with 0.72 confidence | ON HOLD (methodology differs between git-tree vs. directory API; keeping 143 until manual verification) |
+| 12 | LOW | Count Verify | ECC skills 230→183 — Apr 18 agent confirmed 183 skill folders via git tree; Apr 16 had 230 via directory count | ON HOLD (keeping 230 until manual verification; recurring with Apr 13/16 ON HOLD items 12-13) |
+| 13 | LOW | Count Verify | GSD commands 122→81 — Apr 18 agent confirmed 81 .md files in commands/gsd/; Apr 16 was 122 (also ON HOLD that run for 74 value) | ON HOLD (recurring discrepancy, likely multi-runtime pagination; keeping 122 until verified) |
+| 14 | LOW | Count Verify | Superpowers agents 5→1 — Apr 18 agent counted 1 explicit agent; prior counts included implicit sub-agents dispatched by skills | ON HOLD (methodology change only; keeping 5 which includes implicit sub-agent count) |
+| 15 | LOW | Count Verify | oh-my-claudecode Plan link shows ralplan but agent identifies omc-plan (skills/plan/SKILL.md) as active planner | ON HOLD (both skills exist in repo; keeping ralplan link until user preference clarified) |
