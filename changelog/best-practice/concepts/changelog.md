@@ -396,3 +396,27 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 8 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
 | 9 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
 | 10 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+
+---
+
+## [2026-04-18 07:53 PM PKT] Claude Code v2.1.113
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Auto Mode row (line 48) still references `claude --enable-auto-mode` — flag removed in v2.1.111; auto mode now starts via `--permission-mode auto` or Shift+Tab cycle (Max subscribers default with Opus 4.7) | ✅ COMPLETE (location updated to `--permission-mode auto`, `Shift+Tab`; description notes flag removal and Max+Opus-4.7 default) |
+| 2 | HIGH | Missing Concept | Add Ultrareview row to Hot table — cloud-based multi-agent code review (`/ultrareview`, v2.1.86+, dedicated docs at `/en/ultrareview`); free 3 runs for Pro/Max | ✅ COMPLETE (row added after Routines with beta badge, /ultrareview location, Tasks-tracking inline link) |
+| 3 | HIGH | Missing Concept | Add Tasks row — `/tasks` command for tracking background work (referenced on Ultrareview page); replaces TodoWrite per `reports/claude-global-vs-project-settings.md` | ✅ COMPLETE (row added after Scheduled Tasks with /tasks location, BP badge linking to global-vs-project-settings report) |
+| 4 | MED | Changed Description | No Flicker Mode row (line 47) — official docs now lead with `/tui fullscreen` command (v2.1.110); env var is the pre-v2.1.110 legacy path per /fullscreen page | ✅ COMPLETE (location updated to `/tui fullscreen`, `CLAUDE_CODE_NO_FLICKER=1`; description notes /tui as canonical, env var as legacy) |
+| 5 | MED | Stale Command Name | TIPS line 249 references `/fewer-permission-prompts` — official skill name is `/less-permission-prompts` per v2.1.111 changelog (local skill folder is `fewer-permission-prompts` but the user-visible command should match the official name) | ✅ COMPLETE (TIPS line 249 updated to /less-permission-prompts) |
+| 6 | LOW | Changed Description | Scheduled Tasks row (line 60) — Week 15 added Monitor tool + self-pacing `/loop` (LLM picks its own interval); description doesn't mention this | ✅ COMPLETE (description appended with self-pacing/Monitor tool note) |
+| 7 | LOW | Changed Description | Git Worktrees row (line 63) — v2.1.105/106 added `EnterWorktree`/`ExitWorktree` tools and `isolation: "worktree"` subagent frontmatter; description doesn't mention these | ✅ COMPLETE (location updated to include EnterWorktree/ExitWorktree and isolation frontmatter; description notes v2.1.106+ subagent worktree support) |
+| 8 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap (119 pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user has chosen to keep as-is across 17+ runs) |
+| 9 | LOW | Verification | All 45+ external docs URLs validated against llms.txt sitemap (119 pages) — no NEW broken links found beyond the recurring `/slash-commands` redirect | ✅ COMPLETE (all flagged URLs return valid pages) |
+| 10 | LOW | Verification | All local badge file paths validated — no missing files (20+ badge targets checked) | ✅ COMPLETE (all badge targets exist on filesystem) |
+| 11 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading "Organize rules with `.claude/rules/`" exists) |
+| 12 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
+| 13 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
+| 14 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
+| 15 | LOW | Verification | Fullscreen page confirms `/tui fullscreen` is canonical command and `tui` is settings field (v2.1.110) | ✅ COMPLETE (page fetched and quoted) |
+| 16 | LOW | Verification | Permission-modes page confirms `--enable-auto-mode` flag is no longer documented; auto mode now requires Max plan + Opus 4.7 | ✅ COMPLETE (page fetched; flag absent from docs) |
+| 17 | LOW | Verification | Ultrareview page exists at `/en/ultrareview` (v2.1.86+), confirms `/ultrareview` and `/tasks` commands | ✅ COMPLETE (page fetched and content captured) |
