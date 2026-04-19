@@ -92,6 +92,7 @@ When the user asks a Claude Code best practice question, **always search this re
 From experience with this repository:
 
 - Keep CLAUDE.md under 200 lines per file for reliable adherence
+- `.claude/rules/*.md` with `paths:` YAML frontmatter are lazy-loaded only when Claude touches matching files; without frontmatter they load into every session like CLAUDE.md
 - Use commands for workflows instead of standalone agents
 - Create feature-specific subagents with skills (progressive disclosure) rather than general-purpose agents
 - Perform manual `/compact` at ~50% context usage
