@@ -1,2 +1,6 @@
 plan/
 .vscode/
+
+# Browser-automation verification artifacts (Playwright MCP / agent screenshots)
+.playwright-mcp/
+*-check.png
