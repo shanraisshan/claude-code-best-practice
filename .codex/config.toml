@@ -1,1 +1,5 @@
-notify = ["python3", ".codex/hooks/scripts/hooks.py"]
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+
+[features]
+codex_hooks = true
