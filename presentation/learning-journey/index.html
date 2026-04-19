@@ -156,7 +156,7 @@
     <div class="slide" data-slide="2">
         <h1 style="font-size: 1.6rem; margin-bottom: 8px; color: #888; border-bottom: none; padding-bottom: 0; font-weight: 400; letter-spacing: 1px; text-transform: uppercase;">Jargon you'll hear</h1>
         <p style="font-size: 1rem; color: #aaa; margin-bottom: 0; font-style: italic;">I'll unpack each of these as we go &mdash; for now, just let them wash over you.</p>
-        <div style="position: relative; width: 100%; height: calc(100vh - 420px); min-height: 300px; overflow: hidden;">
+        <div style="position: relative; width: 100%; min-height: calc(100vh - 130px); overflow: hidden;">
 
             <!-- ===== HERO TIER: Blue chips (bigger, bolder, dominant) ===== -->
             <!-- vibe coding — top-left anchor -->
@@ -216,10 +216,14 @@
             <!-- token burn -->
             <span style="position: absolute; top: 81%; left: 42%; transform: rotate(5deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">token burn</span>
 
+            <!-- scroll affordance -->
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding-bottom: 10px; pointer-events: none;">
+                <span style="font-size: 0.78rem; color: #bbb; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 4px;">scroll for glossary <span style="font-size: 0.95rem; line-height: 1;">&#8595;</span></span>
+            </div>
         </div>
 
         <!-- ===== LEGEND: 2-column definition table ===== -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 40px; margin-top: 12px; padding: 14px 0 6px 0; border-top: 1px solid #e5e5e5;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 40px; margin-top: 32px; padding: 28px 0 40px 0; border-top: 2px solid #e5e5e5;">
             <!-- Left column: 6 blue hero + first 3 purple -->
             <div style="display: flex; flex-direction: column; gap: 5px;">
                 <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">vibe coding</span> &mdash; describing what you want in plain English and hoping the AI nails it</p>
@@ -1511,6 +1515,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
             if (n > totalSlides) currentSlide = totalSlides;
             if (n < 1) currentSlide = 1;
             document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+            window.scrollTo(0, 0);
             document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
             document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
             document.getElementById('prevBtn').disabled = currentSlide === 1;
