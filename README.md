@@ -190,7 +190,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 |-----|--------|
 | have feature specific [sub-agents](https://code.claude.com/docs/en/sub-agents) (extra context) with [skills](https://code.claude.com/docs/en/skills) (progressive disclosure) instead of general qa, backend engineer | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179850139000872) |
 | say "use subagents" to throw more compute at a problem — offload tasks to keep your main context clean and focused 🚫👶 | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742755737555434) |
-| [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development | |
+| [agent teams with tmux](https://code.claude.com/docs/en/agent-teams) and [git worktrees](https://x.com/bcherny/status/2025007393290272904) for parallel development | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2025007393290272904) |
 | use [test time compute](https://code.claude.com/docs/en/sub-agents) — separate context windows make results better; one agent can cause bugs and another (same model) can find them | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2031151689219321886) |
 
 <a id="tips-commands"></a><img src="!/tags/c.svg" height="14"> **Commands (3)**
@@ -206,7 +206,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 | Tip | Source |
 |-----|--------|
 | use [context: fork](https://code.claude.com/docs/en/skills) to run a skill in an isolated subagent — main context only sees the final result, not intermediate tool calls. The agent field lets you set the subagent type | [![Lydia](!/tags/lydia.svg)](https://x.com/lydiahallie/status/2033603164398883042) |
-| use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos | |
+| use [skills in subfolders](reports/claude-skills-for-larger-mono-repos.md) for monorepos | [![Claude](!/tags/claude.svg)](https://code.claude.com/docs/en/skills) |
 | skills are folders, not files — use references/, scripts/, examples/ subdirectories for [progressive disclosure](https://code.claude.com/docs/en/skills) | [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378) |
 | build a Gotchas section in every skill — highest-signal content, add Claude's failure points over time | [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378) |
 | skill description field is a trigger, not a summary — write it for the model ("when should I fire?") | [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2033949937936085378) |
@@ -264,10 +264,10 @@ All major workflows converge on the same architectural pattern: **Research → P
 | Tip | Source |
 |-----|--------|
 | make it a habit to take screenshots and share with Claude whenever you are stuck with any issue | ![Shayan](!/tags/community-shayan.svg) |
-| use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own | |
+| use mcp ([Claude in Chrome](https://code.claude.com/docs/en/chrome), [Playwright](https://github.com/microsoft/playwright-mcp), [Chrome DevTools](https://developer.chrome.com/blog/chrome-devtools-mcp)) to let claude see chrome console logs on its own | [![Claude](!/tags/claude.svg)](https://code.claude.com/docs/en/chrome) |
 | always ask claude to run the terminal (you want to see logs of) as a background task for better debugging | ![Shayan](!/tags/community-shayan.svg) |
-| [/doctor](https://code.claude.com/docs/en/cli-reference) to diagnose installation, authentication, and configuration issues | |
-| use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review | |
+| [/doctor](https://code.claude.com/docs/en/cli-reference) to diagnose installation, authentication, and configuration issues | ![Shayan](!/tags/community-shayan.svg) |
+| use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review | ![Shayan](!/tags/community-shayan.svg) |
 | agentic search (glob + grep) beats RAG — Claude Code tried and discarded vector databases because code drifts out of sync and permissions are complex | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3095) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3095) |
 
 <a id="tips-utilities"></a>■ **Utilities (5)**
