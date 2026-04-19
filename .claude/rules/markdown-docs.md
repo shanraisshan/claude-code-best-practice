@@ -1,4 +1,9 @@
-# Glob: **/*.md
+---
+paths:
+  - "**/*.md"
+---
+
+# Markdown Docs
 
 ## Documentation Standards
 
