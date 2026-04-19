@@ -156,7 +156,7 @@
     <div class="slide" data-slide="2">
         <h1 style="font-size: 1.6rem; margin-bottom: 8px; color: #888; border-bottom: none; padding-bottom: 0; font-weight: 400; letter-spacing: 1px; text-transform: uppercase;">Jargon you'll hear</h1>
         <p style="font-size: 1rem; color: #aaa; margin-bottom: 0; font-style: italic;">I'll unpack each of these as we go &mdash; for now, just let them wash over you.</p>
-        <div style="position: relative; width: 100%; height: calc(100vh - 200px); min-height: 480px; overflow: hidden;">
+        <div style="position: relative; width: 100%; height: calc(100vh - 420px); min-height: 300px; overflow: hidden;">
 
             <!-- ===== HERO TIER: Blue chips (bigger, bolder, dominant) ===== -->
             <!-- vibe coding — top-left anchor -->
@@ -217,6 +217,35 @@
             <span style="position: absolute; top: 81%; left: 42%; transform: rotate(5deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">token burn</span>
 
         </div>
+
+        <!-- ===== LEGEND: 2-column definition table ===== -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 40px; margin-top: 12px; padding: 14px 0 6px 0; border-top: 1px solid #e5e5e5;">
+            <!-- Left column: 6 blue hero + first 3 purple -->
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">vibe coding</span> &mdash; describing what you want in plain English and hoping the AI nails it</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">agentic engineering</span> &mdash; building guardrails so AI acts like a reliable teammate, not a gamble</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">progressive disclosure</span> &mdash; feeding the AI only what it needs right now, not everything upfront</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">orchestration</span> &mdash; coordinating several AI agents like a conductor leads a band</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">dumb zone</span> &mdash; the stretch where AI has too much context and starts thinking worse, not better</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">agentic workflows</span> &mdash; AI that plans, acts, checks its work, and adapts &mdash; multi-step on its own</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">MCP</span> &mdash; a universal adapter letting AI talk to your tools (GitHub, Slack, databases)</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">hooks</span> &mdash; auto-triggers that run your rules before or after the AI does anything</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">harness</span> &mdash; the scaffolding around the model &mdash; files, terminal, tools &mdash; that turns a chatbot into a worker</p>
+            </div>
+            <!-- Right column: last purple + all green + all amber -->
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">compaction</span> &mdash; auto-summarizing old chat so the AI keeps going without hitting its memory ceiling</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">context engineering</span> &mdash; deliberately curating what the AI sees so it answers well</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">context rot</span> &mdash; quality decay as the conversation drags on and earlier details blur</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">prompt engineering</span> &mdash; the craft of phrasing requests so the AI understands exactly what you mean</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">AI slop</span> &mdash; low-effort, generic AI output that looks polished but says nothing</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">hallucination</span> &mdash; when AI confidently makes up facts that sound true but aren&rsquo;t</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">context bloat</span> &mdash; overstuffing the AI&rsquo;s memory so it slows down and loses focus</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">one-shot prompting</span> &mdash; giving the AI one example and asking it to follow the same pattern</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">token burn</span> &mdash; wasting expensive AI &ldquo;words&rdquo; on unnecessary back-and-forth or bloated prompts</p>
+            </div>
+        </div>
+
     </div>
 
     <!-- ============================================================ -->
