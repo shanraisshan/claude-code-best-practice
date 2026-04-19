@@ -1,4 +1,9 @@
-# Glob: presentation/**
+---
+paths:
+  - "presentation/**"
+---
+
+# Presentation Delegation
 
 ## Delegation Rule
 
