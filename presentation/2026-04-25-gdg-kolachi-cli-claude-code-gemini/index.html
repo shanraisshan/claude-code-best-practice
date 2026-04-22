@@ -239,11 +239,11 @@
                     onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 28px rgba(230,81,0,0.22)'; this.style.background='#fff3e0';"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='#f8f9fa';"
                 >
-                    <img src="../assets/logo/claude-mascot.svg" alt="Claude mascot" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0;" />
+                    <img src="../../!/claude-jumping.svg" alt="Claude mascot" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0;" />
                     <div style="text-align: left; flex: 1;">
-                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #e65100; font-weight: 700; margin-bottom: 4px;">Achievement</div>
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #e65100; font-weight: 700; margin-bottom: 4px;">Open Source</div>
                         <div style="font-size: 1.0rem; font-weight: 600; color: #1a1a1a; line-height: 1.3;">Creator of <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px; font-size: 0.93rem;">claude-code-best-practice</code></div>
-                        <div style="font-size: 0.87rem; color: #666; margin-top: 3px;">The most-starred AI repo from Pakistan &mdash; over 50,000 stars <span style="color: #e65100;">&#9733;</span></div>
+                        <div style="font-size: 0.87rem; color: #666; margin-top: 3px;">The most starred 🇵🇰 Pakistani AI repo <img src="../assets/logo/github.svg" alt="GitHub" style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;" /> with almost 50,000 stars <span style="color: #e65100;">&#9733;</span></div>
                     </div>
                 </a>
 
@@ -492,8 +492,8 @@ todoapp/
             </div>
         </div>
         <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 28px; max-width: 720px; margin-left: auto; margin-right: auto;">
-            <img src="../assets/hallucinations-opus-strawperry.jpg" alt="Claude Opus hallucinating the letter count in 'strawberry'" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
-            <img src="../assets/hallucinations-opus-year.jpg" alt="Claude Opus hallucinating the current year" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+            <img src="../assets/hallucination/hallucinations-opus-strawperry.jpg" alt="Claude Opus hallucinating the letter count in 'strawberry'" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+            <img src="../assets/hallucination/hallucinations-opus-year.jpg" alt="Claude Opus hallucinating the current year" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
         </div>
         <div class="trigger-box" style="margin-top: 28px;">
             <h4>The Fix Isn't Better Prompting</h4>
@@ -985,7 +985,7 @@ Fetch the current temperature for Dubai, UAE.
             <h4>Think of it like this</h4>
             <p>Imagine Claude has a <strong>brain</strong> that holds everything it's aware of right now &mdash; your question, every file it's opened, every tool result, every word it's said back to you. If a thought isn't in the brain, Claude can't use it. Simple as that.</p>
         </div>
-        <img src="../assets/context-window.jpeg" alt="Context window diagram showing how the 1M token limit is divided across system prompt, tools, files, and conversation" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
+        <img src="../assets/concepts/context-window.jpeg" alt="Context window diagram showing how the 1M token limit is divided across system prompt, tools, files, and conversation" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
         <p>When the <code>weather-agent</code> is dispatched, it gets its own fresh brain &mdash; and <code>weather-fetcher</code> is pinned into it at startup via the <code>skills:</code> field. Everything you give Claude in a conversation lands in its brain:</p>
         <div class="use-cases">
             <div class="use-case-item">
@@ -1020,7 +1020,7 @@ Fetch the current temperature for Dubai, UAE.
     <div class="slide" data-slide="24">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
-        <img src="../assets/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
+        <img src="../assets/concepts/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
         <div class="use-cases" style="margin-top: 24px;">
             <div class="use-case-item">
                 <span class="use-case-icon">&#x1F4CB;</span>
