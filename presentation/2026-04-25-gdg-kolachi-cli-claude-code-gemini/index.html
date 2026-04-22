@@ -78,6 +78,7 @@
         .header-logo { position: fixed; top: 20px; left: 40px; width: 100px; height: 65px; z-index: 50; }
         .header-logo.right { left: auto; right: 40px; }
         .header-logo img { width: 100%; height: 100%; }
+        .slide[data-slide="1"].active ~ .header-logo { display: none; }
         .title-logo { width: 200px; height: 130px; margin-bottom: 40px; }
         .title-logo img { width: 100%; height: 100%; }
         /* Journey Bar */
@@ -150,13 +151,13 @@
         <!-- Subtitle with inline brand logos + gradient text -->
         <p class="subtitle" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 0;">
             <span>Lessons from</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
-                <img src="../assets/logo/claude-mascot.svg" alt="Claude" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;">
+            <span style="display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;">
+                <img src="../../!/claude-jumping.svg" alt="Claude" style="height: 54px; width: auto; object-fit: contain;">
                 <strong style="color: #D97757; font-weight: 700;">Claude Code</strong>
             </span>
             <span style="color: #999; font-weight: 400;">&mdash; applied to &mdash;</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
-                <img src="../assets/logo/gemini.svg" alt="Gemini" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;">
+            <span style="display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;">
+                <img src="../../!/gemini-jumping.svg" alt="Gemini" style="height: 54px; width: auto; object-fit: contain;">
                 <strong style="background: linear-gradient(90deg, #1a73e8 0%, #4285f4 55%, #ea4335 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700;">Gemini CLI</strong>
             </span>
         </p>
