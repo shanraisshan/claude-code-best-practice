@@ -474,9 +474,19 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- SLIDE 6: Vibe Coding vs Agentic Engineering                   -->
+    <!-- SLIDE 7: Model + Harness (Brain + Body)                      -->
     <!-- ============================================================ -->
     <div class="slide" data-slide="7">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 75vh; text-align: center;">
+            <h1 style="border-bottom: none; padding-bottom: 0; font-size: 3rem; margin-bottom: 28px;">What is Claude Code?</h1>
+            <p style="font-size: 1.4rem; color: #555; margin: 0; max-width: 900px;"><strong>Model</strong> (Brain &#x1F9E0; &mdash; e.g. Opus, GPT) <span style="color: #999; margin: 0 10px;">+</span> <strong>Harness</strong> (Body &#x1F4AA; &mdash; e.g. tools, MCP, memory)</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6: Vibe Coding vs Agentic Engineering                   -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="8">
         <h1>Vibe Coding vs Agentic Engineering</h1>
         <div class="two-col">
             <div>
@@ -545,7 +555,7 @@ todoapp/
     <!-- ============================================================ -->
     <!-- SLIDE 7: What is Vibe Coding?                                 -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="8">
+    <div class="slide" data-slide="9">
         <h1>What is Vibe Coding?</h1>
         <div class="two-col" style="margin-top: 28px;">
             <div class="col-card bad">
@@ -574,7 +584,7 @@ todoapp/
     <!-- ============================================================ -->
     <!-- SLIDE 8: Good vs Bad Prompts                                  -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="9">
+    <div class="slide" data-slide="10">
         <h1>Good vs Bad Prompts</h1>
         <p>Even before you set up any structure, <strong>how you prompt</strong> matters. Specific beats vague. Context beats assumption.</p>
         <div class="two-col" style="margin-top: 28px;">
@@ -610,7 +620,7 @@ todoapp/
     <!-- ============================================================ -->
     <!-- SLIDE 9: Meet the Person — TOC                                -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="10">
+    <div class="slide" data-slide="11">
         <h1>Meet the Person</h1>
         <p>We're going to learn five concepts using <strong>one running example</strong>: a weather reporter agent that fetches Dubai's temperature and renders a weather card. Same person &mdash; five different angles.</p>
         <div class="toc-vertical">
@@ -657,14 +667,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 8: Agents Section Divider -->
-    <div class="slide section-slide" data-slide="11" data-level="agents">
+    <div class="slide section-slide" data-slide="12" data-level="agents">
         <div class="section-number">Topic 1</div>
         <h1>&#x1F464; Agents &mdash; The Weather Reporter</h1>
         <p class="section-desc">An agent is Claude playing a specific role. Meet the <strong>weather reporter</strong> &mdash; a specialist hired to fetch and report weather data for Dubai. Same Claude, different hat.</p>
     </div>
 
     <!-- Slide 9: The Restaurant Kitchen -->
-    <div class="slide" data-slide="12">
+    <div class="slide" data-slide="13">
         <h1>The Restaurant Kitchen</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -687,7 +697,7 @@ todoapp/
     </div>
 
     <!-- Slide 10: Prompting vs Agent table -->
-    <div class="slide" data-slide="13">
+    <div class="slide" data-slide="14">
         <h1>Prompting vs. Agent &mdash; Side by Side</h1>
         <p>The difference in one picture: <strong>prompting is asking a stranger on the street; using an agent is asking your dedicated specialist.</strong></p>
         <table>
@@ -728,7 +738,7 @@ todoapp/
     </div>
 
     <!-- Slide 11: Agents Get Their Own Brain -->
-    <div class="slide" data-slide="14">
+    <div class="slide" data-slide="15">
         <h1>Agents Get Their Own Brain</h1>
         <div class="info-box">
             <h4>Tip from Thariq (Anthropic) &mdash; Apr 16, 2026</h4>
@@ -761,7 +771,7 @@ todoapp/
     </div>
 
     <!-- Slide 12: How to Create an Agent -->
-    <div class="slide" data-slide="15">
+    <div class="slide" data-slide="16">
         <h1>How to Create Your Own Agent</h1>
         <p>You don't write an agent from scratch &mdash; Claude helps you build one. Type <code>/agents</code> inside Claude Code and a guided menu opens.</p>
         <div class="how-to-trigger">
@@ -804,7 +814,7 @@ todoapp/
     </div>
 
     <!-- Slide 13: Agent Config Fields -->
-    <div class="slide" data-slide="16">
+    <div class="slide" data-slide="17">
         <h1>Agent Config Fields</h1>
         <p>The config block at the top of an agent file controls its identity and capabilities. Here's what the real <code>weather-agent.md</code> uses:</p>
         <div style="margin: 24px 0;">
@@ -852,14 +862,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 14: Skills Section Divider -->
-    <div class="slide section-slide" data-slide="17" data-level="skills">
+    <div class="slide section-slide" data-slide="18" data-level="skills">
         <div class="section-number">Topic 2</div>
         <h1>&#x1F393; Skills &mdash; What the Weather Reporter Knows</h1>
         <p class="section-desc">Skills are the specific things the reporter has been trained to do. Our reporter has two: <strong>fetch the data</strong>, and <strong>render it as a card</strong>.</p>
     </div>
 
     <!-- Slide 15: The Training Manual -->
-    <div class="slide" data-slide="18">
+    <div class="slide" data-slide="19">
         <h1>The Training Manual</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -886,7 +896,7 @@ todoapp/
     </div>
 
     <!-- Slide 16: When to Turn Something Into a Skill -->
-    <div class="slide" data-slide="19">
+    <div class="slide" data-slide="20">
         <h1>When to Turn Something Into a Skill</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -923,7 +933,7 @@ todoapp/
     </div>
 
     <!-- Slide 17: Why Separate Agents and Skills? -->
-    <div class="slide" data-slide="20">
+    <div class="slide" data-slide="21">
         <h1>Why Separate Agents and Skills?</h1>
         <div class="two-col">
             <div>
@@ -949,7 +959,7 @@ todoapp/
     </div>
 
     <!-- Slide 18: How to Create Your Own Skill -->
-    <div class="slide" data-slide="21">
+    <div class="slide" data-slide="22">
         <h1>How to Create Your Own Skill</h1>
         <p>Skills are plain markdown files. If you can write a recipe, you can write a skill.</p>
         <div class="how-to-trigger">
@@ -1002,7 +1012,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 19: Skill Config Fields -->
-    <div class="slide" data-slide="22">
+    <div class="slide" data-slide="23">
         <h1>Skill Config Fields</h1>
         <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
         <div style="margin: 24px 0;">
@@ -1042,14 +1052,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 20: Context Section Divider -->
-    <div class="slide section-slide" data-slide="23" data-level="context">
+    <div class="slide section-slide" data-slide="24" data-level="context">
         <div class="section-number">Topic 3</div>
         <h1>&#x1F9E0; Context &mdash; The Reporter's Brain</h1>
         <p class="section-desc">Now that you've met the reporter and know their skills, let's understand what they can actually hold in mind at once. Every agent &mdash; including the weather reporter &mdash; gets its own fresh brain.</p>
     </div>
 
     <!-- Slide 21: Claude's Brain -->
-    <div class="slide" data-slide="24">
+    <div class="slide" data-slide="25">
         <h1>Claude's Brain</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1087,7 +1097,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 22: What Loads at Session Start -->
-    <div class="slide" data-slide="25">
+    <div class="slide" data-slide="26">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
         <img src="../assets/concepts/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
@@ -1121,7 +1131,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 23: Keep the Brain Clear -->
-    <div class="slide" data-slide="26">
+    <div class="slide" data-slide="27">
         <h1>Keep the Brain Clear</h1>
         <p>The more stuff crammed into Claude's brain, the harder it is to focus on what matters. This is called <strong>context rot</strong> &mdash; performance drops as the brain gets crowded.</p>
         <div class="info-box">
@@ -1165,7 +1175,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 24: How to Manage Your Context -->
-    <div class="slide" data-slide="27">
+    <div class="slide" data-slide="28">
         <h1>How to Manage Your Context</h1>
         <p>You can't <em>create</em> the context &mdash; it's just there, the moment you open a chat. But you can <strong>see</strong> how full it is, <strong>trim</strong> it down, or <strong>wipe</strong> it clean. Three commands give you full control.</p>
         <div class="how-to-trigger">
@@ -1210,14 +1220,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 25: CLAUDE.md Section Divider -->
-    <div class="slide section-slide" data-slide="28" data-level="claude-md">
+    <div class="slide section-slide" data-slide="29" data-level="claude-md">
         <div class="section-number">Topic 4</div>
         <h1>&#x1F4CB; CLAUDE.md &mdash; The Reporter's Pocket Rulebook</h1>
         <p class="section-desc">The weather reporter consults this at the start of every shift &mdash; even though their brain resets overnight. It's the standing instructions pinned in that brain before you've said a word.</p>
     </div>
 
     <!-- Slide 26: The Employee Handbook -->
-    <div class="slide" data-slide="29">
+    <div class="slide" data-slide="30">
         <h1>The Employee Handbook</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1245,7 +1255,7 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
     </div>
 
     <!-- Slide 27: How to Create CLAUDE.md -->
-    <div class="slide" data-slide="30">
+    <div class="slide" data-slide="31">
         <h1>How to Create Your CLAUDE.md</h1>
         <p>You don't need to write CLAUDE.md by hand. Claude can look at your project and draft one for you.</p>
         <div class="how-to-trigger">
@@ -1290,7 +1300,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 28: Grow CLAUDE.md With Every Mistake -->
-    <div class="slide" data-slide="31">
+    <div class="slide" data-slide="32">
         <h1>Grow CLAUDE.md With Every Mistake</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -1327,7 +1337,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 29: What Goes in CLAUDE.md -->
-    <div class="slide" data-slide="32">
+    <div class="slide" data-slide="33">
         <h1>What Goes in CLAUDE.md</h1>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
@@ -1355,7 +1365,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 30: How CLAUDE.md Loads -->
-    <div class="slide" data-slide="33">
+    <div class="slide" data-slide="34">
         <h1>How CLAUDE.md Loads</h1>
         <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
         <div class="two-col">
@@ -1388,14 +1398,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 31: Commands Section Divider -->
-    <div class="slide section-slide" data-slide="34" data-level="commands">
+    <div class="slide section-slide" data-slide="35" data-level="commands">
         <div class="section-number">Topic 5</div>
         <h1>&#x26A1; Commands &mdash; The Trigger</h1>
         <p class="section-desc">One word kicks off the whole chain. <code>/weather-orchestrator</code> &rarr; agent &rarr; skill &rarr; SVG card. Commands are the entry point into any workflow.</p>
     </div>
 
     <!-- Slide 32: Commands — The Entry Point -->
-    <div class="slide" data-slide="35">
+    <div class="slide" data-slide="36">
         <h1>Commands &mdash; The Entry Point</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1439,7 +1449,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 33: How to Create Your Own Command -->
-    <div class="slide" data-slide="36">
+    <div class="slide" data-slide="37">
         <h1>How to Create Your Own Command</h1>
         <p>Commands are markdown files too. If you can write a recipe, you can write a command.</p>
         <div class="how-to-trigger">
@@ -1494,14 +1504,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 34: Workflow Sub-Section (Putting It All Together) -->
-    <div class="slide section-slide" data-slide="37" data-level="workflow">
+    <div class="slide section-slide" data-slide="38" data-level="workflow">
         <div class="section-number">Putting It All Together</div>
         <h1>&#x1F3BC; Workflow &mdash; All Five Pieces Together</h1>
         <p class="section-desc">Watch the weather reporter example run from one keystroke to SVG card output. Five concepts, one orchestrated flow.</p>
     </div>
 
     <!-- Slide 35: Command → Agent → Skill -->
-    <div class="slide" data-slide="38">
+    <div class="slide" data-slide="39">
         <h1>Command &rarr; Agent &rarr; Skill</h1>
         <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows &mdash; demonstrated in this very repo by the weather example:</p>
         <div class="code-block"><span class="comment">The Orchestration Flow</span>
@@ -1528,7 +1538,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 36: Two Ways Skills Are Used -->
-    <div class="slide" data-slide="39">
+    <div class="slide" data-slide="40">
         <h1>Two Ways Skills Are Used</h1>
         <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
         <div class="two-col">
@@ -1551,7 +1561,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 37: How to Wire Your Own Workflow -->
-    <div class="slide" data-slide="40">
+    <div class="slide" data-slide="41">
         <h1>How to Wire Your Own Workflow</h1>
         <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls agents and skills in sequence.</p>
         <div class="how-to-trigger">
@@ -1602,7 +1612,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
     <!-- SLIDE 40: Closing                                             -->
     <!-- ============================================================ -->
-    <div class="slide title-slide" data-slide="41">
+    <div class="slide title-slide" data-slide="42">
         <h1>Journey So Far</h1>
         <p class="subtitle">Five concepts, one running example</p>
         <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 640px;">From meeting the weather reporter to wiring the full <strong>Command &rarr; Agent &rarr; Skill</strong> chain. The same five pieces compose every workflow you'll ever build.</p>
