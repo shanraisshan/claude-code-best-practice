@@ -488,22 +488,19 @@
     <!-- ============================================================ -->
     <div class="slide" data-slide="8">
         <h1>&#x1F9E0; Models &mdash; e.g. Opus, GPT</h1>
-        <p>The <strong>model</strong> is the brain. It ships with everything it was trained on &mdash; and nothing else. Every model has a <strong>knowledge cut-off date</strong>.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0;">
             <div class="col-card" style="border-left: 4px solid #4caf50;">
                 <h4 style="color: #2e7d32; text-transform: none; letter-spacing: 0; margin-bottom: 10px;">&#x2705; Can answer</h4>
-                <p style="font-size: 1rem; color: #333; margin: 0 0 8px;"><em>&ldquo;What is the capital of Japan?&rdquo;</em></p>
-                <p style="font-size: 0.95rem; color: #555; margin: 0;">A fact that existed before the cut-off &mdash; already lives inside the brain.</p>
+                <p style="font-size: 1.05rem; color: #333; margin: 0;"><em>&ldquo;What is the capital of Japan?&rdquo;</em></p>
             </div>
             <div class="col-card" style="border-left: 4px solid #f44336;">
                 <h4 style="color: #c62828; text-transform: none; letter-spacing: 0; margin-bottom: 10px;">&#x274C; Can&rsquo;t answer</h4>
-                <p style="font-size: 1rem; color: #333; margin: 0 0 8px;"><em>&ldquo;Who won yesterday&rsquo;s match?&rdquo;</em></p>
-                <p style="font-size: 0.95rem; color: #555; margin: 0;">Anything after the cut-off date &mdash; the brain simply doesn&rsquo;t know it.</p>
+                <p style="font-size: 1.05rem; color: #333; margin: 0;"><em>&ldquo;Who won yesterday&rsquo;s match?&rdquo;</em></p>
             </div>
         </div>
         <div class="trigger-box">
             <h4>Example: Opus 4.7</h4>
-            <p>Anthropic&rsquo;s latest model has a knowledge cut-off of <strong>January 2026</strong>. It knows facts up to that date &mdash; anything after it is invisible to the raw model.</p>
+            <p>Knowledge cut-off: <strong>January 2026</strong>.</p>
         </div>
     </div>
 
@@ -512,11 +509,10 @@
     <!-- ============================================================ -->
     <div class="slide" data-slide="9">
         <h1>&#x1F9E0; Limitations</h1>
-        <p>The raw model has <strong>no real-time access</strong> &mdash; no internet, no files, no clock. Ask it something happening right now, and it will tell you it can&rsquo;t help.</p>
+        <p>The raw model has <strong>no real-time access</strong> &mdash; no internet, no files, no clock.</p>
         <div style="text-align: center; margin: 24px 0;">
             <img src="../assets/model/model-limitation.jpg" alt="Anthropic Workbench screenshot showing the model refusing a real-time weather query" style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
         </div>
-        <p style="text-align: center; font-size: 0.95rem; color: #888; margin: 8px 0 0;"><em>Above: the model declining a weather query &mdash; &ldquo;I don&rsquo;t have real-time access.&rdquo;</em></p>
     </div>
 
     <!-- ============================================================ -->
