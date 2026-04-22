@@ -2,15 +2,24 @@
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@playwright/mcp"]
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.70"
+      ]
     },
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@2.1.8"
+      ]
     },
     "deepwiki": {
       "command": "npx",
-      "args": ["-y", "deepwiki-mcp"]
+      "args": [
+        "-y",
+        "deepwiki-mcp@0.0.6"
+      ]
     }
   }
 }
