@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="20" role="img" aria-label="Gemini">
+  <title>Gemini</title>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4285F4"/>
+    <stop offset="0.5" stop-color="#7B68EE"/>
+    <stop offset="1" stop-color="#EA4335"/>
+  </linearGradient>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r">
+    <rect width="64" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="64" height="20" fill="url(#g)"/>
+    <rect width="64" height="20" fill="url(#s)"/>
+  </g>
+  <g transform="translate(2, 2) scale(0.0625)">
+    <path d="M 128 0 C 128 64 160 96 256 128 C 160 160 128 192 128 256 C 128 192 96 160 0 128 C 96 96 128 64 128 0 Z" fill="#fff"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
+    <text x="40" y="14">Gemini</text>
+  </g>
+</svg>

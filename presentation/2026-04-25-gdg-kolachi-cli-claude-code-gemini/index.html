@@ -75,7 +75,8 @@
         .slide-counter { position: fixed; bottom: 40px; left: 40px; font-size: 0.9rem; color: #999; }
         .keyboard-hint { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.85rem; color: #999; }
         .keyboard-hint kbd { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd; font-family: inherit; }
-        .header-logo { position: fixed; top: 20px; right: 40px; width: 100px; height: 65px; z-index: 50; }
+        .header-logo { position: fixed; top: 20px; left: 40px; width: 100px; height: 65px; z-index: 50; }
+        .header-logo.right { left: auto; right: 40px; }
         .header-logo img { width: 100%; height: 100%; }
         .title-logo { width: 200px; height: 130px; margin-bottom: 40px; }
         .title-logo img { width: 100%; height: 100%; }
@@ -139,15 +140,42 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- SLIDE 1: Title                                                -->
+    <!-- SLIDE 1: GDG Kolachi Conference Title                         -->
     <!-- ============================================================ -->
     <div class="slide active title-slide" data-slide="1">
-        <div class="title-logo">
-            <img src="../../!/claude-jumping.svg" alt="Claude Code mascot jumping" />
-        </div>
-        <h1>Claude Code Learning Journey</h1>
-        <p class="subtitle">There is no one correct way of using Claude Code</p>
-        <p style="margin-top: 60px; font-size: 0.95rem; color: #888;">An onboarding guide for non-engineers &amp; engineers alike.</p>
+
+        <!-- Main title -->
+        <h1 style="font-size: 3.2rem; letter-spacing: -0.02em; margin-bottom: 16px;">Agentic Engineering in the CLI</h1>
+
+        <!-- Subtitle with inline brand logos + gradient text -->
+        <p class="subtitle" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 0;">
+            <span>Lessons from</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+                <img src="../assets/logo/claude-mascot.svg" alt="Claude" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;">
+                <strong style="color: #D97757; font-weight: 700;">Claude Code</strong>
+            </span>
+            <span style="color: #999; font-weight: 400;">&mdash; applied to &mdash;</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+                <img src="../assets/logo/gemini.svg" alt="Gemini" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;">
+                <strong style="background: linear-gradient(90deg, #1a73e8 0%, #4285f4 55%, #ea4335 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700;">Gemini CLI</strong>
+            </span>
+        </p>
+
+        <!-- GDG Kolachi event badge (bottom) -->
+        <div style="
+            display: inline-block;
+            background: linear-gradient(90deg, #1a73e8 0%, #4285f4 55%, #ea4335 100%);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 7px 22px;
+            border-radius: 999px;
+            box-shadow: 0 3px 12px rgba(26,115,232,0.38);
+            margin-top: 88px;
+        ">GDG Kolachi &middot; Apr 25, 2026</div>
+
     </div>
 
     <!-- ============================================================ -->
@@ -159,7 +187,7 @@
             <!-- Avatar -->
             <div style="position: relative; margin-bottom: 12px;">
                 <img
-                    src="../assets/shayan.png"
+                    src="../assets/introduction/Shayan/shayan.png"
                     alt="Shayan Rais"
                     style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 4px solid #e5e5e5; box-shadow: 0 8px 32px rgba(0,0,0,0.12); display: block; transition: transform 0.3s ease, box-shadow 0.3s ease;"
                     onmouseover="this.style.transform='scale(1.07)'; this.style.boxShadow='0 12px 40px rgba(21,101,192,0.35), 0 0 0 6px rgba(21,101,192,0.12)';"
@@ -169,7 +197,7 @@
 
             <!-- Name + tagline -->
             <h1 style="font-size: 2.6rem; font-weight: 700; margin-bottom: 6px; border-bottom: none; padding-bottom: 0; color: #1a1a1a;">Shayan Rais</h1>
-            <p style="font-size: 1.2rem; color: #444; margin-bottom: 18px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 10px;">Software Architect at <img src="../assets/logo/disrupt-logo.png" alt="disrupt.com" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;" /></p>
+            <p style="font-size: 1.2rem; color: #444; margin-bottom: 18px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 10px;">Software Architect at <img src="../assets/introduction/Shayan/disrupt-logo.png" alt="disrupt.com" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;" /></p>
 
             <!-- Side-by-side cards (2-column grid) -->
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; max-width: 900px; align-items: stretch;">
@@ -183,7 +211,7 @@
                     <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7b1fa2; font-weight: 700; margin-bottom: 14px; text-align: left;">Education</div>
                     <!-- Master's row -->
                     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-                        <img src="../assets/logo/uni-fast-logo.png" alt="FAST NUCES logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
+                        <img src="../assets/introduction/Shayan/uni-fast-logo.png" alt="FAST NUCES logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
                         <div style="text-align: left;">
                             <div style="font-size: 0.98rem; font-weight: 600; color: #1a1a1a; line-height: 1.3;">Master&rsquo;s in Computer Science</div>
                             <div style="font-size: 0.87rem; color: #666; margin-top: 2px;">FAST NUCES &mdash; 2019</div>
@@ -193,7 +221,7 @@
                     <div style="border-top: 1px solid #e0d4ec; margin: 4px 0 12px 0;"></div>
                     <!-- Bachelor's row -->
                     <div style="display: flex; align-items: center; gap: 16px;">
-                        <img src="../assets/logo/uni-ned-logo.png" alt="NED University logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
+                        <img src="../assets/introduction/Shayan/uni-ned-logo.png" alt="NED University logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
                         <div style="text-align: left;">
                             <div style="font-size: 0.98rem; font-weight: 600; color: #1a1a1a; line-height: 1.3;">Bachelor&rsquo;s in Computer Information Systems</div>
                             <div style="font-size: 0.87rem; color: #666; margin-top: 2px;">NED University &mdash; 2014</div>
@@ -1517,9 +1545,12 @@ This is a TodoApp with a FastAPI backend and React frontend.
         <p style="margin-top: 40px; font-size: 0.95rem; color: #aaa;">github.com/shanraisshan/claude-code-best-practice</p>
     </div>
 
-    <!-- Header Logo -->
+    <!-- Corner mascots (global, appear on every slide) -->
     <div class="header-logo">
         <img src="../../!/claude-jumping.svg" alt="Claude Code mascot" />
+    </div>
+    <div class="header-logo right">
+        <img src="../../!/gemini-jumping.svg" alt="Gemini CLI mascot" />
     </div>
 
     <div class="navigation">

@@ -12,7 +12,7 @@ Any request to update, modify, or fix a presentation MUST be handled by the matc
 | Presentation | Path | Agent |
 |---|---|---|
 | Vibe Coding → Agentic Engineering | `presentation/vibe-coding-to-agentic-engineering/index.html` | `presentation-vibe-coding` |
-| Claude Code Learning Journey | `presentation/learning-journey/index.html` | `presentation-learning-journey` |
+| Claude Code Learning Journey | `presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html` | `presentation-learning-journey` |
 
 Invoke via the Agent tool:
 
