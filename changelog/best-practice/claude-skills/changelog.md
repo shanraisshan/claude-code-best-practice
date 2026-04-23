@@ -161,3 +161,11 @@ No drift detected — frontmatter fields (14) and bundled skills (5) are fully s
 ## [2026-04-18 07:53 PM PKT] Claude Code v2.1.114
 
 No drift detected — frontmatter fields (14) and bundled skills (5) are fully synchronized with official docs.
+
+---
+
+## [2026-04-24 12:27 AM PKT] Claude Code v2.1.118
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `arguments` field to frontmatter table — accepts string or YAML list; named positional arguments for `$name` substitution in skill content; maps to argument positions in order | ✅ COMPLETE (added `arguments` row after `argument-hint`, count updated 14→15) |
