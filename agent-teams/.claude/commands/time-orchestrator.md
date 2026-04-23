@@ -1,4 +1,5 @@
 ---
+description: Fetch the current time for Dubai (GST, UTC+4) and create a visual SVG time card
 model: haiku
 ---
 
