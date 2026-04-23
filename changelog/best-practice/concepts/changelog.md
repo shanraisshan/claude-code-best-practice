@@ -420,3 +420,23 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 15 | LOW | Verification | Fullscreen page confirms `/tui fullscreen` is canonical command and `tui` is settings field (v2.1.110) | ✅ COMPLETE (page fetched and quoted) |
 | 16 | LOW | Verification | Permission-modes page confirms `--enable-auto-mode` flag is no longer documented; auto mode now requires Max plan + Opus 4.7 | ✅ COMPLETE (page fetched; flag absent from docs) |
 | 17 | LOW | Verification | Ultrareview page exists at `/en/ultrareview` (v2.1.86+), confirms `/ultrareview` and `/tasks` commands | ✅ COMPLETE (page fetched and content captured) |
+
+---
+
+## [2026-04-24 12:32 AM PKT] Claude Code v2.1.118
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Hooks row (line 28) lists 4 handler types ("scripts, HTTP, prompts, agents") — official `/en/hooks` page now documents 5 types with `mcp_tool` added (v2.1.118 changelog: "Hooks can invoke MCP tools directly" via `type: "mcp_tool"`) | ✅ COMPLETE (description updated to "scripts, HTTP, MCP tools, prompts, agents") |
+| 2 | MED | Empty Description | Workflows row (line 27) description cell is empty (only Orchestration Workflow badge) — official `/en/common-workflows` page covers step-by-step guides for exploring, fixing, refactoring, testing | ✅ COMPLETE (description filled with official-docs-sourced text: "Step-by-step guides for exploring codebases, fixing bugs, refactoring, and testing — orchestration patterns for multi-step tasks") |
+| 3 | LOW | Changed Description | Consider mentioning `/usage` (v2.1.118 merged `/cost`+`/stats`) inline in CLI Startup Flags row — new slash command replacing two legacy ones | ✅ COMPLETE (inline note "`/usage` (merged `/cost`+`/stats` in v2.1.118)" appended after Env Vars) |
+| 4 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap (117 pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user has chosen to keep as-is across 18+ runs) |
+| 5 | LOW | Verification | Hooks page `/en/hooks` fetched — confirmed 5 handler types including `mcp_tool` (v2.1.118) | ✅ COMPLETE (live fetch documented 5-type schema) |
+| 6 | LOW | Verification | Ultrareview page `/en/ultrareview#track-a-running-review` anchor fetched and confirmed | ✅ COMPLETE (section exists, describes `/tasks` integration) |
+| 7 | LOW | Verification | Checkpointing page `/en/checkpointing` fetched — `/undo` alias (v2.1.108) NOT surfaced in docs, only in changelog; no CONCEPTS update required | ✅ COMPLETE (docs page content matches existing description) |
+| 8 | LOW | Verification | All local badge file paths — no changes since v2.1.113 run on 2026-04-18 | ✅ COMPLETE (stable since prior run) |
+| 9 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` — not re-checked this run; stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 10 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 11 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 12 | LOW | Verification | Bundled Skills anchor `#bundled-skills` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 13 | LOW | Verification | claude-code-guide agent cross-check — no contradictions with dedicated agent; surfaced /recap (v2.1.108), /usage (v2.1.118), MCP-tool hooks (v2.1.118) as corroborating evidence | ✅ COMPLETE (both agents aligned) |
