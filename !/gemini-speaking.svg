@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 160 120" width="224" height="168">
+  <defs>
+    <!-- 3D enhanced Gemini gradient (lighter top) -->
+    <linearGradient id="gsBodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="20%" stop-color="#4285F4"/>
+      <stop offset="50%" stop-color="#7B68EE"/>
+      <stop offset="80%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#B82A22"/>
+    </linearGradient>
+
+    <!-- 3D gradient for border -->
+    <linearGradient id="gsBorderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="25%" stop-color="#4285F4"/>
+      <stop offset="50%" stop-color="#9080F0"/>
+      <stop offset="75%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#C03028"/>
+    </linearGradient>
+
+    <!-- Inner panel gradient -->
+    <linearGradient id="gsInnerGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#282840"/>
+      <stop offset="50%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0E0E1A"/>
+    </linearGradient>
+
+    <!-- Arm gradients -->
+    <linearGradient id="gsArmL" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#3570D0"/>
+      <stop offset="50%" stop-color="#5A78E0"/>
+      <stop offset="100%" stop-color="#7B68EE"/>
+    </linearGradient>
+
+    <linearGradient id="gsArmR" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#D04535"/>
+      <stop offset="50%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#C03028"/>
+    </linearGradient>
+
+    <!-- Leg gradients -->
+    <linearGradient id="gsLegL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="50%" stop-color="#6A58D0"/>
+      <stop offset="100%" stop-color="#5040A0"/>
+    </linearGradient>
+
+    <linearGradient id="gsLegR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B84030"/>
+      <stop offset="50%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#D03828"/>
+    </linearGradient>
+
+    <!-- Eye white gradient -->
+    <radialGradient id="gsEyeGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0F0F0"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </radialGradient>
+
+    <!-- Chevron gradient -->
+    <linearGradient id="gsChevronGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6AA3FF"/>
+      <stop offset="30%" stop-color="#4285F4"/>
+      <stop offset="60%" stop-color="#9080F0"/>
+      <stop offset="100%" stop-color="#EA4335"/>
+    </linearGradient>
+
+    <!-- Ground shadow -->
+    <radialGradient id="gsShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="gsDropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.8" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+
+    <!-- Inner depth -->
+    <filter id="gsInnerDepth" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+      <feOffset dx="0" dy="1.5" result="off"/>
+      <feFlood flood-color="#000" flood-opacity="0.2" result="color"/>
+      <feComposite in="color" in2="off" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Chevron glow -->
+    <filter id="gsChevronGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Sound wave glow -->
+    <filter id="gsSoundGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Note glow -->
+    <filter id="gsNoteGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .gemini-body {
+      animation: bob 0.8s ease-in-out infinite;
+      transform-origin: 42px 86px;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .shadow {
+      animation: shadow-pulse 0.8s ease-in-out infinite;
+    }
+    @keyframes shadow-pulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.35; }
+      50% { transform: scaleX(0.9); opacity: 0.25; }
+    }
+
+    .mouth {
+      animation: talk 0.3s ease-in-out infinite;
+      transform-origin: 42px 50px;
+    }
+    @keyframes talk {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.5); }
+    }
+
+    .sound-wave-1 {
+      animation: wave-expand 0.8s ease-out infinite;
+      transform-origin: left center;
+    }
+    .sound-wave-2 {
+      animation: wave-expand 0.8s ease-out infinite 0.2s;
+      transform-origin: left center;
+    }
+    .sound-wave-3 {
+      animation: wave-expand 0.8s ease-out infinite 0.4s;
+      transform-origin: left center;
+    }
+    @keyframes wave-expand {
+      0% { opacity: 0.8; transform: scaleX(0.3) scaleY(0.8); }
+      100% { opacity: 0; transform: scaleX(1.2) scaleY(1); }
+    }
+
+    .music-note-1 {
+      animation: float-note-1 1.5s ease-out infinite;
+    }
+    .music-note-2 {
+      animation: float-note-2 1.5s ease-out infinite 0.3s;
+    }
+    .music-note-3 {
+      animation: float-note-3 1.5s ease-out infinite 0.6s;
+    }
+    @keyframes float-note-1 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(15px, -25px) rotate(15deg); }
+    }
+    @keyframes float-note-2 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(20px, -30px) rotate(-10deg); }
+    }
+    @keyframes float-note-3 {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(10px, -35px) rotate(20deg); }
+    }
+  </style>
+
+  <!-- Shadow -->
+  <ellipse class="shadow" cx="42" cy="92" rx="20" ry="4" fill="url(#gsShadowGrad)"/>
+
+  <!-- Gemini Character Group -->
+  <g class="gemini-body" filter="url(#gsDropShadow)">
+    <!-- Left arm - stable/resting -->
+    <rect x="6" y="42" width="12" height="6" rx="2" fill="url(#gsArmL)"/>
+    <rect x="7" y="43" width="4" height="2" fill="#8AB8FF" opacity="0.3" rx="0.5"/>
+
+    <!-- Right arm - stable/resting -->
+    <rect x="66" y="42" width="12" height="6" rx="2" fill="url(#gsArmR)"/>
+    <rect x="67" y="43" width="4" height="2" fill="#F08070" opacity="0.25" rx="0.5"/>
+
+    <!-- Left leg - stable -->
+    <rect x="26" y="72" width="8" height="14" rx="2" fill="url(#gsLegL)"/>
+    <rect x="27" y="73" width="3" height="7" fill="#6AA3FF" opacity="0.3" rx="0.5"/>
+
+    <!-- Right leg - stable -->
+    <rect x="50" y="72" width="8" height="14" rx="2" fill="url(#gsLegR)"/>
+    <rect x="51" y="73" width="3" height="7" fill="#F08070" opacity="0.25" rx="0.5"/>
+
+    <!-- Gemini CLI Icon -->
+    <g transform="translate(10, 8)" filter="url(#gsInnerDepth)">
+      <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gsBorderGrad)"/>
+      <rect x="2" y="1" width="40" height="3" rx="2" fill="#8AB8FF" opacity="0.3"/>
+
+      <rect x="5" y="5" width="54" height="54" rx="10" fill="url(#gsInnerGrad)"/>
+      <rect x="8" y="7" width="28" height="4" rx="2" fill="#3A3A58" opacity="0.4"/>
+
+      <!-- Chevron ">" - shifted up to leave room for mouth -->
+      <g transform="translate(14, 10)" filter="url(#gsChevronGlow)">
+        <polygon points="0,10 14,0 17,3.5 7,11.5" fill="url(#gsChevronGrad)"/>
+        <polygon points="0,13 7,11.5 17,19.5 14,23" fill="url(#gsChevronGrad)"/>
+        <polygon points="0.5,10.5 12.5,1.5 14,3 6.5,10" fill="#9CC0FF" opacity="0.25"/>
+      </g>
+    </g>
+
+    <!-- Eyes -->
+    <rect x="24" y="28" width="8" height="12" rx="2" fill="url(#gsEyeGrad)"/>
+    <rect x="25" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
+    <rect x="29" y="35" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
+
+    <rect x="44" y="28" width="8" height="12" rx="2" fill="url(#gsEyeGrad)"/>
+    <rect x="45" y="29" width="2.5" height="2.5" fill="#fff" opacity="0.8" rx="0.5"/>
+    <rect x="49" y="35" width="1.2" height="1.2" fill="#fff" opacity="0.35" rx="0.3"/>
+
+    <!-- Mouth - animated speaking -->
+    <ellipse class="mouth" cx="42" cy="50" rx="6" ry="3" fill="#0E0E1A"/>
+    <ellipse cx="42" cy="49" rx="3.5" ry="1" fill="#6AA3FF" opacity="0.3"/>
+  </g>
+
+  <!-- ========== VOICE / MUSIC EFFECTS ========== -->
+
+  <!-- Sound wave arcs emanating from mouth -->
+  <g filter="url(#gsSoundGlow)">
+    <path class="sound-wave-1" d="M78,50 Q90,42 78,34" fill="none" stroke="#6AA3FF" stroke-width="2.2" stroke-linecap="round"/>
+    <path class="sound-wave-2" d="M82,52 Q98,42 82,32" fill="none" stroke="#4285F4" stroke-width="2.0" stroke-linecap="round"/>
+    <path class="sound-wave-3" d="M86,54 Q106,42 86,30" fill="none" stroke="#7B68EE" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Music notes floating out -->
+  <!-- Note 1: eighth note (blue) -->
+  <g class="music-note-1" filter="url(#gsNoteGlow)">
+    <circle cx="95" cy="24" r="2.8" fill="#4285F4"/>
+    <line x1="97.8" y1="24" x2="97.8" y2="14" stroke="#4285F4" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M97.8,14 Q101.5,12.5 100,16" fill="#4285F4" stroke="none"/>
+  </g>
+
+  <!-- Note 2: quarter note (purple) -->
+  <g class="music-note-2" filter="url(#gsNoteGlow)">
+    <circle cx="110" cy="12" r="2.5" fill="#7B68EE"/>
+    <line x1="112.5" y1="12" x2="112.5" y2="3" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M112.5,3 Q116,1.5 114.5,5" fill="#7B68EE" stroke="none"/>
+  </g>
+
+  <!-- Note 3: beamed eighth notes (red) -->
+  <g class="music-note-3" filter="url(#gsNoteGlow)">
+    <circle cx="118" cy="22" r="2.5" fill="#EA4335"/>
+    <circle cx="125" cy="20" r="2.5" fill="#EA4335"/>
+    <line x1="120.5" y1="22" x2="120.5" y2="13" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="127.5" y1="20" x2="127.5" y2="11" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="120.5" y1="13" x2="127.5" y2="11" stroke="#EA4335" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>
