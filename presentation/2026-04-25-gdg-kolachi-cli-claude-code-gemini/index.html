@@ -2339,6 +2339,295 @@ todoapp/
         </div>
     </div>
 
+    <!-- Slide 46: Orchestration Workflow diagram -->
+    <div class="slide" data-slide="46" data-level="workflow">
+        <h1>&#x1F4CB; Orchestration Workflow</h1>
+        <!-- Flow diagram: Command → Agent → Skill -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0; margin: 28px 0 24px 0; flex-wrap: nowrap;">
+            <!-- Step 1: Command -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; min-width: 180px; max-width: 240px;">
+                <div style="background: #fff3cd; border: 2px solid #f9a825; border-radius: 12px; padding: 18px 20px; text-align: center; width: 100%; box-shadow: 0 3px 12px rgba(249,168,37,0.22);">
+                    <div style="font-size: 1.8rem; margin-bottom: 6px;">&#x26A1;</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7a5c00; font-weight: 700; margin-bottom: 4px;">Command</div>
+                    <div style="font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px;">/weather-orchestrator</div>
+                    <div style="font-size: 0.78rem; color: #5a4000; line-height: 1.4;">Entry point &mdash; asks user: C&deg; or F&deg;? &mdash; then coordinates everything below</div>
+                </div>
+                <div style="background: #fff8e1; border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; color: #7a5c00; font-weight: 600; white-space: nowrap;">Step 1: Ask user</div>
+            </div>
+
+            <!-- Arrow 1 -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 12px; flex-shrink: 0;">
+                <div style="font-size: 2rem; color: #9c27b0; font-weight: 700; line-height: 1;">&#x2192;</div>
+                <div style="font-size: 0.68rem; color: #9c27b0; font-weight: 600; white-space: nowrap;">Agent tool</div>
+            </div>
+
+            <!-- Step 2: Agent -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; min-width: 180px; max-width: 240px;">
+                <div style="background: #e8f5e9; border: 2px solid #4caf50; border-radius: 12px; padding: 18px 20px; text-align: center; width: 100%; box-shadow: 0 3px 12px rgba(76,175,80,0.22);">
+                    <div style="font-size: 1.8rem; margin-bottom: 6px;">&#x1F9D1;&#x200D;&#x1F4BC;</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #1b5e20; font-weight: 700; margin-bottom: 4px;">Agent</div>
+                    <div style="font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px;">weather-agent</div>
+                    <div style="font-size: 0.78rem; color: #1b5e20; line-height: 1.4;">Preloaded with <strong>weather-fetcher</strong> skill &mdash; fetches live temp from Open-Meteo</div>
+                </div>
+                <div style="background: #f1f8e9; border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; color: #2e7d32; font-weight: 600; white-space: nowrap;">Step 2: returns temp + unit</div>
+            </div>
+
+            <!-- Arrow 2 -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 12px; flex-shrink: 0;">
+                <div style="font-size: 2rem; color: #1565c0; font-weight: 700; line-height: 1;">&#x2192;</div>
+                <div style="font-size: 0.68rem; color: #1565c0; font-weight: 600; white-space: nowrap;">Skill tool</div>
+            </div>
+
+            <!-- Step 3: Skill -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; min-width: 180px; max-width: 240px;">
+                <div style="background: #e3f2fd; border: 2px solid #1565c0; border-radius: 12px; padding: 18px 20px; text-align: center; width: 100%; box-shadow: 0 3px 12px rgba(21,101,192,0.18);">
+                    <div style="font-size: 1.8rem; margin-bottom: 6px;">&#x1F3AF;</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #0d47a1; font-weight: 700; margin-bottom: 4px;">Skill</div>
+                    <div style="font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px;">weather-svg-creator</div>
+                    <div style="font-size: 0.78rem; color: #0d47a1; line-height: 1.4;">Creates SVG weather card &mdash; writes <code>weather.svg</code> and <code>output.md</code></div>
+                </div>
+                <div style="background: #e3f2fd; border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; color: #1565c0; font-weight: 600; white-space: nowrap;">Step 3: visual output</div>
+            </div>
+        </div>
+        <div class="trigger-box" style="margin: 16px 0 0 0;">
+            <h4>One command &mdash; three pieces working in concert</h4>
+            <p>The <strong>Command</strong> is the conductor. The <strong>Agent</strong> is the data specialist. The <strong>Skill</strong> is the renderer. Each does one job.</p>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 47: Workflow in action (GIF) -->
+    <div class="slide" data-slide="47" data-level="workflow">
+        <h1>&#x1F4F9; Workflow in action</h1>
+        <div style="text-align: center; margin: 24px 0;">
+            <img src="../../orchestration-workflow/orchestration-workflow.gif" alt="Claude running the weather orchestration workflow end-to-end" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 48: Comparison header -->
+    <div class="slide section-slide" data-slide="48">
+        <div class="slide-viewport-content">
+            <h1>&#x2696;&#xFE0F; Comparison</h1>
+            <p class="section-desc">Claude Code vs Gemini CLI &mdash; same pattern, different CLIs.</p>
+            <div style="display: flex; gap: 32px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 12px; background: #fff3e0; border-radius: 10px; padding: 14px 24px; box-shadow: 0 2px 8px rgba(213,109,59,0.15);">
+                    <img src="../../!/claude-jumping.svg" alt="Claude" style="height: 44px; width: auto;" />
+                    <span style="font-size: 1.15rem; font-weight: 700; color: #D97757;">Claude Code</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px; background: #e8f0fe; border-radius: 10px; padding: 14px 24px; box-shadow: 0 2px 8px rgba(26,115,232,0.15);">
+                    <img src="../../!/gemini-jumping.svg" alt="Gemini" style="height: 44px; width: auto;" />
+                    <span style="font-size: 1.15rem; font-weight: 700; color: #1a73e8;">Gemini CLI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 49: Comparison — file structure -->
+    <div class="slide" data-slide="49">
+        <h1>&#x1F4C1; File structure</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0;">
+            <!-- Claude Code column -->
+            <div style="background: #fff3e0; border-left: 4px solid #D97757; border-radius: 8px; padding: 24px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                    <img src="../../!/claude-jumping.svg" alt="Claude" style="height: 32px; width: auto;" />
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #D97757;">Claude Code</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Project memory</div>
+                        <code style="font-size: 0.92rem; color: #D97757; background: none; padding: 0;">CLAUDE.md</code>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Agents</div>
+                        <code style="font-size: 0.92rem; color: #D97757; background: none; padding: 0;">.claude/agents/*.md</code>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Skills</div>
+                        <code style="font-size: 0.92rem; color: #D97757; background: none; padding: 0;">.claude/skills/*/SKILL.md</code>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Slash commands</div>
+                        <code style="font-size: 0.92rem; color: #D97757; background: none; padding: 0;">.claude/commands/*.md</code>
+                    </div>
+                </div>
+            </div>
+            <!-- Gemini CLI column -->
+            <div style="background: #e8f0fe; border-left: 4px solid #1a73e8; border-radius: 8px; padding: 24px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                    <img src="../../!/gemini-jumping.svg" alt="Gemini" style="height: 32px; width: auto;" />
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #1a73e8;">Gemini CLI</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Project memory</div>
+                        <code style="font-size: 0.92rem; color: #1a73e8; background: none; padding: 0;">GEMINI.md</code>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Agents</div>
+                        <code style="font-size: 0.92rem; color: #1a73e8; background: none; padding: 0;">.gemini/agents/*.md</code>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Skills / Tools</div>
+                        <code style="font-size: 0.92rem; color: #1a73e8; background: none; padding: 0;">.gemini/commands/*.toml</code>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 10px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Slash commands</div>
+                        <code style="font-size: 0.92rem; color: #1a73e8; background: none; padding: 0;">.gemini/commands/*.toml</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info-box" style="margin: 0;">
+            <h4>Same idea, different folder</h4>
+            <p>Both CLIs use plain text files in a hidden project folder. Skills/commands in Gemini CLI share the same <code>.toml</code> format &mdash; check vendor docs for the latest spec.</p>
+        </div>
+    </div>
+
+    <!-- Slide 50: Comparison — model & context window -->
+    <div class="slide" data-slide="50">
+        <h1>&#x1F9E0; Model &amp; context window</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0;">
+            <!-- Claude Code column -->
+            <div style="background: #fff3e0; border-left: 4px solid #D97757; border-radius: 8px; padding: 24px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                    <img src="../../!/claude-jumping.svg" alt="Claude" style="height: 32px; width: auto;" />
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #D97757;">Claude Code</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="background: #fff; border-radius: 6px; padding: 12px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Latest model</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #1a1a1a;">Claude Opus 4.7</div>
+                        <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">Knowledge cut-off: <strong>January 2026</strong> &mdash; Released 2026-04-17</div>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 12px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Context window</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #1a1a1a;">1M tokens</div>
+                        <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">~750,000 words &mdash; roughly 10 full novels in one session</div>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 12px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Output tokens</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #1a1a1a;">8K standard &mdash; 64K extended thinking</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gemini CLI column -->
+            <div style="background: #e8f0fe; border-left: 4px solid #1a73e8; border-radius: 8px; padding: 24px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                    <img src="../../!/gemini-jumping.svg" alt="Gemini" style="height: 32px; width: auto;" />
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #1a73e8;">Gemini CLI</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="background: #fff; border-radius: 6px; padding: 12px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Latest model</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #1a1a1a;">Gemini 3.1 Pro</div>
+                        <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">Knowledge cut-off: <strong>January 2025</strong> &mdash; Released 2026-02-19</div>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 12px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Context window</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #1a1a1a;">1M+ tokens</div>
+                        <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">Gemini 2.5 / 3 Pro extended &mdash; check vendor docs for exact figures</div>
+                    </div>
+                    <div style="background: #fff; border-radius: 6px; padding: 12px 14px;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 3px;">Output tokens</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #1a1a1a;">~8K standard</div>
+                        <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">Extended output depends on model version &mdash; check vendor docs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.78rem; color: #aaa; font-style: italic; margin: 4px 0 0;">Context window and output token figures reflect published specs as of 2026-04-24. Verify against vendor docs for the latest.</p>
+    </div>
+
+    <!-- Slide 51: Thank you -->
+    <div class="slide section-slide" data-slide="51">
+        <div class="slide-viewport-content">
+            <h1>&#x1F64F; Thank you!</h1>
+            <div style="margin: 20px auto 28px auto; text-align: center;">
+                <img src="../assets/concepts/thank-you.jpg" alt="Thank you" style="max-width: 600px; max-height: 60vh; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); object-fit: contain;" onerror="this.style.display='none'" />
+            </div>
+            <p class="section-desc">Questions? Feedback?</p>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+                <a href="https://github.com/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; background: #24292e; color: #fff; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                    <img src="../assets/logo/github.svg" style="height: 20px; width: 20px; filter: invert(1);" alt="GitHub" />
+                    github.com/shanraisshan
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Corner mascots (global, appear on every slide) -->
     <div class="header-logo">
         <img src="../../!/claude-jumping.svg" alt="Claude Code mascot" />
