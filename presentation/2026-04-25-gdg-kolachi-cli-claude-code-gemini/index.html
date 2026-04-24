@@ -1243,8 +1243,61 @@ todoapp/
         </div>
     </div>
 
-    <!-- Slide 13: Agent Config Fields -->
+    <!-- Slide 28: Callback to problem statement — agents solve half -->
     <div class="slide" data-slide="28" data-level="agents">
+        <h1>&#x2705; Coming back to problem statement</h1>
+        <ol style="padding-left: 32px; margin: 40px 0 0 0; line-height: 2;">
+            <li style="font-size: 1.25rem; color: #444; margin-bottom: 24px;">
+                <strong>&#x2705; Single source of truth</strong>
+                <p style="color: #888; font-style: normal; margin: 4px 0 0 0; font-size: 1rem;">The agent will always call the Open-Meteo API &mdash; no more source drift.</p>
+            </li>
+            <li style="font-size: 1.25rem; color: #444;">
+                <strong>&#x274C; Repetitively</strong>
+                <p style="color: #888; font-style: normal; margin: 4px 0 0 0; font-size: 1rem;">It&rsquo;s not guaranteed that Claude will always call this agent.</p>
+            </li>
+        </ol>
+        <div style="flex-grow: 1; min-height: 160px;"></div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Agent Config Fields -->
+    <div class="slide" data-slide="29" data-level="agents">
             <h1>Agent config fields with frontmatter</h1>
             <div style="margin: 24px 0;">
                 <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
@@ -1338,7 +1391,7 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide: CLAUDE.md -->
-    <div class="slide section-slide" data-slide="29">
+    <div class="slide section-slide" data-slide="30">
         <div class="slide-viewport-content">
             <h1>&#x1F4DD; CLAUDE.md</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -1398,7 +1451,7 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide: Skills -->
-    <div class="slide section-slide" data-slide="30">
+    <div class="slide section-slide" data-slide="31">
         <div class="slide-viewport-content">
             <h1>&#x1F393; Skills</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -1460,7 +1513,7 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide: Context -->
-    <div class="slide section-slide" data-slide="31">
+    <div class="slide section-slide" data-slide="32">
         <div class="slide-viewport-content">
             <h1>&#x1F9E0; Context</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -1517,14 +1570,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 14: Skills Section Divider -->
-    <div class="slide section-slide" data-slide="32" data-level="skills">
+    <div class="slide section-slide" data-slide="33" data-level="skills">
         <div class="section-number">Topic 2</div>
         <h1>&#x1F393; Skills &mdash; What the Weather Reporter Knows</h1>
         <p class="section-desc">Skills are the specific things the reporter has been trained to do. Our reporter has two: <strong>fetch the data</strong>, and <strong>render it as a card</strong>.</p>
     </div>
 
     <!-- Slide 15: The Training Manual -->
-    <div class="slide" data-slide="33">
+    <div class="slide" data-slide="34">
         <h1>The Training Manual</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1551,7 +1604,7 @@ todoapp/
     </div>
 
     <!-- Slide 16: When to Turn Something Into a Skill -->
-    <div class="slide" data-slide="34">
+    <div class="slide" data-slide="35">
         <h1>When to Turn Something Into a Skill</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -1588,7 +1641,7 @@ todoapp/
     </div>
 
     <!-- Slide 17: Why Separate Agents and Skills? -->
-    <div class="slide" data-slide="35">
+    <div class="slide" data-slide="36">
         <h1>Why Separate Agents and Skills?</h1>
         <div class="two-col">
             <div>
@@ -1614,7 +1667,7 @@ todoapp/
     </div>
 
     <!-- Slide 18: How to Create Your Own Skill -->
-    <div class="slide" data-slide="36">
+    <div class="slide" data-slide="37">
         <h1>How to Create Your Own Skill</h1>
         <p>Skills are plain markdown files. If you can write a recipe, you can write a skill.</p>
         <div class="how-to-trigger">
@@ -1667,7 +1720,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 19: Skill Config Fields -->
-    <div class="slide" data-slide="37">
+    <div class="slide" data-slide="38">
         <h1>Skill Config Fields</h1>
         <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
         <div style="margin: 24px 0;">
@@ -1707,14 +1760,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 20: Context Section Divider -->
-    <div class="slide section-slide" data-slide="38" data-level="context">
+    <div class="slide section-slide" data-slide="39" data-level="context">
         <div class="section-number">Topic 3</div>
         <h1>&#x1F9E0; Context &mdash; The Reporter's Brain</h1>
         <p class="section-desc">Now that you've met the reporter and know their skills, let's understand what they can actually hold in mind at once. Every agent &mdash; including the weather reporter &mdash; gets its own fresh brain.</p>
     </div>
 
     <!-- Slide 21: Claude's Brain -->
-    <div class="slide" data-slide="39">
+    <div class="slide" data-slide="40">
         <h1>Claude's Brain</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1752,7 +1805,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 22: What Loads at Session Start -->
-    <div class="slide" data-slide="40">
+    <div class="slide" data-slide="41">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
         <img src="../assets/concepts/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
@@ -1786,7 +1839,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 23: Keep the Brain Clear -->
-    <div class="slide" data-slide="41">
+    <div class="slide" data-slide="42">
         <h1>Keep the Brain Clear</h1>
         <p>The more stuff crammed into Claude's brain, the harder it is to focus on what matters. This is called <strong>context rot</strong> &mdash; performance drops as the brain gets crowded.</p>
         <div class="info-box">
@@ -1830,7 +1883,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 24: How to Manage Your Context -->
-    <div class="slide" data-slide="42">
+    <div class="slide" data-slide="43">
         <h1>How to Manage Your Context</h1>
         <p>You can't <em>create</em> the context &mdash; it's just there, the moment you open a chat. But you can <strong>see</strong> how full it is, <strong>trim</strong> it down, or <strong>wipe</strong> it clean. Three commands give you full control.</p>
         <div class="how-to-trigger">
@@ -1875,14 +1928,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 25: CLAUDE.md Section Divider -->
-    <div class="slide section-slide" data-slide="43" data-level="claude-md">
+    <div class="slide section-slide" data-slide="44" data-level="claude-md">
         <div class="section-number">Topic 4</div>
         <h1>&#x1F4CB; CLAUDE.md &mdash; The Reporter's Pocket Rulebook</h1>
         <p class="section-desc">The weather reporter consults this at the start of every shift &mdash; even though their brain resets overnight. It's the standing instructions pinned in that brain before you've said a word.</p>
     </div>
 
     <!-- Slide 26: The Employee Handbook -->
-    <div class="slide" data-slide="44">
+    <div class="slide" data-slide="45">
         <h1>The Employee Handbook</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1910,7 +1963,7 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
     </div>
 
     <!-- Slide 27: How to Create CLAUDE.md -->
-    <div class="slide" data-slide="45">
+    <div class="slide" data-slide="46">
         <h1>How to Create Your CLAUDE.md</h1>
         <p>You don't need to write CLAUDE.md by hand. Claude can look at your project and draft one for you.</p>
         <div class="how-to-trigger">
@@ -1955,7 +2008,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 28: Grow CLAUDE.md With Every Mistake -->
-    <div class="slide" data-slide="46">
+    <div class="slide" data-slide="47">
         <h1>Grow CLAUDE.md With Every Mistake</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -1992,7 +2045,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 29: What Goes in CLAUDE.md -->
-    <div class="slide" data-slide="47">
+    <div class="slide" data-slide="48">
         <h1>What Goes in CLAUDE.md</h1>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
@@ -2020,7 +2073,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 30: How CLAUDE.md Loads -->
-    <div class="slide" data-slide="48">
+    <div class="slide" data-slide="49">
         <h1>How CLAUDE.md Loads</h1>
         <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
         <div class="two-col">
@@ -2053,14 +2106,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 31: Commands Section Divider -->
-    <div class="slide section-slide" data-slide="49" data-level="commands">
+    <div class="slide section-slide" data-slide="50" data-level="commands">
         <div class="section-number">Topic 5</div>
         <h1>&#x26A1; Commands &mdash; The Trigger</h1>
         <p class="section-desc">One word kicks off the whole chain. <code>/weather-orchestrator</code> &rarr; agent &rarr; skill &rarr; SVG card. Commands are the entry point into any workflow.</p>
     </div>
 
     <!-- Slide 32: Commands — The Entry Point -->
-    <div class="slide" data-slide="50">
+    <div class="slide" data-slide="51">
         <h1>Commands &mdash; The Entry Point</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2104,7 +2157,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 33: How to Create Your Own Command -->
-    <div class="slide" data-slide="51">
+    <div class="slide" data-slide="52">
         <h1>How to Create Your Own Command</h1>
         <p>Commands are markdown files too. If you can write a recipe, you can write a command.</p>
         <div class="how-to-trigger">
@@ -2159,14 +2212,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 34: Workflow Sub-Section (Putting It All Together) -->
-    <div class="slide section-slide" data-slide="52" data-level="workflow">
+    <div class="slide section-slide" data-slide="53" data-level="workflow">
         <div class="section-number">Putting It All Together</div>
         <h1>&#x1F3BC; Workflow &mdash; All Five Pieces Together</h1>
         <p class="section-desc">Watch the weather reporter example run from one keystroke to SVG card output. Five concepts, one orchestrated flow.</p>
     </div>
 
     <!-- Slide 35: Command → Agent → Skill -->
-    <div class="slide" data-slide="53">
+    <div class="slide" data-slide="54">
         <h1>Command &rarr; Agent &rarr; Skill</h1>
         <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows &mdash; demonstrated in this very repo by the weather example:</p>
         <div class="code-block"><span class="comment">The Orchestration Flow</span>
@@ -2193,7 +2246,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 36: Two Ways Skills Are Used -->
-    <div class="slide" data-slide="54">
+    <div class="slide" data-slide="55">
         <h1>Two Ways Skills Are Used</h1>
         <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
         <div class="two-col">
@@ -2216,7 +2269,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 37: How to Wire Your Own Workflow -->
-    <div class="slide" data-slide="55">
+    <div class="slide" data-slide="56">
         <h1>How to Wire Your Own Workflow</h1>
         <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls agents and skills in sequence.</p>
         <div class="how-to-trigger">
@@ -2267,7 +2320,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
     <!-- SLIDE 40: Closing                                             -->
     <!-- ============================================================ -->
-    <div class="slide title-slide" data-slide="56">
+    <div class="slide title-slide" data-slide="57">
         <h1>Journey So Far</h1>
         <p class="subtitle">Five concepts, one running example</p>
         <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 640px;">From meeting the weather reporter to wiring the full <strong>Command &rarr; Agent &rarr; Skill</strong> chain. The same five pieces compose every workflow you'll ever build.</p>
