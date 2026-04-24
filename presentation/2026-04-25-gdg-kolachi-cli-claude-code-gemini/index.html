@@ -124,6 +124,16 @@
         .file-tree .file { color: #444; }
         .file-tree .highlight { color: #2e7d32; font-weight: 600; }
         .file-tree .dim { color: #aaa; }
+        /* Pillar footer — 5-card reference strip below the viewport fold */
+        .slide-viewport-content { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+        .pillar-footer { display: flex; gap: 10px; justify-content: center; align-items: stretch; max-width: 1200px; margin: 40px auto 32px auto; width: 100%; }
+        .pillar-mini-card { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0; background: #f8f9fa; padding: 12px 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: opacity 0.2s; }
+        .pillar-mini-card .pmc-emoji { font-size: 1.1rem; line-height: 1; }
+        .pillar-mini-card .pmc-title { font-size: 0.82rem; font-weight: 700; color: #1a1a1a; margin-top: 3px; }
+        .pillar-mini-card .pmc-subtitle { font-size: 0.7rem; font-style: italic; color: #666; margin-top: 1px; }
+        .pillar-mini-card .pmc-body { font-size: 0.72rem; line-height: 1.35; color: #333; margin-top: 5px; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+        .pillar-mini-card .pmc-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 2px 7px; border-radius: 999px; margin-top: 6px; white-space: nowrap; align-self: flex-start; }
+        .pillar-mini-card.inactive { opacity: 0.55; }
 </style>
 </head>
 <body>
@@ -797,7 +807,7 @@
                 <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F3AF;</div>
                 <h4 style="color: #2e7d32; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Skills</strong> &mdash; the know-how</h4>
                 <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">What the specialist (or Claude) can actually do.</p>
-                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; progressive disclosure</p>
+                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; progressive disclosure &mdash; loaded on demand</p>
             </div>
             <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #ef6c00; text-align: center;">
                 <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F4D8;</div>
@@ -810,13 +820,6 @@
                 <h4 style="color: #7b1fa2; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>CLAUDE.md</strong> &mdash; your memory</h4>
                 <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">Knowledge <strong>you</strong> provide to the model.</p>
                 <p style="font-size: 0.7rem; color: #c62828; margin: 0; font-weight: 600;">&#x26A0;&#xFE0F; 200-line problem</p>
-            </div>
-            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #ff9800; text-align: center;">
-                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F4DD;</div>
-                <h4 style="color: #ef6c00; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>System Prompt</strong> &mdash; Claude&rsquo;s memory</h4>
-                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">Knowledge <strong>Anthropic</strong> bakes in.</p>
-                <p style="font-size: 0.75rem; color: #999; margin: 0 0 3px; font-style: italic;">e.g. identity &middot; tone &middot; safety</p>
-                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; always on</p>
             </div>
             <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #3f51b5; text-align: center;">
                 <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 6px;">&#x1F4AD;</div>
@@ -859,6 +862,13 @@
                 <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1FA9D;</div>
                 <h4 style="color: #00796b; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Hooks</strong> &mdash; the reflexes</h4>
                 <p style="font-size: 0.9rem; color: #555; margin: 0;"><strong>Deterministic</strong> scripts that fire on events.</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #ff9800; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F4DD;</div>
+                <h4 style="color: #ef6c00; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>System Prompt</strong> &mdash; Claude&rsquo;s memory</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">Knowledge <strong>Anthropic</strong> bakes in.</p>
+                <p style="font-size: 0.75rem; color: #999; margin: 0 0 3px; font-style: italic;">e.g. identity &middot; tone &middot; safety</p>
+                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; always on</p>
             </div>
         </div>
     </div>
@@ -1010,97 +1020,253 @@ todoapp/
 
     <!-- Slide 8: Agents Section Divider -->
     <div class="slide section-slide" data-slide="23" data-level="agents">
-        <h1>👤 Agents</h1>
-        <div style="text-align: center; margin: 12px auto 20px auto;">
-            <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">/agents</span>
-        </div>
-        <p class="section-desc">Examples: <strong>weather reporter</strong>, front-end engineer, QA engineer.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Fresh working memory per run</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F3AF; Scoped tools, model, permission</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x26A1; Parallelizable</span>
-        </div>
-        <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
+        <div class="slide-viewport-content">
+            <h1>👤 Agents</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">/agents</span>
+            </div>
+            <p class="section-desc">Examples: <strong>weather reporter</strong>, front-end engineer, QA engineer.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Fresh working memory per run</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F3AF; Scoped tools, model, permission</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x26A1; Parallelizable</span>
+            </div>
+            <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
 ├── .claude/
 │   └── agents/
 │       └── weather-agent.md
 └── README.md</pre>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+        </div>
     </div>
 
     <!-- Slide 9: The Restaurant Kitchen -->
     <div class="slide" data-slide="24">
-        <h1>Create your first agent &mdash; <code>/agents</code></h1>
-        <div style="max-width: 600px; margin: 32px auto 0 auto;">
-            <div class="col-card" style="border-left: 4px solid #D97757;">
-                <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
-                    <h4>The Command</h4>
-                    <p>Type <code>/agents</code>.</p>
+        <div class="slide-viewport-content" style="justify-content: flex-start; padding-top: 60px;">
+            <h1>Create your first agent &mdash; <code>/agents</code></h1>
+            <div style="max-width: 600px; margin: 32px auto 0 auto;">
+                <div class="col-card" style="border-left: 4px solid #D97757;">
+                    <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
+                        <h4>The Command</h4>
+                        <p>Type <code>/agents</code>.</p>
+                    </div>
+                    <p style="font-size: 1rem; color: #444;">Opens an interactive menu &mdash; pick "Create new agent" and the CLI drafts the agent file for you.</p>
+                    <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>.claude/agents/&lt;name&gt;.md</code> &mdash; a plain markdown file anyone can edit.</p>
                 </div>
-                <p style="font-size: 1rem; color: #444;">Opens an interactive menu &mdash; pick "Create new agent" and the CLI drafts the agent file for you.</p>
-                <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>.claude/agents/&lt;name&gt;.md</code> &mdash; a plain markdown file anyone can edit.</p>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
             </div>
         </div>
     </div>
 
     <!-- Slide 10: Prompting vs Agent table -->
     <div class="slide" data-slide="25">
-        <h1>Demo</h1>
+        <div class="slide-viewport-content" style="justify-content: flex-start; padding-top: 60px;">
+            <h1>Demo</h1>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+        </div>
     </div>
 
     <!-- Slide 13: Agent Config Fields -->
     <div class="slide" data-slide="26">
-        <h1>Agent config fields with frontmatter</h1>
-        <p>The config block at the top of an agent file controls its identity and capabilities. Most fields are <strong>harness-enforced</strong> &mdash; the CLI gates them before the model sees the call. Only <code>description</code> lives in prompt-land.</p>
-        <div style="margin: 24px 0;">
-            <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
-                <span class="field-name" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Field</span>
-                <span class="field-desc" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Description</span>
-                <span class="field-enforced" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; min-width: 110px; text-align: right;">Enforced by</span>
+        <div class="slide-viewport-content" style="justify-content: flex-start; padding-top: 60px;">
+            <h1>Agent config fields with frontmatter</h1>
+            <p>The config block at the top of an agent file controls its identity and capabilities. Most fields are <strong>harness-enforced</strong> &mdash; the CLI gates them before the model sees the call. Only <code>description</code> lives in prompt-land.</p>
+            <div style="margin: 24px 0;">
+                <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
+                    <span class="field-name" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Field</span>
+                    <span class="field-desc" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Description</span>
+                    <span class="field-enforced" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; min-width: 110px; text-align: right;">Enforced by</span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">name <span class="field-recommended">Recommended</span></span>
+                    <span class="field-desc">Unique identifier &mdash; e.g. <code>weather-agent</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">description <span class="field-required">Required</span></span>
+                    <span class="field-desc">When to invoke. Use <code>"PROACTIVELY"</code> for auto-invocation</span>
+                    <span class="field-enforced"><span class="pill-prompt">prompt</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">model</span>
+                    <span class="field-desc"><code>haiku</code>, <code>sonnet</code>, <code>opus</code>, or <code>inherit</code> (default). weather-agent uses <code>sonnet</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">tools</span>
+                    <span class="field-desc">Allowlist of tools. weather-agent allows <code>WebFetch</code>, <code>Read</code>, <code>Write</code>, etc.</span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">skills</span>
+                    <span class="field-desc">Skills preloaded into agent context at startup &mdash; <strong>weather-agent preloads <code>weather-fetcher</code></strong></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">maxTurns</span>
+                    <span class="field-desc">Maximum agentic turns before the agent stops. weather-agent uses <code>5</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">memory</span>
+                    <span class="field-desc">Persistent memory: <code>user</code>, <code>project</code>, or <code>local</code>. weather-agent uses <code>project</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">color</span>
+                    <span class="field-desc">Visual color in task list. weather-agent uses <code>green</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
             </div>
-            <div class="field-row">
-                <span class="field-name">name <span class="field-recommended">Recommended</span></span>
-                <span class="field-desc">Unique identifier &mdash; e.g. <code>weather-agent</code></span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">description <span class="field-required">Required</span></span>
-                <span class="field-desc">When to invoke. Use <code>"PROACTIVELY"</code> for auto-invocation</span>
-                <span class="field-enforced"><span class="pill-prompt">prompt</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">model</span>
-                <span class="field-desc"><code>haiku</code>, <code>sonnet</code>, <code>opus</code>, or <code>inherit</code> (default). weather-agent uses <code>sonnet</code></span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">tools</span>
-                <span class="field-desc">Allowlist of tools. weather-agent allows <code>WebFetch</code>, <code>Read</code>, <code>Write</code>, etc.</span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">skills</span>
-                <span class="field-desc">Skills preloaded into agent context at startup &mdash; <strong>weather-agent preloads <code>weather-fetcher</code></strong></span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">maxTurns</span>
-                <span class="field-desc">Maximum agentic turns before the agent stops. weather-agent uses <code>5</code></span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">memory</span>
-                <span class="field-desc">Persistent memory: <code>user</code>, <code>project</code>, or <code>local</code>. weather-agent uses <code>project</code></span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
-            </div>
-            <div class="field-row">
-                <span class="field-name">color</span>
-                <span class="field-desc">Visual color in task list. weather-agent uses <code>green</code></span>
-                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            <div class="info-box">
+                <h4>The Key Field for This Workshop</h4>
+                <p>The <code>skills:</code> field is what makes the weather-agent special. It preloads <code>weather-fetcher</code> directly into the agent's brain at startup &mdash; before the agent has received a single instruction. The agent doesn't need to be told how to fetch weather; it already knows.</p>
             </div>
         </div>
-        <div class="info-box">
-            <h4>The Key Field for This Workshop</h4>
-            <p>The <code>skills:</code> field is what makes the weather-agent special. It preloads <code>weather-fetcher</code> directly into the agent's brain at startup &mdash; before the agent has received a single instruction. The agent doesn't need to be told how to fetch weather; it already knows.</p>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
         </div>
     </div>
 
@@ -1110,19 +1276,58 @@ todoapp/
 
     <!-- Slide: CLAUDE.md -->
     <div class="slide section-slide" data-slide="27">
-        <h1>&#x1F4DD; CLAUDE.md</h1>
-        <div style="text-align: center; margin: 12px auto 20px auto;">
-            <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">CLAUDE.md</span>
-        </div>
-        <p class="section-desc">Your project's persistent <strong>memory</strong> &mdash; what Claude reads every session.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Loaded into every session</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F4DA; Project knowledge, persisted</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F465; Team-shareable via git</span>
-        </div>
-        <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
+        <div class="slide-viewport-content">
+            <h1>&#x1F4DD; CLAUDE.md</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">CLAUDE.md</span>
+            </div>
+            <p class="section-desc">Your project's persistent <strong>memory</strong> &mdash; what Claude reads every session.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Loaded into every session</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F4DA; Project knowledge, persisted</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F465; Team-shareable via git</span>
+            </div>
+            <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
 &#x251C;&#x2500;&#x2500; CLAUDE.md
 &#x2514;&#x2500;&#x2500; README.md</pre>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+        </div>
     </div>
 
     <!-- ============================================================ -->
@@ -1131,22 +1336,60 @@ todoapp/
 
     <!-- Slide: Skills -->
     <div class="slide section-slide" data-slide="28">
-        <h1>&#x1F393; Skills</h1>
-        <div style="text-align: center; margin: 12px auto 20px auto;">
-            <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">.claude/skills/</span>
-        </div>
-        <p class="section-desc">Reusable <strong>instructions</strong> &mdash; progressive disclosure, loaded only when relevant.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Loaded on demand</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F3AF; Scoped to a task</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x267B;&#xFE0F; Reusable across agents</span>
-        </div>
-        <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
+        <div class="slide-viewport-content">
+            <h1>&#x1F393; Skills</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">.claude/skills/</span>
+            </div>
+            <p class="section-desc">Examples: <strong>weather fetching</strong>, sorting CSV rows, generating SVG cards.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Progressive disclosure &mdash; loaded on demand</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x267B;&#xFE0F; Reusable across agents</span>
+            </div>
+            <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
 &#x251C;&#x2500;&#x2500; .claude/
 &#x2502;   &#x2514;&#x2500;&#x2500; skills/
 &#x2502;       &#x2514;&#x2500;&#x2500; weather-fetcher/
 &#x2502;           &#x2514;&#x2500;&#x2500; SKILL.md
 &#x2514;&#x2500;&#x2500; README.md</pre>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+        </div>
     </div>
 
     <!-- ============================================================ -->
@@ -1155,15 +1398,54 @@ todoapp/
 
     <!-- Slide: Context -->
     <div class="slide section-slide" data-slide="29">
-        <h1>&#x1F9E0; Context</h1>
-        <div style="text-align: center; margin: 12px auto 20px auto;">
-            <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">/context</span>
+        <div class="slide-viewport-content">
+            <h1>&#x1F9E0; Context</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">/context</span>
+            </div>
+            <p class="section-desc">The model's <strong>working memory</strong> &mdash; what it can see in this moment.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1FA9F; Limited budget</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F4C2; Fill it intentionally</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F9F9; Compact at ~50%</span>
+            </div>
         </div>
-        <p class="section-desc">The model's <strong>working memory</strong> &mdash; what it can see in this moment.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1FA9F; Limited budget</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F4C2; Fill it intentionally</span>
-            <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F9F9; Compact at ~50%</span>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line limit</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
         </div>
     </div>
 
