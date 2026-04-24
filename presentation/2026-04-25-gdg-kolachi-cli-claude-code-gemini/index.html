@@ -615,9 +615,173 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- SLIDE 10: Harness (1 of 2) &mdash; mind, methods, memory       -->
+    <!-- SLIDE 13: Horse Harness — The Pivot Analogy                  -->
     <!-- ============================================================ -->
     <div class="slide" data-slide="13">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 120px); text-align: center; gap: 0;">
+
+            <!-- SVG Horse with Harness — annotated callout version -->
+            <!-- viewBox expanded: left -130, top -50, width 780, height 450 -->
+            <!-- Horse body coordinates unchanged; callout labels placed in expanded margins -->
+            <svg viewBox="-130 -50 780 450" width="780" height="450" xmlns="http://www.w3.org/2000/svg" aria-label="Horse with harness illustration with model-harness callouts" style="display: block; max-width: 100%; height: auto;">
+
+                <!-- ===== DEFS: arrowhead marker ===== -->
+                <defs>
+                    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L8,3 Z" fill="#555"/>
+                    </marker>
+                    <!-- Accent arrowhead in harness red -->
+                    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L8,3 Z" fill="#C0392B"/>
+                    </marker>
+                </defs>
+
+                <!-- === HORSE BODY (warm brown silhouette) === -->
+                <!-- Torso -->
+                <ellipse cx="260" cy="210" rx="120" ry="68" fill="#8B6340"/>
+                <!-- Neck -->
+                <path d="M175 175 Q165 130 185 100 Q200 80 220 90 Q230 100 225 130 Q220 155 205 170 Z" fill="#8B6340"/>
+                <!-- Head -->
+                <ellipse cx="198" cy="78" rx="32" ry="22" fill="#8B6340" transform="rotate(-20 198 78)"/>
+                <!-- Muzzle/snout -->
+                <ellipse cx="173" cy="88" rx="18" ry="12" fill="#A07850" transform="rotate(-20 173 88)"/>
+                <!-- Ear -->
+                <path d="M210 60 L218 44 L225 61 Z" fill="#8B6340"/>
+                <!-- Eye -->
+                <circle cx="186" cy="72" r="4" fill="#2a1a0a"/>
+                <circle cx="185" cy="71" r="1.5" fill="#fff"/>
+                <!-- Nostril -->
+                <ellipse cx="165" cy="91" rx="4" ry="2.5" fill="#5a3a1a" transform="rotate(-20 165 91)"/>
+
+                <!-- Front legs -->
+                <rect x="195" y="270" width="22" height="68" rx="8" fill="#7A5530"/>
+                <rect x="228" y="270" width="22" height="68" rx="8" fill="#7A5530"/>
+                <!-- Hooves front -->
+                <rect x="193" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+                <rect x="226" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+
+                <!-- Rear legs -->
+                <rect x="295" y="268" width="22" height="70" rx="8" fill="#7A5530"/>
+                <rect x="325" y="268" width="22" height="70" rx="8" fill="#7A5530"/>
+                <!-- Hooves rear -->
+                <rect x="293" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+                <rect x="323" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+
+                <!-- Tail -->
+                <path d="M378 195 Q420 185 430 210 Q440 235 415 255 Q400 265 385 255" stroke="#5a3a1a" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path d="M385 255 Q370 270 375 288" stroke="#5a3a1a" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+                <!-- Mane -->
+                <path d="M215 88 Q208 100 205 115 Q203 128 207 140" stroke="#5a3a1a" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path d="M222 85 Q215 97 212 112 Q210 125 213 136" stroke="#5a3a1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+                <!-- === HARNESS (dark leather straps, highlighted in accent red-brown) === -->
+
+                <!-- Bridle — around the head/neck -->
+                <ellipse cx="198" cy="78" rx="35" ry="24" fill="none" stroke="#C0392B" stroke-width="3.5" transform="rotate(-20 198 78)"/>
+                <!-- Noseband (horizontal strap across muzzle) -->
+                <line x1="160" y1="85" x2="190" y2="75" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round"/>
+                <!-- Cheek piece (vertical strap on side of head) -->
+                <line x1="186" y1="56" x2="182" y2="93" stroke="#C0392B" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Collar / neck band -->
+                <ellipse cx="210" cy="148" rx="22" ry="36" fill="none" stroke="#C0392B" stroke-width="4" transform="rotate(-8 210 148)"/>
+
+                <!-- Breast collar (horizontal strap across chest) -->
+                <path d="M200 160 Q235 168 270 162" stroke="#C0392B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <!-- Back band / surcingle (strap around the belly/back) -->
+                <ellipse cx="270" cy="208" rx="58" ry="70" fill="none" stroke="#C0392B" stroke-width="4" stroke-dasharray="none"/>
+                <!-- Crupper (rear strap looping under tail) -->
+                <path d="M330 185 Q365 180 378 195" stroke="#C0392B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+                <!-- Traces (long straps from collar back to load) -->
+                <line x1="228" y1="168" x2="360" y2="200" stroke="#922B21" stroke-width="3" stroke-linecap="round"/>
+                <line x1="228" y1="172" x2="360" y2="218" stroke="#922B21" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Reins (from bit to driver — trailing to the left edge) -->
+                <path d="M168 84 Q155 80 145 75 Q135 68 128 72" stroke="#C0392B" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
+                <path d="M128 72 Q110 60 90 65" stroke="#922B21" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="4 4"/>
+
+                <!-- Bit (small ring at mouth) -->
+                <circle cx="160" cy="89" r="5" fill="none" stroke="#888" stroke-width="2.5"/>
+
+                <!-- ===== CALLOUT ARROWS + LABELS ===== -->
+                <!-- Each callout: thin grey connector line → pill chip with primary term + italic subtitle -->
+
+                <!-- ── 1. REINS → Control loop (left side) ── -->
+                <!-- anchor: end of reins at x=90, y=65 → label centre at x=-65, y=48 -->
+                <line x1="90" y1="65" x2="-22" y2="48" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="-128" y="28" width="104" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="-76" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Control loop</text>
+                <!-- italic reason -->
+                <text x="-76" y="61" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">decides the next call</text>
+                <!-- horse-part label — small tag above arrow -->
+                <text x="62" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Reins</text>
+
+                <!-- ── 2. BIT → Tool allowlist (top-left, above the mouth) ── -->
+                <!-- anchor: bit circle at x=160, y=84 → label centre at x=100, y=-25 -->
+                <line x1="160" y1="84" x2="118" y2="-12" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="50" y="-44" width="116" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="108" y="-26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Tool allowlist</text>
+                <!-- italic reason -->
+                <text x="108" y="-11" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">constrains what it can do</text>
+                <!-- horse-part label -->
+                <text x="166" y="80" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Bit</text>
+
+                <!-- ── 3. BLINDERS → Context management (top-right, above head) ── -->
+                <!-- anchor: top of bridle / head at x=215, y=55 → label centre at x=330, y=-25 -->
+                <line x1="215" y1="55" x2="285" y2="-12" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="232" y="-44" width="152" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="308" y="-26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Context management</text>
+                <!-- italic reason -->
+                <text x="308" y="-11" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">narrows what it sees</text>
+                <!-- horse-part label -->
+                <text x="210" y="50" text-anchor="end" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Blinders</text>
+
+                <!-- ── 4. DRIVER (surcingle/back band) → Evaluator (right side, mid) ── -->
+                <!-- anchor: right edge of surcingle at x=328, y=208 → label at x=530, y=195 -->
+                <line x1="328" y1="208" x2="462" y2="198" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="464" y="178" width="90" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="509" y="196" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Evaluator</text>
+                <!-- italic reason -->
+                <text x="509" y="211" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">decides when done</text>
+                <!-- horse-part label -->
+                <text x="332" y="204" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Driver</text>
+
+                <!-- ── 5. TRACES → State persistence (bottom-right) ── -->
+                <!-- anchor: mid-trace at x=310, y=210 → label at x=490, y=310 -->
+                <line x1="355" y1="215" x2="465" y2="305" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="464" y="293" width="136" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="532" y="311" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">State persistence</text>
+                <!-- italic reason -->
+                <text x="532" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">carries work forward</text>
+                <!-- horse-part label -->
+                <text x="350" y="210" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Traces</text>
+
+            </svg>
+
+            <!-- One-liner — kept, placed below the diagram -->
+            <p style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a; margin: 12px 0 6px; letter-spacing: -0.02em; line-height: 1.2;">A horse harness. A model harness.</p>
+            <p style="font-size: 1.2rem; font-weight: 400; color: #C0392B; margin: 0; letter-spacing: 0.01em;">Same verb.</p>
+
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10: Harness (1 of 2) &mdash; mind, methods, memory       -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="14">
         <h1>&#x1F4AA; Harness &mdash; the body around the brain</h1>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin: 28px 0;">
             <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #009688; text-align: center;">
@@ -669,7 +833,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 11: Harness (2 of 2) &mdash; senses, rules, reflexes     -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="14">
+    <div class="slide" data-slide="15">
         <h1>&#x1F4AA; Harness &mdash; the body around the brain</h1>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin: 28px 0;">
             <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #4caf50; text-align: center;">
@@ -699,7 +863,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 12: Problem solved with harness &mdash; success case     -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="15">
+    <div class="slide" data-slide="16">
         <h1>&#x1F389; Yayyyyy! Problem solved with harness</h1>
         <p>The harness reaches out via <strong>WebSearch</strong> and fetches a real answer from live sources.</p>
         <div style="text-align: center; margin: 24px 0;">
@@ -710,7 +874,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 13: Suspense / transition &mdash; But...?                -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="16">
+    <div class="slide" data-slide="17">
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 75vh; text-align: center;">
             <div style="font-size: 12rem; color: #3f51b5; line-height: 1; font-weight: 700;">?</div>
             <p style="font-size: 1.6rem; color: #555; margin: 24px 0 0; max-width: 900px; font-weight: 600;">Really?</p>
@@ -720,7 +884,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 14: Non-determinism 1 &mdash; Refuses to use tools       -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="17">
+    <div class="slide" data-slide="18">
         <h1>&#x1F4AA; Non-determinism &mdash; Doesn&rsquo;t always use its tools</h1>
         <p>Similar prompt &mdash; but this time <strong>the model decided not to use the tool</strong>.</p>
         <div style="text-align: center; margin: 24px 0;">
@@ -731,7 +895,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 15: Non-determinism 2 &mdash; Tools can fail             -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="18">
+    <div class="slide" data-slide="19">
         <h1>&#x1F4AA; Non-determinism &mdash; Tools can fail</h1>
         <p>The model first tried <strong>one source</strong> &mdash; it <strong>failed (403)</strong> &mdash; so it fell back to <strong>another</strong>.</p>
         <div style="text-align: center; margin: 24px 0;">
@@ -742,7 +906,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 18: The Two Problems &mdash; what we're solving          -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="19">
+    <div class="slide" data-slide="20">
         <h1>The Two Problems</h1>
         <p style="text-align: center; color: #666; font-style: italic; margin: 0 0 40px; font-size: 1.1rem;">These are the two problems we&rsquo;re trying to solve.</p>
         <div style="max-width: 900px;">
@@ -760,7 +924,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 19: Vibe Coding &mdash; Karpathy&rsquo;s original tweet  -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="20">
+    <div class="slide" data-slide="21">
         <h1>Vibe Coding</h1>
         <p style="text-align: center; color: #666; margin: 0 0 20px; font-size: 1.05rem;"><strong>Andrej Karpathy</strong> &mdash; OpenAI founding team &middot; former Director of AI at Tesla &middot; founder of Eureka Labs.</p>
         <div style="text-align: center; margin: 16px 0;">
@@ -771,7 +935,7 @@
     <!-- ============================================================ -->
     <!-- SLIDE 6: Vibe Coding vs Agentic Engineering                   -->
     <!-- ============================================================ -->
-    <div class="slide" data-slide="21">
+    <div class="slide" data-slide="22">
         <h1>Vibe Coding vs Agentic Engineering</h1>
         <div class="two-col">
             <div>
@@ -842,14 +1006,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 8: Agents Section Divider -->
-    <div class="slide section-slide" data-slide="22" data-level="agents">
+    <div class="slide section-slide" data-slide="23" data-level="agents">
         <div class="section-number">Topic 1</div>
         <h1>&#x1F464; Agents &mdash; The Weather Reporter</h1>
         <p class="section-desc">An agent is Claude playing a specific role. Meet the <strong>weather reporter</strong> &mdash; a specialist hired to fetch and report weather data for Dubai. Same Claude, different hat.</p>
     </div>
 
     <!-- Slide 9: The Restaurant Kitchen -->
-    <div class="slide" data-slide="23">
+    <div class="slide" data-slide="24">
         <h1>The Restaurant Kitchen</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -872,7 +1036,7 @@ todoapp/
     </div>
 
     <!-- Slide 10: Prompting vs Agent table -->
-    <div class="slide" data-slide="24">
+    <div class="slide" data-slide="25">
         <h1>Prompting vs. Agent &mdash; Side by Side</h1>
         <p>The difference in one picture: <strong>prompting is asking a stranger on the street; using an agent is asking your dedicated specialist.</strong></p>
         <table>
@@ -913,7 +1077,7 @@ todoapp/
     </div>
 
     <!-- Slide 11: Agents Get Their Own Brain -->
-    <div class="slide" data-slide="25">
+    <div class="slide" data-slide="26">
         <h1>Agents Get Their Own Brain</h1>
         <div class="info-box">
             <h4>Tip from Thariq (Anthropic) &mdash; Apr 16, 2026</h4>
@@ -946,7 +1110,7 @@ todoapp/
     </div>
 
     <!-- Slide 12: How to Create an Agent -->
-    <div class="slide" data-slide="26">
+    <div class="slide" data-slide="27">
         <h1>How to Create Your Own Agent</h1>
         <p>You don't write an agent from scratch &mdash; Claude helps you build one. Type <code>/agents</code> inside Claude Code and a guided menu opens.</p>
         <div class="how-to-trigger">
@@ -989,7 +1153,7 @@ todoapp/
     </div>
 
     <!-- Slide 13: Agent Config Fields -->
-    <div class="slide" data-slide="27">
+    <div class="slide" data-slide="28">
         <h1>Agent Config Fields</h1>
         <p>The config block at the top of an agent file controls its identity and capabilities. Here's what the real <code>weather-agent.md</code> uses:</p>
         <div style="margin: 24px 0;">
@@ -1037,14 +1201,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 14: Skills Section Divider -->
-    <div class="slide section-slide" data-slide="28" data-level="skills">
+    <div class="slide section-slide" data-slide="29" data-level="skills">
         <div class="section-number">Topic 2</div>
         <h1>&#x1F393; Skills &mdash; What the Weather Reporter Knows</h1>
         <p class="section-desc">Skills are the specific things the reporter has been trained to do. Our reporter has two: <strong>fetch the data</strong>, and <strong>render it as a card</strong>.</p>
     </div>
 
     <!-- Slide 15: The Training Manual -->
-    <div class="slide" data-slide="29">
+    <div class="slide" data-slide="30">
         <h1>The Training Manual</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1071,7 +1235,7 @@ todoapp/
     </div>
 
     <!-- Slide 16: When to Turn Something Into a Skill -->
-    <div class="slide" data-slide="30">
+    <div class="slide" data-slide="31">
         <h1>When to Turn Something Into a Skill</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -1108,7 +1272,7 @@ todoapp/
     </div>
 
     <!-- Slide 17: Why Separate Agents and Skills? -->
-    <div class="slide" data-slide="31">
+    <div class="slide" data-slide="32">
         <h1>Why Separate Agents and Skills?</h1>
         <div class="two-col">
             <div>
@@ -1134,7 +1298,7 @@ todoapp/
     </div>
 
     <!-- Slide 18: How to Create Your Own Skill -->
-    <div class="slide" data-slide="32">
+    <div class="slide" data-slide="33">
         <h1>How to Create Your Own Skill</h1>
         <p>Skills are plain markdown files. If you can write a recipe, you can write a skill.</p>
         <div class="how-to-trigger">
@@ -1187,7 +1351,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 19: Skill Config Fields -->
-    <div class="slide" data-slide="33">
+    <div class="slide" data-slide="34">
         <h1>Skill Config Fields</h1>
         <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
         <div style="margin: 24px 0;">
@@ -1227,14 +1391,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 20: Context Section Divider -->
-    <div class="slide section-slide" data-slide="34" data-level="context">
+    <div class="slide section-slide" data-slide="35" data-level="context">
         <div class="section-number">Topic 3</div>
         <h1>&#x1F9E0; Context &mdash; The Reporter's Brain</h1>
         <p class="section-desc">Now that you've met the reporter and know their skills, let's understand what they can actually hold in mind at once. Every agent &mdash; including the weather reporter &mdash; gets its own fresh brain.</p>
     </div>
 
     <!-- Slide 21: Claude's Brain -->
-    <div class="slide" data-slide="35">
+    <div class="slide" data-slide="36">
         <h1>Claude's Brain</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1272,7 +1436,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 22: What Loads at Session Start -->
-    <div class="slide" data-slide="36">
+    <div class="slide" data-slide="37">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
         <img src="../assets/concepts/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
@@ -1306,7 +1470,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 23: Keep the Brain Clear -->
-    <div class="slide" data-slide="37">
+    <div class="slide" data-slide="38">
         <h1>Keep the Brain Clear</h1>
         <p>The more stuff crammed into Claude's brain, the harder it is to focus on what matters. This is called <strong>context rot</strong> &mdash; performance drops as the brain gets crowded.</p>
         <div class="info-box">
@@ -1350,7 +1514,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 24: How to Manage Your Context -->
-    <div class="slide" data-slide="38">
+    <div class="slide" data-slide="39">
         <h1>How to Manage Your Context</h1>
         <p>You can't <em>create</em> the context &mdash; it's just there, the moment you open a chat. But you can <strong>see</strong> how full it is, <strong>trim</strong> it down, or <strong>wipe</strong> it clean. Three commands give you full control.</p>
         <div class="how-to-trigger">
@@ -1395,14 +1559,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 25: CLAUDE.md Section Divider -->
-    <div class="slide section-slide" data-slide="39" data-level="claude-md">
+    <div class="slide section-slide" data-slide="40" data-level="claude-md">
         <div class="section-number">Topic 4</div>
         <h1>&#x1F4CB; CLAUDE.md &mdash; The Reporter's Pocket Rulebook</h1>
         <p class="section-desc">The weather reporter consults this at the start of every shift &mdash; even though their brain resets overnight. It's the standing instructions pinned in that brain before you've said a word.</p>
     </div>
 
     <!-- Slide 26: The Employee Handbook -->
-    <div class="slide" data-slide="40">
+    <div class="slide" data-slide="41">
         <h1>The Employee Handbook</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1430,7 +1594,7 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
     </div>
 
     <!-- Slide 27: How to Create CLAUDE.md -->
-    <div class="slide" data-slide="41">
+    <div class="slide" data-slide="42">
         <h1>How to Create Your CLAUDE.md</h1>
         <p>You don't need to write CLAUDE.md by hand. Claude can look at your project and draft one for you.</p>
         <div class="how-to-trigger">
@@ -1475,7 +1639,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 28: Grow CLAUDE.md With Every Mistake -->
-    <div class="slide" data-slide="42">
+    <div class="slide" data-slide="43">
         <h1>Grow CLAUDE.md With Every Mistake</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -1512,7 +1676,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 29: What Goes in CLAUDE.md -->
-    <div class="slide" data-slide="43">
+    <div class="slide" data-slide="44">
         <h1>What Goes in CLAUDE.md</h1>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
@@ -1540,7 +1704,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 30: How CLAUDE.md Loads -->
-    <div class="slide" data-slide="44">
+    <div class="slide" data-slide="45">
         <h1>How CLAUDE.md Loads</h1>
         <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
         <div class="two-col">
@@ -1573,14 +1737,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 31: Commands Section Divider -->
-    <div class="slide section-slide" data-slide="45" data-level="commands">
+    <div class="slide section-slide" data-slide="46" data-level="commands">
         <div class="section-number">Topic 5</div>
         <h1>&#x26A1; Commands &mdash; The Trigger</h1>
         <p class="section-desc">One word kicks off the whole chain. <code>/weather-orchestrator</code> &rarr; agent &rarr; skill &rarr; SVG card. Commands are the entry point into any workflow.</p>
     </div>
 
     <!-- Slide 32: Commands — The Entry Point -->
-    <div class="slide" data-slide="46">
+    <div class="slide" data-slide="47">
         <h1>Commands &mdash; The Entry Point</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1624,7 +1788,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 33: How to Create Your Own Command -->
-    <div class="slide" data-slide="47">
+    <div class="slide" data-slide="48">
         <h1>How to Create Your Own Command</h1>
         <p>Commands are markdown files too. If you can write a recipe, you can write a command.</p>
         <div class="how-to-trigger">
@@ -1679,14 +1843,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 34: Workflow Sub-Section (Putting It All Together) -->
-    <div class="slide section-slide" data-slide="48" data-level="workflow">
+    <div class="slide section-slide" data-slide="49" data-level="workflow">
         <div class="section-number">Putting It All Together</div>
         <h1>&#x1F3BC; Workflow &mdash; All Five Pieces Together</h1>
         <p class="section-desc">Watch the weather reporter example run from one keystroke to SVG card output. Five concepts, one orchestrated flow.</p>
     </div>
 
     <!-- Slide 35: Command → Agent → Skill -->
-    <div class="slide" data-slide="49">
+    <div class="slide" data-slide="50">
         <h1>Command &rarr; Agent &rarr; Skill</h1>
         <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows &mdash; demonstrated in this very repo by the weather example:</p>
         <div class="code-block"><span class="comment">The Orchestration Flow</span>
@@ -1713,7 +1877,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 36: Two Ways Skills Are Used -->
-    <div class="slide" data-slide="50">
+    <div class="slide" data-slide="51">
         <h1>Two Ways Skills Are Used</h1>
         <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
         <div class="two-col">
@@ -1736,7 +1900,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 37: How to Wire Your Own Workflow -->
-    <div class="slide" data-slide="51">
+    <div class="slide" data-slide="52">
         <h1>How to Wire Your Own Workflow</h1>
         <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls agents and skills in sequence.</p>
         <div class="how-to-trigger">
@@ -1787,7 +1951,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
     <!-- SLIDE 40: Closing                                             -->
     <!-- ============================================================ -->
-    <div class="slide title-slide" data-slide="52">
+    <div class="slide title-slide" data-slide="53">
         <h1>Journey So Far</h1>
         <p class="subtitle">Five concepts, one running example</p>
         <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 640px;">From meeting the weather reporter to wiring the full <strong>Command &rarr; Agent &rarr; Skill</strong> chain. The same five pieces compose every workflow you'll ever build.</p>
