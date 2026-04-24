@@ -1544,14 +1544,207 @@ todoapp/
         </div>
     </div>
 
+    <!-- Slide 33: Create your first CLAUDE.md — /init -->
+    <div class="slide" data-slide="33" data-level="claude-md">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>Create your first CLAUDE.md &mdash; <code>/init</code></h1>
+            <div style="max-width: 600px;">
+                <div class="col-card" style="border-left: 4px solid #9c27b0;">
+                    <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
+                        <h4>The Command</h4>
+                        <p>Type <code>/init</code> in Claude Code.</p>
+                    </div>
+                    <p style="font-size: 1rem; color: #444;">Claude scans your codebase and drafts a starter CLAUDE.md for you &mdash; project conventions, key patterns, common commands.</p>
+                    <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>CLAUDE.md</code> in your repo root &mdash; a plain markdown file you edit and commit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 34: CLAUDE.md — the real thing (screenshot) -->
+    <div class="slide" data-slide="34" data-level="claude-md">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x1F4DD; CLAUDE.md &mdash; the real thing</h1>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="../assets/concepts/claudemd/claudemd.png" alt="A real CLAUDE.md file showing project rules and agent invocation instructions" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 35: claude-code-best-practice Tips & Tricks (CLAUDE.md) -->
+    <div class="slide" data-slide="35" data-level="claude-md">
+        <h1><code>claude-code-best-practice</code> Tips &amp; Tricks</h1>
+        <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/concepts/claudemd/claudemd-tips.png" alt="Claude Code tips and tricks for CLAUDE.md" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 36: CLAUDE.md problem — keep it under 200 lines -->
+    <div class="slide" data-slide="36" data-level="claude-md">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x26A0;&#xFE0F; CLAUDE.md problem &mdash; keep it under 200 lines</h1>
+            <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+                <img src="../assets/concepts/claudemd/claudemd-problem.png" alt="Illustration of the CLAUDE.md 200-line adherence problem" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
     <!-- ============================================================ -->
     <!-- NEW SLIDE 28: Skills concept intro                            -->
     <!-- ============================================================ -->
 
     <!-- Slide: Skills -->
-    <div class="slide section-slide" data-slide="33">
+    <div class="slide section-slide" data-slide="37">
         <div class="slide-viewport-content">
-            <h1>&#x1F393; Skills</h1>
+            <h1>&#x1F3AF; Skills</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
                 <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">.claude/skills/</span>
             </div>
@@ -1607,11 +1800,168 @@ todoapp/
     </div>
 
     <!-- ============================================================ -->
+    <!-- NEW SLIDE 38: Create your first skill                         -->
+    <!-- ============================================================ -->
+
+    <div class="slide" data-slide="38" data-level="skills">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>Create your first skill</h1>
+            <div class="two-col" style="margin-top: 28px;">
+                <div class="col-card" style="border-left: 4px solid #4caf50;">
+                    <h4>Write it by prompting</h4>
+                    <p>Just describe what you want Claude to do. It drafts the skill file for you.</p>
+                    <p style="font-size: 0.92rem; color: #555; margin-top: 12px; font-style: italic;">"Create a skill that fetches weather from Open-Meteo for a given city."</p>
+                </div>
+                <div class="col-card" style="border-left: 4px solid #4caf50;">
+                    <h4>Use Anthropic's skill-creator</h4>
+                    <p>Anthropic ships an official <code>skill-creator</code> skill. Invoke it and it walks you through generating a properly-structured skill.</p>
+                    <p style="font-size: 0.9rem; color: #2e7d32; font-weight: 600; margin-top: 12px;">Recommended &mdash; always produces the correct SKILL.md format.</p>
+                </div>
+            </div>
+            <div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 20px 28px; border-radius: 8px; max-width: 900px; margin: 32px auto 0 auto;">
+                <p style="font-weight: 700; margin: 0 0 8px 0;">&#x26A0;&#xFE0F; Watch out (method 1)</p>
+                <p style="margin: 0; font-size: 0.95rem; color: #444;">The prompting method sometimes creates the wrong structure. Instead of generating a folder with <code>SKILL.md</code> inside (e.g. <code>weather-fetcher/SKILL.md</code>), it creates a plain <code>weather-fetcher.md</code> file. The wrong form isn&rsquo;t recognized as a skill by Claude Code.</p>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- NEW SLIDE 39: Skill config fields with frontmatter            -->
+    <!-- ============================================================ -->
+
+    <div class="slide" data-slide="39" data-level="skills">
+        <h1>Skill config fields with frontmatter</h1>
+        <p style="font-style: italic; color: #666; margin: 8px 0 20px 0;">Most fields control how and when the skill loads &mdash; enforced by the harness. Only <code>description</code> lives in prompt-land.</p>
+        <div style="margin: 0 0 24px 0;">
+            <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
+                <span class="field-name" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Field</span>
+                <span class="field-desc" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Description</span>
+                <span class="field-enforced" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; min-width: 110px; text-align: right;">Enforced by</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">name <span class="field-recommended">Recommended</span></span>
+                <span class="field-desc">Display name and <code>/slash-command</code> (defaults to directory name)</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">description <span class="field-required">Required</span></span>
+                <span class="field-desc">When to invoke &mdash; used for auto-discovery. Write it clearly.</span>
+                <span class="field-enforced"><span class="pill-prompt">prompt</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">argument-hint</span>
+                <span class="field-desc">Autocomplete hint shown in the <code>/</code> menu (e.g. <code>[city-name]</code>)</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">disable-model-invocation</span>
+                <span class="field-desc">Set <code>true</code> to prevent Claude from invoking this skill automatically</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">user-invocable</span>
+                <span class="field-desc">Set <code>false</code> to hide from <code>/</code> menu &mdash; background knowledge only</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">allowed-tools</span>
+                <span class="field-desc">Tools allowed without permission prompts when this skill is active</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">model</span>
+                <span class="field-desc">Model to use when skill is active: <code>haiku</code>, <code>sonnet</code>, <code>opus</code></span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">context</span>
+                <span class="field-desc">Set to <code>fork</code> to run skill in an isolated subagent context</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+        </div>
+        <p style="font-style: italic; color: #444; text-align: center; max-width: 900px; margin: 16px auto 0 auto; background: #fafafa; padding: 16px 24px; border-radius: 8px;">The <code>description</code> field is the single prompt-land field &mdash; it&rsquo;s what makes Claude decide when to invoke your skill. Write it well.</p>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
     <!-- NEW SLIDE 29: Context concept intro                           -->
     <!-- ============================================================ -->
 
     <!-- Slide: Context -->
-    <div class="slide section-slide" data-slide="34">
+    <div class="slide section-slide" data-slide="40">
         <div class="slide-viewport-content">
             <h1>&#x1F9E0; Context</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -1668,14 +2018,14 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide 14: Skills Section Divider -->
-    <div class="slide section-slide" data-slide="35" data-level="skills">
+    <div class="slide section-slide" data-slide="41" data-level="skills">
         <div class="section-number">Topic 2</div>
         <h1>&#x1F393; Skills &mdash; What the Weather Reporter Knows</h1>
         <p class="section-desc">Skills are the specific things the reporter has been trained to do. Our reporter has two: <strong>fetch the data</strong>, and <strong>render it as a card</strong>.</p>
     </div>
 
     <!-- Slide 15: The Training Manual -->
-    <div class="slide" data-slide="36">
+    <div class="slide" data-slide="42">
         <h1>The Training Manual</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1702,7 +2052,7 @@ todoapp/
     </div>
 
     <!-- Slide 16: When to Turn Something Into a Skill -->
-    <div class="slide" data-slide="37">
+    <div class="slide" data-slide="43">
         <h1>When to Turn Something Into a Skill</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -1739,7 +2089,7 @@ todoapp/
     </div>
 
     <!-- Slide 17: Why Separate Agents and Skills? -->
-    <div class="slide" data-slide="38">
+    <div class="slide" data-slide="44">
         <h1>Why Separate Agents and Skills?</h1>
         <div class="two-col">
             <div>
@@ -1765,7 +2115,7 @@ todoapp/
     </div>
 
     <!-- Slide 18: How to Create Your Own Skill -->
-    <div class="slide" data-slide="39">
+    <div class="slide" data-slide="45">
         <h1>How to Create Your Own Skill</h1>
         <p>Skills are plain markdown files. If you can write a recipe, you can write a skill.</p>
         <div class="how-to-trigger">
@@ -1818,7 +2168,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 19: Skill Config Fields -->
-    <div class="slide" data-slide="40">
+    <div class="slide" data-slide="46">
         <h1>Skill Config Fields</h1>
         <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
         <div style="margin: 24px 0;">
@@ -1858,14 +2208,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 20: Context Section Divider -->
-    <div class="slide section-slide" data-slide="41" data-level="context">
+    <div class="slide section-slide" data-slide="47" data-level="context">
         <div class="section-number">Topic 3</div>
         <h1>&#x1F9E0; Context &mdash; The Reporter's Brain</h1>
         <p class="section-desc">Now that you've met the reporter and know their skills, let's understand what they can actually hold in mind at once. Every agent &mdash; including the weather reporter &mdash; gets its own fresh brain.</p>
     </div>
 
     <!-- Slide 21: Claude's Brain -->
-    <div class="slide" data-slide="42">
+    <div class="slide" data-slide="48">
         <h1>Claude's Brain</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -1903,7 +2253,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 22: What Loads at Session Start -->
-    <div class="slide" data-slide="43">
+    <div class="slide" data-slide="49">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
         <img src="../assets/concepts/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
@@ -1937,7 +2287,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 23: Keep the Brain Clear -->
-    <div class="slide" data-slide="44">
+    <div class="slide" data-slide="50">
         <h1>Keep the Brain Clear</h1>
         <p>The more stuff crammed into Claude's brain, the harder it is to focus on what matters. This is called <strong>context rot</strong> &mdash; performance drops as the brain gets crowded.</p>
         <div class="info-box">
@@ -1981,7 +2331,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 24: How to Manage Your Context -->
-    <div class="slide" data-slide="45">
+    <div class="slide" data-slide="51">
         <h1>How to Manage Your Context</h1>
         <p>You can't <em>create</em> the context &mdash; it's just there, the moment you open a chat. But you can <strong>see</strong> how full it is, <strong>trim</strong> it down, or <strong>wipe</strong> it clean. Three commands give you full control.</p>
         <div class="how-to-trigger">
@@ -2026,14 +2376,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 25: CLAUDE.md Section Divider -->
-    <div class="slide section-slide" data-slide="46" data-level="claude-md">
+    <div class="slide section-slide" data-slide="52" data-level="claude-md">
         <div class="section-number">Topic 4</div>
         <h1>&#x1F4CB; CLAUDE.md &mdash; The Reporter's Pocket Rulebook</h1>
         <p class="section-desc">The weather reporter consults this at the start of every shift &mdash; even though their brain resets overnight. It's the standing instructions pinned in that brain before you've said a word.</p>
     </div>
 
     <!-- Slide 26: The Employee Handbook -->
-    <div class="slide" data-slide="47">
+    <div class="slide" data-slide="53">
         <h1>The Employee Handbook</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2061,7 +2411,7 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
     </div>
 
     <!-- Slide 27: How to Create CLAUDE.md -->
-    <div class="slide" data-slide="48">
+    <div class="slide" data-slide="54">
         <h1>How to Create Your CLAUDE.md</h1>
         <p>You don't need to write CLAUDE.md by hand. Claude can look at your project and draft one for you.</p>
         <div class="how-to-trigger">
@@ -2106,7 +2456,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 28: Grow CLAUDE.md With Every Mistake -->
-    <div class="slide" data-slide="49">
+    <div class="slide" data-slide="55">
         <h1>Grow CLAUDE.md With Every Mistake</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -2143,7 +2493,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 29: What Goes in CLAUDE.md -->
-    <div class="slide" data-slide="50">
+    <div class="slide" data-slide="56">
         <h1>What Goes in CLAUDE.md</h1>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
@@ -2171,7 +2521,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 30: How CLAUDE.md Loads -->
-    <div class="slide" data-slide="51">
+    <div class="slide" data-slide="57">
         <h1>How CLAUDE.md Loads</h1>
         <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
         <div class="two-col">
@@ -2204,14 +2554,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 31: Commands Section Divider -->
-    <div class="slide section-slide" data-slide="52" data-level="commands">
+    <div class="slide section-slide" data-slide="58" data-level="commands">
         <div class="section-number">Topic 5</div>
         <h1>&#x26A1; Commands &mdash; The Trigger</h1>
         <p class="section-desc">One word kicks off the whole chain. <code>/weather-orchestrator</code> &rarr; agent &rarr; skill &rarr; SVG card. Commands are the entry point into any workflow.</p>
     </div>
 
     <!-- Slide 32: Commands — The Entry Point -->
-    <div class="slide" data-slide="53">
+    <div class="slide" data-slide="59">
         <h1>Commands &mdash; The Entry Point</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2255,7 +2605,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 33: How to Create Your Own Command -->
-    <div class="slide" data-slide="54">
+    <div class="slide" data-slide="60">
         <h1>How to Create Your Own Command</h1>
         <p>Commands are markdown files too. If you can write a recipe, you can write a command.</p>
         <div class="how-to-trigger">
@@ -2310,14 +2660,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 34: Workflow Sub-Section (Putting It All Together) -->
-    <div class="slide section-slide" data-slide="55" data-level="workflow">
+    <div class="slide section-slide" data-slide="61" data-level="workflow">
         <div class="section-number">Putting It All Together</div>
         <h1>&#x1F3BC; Workflow &mdash; All Five Pieces Together</h1>
         <p class="section-desc">Watch the weather reporter example run from one keystroke to SVG card output. Five concepts, one orchestrated flow.</p>
     </div>
 
     <!-- Slide 35: Command → Agent → Skill -->
-    <div class="slide" data-slide="56">
+    <div class="slide" data-slide="62">
         <h1>Command &rarr; Agent &rarr; Skill</h1>
         <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows &mdash; demonstrated in this very repo by the weather example:</p>
         <div class="code-block"><span class="comment">The Orchestration Flow</span>
@@ -2344,7 +2694,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 36: Two Ways Skills Are Used -->
-    <div class="slide" data-slide="57">
+    <div class="slide" data-slide="63">
         <h1>Two Ways Skills Are Used</h1>
         <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
         <div class="two-col">
@@ -2367,7 +2717,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 37: How to Wire Your Own Workflow -->
-    <div class="slide" data-slide="58">
+    <div class="slide" data-slide="64">
         <h1>How to Wire Your Own Workflow</h1>
         <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls agents and skills in sequence.</p>
         <div class="how-to-trigger">
@@ -2418,7 +2768,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
     <!-- SLIDE 40: Closing                                             -->
     <!-- ============================================================ -->
-    <div class="slide title-slide" data-slide="59">
+    <div class="slide title-slide" data-slide="65">
         <h1>Journey So Far</h1>
         <p class="subtitle">Five concepts, one running example</p>
         <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 640px;">From meeting the weather reporter to wiring the full <strong>Command &rarr; Agent &rarr; Skill</strong> chain. The same five pieces compose every workflow you'll ever build.</p>
