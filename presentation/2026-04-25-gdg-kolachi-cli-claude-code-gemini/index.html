@@ -1078,6 +1078,7 @@ todoapp/
 
     <!-- Slide 9: The Restaurant Kitchen -->
     <div class="slide" data-slide="24">
+        <div style="min-height: calc(100vh - 120px);">
             <h1>Create your first agent &mdash; <code>/agents</code></h1>
             <div style="max-width: 600px;">
                 <div class="col-card" style="border-left: 4px solid #D97757;">
@@ -1089,6 +1090,7 @@ todoapp/
                     <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>.claude/agents/&lt;name&gt;.md</code> &mdash; a plain markdown file anyone can edit.</p>
                 </div>
             </div>
+        </div>
         <div class="pillar-footer">
             <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
                 <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
@@ -1175,7 +1177,6 @@ todoapp/
     <!-- Slide 13: Agent Config Fields -->
     <div class="slide" data-slide="26">
             <h1>Agent config fields with frontmatter</h1>
-            <p>The config block at the top of an agent file controls its identity and capabilities. Most fields are <strong>harness-enforced</strong> &mdash; the CLI gates them before the model sees the call. Only <code>description</code> lives in prompt-land.</p>
             <div style="margin: 24px 0;">
                 <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
                     <span class="field-name" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Field</span>
@@ -1223,10 +1224,7 @@ todoapp/
                     <span class="field-enforced"><span class="pill-harness">harness</span></span>
                 </div>
             </div>
-            <div class="info-box">
-                <h4>The Key Field for This Workshop</h4>
-                <p>The <code>skills:</code> field is what makes the weather-agent special. It preloads <code>weather-fetcher</code> directly into the agent's brain at startup &mdash; before the agent has received a single instruction. The agent doesn't need to be told how to fetch weather; it already knows.</p>
-            </div>
+            <p style="font-style: italic; color: #444; text-align: center; max-width: 900px; margin: 24px auto 0 auto;">The <code>skills:</code> field is what makes the agent special. It preloads <code>any-skill</code> directly into the agent&rsquo;s brain at startup &mdash; before the agent has received a single instruction.</p>
         <div class="pillar-footer">
             <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
                 <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
