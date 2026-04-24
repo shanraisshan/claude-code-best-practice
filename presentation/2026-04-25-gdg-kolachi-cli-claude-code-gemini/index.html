@@ -2212,19 +2212,93 @@ todoapp/
         </div>
     </div>
 
+    <!-- Slide 44: Context — Lost in the Middle (Liu et al., Stanford 2023) -->
+    <div class="slide" data-slide="44" data-level="context">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1 style="text-align: center;">&#x1F4C4; Lost in the Middle</h1>
+            <p style="text-align: center; color: #666; font-style: italic; font-size: 1.1rem; margin-top: -20px; margin-bottom: 30px;">by Nelson F. Liu &middot; Stanford University &middot; 2023</p>
+
+            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+                <!-- Left column: image -->
+                <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
+                    <img src="../assets/concepts/context/lost-in-middle.png" alt="Lost in the Middle paper illustration showing U-shaped attention curve across context positions" style="max-width: 420px; max-height: 55vh; width: auto; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+                </div>
+
+                <!-- Right column: explanation -->
+                <div style="flex: 1 1 300px;">
+                    <ol style="padding-left: 20px; margin: 0; display: flex; flex-direction: column; gap: 18px;">
+                        <li>
+                            <strong>Primacy &amp; recency work.</strong>
+                            Information at the <strong>start</strong> of the context (what Claude sees first) and at the <strong>end</strong> (what Claude saw most recently) gets strong attention. These are the safe zones.
+                        </li>
+                        <li>
+                            <strong>The middle is the dumb zone.</strong>
+                            Content buried in the middle of a long context effectively disappears. The model <em>has</em> the tokens, but doesn't weight them strongly during generation. It's in the working memory &mdash; but not really <em>read</em>.
+                        </li>
+                        <li>
+                            <strong>Practical implication.</strong>
+                            Keep critical instructions either at the very top (in <code style="background: #f1f3f4; padding: 1px 6px; border-radius: 4px;">CLAUDE.md</code>) or near the user's most recent message. A bigger context window doesn't help if your payload lands in the middle.
+                        </li>
+                    </ol>
+
+                    <div style="margin-top: 24px; background: #fff8e1; border-left: 4px solid #f9a825; padding: 14px 18px; border-radius: 0 8px 8px 0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #5a4100;">This is the <strong>"dumb-zone problem"</strong> the deck has been warning about &mdash; now you know where it came from.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
     <!-- ============================================================ -->
     <!-- TOPIC 2: SKILLS (Slides 15-20)                                -->
     <!-- ============================================================ -->
 
     <!-- Slide 14: Skills Section Divider -->
-    <div class="slide section-slide" data-slide="44" data-level="skills">
+    <div class="slide section-slide" data-slide="45" data-level="skills">
         <div class="section-number">Topic 2</div>
         <h1>&#x1F393; Skills &mdash; What the Weather Reporter Knows</h1>
         <p class="section-desc">Skills are the specific things the reporter has been trained to do. Our reporter has two: <strong>fetch the data</strong>, and <strong>render it as a card</strong>.</p>
     </div>
 
     <!-- Slide 15: The Training Manual -->
-    <div class="slide" data-slide="45">
+    <div class="slide" data-slide="46">
         <h1>The Training Manual</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2251,7 +2325,7 @@ todoapp/
     </div>
 
     <!-- Slide 16: When to Turn Something Into a Skill -->
-    <div class="slide" data-slide="46">
+    <div class="slide" data-slide="47">
         <h1>When to Turn Something Into a Skill</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -2288,7 +2362,7 @@ todoapp/
     </div>
 
     <!-- Slide 17: Why Separate Agents and Skills? -->
-    <div class="slide" data-slide="47">
+    <div class="slide" data-slide="48">
         <h1>Why Separate Agents and Skills?</h1>
         <div class="two-col">
             <div>
@@ -2314,7 +2388,7 @@ todoapp/
     </div>
 
     <!-- Slide 18: How to Create Your Own Skill -->
-    <div class="slide" data-slide="48">
+    <div class="slide" data-slide="49">
         <h1>How to Create Your Own Skill</h1>
         <p>Skills are plain markdown files. If you can write a recipe, you can write a skill.</p>
         <div class="how-to-trigger">
@@ -2367,7 +2441,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 19: Skill Config Fields -->
-    <div class="slide" data-slide="49">
+    <div class="slide" data-slide="50">
         <h1>Skill Config Fields</h1>
         <p>The small config block at the top of a SKILL.md (the "frontmatter") controls how the skill behaves:</p>
         <div style="margin: 24px 0;">
@@ -2407,14 +2481,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 20: Context Section Divider -->
-    <div class="slide section-slide" data-slide="50" data-level="context">
+    <div class="slide section-slide" data-slide="51" data-level="context">
         <div class="section-number">Topic 3</div>
         <h1>&#x1F9E0; Context &mdash; The Reporter's Brain</h1>
         <p class="section-desc">Now that you've met the reporter and know their skills, let's understand what they can actually hold in mind at once. Every agent &mdash; including the weather reporter &mdash; gets its own fresh brain.</p>
     </div>
 
     <!-- Slide 21: Claude's Brain -->
-    <div class="slide" data-slide="51">
+    <div class="slide" data-slide="52">
         <h1>Claude's Brain</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2452,7 +2526,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 22: What Loads at Session Start -->
-    <div class="slide" data-slide="52">
+    <div class="slide" data-slide="53">
         <h1>What Loads at Session Start</h1>
         <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
         <img src="../assets/concepts/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
@@ -2486,7 +2560,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 23: Keep the Brain Clear -->
-    <div class="slide" data-slide="53">
+    <div class="slide" data-slide="54">
         <h1>Keep the Brain Clear</h1>
         <p>The more stuff crammed into Claude's brain, the harder it is to focus on what matters. This is called <strong>context rot</strong> &mdash; performance drops as the brain gets crowded.</p>
         <div class="info-box">
@@ -2530,7 +2604,7 @@ Fetch the current temperature for Dubai, UAE.
     </div>
 
     <!-- Slide 24: How to Manage Your Context -->
-    <div class="slide" data-slide="54">
+    <div class="slide" data-slide="55">
         <h1>How to Manage Your Context</h1>
         <p>You can't <em>create</em> the context &mdash; it's just there, the moment you open a chat. But you can <strong>see</strong> how full it is, <strong>trim</strong> it down, or <strong>wipe</strong> it clean. Three commands give you full control.</p>
         <div class="how-to-trigger">
@@ -2575,14 +2649,14 @@ Fetch the current temperature for Dubai, UAE.
     <!-- ============================================================ -->
 
     <!-- Slide 25: CLAUDE.md Section Divider -->
-    <div class="slide section-slide" data-slide="55" data-level="claude-md">
+    <div class="slide section-slide" data-slide="56" data-level="claude-md">
         <div class="section-number">Topic 4</div>
         <h1>&#x1F4CB; CLAUDE.md &mdash; The Reporter's Pocket Rulebook</h1>
         <p class="section-desc">The weather reporter consults this at the start of every shift &mdash; even though their brain resets overnight. It's the standing instructions pinned in that brain before you've said a word.</p>
     </div>
 
     <!-- Slide 26: The Employee Handbook -->
-    <div class="slide" data-slide="56">
+    <div class="slide" data-slide="57">
         <h1>The Employee Handbook</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2610,7 +2684,7 @@ This is the Q2 marketing campaign brief &mdash; targeting small business owners.
     </div>
 
     <!-- Slide 27: How to Create CLAUDE.md -->
-    <div class="slide" data-slide="57">
+    <div class="slide" data-slide="58">
         <h1>How to Create Your CLAUDE.md</h1>
         <p>You don't need to write CLAUDE.md by hand. Claude can look at your project and draft one for you.</p>
         <div class="how-to-trigger">
@@ -2655,7 +2729,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 28: Grow CLAUDE.md With Every Mistake -->
-    <div class="slide" data-slide="58">
+    <div class="slide" data-slide="59">
         <h1>Grow CLAUDE.md With Every Mistake</h1>
         <div class="info-box">
             <h4>Tip from Boris Cherny (creator of Claude Code) &mdash; Feb 1, 2026</h4>
@@ -2692,7 +2766,7 @@ open, edit, save           <span class="comment"># Tweak it like any doc</span><
     </div>
 
     <!-- Slide 29: What Goes in CLAUDE.md -->
-    <div class="slide" data-slide="59">
+    <div class="slide" data-slide="60">
         <h1>What Goes in CLAUDE.md</h1>
         <div class="code-block"><span class="comment"># CLAUDE.md</span>
 
@@ -2720,7 +2794,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 30: How CLAUDE.md Loads -->
-    <div class="slide" data-slide="60">
+    <div class="slide" data-slide="61">
         <h1>How CLAUDE.md Loads</h1>
         <p>Claude Code uses two mechanisms to find CLAUDE.md files:</p>
         <div class="two-col">
@@ -2753,14 +2827,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 31: Commands Section Divider -->
-    <div class="slide section-slide" data-slide="61" data-level="commands">
+    <div class="slide section-slide" data-slide="62" data-level="commands">
         <div class="section-number">Topic 5</div>
         <h1>&#x26A1; Commands &mdash; The Trigger</h1>
         <p class="section-desc">One word kicks off the whole chain. <code>/weather-orchestrator</code> &rarr; agent &rarr; skill &rarr; SVG card. Commands are the entry point into any workflow.</p>
     </div>
 
     <!-- Slide 32: Commands — The Entry Point -->
-    <div class="slide" data-slide="62">
+    <div class="slide" data-slide="63">
         <h1>Commands &mdash; The Entry Point</h1>
         <div class="analogy-box">
             <h4>Think of it like this</h4>
@@ -2804,7 +2878,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 33: How to Create Your Own Command -->
-    <div class="slide" data-slide="63">
+    <div class="slide" data-slide="64">
         <h1>How to Create Your Own Command</h1>
         <p>Commands are markdown files too. If you can write a recipe, you can write a command.</p>
         <div class="how-to-trigger">
@@ -2859,14 +2933,14 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
 
     <!-- Slide 34: Workflow Sub-Section (Putting It All Together) -->
-    <div class="slide section-slide" data-slide="64" data-level="workflow">
+    <div class="slide section-slide" data-slide="65" data-level="workflow">
         <div class="section-number">Putting It All Together</div>
         <h1>&#x1F3BC; Workflow &mdash; All Five Pieces Together</h1>
         <p class="section-desc">Watch the weather reporter example run from one keystroke to SVG card output. Five concepts, one orchestrated flow.</p>
     </div>
 
     <!-- Slide 35: Command → Agent → Skill -->
-    <div class="slide" data-slide="65">
+    <div class="slide" data-slide="66">
         <h1>Command &rarr; Agent &rarr; Skill</h1>
         <p>This is the <strong>core architecture pattern</strong> of Claude Code workflows &mdash; demonstrated in this very repo by the weather example:</p>
         <div class="code-block"><span class="comment">The Orchestration Flow</span>
@@ -2893,7 +2967,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 36: Two Ways Skills Are Used -->
-    <div class="slide" data-slide="66">
+    <div class="slide" data-slide="67">
         <h1>Two Ways Skills Are Used</h1>
         <p>The weather workflow demonstrates both skill patterns in a single flow:</p>
         <div class="two-col">
@@ -2916,7 +2990,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     </div>
 
     <!-- Slide 37: How to Wire Your Own Workflow -->
-    <div class="slide" data-slide="67">
+    <div class="slide" data-slide="68">
         <h1>How to Wire Your Own Workflow</h1>
         <p>A workflow isn't a separate file type. It <em>emerges</em> when one command calls agents and skills in sequence.</p>
         <div class="how-to-trigger">
@@ -2967,7 +3041,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
     <!-- ============================================================ -->
     <!-- SLIDE 40: Closing                                             -->
     <!-- ============================================================ -->
-    <div class="slide title-slide" data-slide="68">
+    <div class="slide title-slide" data-slide="69">
         <h1>Journey So Far</h1>
         <p class="subtitle">Five concepts, one running example</p>
         <p style="margin-top: 20px; font-size: 1.1rem; color: #666; max-width: 640px;">From meeting the weather reporter to wiring the full <strong>Command &rarr; Agent &rarr; Skill</strong> chain. The same five pieces compose every workflow you'll ever build.</p>
