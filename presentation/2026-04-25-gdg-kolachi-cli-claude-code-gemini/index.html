@@ -380,6 +380,9 @@
             <!-- context window — hero blue, top-left anchor slot -->
             <span style="position: absolute; top: 3%; left: 5%; transform: rotate(2deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">context window</span>
 
+            <!-- ralph wiggum loop — hero blue, row 1b gap -->
+            <span style="position: absolute; top: 10%; left: 28%; transform: rotate(-3deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">ralph wiggum loop</span>
+
             <!-- ===== SUPPORTING TIER: Purple chips (smaller, softer) ===== -->
             <!-- MCP — nudged from 14% to 16% to clear context window hero pill above -->
             <span style="position: absolute; top: 16%; left: 3%; transform: rotate(5deg); background: #7b1fa2; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">MCP</span>
@@ -433,6 +436,7 @@
                 <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">harness</span> &mdash; the scaffolding around the model &mdash; files, terminal, tools &mdash; that turns a chatbot into a worker</p>
                 <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">compaction</span> &mdash; auto-summarizing old chat so the AI keeps going without hitting its memory ceiling</p>
                 <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">context window</span> &mdash; the AI&rsquo;s working memory &mdash; how much it can &ldquo;see&rdquo; at once before older details fall off</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">ralph wiggum loop</span> &mdash; when the AI repeats the same broken step in circles, like a confused kid who can&rsquo;t stop</p>
                 <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">MCP</span> &mdash; a universal adapter letting AI talk to your tools (GitHub, Slack, databases)</p>
                 <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">hooks</span> &mdash; auto-triggers that run your rules before or after the AI does anything</p>
             </div>
@@ -768,7 +772,7 @@
 
             <!-- One-liner — kept, placed below the diagram -->
             <p style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a; margin: 12px 0 6px; letter-spacing: -0.02em; line-height: 1.2;">A horse harness. A model harness.</p>
-            <p style="font-size: 1.2rem; font-weight: 400; color: #C0392B; margin: 0; letter-spacing: 0.01em;">Same verb.</p>
+            <p style="font-size: 1.2rem; font-weight: 400; color: #C0392B; margin: 0; letter-spacing: 0.01em;">The model is the horse. Raw power, no direction. The harness is everything else.</p>
 
         </div>
     </div>
@@ -2342,57 +2346,8 @@ todoapp/
     <!-- Slide 46: Orchestration Workflow diagram -->
     <div class="slide" data-slide="46" data-level="workflow">
         <h1>&#x1F4CB; Orchestration Workflow</h1>
-        <!-- Flow diagram: Command → Agent → Skill -->
-        <div style="display: flex; align-items: center; justify-content: center; gap: 0; margin: 28px 0 24px 0; flex-wrap: nowrap;">
-            <!-- Step 1: Command -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; min-width: 180px; max-width: 240px;">
-                <div style="background: #fff3cd; border: 2px solid #f9a825; border-radius: 12px; padding: 18px 20px; text-align: center; width: 100%; box-shadow: 0 3px 12px rgba(249,168,37,0.22);">
-                    <div style="font-size: 1.8rem; margin-bottom: 6px;">&#x26A1;</div>
-                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7a5c00; font-weight: 700; margin-bottom: 4px;">Command</div>
-                    <div style="font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px;">/weather-orchestrator</div>
-                    <div style="font-size: 0.78rem; color: #5a4000; line-height: 1.4;">Entry point &mdash; asks user: C&deg; or F&deg;? &mdash; then coordinates everything below</div>
-                </div>
-                <div style="background: #fff8e1; border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; color: #7a5c00; font-weight: 600; white-space: nowrap;">Step 1: Ask user</div>
-            </div>
-
-            <!-- Arrow 1 -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 12px; flex-shrink: 0;">
-                <div style="font-size: 2rem; color: #9c27b0; font-weight: 700; line-height: 1;">&#x2192;</div>
-                <div style="font-size: 0.68rem; color: #9c27b0; font-weight: 600; white-space: nowrap;">Agent tool</div>
-            </div>
-
-            <!-- Step 2: Agent -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; min-width: 180px; max-width: 240px;">
-                <div style="background: #e8f5e9; border: 2px solid #4caf50; border-radius: 12px; padding: 18px 20px; text-align: center; width: 100%; box-shadow: 0 3px 12px rgba(76,175,80,0.22);">
-                    <div style="font-size: 1.8rem; margin-bottom: 6px;">&#x1F9D1;&#x200D;&#x1F4BC;</div>
-                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #1b5e20; font-weight: 700; margin-bottom: 4px;">Agent</div>
-                    <div style="font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px;">weather-agent</div>
-                    <div style="font-size: 0.78rem; color: #1b5e20; line-height: 1.4;">Preloaded with <strong>weather-fetcher</strong> skill &mdash; fetches live temp from Open-Meteo</div>
-                </div>
-                <div style="background: #f1f8e9; border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; color: #2e7d32; font-weight: 600; white-space: nowrap;">Step 2: returns temp + unit</div>
-            </div>
-
-            <!-- Arrow 2 -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 12px; flex-shrink: 0;">
-                <div style="font-size: 2rem; color: #1565c0; font-weight: 700; line-height: 1;">&#x2192;</div>
-                <div style="font-size: 0.68rem; color: #1565c0; font-weight: 600; white-space: nowrap;">Skill tool</div>
-            </div>
-
-            <!-- Step 3: Skill -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; min-width: 180px; max-width: 240px;">
-                <div style="background: #e3f2fd; border: 2px solid #1565c0; border-radius: 12px; padding: 18px 20px; text-align: center; width: 100%; box-shadow: 0 3px 12px rgba(21,101,192,0.18);">
-                    <div style="font-size: 1.8rem; margin-bottom: 6px;">&#x1F3AF;</div>
-                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #0d47a1; font-weight: 700; margin-bottom: 4px;">Skill</div>
-                    <div style="font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px;">weather-svg-creator</div>
-                    <div style="font-size: 0.78rem; color: #0d47a1; line-height: 1.4;">Creates SVG weather card &mdash; writes <code>weather.svg</code> and <code>output.md</code></div>
-                </div>
-                <div style="background: #e3f2fd; border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; color: #1565c0; font-weight: 600; white-space: nowrap;">Step 3: visual output</div>
-            </div>
-        </div>
-        <div class="trigger-box" style="margin: 16px 0 0 0;">
-            <h4>One command &mdash; three pieces working in concert</h4>
-            <p>The <strong>Command</strong> is the conductor. The <strong>Agent</strong> is the data specialist. The <strong>Skill</strong> is the renderer. Each does one job.</p>
-        </div>
+        <img src="../../orchestration-workflow/orchestration-workflow.svg" alt="Command → Agent → Skill architecture flow"
+             style="max-width: 1100px; max-height: 70vh; width: 100%; height: auto; display: block; margin: 20px auto 0 auto;" />
         <div class="pillar-footer">
             <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
                 <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
