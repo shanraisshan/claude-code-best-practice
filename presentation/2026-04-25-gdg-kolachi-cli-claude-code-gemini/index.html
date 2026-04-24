@@ -81,15 +81,6 @@
         .slide[data-slide="1"].active ~ .header-logo { display: none; }
         .title-logo { width: 200px; height: 130px; margin-bottom: 40px; }
         .title-logo img { width: 100%; height: 100%; }
-        /* Journey Bar */
-        .journey-bar { position: fixed; top: 95px; right: 62px; display: flex; flex-direction: column; align-items: center; z-index: 99; gap: 6px; }
-        .journey-bar.hidden { display: none; }
-        .journey-track-wrap { position: relative; display: flex; align-items: stretch; gap: 4px; }
-        .journey-track { width: 20px; height: 300px; background: #e5e5e5; border-radius: 10px; overflow: hidden; position: relative; flex-shrink: 0; }
-        .journey-fill { position: absolute; bottom: 0; width: 100%; border-radius: 10px; transition: height 0.4s ease, background-color 0.4s ease; height: 0%; }
-        .journey-level-label { font-size: 0.65rem; color: #777; font-weight: 400; }
-        .journey-ticks { display: flex; flex-direction: column; justify-content: space-between; height: 300px; padding: 2px 0; }
-        .journey-tick { font-size: 0.45rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; color: #999; white-space: nowrap; line-height: 1; }
         .level-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 12px; vertical-align: middle; }
         /* Hiring analogy steps */
         .hiring-steps { margin: 32px 0; }
@@ -138,21 +129,6 @@
 </head>
 <body>
     <div class="progress" id="progress"></div>
-    <div class="journey-bar hidden" id="journeyBar">
-        <div class="journey-track-wrap">
-            <div class="journey-track"><div class="journey-fill" id="journeyFill"></div></div>
-            <div class="journey-ticks">
-                <span class="journey-tick">&#x1F3BC; Workflow</span>
-                <span class="journey-tick">&#x26A1; Commands</span>
-                <span class="journey-tick">&#x1F4CB; CLAUDE.md</span>
-                <span class="journey-tick">&#x1F9E0; Context</span>
-                <span class="journey-tick">&#x1F393; Skills</span>
-                <span class="journey-tick">&#x1F464; Agents</span>
-            </div>
-        </div>
-        <span class="journey-level-label" id="journeyLevelLabel"></span>
-    </div>
-
     <!-- ============================================================ -->
     <!-- SLIDE 1: GDG Kolachi Conference Title                         -->
     <!-- ============================================================ -->
@@ -2230,57 +2206,36 @@ This is a TodoApp with a FastAPI backend and React frontend.
         const slides = document.querySelectorAll('[data-slide]');
         const totalSlides = slides.length;
 
-        // Level definitions — arc order: Agents → Skills → Context → CLAUDE.md → Commands → Workflow
-        const LEVELS = {
-            'agents':    { order: 1, color: 'hsl(35, 80%, 50%)',  height: '17%',  label: 'Agents'    },
-            'skills':    { order: 2, color: 'hsl(140, 60%, 45%)', height: '33%',  label: 'Skills'    },
-            'context':   { order: 3, color: 'hsl(340, 50%, 55%)', height: '50%',  label: 'Context'   },
-            'claude-md': { order: 4, color: 'hsl(25, 75%, 50%)',  height: '67%',  label: 'CLAUDE.md' },
-            'commands':  { order: 5, color: 'hsl(195, 65%, 50%)', height: '83%',  label: 'Commands'  },
-            'workflow':  { order: 6, color: 'hsl(45, 90%, 45%)',  height: '100%', label: 'Workflow'  }
+        // Level label map — used for the level-badge on section-divider h1s
+        const LEVEL_LABELS = {
+            'agents':    'Agents',
+            'skills':    'Skills',
+            'context':   'Context',
+            'claude-md': 'CLAUDE.md',
+            'commands':  'Commands',
+            'workflow':  'Workflow'
         };
-
-        // Build slide-to-level map
-        const SLIDE_LEVELS = {};
-        let lastLevel = null;
-        slides.forEach((s) => {
-            const num = parseInt(s.dataset.slide);
-            if (s.dataset.level) { lastLevel = s.dataset.level; }
-            SLIDE_LEVELS[num] = lastLevel;
-        });
 
         let prevDisplayedLevel = null;
 
-        function updateJourneyBar(slideNum) {
-            const bar = document.getElementById('journeyBar');
-            const fill = document.getElementById('journeyFill');
-            const labelEl = document.getElementById('journeyLevelLabel');
-            if (slideNum <= 1) { bar.classList.add('hidden'); prevDisplayedLevel = null; return; }
-            bar.classList.remove('hidden');
-            const levelKey = SLIDE_LEVELS[slideNum];
-            if (!levelKey || !LEVELS[levelKey]) {
-                fill.style.height = '0%';
-                if (labelEl) { labelEl.innerHTML = ''; }
-                return;
-            }
-            const lvl = LEVELS[levelKey];
-            fill.style.height = lvl.height;
-            fill.style.backgroundColor = lvl.color;
-            if (labelEl) { labelEl.innerHTML = '<strong style="color:' + lvl.color + '">' + lvl.label + '</strong>'; }
-
-            // Show level badge when level changes
+        function updateLevelBadge(slideNum) {
             document.querySelectorAll('.level-badge').forEach(b => b.remove());
             const slideEl = document.querySelector(`[data-slide="${slideNum}"]`);
             if (slideEl && slideEl.dataset.level && slideEl.dataset.level !== prevDisplayedLevel) {
-                const h1 = slideEl.querySelector('h1');
-                if (h1) {
-                    const badge = document.createElement('span');
-                    badge.className = 'level-badge';
-                    badge.textContent = '\u2192 ' + lvl.label;
-                    h1.appendChild(badge);
+                const levelKey = slideEl.dataset.level;
+                const label = LEVEL_LABELS[levelKey];
+                if (label) {
+                    const h1 = slideEl.querySelector('h1');
+                    if (h1) {
+                        const badge = document.createElement('span');
+                        badge.className = 'level-badge';
+                        badge.textContent = '\u2192 ' + label;
+                        h1.appendChild(badge);
+                    }
                 }
             }
-            prevDisplayedLevel = levelKey;
+            if (slideEl && slideEl.dataset.level) { prevDisplayedLevel = slideEl.dataset.level; }
+            if (slideNum <= 1) { prevDisplayedLevel = null; }
         }
 
         function showSlide(n) {
@@ -2293,7 +2248,7 @@ This is a TodoApp with a FastAPI backend and React frontend.
             document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
             document.getElementById('prevBtn').disabled = currentSlide === 1;
             document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
-            updateJourneyBar(currentSlide);
+            updateLevelBadge(currentSlide);
         }
         function nextSlide() { currentSlide++; showSlide(currentSlide); }
         function prevSlide() { currentSlide--; showSlide(currentSlide); }
