@@ -1078,9 +1078,8 @@ todoapp/
 
     <!-- Slide 9: The Restaurant Kitchen -->
     <div class="slide" data-slide="24">
-        <div class="slide-viewport-content" style="justify-content: flex-start; padding-top: 60px;">
             <h1>Create your first agent &mdash; <code>/agents</code></h1>
-            <div style="max-width: 600px; margin: 32px auto 0 auto;">
+            <div style="max-width: 600px;">
                 <div class="col-card" style="border-left: 4px solid #D97757;">
                     <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
                         <h4>The Command</h4>
@@ -1090,7 +1089,6 @@ todoapp/
                     <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>.claude/agents/&lt;name&gt;.md</code> &mdash; a plain markdown file anyone can edit.</p>
                 </div>
             </div>
-        </div>
         <div class="pillar-footer">
             <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
                 <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
@@ -1132,7 +1130,7 @@ todoapp/
 
     <!-- Slide 10: Prompting vs Agent table -->
     <div class="slide" data-slide="25">
-        <div class="slide-viewport-content" style="justify-content: flex-start; padding-top: 60px;">
+        <div style="min-height: calc(100vh - 120px);">
             <h1>Demo</h1>
         </div>
         <div class="pillar-footer">
@@ -1176,7 +1174,6 @@ todoapp/
 
     <!-- Slide 13: Agent Config Fields -->
     <div class="slide" data-slide="26">
-        <div class="slide-viewport-content" style="justify-content: flex-start; padding-top: 60px;">
             <h1>Agent config fields with frontmatter</h1>
             <p>The config block at the top of an agent file controls its identity and capabilities. Most fields are <strong>harness-enforced</strong> &mdash; the CLI gates them before the model sees the call. Only <code>description</code> lives in prompt-land.</p>
             <div style="margin: 24px 0;">
@@ -1230,7 +1227,6 @@ todoapp/
                 <h4>The Key Field for This Workshop</h4>
                 <p>The <code>skills:</code> field is what makes the weather-agent special. It preloads <code>weather-fetcher</code> directly into the agent's brain at startup &mdash; before the agent has received a single instruction. The agent doesn't need to be told how to fetch weather; it already knows.</p>
             </div>
-        </div>
         <div class="pillar-footer">
             <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
                 <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
