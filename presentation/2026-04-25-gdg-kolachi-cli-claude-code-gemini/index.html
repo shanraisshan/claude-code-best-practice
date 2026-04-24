@@ -1018,23 +1018,16 @@ todoapp/
 
     <!-- Slide 9: The Restaurant Kitchen -->
     <div class="slide" data-slide="24">
-        <h1>The Restaurant Kitchen</h1>
-        <div class="analogy-box">
-            <h4>Think of it like this</h4>
-            <p>Without an agent, you walk into a random kitchen and shout "make me pasta!" &mdash; whoever happens to hear you might boil instant noodles or make a five-course Italian meal. <strong>With an agent</strong>, you're walking up to a specific person with a specific job title. The Italian chef makes pasta the Italian-chef way. Every time.</p>
-        </div>
-        <div class="two-col" style="margin-top: 32px;">
-            <div class="col-card bad">
-                <h4>Plain Prompting (asking a stranger)</h4>
-                <p>You ask Claude "What's the weather in Dubai?"</p>
-                <p>It might guess from training data, search the web, or make something up.</p>
-                <p style="margin-top: 12px; color: #c62828;"><strong>You don't know what it'll do.</strong></p>
-            </div>
-            <div class="col-card good">
-                <h4>With an Agent (your specialist)</h4>
-                <p>The <code>weather-agent</code> has a clear job description:</p>
-                <p><em>"Always check the Open-Meteo weather service. Always return temperature in a clean, consistent format."</em></p>
-                <p style="margin-top: 12px; color: #2e7d32;"><strong>Same question, same approach, every time.</strong></p>
+        <h1>Create your first agent &mdash; <code>/agents</code></h1>
+        <div style="max-width: 600px; margin: 32px auto 0 auto;">
+            <div class="col-card" style="border-left: 4px solid #D97757;">
+                <h4>Claude Code</h4>
+                <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
+                    <h4>The Command</h4>
+                    <p>Type <code>/agents</code> in Claude Code.</p>
+                </div>
+                <p style="font-size: 1rem; color: #444;">Opens an interactive menu &mdash; pick "Create new agent" and Claude drafts the agent file for you.</p>
+                <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>.claude/agents/&lt;name&gt;.md</code> &mdash; a plain markdown file anyone can edit.</p>
             </div>
         </div>
     </div>
