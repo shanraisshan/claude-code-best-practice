@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 435" width="1200" height="435">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L8,4 z" fill="#666"/>
+    </marker>
+    <linearGradient id="gem" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="55%" stop-color="#7B68EE"/>
+      <stop offset="100%" stop-color="#EA4335"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="435" fill="#fafafa" rx="10"/>
+
+  <!-- Header: Gemini spark + title -->
+  <g transform="translate(400, 18)">
+    <!-- Gemini four-point spark -->
+    <path d="M 14 0 L 17 11 L 28 14 L 17 17 L 14 28 L 11 17 L 0 14 L 11 11 Z" fill="url(#gem)"/>
+  </g>
+  <text x="435" y="33" text-anchor="start" fill="#333" font-family="system-ui" font-size="18" font-weight="bold">Gemini CLI Orchestration Workflow</text>
+
+  <!-- User -->
+  <circle cx="75" cy="190" r="38" fill="#E07C4C"/>
+  <text x="75" y="196" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">User</text>
+
+  <!-- Arrow 1 -->
+  <line x1="118" y1="190" x2="183" y2="190" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Command Box -->
+  <rect x="193" y="145" width="240" height="90" rx="8" fill="#2C3E50" stroke="#1A252F" stroke-width="2.5"/>
+  <text x="313" y="179" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Command</text>
+  <text x="313" y="207" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">commands/weather-orchestrator</text>
+  <!-- Command description -->
+  <text x="313" y="265" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Asks user for C°/F°, invokes</text>
+  <text x="313" y="280" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">agent and SVG creator skill</text>
+
+  <!-- Arrow 2 -->
+  <line x1="438" y1="190" x2="503" y2="190" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="470" y="180" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">@agent</text>
+
+  <!-- Agent Box -->
+  <rect x="513" y="127" width="240" height="126" rx="8" fill="#2BA5A5" stroke="#1E8F8F" stroke-width="2.5"/>
+  <text x="633" y="155" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Agent</text>
+  <text x="633" y="173" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.85">agents/weather-agent</text>
+
+  <!-- Inner tools box inside Agent -->
+  <rect x="527" y="183" width="212" height="56" rx="5" fill="white" opacity="0.2"/>
+  <text x="633" y="205" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.7">(scoped tools)</text>
+  <text x="633" y="229" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" opacity="0.9">web_fetch · run_shell_command</text>
+  <!-- Agent description -->
+  <text x="633" y="273" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Fetches temperature from</text>
+  <text x="633" y="288" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Open-Meteo API for Dubai</text>
+
+  <!-- Arrow 3 -->
+  <line x1="758" y1="190" x2="823" y2="190" stroke="#666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="790" y="180" text-anchor="middle" fill="#666" font-family="system-ui" font-size="11">activate_skill</text>
+
+  <!-- SVG Creator Skill Box -->
+  <rect x="833" y="145" width="280" height="90" rx="8" fill="#9B59B6" stroke="#8E44AD" stroke-width="2.5"/>
+  <text x="973" y="179" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Skill</text>
+  <text x="973" y="207" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" opacity="0.9">skills/weather-svg-creator</text>
+  <!-- Skill description -->
+  <text x="973" y="265" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">Creates SVG weather card at</text>
+  <text x="973" y="280" text-anchor="middle" fill="#888" font-family="system-ui" font-size="11">orchestration-workflow/weather.svg</text>
+
+  <!-- Arrow 4 (back to user) -->
+  <path d="M 1113 190 Q 1160 190 1160 325 Q 1160 360 75 360 Q 40 360 40 255 L 40 235"
+        stroke="#666" stroke-width="2.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <text x="600" y="407" text-anchor="middle" fill="#888" font-family="system-ui" font-size="12">
+    commands/weather-orchestrator → agents/weather-agent (scoped tools) → skills/weather-svg-creator (skill)
+  </text>
+</svg>

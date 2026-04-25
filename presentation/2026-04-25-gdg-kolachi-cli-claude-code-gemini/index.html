@@ -2570,8 +2570,54 @@ todoapp/
         <p style="font-size: 0.78rem; color: #aaa; font-style: italic; margin: 4px 0 0;">Context window and output token figures reflect published specs as of 2026-04-24. Verify against vendor docs for the latest.</p>
     </div>
 
-    <!-- Slide 51: Thank you -->
-    <div class="slide section-slide" data-slide="51">
+    <!-- Slide 51: Gemini Orchestration Workflow diagram -->
+    <div class="slide" data-slide="51" data-level="workflow">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x1F4CB; Gemini Orchestration Workflow</h1>
+            <img src="../assets/concepts/workflow/gemini-orchestration-workflow.svg" alt="Gemini CLI Command → Agent → Skill architecture flow"
+                 style="max-width: 1100px; max-height: 70vh; width: 100%; height: auto; display: block; margin: 20px auto 0 auto;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 52: Thank you -->
+    <div class="slide section-slide" data-slide="52">
         <div class="slide-viewport-content">
             <h1>&#x1F64F; Thank you!</h1>
             <div style="margin: 20px auto 28px auto; text-align: center;">
