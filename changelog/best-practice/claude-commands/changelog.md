@@ -264,3 +264,15 @@ No priority action items — report is fully in sync with official documentation
 | 6 | MED | Changed Description | Update `/theme` — add custom themes support (`~/.claude/themes/`, plugins, "New custom theme…") | ✅ COMPLETE (custom themes detail added to description) |
 | 7 | MED | Changed Description | Update `/terminal-setup` — replace terminal list (drop Warp; add Cursor, Windsurf, Zed) | ✅ COMPLETE (terminal list replaced: VS Code, Cursor, Windsurf, Alacritty, Zed) |
 | 8 | LOW | Changed Description | Update `/effort` — note that `max` level is session-only | ✅ COMPLETE (added "(session-only)" qualifier to `max` in description) |
+
+---
+
+## [2026-04-26 01:10 PM PKT] Claude Code v2.1.119
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/branch` — add `CLAUDE_CODE_FORK_SUBAGENT` env-var note explaining `/fork` divergence (v2.1.117) | ✅ COMPLETE (appended fork-subagent note to description at #67 in Session tag) |
+| 2 | MED | Changed Description | Update `/focus` — add "Only available in fullscreen rendering" qualifier (v2.1.110) | ✅ COMPLETE (appended fullscreen-only qualifier at #8 in Config tag) |
+| 3 | MED | Changed Description | Update `/skills` — add "Press `t` to sort by token count" (v2.1.110/111) | ✅ COMPLETE (appended sort-by-token-count detail at #42 in Extensions tag) |
+| 4 | MED | Changed Description | Update `/clear` — reword to contrast with `/compact` per official docs | ✅ COMPLETE (replaced description with "Start a new conversation with empty context… use `/compact` instead" at #69 in Session tag) |
+| 5 | LOW | Scope Decision | 6 bundled skills (`/batch`, `/claude-api`, `/debug`, `/fewer-permission-prompts`, `/loop`, `/simplify`) listed in upstream unified table but excluded per report scope | ❌ INVALID (recurring from v2.1.107 — user previously chose to keep report scoped to built-in commands only) |
