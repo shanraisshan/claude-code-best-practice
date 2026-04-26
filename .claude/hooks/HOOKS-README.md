@@ -419,7 +419,7 @@ Claude Code provides these environment variables to hook scripts:
 | Variable | Availability | Description |
 |----------|-------------|-------------|
 | `$CLAUDE_PROJECT_DIR` | All hooks | Project root directory. Wrap in quotes for paths with spaces |
-| `$CLAUDE_ENV_FILE` | SessionStart, CwdChanged, FileChanged | File path for persisting environment variables for subsequent Bash commands. Use append (`>>`) to preserve variables from other hooks |
+| `$CLAUDE_ENV_FILE` | SessionStart, CwdChanged, FileChanged | File path for persisting environment variables for subsequent Bash commands. Use append (`>>`) to preserve variables from other hooks. **Windows fix (v2.1.111):** `CLAUDE_ENV_FILE` and SessionStart hook environment files now apply on Windows (prior to v2.1.111, this was a silent no-op on Windows) |
 | `${CLAUDE_PLUGIN_ROOT}` | Plugin hooks | Plugin's root directory, for scripts bundled with a plugin |
 | `$CLAUDE_CODE_REMOTE` | All hooks | Set to `"true"` in remote web environments, not set in local CLI |
 | `${CLAUDE_SKILL_DIR}` | Skill hooks | Skill's own directory, for scripts bundled with a skill (since v2.1.69) |
@@ -533,6 +533,18 @@ When a `PreToolUse` hook matches `AskUserQuestion`, it can return `updatedInput`
 ```
 
 This is useful for CI/CD pipelines, automated testing, or any context where Claude Code runs without a human at the terminal. Not yet in official docs pages — sourced from GitHub changelog v2.1.85.
+
+### PreToolUse `additionalContext` Now Preserved on Tool Failure (v2.1.110)
+
+Prior to v2.1.110, any `additionalContext` returned by a `PreToolUse` hook was **silently dropped** if the tool itself subsequently failed. As of v2.1.110, `additionalContext` from `PreToolUse` is preserved and surfaced to the model even when the matched tool call fails — so hook-provided context reaches the model consistently regardless of tool outcome.
+
+This does not affect this project since `hooks.py` does not return `additionalContext`.
+
+### PermissionRequest `updatedInput` Re-Checked Against Deny Rules (v2.1.102, v2.1.110)
+
+When a `PermissionRequest` hook returns `hookSpecificOutput.updatedInput` to rewrite the tool input, that rewritten input is now re-evaluated against permission deny rules. Prior to v2.1.102 / v2.1.110 (two related fixes), a hook could return `updatedInput` that bypassed configured deny rules — a security-relevant edge case.
+
+This does not affect this project since `hooks.py` does not use decision control or `updatedInput`.
 
 ### PreToolUse Decision Control Deprecation
 
