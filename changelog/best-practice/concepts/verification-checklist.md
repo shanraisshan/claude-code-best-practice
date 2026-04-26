@@ -51,3 +51,11 @@ Rules for verifying CONCEPTS table accuracy. Each rule is checked during every w
 - **Source to compare against**: llms.txt sitemap + CONCEPTS table URLs
 - **Date added**: 2026-04-16
 - **Origin**: `web-scheduled-tasks` URL was fixed in Hot table (2026-04-14) but the same stale URL persisted in TIPS (line 223)
+
+### 7. Beta Badge Currency
+- **Category**: Badge Accuracy
+- **What to check**: Concepts marked `![beta](!/tags/beta.svg)` in the Hot table should still be flagged as beta / research preview in their official docs page (header banner, "research preview" copy, or env-var gating)
+- **Depth**: Fetch each upstream page and check for explicit beta/preview/experimental wording; if absent, the README badge may be stale
+- **Source to compare against**: Official docs page banner text + GA-marker copy
+- **Date added**: 2026-04-26
+- **Origin**: Workflow-concepts-agent flagged Routines, No Flicker Mode, Computer Use, and Code Review as carrying README beta badges while their docs pages read as GA (confidence 0.6) — this drift type isn't covered by the existing description-currency rule
