@@ -428,3 +428,23 @@
 | 15 | LOW | Count Update | Update CE skills from 44 to 42 (41 compound-engineering + 1 coding-tutor; v3.0.0 consolidation) | COMPLETE (updated README table) |
 | 16 | LOW | Count Verify | ECC 48→47 agents, 143→82 commands (79+3), 230→183 skills — 3rd consecutive run via directory enumeration | ON HOLD (RECURRING from Apr 13/16/18; methodology difference persists — keeping current values until manual verification) |
 | 17 | LOW | Count Verify | GSD commands 122→85 — 3rd consecutive lower count (Apr 16: 74, Apr 18: 81, Apr 24: 85) | ON HOLD (RECURRING from Apr 16/18; likely multi-runtime directory pagination — keeping 122 until verified) |
+
+---
+
+## [2026-04-26 01:18 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 166k to 168k (167,874 actual — v5.0.7 Codex plugin mirroring) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 165k to 167k (167,155 actual — v1.10.0 Operator Workflows, ECC 2.0 Alpha) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update gstack ★ from 81k to 84k (83,534 actual — v1.14.0.0 interactive REPL browser sidebar, $B tab-each fan-out) | COMPLETE (updated README table) |
+| 4 | HIGH | Tag Update | Update BMAD-METHOD tag "22+ platforms" → "42 platforms" (v6.5.0 released today added 18 new agent platforms) | COMPLETE (updated README table) |
+| 5 | MED | Star Update | Update Spec Kit ★ from 90k to 91k (90,907 actual — v0.8.1 SkillsIntegration for vibe integration, 3 releases in 3 days) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update Compound Engineering ★ from 15k to 16k (15,549 actual — v3.1.0 ce-ideate skill, ast-grep CLI integration) | COMPLETE (updated README table) |
+| 7 | MED | Count Update | Update Compound Engineering agents from 60 to 51 (per repo README explicit statement; .agent.md file enumeration confirms) | COMPLETE (updated README table) |
+| 8 | MED | Count Update | Update Compound Engineering skills from 42 to 37 (per repo README "36 skills" + 1 coding-tutor skill) | COMPLETE (updated README table) |
+| 9 | LOW | Count Update | Update BMAD skills from 40 to 39 (27 bmm-skills + 12 core-skills via directory enumeration) | COMPLETE (updated README table) |
+| 10 | LOW | Count Verify | oh-my-claudecode skills 46→38 — agent enumerated 38 directories via API | ON HOLD (recurring lower count vs. 46 baseline; possible pagination — keeping 46 until verified) |
+| 11 | LOW | Count Verify | ECC counts 143→82 commands, 230→183 skills — 4th consecutive run via directory enumeration | ON HOLD (RECURRING from Apr 13/16/18/24; methodology persists — keeping current values until manual verification) |
+| 12 | LOW | Count Verify | GSD commands 122→85 — 4th consecutive lower count from API enumeration | ON HOLD (RECURRING from Apr 16/18/24; likely directory pagination — keeping 122 until verified) |
+| 13 | LOW | Count Verify | Superpowers agents 5→1 formal — agents/ has only code-reviewer.md; 4 implicit dispatch from skills | ON HOLD (keeping 5 per prior decision to count implicit dispatch roles) |
