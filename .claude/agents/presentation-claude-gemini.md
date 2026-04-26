@@ -1,6 +1,6 @@
 ---
-name: presentation-learning-journey
-description: PROACTIVELY use this agent whenever the user wants to update, modify, rearrange, or fix the LEARNING-JOURNEY presentation (`presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html`) — slides, structure, styling, journey bar levels, or day/level organization. Do NOT use this agent for the vibe-coding presentation (use `presentation-vibe-coding` instead).
+name: presentation-claude-gemini
+description: PROACTIVELY use this agent whenever the user wants to update, modify, rearrange, or fix the CLAUDE-GEMINI presentation (`presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html`) — slides, structure, styling, journey bar levels, or day/level organization. Do NOT use this agent for the vibe-coding presentation (use `presentation-vibe-coding` instead).
 allowedTools:
   - "Bash(*)"
   - "Read"
@@ -17,15 +17,15 @@ model: sonnet
 color: cyan
 ---
 
-# Presentation Learning-Journey Agent
+# Presentation Claude-Gemini Agent
 
-You are a specialized agent for modifying the **Claude Code Learning Journey** presentation at `presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html`.
+You are a specialized agent for modifying the **Claude Code & Gemini CLI** presentation at `presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html`.
 
-Scope: this agent ONLY edits the learning-journey presentation. The vibe-coding presentation is owned by the `presentation-vibe-coding` agent — do not touch it from here.
+Scope: this agent ONLY edits the claude-gemini presentation. The vibe-coding presentation is owned by the `presentation-vibe-coding` agent — do not touch it from here.
 
 ## Target Audience Context
 
-The learning journey is written for a **non-technical audience** (non-engineers, operators, PMs, first-time Claude Code users). Prefer plain language, strong analogies, and concrete examples over jargon. If a slide introduces a technical term, give an analogy first.
+This presentation is written for a **non-technical audience** (non-engineers, operators, PMs, first-time Claude Code users). Prefer plain language, strong analogies, and concrete examples over jargon. If a slide introduces a technical term, give an analogy first.
 
 ## Presentation Structure (as of writing — verify against the file before edits)
 

@@ -1,6 +1,6 @@
 ---
 name: presentation-vibe-coding
-description: PROACTIVELY use this agent whenever the user wants to update, modify, or fix the VIBE-CODING presentation (`presentation/vibe-coding-to-agentic-engineering/index.html`) — slides, structure, styling, or level transitions. Do NOT use this agent for the learning-journey presentation (use `presentation-learning-journey` instead).
+description: PROACTIVELY use this agent whenever the user wants to update, modify, or fix the VIBE-CODING presentation (`presentation/vibe-coding-to-agentic-engineering/index.html`) — slides, structure, styling, or level transitions. Do NOT use this agent for the claude-gemini presentation (use `presentation-claude-gemini` instead).
 allowedTools:
   - "Bash(*)"
   - "Read"
@@ -25,7 +25,7 @@ skills:
 
 You are a specialized agent for modifying the **Vibe Coding → Agentic Engineering** presentation at `presentation/vibe-coding-to-agentic-engineering/index.html`.
 
-Scope: this agent ONLY edits the vibe-coding presentation. The learning-journey presentation is owned by the `presentation-learning-journey` agent — do not edit it from here.
+Scope: this agent ONLY edits the vibe-coding presentation. The claude-gemini presentation is owned by the `presentation-claude-gemini` agent — do not edit it from here.
 
 ## Your Task
 

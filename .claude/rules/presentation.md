@@ -12,17 +12,17 @@ Any request to update, modify, or fix a presentation MUST be handled by the matc
 | Presentation | Path | Agent |
 |---|---|---|
 | Vibe Coding → Agentic Engineering | `presentation/vibe-coding-to-agentic-engineering/index.html` | `presentation-vibe-coding` |
-| Claude Code Learning Journey | `presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html` | `presentation-learning-journey` |
+| Claude Code & Gemini CLI | `presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini/index.html` | `presentation-claude-gemini` |
 
 Invoke via the Agent tool:
 
 ```
 Agent(subagent_type="presentation-vibe-coding", description="...", prompt="...")
-Agent(subagent_type="presentation-learning-journey", description="...", prompt="...")
+Agent(subagent_type="presentation-claude-gemini", description="...", prompt="...")
 ```
 
 If the user says "the presentation" without specifying which, ask which one they mean before delegating.
 
 ## Why
 
-Each presentation has its own slide numbering, level system, journey-bar tick labels, and target audience. Per-presentation agents let each one keep a focused knowledge base and self-evolve without cross-contaminating the other. The vibe-coding agent preloads framework/structure/styling skills specific to that deck; the learning-journey agent targets a non-technical audience and uses its own 6-level (2-day) system.
+Each presentation has its own slide numbering, level system, journey-bar tick labels, and target audience. Per-presentation agents let each one keep a focused knowledge base and self-evolve without cross-contaminating the other. The vibe-coding agent preloads framework/structure/styling skills specific to that deck; the claude-gemini agent targets a non-technical audience and uses its own 6-level (2-day) system.
