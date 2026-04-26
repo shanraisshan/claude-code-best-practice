@@ -95,7 +95,7 @@ This showcases the **Command → Agent → Skill** architecture pattern, where:
 - **Location**: `.claude/agents/weather-agent.md`
 - **Purpose**: Fetch weather data using its preloaded skill
 - **Skills**: `weather-fetcher` (preloaded as domain knowledge)
-- **Tools Available**: WebFetch, Read
+- **Tools Available**: Read, Skill
 - **Model**: sonnet
 - **Color**: green
 - **Memory**: project
