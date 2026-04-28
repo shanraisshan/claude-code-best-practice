@@ -276,3 +276,9 @@ No priority action items — report is fully in sync with official documentation
 | 3 | MED | Changed Description | Update `/skills` — add "Press `t` to sort by token count" (v2.1.110/111) | ✅ COMPLETE (appended sort-by-token-count detail at #42 in Extensions tag) |
 | 4 | MED | Changed Description | Update `/clear` — reword to contrast with `/compact` per official docs | ✅ COMPLETE (replaced description with "Start a new conversation with empty context… use `/compact` instead" at #69 in Session tag) |
 | 5 | LOW | Scope Decision | 6 bundled skills (`/batch`, `/claude-api`, `/debug`, `/fewer-permission-prompts`, `/loop`, `/simplify`) listed in upstream unified table but excluded per report scope | ❌ INVALID (recurring from v2.1.107 — user previously chose to keep report scoped to built-in commands only) |
+
+---
+
+## [2026-04-29 12:50 AM PKT] Claude Code v2.1.121
+
+No priority action items — report is fully in sync with official documentation (15 frontmatter fields, 75 built-in commands).
