@@ -448,3 +448,28 @@
 | 11 | LOW | Count Verify | ECC counts 143→82 commands, 230→183 skills — 4th consecutive run via directory enumeration | ON HOLD (RECURRING from Apr 13/16/18/24; methodology persists — keeping current values until manual verification) |
 | 12 | LOW | Count Verify | GSD commands 122→85 — 4th consecutive lower count from API enumeration | ON HOLD (RECURRING from Apr 16/18/24; likely directory pagination — keeping 122 until verified) |
 | 13 | LOW | Count Verify | Superpowers agents 5→1 formal — agents/ has only code-reviewer.md; 4 implicit dispatch from skills | ON HOLD (keeping 5 per prior decision to count implicit dispatch roles) |
+
+---
+
+## [2026-04-29 12:48 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 168k to 171k (171,334 actual — v5.0.7 momentum) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 167k to 169k (169,230 actual — v1.10.0 desktop dashboard, ECC2 alpha) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Spec Kit ★ from 91k to 92k (91,505 actual — v0.8.2 RAG/Chroma DB, 3 releases in 6 days) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update gstack ★ from 84k to 86k (86,021 actual — v1.17.0.0) | COMPLETE (updated README table) |
+| 5 | HIGH | Star Update | Update GSD ★ from 57k to 58k (58,418 actual — v1.39.0-rc.4 minimal install profile, /gsd-edit-phase) | COMPLETE (updated README table) |
+| 6 | HIGH | Star Update | Update OpenSpec ★ from 43k to 44k (43,637 actual — v1.3.1 path canonicalization fixes) | COMPLETE (updated README table) |
+| 7 | HIGH | Star Update | Update oh-my-claudecode ★ from 31k to 32k (31,760 actual — v4.13.5 HUD rate limit fixes, auto-merge orchestrator) | COMPLETE (updated README table) |
+| 8 | HIGH | Count Update | Update gstack skills from 41 to 42 (42 root-level SKILL.md dirs confirmed; +plan-devex-review) | COMPLETE (updated README table) |
+| 9 | HIGH | Count Update | Update BMAD skills from 39 to 40 (28 bmm-skills + 12 core-skills; bmad-customize added Apr 21 in v6.5.0) | COMPLETE (updated README table) |
+| 10 | HIGH | Count Update | Update Matt Pocock skills from 16 to 22 (5 category subdirs: engineering 9, productivity 3, misc 4, personal 2, deprecated 4) | COMPLETE (updated README table) |
+| 11 | HIGH | Workflow | Update Spec Kit workflow — insert /speckit.clarify between /speckit.constitution and /speckit.specify | COMPLETE (updated README table) |
+| 12 | HIGH | Workflow | Update Superpowers workflow — insert using-git-worktrees between brainstorming and writing-plans | COMPLETE (updated README table) |
+| 13 | HIGH | Workflow | Rework Matt Pocock workflow — replace ralph-loop/feedback-loops/review with /triage, /diagnose, /zoom-out (reflects Apr 17/28 skill renames) | COMPLETE (updated README table) |
+| 14 | HIGH | Workflow | Replace HumanLayer /rpi:* workflow with actual .claude/commands: /create_plan → /validate_plan → /implement_plan → /iterate_plan(sub) → /local_review → /commit | COMPLETE (updated README table) |
+| 15 | MED | Workflow | Update Compound Engineering — replace "repeat" with sub-loops /ce-debug(sub), /ce-optimize(sub), /ce-compound-refresh(sub) | COMPLETE (updated README table) |
+| 16 | LOW | Count Verify | ECC counts 143→133 commands (mixed: 79 legacy + 72 synced active), 230→156 skills self-reported — 6th consecutive run | ON HOLD (RECURRING from Apr 13/16/18/24/26; methodology persists — keeping current values until manual verification) |
+| 17 | LOW | Count Verify | GSD commands 122→86 — 5th consecutive lower count from API enumeration | ON HOLD (RECURRING from Apr 16/18/24/26; likely directory pagination — keeping 122 until verified) |
+| 18 | LOW | Count Verify | oh-my-claudecode skills 46→38 — 2nd consecutive run with 38; possible v4.13.x consolidation | ON HOLD (RECURRING from Apr 26; keeping 46 until verified) |
