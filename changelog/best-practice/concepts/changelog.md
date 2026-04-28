@@ -464,3 +464,24 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 15 | LOW | Verification | Ultrareview anchor `#track-a-running-review` confirmed on `/en/ultrareview` page | ✅ COMPLETE (stable since v2.1.118) |
 | 16 | LOW | Verification | claude-code-guide cross-check — corroborated dedicated agent's findings on Vim mode (v2.1.118), Theme (v2.1.118), Effort xhigh (v2.1.111+ Opus 4.7), Worktrees (v2.1.105+); no contradictions | ✅ COMPLETE (both agents aligned) |
 | 17 | LOW | Verification Checklist Update | Added new rule (#7) "Beta Badge Currency" to verification-checklist.md — covers re-evaluating beta badges against upstream docs page lifecycle | ✅ COMPLETE (rule added) |
+
+---
+
+## [2026-04-29 12:53 AM PKT] Claude Code v2.1.121
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap (139+ pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user has chosen to keep as-is across 20+ runs) |
+| 2 | MED | Changed Description | Ultrareview row (line 44) doesn't mention `claude ultrareview [target]` non-interactive subcommand introduced in v2.1.120 — docs confirm `--json` and `--timeout` flags for CI usage | ✅ COMPLETE (location updated to include `claude ultrareview [target]`; description appends non-interactive subcommand with `--json` and `--timeout` flags note, v2.1.120+) |
+| 3 | MED | Changed Description | MCP Servers row (line 29) doesn't mention `alwaysLoad` setting added in v2.1.121 — bypasses tool-search deferral so a server's tools are always loaded into context | ✅ COMPLETE (description appended with `alwaysLoad` note explaining tool-search deferral bypass, v2.1.121+) |
+| 4 | MED | Changed Description | Hooks row (line 28) doesn't mention `updatedToolOutput` capability added in v2.1.121 — PostToolUse hooks can now replace tool output via `hookSpecificOutput.updatedToolOutput` | ✅ COMPLETE (description appended with `hookSpecificOutput.updatedToolOutput` note for PostToolUse output replacement, v2.1.121+) |
+| 5 | LOW | Changed Description | Subagents row (line 24) doesn't mention forked subagents now available on external builds via `CLAUDE_CODE_FORK_SUBAGENT=1` (v2.1.117) — was previously internal-only | ✅ COMPLETE (description appended with `CLAUDE_CODE_FORK_SUBAGENT=1` note for external builds, v2.1.117+) |
+| 6 | LOW | Missing Inline Link | Settings row (line 31) inline links cover Permissions/Model Config/Output Styles/Sandboxing/Keybindings but not Auto Mode Config (`/auto-mode-config`) — exists as standalone page | ✅ COMPLETE (Auto Mode Config inline link appended after Keybindings) |
+| 7 | LOW | Verification | All 35+ external CONCEPTS docs URLs spot-validated — Subagents, Skills, MCP, Ultrareview pages confirmed; only the recurring `/slash-commands` redirect flagged | ✅ COMPLETE (no NEW broken URLs) |
+| 8 | LOW | Verification | All local badge file paths validated — all 22 `best-practice/`, `implementation/`, `reports/`, `.claude/`, `CLAUDE.md` targets exist on filesystem | ✅ COMPLETE (no missing local files) |
+| 9 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` — stable since v2.1.113 (not re-fetched this run) | ✅ COMPLETE (stable) |
+| 10 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 11 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 12 | LOW | Verification | Bundled Skills anchor `#bundled-skills` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 13 | LOW | Verification | Ultrareview anchor `#track-a-running-review` confirmed on `/en/ultrareview` page — section exists and describes `/tasks` integration | ✅ COMPLETE (stable since v2.1.118) |
+| 14 | LOW | Verification | claude-code-guide cross-check — corroborated dedicated agent's findings on v2.1.117–v2.1.121 changes (forked subagents external, alwaysLoad, updatedToolOutput, claude ultrareview subcommand); also surfaced Bedrock/Vertex/Foundry, Desktop, IDE Integrations as long-standing missing concepts | ✅ COMPLETE (both agents aligned; all "missing platform surfaces" already INVALID per recurring user decision) |
