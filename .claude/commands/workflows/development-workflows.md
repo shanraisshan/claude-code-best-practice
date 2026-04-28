@@ -31,14 +31,13 @@ Update the DEVELOPMENT WORKFLOWS table in `README.md` by researching 11 repos in
 The README table has these columns:
 
 ```markdown
-| Name | ★ | Plan | <img src="!/tags/a.svg" height="14"> | <img src="!/tags/c.svg" height="14"> | <img src="!/tags/s.svg" height="14"> | Workflow |
+| Name | ★ | Workflow | <img src="!/tags/a.svg" height="14"> | <img src="!/tags/c.svg" height="14"> | <img src="!/tags/s.svg" height="14"> |
 ```
 
 - **Name**: `[Short Name](github-url)` — use project name, not owner/repo
 - **★**: Star count rounded to `k` (e.g., 98k, 10k, 4.1k). Under 1000 show exact number
-- **Plan**: Icon + linked name of the Plan implementation. Icon is `<img src="!/tags/c.svg" height="14">` for command, `<img src="!/tags/a.svg" height="14">` for agent, `<img src="!/tags/s.svg" height="14">` for skill. Name links to the actual file in the repo
-- **Agent/Command/Skill counts**: Just the number (e.g., `25`, `0`, `108+`)
 - **Workflow**: The canonical end-to-end pipeline as a sequence of shields.io badges joined by ` → `. Each step is the actual command/skill/agent name from the repo (e.g. `/speckit.plan`, `bmad-create-prd`, `subagent-driven-development`). Use parenthetical sub-steps only when a stage has a critical inner loop (e.g. `(/tdd + feedback loops)`). Trace the README's "how to use" / "workflow" section for the canonical happy path: idea → spec/plan → tasks → implement → review → ship.
+- **Agent/Command/Skill counts**: Just the number (e.g., `25`, `0`, `108+`)
 
 ### Workflow badge encoding (shields.io)
 
@@ -61,7 +60,7 @@ Examples:
 
 Join steps with the literal arrow character ` → ` (space-arrow-space) outside the badge markdown. For sub-loops, wrap in parentheses inside the cell, e.g. `![/team](...) (![team-plan](...) → ![team-fix](...) loop) → ![/ralph](...)`.
 
-**Sort order**: Sorted by stars descending (highest first). Do NOT group by Plan type.
+**Sort order**: Sorted by stars descending (highest first).
 
 ---
 
@@ -69,7 +68,7 @@ Join steps with the literal arrow character ` → ` (space-arrow-space) outside 
 
 Read these files:
 
-1. `README.md` — the `## ⚙️ DEVELOPMENT WORKFLOWS` table (note current stars, tags, Plan links, counts)
+1. `README.md` — the `## ⚙️ DEVELOPMENT WORKFLOWS` table (note current stars, workflow pipelines, counts)
 2. `changelog/development-workflows/changelog.md` — previous changelog entries
 
 ---
@@ -93,9 +92,8 @@ Read these files:
 > 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For obra, also count implicit sub-agents dispatched by skills. For mattpocock, count is 0 (skills-only repo).
 > 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For mattpocock, count folders in `skills/` at repo root.
 > 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For spec-kit, count files in `templates/commands/`. For mattpocock, count is 0 (skills serve as slash commands).
-> 5. **Plan implementation** — find the Plan/planning agent, skill, or command. Return its name, type (agent/skill/command), and file path. For mattpocock, the Plan-artifact-producing skill is `to-prd` (the alignment skill `grill-me` is the upstream entry point but not the Plan column).
-> 6. **Workflow** — the canonical end-to-end pipeline as a sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. Wrap critical inner loops in parentheses, e.g. `subagent-driven-development (test-driven-development + requesting-code-review)`. Output as plain text — the orchestrator will encode each step into a shields.io badge.
-> 7. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
+> 5. **Workflow** — the canonical end-to-end pipeline as a sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. Wrap critical inner loops in parentheses, e.g. `subagent-driven-development (test-driven-development + requesting-code-review)`. Output as plain text — the orchestrator will encode each step into a shields.io badge.
+> 6. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
 >
 > Return structured report per repo:
 > ```
@@ -104,7 +102,6 @@ Read these files:
 > AGENTS: <count>
 > COMMANDS: <count>
 > SKILLS: <count>
-> PLAN: <name> (<type>) — <file-path>
 > WORKFLOW: <step1> → <step2> → ... → <stepN>
 > CHANGES: <changes or "No significant changes">
 > ```
@@ -127,9 +124,8 @@ Read these files:
 > 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For BMAD, count agent-persona skills in `src/bmm-skills/`. For compound-engineering-plugin, count `.md` files across all subdirectories of `plugins/compound-engineering/agents/`. For oh-my-claudecode, count `.md` files in `agents/` at repo root.
 > 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For gstack, skills are root-level directories with SKILL.md. For BMAD, count all skills in `src/bmm-skills/` and `src/core-skills/`. For compound-engineering-plugin, count folders in `plugins/compound-engineering/skills/` plus `plugins/coding-tutor/skills/`. For oh-my-claudecode, count folders in `skills/` at repo root.
 > 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For GSD, count in `commands/gsd/`. For OpenSpec, count `/opsx:*` commands. For BMAD, count is 0 (commands generated at install time). For compound-engineering-plugin, count `.md` files in `.claude/commands/` plus `plugins/coding-tutor/commands/`. For oh-my-claudecode, count is 0 (skills serve as slash commands).
-> 5. **Plan implementation** — find the Plan/planning agent, skill, or command. Return its name, type (agent/skill/command), and file path.
-> 6. **Workflow** — the canonical end-to-end pipeline as a sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. Wrap critical inner loops in parentheses, e.g. `/team (team-plan → team-fix loop) → /ralph`. Output as plain text — the orchestrator will encode each step into a shields.io badge.
-> 7. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
+> 5. **Workflow** — the canonical end-to-end pipeline as a sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. Wrap critical inner loops in parentheses, e.g. `/team (team-plan → team-fix loop) → /ralph`. Output as plain text — the orchestrator will encode each step into a shields.io badge.
+> 6. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
 >
 > Return structured report per repo:
 > ```
@@ -138,7 +134,6 @@ Read these files:
 > AGENTS: <count>
 > COMMANDS: <count>
 > SKILLS: <count>
-> PLAN: <name> (<type>) — <file-path>
 > WORKFLOW: <step1> → <step2> → ... → <stepN>
 > CHANGES: <changes or "No significant changes">
 > ```
@@ -156,7 +151,6 @@ Development Workflows — Update Report
 Changes Found:
   <repo>: ★ <old>k → <new>k | agents <old>→<new> | commands <old>→<new> | skills <old>→<new>
   <repo>: workflow updated: <old workflow> → <new workflow>
-  <repo>: Plan link changed: <old> → <new>
   ...
 
 No Changes:
@@ -168,8 +162,7 @@ Action Items:
 1  | Star        | Update <repo> ★ from Xk to Yk         | NEW/RECURRING
 2  | Count       | Update <repo> agents from X to Y      | NEW/RECURRING
 3  | Workflow    | Update <repo> workflow pipeline       | NEW/RECURRING
-4  | Plan        | Update <repo> Plan link               | NEW/RECURRING
-5  | Sort        | Move <repo> (Plan type changed)       | NEW/RECURRING
+4  | Sort        | Move <repo> (stars changed)           | NEW/RECURRING
 ```
 
 Compare with previous changelog entries and mark items as `NEW`, `RECURRING`, or `RESOLVED`.
@@ -212,8 +205,8 @@ Update the badge on line 4 of `README.md`. Get time via `TZ=Asia/Karachi date "+
 Ask user: **(1) Execute all** | **(2) Execute specific** | **(3) Skip**
 
 When executing, edit the `## ⚙️ DEVELOPMENT WORKFLOWS` table in `README.md`:
-- Update stars, Plan links, counts, **and the Workflow column** per row
-- Maintain sort order: stars descending (highest first). Do NOT group by Plan type
+- Update stars, counts, **and the Workflow column** per row
+- Maintain sort order: stars descending (highest first)
 - Match existing format exactly (icons, badge URLs, link style)
 - For the Workflow column, encode each plain-text step the agent returned into a `ddf4ff` shields.io badge per the encoding rules in the Table Format section, then join with ` → `
 
@@ -225,10 +218,9 @@ When executing, edit the `## ⚙️ DEVELOPMENT WORKFLOWS` table in `README.md`:
 2. **Never guess** — use data from agents only
 3. **Don't auto-execute** — present report first, wait for approval
 4. **ALWAYS append changelog** and **ALWAYS update badge** — mandatory
-5. **Sort by stars descending** — highest stars first, do NOT group by Plan type
+5. **Sort by stars descending** — highest stars first
 6. **Workflow badges use shields.io** — `![step](https://img.shields.io/badge/<ENCODED>-ddf4ff)` with `_` for spaces, `--` for hyphens, `__` for underscores, `%2F` for `/`, `%2B` for `+`. Dots and colons survive verbatim. Join steps with ` → `. Always update the Workflow column when any step name in the upstream repo changes.
-7. **Plan links must point to actual files** — not repo root
-8. **Agents, commands, skills are different** — count from their respective directories, don't conflate
-9. **Round stars consistently** — `k` suffix (98k, 10k, 4.1k). Under 1000 show exact
-10. **Compare with previous changelog** — mark items NEW, RECURRING, or RESOLVED
-11. **Workflow column is mandatory** — every row must have a Workflow cell. Trace the README's "how to use" / canonical happy path; do not synthesize a fictional pipeline. Wrap critical inner loops in parentheses (e.g. `(/tdd + feedback loops)`).
+7. **Agents, commands, skills are different** — count from their respective directories, don't conflate
+8. **Round stars consistently** — `k` suffix (98k, 10k, 4.1k). Under 1000 show exact
+9. **Compare with previous changelog** — mark items NEW, RECURRING, or RESOLVED
+10. **Workflow column is mandatory** — every row must have a Workflow cell. Trace the README's "how to use" / canonical happy path; do not synthesize a fictional pipeline. Wrap critical inner loops in parentheses (e.g. `(/tdd + feedback loops)`).
