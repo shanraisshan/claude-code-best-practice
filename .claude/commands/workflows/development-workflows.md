@@ -36,18 +36,32 @@ The README table has these columns:
 
 - **Name**: `[Short Name](github-url)` — use project name, not owner/repo
 - **★**: Star count rounded to `k` (e.g., 98k, 10k, 4.1k). Under 1000 show exact number
-- **Workflow**: The canonical end-to-end pipeline as a flat left-to-right sequence of shields.io badges joined by ` → `. Each step is the actual command/skill/agent name from the repo (e.g. `/speckit.plan`, `bmad-create-prd`, `subagent-driven-development`). **Flat only** — no parentheticals, no English qualifiers ("loop", "per story", "parallel waves"), no `+` connectors. If a step has internal sub-steps that matter, list them as siblings in the main chain instead of nesting them. Trace the README's "how to use" / "workflow" section for the canonical happy path: idea → spec/plan → tasks → implement → review → ship.
+- **Workflow**: The canonical end-to-end pipeline as a flat left-to-right sequence of shields.io badges joined by ` → `. Each step is the actual command/skill/agent name from the repo (e.g. `/speckit.plan`, `bmad-create-prd`, `subagent-driven-development`). **Flat only** — no parentheticals, no English qualifiers ("loop", "per story", "parallel waves"), no `+` connectors. If a step has internal sub-steps that matter, list them as siblings in the main chain and **color them yellow (`fff3b0`)** to mark them as sub-loops; top-level steps stay light blue (`ddf4ff`). Trace the README's "how to use" / "workflow" section for the canonical happy path: idea → spec/plan → tasks → implement → review → ship.
 - **Agent/Command/Skill counts**: Just the number (e.g., `25`, `0`, `108+`)
 
 ### Workflow badge encoding (shields.io)
 
-Each step renders as an **HTML `<img>` tag with `align="middle"`** (not markdown image syntax) so the arrow stays vertically centered with the badges:
+Each step renders as an **HTML `<img>` tag with `align="middle"`** (not markdown image syntax) so the arrow stays vertically centered with the badges. Two background colors:
+
+| Color | Hex | When to use |
+|---|---|---|
+| Light blue | `ddf4ff` | Top-level workflow steps |
+| Soft yellow | `fff3b0` | Sub-loop steps (repeat per task/story/until verified inside a parent step) |
+
+Template:
 
 ```html
-<img src="https://img.shields.io/badge/<ENCODED>-ddf4ff" alt="<plain-label>" align="middle">
+<img src="https://img.shields.io/badge/<ENCODED>-ddf4ff" alt="<plain-label>" align="middle">    <!-- top-level -->
+<img src="https://img.shields.io/badge/<ENCODED>-fff3b0" alt="<plain-label>" align="middle">    <!-- sub-loop -->
 ```
 
 The `align="middle"` puts the badge's vertical center at the text baseline, so the ` → ` arrow ends up centered on each badge instead of sitting at badge-bottom. Without it the arrow visibly drops below the badges in GitHub's rendering.
+
+After the table closes, **always include this legend** as a blockquote on its own line:
+
+```markdown
+> *Note: yellow tags are sub-loops — steps that repeat inside a parent step (e.g. per task, per story, or until a verify condition passes).*
+```
 
 Encoding rules for the `<ENCODED>` portion of the URL:
 
@@ -102,7 +116,7 @@ Read these files:
 > 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For obra, also count implicit sub-agents dispatched by skills. For mattpocock, count is 0 (skills-only repo).
 > 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For mattpocock, count folders in `skills/` at repo root.
 > 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For spec-kit, count files in `templates/commands/`. For mattpocock, count is 0 (skills serve as slash commands).
-> 5. **Workflow** — the canonical end-to-end pipeline as a flat left-to-right sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. **Flat only** — no parentheses, no English qualifiers ("loop", "per story", "parallel waves"), no `+` connectors. If a step has internal sub-steps, list them as siblings in the main chain. Output as plain text — the orchestrator will encode each step into a shields.io HTML img badge.
+> 5. **Workflow** — the canonical end-to-end pipeline as a flat left-to-right sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. **Flat only** — no parentheses, no English qualifiers ("loop", "per story", "parallel waves"), no `+` connectors. If a step has internal sub-steps, list them as siblings in the main chain. Mark each step as either `top` (top-level) or `sub` (sub-loop, repeats inside a parent step) so the orchestrator can color it. Output as plain text — the orchestrator will encode each step into a shields.io HTML img badge.
 > 6. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
 >
 > Return structured report per repo:
@@ -112,7 +126,7 @@ Read these files:
 > AGENTS: <count>
 > COMMANDS: <count>
 > SKILLS: <count>
-> WORKFLOW: <step1> → <step2> → ... → <stepN>
+> WORKFLOW: <step1>(top) → <step2>(top) → <step3>(sub) → ... → <stepN>(top)
 > CHANGES: <changes or "No significant changes">
 > ```
 
@@ -134,7 +148,7 @@ Read these files:
 > 2. **Agent count** — count `.md` files in `agents/` or `.claude/agents/`. For BMAD, count agent-persona skills in `src/bmm-skills/`. For compound-engineering-plugin, count `.md` files across all subdirectories of `plugins/compound-engineering/agents/`. For oh-my-claudecode, count `.md` files in `agents/` at repo root.
 > 3. **Skill count** — count folders in `skills/` or `.claude/skills/`. For gstack, skills are root-level directories with SKILL.md. For BMAD, count all skills in `src/bmm-skills/` and `src/core-skills/`. For compound-engineering-plugin, count folders in `plugins/compound-engineering/skills/` plus `plugins/coding-tutor/skills/`. For oh-my-claudecode, count folders in `skills/` at repo root.
 > 4. **Command count** — count `.md` files in `commands/` or `.claude/commands/`. For GSD, count in `commands/gsd/`. For OpenSpec, count `/opsx:*` commands. For BMAD, count is 0 (commands generated at install time). For compound-engineering-plugin, count `.md` files in `.claude/commands/` plus `plugins/coding-tutor/commands/`. For oh-my-claudecode, count is 0 (skills serve as slash commands).
-> 5. **Workflow** — the canonical end-to-end pipeline as a flat left-to-right sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. **Flat only** — no parentheses, no English qualifiers ("loop", "per story", "parallel waves"), no `+` connectors. If a step has internal sub-steps, list them as siblings in the main chain. Output as plain text — the orchestrator will encode each step into a shields.io HTML img badge.
+> 5. **Workflow** — the canonical end-to-end pipeline as a flat left-to-right sequence of step names joined by ` → `. Trace the README's "how to use" / "workflow" section for the happy path: idea → spec/plan → tasks → implement → review → ship. Use the actual command/skill/agent names from the repo. **Flat only** — no parentheses, no English qualifiers ("loop", "per story", "parallel waves"), no `+` connectors. If a step has internal sub-steps, list them as siblings in the main chain. Mark each step as either `top` (top-level) or `sub` (sub-loop, repeats inside a parent step) so the orchestrator can color it. Output as plain text — the orchestrator will encode each step into a shields.io HTML img badge.
 > 6. **Notable changes** — any significant recent changes? New agents/skills/commands, major versions?
 >
 > Return structured report per repo:
@@ -144,7 +158,7 @@ Read these files:
 > AGENTS: <count>
 > COMMANDS: <count>
 > SKILLS: <count>
-> WORKFLOW: <step1> → <step2> → ... → <stepN>
+> WORKFLOW: <step1>(top) → <step2>(top) → <step3>(sub) → ... → <stepN>(top)
 > CHANGES: <changes or "No significant changes">
 > ```
 
@@ -218,7 +232,8 @@ When executing, edit the `## ⚙️ DEVELOPMENT WORKFLOWS` table in `README.md`:
 - Update stars, counts, **and the Workflow column** per row
 - Maintain sort order: stars descending (highest first)
 - Match existing format exactly (icons, badge URLs, link style)
-- For the Workflow column, encode each plain-text step the agent returned into a `ddf4ff` shields.io badge per the encoding rules in the Table Format section, then join with ` → `
+- For the Workflow column, encode each plain-text step the agent returned into a shields.io HTML img badge per the Table Format section. Use `ddf4ff` for steps marked `(top)` and `fff3b0` for steps marked `(sub)`. Join with ` → `.
+- Ensure the legend `> *Note: yellow tags are sub-loops — steps that repeat inside a parent step (e.g. per task, per story, or until a verify condition passes).*` is present immediately after the table; add it if missing.
 
 ---
 
@@ -229,8 +244,9 @@ When executing, edit the `## ⚙️ DEVELOPMENT WORKFLOWS` table in `README.md`:
 3. **Don't auto-execute** — present report first, wait for approval
 4. **ALWAYS append changelog** and **ALWAYS update badge** — mandatory
 5. **Sort by stars descending** — highest stars first
-6. **Workflow badges use HTML img with align="middle"** — `<img src="https://img.shields.io/badge/<ENCODED>-ddf4ff" alt="<plain-label>" align="middle">`. The `align="middle"` is required so the ` → ` arrow stays vertically centered with the badges. Encoding: `_` for spaces, `--` for hyphens, `__` for underscores, `%2F` for `/`, `%2B` for `+`. Dots and colons survive verbatim. Join steps with ` → `. Always update the Workflow column when any step name in the upstream repo changes.
+6. **Workflow badges use HTML img with align="middle"** — `<img src="https://img.shields.io/badge/<ENCODED>-<COLOR>" alt="<plain-label>" align="middle">`. The `align="middle"` is required so the ` → ` arrow stays vertically centered with the badges. Two colors: `ddf4ff` for top-level steps, `fff3b0` for sub-loop steps. Encoding: `_` for spaces, `--` for hyphens, `__` for underscores, `%2F` for `/`, `%2B` for `+`. Dots and colons survive verbatim. Join steps with ` → `. Always update the Workflow column when any step name in the upstream repo changes.
 7. **Agents, commands, skills are different** — count from their respective directories, don't conflate
 8. **Round stars consistently** — `k` suffix (98k, 10k, 4.1k). Under 1000 show exact
 9. **Compare with previous changelog** — mark items NEW, RECURRING, or RESOLVED
-10. **Workflow column is mandatory and flat** — every row must have a Workflow cell. Trace the README's "how to use" / canonical happy path; do not synthesize a fictional pipeline. **No parentheses, no English qualifiers, no `+` connectors** — if a step has internal sub-steps, list them as siblings in the flat chain.
+10. **Workflow column is mandatory and flat** — every row must have a Workflow cell. Trace the README's "how to use" / canonical happy path; do not synthesize a fictional pipeline. **No parentheses, no English qualifiers, no `+` connectors** — if a step has internal sub-steps, list them as siblings in the flat chain and color them yellow (`fff3b0`); top-level steps stay blue (`ddf4ff`).
+11. **Sub-loop legend is mandatory** — immediately after the table, the line `> *Note: yellow tags are sub-loops — steps that repeat inside a parent step (e.g. per task, per story, or until a verify condition passes).*` must be present. Add it back if it was removed; never edit the wording.
