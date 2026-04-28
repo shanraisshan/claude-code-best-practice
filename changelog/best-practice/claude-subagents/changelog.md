@@ -209,3 +209,13 @@ No drift detected — report is fully in sync with official docs. All 16 frontma
 ## [2026-04-26 01:10 PM PKT] Claude Code v2.1.119
 
 No drift detected — report is fully in sync with official docs. All 16 frontmatter fields and 5 built-in agents match.
+
+---
+
+## [2026-04-29 12:49 AM PKT] Claude Code v2.1.121
+
+No drift detected on the two tracked dimensions — all 16 frontmatter fields and 5 built-in agents match. One out-of-scope enum-value update was applied at the user's request.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Field Docs | Update `effort` field description — add `xhigh` between `high` and `max` to match official docs' enum value list | ✅ COMPLETE (inserted `xhigh` on line 33; mirrors the v2.1.91 pattern when `auto` was added to `permissionMode`) |
