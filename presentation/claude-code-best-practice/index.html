@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../!/claude-jumping.svg">
+    <title>Claude Code Best Practice</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.6; }
+        .slide { display: none; min-height: 100vh; padding: 60px 80px; max-width: 1200px; margin: 0 auto; }
+        .slide.active { display: block; }
+        h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 40px; color: #1a1a1a; border-bottom: 2px solid #e5e5e5; padding-bottom: 20px; }
+        h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #2a2a2a; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin: 24px 0 12px 0; color: #333; }
+        p { font-size: 1.1rem; margin-bottom: 16px; color: #444; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.95rem; }
+        .slide.title-slide.active { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px; }
+        .title-slide h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; border-bottom: none; padding-bottom: 0; }
+        .title-slide .subtitle { font-size: 1.4rem; color: #555; margin-bottom: 50px; font-weight: 400; }
+        .slide.section-slide.active { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px; }
+        .section-slide h1 { font-size: 3rem; font-weight: 700; border-bottom: none; padding-bottom: 0; margin-bottom: 16px; }
+        .section-slide .section-number { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 20px; }
+        .section-slide .section-desc { font-size: 1.2rem; color: #666; max-width: 600px; }
+        .trigger-box { background: #f8f9fa; border-left: 4px solid #1a1a1a; padding: 20px 24px; margin: 24px 0; }
+        .trigger-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; }
+        .trigger-box p { font-size: 1.05rem; color: #333; margin: 0; }
+        .analogy-box { background: #f3e5f5; border-left: 4px solid #9c27b0; padding: 20px 24px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+        .analogy-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #7b1fa2; margin-bottom: 8px; }
+        .analogy-box p { font-size: 1.05rem; color: #4a148c; margin: 0; }
+        .how-to-trigger { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .how-to-trigger h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #2e7d32; margin-bottom: 8px; }
+        .how-to-trigger p { font-size: 1.05rem; color: #1b5e20; margin: 0; }
+        .how-to-trigger code { background: rgba(0,0,0,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.95rem; }
+        .warning-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .warning-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #e65100; margin-bottom: 8px; }
+        .warning-box p { font-size: 1.05rem; color: #bf360c; margin: 0; }
+        .info-box { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px 24px; margin: 16px 0 24px 0; }
+        .info-box h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #1565c0; margin-bottom: 8px; }
+        .info-box p { font-size: 1.05rem; color: #0d47a1; margin: 0; }
+        .code-block { background: #1a1a1a; color: #e5e5e5; padding: 20px 24px; border-radius: 8px; font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; white-space: pre; line-height: 1.7; }
+        .code-block .comment { color: #6a9955; }
+        .code-block .key { color: #9cdcfe; }
+        .code-block .string { color: #ce9178; }
+        .code-block .cmd { color: #dcdcaa; }
+        .code-block .claude-file { color: #ff5252; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .col-card { background: #f8f9fa; padding: 24px; border-radius: 8px; }
+        .col-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 12px; }
+        .col-card.good { border-left: 4px solid #4caf50; }
+        .col-card.bad { border-left: 4px solid #f44336; }
+        .use-cases { margin: 24px 0; }
+        .use-case-item { display: flex; align-items: flex-start; margin-bottom: 12px; padding: 14px 20px; background: #fafafa; border-radius: 8px; }
+        .use-case-icon { font-size: 1.5rem; margin-right: 16px; min-width: 32px; }
+        .use-case-text { flex: 1; }
+        .use-case-text strong { display: block; font-size: 1.05rem; color: #1a1a1a; margin-bottom: 4px; }
+        .use-case-text span { font-size: 0.95rem; color: #666; }
+        .toc-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+        .toc-item { display: flex; align-items: center; padding: 16px 20px; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .toc-item:hover { background: #eee; }
+        .toc-number { width: 28px; height: 28px; background: #1a1a1a; color: #fff; border-radius: 50%; text-align: center; line-height: 28px; font-size: 0.85rem; margin-right: 12px; font-weight: 600; flex-shrink: 0; }
+        .toc-name { font-size: 1rem; color: #1a1a1a; }
+        .feature-list { list-style: none; margin: 24px 0; }
+        .feature-list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem; }
+        .feature-list li:last-child { border-bottom: none; }
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        th { background: #f8f9fa; padding: 14px 20px; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #666; border-bottom: 2px solid #e5e5e5; }
+        td { padding: 14px 20px; border-bottom: 1px solid #eee; font-size: 1rem; color: #444; }
+        tr:last-child td { border-bottom: none; }
+        .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 12px; z-index: 100; }
+        .nav-btn { width: 50px; height: 50px; border: 2px solid #1a1a1a; background: #fff; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .nav-btn:hover { background: #1a1a1a; color: #fff; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .progress { position: fixed; top: 0; left: 0; height: 4px; background: #1a1a1a; transition: width 0.3s; z-index: 100; }
+        .slide-counter { position: fixed; bottom: 40px; left: 40px; font-size: 0.9rem; color: #999; }
+        .keyboard-hint { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.85rem; color: #999; }
+        .keyboard-hint kbd { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd; font-family: inherit; }
+        .header-logo { position: fixed; top: 20px; left: 40px; width: 100px; height: 65px; z-index: 50; }
+        .header-logo.right { left: auto; right: 40px; }
+        .header-logo img { width: 100%; height: 100%; }
+        .slide[data-slide="1"].active ~ .header-logo { display: none; }
+        .title-logo { width: 200px; height: 130px; margin-bottom: 40px; }
+        .title-logo img { width: 100%; height: 100%; }
+        .level-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; margin-left: 12px; vertical-align: middle; }
+        /* Hiring analogy steps */
+        .hiring-steps { margin: 32px 0; }
+        .hiring-step { display: flex; align-items: flex-start; margin-bottom: 20px; padding: 20px 24px; background: #fafafa; border-radius: 8px; border-left: 4px solid #e5e5e5; }
+        .hiring-step.level-1 { border-left-color: #2196f3; }
+        .hiring-step.level-2 { border-left-color: #ff9800; }
+        .hiring-step.level-3 { border-left-color: #4caf50; }
+        .hiring-step-number { font-size: 1.8rem; font-weight: 700; margin-right: 20px; min-width: 40px; color: #1a1a1a; }
+        .hiring-step-content { flex: 1; }
+        .hiring-step-content strong { display: block; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 4px; }
+        .hiring-step-content span { font-size: 0.95rem; color: #666; }
+        /* Frontmatter field rows */
+        .field-row { display: flex; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .field-row:last-child { border-bottom: none; }
+        .field-name { font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; color: #9cdcfe; min-width: 180px; font-weight: 600; }
+        .field-desc { font-size: 0.95rem; color: #555; flex: 1; }
+        .field-required { font-size: 0.7rem; background: #ffcdd2; color: #c62828; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
+        .field-recommended { font-size: 0.7rem; background: #fff9c4; color: #f57f17; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
+        .field-enforced { min-width: 110px; text-align: right; }
+        .field-enforced .pill-harness { display: inline-block; background: #2e7d32; color: #fff; padding: 2px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.3px; }
+        .field-enforced .pill-prompt { display: inline-block; background: #e0e0e0; color: #555; padding: 2px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.3px; }
+        /* TOC vertical list for Meet the Person */
+        .toc-vertical { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; max-width: 700px; }
+        .toc-vertical .toc-item { display: flex; align-items: flex-start; padding: 18px 24px; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .toc-vertical .toc-item:hover { background: #eee; }
+        .toc-vertical .toc-badge { font-size: 0.7rem; font-weight: 700; background: #e5e5e5; color: #777; border-radius: 10px; padding: 2px 8px; margin-left: 10px; white-space: nowrap; }
+        .toc-vertical .toc-name { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+        .toc-vertical .toc-sub { font-size: 0.9rem; color: #666; }
+        /* File tree */
+        .file-tree { font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.9rem; background: #f8f9fa; padding: 24px; border-radius: 8px; line-height: 1.9; }
+        .file-tree .dir { color: #1565c0; font-weight: 600; }
+        .file-tree .file { color: #444; }
+        .file-tree .highlight { color: #2e7d32; font-weight: 600; }
+        .file-tree .dim { color: #aaa; }
+        /* Pillar footer — 5-card reference strip below the viewport fold */
+        .slide-viewport-content { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+        .pillar-footer { display: flex; gap: 10px; justify-content: center; align-items: stretch; max-width: 1200px; margin: 40px auto 32px auto; width: 100%; }
+        .pillar-mini-card { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0; background: #f8f9fa; padding: 12px 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: opacity 0.2s; }
+        .pillar-mini-card .pmc-emoji { font-size: 1.1rem; line-height: 1; }
+        .pillar-mini-card .pmc-title { font-size: 0.82rem; font-weight: 700; color: #1a1a1a; margin-top: 3px; }
+        .pillar-mini-card .pmc-subtitle { font-size: 0.7rem; font-style: italic; color: #666; margin-top: 1px; }
+        .pillar-mini-card .pmc-body { font-size: 0.72rem; line-height: 1.35; color: #333; margin-top: 5px; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+        .pillar-mini-card .pmc-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 2px 7px; border-radius: 999px; margin-top: 6px; white-space: nowrap; align-self: flex-start; }
+        .pillar-mini-card.inactive { opacity: 0.55; }
+</style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <!-- ============================================================ -->
+    <!-- SLIDE 1: Claude Code Best Practice — Title                    -->
+    <!-- ============================================================ -->
+    <div class="slide active title-slide" data-slide="1">
+
+        <!-- Main title -->
+        <h1 style="font-size: 3.2rem; letter-spacing: -0.02em; margin-bottom: 16px;">Claude Code Best Practice</h1>
+
+        <!-- Subtitle with inline brand logos + gradient text -->
+        <p class="subtitle" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 0;">
+            <span>Practical patterns for</span>
+            <span style="display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;">
+                <img src="../../!/claude-jumping.svg" alt="Claude" style="height: 54px; width: auto; object-fit: contain;">
+                <strong style="color: #D97757; font-weight: 700;">Claude Code</strong>
+            </span>
+        </p>
+
+        <!-- Deck version tag -->
+        <div style="
+            display: inline-block;
+            background: #f5f5f5;
+            color: #888;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 6px 18px;
+            border-radius: 999px;
+            border: 1px solid #e0e0e0;
+            margin-top: 88px;
+        ">github.com/shanraisshan/claude-code-best-practice</div>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 2: About Me — Shayan Rais                               -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="2">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 0;">
+
+            <!-- Avatar -->
+            <div style="position: relative; margin-bottom: 12px;">
+                <img
+                    src="../assets/introduction/Shayan/shayan.png"
+                    alt="Shayan Rais"
+                    style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 4px solid #e5e5e5; box-shadow: 0 8px 32px rgba(0,0,0,0.12); display: block; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                    onmouseover="this.style.transform='scale(1.07)'; this.style.boxShadow='0 12px 40px rgba(21,101,192,0.35), 0 0 0 6px rgba(21,101,192,0.12)';"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.12)';"
+                />
+            </div>
+
+            <!-- Name + tagline -->
+            <h1 style="font-size: 2.6rem; font-weight: 700; margin-bottom: 6px; border-bottom: none; padding-bottom: 0; color: #1a1a1a;">Shayan Rais</h1>
+            <p style="font-size: 1.2rem; color: #444; margin-bottom: 18px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 10px;">Software Architect at <img src="../assets/introduction/Shayan/disrupt-logo.png" alt="disrupt.com" style="height: 28px; width: auto; object-fit: contain; vertical-align: middle;" /></p>
+
+            <!-- Side-by-side cards (2-column grid) -->
+            <div style="display: grid; grid-template-columns: 5fr 4fr; gap: 16px; width: 100%; max-width: 900px; align-items: stretch;">
+
+                <!-- Card 1: Education (two degrees) -->
+                <div
+                    style="background: #f8f9fa; border-radius: 12px; padding: 20px 24px; border-left: 4px solid #7b1fa2; cursor: default; transition: transform 0.25s ease, box-shadow 0.25s ease;"
+                    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 28px rgba(123,31,162,0.18)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';"
+                >
+                    <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7b1fa2; font-weight: 700; margin-bottom: 14px; text-align: left;">Education</div>
+                    <!-- Master's row -->
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <img src="../assets/introduction/Shayan/uni-fast-logo.png" alt="FAST NUCES logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.98rem; font-weight: 600; color: #1a1a1a; line-height: 1.3;">Master&rsquo;s in Computer Science</div>
+                            <div style="font-size: 0.87rem; color: #666; margin-top: 2px;">FAST NUCES &mdash; 2019</div>
+                        </div>
+                    </div>
+                    <!-- thin divider -->
+                    <div style="border-top: 1px solid #e0d4ec; margin: 4px 0 12px 0;"></div>
+                    <!-- Bachelor's row -->
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <img src="../assets/introduction/Shayan/uni-ned-logo.png" alt="NED University logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.98rem; font-weight: 600; color: #1a1a1a; line-height: 1.3;">Bachelor&rsquo;s in Computer Information Systems</div>
+                            <div style="font-size: 0.87rem; color: #666; margin-top: 2px;">NED University &mdash; 2014</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Achievement (clickable → GitHub) -->
+                <a
+                    href="https://github.com/shanraisshan/claude-code-best-practice"
+                    target="_blank"
+                    rel="noopener"
+                    style="background: #f8f9fa; border-radius: 12px; padding: 20px 24px; border-left: 4px solid #e65100; display: flex; align-items: center; gap: 20px; text-decoration: none; color: inherit; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;"
+                    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 28px rgba(230,81,0,0.22)'; this.style.background='#fff3e0';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='#f8f9fa';"
+                >
+                    <img src="../../!/claude-jumping.svg" alt="Claude mascot" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0;" />
+                    <div style="text-align: left; flex: 1;">
+                        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #e65100; font-weight: 700; margin-bottom: 4px;">Contributions</div>
+                        <div style="font-size: 1.0rem; font-weight: 600; color: #1a1a1a; line-height: 1.3;">Creator of <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px; font-size: 0.93rem;">claude-code-best-practice</code></div>
+                        <div style="font-size: 0.87rem; color: #666; margin-top: 3px;">The most starred 🇵🇰 Pakistani AI repo <img src="../assets/logo/github.svg" alt="GitHub" style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;" /> with almost 50,000 stars <span style="color: #e65100;">&#9733;</span></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 3: GitHub Stars (proof point for Shayan's bio)           -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="3">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 120px); padding: 0;">
+            <img
+                src="../assets/introduction/Shayan/github-stars.png"
+                alt="claude-code-best-practice GitHub stars growth"
+                style="width: auto; height: auto; max-width: 100%; max-height: calc(100vh - 120px); border-radius: 12px; box-shadow: 0 10px 36px rgba(0,0,0,0.18); border: 1px solid #e5e5e5; display: block; object-fit: contain;"
+            />
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 4: Agenda                                                -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="4">
+        <h1 style="color: #c62828;">&#x1F6A8; Problem Statement</h1>
+
+        <!-- Sub-line -->
+        <p style="font-size: 1.6rem; font-weight: 600; color: #333; margin-top: 20px; margin-bottom: 24px;">Fetch weather of Karachi</p>
+
+        <!-- Bullet points -->
+        <ol style="padding-left: 32px; margin: 0 0 40px 0; line-height: 2;">
+            <li style="font-size: 1.25rem; color: #444;">Single source of truth</li>
+            <li style="font-size: 1.25rem; color: #444;">Repetitively</li>
+        </ol>
+
+        <!-- Section 2: Learning Outcome -->
+        <div style="max-width: 860px;">
+            <div class="info-box" style="margin: 0;">
+                <p style="font-size: 1.05rem; color: #0d47a1; margin: 0; font-style: italic;">By solving this problem statement, we&rsquo;ll learn different concepts of <strong>agentic engineering</strong> along the way.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 5: AI Jargon Word Cloud                                 -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="5">
+        <h1 style="font-size: 1.6rem; margin-bottom: 8px; color: #888; border-bottom: none; padding-bottom: 0; font-weight: 400; letter-spacing: 1px; text-transform: uppercase;">Jargon you'll hear</h1>
+        <p style="font-size: 1rem; color: #aaa; margin-bottom: 0; font-style: italic;">I'll unpack each of these as we go &mdash; for now, just let them wash over you.</p>
+        <div style="position: relative; width: 100%; min-height: calc(100vh - 130px); overflow: hidden;">
+
+            <!-- ===== HERO TIER: Blue chips (bigger, bolder, dominant) ===== -->
+            <!-- agentic engineering — demoted to orange, bottom-left area -->
+            <span style="position: absolute; top: 91%; left: 54%; transform: rotate(3deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">agentic engineering</span>
+
+            <!-- progressive disclosure — centre-right, row 2 -->
+            <span style="position: absolute; top: 22%; left: 55%; transform: rotate(-4deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">progressive disclosure</span>
+
+            <!-- orchestration — left-centre -->
+            <span style="position: absolute; top: 42%; left: 6%; transform: rotate(3deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.6rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">orchestration</span>
+
+            <!-- dumb zone — centre, row 4 -->
+            <span style="position: absolute; top: 60%; left: 36%; transform: rotate(-5deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.55rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">dumb zone</span>
+
+            <!-- agentic workflows — bottom-right -->
+            <span style="position: absolute; top: 72%; left: 58%; transform: rotate(4deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">agentic workflows</span>
+
+            <!-- harness — hero blue -->
+            <span style="position: absolute; top: 52%; left: 64%; transform: rotate(3deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">harness</span>
+
+            <!-- compaction — hero blue -->
+            <span style="position: absolute; top: 80%; left: 8%; transform: rotate(-3deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">compaction</span>
+
+            <!-- context window — hero blue, top-left anchor slot -->
+            <span style="position: absolute; top: 3%; left: 5%; transform: rotate(2deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">context window</span>
+
+            <!-- ralph wiggum loop — hero blue, row 1b gap -->
+            <span style="position: absolute; top: 10%; left: 28%; transform: rotate(-3deg); background: #1565c0; color: #fff; padding: 14px 28px; border-radius: 28px; font-size: 1.5rem; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 18px rgba(21,101,192,0.45), 0 0 0 2px rgba(21,101,192,0.2);">ralph wiggum loop</span>
+
+            <!-- ===== SUPPORTING TIER: Purple chips (smaller, softer) ===== -->
+            <!-- MCP — nudged from 14% to 16% to clear context window hero pill above -->
+            <span style="position: absolute; top: 16%; left: 3%; transform: rotate(5deg); background: #7b1fa2; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">MCP</span>
+
+            <!-- hooks -->
+            <span style="position: absolute; top: 31%; left: 46%; transform: rotate(-4deg); background: #7b1fa2; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">hooks</span>
+
+            <!-- ===== SUPPORTING TIER: Green chips ===== -->
+            <!-- context rot -->
+            <span style="position: absolute; top: 36%; left: 30%; transform: rotate(5deg); background: #2e7d32; color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">context rot</span>
+
+            <!-- prompt engineering -->
+            <span style="position: absolute; top: 55%; left: 3%; transform: rotate(-4deg); background: #2e7d32; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">prompt engineering</span>
+
+            <!-- AI slop -->
+            <span style="position: absolute; top: 68%; left: 24%; transform: rotate(4deg); background: #2e7d32; color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">AI slop</span>
+
+            <!-- inference -->
+            <span style="position: absolute; top: 83%; left: 64%; transform: rotate(-3deg); background: #2e7d32; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">inference</span>
+
+            <!-- ===== SUPPORTING TIER: Amber/Orange chips ===== -->
+            <!-- hallucination -->
+            <span style="position: absolute; top: 5%; left: 78%; transform: rotate(-5deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">hallucination</span>
+
+            <!-- context bloat -->
+            <span style="position: absolute; top: 20%; left: 22%; transform: rotate(3deg); background: #e65100; color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">context bloat</span>
+
+            <!-- one-shot prompting -->
+            <span style="position: absolute; top: 45%; left: 52%; transform: rotate(-3deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">one-shot prompting</span>
+
+            <!-- token burn -->
+            <span style="position: absolute; top: 81%; left: 42%; transform: rotate(5deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">token burn</span>
+
+            <!-- vibe coding — moved from hero-blue to orange -->
+            <span style="position: absolute; top: 91%; left: 22%; transform: rotate(-2deg); background: #e65100; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">vibe coding</span>
+
+            <!-- scroll affordance -->
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding-bottom: 10px; pointer-events: none;">
+                <span style="font-size: 0.78rem; color: #bbb; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 4px;">scroll for glossary <span style="font-size: 0.95rem; line-height: 1;">&#8595;</span></span>
+            </div>
+        </div>
+
+        <!-- ===== LEGEND: 2-column definition table ===== -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 40px; margin-top: 32px; padding: 28px 0 40px 0; border-top: 2px solid #e5e5e5;">
+            <!-- Left column: 7 blue hero + 2 purple -->
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">progressive disclosure</span> &mdash; feeding the AI only what it needs right now, not everything upfront</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">orchestration</span> &mdash; coordinating several AI agents like a conductor leads a band</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">dumb zone</span> &mdash; the stretch where AI has too much context and starts thinking worse, not better</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">agentic workflows</span> &mdash; AI that plans, acts, checks its work, and adapts &mdash; multi-step on its own</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">harness</span> &mdash; the scaffolding around the model &mdash; files, terminal, tools &mdash; that turns a chatbot into a worker</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">compaction</span> &mdash; auto-summarizing old chat so the AI keeps going without hitting its memory ceiling</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">context window</span> &mdash; the AI&rsquo;s working memory &mdash; how much it can &ldquo;see&rdquo; at once before older details fall off</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #1565c0; font-weight: 700;">ralph wiggum loop</span> &mdash; when the AI repeats the same broken step in circles, like a confused kid who can&rsquo;t stop</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">MCP</span> &mdash; a universal adapter letting AI talk to your tools (GitHub, Slack, databases)</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #7b1fa2; font-weight: 700;">hooks</span> &mdash; auto-triggers that run your rules before or after the AI does anything</p>
+            </div>
+            <!-- Right column: 4 green + 6 orange -->
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">context rot</span> &mdash; quality decay as the conversation drags on and earlier details blur</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">prompt engineering</span> &mdash; the craft of phrasing requests so the AI understands exactly what you mean</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">AI slop</span> &mdash; low-effort, generic AI output that looks polished but says nothing</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #2e7d32; font-weight: 700;">inference</span> &mdash; the moment the model actually runs to produce an answer. <em>Training</em> is when the model learned (once, long ago). <em>Inference</em> is the model answering you, right now</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">hallucination</span> &mdash; when AI confidently makes up facts that sound true but aren&rsquo;t</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">context bloat</span> &mdash; overstuffing the AI&rsquo;s memory so it slows down and loses focus</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">one-shot prompting</span> &mdash; giving the AI one example and asking it to follow the same pattern</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">token burn</span> &mdash; wasting expensive AI &ldquo;words&rdquo; on unnecessary back-and-forth or bloated prompts</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">vibe coding</span> &mdash; describing what you want in plain English and hoping the AI nails it</p>
+                <p style="font-size: 0.82rem; margin: 0; color: #444; line-height: 1.4;"><span style="color: #e65100; font-weight: 700;">agentic engineering</span> &mdash; building guardrails so AI acts like a reliable teammate, not a gamble</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6: Audience Question — GPT vs ChatGPT                  -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="6">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; text-align: center;">
+            <h1 style="border-bottom: none; padding-bottom: 0; font-size: 3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 20px;">Difference between GPT and ChatGPT?</h1>
+            <p style="font-size: 0.95rem; color: #bbb; margin: 0; letter-spacing: 0.05em; text-transform: uppercase;">discuss</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 7: Boris Three-Tweets GIF (was SLIDE 4)                 -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="7">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; text-align: center;">
+            <figure style="max-width: 900px; width: 100%;">
+                <img src="../../!/root/boris-slider.gif" alt="Boris Cherny slides showing the spectrum of Claude Code usage styles" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+                <figcaption style="margin-top: 20px; font-size: 1rem; color: #666; font-style: italic;">
+                    Boris Cherny (creator of Claude Code) &mdash; different teams use Claude Code completely differently.<br />
+                    There is no single &ldquo;correct&rdquo; way. But there <em>are</em> patterns worth understanding.
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 8: Model + Harness (Brain + Body)                      -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="8">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 75vh; text-align: center;">
+            <h1 style="border-bottom: none; padding-bottom: 0; font-size: 3rem; margin-bottom: 28px;">What is Claude Code?</h1>
+            <p style="font-size: 1.4rem; color: #555; margin: 0; max-width: 900px;"><strong>Model</strong> (Brain &#x1F9E0; &mdash; e.g. Opus, GPT) <span style="color: #999; margin: 0 10px;">+</span> <strong>Harness</strong> (Body &#x1F4AA; &mdash; e.g. tools, MCP, memory)</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 9: Models — Can answer / Can't answer                  -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="9">
+
+        <!-- Headline -->
+        <div style="text-align: center; margin-bottom: 36px;">
+            <div style="font-size: 3.2rem; line-height: 1; margin-bottom: 12px;">&#x1F99C;</div>
+            <h1 style="border-bottom: none; padding-bottom: 0; font-size: 2.8rem; margin-bottom: 8px;">&ldquo;Stochastic Parrots&rdquo;</h1>
+            <p style="font-size: 1.1rem; color: #777; margin: 0;"><strong>Stochastic</strong> means random/probabilistic &mdash; models don&rsquo;t <em>know</em> the answer, they <em>sample</em> from a probability distribution.</p>
+        </div>
+
+        <!-- Probability distribution visual -->
+        <div style="max-width: 720px; margin: 0 auto 32px; background: #f8f9fa; border-radius: 12px; padding: 28px 36px;">
+            <p style="font-size: 1rem; color: #555; margin: 0 0 20px; text-align: center;">Prompt: &nbsp;<code style="font-size: 1.1rem; background: #fff; border: 1px solid #ddd; padding: 4px 12px; border-radius: 6px;">&ldquo;The sky is ___&rdquo;</code></p>
+
+            <!-- bar: blue 62% -->
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+                <div style="width: 120px; text-align: right; font-size: 0.95rem; color: #333; font-family: 'SF Mono', Monaco, monospace; flex-shrink: 0;">blue</div>
+                <div style="flex: 1; background: #e8eaf6; border-radius: 4px; height: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; left: 0; top: 0; height: 100%; width: 62%; background: linear-gradient(90deg, #3949ab, #5c6bc0); border-radius: 4px; transition: width 0.6s ease;"></div>
+                </div>
+                <div style="width: 48px; font-size: 1rem; font-weight: 700; color: #3949ab; flex-shrink: 0;">62%</div>
+            </div>
+
+            <!-- bar: clear 14% -->
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+                <div style="width: 120px; text-align: right; font-size: 0.95rem; color: #333; font-family: 'SF Mono', Monaco, monospace; flex-shrink: 0;">clear</div>
+                <div style="flex: 1; background: #e8eaf6; border-radius: 4px; height: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; left: 0; top: 0; height: 100%; width: 14%; background: linear-gradient(90deg, #1e88e5, #42a5f5); border-radius: 4px;"></div>
+                </div>
+                <div style="width: 48px; font-size: 1rem; font-weight: 700; color: #1e88e5; flex-shrink: 0;">14%</div>
+            </div>
+
+            <!-- bar: dark 8% -->
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+                <div style="width: 120px; text-align: right; font-size: 0.95rem; color: #333; font-family: 'SF Mono', Monaco, monospace; flex-shrink: 0;">dark</div>
+                <div style="flex: 1; background: #e8eaf6; border-radius: 4px; height: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; left: 0; top: 0; height: 100%; width: 8%; background: linear-gradient(90deg, #546e7a, #78909c); border-radius: 4px;"></div>
+                </div>
+                <div style="width: 48px; font-size: 1rem; font-weight: 700; color: #546e7a; flex-shrink: 0;">8%</div>
+            </div>
+
+            <!-- bar: falling 0.3% -->
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <div style="width: 120px; text-align: right; font-size: 0.95rem; color: #aaa; font-family: 'SF Mono', Monaco, monospace; flex-shrink: 0;">falling</div>
+                <div style="flex: 1; background: #e8eaf6; border-radius: 4px; height: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; left: 0; top: 0; height: 100%; width: 0.3%; background: #ef9a9a; border-radius: 4px;"></div>
+                </div>
+                <div style="width: 48px; font-size: 0.9rem; font-weight: 700; color: #aaa; flex-shrink: 0;">0.3%</div>
+            </div>
+
+            <p style="font-size: 0.8rem; color: #aaa; margin: 16px 0 0; text-align: center; font-style: italic;">Each run the model <em>samples</em> &mdash; temperature controls how widely it samples.</p>
+        </div>
+
+        <!-- Attribution -->
+        <p style="font-size: 0.78rem; color: #bbb; text-align: center; margin: 0 0 32px;">Bender, Gebru, McMillan-Major, Mitchell &mdash; <em>On the Dangers of Stochastic Parrots</em> (2021)</p>
+
+        <!-- LLM nature tags -->
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 20px 0 8px;">
+            <span style="background: rgba(57,73,171,0.08); color: #3949ab; border: 1px solid rgba(57,73,171,0.22); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">stochastic</span>
+            <span style="background: rgba(233,30,99,0.07); color: #c2185b; border: 1px solid rgba(233,30,99,0.2); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">sycophantic</span>
+            <span style="background: rgba(230,81,0,0.08); color: #e65100; border: 1px solid rgba(230,81,0,0.22); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">hallucinating</span>
+            <span style="background: rgba(84,110,122,0.08); color: #455a64; border: 1px solid rgba(84,110,122,0.22); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">stateless</span>
+            <span style="background: rgba(123,31,162,0.07); color: #7b1fa2; border: 1px solid rgba(123,31,162,0.2); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">biased</span>
+            <span style="background: rgba(46,125,50,0.07); color: #2e7d32; border: 1px solid rgba(46,125,50,0.2); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">confident</span>
+            <span style="background: rgba(21,101,192,0.07); color: #1565c0; border: 1px solid rgba(21,101,192,0.2); padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">pattern-matching</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10: Model Limitations &mdash; Real-time access          -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="10">
+        <h1>&#x1F9E0; Models &mdash; e.g. Opus, GPT, Gemini</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0;">
+            <div class="col-card" style="border-left: 4px solid #4caf50;">
+                <h4 style="color: #2e7d32; text-transform: none; letter-spacing: 0; margin-bottom: 10px;">&#x2705; Can answer</h4>
+                <p style="font-size: 1.05rem; color: #333; margin: 0 0 8px;"><em>&ldquo;What is the capital of Japan?&rdquo;</em></p>
+                <p style="font-size: 1.05rem; color: #333; margin: 0 0 8px;"><em>&ldquo;When did Pakistan gain independence?&rdquo;</em></p>
+                <p style="font-size: 1.05rem; color: #333; margin: 0;"><em>&ldquo;Who wrote Romeo and Juliet?&rdquo;</em></p>
+            </div>
+            <div class="col-card" style="border-left: 4px solid #f44336;">
+                <h4 style="color: #c62828; text-transform: none; letter-spacing: 0; margin-bottom: 10px;">&#x274C; Can&rsquo;t answer</h4>
+                <p style="font-size: 1.05rem; color: #333; margin: 0 0 8px;"><em>&ldquo;Who won yesterday&rsquo;s match?&rdquo;</em></p>
+                <p style="font-size: 1.05rem; color: #333; margin: 0 0 8px;"><em>&ldquo;What&rsquo;s today&rsquo;s USD &rarr; PKR rate?&rdquo;</em></p>
+                <p style="font-size: 1.05rem; color: #333; margin: 0;"><em>&ldquo;What did Anthropic release yesterday?&rdquo;</em></p>
+            </div>
+        </div>
+        <p style="font-size: 1rem; color: #555; margin: 0 0 16px;">Every model &mdash; no matter how new &mdash; has a knowledge cut-off. Events after that date simply do not exist inside the model.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 0;">
+            <div class="trigger-box" style="margin: 0;">
+                <h4>Opus 4.7 &mdash; Anthropic</h4>
+                <p style="margin: 0 0 4px;">Knowledge cut-off: <strong>January 2026</strong></p>
+                <p style="font-size: 0.82rem; color: #666; margin: 0;">Released 2026-04-17</p>
+            </div>
+            <div class="trigger-box" style="margin: 0;">
+                <h4>GPT-5.5 &mdash; OpenAI</h4>
+                <p style="margin: 0 0 4px;">Knowledge cut-off: <strong>December 1, 2025</strong></p>
+                <p style="font-size: 0.82rem; color: #666; margin: 0;">Released 2026-04-23 &mdash; brand-new, but still has a cut-off.</p>
+            </div>
+            <div class="trigger-box" style="margin: 0;">
+                <h4>Gemini 3.1 Pro &mdash; Google</h4>
+                <p style="margin: 0 0 4px;">Knowledge cut-off: <strong>January 2025</strong></p>
+                <p style="font-size: 0.82rem; color: #666; margin: 0;">Released 2026-02-19</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 11: Limitations                                         -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="11">
+        <h1>&#x1F9E0; Limitations</h1>
+        <p>The raw model has <strong>no real-time access</strong> &mdash; no internet, no files, no clock.</p>
+        <div style="text-align: center; margin: 24px 0;">
+            <img src="../assets/harness/model-limitation.jpg" alt="Anthropic Workbench screenshot showing the model refusing a real-time weather query" style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 12: Horse Harness — The Pivot Analogy                  -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="12">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 120px); text-align: center; gap: 0;">
+
+            <!-- SVG Horse with Harness — annotated callout version -->
+            <!-- viewBox expanded: left -130, top -50, width 780, height 450 -->
+            <!-- Horse body coordinates unchanged; callout labels placed in expanded margins -->
+            <svg viewBox="-130 -50 780 450" width="780" height="450" xmlns="http://www.w3.org/2000/svg" aria-label="Horse with harness illustration with model-harness callouts" style="display: block; max-width: 100%; height: auto;">
+
+                <!-- ===== DEFS: arrowhead marker ===== -->
+                <defs>
+                    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L8,3 Z" fill="#555"/>
+                    </marker>
+                    <!-- Accent arrowhead in harness red -->
+                    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L8,3 Z" fill="#C0392B"/>
+                    </marker>
+                </defs>
+
+                <!-- === HORSE BODY (warm brown silhouette) === -->
+                <!-- Torso -->
+                <ellipse cx="260" cy="210" rx="120" ry="68" fill="#8B6340"/>
+                <!-- Neck -->
+                <path d="M175 175 Q165 130 185 100 Q200 80 220 90 Q230 100 225 130 Q220 155 205 170 Z" fill="#8B6340"/>
+                <!-- Head -->
+                <ellipse cx="198" cy="78" rx="32" ry="22" fill="#8B6340" transform="rotate(-20 198 78)"/>
+                <!-- Muzzle/snout -->
+                <ellipse cx="173" cy="88" rx="18" ry="12" fill="#A07850" transform="rotate(-20 173 88)"/>
+                <!-- Ear -->
+                <path d="M210 60 L218 44 L225 61 Z" fill="#8B6340"/>
+                <!-- Eye -->
+                <circle cx="186" cy="72" r="4" fill="#2a1a0a"/>
+                <circle cx="185" cy="71" r="1.5" fill="#fff"/>
+                <!-- Nostril -->
+                <ellipse cx="165" cy="91" rx="4" ry="2.5" fill="#5a3a1a" transform="rotate(-20 165 91)"/>
+
+                <!-- Front legs -->
+                <rect x="195" y="270" width="22" height="68" rx="8" fill="#7A5530"/>
+                <rect x="228" y="270" width="22" height="68" rx="8" fill="#7A5530"/>
+                <!-- Hooves front -->
+                <rect x="193" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+                <rect x="226" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+
+                <!-- Rear legs -->
+                <rect x="295" y="268" width="22" height="70" rx="8" fill="#7A5530"/>
+                <rect x="325" y="268" width="22" height="70" rx="8" fill="#7A5530"/>
+                <!-- Hooves rear -->
+                <rect x="293" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+                <rect x="323" y="330" width="26" height="14" rx="5" fill="#3a2a18"/>
+
+                <!-- Tail -->
+                <path d="M378 195 Q420 185 430 210 Q440 235 415 255 Q400 265 385 255" stroke="#5a3a1a" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path d="M385 255 Q370 270 375 288" stroke="#5a3a1a" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+                <!-- Mane -->
+                <path d="M215 88 Q208 100 205 115 Q203 128 207 140" stroke="#5a3a1a" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path d="M222 85 Q215 97 212 112 Q210 125 213 136" stroke="#5a3a1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+                <!-- === HARNESS (dark leather straps, highlighted in accent red-brown) === -->
+
+                <!-- Bridle — around the head/neck -->
+                <ellipse cx="198" cy="78" rx="35" ry="24" fill="none" stroke="#C0392B" stroke-width="3.5" transform="rotate(-20 198 78)"/>
+                <!-- Noseband (horizontal strap across muzzle) -->
+                <line x1="160" y1="85" x2="190" y2="75" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round"/>
+                <!-- Cheek piece (vertical strap on side of head) -->
+                <line x1="186" y1="56" x2="182" y2="93" stroke="#C0392B" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Collar / neck band -->
+                <ellipse cx="210" cy="148" rx="22" ry="36" fill="none" stroke="#C0392B" stroke-width="4" transform="rotate(-8 210 148)"/>
+
+                <!-- Breast collar (horizontal strap across chest) -->
+                <path d="M200 160 Q235 168 270 162" stroke="#C0392B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <!-- Back band / surcingle (strap around the belly/back) -->
+                <ellipse cx="270" cy="208" rx="58" ry="70" fill="none" stroke="#C0392B" stroke-width="4" stroke-dasharray="none"/>
+                <!-- Crupper (rear strap looping under tail) -->
+                <path d="M330 185 Q365 180 378 195" stroke="#C0392B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+                <!-- Traces (long straps from collar back to load) -->
+                <line x1="228" y1="168" x2="360" y2="200" stroke="#922B21" stroke-width="3" stroke-linecap="round"/>
+                <line x1="228" y1="172" x2="360" y2="218" stroke="#922B21" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Reins (from bit to driver — trailing to the left edge) -->
+                <path d="M168 84 Q155 80 145 75 Q135 68 128 72" stroke="#C0392B" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
+                <path d="M128 72 Q110 60 90 65" stroke="#922B21" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="4 4"/>
+
+                <!-- Bit (small ring at mouth) -->
+                <circle cx="160" cy="89" r="5" fill="none" stroke="#888" stroke-width="2.5"/>
+
+                <!-- ===== CALLOUT ARROWS + LABELS ===== -->
+                <!-- Each callout: thin grey connector line → pill chip with primary term + italic subtitle -->
+
+                <!-- ── 1. REINS → Control loop (left side) ── -->
+                <!-- anchor: end of reins at x=90, y=65 → label centre at x=-65, y=48 -->
+                <line x1="90" y1="65" x2="-22" y2="48" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="-128" y="28" width="104" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="-76" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Control loop</text>
+                <!-- italic reason -->
+                <text x="-76" y="61" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">decides the next call</text>
+                <!-- horse-part label — small tag above arrow -->
+                <text x="62" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Reins</text>
+
+                <!-- ── 2. BIT → Tool allowlist (top-left, above the mouth) ── -->
+                <!-- anchor: bit circle at x=160, y=84 → label centre at x=100, y=-25 -->
+                <line x1="160" y1="84" x2="118" y2="-12" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="50" y="-44" width="116" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="108" y="-26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Tool allowlist</text>
+                <!-- italic reason -->
+                <text x="108" y="-11" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">constrains what it can do</text>
+                <!-- horse-part label -->
+                <text x="166" y="80" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Bit</text>
+
+                <!-- ── 3. BLINDERS → Context management (top-right, above head) ── -->
+                <!-- anchor: top of bridle / head at x=215, y=55 → label centre at x=330, y=-25 -->
+                <line x1="215" y1="55" x2="285" y2="-12" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="232" y="-44" width="152" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="308" y="-26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Context management</text>
+                <!-- italic reason -->
+                <text x="308" y="-11" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">narrows what it sees</text>
+                <!-- horse-part label -->
+                <text x="210" y="50" text-anchor="end" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Blinders</text>
+
+                <!-- ── 4. DRIVER (surcingle/back band) → Evaluator (right side, mid) ── -->
+                <!-- anchor: right edge of surcingle at x=328, y=208 → label at x=530, y=195 -->
+                <line x1="328" y1="208" x2="462" y2="198" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="464" y="178" width="90" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="509" y="196" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">Evaluator</text>
+                <!-- italic reason -->
+                <text x="509" y="211" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">decides when done</text>
+                <!-- horse-part label -->
+                <text x="332" y="204" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Driver</text>
+
+                <!-- ── 5. TRACES → State persistence (bottom-right) ── -->
+                <!-- anchor: mid-trace at x=310, y=210 → label at x=490, y=310 -->
+                <line x1="355" y1="215" x2="465" y2="305" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" stroke-linecap="round"/>
+                <!-- pill background -->
+                <rect x="464" y="293" width="136" height="42" rx="8" fill="#C0392B"/>
+                <!-- primary term -->
+                <text x="532" y="311" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fff">State persistence</text>
+                <!-- italic reason -->
+                <text x="532" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-style="italic" fill="rgba(255,255,255,0.85)">carries work forward</text>
+                <!-- horse-part label -->
+                <text x="350" y="210" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#888">Traces</text>
+
+            </svg>
+
+            <!-- One-liner — kept, placed below the diagram -->
+            <p style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a; margin: 12px 0 6px; letter-spacing: -0.02em; line-height: 1.2;">A horse harness. A model harness.</p>
+            <p style="font-size: 1.2rem; font-weight: 400; color: #C0392B; margin: 0; letter-spacing: 0.01em;">The model is the horse. Raw power, no direction. The harness is everything else.</p>
+
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 13: Tool Calling &mdash; how the harness reaches the world -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="13">
+        <h1>&#x26A1; Tool Calling &mdash; how the harness reaches the world</h1>
+        <div style="text-align: center; margin: 24px 0;">
+            <img src="../assets/harness/tool-calling.png"
+                 alt="Diagram showing how Claude sends a tool-call request to the harness, the harness executes it against real-world systems, and the result flows back into Claude&rsquo;s context"
+                 style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 14: Harness (1 of 2) &mdash; mind, methods, memory       -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="14">
+        <h1>&#x1F4AA; Harness &mdash; the body around the brain</h1>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin: 28px 0;">
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #009688; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F9D1;&#x200D;&#x1F4BC;</div>
+                <h4 style="color: #00796b; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Agents</strong> &mdash; the specialists</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">A dedicated Claude worker &mdash; own context, tools, focus.</p>
+                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; fresh working memory per run</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #4caf50; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F3AF;</div>
+                <h4 style="color: #2e7d32; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Skills</strong> &mdash; the know-how</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">What the specialist (or Claude) can actually do.</p>
+                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; progressive disclosure &mdash; loaded on demand</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #ef6c00; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F4D8;</div>
+                <h4 style="color: #ef6c00; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Workflows</strong> &mdash; the instruction manual</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">Repeatable step-by-step recipes &mdash; like an AC install guide.</p>
+                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; reproducible recipes</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #9c27b0; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F4DD;</div>
+                <h4 style="color: #7b1fa2; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>CLAUDE.md</strong> &mdash; your memory</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">Knowledge <strong>you</strong> provide to the model.</p>
+                <p style="font-size: 0.7rem; color: #c62828; margin: 0; font-weight: 600;">&#x26A0;&#xFE0F; 200-line problem</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #3f51b5; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 6px;">&#x1F4AD;</div>
+                <h4 style="color: #283593; text-transform: none; letter-spacing: 0; margin-bottom: 4px;"><strong>Context</strong> &mdash; the working memory</h4>
+                <p style="font-size: 0.85rem; color: #555; margin: 0 0 6px;">What Claude holds in his head now &mdash; fresh every new chat session.</p>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="flex: 1; background: #e0e0e0; border-radius: 3px; height: 6px; overflow: hidden;">
+                        <div style="background: #3f51b5; width: 20%; height: 100%;"></div>
+                    </div>
+                    <span style="font-size: 0.7rem; color: #666; white-space: nowrap;">20% of 1M tokens</span>
+                </div>
+                <p style="font-size: 0.7rem; color: #c62828; margin: 6px 0 0; font-weight: 600;">&#x26A0;&#xFE0F; dumb-zone problem</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 15: Harness (2 of 2) &mdash; senses, rules, reflexes     -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="15">
+        <h1>&#x1F4AA; Harness &mdash; the body around the brain</h1>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin: 28px 0;">
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #4caf50; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x270B;</div>
+                <h4 style="color: #2e7d32; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Tools</strong> &mdash; the hands</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0;">Built-in: Read, Edit, Bash, WebSearch.</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #2196f3; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F50C;</div>
+                <h4 style="color: #1565c0; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>MCP</strong> &mdash; the adapters</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">USB-C for AI &mdash; plug in external tools (databases, browsers, APIs).</p>
+                <p style="font-size: 0.75rem; color: #999; margin: 0; font-style: italic;">e.g. &#x1F441;&#xFE0F; Claude in Chrome</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #f44336; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F6E1;&#xFE0F;</div>
+                <h4 style="color: #c62828; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Permissions</strong> &mdash; the guardrails</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0;">Allow / ask / deny for tool use.</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #009688; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1FA9D;</div>
+                <h4 style="color: #00796b; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>Hooks</strong> &mdash; the reflexes</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0;"><strong>Deterministic</strong> scripts that fire on events.</p>
+            </div>
+            <div class="col-card" style="flex: 0 1 calc(33.333% - 12px); border-left: 4px solid #ff9800; text-align: center;">
+                <div style="font-size: 2.8rem; line-height: 1; margin-bottom: 10px;">&#x1F4DD;</div>
+                <h4 style="color: #ef6c00; text-transform: none; letter-spacing: 0; margin-bottom: 6px;"><strong>System Prompt</strong> &mdash; Claude&rsquo;s memory</h4>
+                <p style="font-size: 0.9rem; color: #555; margin: 0 0 4px;">Knowledge <strong>Anthropic</strong> bakes in.</p>
+                <p style="font-size: 0.75rem; color: #999; margin: 0 0 3px; font-style: italic;">e.g. identity &middot; tone &middot; safety</p>
+                <p style="font-size: 0.7rem; color: #2e7d32; margin: 0; font-weight: 600;">&#x2705; always on</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 16: Problem solved with harness &mdash; success case     -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="16">
+        <h1>&#x1F389; Yayyyyy! Problem solved with harness</h1>
+        <p>The harness reaches out via <strong>WebSearch</strong> and fetches a real answer from live sources.</p>
+        <div style="text-align: center; margin: 24px 0;">
+            <img src="../assets/harness/harness-limitation-2.jpg" alt="Claude Code using Web Search across AccuWeather, Weather25, and TimeAndDate to answer &quot;what is the weather in Karachi?&quot;" style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 17: Suspense / transition &mdash; But...?                -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="17">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 75vh; text-align: center;">
+            <div style="font-size: 12rem; color: #3f51b5; line-height: 1; font-weight: 700;">?</div>
+            <p style="font-size: 1.6rem; color: #555; margin: 24px 0 0; max-width: 900px; font-weight: 600;">Really?</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 18: Non-determinism 1 &mdash; Refuses to use tools       -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="18">
+        <h1>&#x1F4AA; Non-determinism &mdash; Doesn&rsquo;t always use its tools</h1>
+        <p>Similar prompt &mdash; but this time <strong>the model decided not to use the tool</strong>.</p>
+        <div style="text-align: center; margin: 24px 0;">
+            <img src="../assets/harness/harness-limitation-1.jpg" alt="Claude Code refusing to check live weather and asking permission to use WebFetch" style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 19: Non-determinism 2 &mdash; Tools can fail             -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="19">
+        <h1>&#x1F4AA; Non-determinism &mdash; Tools can fail</h1>
+        <p>The model first tried <strong>one source</strong> &mdash; it <strong>failed (403)</strong> &mdash; so it fell back to <strong>another</strong>.</p>
+        <div style="text-align: center; margin: 24px 0;">
+            <img src="../assets/harness/harness-limitation-3.jpg" alt="Claude Code showing a 403 error from timeanddate.com and falling back to wttr.in" style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 20: The Two Problems &mdash; what we're solving          -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="20">
+        <h1>&#x1F6A8; Problem Statement</h1>
+        <ol style="padding-left: 32px; margin: 40px 0 0 0; line-height: 2;">
+            <li style="font-size: 1.25rem; color: #444; margin-bottom: 24px;">
+                <strong>&#x274C; Single source of truth</strong>
+                <p style="color: #888; font-style: normal; margin: 4px 0 0 0; font-size: 1rem;">The model does not always follow the same path.</p>
+            </li>
+            <li style="font-size: 1.25rem; color: #444;">
+                <strong>&#x274C; Repetitively</strong>
+                <p style="color: #888; font-style: normal; margin: 4px 0 0 0; font-size: 1rem;">Model sometimes failed/forgot to use the tool.</p>
+            </li>
+        </ol>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 21: Vibe Coding &mdash; Karpathy&rsquo;s original tweet  -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="21">
+        <h1>Vibe Coding</h1>
+        <div style="text-align: center; margin: 16px 0;">
+            <img src="../assets/concepts/vibe-coding.jpg" alt="Andrej Karpathy's Feb 3 2025 tweet coining 'vibe coding' — 'fully give in to the vibes, embrace exponentials, and forget that the code even exists'" style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+        <p style="text-align: center; color: #666; margin: 20px 0 0; font-size: 1.05rem;"><strong>Andrej Karpathy</strong> &mdash; OpenAI founding team &middot; former Director of AI at Tesla &middot; founder of Eureka Labs.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 22: Vibe Coding vs Agentic Engineering                   -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="22">
+        <h1>Vibe Coding vs Agentic Engineering</h1>
+        <div class="two-col">
+            <div>
+                <div class="code-block" style="margin-top: 16px;"><span class="comment"># Plain TodoApp</span>
+todoapp/
+  <span class="key">backend/</span>
+    main.py
+    routes/
+      todos.py
+      users.py
+    models/
+      todo.py
+      user.py
+    tests/
+      test_todos.py
+  <span class="key">frontend/</span>
+    components/
+      TodoList.tsx
+      Sidebar.tsx
+    pages/
+      index.tsx
+      todos.tsx
+    lib/
+      api.ts</div>
+            </div>
+            <div>
+                <div class="code-block" style="margin-top: 16px;"><span class="comment"># With Claude Code Best Practices</span>
+todoapp/
+  <span class="claude-file">.claude/</span>                  <span class="claude-file comment"># Claude Code config</span>
+    <span class="claude-file">agents/</span>               <span class="claude-file comment"># Custom subagents</span>
+    <span class="claude-file">skills/</span>               <span class="claude-file comment"># Domain knowledge</span>
+    <span class="claude-file">commands/</span>             <span class="claude-file comment"># Slash commands</span>
+    <span class="claude-file">hooks/</span>                <span class="claude-file comment"># Lifecycle scripts</span>
+    <span class="claude-file">rules/</span>                <span class="claude-file comment"># Modular instructions</span>
+    <span class="claude-file">settings.json</span>         <span class="claude-file comment"># Team settings</span>
+    <span class="claude-file">settings.local.json</span>   <span class="claude-file comment"># Personal settings</span>
+  <span class="key">backend/</span>
+    main.py
+    routes/
+      todos.py
+      users.py
+    models/
+      todo.py
+      user.py
+    tests/
+      test_todos.py
+    <span class="claude-file">CLAUDE.md</span>             <span class="claude-file comment"># Backend instructions</span>
+  <span class="key">frontend/</span>
+    components/
+      TodoList.tsx
+      Sidebar.tsx
+    pages/
+      index.tsx
+      todos.tsx
+    lib/
+      api.ts
+    <span class="claude-file">CLAUDE.md</span>             <span class="claude-file comment"># Frontend instructions</span>
+  <span class="claude-file">.mcp.json</span>               <span class="claude-file comment"># Managed MCP servers</span>
+  <span class="claude-file">CLAUDE.md</span>               <span class="claude-file comment"># Project instructions</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TOPIC 1: AGENTS (Slides 9-14)                                 -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 8: Agents Section Divider -->
+    <div class="slide section-slide" data-slide="23" data-level="agents">
+        <div class="slide-viewport-content">
+            <h1>👤 Agents</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">/agents</span>
+            </div>
+            <p class="section-desc">Examples: <strong>weather reporter</strong>, front-end engineer, QA engineer.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Fresh working memory per run</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F3AF; Scoped tools, model, permission</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x26A1; Parallelizable</span>
+            </div>
+            <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
+├── .claude/
+│   └── agents/
+│       └── weather-agent.md
+└── README.md</pre>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: The Restaurant Kitchen -->
+    <div class="slide" data-slide="24">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>Create your first agent &mdash; <code>/agents</code></h1>
+            <div style="max-width: 600px;">
+                <div class="col-card" style="border-left: 4px solid #D97757;">
+                    <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
+                        <h4>The Command</h4>
+                        <p>Type <code>/agents</code>.</p>
+                    </div>
+                    <p style="font-size: 1rem; color: #444;">Opens an interactive menu &mdash; pick "Create new agent" and the CLI drafts the agent file for you.</p>
+                    <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>.claude/agents/&lt;name&gt;.md</code> &mdash; a plain markdown file anyone can edit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Prompting vs Agent table -->
+    <div class="slide" data-slide="25">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>Demo</h1>
+            <video
+                src="../assets/concepts/agents/agent-creation.mov"
+                controls
+                preload="metadata"
+                style="max-width: 1100px; max-height: 70vh; width: 100%; height: auto; display: block; margin: 40px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide: Agent Created (image only) -->
+    <div class="slide" data-slide="26" data-level="agents">
+        <h1>&#x1F389; Yayyyyy! Problem solved with agents</h1>
+        <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/concepts/agents/agent-created.png" alt="Agent created" style="max-width: 1200px; max-height: 80vh; width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 27: Skeptical counter-beat (mirrors slide 17) -->
+    <div class="slide" data-slide="27" data-level="agents">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 120px); text-align: center;">
+            <div style="font-size: 12rem; color: #3f51b5; line-height: 1; font-weight: 700;">?</div>
+            <p style="font-size: 1.6rem; color: #555; margin: 24px 0 0; max-width: 900px; font-weight: 600;">Not so fast...</p>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 28: Callback to problem statement — agents solve half -->
+    <div class="slide" data-slide="28" data-level="agents">
+        <h1>&#x1F6A8; Problem Statement</h1>
+        <div style="min-height: calc(100vh - 120px);">
+        <ol style="padding-left: 32px; margin: 40px 0 0 0; line-height: 2;">
+            <li style="font-size: 1.25rem; color: #444; margin-bottom: 24px;">
+                <strong>&#x2705; Single source of truth</strong>
+                <p style="color: #888; font-style: normal; margin: 4px 0 0 0; font-size: 1rem;">The agent will always call the Open-Meteo API &mdash; no more source drift.</p>
+            </li>
+            <li style="font-size: 1.25rem; color: #444;">
+                <strong>&#x274C; Repetitively</strong>
+                <p style="color: #888; font-style: normal; margin: 4px 0 0 0; font-size: 1rem;">It&rsquo;s not guaranteed that Claude will always call this agent.</p>
+            </li>
+        </ol>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Agent Config Fields -->
+    <div class="slide" data-slide="29" data-level="agents">
+            <h1>Agent config fields with frontmatter</h1>
+            <div style="margin: 24px 0;">
+                <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
+                    <span class="field-name" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Field</span>
+                    <span class="field-desc" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Description</span>
+                    <span class="field-enforced" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; min-width: 110px; text-align: right;">Enforced by</span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">name <span class="field-recommended">Recommended</span></span>
+                    <span class="field-desc">Unique identifier &mdash; e.g. <code>weather-agent</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">description <span class="field-required">Required</span></span>
+                    <span class="field-desc">When to invoke. Use <code>"PROACTIVELY"</code> for auto-invocation</span>
+                    <span class="field-enforced"><span class="pill-prompt">prompt</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">model</span>
+                    <span class="field-desc"><code>haiku</code>, <code>sonnet</code>, <code>opus</code>, or <code>inherit</code> (default). weather-agent uses <code>sonnet</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">tools</span>
+                    <span class="field-desc">Allowlist of tools. weather-agent allows <code>WebFetch</code>, <code>Read</code>, <code>Write</code>, etc.</span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">skills</span>
+                    <span class="field-desc">Skills preloaded into agent context at startup &mdash; <strong>weather-agent preloads <code>weather-fetcher</code></strong></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">maxTurns</span>
+                    <span class="field-desc">Maximum agentic turns before the agent stops. weather-agent uses <code>5</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">memory</span>
+                    <span class="field-desc">Persistent memory: <code>user</code>, <code>project</code>, or <code>local</code>. weather-agent uses <code>project</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-name">color</span>
+                    <span class="field-desc">Visual color in task list. weather-agent uses <code>green</code></span>
+                    <span class="field-enforced"><span class="pill-harness">harness</span></span>
+                </div>
+            </div>
+            <p style="font-style: italic; color: #444; text-align: center; max-width: 900px; margin: 24px auto 0 auto; background: #fff3cd; padding: 16px 24px; border-radius: 8px;">The <code>skills:</code> field is what makes the agent special. It preloads <code>any-skill</code> directly into the agent&rsquo;s brain at startup &mdash; before the agent has received a single instruction.</p>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 30: Agent tips and tricks — part 1 -->
+    <div class="slide" data-slide="30" data-level="agents">
+        <h1><code>claude-code-best-practice</code> Tips &amp; Tricks</h1>
+        <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/concepts/agents/agent-tips-1.png" alt="Claude Code tips and tricks — part 1" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 31: Agent tips and tricks — part 2 -->
+    <div class="slide" data-slide="31" data-level="agents">
+        <h1><code>claude-code-best-practice</code> Tips &amp; Tricks</h1>
+        <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/concepts/agents/agent-tips-2.png" alt="Claude Code tips and tricks — part 2" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- NEW SLIDE 27: CLAUDE.md concept intro                         -->
+    <!-- ============================================================ -->
+
+    <!-- Slide 32: CLAUDE.md concept intro -->
+    <div class="slide section-slide" data-slide="32">
+        <div class="slide-viewport-content">
+            <h1>&#x1F4DD; CLAUDE.md</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">CLAUDE.md</span>
+            </div>
+            <p class="section-desc">Knowledge <strong>you</strong> provide to the model &mdash; read every session.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Loaded into every session</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F465; Team-shareable via git</span>
+                <span style="background: #c62828; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(198,40,40,0.35);">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
+&#x251C;&#x2500;&#x2500; CLAUDE.md
+&#x2514;&#x2500;&#x2500; README.md</pre>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 33: Create your first CLAUDE.md — /init -->
+    <div class="slide" data-slide="33" data-level="claude-md">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>Create your first CLAUDE.md &mdash; <code>/init</code></h1>
+            <div style="max-width: 600px;">
+                <div class="col-card" style="border-left: 4px solid #9c27b0;">
+                    <div class="how-to-trigger" style="margin: 16px 0 12px 0;">
+                        <h4>The Command</h4>
+                        <p>Type <code>/init</code> in Claude Code.</p>
+                    </div>
+                    <p style="font-size: 1rem; color: #444;">Claude scans your codebase and drafts a starter CLAUDE.md for you &mdash; project conventions, key patterns, common commands.</p>
+                    <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">Creates <code>CLAUDE.md</code> in your repo root &mdash; a plain markdown file you edit and commit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 34: CLAUDE.md — the real thing (screenshot) -->
+    <div class="slide" data-slide="34" data-level="claude-md">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x1F4DD; CLAUDE.md &mdash; the real thing</h1>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="../assets/concepts/claudemd/claudemd.png" alt="A real CLAUDE.md file showing project rules and agent invocation instructions" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 35: claude-code-best-practice Tips & Tricks (CLAUDE.md) -->
+    <div class="slide" data-slide="35" data-level="claude-md">
+        <h1><code>claude-code-best-practice</code> Tips &amp; Tricks</h1>
+        <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/concepts/claudemd/claudemd-tips.png" alt="Claude Code tips and tricks for CLAUDE.md" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 36: CLAUDE.md problem — keep it under 200 lines -->
+    <div class="slide" data-slide="36" data-level="claude-md">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x26A0;&#xFE0F; CLAUDE.md problem &mdash; keep it under 200 lines</h1>
+            <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
+                <img src="../assets/concepts/claudemd/claudemd-problem.png" alt="Illustration of the CLAUDE.md 200-line adherence problem" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- NEW SLIDE 28: Skills concept intro                            -->
+    <!-- ============================================================ -->
+
+    <!-- Slide: Skills -->
+    <div class="slide section-slide" data-slide="37">
+        <div class="slide-viewport-content">
+            <h1>&#x1F3AF; Skills</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">.claude/skills/</span>
+            </div>
+            <p class="section-desc">Examples: <strong>weather fetching</strong>, sorting CSV rows, generating SVG cards.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Progressive disclosure &mdash; loaded on demand</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x267B;&#xFE0F; Reusable across agents</span>
+            </div>
+            <pre class="file-tree" style="max-width: 440px; margin: 32px auto 0 auto; font-size: 0.9rem; line-height: 1.8; padding: 16px 24px; text-align: left;">root/
+&#x251C;&#x2500;&#x2500; .claude/
+&#x2502;   &#x2514;&#x2500;&#x2500; skills/
+&#x2502;       &#x2514;&#x2500;&#x2500; weather-fetcher/
+&#x2502;           &#x2514;&#x2500;&#x2500; SKILL.md
+&#x2514;&#x2500;&#x2500; README.md</pre>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- NEW SLIDE 38: Create your first skill                         -->
+    <!-- ============================================================ -->
+
+    <div class="slide" data-slide="38" data-level="skills">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>Create your first skill</h1>
+            <div class="two-col" style="margin-top: 28px;">
+                <div class="col-card" style="border-left: 4px solid #4caf50;">
+                    <h4>Write it by prompting</h4>
+                    <p>Just describe what you want Claude to do. It drafts the skill file for you.</p>
+                    <p style="font-size: 0.92rem; color: #555; margin-top: 12px; font-style: italic;">"Create a skill that fetches weather from Open-Meteo for a given city."</p>
+                </div>
+                <div class="col-card" style="border-left: 4px solid #4caf50;">
+                    <h4>Use Anthropic's skill-creator</h4>
+                    <p>Anthropic ships an official <code>skill-creator</code> skill. Invoke it and it walks you through generating a properly-structured skill.</p>
+                    <p style="font-size: 0.9rem; color: #2e7d32; font-weight: 600; margin-top: 12px;">Recommended &mdash; always produces the correct SKILL.md format.</p>
+                </div>
+            </div>
+            <div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 20px 28px; border-radius: 8px; max-width: 900px; margin: 32px auto 0 auto;">
+                <p style="font-weight: 700; margin: 0 0 8px 0;">&#x26A0;&#xFE0F; Watch out (method 1)</p>
+                <p style="margin: 0; font-size: 0.95rem; color: #444;">The prompting method sometimes creates the wrong structure. Instead of generating a folder with <code>SKILL.md</code> inside (e.g. <code>weather-fetcher/SKILL.md</code>), it creates a plain <code>weather-fetcher.md</code> file. The wrong form isn&rsquo;t recognized as a skill by Claude Code.</p>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Slide 39: Skills — a real one (screenshot)                    -->
+    <!-- ============================================================ -->
+
+    <div class="slide" data-slide="39" data-level="skills">
+        <div style="min-height: calc(100vh - 200px);">
+            <h1>&#x1F3AF; Skills &mdash; a real one</h1>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="../assets/concepts/skills/skill-created.jpg" alt="A real skill file on disk — SKILL.md inside a named folder inside .claude/skills/" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Slide 40: Skill config fields with frontmatter (was 39)       -->
+    <!-- ============================================================ -->
+
+    <div class="slide" data-slide="40" data-level="skills">
+        <h1>Skill config fields with frontmatter</h1>
+        <p style="font-style: italic; color: #666; margin: 8px 0 20px 0;">Most fields control how and when the skill loads &mdash; enforced by the harness. Only <code>description</code> lives in prompt-land.</p>
+        <div style="margin: 0 0 24px 0;">
+            <div class="field-row" style="padding-bottom: 6px; border-bottom: 2px solid #ddd;">
+                <span class="field-name" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Field</span>
+                <span class="field-desc" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Description</span>
+                <span class="field-enforced" style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; min-width: 110px; text-align: right;">Enforced by</span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">name <span class="field-recommended">Recommended</span></span>
+                <span class="field-desc">Display name and <code>/slash-command</code> (defaults to directory name)</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">description <span class="field-required">Required</span></span>
+                <span class="field-desc">When to invoke &mdash; used for auto-discovery. Write it clearly.</span>
+                <span class="field-enforced"><span class="pill-prompt">prompt</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">argument-hint</span>
+                <span class="field-desc">Autocomplete hint shown in the <code>/</code> menu (e.g. <code>[city-name]</code>)</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">disable-model-invocation</span>
+                <span class="field-desc">Set <code>true</code> to prevent Claude from invoking this skill automatically</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">user-invocable</span>
+                <span class="field-desc">Set <code>false</code> to hide from <code>/</code> menu &mdash; background knowledge only</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">allowed-tools</span>
+                <span class="field-desc">Tools allowed without permission prompts when this skill is active</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">model</span>
+                <span class="field-desc">Model to use when skill is active: <code>haiku</code>, <code>sonnet</code>, <code>opus</code></span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+            <div class="field-row">
+                <span class="field-name">context</span>
+                <span class="field-desc">Set to <code>fork</code> to run skill in an isolated subagent context</span>
+                <span class="field-enforced"><span class="pill-harness">harness</span></span>
+            </div>
+        </div>
+        <p style="font-style: italic; color: #444; text-align: center; max-width: 900px; margin: 24px auto 0 auto; background: #fff3cd; padding: 14px 24px; border-radius: 8px;">Small <code>description</code>, full body loaded on demand &mdash; this is <strong>progressive disclosure</strong>. Claude&rsquo;s main context stays lean until the skill is actually needed.</p>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- NEW SLIDE 29: Context concept intro                           -->
+    <!-- ============================================================ -->
+
+    <!-- Slide: Context -->
+    <div class="slide section-slide" data-slide="41">
+        <div class="slide-viewport-content">
+            <h1>&#x1F4AD; Context</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; font-family: 'SF Mono', Monaco, 'Courier New', monospace; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">/context</span>
+            </div>
+            <p class="section-desc">The model's <strong>working memory</strong> &mdash; what it can see in this moment.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Fresh every chat</span>
+                <span style="background: #c62828; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(198,40,40,0.35);">&#x26A0;&#xFE0F; Dumb-zone problem</span>
+                <span style="background: #c62828; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(198,40,40,0.35);">&#x26A0;&#xFE0F; <code style="background: rgba(255,255,255,0.2); color: #fff; padding: 2px 8px; border-radius: 4px; font-family: 'SF Mono', Monaco, 'Courier New', monospace;">/compact</code></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 20px; width: 100%; max-width: 420px; margin-left: auto; margin-right: auto;">
+                <div style="flex: 1; min-width: 0; background: #e0e0e0; border-radius: 3px; height: 6px; overflow: hidden;">
+                    <div style="background: #3f51b5; width: 20%; height: 100%;"></div>
+                </div>
+                <span style="font-size: 0.7rem; color: #666; white-space: nowrap;">20% of 1M tokens</span>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 42: Context — Claude's Brain -->
+    <div class="slide" data-slide="42" data-level="context">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x1F9E0; Claude's Brain</h1>
+            <div class="analogy-box">
+                <h4>Think of it like this</h4>
+                <p>Imagine Claude has a <strong>brain</strong> that holds everything it's aware of right now &mdash; your question, every file it's opened, every tool result, every word it's said back to you. If a thought isn't in the brain, Claude can't use it. Simple as that.</p>
+            </div>
+            <img src="../assets/concepts/context/context-window.jpeg" alt="Context window diagram showing how the 1M token limit is divided across system prompt, tools, files, and conversation" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
+            <div class="use-cases">
+                <div class="use-case-item">
+                    <span class="use-case-icon">&#x1F4AC;</span>
+                    <div class="use-case-text">
+                        <strong>Your messages</strong>
+                        <span>Every question, clarification, and follow-up</span>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <span class="use-case-icon">&#x1F4C4;</span>
+                    <div class="use-case-text">
+                        <strong>Every file Claude opens</strong>
+                        <span>Read a 500-page PDF? All of it is in the brain now.</span>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <span class="use-case-icon">&#x1F527;</span>
+                    <div class="use-case-text">
+                        <strong>Every tool result</strong>
+                        <span>Web searches, command output, screenshots &mdash; all held in memory</span>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-box">
+                <h4>Two Things to Know</h4>
+                <p><strong>1. The brain is finite.</strong> It can hold about 1 million tokens &mdash; roughly 750,000 words. Big, but not infinite. <strong>2. The brain empties at the end of every chat.</strong> When you start a new conversation, Claude remembers <em>nothing</em> from the last one unless you tell it again.</p>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 43: Context — What Loads at Session Start -->
+    <div class="slide" data-slide="43" data-level="context">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>What Loads at Session Start</h1>
+            <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
+            <img src="../assets/concepts/context/context.jpg" alt="Diagram showing what loads into Claude's context window at session start" style="width: 100%; max-width: 800px; margin: 24px auto; display: block; border-radius: 8px;" />
+            <div class="use-cases" style="margin-top: 24px;">
+                <div class="use-case-item">
+                    <span class="use-case-icon">&#x1F4CB;</span>
+                    <div class="use-case-text">
+                        <strong>CLAUDE.md &mdash; full content</strong>
+                        <span>Standing instructions, every line. Always pinned in the brain at startup.</span>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <span class="use-case-icon">&#x1F393;</span>
+                    <div class="use-case-text">
+                        <strong>Skills &mdash; descriptions only</strong>
+                        <span>Claude knows which skills exist and what each does &mdash; the full content loads when the skill is actually invoked.</span>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <span class="use-case-icon">&#x1F464;</span>
+                    <div class="use-case-text">
+                        <strong>Agents &mdash; descriptions only</strong>
+                        <span>The roster of specialists. The full system prompt loads when the agent is dispatched.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="trigger-box">
+                <h4>The One-Liner</h4>
+                <p>Only <strong>descriptions</strong> of skills and agents are loaded at startup &mdash; the rest is fetched on-demand. That's <strong>progressive disclosure</strong>. It keeps the brain light.</p>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 44: Context — Lost in the Middle (Liu et al., Stanford 2023) -->
+    <div class="slide" data-slide="44" data-level="context">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1 style="text-align: center;">&#x1F4C4; Lost in the Middle</h1>
+            <p style="text-align: center; color: #666; font-style: italic; font-size: 1.1rem; margin-top: -20px; margin-bottom: 30px;">by Nelson F. Liu &middot; Stanford University &middot; 2023</p>
+
+            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+                <!-- Left column: image -->
+                <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
+                    <img src="../assets/concepts/context/lost-in-the-middle.png" alt="Lost in the Middle paper illustration showing U-shaped attention curve across context positions" style="max-width: 420px; max-height: 55vh; width: auto; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+                </div>
+
+                <!-- Right column: explanation -->
+                <div style="flex: 1 1 300px;">
+                    <ol style="padding-left: 20px; margin: 0; display: flex; flex-direction: column; gap: 18px;">
+                        <li>
+                            <strong>Primacy &amp; recency work.</strong>
+                            Information at the <strong>start</strong> of the context (what Claude sees first) and at the <strong>end</strong> (what Claude saw most recently) gets strong attention. These are the safe zones.
+                        </li>
+                        <li>
+                            <strong>The middle is the dumb zone.</strong>
+                            Content buried in the middle of a long context effectively disappears. The model <em>has</em> the tokens, but doesn't weight them strongly during generation. It's in the working memory &mdash; but not really <em>read</em>.
+                        </li>
+                        <li>
+                            <strong>Practical implication.</strong>
+                            Keep critical instructions either at the very top (in <code style="background: #f1f3f4; padding: 1px 6px; border-radius: 4px;">CLAUDE.md</code>) or near the user's most recent message. A bigger context window doesn't help if your payload lands in the middle.
+                        </li>
+                    </ol>
+
+                    <div style="margin-top: 24px; background: #fff8e1; border-left: 4px solid #f9a825; padding: 14px 18px; border-radius: 0 8px 8px 0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #5a4100;">This is the <strong>"dumb-zone problem"</strong> the deck has been warning about &mdash; now you know where it came from.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 45: Workflow concept-intro -->
+    <div class="slide section-slide" data-slide="45" data-level="workflow">
+        <div class="slide-viewport-content">
+            <h1>&#x1F4D8; Workflow</h1>
+            <div style="text-align: center; margin: 12px auto 20px auto;">
+                <span style="background: #fff3cd; color: #7a5c00; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(122,92,0,0.18);">.claude/commands/</span>
+            </div>
+            <p class="section-desc">Repeatable <strong>step-by-step recipes</strong> &mdash; the instruction manual that makes Claude run the same playbook every time.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;">
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x2705; Reproducible recipes</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F501; Same steps, every run</span>
+                <span style="background: #2e7d32; color: #fff; padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(46,125,50,0.35);">&#x1F465; Team-shareable via git</span>
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 46: Orchestration Workflow diagram -->
+    <div class="slide" data-slide="46" data-level="workflow">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x1F4CB; Orchestration Workflow</h1>
+            <img src="../../orchestration-workflow/orchestration-workflow.svg" alt="Command → Agent → Skill architecture flow"
+                 style="max-width: 1100px; max-height: 70vh; width: 100%; height: auto; display: block; margin: 20px auto 0 auto;" />
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 47: Workflow in action (GIF) -->
+    <div class="slide" data-slide="47" data-level="workflow">
+        <div style="min-height: calc(100vh - 120px);">
+            <h1>&#x1F4F9; Workflow in action</h1>
+            <div style="text-align: center; margin: 24px 0;">
+                <img src="../../orchestration-workflow/orchestration-workflow.gif" alt="Claude running the weather orchestration workflow end-to-end" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
+            </div>
+        </div>
+        <div class="pillar-footer">
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card" style="border-left: 4px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Slide 49: Thank you -->
+    <div class="slide section-slide" data-slide="48">
+        <div class="slide-viewport-content">
+            <h1>&#x1F64F; Thank you!</h1>
+            <div style="margin: 20px auto 28px auto; text-align: center;">
+                <img src="../assets/concepts/thank-you.jpg" alt="Thank you" style="max-width: 600px; max-height: 60vh; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); object-fit: contain;" onerror="this.style.display='none'" />
+            </div>
+            <p class="section-desc">Questions? Feedback?</p>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+                <a href="https://github.com/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; background: #24292e; color: #fff; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                    <img src="../assets/logo/github.svg" style="height: 20px; width: 20px; filter: invert(1);" alt="GitHub" />
+                    github.com/shanraisshan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Corner mascots (global, appear on every slide) -->
+    <div class="header-logo">
+        <img src="../../!/claude-jumping.svg" alt="Claude Code mascot" />
+    </div>
+
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()">&#8592;</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">&#8594;</button>
+    </div>
+    <div class="slide-counter" id="slideCounter">1 / --</div>
+    <div class="keyboard-hint"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> or <kbd>Space</kbd> to navigate</div>
+
+    <script>
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('[data-slide]');
+        const totalSlides = slides.length;
+
+        // Level label map — used for the level-badge on section-divider h1s
+        const LEVEL_LABELS = {
+            'agents':    'Agents',
+            'skills':    'Skills',
+            'context':   'Context',
+            'claude-md': 'CLAUDE.md',
+            'commands':  'Commands',
+            'workflow':  'Workflow'
+        };
+
+        let prevDisplayedLevel = null;
+
+        function updateLevelBadge(slideNum) {
+            document.querySelectorAll('.level-badge').forEach(b => b.remove());
+            const slideEl = document.querySelector(`[data-slide="${slideNum}"]`);
+            if (slideEl && slideEl.dataset.level && slideEl.dataset.level !== prevDisplayedLevel) {
+                const levelKey = slideEl.dataset.level;
+                const label = LEVEL_LABELS[levelKey];
+                if (label) {
+                    const h1 = slideEl.querySelector('h1');
+                    if (h1) {
+                        const badge = document.createElement('span');
+                        badge.className = 'level-badge';
+                        badge.textContent = '\u2192 ' + label;
+                        h1.appendChild(badge);
+                    }
+                }
+            }
+            if (slideEl && slideEl.dataset.level) { prevDisplayedLevel = slideEl.dataset.level; }
+            if (slideNum <= 1) { prevDisplayedLevel = null; }
+        }
+
+        function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+            document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+            window.scrollTo(0, 0);
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+            updateLevelBadge(currentSlide);
+        }
+        function nextSlide() { currentSlide++; showSlide(currentSlide); }
+        function prevSlide() { currentSlide--; showSlide(currentSlide); }
+        function goToSlide(n) { currentSlide = n; showSlide(currentSlide); }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) { if (diff > 0) nextSlide(); else prevSlide(); }
+        });
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
