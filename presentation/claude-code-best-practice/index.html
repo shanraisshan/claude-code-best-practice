@@ -513,18 +513,11 @@
                 </div>
 
                 <!-- Turn 2: Model → User -->
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
                     <div style="background: #f3e5f5; border: 1px solid #ce93d8; border-radius: 18px 18px 4px 18px; padding: 12px 18px; max-width: 62%; text-align: left; position: relative;">
                         <span style="font-size: 1rem; color: #1a1a1a;">&ldquo;Okay, your name is Shayan.&rdquo;</span>
                         <span style="display: block; font-size: 0.7rem; color: #888; margin-top: 4px;">&#x279C; to user</span>
                     </div>
-                </div>
-
-                <!-- Divider: new session / context wiped -->
-                <div style="display: flex; align-items: center; gap: 12px; margin: 4px 0 20px;">
-                    <div style="flex: 1; border-top: 2px dashed #e0a020; opacity: 0.7;"></div>
-                    <span style="font-size: 0.75rem; font-weight: 600; color: #e0a020; background: #fff8e1; border: 1px solid #ffe082; padding: 3px 12px; border-radius: 999px; white-space: nowrap;">new session &mdash; context wiped</span>
-                    <div style="flex: 1; border-top: 2px dashed #e0a020; opacity: 0.7;"></div>
                 </div>
 
                 <!-- Turn 3: User → Model -->
@@ -538,7 +531,7 @@
                 <!-- Turn 4: Model → User (can't remember) -->
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 0;">
                     <div style="background: #fce4ec; border: 1px solid #f48fb1; border-radius: 18px 18px 4px 18px; padding: 12px 18px; max-width: 72%; text-align: left;">
-                        <span style="font-size: 1rem; color: #1a1a1a;">&ldquo;I don&rsquo;t know your name &mdash; each conversation starts fresh.&rdquo;</span>
+                        <span style="font-size: 1rem; color: #1a1a1a;">&ldquo;I don&rsquo;t know your name &mdash; I have no memory of what you just said.&rdquo;</span>
                         <span style="display: block; font-size: 0.7rem; color: #888; margin-top: 4px;">&#x279C; to user</span>
                     </div>
                 </div>
@@ -546,7 +539,7 @@
             </div>
 
             <!-- Caption strip — mirrors slide-12 pattern -->
-            <p style="font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin: 8px 0 4px; letter-spacing: -0.02em; line-height: 1.2;">Each call starts from zero.</p>
+            <p style="font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin: 8px 0 4px; letter-spacing: -0.02em; line-height: 1.2;">Every turn is a fresh API call.</p>
             <p style="font-size: 1.1rem; font-weight: 400; color: #C0392B; margin: 0; letter-spacing: 0.01em;">Memory only exists if the harness replays the transcript.</p>
 
         </div>
@@ -762,6 +755,7 @@
             <!-- One-liner — kept, placed below the diagram -->
             <p style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a; margin: 12px 0 6px; letter-spacing: -0.02em; line-height: 1.2;">A horse harness. A model harness.</p>
             <p style="font-size: 1.2rem; font-weight: 400; color: #C0392B; margin: 0; letter-spacing: 0.01em;">The model is the horse. Raw power, no direction. The harness is everything else.</p>
+            <p style="font-size: 0.95rem; font-weight: 400; color: #666; margin: 16px 0 0; letter-spacing: 0.01em;">The origin is Old French <em>harneis</em> &mdash; gear, equipment, armor.</p>
 
         </div>
     </div>
@@ -775,6 +769,14 @@
             <img src="../assets/harness/tool-calling.png"
                  alt="Diagram showing how Claude sends a tool-call request to the harness, the harness executes it against real-world systems, and the result flows back into Claude&rsquo;s context"
                  style="max-width: 100%; max-height: 55vh; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+        </div>
+
+        <!-- Vocabulary definitions — anchored here because the diagram above makes both terms concrete -->
+        <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px; max-width: 820px; margin-left: auto; margin-right: auto;">
+            <!-- Diagram-specific count annotation — scoped to this image, not a general rule -->
+            <p style="font-size: 0.9rem; color: #666; margin: 0 0 4px; font-style: italic;">In the diagram above:&nbsp;&nbsp;<strong style="font-style: normal; color: #C0392B; font-size: 1rem;">Turn &times; 1</strong>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<strong style="font-style: normal; color: #C0392B; font-size: 1rem;">Inference &times; 2</strong></p>
+            <p style="font-size: 0.95rem; color: #444; margin: 0;"><strong style="color: #1a1a1a;">Turn</strong> &mdash; one round from the user&rsquo;s view: you ask, the assistant answers. <em>The entire flow above &mdash; your request, the assistant&rsquo;s tool calls, and the final reply &mdash; is one turn.</em></p>
+            <p style="font-size: 0.95rem; color: #444; margin: 0;"><strong style="color: #1a1a1a;">Inference</strong> &mdash; one call to the language model. The model wakes up, reads the input it was given, writes a reply, then forgets everything. <em>Every arrow touching the &ldquo;Language Model&rdquo; column above is a separate inference. One turn can contain many inferences.</em></p>
         </div>
     </div>
 
