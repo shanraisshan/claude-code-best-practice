@@ -137,6 +137,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 | [anthropics/skills](https://github.com/anthropics/skills) | 125k | 17 |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | 36k | 18 |
 | [wshobson/agents](https://github.com/wshobson/agents) | 34k | 152 |
+| [agent-skills](https://github.com/addyosmani/agent-skills) | 26k | 20 |
 | [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 20k | 134 |
 | [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 19k | 930+ (curated list) |
 
