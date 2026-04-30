@@ -35,6 +35,7 @@ from vibe coding to agentic engineering - practice makes claude perfect
 | [**CLI Startup Flags**](https://code.claude.com/docs/en/cli-reference) | `claude [flags]` | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-cli-startup-flags.md) Command-line flags, subcommands, and environment variables for launching Claude Code · [Interactive Mode](https://code.claude.com/docs/en/interactive-mode) · [Env Vars](https://code.claude.com/docs/en/env-vars) · `/usage` (merged `/cost`+`/stats` in v2.1.118) |
 | **AI Terms** | | [![Best Practice](!/tags/best-practice.svg)](https://github.com/shanraisshan/claude-code-codex-cursor-gemini/blob/main/reports/ai-terms.md) Agentic Engineering · Context Engineering · Vibe Coding |
 | [**Best Practices**](https://code.claude.com/docs/en/best-practices) | | Official best practices · [Prompt Engineering](https://github.com/anthropics/prompt-eng-interactive-tutorial) · [Extend Claude Code](https://code.claude.com/docs/en/features-overview) |
+| [**Troubleshooting**](best-practice/claude-troubleshooting.md) | | [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-troubleshooting.md) Hooks not firing, context rot, agent loops, permission denials, MCP issues, CLAUDE.md not loading, session recovery, high cost |
 
 ### 🔥 Hot
 
