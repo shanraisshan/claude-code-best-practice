@@ -183,3 +183,9 @@ No drift detected — frontmatter fields (15) and bundled skills (5) are fully s
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Skill | Add `fewer-permission-prompts` to official bundled skills table — introduced in v2.1.112; canonical commands reference (`/en/commands`) marks it `[Skill]` alongside the other 5 bundled skills. The Skills Reference prose at `/en/skills` undercounts (lists 5); commands page is authoritative | ✅ COMPLETE (added row 6 to bundled skills table, count updated 5→6) |
+
+---
+
+## [2026-05-01 03:30 PM PKT] Claude Code v2.1.126
+
+No drift detected — frontmatter fields (15) and bundled skills (6) are fully synchronized with official docs.
