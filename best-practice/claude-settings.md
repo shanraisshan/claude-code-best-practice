@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2029%2C%202026%2012%3A49%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.121-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-May%2001%2C%202026%203%3A29%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.126-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.121, Claude Code exposes **60+ settings** and **175+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.126, Claude Code exposes **60+ settings** and **175+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -52,6 +52,8 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 
 > **Note:** As of v2.1.75, the deprecated Windows fallback path `C:\ProgramData\ClaudeCode\managed-settings.json` has been removed. Use `C:\Program Files\ClaudeCode\managed-settings.json` instead.
 
+> **Note (v2.1.126):** `/config` now persists changes to `~/.claude/settings.json` instead of holding them in memory only. Edits made through the interactive Config UI survive restarts.
+
 **Important**:
 - `deny` rules have highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
 - Managed settings may lock or override local behavior even if local files specify different values.
@@ -76,7 +78,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `skipWebFetchPreflight` | boolean | `false` | Skip WebFetch blocklist check before fetching URLs *(in JSON schema, not on official settings page)* |
 | `availableModels` | array | - | Restrict which models users can select via `/model`, `--model`, Config tool, or `ANTHROPIC_MODEL`. Does not affect the Default option. Example: `["sonnet", "haiku"]` |
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
-| `defaultShell` | string | `"bash"` | Default shell for input-box `!` commands. Accepts `"bash"` (default) or `"powershell"`. Setting `"powershell"` routes interactive `!` commands through PowerShell on Windows. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` (v2.1.84) |
+| `defaultShell` | string | `"bash"` | Default shell for input-box `!` commands. Accepts `"bash"` (default) or `"powershell"`. Setting `"powershell"` routes interactive `!` commands through PowerShell on Windows. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` (v2.1.84). **v2.1.120:** When PowerShell is available, it is used as the fallback shell on Windows even without Git for Windows installed. **v2.1.126:** When PowerShell is enabled, it is treated as the *primary* shell instead of defaulting to Bash. PowerShell 7 detection now also covers Microsoft Store installs, MSI installs not on PATH, and `.NET` global tool installs |
 | `includeGitInstructions` | boolean | `true` | Include built-in commit and PR workflow instructions and the git status snapshot in Claude's system prompt. The `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` environment variable takes precedence over this setting when set |
 | `voice` | object | - | Voice dictation configuration. Object with three fields: `enabled` (boolean — push-to-talk on/off), `mode` (string — `"hold"` for hold-to-talk or `"tap"` for tap-to-toggle), and `autoSubmit` (boolean — submit transcript immediately when dictation ends). Written automatically when you run `/voice`. Requires a Claude.ai account (v2.1.118 expanded structure) |
 | `voiceEnabled` | boolean | - | **DEPRECATED** — legacy alias for `voice.enabled`. Use the `voice` object instead to get `mode` and `autoSubmit` controls |
@@ -245,7 +247,7 @@ Control what tools and operations Claude can perform.
 | `"default"` | Standard permission checking with prompts |
 | `"acceptEdits"` | Auto-accept file edits without asking |
 | `"dontAsk"` | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
-| `"bypassPermissions"` | Skip all permission checks (dangerous). Writes to protected paths (`.git`, `.claude`, `.vscode`, `.idea`, `.husky`) still prompt. As of v2.1.121, writes to `.claude/commands/`, `.claude/agents/`, `.claude/skills/`, and `.claude/worktrees/` are explicitly exempt from the protected-paths prompt because Claude routinely writes there when creating skills, subagents, and commands |
+| `"bypassPermissions"` | Skip all permission checks (dangerous). Writes to protected paths (`.git`, `.claude`, `.vscode`, `.idea`, `.husky`) still prompt. As of v2.1.121, writes to `.claude/commands/`, `.claude/agents/`, `.claude/skills/`, and `.claude/worktrees/` are explicitly exempt from the protected-paths prompt because Claude routinely writes there when creating skills, subagents, and commands. **v2.1.126** further extends the exemption: writes to `.claude/`, `.git/`, `.vscode/`, and shell config files (e.g., `.bashrc`, `.zshrc`) no longer prompt under `--dangerously-skip-permissions`. Catastrophic removal commands still prompt as a safety net |
 | `"auto"` | Auto-approves tool calls with background safety checks that verify actions align with your request. Research preview. Classifier auto-approves read-only and file edits; sends everything else through a safety check. Falls back to prompting after 3 consecutive or 20 total blocks. In the default `Shift+Tab` permission-mode cycle since v2.1.111 (the `--enable-auto-mode` flag was removed in v2.1.111 — start in this mode with `--permission-mode auto`). Configure with the `autoMode` setting |
 | `"plan"` | Read-only exploration mode |
 
@@ -577,7 +579,7 @@ Configure via `env` key:
 | `outputStyle` | string | `"default"` | Output style (e.g., `"Explanatory"`) |
 | `spinnerTipsEnabled` | boolean | `true` | Show tips while waiting |
 | `spinnerVerbs` | object | - | Custom spinner verbs with `mode` ("append" or "replace") and `verbs` array |
-| `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` (string array) and optional `excludeDefault` (boolean) |
+| `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` (string array) and optional `excludeDefault` (boolean). When `excludeDefault` is `true`, only custom tips show; when `false` or absent, custom tips merge with built-in tips. As of v2.1.121, `excludeDefault: true` also suppresses time-based spinner tips |
 | `respectGitignore` | boolean | `true` | Respect .gitignore in file picker |
 | `prefersReducedMotion` | boolean | `false` | Reduce animations and motion effects in the UI |
 | `fileSuggestion` | object | - | Custom file suggestion command (see File Suggestion Configuration below) |
@@ -586,6 +588,7 @@ Configure via `env` key:
 | `showTurnDuration` | boolean | `true` | Show turn duration messages after responses (e.g., "Cooked for 1m 6s"). Versions before v2.1.119 stored this in `~/.claude.json` |
 | `teammateMode` | string | `"auto"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"`, or `"tmux"`. See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode). Versions before v2.1.119 stored this in `~/.claude.json` |
 | `terminalProgressBarEnabled` | boolean | `true` | Show the terminal progress bar in supported terminals (ConEmu, Ghostty 1.2.0+, and iTerm2 3.6.6+). Appears in `/config` as **Terminal progress bar**. Versions before v2.1.119 stored this in `~/.claude.json` |
+| `preferredNotifChannel` | string | `"auto"` | Method for task-complete and permission-prompt notifications. Values: `"auto"`, `"terminal_bell"`, `"iterm2"`, `"iterm2_with_bell"`, `"kitty"`, `"ghostty"`, `"notifications_disabled"`. Default `"auto"` sends a desktop notification in iTerm2, Ghostty, and Kitty and does nothing in other terminals. Set `"terminal_bell"` to ring the bell character in any terminal. Appears in `/config` as **Notifications**. See [Get a terminal bell or notification](https://code.claude.com/docs/en/terminal-config#get-a-terminal-bell-or-notification) |
 
 ### Global Config Settings (`~/.claude.json`)
 
@@ -785,6 +788,8 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_BASE_URL` | Custom API endpoint |
 | `ANTHROPIC_BEDROCK_BASE_URL` | Override Bedrock endpoint URL |
 | `ANTHROPIC_BEDROCK_MANTLE_BASE_URL` | Override the Bedrock Mantle endpoint URL. See [Mantle endpoint](https://code.claude.com/docs/en/amazon-bedrock#use-the-mantle-endpoint) |
+| `ANTHROPIC_BEDROCK_SERVICE_TIER` | Bedrock service tier: `default`, `flex`, or `priority`. Sent as the `X-Amzn-Bedrock-Service-Tier` header on every request. See [Amazon Bedrock service tiers](https://code.claude.com/docs/en/amazon-bedrock#service-tiers) (v2.1.122) |
+| `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST` | Set by host platforms that embed Claude Code and manage model provider routing on the user's behalf. When set, provider-selection / endpoint / authentication env vars in `settings.json` (e.g., `CLAUDE_CODE_USE_BEDROCK`, `ANTHROPIC_BASE_URL`, `ANTHROPIC_API_KEY`) are ignored so user settings cannot override the host's routing. The automatic telemetry opt-out for Bedrock/Vertex/Foundry is also skipped, so telemetry follows the standard `DISABLE_TELEMETRY` opt-out (v2.1.126) |
 | `ANTHROPIC_VERTEX_BASE_URL` | Override Vertex AI endpoint URL |
 | `ANTHROPIC_BETAS` | Comma-separated Anthropic beta header values |
 | `ANTHROPIC_VERTEX_PROJECT_ID` | GCP project ID for Vertex AI |
@@ -1104,10 +1109,12 @@ Set environment variables for all Claude Code sessions.
     "excludeDefault": false
   },
   "prefersReducedMotion": false,
+  "preferredNotifChannel": "terminal_bell",
 
   "env": {
     "NODE_ENV": "development",
-    "CLAUDE_CODE_EFFORT_LEVEL": "medium"
+    "CLAUDE_CODE_EFFORT_LEVEL": "medium",
+    "ANTHROPIC_BEDROCK_SERVICE_TIER": "priority"
   }
 }
 ```
