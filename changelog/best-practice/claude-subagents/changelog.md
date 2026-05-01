@@ -219,3 +219,9 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | LOW | Field Docs | Update `effort` field description — add `xhigh` between `high` and `max` to match official docs' enum value list | ✅ COMPLETE (inserted `xhigh` on line 33; mirrors the v2.1.91 pattern when `auto` was added to `permissionMode`) |
+
+---
+
+## [2026-05-01 03:30 PM PKT] Claude Code v2.1.126
+
+No drift detected on the two tracked dimensions — all 16 frontmatter fields and 5 built-in agents match.
