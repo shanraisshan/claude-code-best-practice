@@ -146,7 +146,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
-## 💡 TIPS AND TRICKS (82)
+## 💡 TIPS AND TRICKS (85)
 
 🚫👶 = do not babysit
 
@@ -293,7 +293,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 | use a [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for QA — e.g. [Codex](https://github.com/shanraisshan/codex-cli-best-practice) for plan and implementation review | ![Shayan](!/tags/community-shayan.svg) |
 | agentic search (glob + grep) beats RAG — Claude Code tried and discarded vector databases because code drifts out of sync and permissions are complex | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3095) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3095) |
 
-<a id="tips-utilities"></a>■ **Utilities (5)**
+<a id="tips-utilities"></a>■ **Utilities (8)**
 
 | Tip | Source |
 |-----|--------|
@@ -302,6 +302,9 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 | [claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks) for claude feedback | ![Shayan](!/tags/community-shayan.svg) |
 | [status line](https://github.com/shanraisshan/claude-code-status-line) for context awareness and fast compacting | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021700784019452195) ![Shayan](!/tags/community-shayan.svg) |
 | explore [settings.json](best-practice/claude-settings.md) features like [Plans Directory](best-practice/claude-settings.md#plans-directory), [Spinner Verbs](best-practice/claude-settings.md#display--ux) for a personalized experience | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2021701145023197516) |
+| [rtk](https://github.com/rtk-ai/rtk) — CLI proxy that filters shell tool output (git, docker, gh, ls) before it reaches the model. Single Rust binary, transparent via hook, claims 60-90% token reduction on common dev commands | [![Community](!/tags/community.svg)](https://github.com/rtk-ai/rtk) |
+| [claude-mem](https://github.com/thedotmack/claude-mem) — plugin that captures session work, AI-compresses it via agent-sdk, and injects relevant context into future sessions for inter-session memory | [![Community](!/tags/community.svg)](https://github.com/thedotmack/claude-mem) |
+| [context-mode](https://github.com/mksglu/context-mode) — sandboxes verbose tool output (Playwright, MCP servers, browser automation) so only the summary returns to the main context. 14 platforms supported | [![Community](!/tags/community.svg)](https://github.com/mksglu/context-mode) |
 
 <a id="tips-daily"></a>■ **Daily (2)**
 
