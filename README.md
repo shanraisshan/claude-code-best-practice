@@ -498,11 +498,12 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 > | # | Workflow | Description |
 > |---|----------|-------------|
 > | 1 | /workflows:development-workflows | Update the DEVELOPMENT WORKFLOWS table and cross-workflow analysis report by researching all 10 workflow repos in parallel |
-> | 2 | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
-> | 3 | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
-> | 4 | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |
-> | 5 | /workflows:best-practice:workflow-claude-commands | Track Claude Code commands report changes and find what needs updating |
-> | 6 | /workflows:best-practice:workflow-claude-skills | Track Claude Code skills report changes and find what needs updating |
+> | 2 | /workflows:skill-collections | Update the SKILL COLLECTIONS table by researching all 5 skill-collection repos in parallel |
+> | 3 | /workflows:best-practice:workflow-concepts | Update the README CONCEPTS section with the latest Claude Code features and concepts |
+> | 4 | /workflows:best-practice:workflow-claude-settings | Track Claude Code settings report changes and find what needs updating |
+> | 5 | /workflows:best-practice:workflow-claude-subagents | Track Claude Code subagents report changes and find what needs updating |
+> | 6 | /workflows:best-practice:workflow-claude-commands | Track Claude Code commands report changes and find what needs updating |
+> | 7 | /workflows:best-practice:workflow-claude-skills | Track Claude Code skills report changes and find what needs updating |
 
 ## Extras
 
