@@ -485,3 +485,27 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 12 | LOW | Verification | Bundled Skills anchor `#bundled-skills` — stable since v2.1.113 | ✅ COMPLETE (stable) |
 | 13 | LOW | Verification | Ultrareview anchor `#track-a-running-review` confirmed on `/en/ultrareview` page — section exists and describes `/tasks` integration | ✅ COMPLETE (stable since v2.1.118) |
 | 14 | LOW | Verification | claude-code-guide cross-check — corroborated dedicated agent's findings on v2.1.117–v2.1.121 changes (forked subagents external, alwaysLoad, updatedToolOutput, claude ultrareview subcommand); also surfaced Bedrock/Vertex/Foundry, Desktop, IDE Integrations as long-standing missing concepts | ✅ COMPLETE (both agents aligned; all "missing platform surfaces" already INVALID per recurring user decision) |
+
+---
+
+## [2026-05-01 03:34 PM PKT] Claude Code v2.1.126
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Stale Version | README badge pinned at v2.1.121 (Apr 29) — latest is v2.1.126 (May 01); 5 versions behind | ✅ COMPLETE (badge bumped to v2.1.126 May 01 2026 3:34 PM PKT) |
+| 2 | MED | New Concept (optional) | v2.1.126 introduced `claude project purge [path]` subcommand with `--dry-run`/`--all` flags — currently absent from CLI Startup Flags row; could be inline note | ✋ ON HOLD (deferred — single-version-old subcommand; revisit if user requests CLI Startup Flags refresh) |
+| 3 | MED | New Concept (optional) | v2.1.126 added gateway-driven model picker — `/model` lists models from `ANTHROPIC_BASE_URL`'s `/v1/models` endpoint when gateway is Anthropic-compatible | ✋ ON HOLD (deferred — niche LLM-gateway feature; only relevant for self-hosted-gateway users; not surfaced in CONCEPTS by design) |
+| 4 | LOW | Changed Description (optional) | v2.1.122 expanded `--from-pr` to accept GitLab MR + Bitbucket PR + GitHub Enterprise PR URLs (originally GitHub only) — CLI Startup Flags row doesn't surface this | ✋ ON HOLD (deferred — `--from-pr` not currently surfaced as inline link; would require new sub-link addition) |
+| 5 | HIGH | Stale URL | Commands URL `/slash-commands` not in official sitemap — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user has chosen to keep as-is across 21+ runs) |
+| 6 | MED | Missing Concept (recurring) | Dedicated agent re-flagged Output Styles, Permissions, Sandboxing, Headless Mode, Desktop App, IDE Integration as missing standalone rows | ❌ INVALID (RECURRING from 2026-03-10/2026-03-17/2026-04-08/2026-04-09; user considers all six platform surfaces or covered as Settings sub-links — not standalone concepts) |
+| 7 | MED | Missing Concept (recurring) | Dedicated agent flagged Auto Memory needs its own row separate from Memory | ❌ INVALID (RECURRING — current Memory row already surfaces both `/en/memory#auto-memory` and `reports/claude-agent-memory.md` as inline links; user's chosen pattern for cross-cutting feature) |
+| 8 | LOW | Stale Finding | Dedicated agent flagged Tasks row primary URL needs `/en/agent-sdk/todo-tracking` cross-reference | ❌ INVALID (already RESOLVED on 2026-04-26 — user explicitly moved Tasks primary URL to `reports/claude-global-vs-project-settings.md#tasks-system` and kept ultrareview tracking as inline link; agent's analysis is stale) |
+| 9 | LOW | Verification | All 23 local badge file paths validated — `best-practice/`, `implementation/`, `reports/`, `.claude/`, `.mcp.json`, `CLAUDE.md` all exist | ✅ COMPLETE (no missing local files) |
+| 10 | LOW | Verification | Spot-validated external CONCEPTS URLs (`/en/cli-reference`, `/en/agent-teams`, `/en/changelog`, `/en/mcp`) — all return valid pages | ✅ COMPLETE (no NEW broken URLs) |
+| 11 | LOW | Verification | Beta badge currency (rule #7) — fetched `/en/agent-teams` and confirmed `<Warning>` banner: "Agent teams are experimental and disabled by default" — README beta badge accurate | ✅ COMPLETE (no demotions warranted) |
+| 12 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 13 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 14 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 15 | LOW | Verification | Bundled Skills anchor `#bundled-skills` — stable since v2.1.113 | ✅ COMPLETE (stable) |
+| 16 | LOW | Verification | Ultrareview anchor `#track-a-running-review` — stable since v2.1.118 | ✅ COMPLETE (stable) |
+| 17 | LOW | Verification | claude-code-guide cross-check — independent research surfaced same v2.1.122–126 changes (`claude project purge`, gateway model picker, `--from-pr` expansion); also re-surfaced long-standing platform-surface concepts (Desktop, IDE Integration, Bedrock/Vertex/Foundry) which are RECURRING INVALID per user policy; no contradictions | ✅ COMPLETE (both agents aligned) |
