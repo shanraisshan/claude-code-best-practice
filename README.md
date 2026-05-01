@@ -1,7 +1,7 @@
 # claude-code-best-practice
 from vibe coding to agentic engineering - practice makes claude perfect
 
-![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.121%20(Apr%2029%2C%202026%201%3A06%20AM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a> ![🇵🇰 2nd Most ★](!/root/second-most-starred.svg)<br>
+![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.126%20(May%2001%2C%202026%203%3A36%20PM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a> ![🇵🇰 2nd Most ★](!/root/second-most-starred.svg)<br>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) [![Implemented](!/tags/implemented.svg)](implementation/) [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) [![Claude](!/tags/claude.svg)](https://code.claude.com/docs) [![Boris](!/tags/boris-cherny.svg)](#-tips-and-tricks) [![Community](!/tags/community.svg)](#-subscribe) ![Click on these badges below to see the actual sources](!/tags/click-badges.svg)<br>
 <img src="!/tags/a.svg" height="14"> = Agents · <img src="!/tags/c.svg" height="14"> = Commands · <img src="!/tags/s.svg" height="14"> = Skills
@@ -134,11 +134,11 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 
 | Name | ★ | <img src="!/tags/s.svg" height="14"> |
 |------|---|---|
-| [anthropics/skills](https://github.com/anthropics/skills) | 125k | 17 |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | 36k | 18 |
-| [wshobson/agents](https://github.com/wshobson/agents) | 34k | 152 |
+| [anthropics/skills](https://github.com/anthropics/skills) | 127k | 17 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 51k | 18 |
+| [wshobson/agents](https://github.com/wshobson/agents) | 35k | 152 |
 | [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 20k | 134 |
-| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 19k | 930+ (curated list) |
+| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 20k | 930+ (curated list) |
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
