@@ -1,6 +1,6 @@
 # Sub-agents Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Apr%2029%2C%202026%2012%3A49%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.121-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-May%2001%2C%202026%203%3A30%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.126-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-subagents-implementation.md)
 
 Claude Code subagents — frontmatter fields and official built-in agent types.
