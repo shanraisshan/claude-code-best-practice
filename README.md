@@ -461,7 +461,13 @@ Get the maximum out of this repo by following these steps:
 6. **Point Claude at the [tips and tricks](#-tips-and-tricks-83) section in your own project** and ask it to suggest edits — especially how to restructure your `CLAUDE.md`. Every tip is sourced from the Claude team or the community.
 7. **Subscribe to the Reddit and YouTube channels in the [Subscribe section](#-subscribe)** to keep up with the community.
 
+**🎬 Videos**
+
 <a href="https://www.youtube.com/watch?v=AkAhkalkRY4"><img src="!/thumbnail/video-1.png" alt="Watch on YouTube" width="300"></a>
+
+**📊 Presentations**
+
+<a href="https://github.com/shanraisshan/claude-code-best-practice/tree/main/presentation/2026-04-25-gdg-kolachi-cli-claude-code-gemini"><img src="!/thumbnail/presentation-1.png" alt="Claude Code & Gemini CLI — GDG Kolachi" width="300"></a>
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
