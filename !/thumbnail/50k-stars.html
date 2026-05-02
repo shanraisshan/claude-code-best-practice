@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50k stars on GitHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90' width='140' height='126'%3E%3Cstyle%3E.claude-body%7Banimation:jump .5s ease-in-out infinite;transform-origin:center bottom%7D.shadow%7Banimation:shadow-scale .5s ease-in-out infinite%7D.left-arm%7Banimation:wave-left .5s ease-in-out infinite;transform-origin:right center%7D.right-arm%7Banimation:wave-right .5s ease-in-out infinite;transform-origin:left center%7D.left-ear%7Banimation:ear-bounce .5s ease-in-out infinite;transform-origin:center bottom%7D.right-ear%7Banimation:ear-bounce .5s ease-in-out infinite .1s;transform-origin:center bottom%7D@keyframes jump%7B0%25,100%25%7Btransform:translateY(0) scaleY(1) scaleX(1)%7D30%25%7Btransform:translateY(-16px) scaleY(1.1) scaleX(.95)%7D50%25%7Btransform:translateY(-18px) scaleY(1.05) scaleX(.98)%7D80%25%7Btransform:translateY(-5px) scaleY(.95) scaleX(1.05)%7D%7D@keyframes shadow-scale%7B0%25,100%25%7Btransform:scaleX(1);opacity:.25%7D50%25%7Btransform:scaleX(.4);opacity:.08%7D%7D@keyframes wave-left%7B0%25,100%25%7Btransform:rotate(0)%7D50%25%7Btransform:rotate(-25deg)%7D%7D@keyframes wave-right%7B0%25,100%25%7Btransform:rotate(0)%7D50%25%7Btransform:rotate(25deg)%7D%7D@keyframes ear-bounce%7B0%25,100%25%7Btransform:scaleY(1)%7D40%25%7Btransform:scaleY(1.2)%7D60%25%7Btransform:scaleY(.85)%7D%7D%3C/style%3E%3Cellipse class='shadow' cx='50' cy='82' rx='22' ry='5' fill='%23000'/%3E%3Cg class='claude-body'%3E%3Crect class='left-ear' x='22' y='10' width='8' height='14' fill='%23E07C4C'/%3E%3Crect class='right-ear' x='70' y='10' width='8' height='14' fill='%23E07C4C'/%3E%3Crect x='18' y='24' width='64' height='4' fill='%23E07C4C'/%3E%3Crect x='14' y='28' width='72' height='32' fill='%23E07C4C'/%3E%3Crect x='30' y='34' width='8' height='10' fill='%23000'/%3E%3Crect x='62' y='34' width='8' height='10' fill='%23000'/%3E%3Crect class='left-arm' x='2' y='36' width='12' height='8' fill='%23E07C4C'/%3E%3Crect class='right-arm' x='86' y='36' width='12' height='8' fill='%23E07C4C'/%3E%3Crect x='24' y='60' width='12' height='14' fill='%23E07C4C'/%3E%3Crect x='64' y='60' width='12' height='14' fill='%23E07C4C'/%3E%3C/g%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px 30px;
+        }
+
+        .top-bar-left {
+            text-align: left;
+        }
+
+        .top-bar-left .repo-name {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1f2328;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #d1d9e0;
+        }
+
+        .top-bar-left .repo-tagline {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-size: 0.95rem;
+            color: #656d76;
+            margin-top: 6px;
+            font-weight: 400;
+        }
+
+        .trending-badge img {
+            height: 55px;
+            width: auto;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .title-logo {
+            width: 220px;
+            height: 159px;
+            flex-shrink: 0;
+        }
+
+        .title-logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pixel-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 2.8rem;
+            color: #E07C4C;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 3.5rem;
+            color: #555;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .project-line {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .subtitle .how-i-run {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .subtitle .workflows {
+            display: inline-block;
+            color: #16a34a;
+            font-weight: 700;
+            background: linear-gradient(90deg, #16a34a 0%, #4ade80 50%, #16a34a 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer-seq 10s ease-in-out infinite;
+        }
+
+        @keyframes shimmer-seq {
+            0% { background-position: 200% 0; }
+            20% { background-position: -200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .stars-banner {
+            margin-top: 48px;
+            padding: 22px 44px;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+            border: 2px solid #f1c40f;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 28px;
+            position: relative;
+            overflow: hidden;
+            animation: banner-glow 3s ease-in-out infinite;
+        }
+
+        .stars-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(241, 196, 15, 0.25), transparent);
+            animation: banner-shimmer 3.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes banner-glow {
+            0%, 100% {
+                box-shadow: 0 0 30px rgba(241, 196, 15, 0.35),
+                            inset 0 0 18px rgba(241, 196, 15, 0.08);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(241, 196, 15, 0.6),
+                            inset 0 0 28px rgba(241, 196, 15, 0.18);
+            }
+        }
+
+        @keyframes banner-shimmer {
+            0% { left: -150%; }
+            60%, 100% { left: 250%; }
+        }
+
+        .banner-star {
+            width: 56px;
+            height: 56px;
+            fill: #f1c40f;
+            filter: drop-shadow(0 0 10px rgba(241, 196, 15, 0.7));
+            animation: star-twinkle 2.4s ease-in-out infinite;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .banner-star.right { animation-delay: 1.2s; }
+
+        @keyframes star-twinkle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-12deg) scale(1.12); }
+            50% { transform: rotate(0deg) scale(1); }
+            75% { transform: rotate(12deg) scale(1.12); }
+        }
+
+        .stars-banner-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .stars-banner-top {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .stars-number {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 2.6rem;
+            color: #f1c40f;
+            text-shadow: 0 0 18px rgba(241, 196, 15, 0.55);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .stars-plus {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.4rem;
+            color: #f1c40f;
+            opacity: 0.85;
+        }
+
+        .stars-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+            font-size: 0.82rem;
+            color: #c9d1d9;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .stars-label .gh-mark {
+            width: 18px;
+            height: 18px;
+            fill: #c9d1d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="repo-name">claude-code-best-practice</div>
+            <div class="repo-tagline">from vibe coding to agentic engineering - practice makes claude perfect</div>
+        </div>
+        <div class="trending-badge">
+            <img src="../root/github-trending-day.svg" alt="GitHub Trending #1 Repository Of The Day">
+        </div>
+    </div>
+    <div class="header-row">
+    <div class="title-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 130" width="220" height="159">
+            <style>
+                .claude-left-ear { animation: claude-ear-bounce 1.6s ease-in-out infinite; transform-origin: 60px 36px; }
+                .claude-right-ear { animation: claude-ear-bounce 1.6s ease-in-out infinite 0.2s; transform-origin: 108px 36px; }
+                .right-flag-grp { animation: flag-wave 1.1s ease-in-out infinite; transform-origin: 120px 52px; }
+                @keyframes claude-ear-bounce { 0%, 100% { transform: scaleY(1); } 40% { transform: scaleY(1.18); } 60% { transform: scaleY(0.88); } }
+                @keyframes flag-wave { 0%, 100% { transform: rotate(-20deg); } 50% { transform: rotate(15deg); } }
+            </style>
+
+            <!-- Static shadow tucked just below the body (no animation) -->
+            <ellipse cx="84" cy="92" rx="24" ry="4" fill="#000" opacity="0.22"/>
+
+            <!-- Ears -->
+            <rect class="claude-left-ear" x="56" y="22" width="8" height="14" fill="#E07C4C"/>
+            <rect class="claude-right-ear" x="104" y="22" width="8" height="14" fill="#E07C4C"/>
+            <!-- Antenna band -->
+            <rect x="52" y="36" width="64" height="4" fill="#E07C4C"/>
+            <!-- Head/body -->
+            <rect x="48" y="40" width="72" height="32" fill="#E07C4C"/>
+            <!-- Eyes -->
+            <rect x="64" y="46" width="8" height="10" fill="#000"/>
+            <rect x="96" y="46" width="8" height="10" fill="#000"/>
+            <!-- Legs -->
+            <rect x="58" y="72" width="12" height="14" fill="#E07C4C"/>
+            <rect x="98" y="72" width="12" height="14" fill="#E07C4C"/>
+
+            <!-- LEFT arm: empty 12x8 stub -->
+            <rect x="36" y="48" width="12" height="8" fill="#E07C4C"/>
+
+            <!-- RIGHT arm + flag raised UP (the entire group rotates as the wave) -->
+            <g class="right-flag-grp">
+                <!-- Right arm stub (the hand) -->
+                <rect x="120" y="48" width="12" height="8" fill="#E07C4C"/>
+                <!-- Flag pole going UP from the hand -->
+                <rect x="130" y="20" width="2" height="28" fill="#6b4423"/>
+                <circle cx="131" cy="20" r="1.5" fill="#d4af37"/>
+                <!-- Pakistani flag attached to upper portion of pole -->
+                <!-- Pole on flag's LEFT edge → white hoist on left -->
+                <rect x="132" y="22" width="26" height="18" fill="#01411C"/>
+                <!-- White hoist stripe (left edge — adjacent to pole) -->
+                <rect x="132" y="22" width="6" height="18" fill="#fff"/>
+                <!-- White moon -->
+                <circle cx="148" cy="31" r="4" fill="#fff"/>
+                <!-- Green disc offset upper-right carves the crescent's opening -->
+                <circle cx="149.5" cy="29.5" r="3.3" fill="#01411C"/>
+                <!-- Star nestled INSIDE the crescent's opening -->
+                <polygon points="149.5,28.2 149.79,29.1 150.74,29.1 149.98,29.66 150.26,30.55 149.5,30 148.74,30.55 149.02,29.66 148.26,29.1 149.21,29.1"
+                         fill="#fff"/>
+            </g>
+        </svg>
+    </div>
+    <div class="pixel-title">CLAUDE CODE<br>BEST PRACTICE</div>
+    </div>
+    <div class="stars-banner">
+        <svg class="banner-star" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <div class="stars-banner-content">
+            <div class="stars-banner-top">
+                <span class="stars-number">50,000</span>
+                <span class="stars-plus">+</span>
+            </div>
+            <div class="stars-label">
+                <svg class="gh-mark" viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                GitHub Stars
+            </div>
+        </div>
+        <svg class="banner-star right" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+    </div>
+</body>
+</html>
