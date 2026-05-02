@@ -146,7 +146,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
-## 💡 TIPS AND TRICKS (82)
+## 💡 TIPS AND TRICKS (83)
 
 🚫👶 = do not babysit
 
@@ -162,13 +162,14 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 | after a mediocre fix — "knowing everything you know now, scrap this and implement the elegant solution" 🚫👶 | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544) |
 | Claude fixes most bugs by itself — paste the bug, say "fix", don't micromanage how 🚫👶 | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742750473720121) |
 
-<a id="tips-planning"></a>■ **Planning/Specs (6)**
+<a id="tips-planning"></a>■ **Planning/Specs (7)**
 
 | Tip | Source |
 |-----|--------|
 | always start with [plan mode](https://code.claude.com/docs/en/common-workflows) | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2007179845336527000) |
 | start with a minimal spec or prompt and ask Claude to interview you using [AskUserQuestion](https://code.claude.com/docs/en/cli-reference) tool, then make a new session to execute the spec | [![Thariq](!/tags/thariq.svg)](https://x.com/trq212/status/2005315275026260309) |
 | always make a phase-wise gated plan, with each phase having multiple tests (unit, automation, integration) | [![Dex](!/tags/community-dex.svg)](videos/claude-dex-mlops-community-24-mar-26.md) [![Video](!/tags/video.svg)](https://youtu.be/YwZR6tc7qYg?t=1032) |
+| break PRDs into vertical slices (tracer bullets) that cross all layers (DB + service + UI) — AI defaults to horizontal phasing (DB phase, then API phase, then frontend phase) which delays end-to-end feedback until the last phase. From the Pragmatic Programmer 🚫👶 | [![Matt](!/tags/community-matt.svg)](videos/claude-matt-pocock-24-apr-26.md) [![Video](!/tags/video.svg)](https://youtu.be/-QFHIoCo-Ko) |
 | spin up a second Claude to review your plan as a staff engineer, or use [cross-model](development-workflows/cross-model-workflow/cross-model-workflow.md) for review | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742745365057733) |
 | write detailed specs and reduce ambiguity before handing work off — the more specific you are, the better the output | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny/status/2017742752566632544) |
 | prototype > PRD — build 20-30 versions instead of writing specs, the cost of building is low so take many shots | [![Boris](!/tags/boris-cherny.svg)](https://youtu.be/julbw1JuAz0?t=3630) [![Video](!/tags/video.svg)](https://youtu.be/julbw1JuAz0?t=3630) |
@@ -343,6 +344,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 
 | Video / Podcast | Source | YouTube |
 |-----------------|--------|---------|
+| Full Walkthrough: Workflow for AI Coding (Matt) \| 24 Apr 2026 \| Matt Pocock | [![Matt](!/tags/community-matt.svg)](https://x.com/mattpocockuk) | [YouTube](https://youtu.be/-QFHIoCo-Ko) |
 | Everything We Got Wrong About Research-Plan-Implement (Dex) \| 24 Mar 2026 \| MLOps Community | [![Dex](!/tags/community-dex.svg)](https://x.com/daborhyde) | [YouTube](https://youtu.be/YwZR6tc7qYg) |
 | Building Claude Code with Boris Cherny (Boris) \| 04 Mar 2026 \| The Pragmatic Engineer | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny) | [YouTube](https://youtu.be/julbw1JuAz0) |
 | Head of Claude Code: What happens after coding is solved (Boris) \| 19 Feb 2026 \| Lenny's Podcast | [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny) | [YouTube](https://youtu.be/We7BZVKbCVw) |
