@@ -415,6 +415,8 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 2. How often do you need to update specs so they don't become obsolete when a new feature is implemented?
 3. When implementing a new feature, how do you handle the ripple effect on specs for other features?
 
+### 🤔 [Does code matter?](https://github.com/shanraisshan/agentic-engineering)
+
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
