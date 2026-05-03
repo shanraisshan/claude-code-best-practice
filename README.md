@@ -465,6 +465,7 @@ Get the maximum out of this repo by following these steps:
 **🎬 Videos**
 
 <a href="https://www.youtube.com/watch?v=AkAhkalkRY4"><img src="!/thumbnail/video-1.png" alt="Watch on YouTube" width="300"></a>
+<a href="https://youtu.be/lPjhM6BBK0Q"><img src="!/thumbnail/video-2.png" alt="Watch on YouTube" width="300"></a>
 
 **📊 Presentations**
 
