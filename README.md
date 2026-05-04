@@ -148,6 +148,19 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
+## 🤖 AGENT COLLECTIONS
+
+Repos primarily known as curated libraries of subagent definitions (`.claude/agents/*.md`). Sorted by stars descending.
+
+| Name | ★ | <img src="!/tags/a.svg" height="14"> |
+|------|---|---|
+| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 92k | 206 |
+| [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | 19k | 148 |
+
+<p align="center">
+  <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
+</p>
+
 ## 💡 TIPS AND TRICKS (83)
 
 🚫👶 = do not babysit
