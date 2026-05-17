@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-17 08:47 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                     |
+|---|----------|-------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | HIGH     | Star  | Update msitarzewski/agency-agents ★ from 98k to 99k                                                | COMPLETE (GitHub API: 98,908 exact; crosses k-boundary; NEW — first 99k crossing)                                                                                          |
+| 2 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents 151 → 144                                           | INVALID (RECURRING oscillation; no commits in last 30 days — last commit April 19-20; 144↔151 prior pattern; no confirmed real change)                                     |
+| 3 | LOW      | Count | msitarzewski/agency-agents agents 188 vs research range 144-184                                    | INVALID (RECURRING methodological variation; conf 0.60; README self-declares 144-147; per-dir enumeration ~184; no commits last 30 days; no change applied)                |
+| 4 | LOW      | Sort  | Verify sort order (99k > 20k — stars descending)                                                   | COMPLETE (order preserved; RECURRING)                                                                                                                                      |
+
+---
+
+
 ## [2026-05-16 08:47 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                                      | Status                                                                                                                                                           |
