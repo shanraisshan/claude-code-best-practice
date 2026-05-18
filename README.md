@@ -168,6 +168,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 | [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 21k | 1,100+ (curated list) |
 | [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 21k | 135 |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) | 15k | 246 (across 9 domains) |
+| [recsys-pipeline-architect](https://github.com/mturac/recsys-pipeline-architect) | 0 | 1 (with 5 references + 3 runnable example scaffolds in TS/Go/Python) |
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
