@@ -174,8 +174,10 @@ def play_sound(sound_name):
                         # SND_NODEFAULT: don't play default sound if file not found
                         # Note: Using SND_SYNC instead of SND_ASYNC because the script exits immediately
                         # after this call, which would terminate async playback before it completes
-                        winsound.PlaySound(str(file_path),
-                                         winsound.SND_FILENAME | winsound.SND_NODEFAULT)
+                        winsound.PlaySound(
+                            str(file_path),
+                            winsound.SND_FILENAME | winsound.SND_SYNC | winsound.SND_NODEFAULT
+                        )
                         return True
                     else:
                         # winsound not available, fail silently
