@@ -301,3 +301,14 @@ No priority action items — report is fully in sync with official documentation
 | 4 | HIGH | New Command | Add `/scroll-speed` to Config tag — Adjust mouse wheel scroll speed interactively (v2.1.139) | ✅ COMPLETE (added as #14 in Config tag) |
 | 5 | HIGH | New Command | Add `/stop` to Session tag — Stop the current background session; transcript and worktree are kept | ✅ COMPLETE (added as #80 in Session tag) |
 | 6 | LOW | Scope Decision | 6 bundled skills (`/batch`, `/claude-api`, `/debug`, `/fewer-permission-prompts`, `/loop`, `/simplify`) listed in upstream unified table but excluded per report scope | ❌ INVALID (recurring from v2.1.107 and v2.1.119 — user previously chose to keep report scoped to built-in commands only) |
+
+---
+
+## [2026-05-21 12:06 AM PKT] Claude Code v2.1.145
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Renamed Command | Rename `/extra-usage` → `/usage-credits` in Context tag (v2.1.144); keep `/extra-usage` noted as previous name; re-sort within Context group (`e`→`u`) | ✅ COMPLETE (renamed at #27 in Context tag, moved after `/usage`, rows 23–27 renumbered; count unchanged at 80) |
+| 2 | MED | New Alias | Add `/share` alias to `/feedback` and broaden description to "Submit feedback, report a bug, or share your conversation. Aliases: `/bug`, `/share`" | ✅ COMPLETE (updated description at #29 in Debug tag) |
+| 3 | LOW | Changed Value | Add `xhigh` to the `effort` frontmatter field's options list (`low`, `medium`, `high`, `xhigh`, `max`) | ✅ COMPLETE (added `xhigh` to effort field row; value-list sync, not a field add/remove) |
+| 4 | LOW | Scope Decision | 9 bundled skills (`/batch`, `/claude-api`, `/debug`, `/fewer-permission-prompts`, `/loop`, `/run`, `/run-skill-generator`, `/simplify`, `/verify`) in upstream unified table excluded per report scope | ❌ INVALID (recurring from v2.1.107/119/139 — report intentionally scoped to built-in commands only) |
