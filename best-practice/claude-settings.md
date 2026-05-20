@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-May%2012%2C%202026%2011%3A40%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.139-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-May%2021%2C%202026%2012%3A27%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.145-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.139, Claude Code exposes **60+ settings** and **180+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.145, Claude Code exposes **80+ settings** and **180+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -78,6 +78,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `model` | string | `"default"` | Override default model. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs |
 | `agent` | string | - | Set the default agent for the main conversation. Value is the agent name from `.claude/agents/`. Also available via `--agent` CLI flag |
 | `language` | string | `"english"` | Claude's preferred response language. Also sets the voice dictation language and the terminal tab title (v2.1.121) |
+| `claudeMdExcludes` | array | - | Glob patterns or absolute paths of `CLAUDE.md` files to skip when loading [memory](https://code.claude.com/docs/en/memory). Patterns match against absolute file paths. Only applies to user, project, and local memory; managed policy files cannot be excluded. Example: `["**/vendor/**/CLAUDE.md"]` |
 | `cleanupPeriodDays` | number | `30` | Age cutoff for the startup cleanup sweep (minimum 1). Inactive session transcripts and orphaned subagent worktrees are deleted; as of v2.1.117 the sweep also covers `~/.claude/tasks/`, `~/.claude/shell-snapshots/`, and `~/.claude/backups/`. Setting to `0` is rejected with a validation error. To disable transcript writes in non-interactive mode (`-p`), use `--no-session-persistence` or `persistSession: false` SDK option |
 | `autoUpdatesChannel` | string | `"latest"` | Release channel: `"stable"` or `"latest"` |
 | `minimumVersion` | string | - | Prevent the auto-updater from downgrading below a specific version. Automatically set when switching to the stable channel and choosing to stay on the current version until stable catches up. Used with `autoUpdatesChannel` |
@@ -123,6 +124,7 @@ Store plan and auto-memory files in custom locations.
 |-----|------|---------|-------------|
 | `plansDirectory` | string | `~/.claude/plans` | Directory where `/plan` outputs are stored |
 | `autoMemoryDirectory` | string | - | Custom directory for auto-memory storage. Accepts `~/`-expanded paths. Not accepted in project settings (`.claude/settings.json`) to prevent redirecting memory writes to sensitive locations; accepted from policy, local, and user settings |
+| `autoMemoryEnabled` | boolean | `true` | Enable [auto memory](https://code.claude.com/docs/en/memory). When `false`, Claude does not read from or write to the auto-memory directory. Can also be toggled with `/memory` during a session, or disabled via the `CLAUDE_CODE_DISABLE_AUTO_MEMORY` env var |
 
 **Example:**
 ```json
@@ -142,6 +144,7 @@ Configure how `--worktree` creates and manages git worktrees. Useful for reducin
 | `worktree.symlinkDirectories` | array | `[]` | Directories to symlink from the main repository into each worktree to avoid duplicating large directories on disk |
 | `worktree.sparsePaths` | array | `[]` | Directories to check out in each worktree via git sparse-checkout (cone mode). Only the listed paths are written to disk |
 | `worktree.baseRef` | string | `"fresh"` | Which ref new worktrees branch from. `"fresh"` branches from `origin/<default-branch>` for a clean tree matching the remote. `"head"` branches from your current local `HEAD`, including uncommitted-but-tracked changes (v2.1.133) |
+| `worktree.bgIsolation` | string | `"worktree"` | Isolation mode for [background sessions](https://code.claude.com/docs/en/agent-view). `"worktree"` (default) blocks `Edit`/`Write` in the main checkout until `EnterWorktree` is called; `"none"` lets background jobs edit the working copy directly (v2.1.143) |
 
 **Example:**
 ```json
@@ -257,9 +260,9 @@ Control what tools and operations Claude can perform.
 | Mode | Behavior |
 |------|----------|
 | `"default"` | Standard permission checking with prompts |
-| `"acceptEdits"` | Auto-accept file edits without asking |
+| `"acceptEdits"` | Automatically accepts file edits **and common filesystem commands** (`mkdir`, `touch`, `mv`, `cp`, etc.) for paths in the working directory or `additionalDirectories` |
 | `"dontAsk"` | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
-| `"bypassPermissions"` | Skip all permission checks (dangerous). Writes to protected paths (`.git`, `.claude`, `.vscode`, `.idea`, `.husky`) still prompt. As of v2.1.121, writes to `.claude/commands/`, `.claude/agents/`, `.claude/skills/`, and `.claude/worktrees/` are explicitly exempt from the protected-paths prompt because Claude routinely writes there when creating skills, subagents, and commands. **v2.1.126** further extends the exemption: writes to `.claude/`, `.git/`, `.vscode/`, and shell config files (e.g., `.bashrc`, `.zshrc`) no longer prompt under `--dangerously-skip-permissions`. Catastrophic removal commands still prompt as a safety net |
+| `"bypassPermissions"` | Skip all permission checks (dangerous). Writes to protected paths (`.git`, `.claude`, `.vscode`, `.idea`, `.husky`) still prompt. As of v2.1.121, writes to `.claude/commands/`, `.claude/agents/`, `.claude/skills/`, and `.claude/worktrees/` are explicitly exempt from the protected-paths prompt because Claude routinely writes there when creating skills, subagents, and commands. **v2.1.126** further extends the exemption: writes to `.claude/`, `.git/`, `.vscode/`, and shell config files (e.g., `.bashrc`, `.zshrc`) no longer prompt under `--dangerously-skip-permissions`. Removals targeting the filesystem root or home directory (`rm -rf /`, `rm -rf ~`) still prompt as a circuit breaker against model error |
 | `"auto"` | Auto-approves tool calls with background safety checks that verify actions align with your request. Research preview. Classifier auto-approves read-only and file edits; sends everything else through a safety check. Falls back to prompting after 3 consecutive or 20 total blocks. In the default `Shift+Tab` permission-mode cycle since v2.1.111 (the `--enable-auto-mode` flag was removed in v2.1.111 — start in this mode with `--permission-mode auto`). Configure with the `autoMode` setting |
 | `"plan"` | Read-only exploration mode. As of v2.1.136, file writes are blocked even when a matching `Edit(...)` allow rule exists — plan mode now overrides explicit allow rules to maintain its read-only guarantee |
 
@@ -268,6 +271,7 @@ Control what tools and operations Claude can perform.
 | Tool | Syntax | Examples |
 |------|--------|----------|
 | `Bash` | `Bash(command pattern)` | `Bash(npm run *)`, `Bash(* install)`, `Bash(git * main)` |
+| `PowerShell` | `PowerShell(cmd *)` | `PowerShell(Get-ChildItem *)`, `PowerShell(git commit *)` — same shape as Bash; common aliases are canonicalized (`gci`/`ls`/`dir` → `Get-ChildItem`) and the PowerShell AST is parsed so each subcommand of a `|`/`;`/`&&`/`||` chain must match |
 | `Read` | `Read(path pattern)` | `Read(.env)`, `Read(./secrets/**)` |
 | `Edit` | `Edit(path pattern)` | `Edit(src/**)`, `Edit(*.ts)` |
 | `Write` | `Write(path pattern)` | `Write(*.md)`, `Write(./docs/**)` |
@@ -290,12 +294,16 @@ Control what tools and operations Claude can perform.
 | `/` | Relative to project root | `Edit(/src/**)` |
 | `./` or none | Relative path (current directory) | `Read(.env)`, `Read(*.ts)` |
 
+**Symlink resolution:** Permission rules check both the symlink path and its resolved target. **Allow** rules apply only when *both* the symlink and its target match — a symlink inside an allowed directory that points outside it still prompts. **Deny** rules apply when *either* the symlink or its target matches — a symlink to a denied file is itself denied.
+
 **Bash wildcard notes:**
 - `*` can appear at **any position**: prefix (`Bash(* install)`), suffix (`Bash(npm *)`), or middle (`Bash(git * main)`)
 - **Word boundary:** `Bash(ls *)` (space before `*`) matches `ls -la` but NOT `lsof`; `Bash(ls*)` (no space) matches both
 - `Bash(*)` is treated as equivalent to `Bash` (matches all bash commands)
 - Permission rules support output redirections: `Bash(python:*)` matches `python script.py > output.txt`
 - The legacy `:*` suffix syntax (e.g., `Bash(npm:*)`) is equivalent to ` *` but is deprecated
+- **Compound commands:** shell operators (`&&`, `||`, `;`, `|`, `|&`, `&`, and newlines) split a command and each subcommand must match independently — `Bash(safe-cmd *)` does **not** authorize `safe-cmd && other-cmd`
+- **Process wrappers:** `timeout`, `time`, `nice`, `nohup`, and `stdbuf` are stripped before matching (so `Bash(npm test *)` also matches `timeout 30 npm test`); bare `xargs` (no flags) is stripped too. Exec wrappers `watch`, `setsid`, `ionice`, `flock`, and `find` with `-exec`/`-delete` always prompt and cannot be approved by a prefix rule
 
 **Example:**
 ```json
@@ -528,6 +536,8 @@ Configure Claude Code plugins and marketplaces.
 }
 ```
 
+> **Note (v2.1.144):** `/model` changes the model for the **current session only**. Press `d` in the `/model` picker to also set the selection as your default. The `model` setting and `ANTHROPIC_MODEL` continue to control the persistent default.
+
 ### Model Overrides
 
 Map Anthropic model IDs to provider-specific model IDs for Bedrock, Vertex, or Foundry deployments.
@@ -712,6 +722,7 @@ The status line command receives a JSON object on stdin. For the full JSON schem
 | `worktree.branch` | Git branch name for the worktree. Absent for hook-based worktrees |
 | `worktree.original_cwd` | Directory before entering the worktree |
 | `worktree.original_branch` | Git branch checked out before entering the worktree. Absent for hook-based worktrees |
+| `github` | GitHub repository and pull-request information for the current branch when detected — repo identity and the associated PR (v2.1.145) |
 
 ### File Suggestion Configuration
 
@@ -803,6 +814,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_OAUTH_TOKEN` | OAuth access token for Claude.ai authentication. Alternative to `/login` for SDK and automated environments. Takes precedence over keychain-stored credentials |
 | `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` | OAuth refresh token for Claude.ai authentication. When set, `claude auth login` exchanges this token directly instead of opening a browser. Requires `CLAUDE_CODE_OAUTH_SCOPES` |
 | `CLAUDE_CODE_OAUTH_SCOPES` | Space-separated OAuth scopes the refresh token was issued with (e.g., `"user:profile user:inference user:sessions:claude_code"`). Required when `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` is set |
+| `ANTHROPIC_WORKSPACE_ID` | Workspace ID for [workload identity federation](https://platform.claude.com/docs/en/manage-claude/workload-identity-federation). Set when your federation rule is scoped to more than one workspace so the token exchange knows which workspace to target (v2.1.141) |
 | `ANTHROPIC_BASE_URL` | Custom API endpoint |
 | `ANTHROPIC_BEDROCK_BASE_URL` | Override Bedrock endpoint URL |
 | `ANTHROPIC_BEDROCK_MANTLE_BASE_URL` | Override the Bedrock Mantle endpoint URL. See [Mantle endpoint](https://code.claude.com/docs/en/amazon-bedrock#use-the-mantle-endpoint) |
@@ -829,6 +841,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_USE_FOUNDRY` | Use Microsoft Foundry (`1` to enable) |
 | `CLAUDE_CODE_USE_MANTLE` | Use the Bedrock [Mantle endpoint](https://code.claude.com/docs/en/amazon-bedrock#use-the-mantle-endpoint) (`1` to enable) |
 | `CLAUDE_CODE_USE_POWERSHELL_TOOL` | Set to `1` to enable the PowerShell tool on Windows (opt-in preview). When enabled, Claude can run PowerShell commands natively instead of routing through Git Bash. Only supported on native Windows, not WSL (v2.1.84) |
+| `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY` | Set to `1` to stop Claude Code from passing `-ExecutionPolicy Bypass` when spawning PowerShell for tool calls, hooks, and status line commands, respecting the machine's effective execution policy instead. By default Claude Code bypasses execution policy at process scope so `.ps1` scripts and module imports work on default-Restricted Windows. Never overrides Group Policy `MachinePolicy`/`UserPolicy` (v2.1.143) |
 | `CLAUDE_CODE_REMOTE` | Read-only. Set automatically to `true` when Claude Code is running as a cloud session. Read this from a hook or setup script to detect whether you are in a cloud environment |
 | `CLAUDE_CODE_REMOTE_SESSION_ID` | Read-only. Set automatically in cloud sessions to the current session's ID. Read this to construct a link back to the session transcript |
 | `CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX` | Prefix for auto-generated Remote Control session names. Defaults to the machine hostname |
@@ -876,6 +889,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_PLUGIN_SEED_DIR` | Path to one or more read-only plugin seed directories, separated by `:` on Unix or `;` on Windows. Bundle pre-populated plugins into a container image. Claude Code registers marketplaces from these directories at startup and uses pre-cached plugins without re-cloning |
 | `ENABLE_CLAUDEAI_MCP_SERVERS` | Enable Claude.ai MCP servers |
 | `CLAUDE_CODE_EFFORT_LEVEL` | Set effort level: `low`, `medium`, `high`, `xhigh` (Opus 4.7 only, v2.1.111), `max` (Opus 4.6 only), or `auto` (use model default). Takes precedence over `/effort` and the `effortLevel` setting. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
+| `CLAUDE_EFFORT` | Read-only. Injected into Bash tool subprocesses and hook handlers with the active effort level so shell scripts and hooks can adapt to the current tier (companion to `CLAUDE_CODE_EFFORT_LEVEL`; v2.1.133). Inside skill files use `${CLAUDE_EFFORT}` *(in changelog, not on official env-vars page — read-only, not user-configurable)* |
 | `CLAUDE_CODE_MAX_TURNS` | Maximum agentic turns before stopping *(not in official docs — unverified)* |
 | `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | Equivalent of setting `DISABLE_AUTOUPDATER`, `DISABLE_FEEDBACK_COMMAND`, `DISABLE_ERROR_REPORTING`, and `DISABLE_TELEMETRY` |
 | `CLAUDE_CODE_SKIP_SETTINGS_SETUP` | Skip first-run settings setup flow *(not in official docs — unverified)* |
@@ -884,6 +898,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) *(not in official docs — unverified)* |
 | `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens per response. Default: 32,000 (64,000 for Opus 4.6 as of v2.1.77). Upper bound: 64,000 (128,000 for Opus 4.6 and Sonnet 4.6 as of v2.1.77) |
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
+| `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | Set to `1` to pin [fast mode](https://code.claude.com/docs/en/fast-mode) to Claude Opus 4.6 instead of the default Opus 4.7. With it set, `/fast` runs on Opus 4.6; without it, `/fast` runs on Opus 4.7 (v2.1.142) |
 | `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` | Set to `1` to disable the non-streaming fallback when a streaming request fails mid-stream. Streaming errors propagate to the retry layer instead. Useful when a proxy or gateway causes the fallback to produce duplicate tool execution (v2.1.83) |
 | `CLAUDE_ENABLE_STREAM_WATCHDOG` | Abort stalled streams (`1` to enable) |
 | `CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING` | Enable fine-grained tool streaming (`1` to enable) |
@@ -917,6 +932,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_CLIENT_KEY_PASSPHRASE` | Passphrase for encrypted mTLS key |
 | `CLAUDE_CODE_CERT_STORE` | Comma-separated list of CA certificate sources for TLS connections: `bundled` (Mozilla CA set shipped with Claude Code) and/or `system` (OS trust store). Default: `bundled,system`. The native binary distribution is required for system store integration; on the Node.js runtime, only the bundled set is used regardless of this value (v2.1.101) |
 | `CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS` | Plugin marketplace git clone timeout in ms (default: 120000) |
+| `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` | Set to `1` to clone GitHub `owner/repo` shorthand plugin sources over HTTPS instead of SSH. Applies to plugin install/update and `/plugin marketplace add`/`update`. Useful in CI runners or containers without a configured SSH key for `github.com` (v2.1.141) |
 | `CLAUDE_CODE_PLUGIN_CACHE_DIR` | Override the plugins root directory |
 | `CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL` | Skip auto-adding the official marketplace (`1` to disable) |
 | `CLAUDE_CODE_SYNC_PLUGIN_INSTALL` | Wait for plugin install to complete before first query (`1` to enable) |
@@ -930,7 +946,7 @@ Set environment variables for all Claude Code sessions.
 | `DISABLE_LOGIN_COMMAND` | Hide the `/login` command (`1` to disable) |
 | `DISABLE_LOGOUT_COMMAND` | Hide the `/logout` command (`1` to disable) |
 | `DISABLE_UPGRADE_COMMAND` | Hide the `/upgrade` command (`1` to disable) |
-| `DISABLE_EXTRA_USAGE_COMMAND` | Hide the `/extra-usage` command (`1` to disable) |
+| `DISABLE_EXTRA_USAGE_COMMAND` | Hide the `/extra-usage` command — renamed to `/usage-credits` in v2.1.144, though this env var name is unchanged (`1` to disable) |
 | `DISABLE_INSTALL_GITHUB_APP_COMMAND` | Hide the `/install-github-app` command (`1` to disable) |
 | `DISABLE_NON_ESSENTIAL_MODEL_CALLS` | Disable flavor text and non-essential model calls *(not in official docs — unverified)* |
 | `CLAUDE_CODE_DEBUG_LOGS_DIR` | Override debug log file directory path |
@@ -1036,6 +1052,7 @@ Set environment variables for all Claude Code sessions.
 | `/keybindings` | Configure custom keyboard shortcuts |
 | `/skills` | View and manage skills |
 | `/permissions` | View and manage permission rules |
+| `/usage-credits` | View remaining usage credits and limits. Renamed from `/extra-usage` in v2.1.144 (the old name still works) |
 | `--doctor` | Diagnose configuration issues |
 | `--debug` | Debug mode with hook execution details |
 
@@ -1059,12 +1076,14 @@ Set environment variables for all Claude Code sessions.
   "includeGitInstructions": true,
   "defaultShell": "bash",
   "plansDirectory": "./plans",
+  "claudeMdExcludes": ["**/vendor/**/CLAUDE.md"],
   "effortLevel": "xhigh",
 
   "worktree": {
     "symlinkDirectories": ["node_modules"],
     "sparsePaths": ["packages/my-app", "shared/utils"],
-    "baseRef": "fresh"
+    "baseRef": "fresh",
+    "bgIsolation": "worktree"
   },
 
   "skillOverrides": {
