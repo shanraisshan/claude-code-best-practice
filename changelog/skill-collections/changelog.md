@@ -86,3 +86,20 @@
 | 1 | HIGH | Add | Added alirezarezvani/claude-skills (14,550 exact → 15k / 246 skills across 9 domains) at row 8 of SKILL COLLECTIONS table (after K-Dense-AI/scientific-agent-skills 21k); user-requested manual addition | COMPLETE (inserted into SKILL COLLECTIONS table) |
 | 2 | MEDIUM | Note | Drops empirical SKILL COLLECTIONS star floor from 21k to ~15k. No explicit star-threshold memory exists for this table (only AGENT COLLECTIONS and CROSS-MODEL WORKFLOWS have the 10k+ rule), so this is a precedent-setting addition rather than a rule violation | COMPLETE (decision logged) |
 | 3 | LOW | Note | Repo is cross-tool by design (supports Claude Code, Codex, Gemini CLI, Cursor + 8 more per its own README description). Candidate for CROSS-MODEL WORKFLOWS table in future review, but classified here per user direction | COMPLETE (cross-classification noted) |
+
+---
+
+## [2026-05-20 11:55 PM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 76k to 97k (96,663 exact — +21k surge over ~8 days, third consecutive amplification event) | RECURRING (similar +25k surge logged 2026-05-12, +15k logged 2026-05-01) |
+| 2 | MEDIUM | Star | Update anthropics/skills ★ from 133k to 138k (138,169 exact) | RECURRING (routine star bump, logged 2026-05-12) |
+| 3 | LOW | Star | Update wshobson/agents ★ from 35k to 36k (35,706 exact) | RECURRING (star bumps logged 2026-05-01, 2026-05-12) |
+| 4 | LOW | Count | Update wshobson/agents skill count from 153 to 155 (added recsys-pipeline-architect 2026-05-17, ship-mate plugin 2026-05-11) | RECURRING (count drift logged 2026-05-12) |
+| 5 | MEDIUM | Star | Update K-Dense-AI/scientific-agent-skills ★ from 21k to 25k (24,924 exact — +4k, surpassed VoltAgent) | RECURRING (star bump logged 2026-05-12) |
+| 6 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 135 to 138 (v2.39.0 community contributions 2026-05-19, Hugging Science 2026-05-01) | RECURRING (count drift logged 2026-05-12) |
+| 7 | LOW | Star | Update VoltAgent/awesome-agent-skills ★ from 21k to 22k (22,473 exact) | RECURRING (star bump logged 2026-05-12) |
+| 8 | MEDIUM | Sort | Swap K-Dense-AI (24,924) above VoltAgent (22,473) — K-Dense-AI reclaims higher rank with ~2,450 star lead | RECURRING (reverses VoltAgent-up swap logged 2026-05-12) |
+| 9 | LOW | No Change | anthropics & mattpocock active skill counts steady (17, 24); VoltAgent curated count steady (1,100+) | COMPLETE (verified, no drift) |
+| 10 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
