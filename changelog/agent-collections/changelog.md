@@ -10,6 +10,17 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-20 08:47 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                          | Status                                                                                                                                                                    |
+|---|----------|-------|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | HIGH     | Star  | Update msitarzewski/agency-agents ★ from 101k to 103k                                           | COMPLETE (GitHub page: ~103,000 exact; crosses two k-boundaries; NEW — two-day jump from 101k)                                                                            |
+| 2 | LOW      | Count | msitarzewski/agency-agents agents 144 → 181 (HTML scrape, conf 0.65)                            | INVALID (RECURRING methodological variation; git tree API blocked (403); no commits since April 12; May 19 git-tree run confirmed 144 at conf 0.96 — higher-confidence run takes precedence) |
+| 3 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents 151 → 144 (HTML scrape, conf 0.82)               | INVALID (RECURRING oscillation 144↔151; no commits since April 20; historical pattern shows repeated 144↔151 flip; no confirmed real change)                              |
+| 4 | LOW      | Sort  | Verify sort order (103k > 20k — stars descending)                                               | COMPLETE (order preserved; RECURRING)                                                                                                                                     |
+
+---
+
 ## [2026-05-19 08:50 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                          | Status                                                                                                                                                                    |
