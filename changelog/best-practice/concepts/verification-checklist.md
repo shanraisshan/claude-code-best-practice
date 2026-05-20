@@ -59,3 +59,11 @@ Rules for verifying CONCEPTS table accuracy. Each rule is checked during every w
 - **Source to compare against**: Official docs page banner text + GA-marker copy
 - **Date added**: 2026-04-26
 - **Origin**: Workflow-concepts-agent flagged Routines, No Flicker Mode, Computer Use, and Code Review as carrying README beta badges while their docs pages read as GA (confidence 0.6) — this drift type isn't covered by the existing description-currency rule
+
+### 8. Location Column Factual Accuracy
+- **Category**: Description Accuracy
+- **What to check**: Each concept's **Location** column (column 2) value must factually match the mechanism described in the official docs — not merely that the path/command/flag exists, but that the characterization is correct (e.g. how a feature stores state, what it tracks, where config lives)
+- **Depth**: For any Location value that makes a mechanism claim (e.g. "git-based", "automatic", "built-in (env var)", "cloud backend"), fetch the official page and confirm the claim against the docs' own description of the mechanism
+- **Source to compare against**: Official docs page body (mechanism/"how it works" sections)
+- **Date added**: 2026-05-21
+- **Origin**: Checkpointing Location read `automatic (git-based)` for every prior run, but `/en/checkpointing` explicitly states checkpoints track file-editing-tool changes (not git, not bash) and are "not a replacement for version control" — *"checkpoints as 'local undo' and Git as 'permanent history'."* Existing rule #5 (Description Currency) only inspects the Description column, so a factual error in the Location column went unchecked indefinitely
