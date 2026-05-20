@@ -533,3 +533,27 @@
 | 19 | HIGH | Sort Order | Re-sort table by stars descending: Superpowers (188k) > ECC (180k) > Spec Kit (97k) > gstack (95k) > Matt Pocock (76k) > GSD (62k) > OpenSpec (47.3k) > BMAD (47.0k) > oh-my-claudecode (34k) > agent-skills (27k) > Compound (17k) > HumanLayer (11k); Matt Pocock moves from row 6 to row 5 above GSD; OpenSpec swaps above BMAD (47.3 vs 47.0) | COMPLETE (updated README table) |
 | 20 | LOW | Count Verify | ECC agents 48→60, commands 143→78, skills 230→120 — research confidence 0.72 due to API pagination on 1000+ files; conflicts with README badge counts | ON HOLD (RECURRING — keeping current values until manual verification) |
 | 21 | LOW | Count Verify | BMAD agents 0→6 and skills 40→16 — methodology shift (counting bmad-agent-* skills as agents, fewer skill containers); not an actual repo change | ON HOLD (keeping current methodology to preserve trend continuity) |
+
+---
+
+## [2026-05-21 12:29 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 188k to 200k (200,000 actual — crossed 200k milestone; v5.1.0 removed legacy slash commands + named code-reviewer agent) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 180k to 188k (188,000 actual — ECC 2.0 Alpha, billing gates, AgentShield adapter readback) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Spec Kit ★ from 97k to 104k (104,000 actual — crossed 100k; v0.8.12 extension catalog refactor, Squad Bridge, Superpowers Implementation Bridge) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update gstack ★ from 95k to 100k (100,000 actual — crossed 100k milestone; v1.42.x stability, 23 community fixes) | COMPLETE (updated README table) |
+| 5 | HIGH | Star Update | Update Matt Pocock Skills ★ from 76k to 97k (96,700 actual — +21k surge; handoff/improve-codebase-architecture skill updates May 19-20) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update Get Shit Done ★ from 62k to 63k (63,300 actual — v1.42.3/v1.43.0-rc2, Codex CLI 0.130.0 compat, knowledge-graph auto-update) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update OpenSpec ★ from 47k to 50k (49,500 actual — v1.3.1, Codex workspace change-planning, Windows workspace fixes) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update BMAD-METHOD ★ from 47k to 48k (47,700 actual — v6.7.1 installer fix, v6.7.0 PRD/brief facilitator overhaul, bmad-investigate skill) | COMPLETE (updated README table) |
+| 9 | MED | Count Update | Update OpenSpec commands from 9 to 11 (/opsx:explore + /opsx:sync re-counted; 11 confirmed in docs/commands.md) | COMPLETE (RECURRING — count has oscillated 9↔10↔11 across runs; agent gave explicit doc-sourced list) |
+| 10 | LOW | Count Update | Update GSD commands from 66 to 67 (one new command in commands/gsd/ via v1.42-43) | COMPLETE (updated README table) |
+| 11 | LOW | Count Update | Update BMAD skills from 40 to 42 (30 bmm-skills + 12 core-skills; v6.7.0 added bmad-investigate) | COMPLETE (updated README table) |
+| 12 | LOW | Count Update | Update oh-my-claudecode skills from 38 to 39 (39 skill folders confirmed; +1 in v4.14.x) | COMPLETE (updated README table) |
+| 13 | LOW | Count Verify | ECC agents 48→60, commands 143→75, skills 230→232 — directory-enum vs README-self-report conflict persists | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12; keeping current values until manual verification) |
+| 14 | LOW | Count Verify | gstack skills 48→59 — agent's AGENTS.md catalog count includes non-skill root dirs (gstack/test/hosts/supabase); catalog lists ~46 actual skills, confidence 0.80 | ON HOLD (agent overcount; keeping 48) |
+| 15 | LOW | Count Verify | BMAD agents 0→6/30 — methodology shift (counting bmad-agent-* personas as agents) | ON HOLD (RECURRING from May 12; keeping 0 to preserve trend continuity) |
+| 16 | LOW | Count Verify | oh-my-claudecode commands 0→27 — agent found 27 .md in commands/ but workflow methodology treats skills as the command surface | ON HOLD (keeping 0 per established methodology) |
+| 17 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 200k > ECC 188k > Spec Kit 104k > gstack 100k > Matt Pocock 97k > GSD 63k > OpenSpec 50k > BMAD 48k > omc 34k > agent-skills 27k > Compound 17k > HumanLayer 11k | COMPLETE (verified order unchanged) |
