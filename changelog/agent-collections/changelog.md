@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-21 08:47 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                               |
+|---|----------|-------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | LOW      | Star  | msitarzewski/agency-agents ★ unchanged (103k = ~103,000)                                            | INVALID (no change required)                                                                                                                                                                         |
+| 2 | LOW      | Count | msitarzewski/agency-agents agents 144 → 179 (conf 0.88)                                             | INVALID (RECURRING methodological variation; no commits since April 12; prior git-tree at conf 0.96 confirmed 144; current 0.88 run used 15 dirs vs prior 10 dirs — directory scope boundary accounts for +35 swing) |
+| 3 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (20k = ~20,300)                                 | INVALID (no change required)                                                                                                                                                                         |
+| 4 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents 151 → 144 (conf 0.94)                                | INVALID (RECURRING 144↔151 oscillation; no new .md agent commits since April 20; May 16 confirmed 151 after two new files; current 144 is recurring methodology boundary issue — 9th occurrence)    |
+| 5 | LOW      | Sort  | Verify sort order (103k > 20k — stars descending)                                                   | COMPLETE (order preserved; RECURRING)                                                                                                                                                                |
+
+---
+
 ## [2026-05-20 08:47 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                          | Status                                                                                                                                                                    |
