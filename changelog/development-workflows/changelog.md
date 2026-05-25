@@ -557,3 +557,30 @@
 | 15 | LOW | Count Verify | BMAD agents 0→6/30 — methodology shift (counting bmad-agent-* personas as agents) | ON HOLD (RECURRING from May 12; keeping 0 to preserve trend continuity) |
 | 16 | LOW | Count Verify | oh-my-claudecode commands 0→27 — agent found 27 .md in commands/ but workflow methodology treats skills as the command surface | ON HOLD (keeping 0 per established methodology) |
 | 17 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 200k > ECC 188k > Spec Kit 104k > gstack 100k > Matt Pocock 97k > GSD 63k > OpenSpec 50k > BMAD 48k > omc 34k > agent-skills 27k > Compound 17k > HumanLayer 11k | COMPLETE (verified order unchanged) |
+
+---
+
+## [2026-05-25 04:31 PM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 200k to 206k (205,730 actual — v5.1.0 Codex plugin sync, worktree consent requirement) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 188k to 192k (191,589 actual — v2.0.0-rc.1 Hermes operator control-plane, cross-harness substrate) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Spec Kit ★ from 104k to 106k (105,688 actual — v0.8.11-0.8.13 weekly releases, extension catalog growth) | COMPLETE (updated README table) |
+| 4 | HIGH | Star Update | Update Matt Pocock Skills ★ from 97k to 104k (104,487 actual — +7k; handoff/review skills added May 10-11) | COMPLETE (updated README table) |
+| 5 | HIGH | Sort Order | Move Matt Pocock (104,487) above gstack (102,000) — row 5→4; new order Spec Kit > Matt Pocock > gstack | COMPLETE (updated README table) |
+| 6 | HIGH | Star Update | Update gstack ★ from 100k to 102k (102,000 actual — v1.44.0.0 WebSocket keepalive, persistent PTY) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update Get Shit Done ★ from 63k to 64k (63,696 actual — v1.42-1.43 supply-chain protection gate, Codex CLI compat) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update OpenSpec ★ from 50k to 51k (50,600 actual — v1.3.1 workspace management overhaul, Windows path fixes) | COMPLETE (updated README table) |
+| 9 | MED | Star Update | Update oh-my-claudecode ★ from 34k to 35k (34,795 actual — v4.14.x Ultragoal durable multi-goal workflow) | COMPLETE (updated README table) |
+| 10 | MED | Workflow | Update Spec Kit workflow — insert /speckit.analyze between /speckit.tasks and /speckit.implement (analyze.md confirmed in templates/commands/) | COMPLETE (updated README table) |
+| 11 | MED | Count Update | Update Compound Engineering agents from 49 to 43 (v3.8.x removed 6 reviewer agents; confirmed by two independent exact-name fetches) | COMPLETE (updated README table) |
+| 12 | MED | Count Update | Update Get Shit Done commands from 67 to 96 (v1.42-1.43 feature dump before fork; direct commands/gsd/ listing, confidence 0.90) | COMPLETE (updated README table) |
+| 13 | LOW | Count Update | Update gstack skills from 48 to 47 (AGENTS.md authoritative catalog lists 47 root-level SKILL.md dirs) | COMPLETE (updated README table) |
+| 14 | LOW | Note | Get Shit Done repo marked DEPRECATED May 22 2026 → directs users to open-gsd/get-shit-done-redux fork; still tracking original per workflow scope | ON HOLD (user decision on whether to switch tracking to fork in future runs) |
+| 15 | LOW | Note | HumanLayer pivoted to CodeLayer IDE product; README no longer documents .claude/ workflow; counts unchanged (6 agents / 27 commands / 0 skills) | COMPLETE (no count change, context only) |
+| 16 | LOW | Count Verify | Compound Engineering skills 38→42 — fetch stated 41 compound-eng + 1 coding-tutor but only 38 names enumerated (3 missing) | ON HOLD (uncertain; keeping 38 until confirmed) |
+| 17 | LOW | Count Verify | Matt Pocock skills 28→21 — README self-reports 21 active (excludes in-progress/personal/deprecated subdirs); directory count = 28 | ON HOLD (keeping 28 per directory-count methodology) |
+| 18 | LOW | Count Verify | ECC agents 48→88/60, commands 143→78, skills 230→232/254 — directory-enum vs README self-report conflict | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21; keeping current values until manual verification) |
+| 19 | LOW | Count Verify | ECC workflow — research adds /test-coverage step before merge (confidence 0.82) | ON HOLD (keeping current 6-step workflow until confirmed) |
+| 20 | LOW | Count Verify | Superpowers agents 0 explicit — skills dispatch implicit subagents; v5.1.0 removed named code-reviewer | ON HOLD (keeping 0 per v5.1.0 architecture) |
