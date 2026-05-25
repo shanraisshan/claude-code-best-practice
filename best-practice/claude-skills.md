@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-May%2021%2C%202026%2012%3A04%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.145-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-May%2025%2C%202026%204%3A25%20PM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.150-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -40,7 +40,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 | # | Skill | Description |
 |---|-------|-------------|
-| 1 | `simplify` | Review changed code for reuse, quality, and efficiency — refactors to eliminate duplication |
+| 1 | `code-review` | Review the current diff for correctness bugs at a chosen effort level (low/medium: fewer, high-confidence findings; high→max: broader coverage) — `--comment` posts findings as inline PR comments |
 | 2 | `batch` | Run commands across multiple files in bulk |
 | 3 | `debug` | Debug failing commands or code issues |
 | 4 | `loop` | Run a prompt or slash command on a recurring interval (up to 3 days) |
