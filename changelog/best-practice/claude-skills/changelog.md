@@ -205,3 +205,12 @@ No drift detected — frontmatter fields (15) and bundled skills (6) are fully s
 | 1 | HIGH | New Skill | Add `run` to official bundled skills table — launch and drive the project's app to see a change working (requires v2.1.145) | ✅ COMPLETE (added as row 7, count updated 6→9) |
 | 2 | HIGH | New Skill | Add `verify` to official bundled skills table — build and run the app to confirm a change works without falling back to tests/type checks (requires v2.1.145) | ✅ COMPLETE (added as row 8, count updated 6→9) |
 | 3 | HIGH | New Skill | Add `run-skill-generator` to official bundled skills table — teaches `/run` and `/verify` how to build/launch the project, records a per-project recipe at `.claude/skills/run-<name>/` (requires v2.1.145) | ✅ COMPLETE (added as row 9, count updated 6→9) |
+
+---
+
+## [2026-05-25 04:25 PM PKT] Claude Code v2.1.150
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Renamed Skill | Rename `simplify` (row 1) to `code-review`; update description — `/simplify` was renamed to `/code-review` in v2.1.147, now reviews the current diff for correctness bugs at a chosen effort level (`--comment` posts findings as inline PR comments) | ✅ COMPLETE (renamed row 1 to `code-review` and rewrote description; bundled skill count stays 9) |
+| 2 | LOW | Skill Naming | Agent flagged `fewer-permission-prompts` (report row 6) vs changelog name `less-permission-prompts` (v2.1.111) — verify which is canonical | ❌ INVALID (live `/` skill menu in this session confirms `fewer-permission-prompts` is the shipping name; report row 6 is correct, no change) |
