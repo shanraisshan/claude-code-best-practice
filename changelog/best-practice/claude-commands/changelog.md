@@ -312,3 +312,13 @@ No priority action items — report is fully in sync with official documentation
 | 2 | MED | New Alias | Add `/share` alias to `/feedback` and broaden description to "Submit feedback, report a bug, or share your conversation. Aliases: `/bug`, `/share`" | ✅ COMPLETE (updated description at #29 in Debug tag) |
 | 3 | LOW | Changed Value | Add `xhigh` to the `effort` frontmatter field's options list (`low`, `medium`, `high`, `xhigh`, `max`) | ✅ COMPLETE (added `xhigh` to effort field row; value-list sync, not a field add/remove) |
 | 4 | LOW | Scope Decision | 9 bundled skills (`/batch`, `/claude-api`, `/debug`, `/fewer-permission-prompts`, `/loop`, `/run`, `/run-skill-generator`, `/simplify`, `/verify`) in upstream unified table excluded per report scope | ❌ INVALID (recurring from v2.1.107/119/139 — report intentionally scoped to built-in commands only) |
+
+---
+
+## [2026-05-25 04:25 PM PKT] Claude Code v2.1.150
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Scope Decision | 9 bundled skills (`/batch`, `/claude-api`, `/code-review`, `/debug`, `/fewer-permission-prompts`, `/loop`, `/run`, `/run-skill-generator`, `/verify`) in upstream unified table excluded per report scope; `/simplify` renamed → `/code-review` at v2.1.147 (still a bundled Skill, stays excluded) | ❌ INVALID (recurring from v2.1.107/119/139/145 — report intentionally scoped to built-in commands only) |
+
+_No tracked drift: frontmatter fields 15/15 match official docs, built-in commands 80/80 match. Version badge bumped v2.1.145 → v2.1.150._
