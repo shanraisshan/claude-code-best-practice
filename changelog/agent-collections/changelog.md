@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-25 08:47 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                                                                           |
+|---|----------|-------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | HIGH     | Star  | Update VoltAgent/awesome-claude-code-subagents ★ from 20k to 21k                                    | COMPLETE (GitHub API: 20,508 exact; 20.508k rounds to 21k at .5 boundary; NEW — first 21k milestone; mirrors May 10 half-k rounding precedent)                                                                                                  |
+| 2 | MED      | Count | Update VoltAgent/awesome-claude-code-subagents agents from 151 to 154                               | COMPLETE (README self-reports "154+"; per-category enumeration: 154 .md files across 10 dirs; PRs #256/#247/#238 merged May 25 added new agents; NEW — net +3 confirmed real change; confidence 0.90)                                           |
+| 3 | LOW      | Count | msitarzewski/agency-agents agents 144 vs 184 (conf 0.88)                                            | INVALID (RECURRING methodological oscillation; no commits since April 12, 2026; 144↔184 boundary between agent defs and workflow/strategy docs varies per run; 9th+ consecutive INVALID ruling)                                                 |
+| 4 | LOW      | Star  | msitarzewski/agency-agents ★ unchanged (105k = 104,981)                                             | INVALID (no change required)                                                                                                                                                                                                                     |
+| 5 | LOW      | Sort  | Verify sort order (105k > 21k — stars descending)                                                   | COMPLETE (order preserved; RECURRING)                                                                                                                                                                                                            |
+
+---
+
 ## [2026-05-24 08:46 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                                                 |
