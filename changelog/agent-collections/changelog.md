@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-26 08:46 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                                                                          |
+|---|----------|-------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | LOW      | Count | msitarzewski/agency-agents agents 144 → 185 (conf 0.80)                                             | INVALID (RECURRING methodological oscillation; no commits since April 12, 2026 — 44 days; 144↔185 boundary between agent defs and workflow/strategy docs varies per run; 10th+ consecutive INVALID ruling)                                      |
+| 2 | LOW      | Star  | msitarzewski/agency-agents ★ unchanged (105k)                                                       | INVALID (no change required)                                                                                                                                                                                                                    |
+| 3 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (21k, exact ~20,600)                            | INVALID (no change required; 20,600 rounds to 21k)                                                                                                                                                                                              |
+| 4 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents unchanged (154)                                      | INVALID (no change required; recent commits May 25 were maintenance/README updates, not new agent files)                                                                                                                                        |
+| 5 | LOW      | Sort  | Verify sort order (105k > 21k — stars descending)                                                   | COMPLETE (order preserved; RECURRING)                                                                                                                                                                                                           |
+
+---
+
 ## [2026-05-25 08:47 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                                                                           |
