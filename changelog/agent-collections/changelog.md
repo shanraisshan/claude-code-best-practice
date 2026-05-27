@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-27 08:48 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                                                          |
+|---|----------|-------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | HIGH     | Star  | Update msitarzewski/agency-agents ★ from 105k to 106k                                               | COMPLETE (GitHub API: 105,522 exact; crosses k-boundary; NEW — first 106k milestone)                                                                                                                                            |
+| 2 | MED      | Count | Update VoltAgent/awesome-claude-code-subagents agents from 154 to 156                               | COMPLETE (per-directory enumeration: 156 .md files across 10 category dirs; conf 0.85; last commit May 27, 2026 — PRs merged May 25 added product compliance subagents; NEW — net +2 confirmed real change)                     |
+| 3 | LOW      | Count | msitarzewski/agency-agents agents 144 vs 185 (conf 0.88)                                            | INVALID (RECURRING methodological oscillation; no commits since April 12, 2026 — 45 days; 144↔185 boundary between agent defs and workflow/strategy docs varies per run; 11th+ consecutive INVALID ruling)                      |
+| 4 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (21k = 20,660)                                  | INVALID (no change required)                                                                                                                                                                                                    |
+| 5 | LOW      | Sort  | Verify sort order (106k > 21k — stars descending)                                                   | COMPLETE (order preserved; RECURRING)                                                                                                                                                                                           |
+
+---
+
 ## [2026-05-26 08:46 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                              | Status                                                                                                                                                                                                                                          |
