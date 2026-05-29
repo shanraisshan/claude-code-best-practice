@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-29 08:48 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                                                    | Status                                                                                                                                                                                                                                      |
+|---|----------|-------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | LOW      | Star  | msitarzewski/agency-agents ★ unchanged (106k = 105,923)                                                                   | INVALID (no change required; RECURRING)                                                                                                                                                                                                     |
+| 2 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (21k = 20,833)                                                        | INVALID (no change required; RECURRING)                                                                                                                                                                                                     |
+| 3 | LOW      | Count | msitarzewski/agency-agents agents ~190-210 vs table 144 (conf 0.72)                                                       | INVALID (RECURRING methodological oscillation; 13th+ consecutive INVALID ruling; no commits since April 12, 2026 — 47 days; count range 190-210 varies per fetch due to inconsistent tree API responses across directory batches)           |
+| 4 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents 140 in-repo vs table 156 vs README "154+" (conf 0.85)                      | INVALID (RECURRING oscillation; 140 actual .md files per tree API, gap explained by external tool links in meta-orchestration section; README self-reports "154+"; ~10 new files added May 4-27 so net trend is UP not DOWN; no change)    |
+| 5 | LOW      | Sort  | Verify sort order (106k > 21k — stars descending)                                                                         | COMPLETE (order preserved; RECURRING)                                                                                                                                                                                                       |
+
+---
+
 ## [2026-05-28 08:46 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                                                    | Status                                                                                                                                                                                                                                      |
