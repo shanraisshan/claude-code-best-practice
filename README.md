@@ -170,6 +170,7 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 | [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 27k | 143 |
 | [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 24k | 1,424+ (curated list) |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) | 15k | 246 (across 9 domains) |
+| [shanraisshan/draw-json-architecture-skill](https://github.com/shanraisshan/draw-json-architecture-skill) | 0 | 1 |
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
