@@ -584,3 +584,27 @@
 | 18 | LOW | Count Verify | ECC agents 48→88/60, commands 143→78, skills 230→232/254 — directory-enum vs README self-report conflict | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21; keeping current values until manual verification) |
 | 19 | LOW | Count Verify | ECC workflow — research adds /test-coverage step before merge (confidence 0.82) | ON HOLD (keeping current 6-step workflow until confirmed) |
 | 20 | LOW | Count Verify | Superpowers agents 0 explicit — skills dispatch implicit subagents; v5.1.0 removed named code-reviewer | ON HOLD (keeping 0 per v5.1.0 architecture) |
+
+---
+
+## [2026-06-01 12:07 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 206k to 214k (shields.io live count — v5.1.0 momentum) | COMPLETE (updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 192k to 200k (shields.io live count; research agent's 182k was a stale README badge, corrected via shields.io to 200k) | COMPLETE (updated README table) |
+| 3 | HIGH | Star Update | Update Matt Pocock Skills ★ from 104k to 113k (shields.io live count — +9k) | COMPLETE (updated README table) |
+| 4 | HIGH | Sort Order | Move Matt Pocock (113k) above Spec Kit (107k) and gstack (105k) — row 4→3; new order Superpowers > ECC > Matt Pocock > Spec Kit > gstack | COMPLETE (updated README table) |
+| 5 | HIGH | Star Update | Update Spec Kit ★ from 106k to 107k (shields.io live count — v0.8.18 weekly release cadence) | COMPLETE (updated README table) |
+| 6 | MED | Star Update | Update gstack ★ from 102k to 105k (shields.io live count — v1.55.0, 5 releases May 30) | COMPLETE (updated README table) |
+| 7 | MED | Star Update | Update OpenSpec ★ from 51k to 52k (shields.io live count — 51.9k actual) | COMPLETE (updated README table) |
+| 8 | MED | Star Update | Update Compound Engineering ★ from 17k to 19k (shields.io live count — 18.6k actual, daily releases) | COMPLETE (updated README table) |
+| 9 | LOW | No Change | GSD 64k, BMAD 48k, oh-my-claudecode 35k, HumanLayer 11k stars unchanged | COMPLETE (verified via shields.io, match current) |
+| 10 | LOW | Count Update | ECC agents 48→63, commands 143→121, skills 230→300+ — directory-enum vs README self-report conflict; star reading was also contaminated | COMPLETE (user approved applying count changes despite low-confidence flag; applied research-agent figures) |
+| 11 | LOW | Count Update | Compound Engineering skills 38→42 — agent reports 41 compound-eng + 1 coding-tutor but did not enumerate all 41 names | COMPLETE (user approved; applied 42) |
+| 12 | LOW | Count Update | oh-my-claudecode skills 39→47 — agent padded enumeration ("others to reach 47"); not fully verified | COMPLETE (user approved; applied 47) |
+| 13 | LOW | Count Update | BMAD agents 0→6 (persona-skills) and skills 42→40 — agent arithmetic inconsistent (6+6+5+12≠28) | COMPLETE (user approved; applied 6/40 — note personas may be double-counted in skills) |
+| 14 | LOW | Count Update | Matt Pocock skills 28→29 — possible new /teach in-progress subdir (added May 27) | COMPLETE (user approved; applied 29) |
+| 15 | LOW | Count Update | OpenSpec commands 11→9 — agent low confidence (0.72), commands are TS modules not .md | COMPLETE (user approved; applied 9) |
+| 16 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core (prior run said open-gsd/get-shit-done-redux); still tracking original per workflow scope | ON HOLD (RECURRING; user decision on switching tracking to fork) |
+| 17 | LOW | Note | HumanLayer remains pre-release CodeLayer IDE; .claude/ scaffold empty; counts unchanged (6/27/0) | COMPLETE (context only, no change) |
