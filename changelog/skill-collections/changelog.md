@@ -120,3 +120,21 @@
 | 8 | LOW | Sort | Order preserved — K-Dense-AI (26k) stays below the two 27k manual rows and above VoltAgent (23k); no row reordering needed | COMPLETE (verified) |
 | 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
 | 10 | LOW | Note | anthropics & mattpocock star counts read from GitHub HTML (k-abbreviated), not exact API counts (api.github.com rate-limited); k-rounded values used per table convention | COMPLETE (method noted) |
+
+---
+
+## [2026-05-31 11:21 PM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 140k to 145k (144,623 exact) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 104k to 113k (112,970 exact — +9k, fifth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k) |
+| 3 | MEDIUM | Count | Update mattpocock/skills active skills from 24 to 25 (added /teach 2026-05-27/31; /review moved to in-progress; writing-* staged; 4 deprecated unchanged) | RECURRING (count drift logged 2026-05-12, 2026-05-20) |
+| 4 | LOW | Star | Update K-Dense-AI/scientific-agent-skills ★ from 26k to 27k (26,729 exact — +1k) | RECURRING (star bumps logged 2026-05-20, 2026-05-25) |
+| 5 | MEDIUM | Count | Update K-Dense-AI/scientific-agent-skills count from 138 to 143 (added bulk-rnaseq, pathway-enrichment, Nextflow support 2026-05-28; scvi-tools/scikit-bio updated) | RECURRING (count drift logged 2026-05-12, 2026-05-20) |
+| 6 | LOW | Star | Update VoltAgent/awesome-agent-skills ★ from 23k to 24k (23,736 exact — +1k) | RECURRING (star bump logged 2026-05-25) |
+| 7 | LOW | No Change | wshobson/agents steady — ★ 36k (36,182 exact) and skills 155 (155 SKILL.md via git tree, not truncated); native Codex/Cursor/Gemini plugin-install added 2026-05-29 but no skill count delta | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | anthropics/skills active count steady at 17 (template/SKILL.md scaffold excluded); VoltAgent curated count held at 1,424+ (README badge); claude-api skill updated with Opus 4.8 migration 2026-05-29 | COMPLETE (verified, no drift) |
+| 9 | LOW | Sort | Order preserved — K-Dense-AI (26,729 → 27k) stays below the two 27k manual rows (impeccable, addyosmani/agent-skills) per 2026-05-25 precedent; VoltAgent (24k) remains last among research repos | COMPLETE (verified) |
+| 10 | LOW | Note | VoltAgent badge "1,424+" vs direct bold-link enumeration of 1,116 (Δ308) — badge retained as canonical source per twice-settled precedent (2026-04-29, 2026-05-12) | RECURRING (count-source method debated 2026-04-29, badge reaffirmed 2026-05-12, 2026-05-25) |
+| 11 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
