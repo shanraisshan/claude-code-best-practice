@@ -214,3 +214,12 @@ No drift detected — frontmatter fields (15) and bundled skills (6) are fully s
 |---|----------|------|--------|--------|
 | 1 | HIGH | Renamed Skill | Rename `simplify` (row 1) to `code-review`; update description — `/simplify` was renamed to `/code-review` in v2.1.147, now reviews the current diff for correctness bugs at a chosen effort level (`--comment` posts findings as inline PR comments) | ✅ COMPLETE (renamed row 1 to `code-review` and rewrote description; bundled skill count stays 9) |
 | 2 | LOW | Skill Naming | Agent flagged `fewer-permission-prompts` (report row 6) vs changelog name `less-permission-prompts` (v2.1.111) — verify which is canonical | ❌ INVALID (live `/` skill menu in this session confirms `fewer-permission-prompts` is the shipping name; report row 6 is correct, no change) |
+
+---
+
+## [2026-06-01 12:01 AM PKT] Claude Code v2.1.158
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `disallowed-tools` to frontmatter table — tools removed from Claude's available pool while the skill is active (accepts space/comma-separated string or YAML list; clears on next message). Introduced v2.1.152, reaffirmed v2.1.157. Update count 15→16 | ✅ COMPLETE (added `disallowed-tools` row after `allowed-tools`, count updated 15→16) |
+| 2 | HIGH | New Skill | Add `simplify` to official bundled skills table — cleanup-only review (reuse, simplification, efficiency, abstraction level), four review agents in parallel; from v2.1.154 it does NOT hunt for correctness bugs (use `/code-review` for that). Update count 9→10 | ✅ COMPLETE (added as row 10, count updated 9→10) |
