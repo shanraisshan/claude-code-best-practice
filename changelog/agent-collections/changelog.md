@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-05-31 08:46 PM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                                                    | Status                                                                                                                                                                                                                                       |
+|---|----------|-------|---------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | LOW      | Star  | msitarzewski/agency-agents ★ unchanged (106k = 106,321)                                                                   | INVALID (no change required; RECURRING)                                                                                                                                                                                                      |
+| 2 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (21k = 20,939)                                                        | INVALID (no change required; RECURRING)                                                                                                                                                                                                      |
+| 3 | LOW      | Count | msitarzewski/agency-agents agents 144 vs 184 (conf 0.90)                                                                  | INVALID (RECURRING methodological oscillation; 15th+ consecutive INVALID ruling; no commits since April 12, 2026 — 49 days; 184 includes category boundary judgment calls; README self-declares 144; marketing/ dir may have 30 or 31 files) |
+| 4 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents 156 vs 155 (conf 0.88)                                                     | INVALID (RECURRING oscillation; −1 within ±2 threshold; 07-specialized-domains noted possible +1 undercounting; PRs #256/#247/#238 merged May 25 added agents; net change unclear; no change)                                               |
+| 5 | LOW      | Sort  | Verify sort order (106k > 21k — stars descending)                                                                         | COMPLETE (order preserved; RECURRING)                                                                                                                                                                                                        |
+
+---
+
 ## [2026-05-30 08:45 PM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                                                    | Status                                                                                                                                                                                                                                          |
