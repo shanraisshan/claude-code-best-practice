@@ -223,3 +223,9 @@ No drift detected — frontmatter fields (15) and bundled skills (6) are fully s
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Field | Add `disallowed-tools` to frontmatter table — tools removed from Claude's available pool while the skill is active (accepts space/comma-separated string or YAML list; clears on next message). Introduced v2.1.152, reaffirmed v2.1.157. Update count 15→16 | ✅ COMPLETE (added `disallowed-tools` row after `allowed-tools`, count updated 15→16) |
 | 2 | HIGH | New Skill | Add `simplify` to official bundled skills table — cleanup-only review (reuse, simplification, efficiency, abstraction level), four review agents in parallel; from v2.1.154 it does NOT hunt for correctness bugs (use `/code-review` for that). Update count 9→10 | ✅ COMPLETE (added as row 10, count updated 9→10) |
+
+---
+
+## [2026-06-01 10:11 AM PKT] Claude Code v2.1.159
+
+No drift detected — frontmatter fields (16) and bundled skills (10) are fully synchronized with official docs.
