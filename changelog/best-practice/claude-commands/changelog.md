@@ -332,3 +332,9 @@ _No tracked drift: frontmatter fields 15/15 match official docs, built-in comman
 | 1 | HIGH | New Field | Add `disallowed-tools` to frontmatter table — tools removed from Claude's available pool while the skill/command is active; clears on next message (count 15 → 16) | ✅ COMPLETE (added after `allowed-tools`, heading updated 15 → 16) |
 | 2 | HIGH | New Command | Add `/reload-skills` to Extensions tag — re-scan skill/command directories so on-disk changes apply without restart; reports counts added/removed (count 80 → 81) | ✅ COMPLETE (added as #44 after `/reload-plugins`, downstream rows renumbered) |
 | 3 | HIGH | New Command | Add `/workflows` to Session tag — open the workflow progress view to watch, pause, resume, or save running and completed workflows (count 81 → 82) | ✅ COMPLETE (added as #82 at end of Session group, count heading updated → 82) |
+
+---
+
+## [2026-06-01 11:08 AM PKT] Claude Code v2.1.159
+
+No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 82 built-in commands).
