@@ -138,3 +138,18 @@
 | 9 | LOW | Sort | Order preserved — K-Dense-AI (26,729 → 27k) stays below the two 27k manual rows (impeccable, addyosmani/agent-skills) per 2026-05-25 precedent; VoltAgent (24k) remains last among research repos | COMPLETE (verified) |
 | 10 | LOW | Note | VoltAgent badge "1,424+" vs direct bold-link enumeration of 1,116 (Δ308) — badge retained as canonical source per twice-settled precedent (2026-04-29, 2026-05-12) | RECURRING (count-source method debated 2026-04-29, badge reaffirmed 2026-05-12, 2026-05-25) |
 | 11 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-01 08:12 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 143 to 142 (README badge decreased by 1 — exact cause unknown; possible skill removal or reorganization since 2026-05-31) | RECURRING (count drift logged 2026-05-31 +5, 2026-05-20 +3, 2026-05-12 +1) |
+| 2 | LOW | No Change | anthropics/skills ★ 145k (145,000 exact) / 17 skills — no drift | COMPLETE (verified, no drift) |
+| 3 | LOW | No Change | mattpocock/skills ★ 113k (113,000 exact) / 25 active skills — no drift | COMPLETE (verified, no drift) |
+| 4 | LOW | No Change | wshobson/agents ★ 36k (36,200 exact) / 155 skills — no drift | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | K-Dense-AI/scientific-agent-skills ★ 27k (26,800 exact) — star steady at 27k | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | VoltAgent/awesome-agent-skills ★ 24k (23,800 exact) / 1,424+ curated — no drift | COMPLETE (verified, no drift) |
+| 7 | LOW | Sort | Order preserved — no star changes crossed k-rounding boundaries; no row reordering needed | COMPLETE (verified) |
+| 8 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
