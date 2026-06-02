@@ -636,3 +636,30 @@
 | 19 | LOW | Count Verify | oh-my-claudecode commands 0 — agent found 27 .md in commands/ but workflow methodology treats skills as the command surface | ON HOLD (RECURRING — keeping 0 per established methodology) |
 | 20 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
 | 21 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 214k > ECC 201k > Matt Pocock 113k > Spec Kit 107k > gstack 105k > GSD 64k > OpenSpec 52k > BMAD 48k > omc 35k > agent-skills 27k > CE 19k > HumanLayer 11k | COMPLETE (verified; ECC 200k→201k does not affect position) |
+
+---
+
+## [2026-06-02 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 214k to 215k (215k actual — v5.1.0 momentum) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 201k to 202k (202k actual — v2.0.0-rc.1 cross-harness agentic OS) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star Update | Update Matt Pocock Skills ★ from 113k to 114k (114k actual — engineering/productivity skill additions) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star Update | Update Spec Kit ★ from 107k to 108k (108k actual — v0.9.0 bundled extension migration) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star Update | Update gstack ★ from 105k to 106k (106k actual — v1.55.x daily releases) | COMPLETE (RECURRING — updated README table) |
+| 6 | MED | Star Update | Update BMAD-METHOD ★ from 48k to 49k (48.5k actual — v6.8.0 two-spine UX planning, Web Bundles) | COMPLETE (RECURRING — updated README table) |
+| 7 | MED | Star Update | Update oh-my-claudecode ★ from 35k to 36k (35.5k actual — v4.14.x Ultragoal durable multi-goal workflow) | COMPLETE (RECURRING — updated README table) |
+| 8 | MED | Count Update | Update gstack skills from 47 to 61 (61 root-level SKILL.md dirs confirmed from AGENTS.md authoritative catalog; v1.55.x added 14 new skills across browser, iOS, safety categories) | COMPLETE (NEW — previous ON HOLD at 52 now confirmed 61 from AGENTS.md; confidence 0.85) |
+| 9 | MED | Count Update | Update Compound Engineering agents from 43 to 47 (47 .md filenames explicitly enumerated in directory listing; README states 51) | COMPLETE (NEW — partial increase; 47 is directory-confirmed lower bound; 4 more possible from pagination) |
+| 10 | MED | Workflow | Update Spec Kit workflow — /speckit.taskstoissues moved from last position to before /speckit.implement; +/speckit.checklist appended as final step (checklist.md in templates/commands/ was in the 9-command count but missing from workflow) | COMPLETE (NEW — v0.9.0 canonicalized order: tasks→taskstoissues→implement→analyze→checklist; conf 0.88) |
+| 11 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 215k > ECC 202k > Matt Pocock 114k > Spec Kit 108k > gstack 106k > GSD 64k > OpenSpec 52k > BMAD 49k > omc 36k > agent-skills 27k > CE 19k > HumanLayer 11k | COMPLETE (verified) |
+| 12 | LOW | Count Verify | ECC commands 121→106 (agent found 106 .md files, conf 0.78) — 10th consecutive run with directory-enum giving different value | ON HOLD (RECURRING — from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM; keeping 121 until manual verification) |
+| 13 | LOW | Count Verify | ECC skills 300+→249 (agent reports publisher-stated 249 from v2.0.0-rc.1 release page; directory pagination cut off at 100) | ON HOLD (RECURRING — 10th consecutive run; keeping 300+ per last approved value) |
+| 14 | LOW | Count Verify | ECC workflow — agent found new v2.0 PRP workflow (plan→prp-plan→prp-prd→feature-dev→prp-implement→prp-commit→code-review→review-pr→prp-pr) vs current /ecc:plan→/tdd→/code-review→/security-scan→/e2e→merge; conf 0.78 | ON HOLD (NEW — v2.0.0-rc.1 workflow change; keeping current v1.x workflow until higher confidence) |
+| 15 | LOW | Count Verify | gstack workflow — agent found reordered steps (spec before autoplan, plan-ceo-review→sub, design-consultation removed, land-and-deploy removed); conf 0.85 | ON HOLD (NEW — Jun 1 run just updated this; deferring further reorder) |
+| 16 | LOW | Count Verify | BMAD agents 6 — agent found 6 bmad-agent-* folders, consistent with current value; README "12+" includes Party Mode personas | ON HOLD (RECURRING — keeping 6 per established methodology) |
+| 17 | LOW | Count Verify | BMAD skills 42→41 (agent found 29 bmm-skills + 12 core-skills = 41; conf 0.82) | ON HOLD (RECURRING — oscillating 40↔41↔42; keeping 42 per last confirmed directory count) |
+| 18 | LOW | Count Verify | CE agents 47→51 — README states 51 but only 47 filenames visible in paginated listing | ON HOLD (NEW — applied 47 as lower bound; 4 additional agents possible from pagination) |
+| 19 | LOW | Count Verify | Matt Pocock skills 29→20+ minimum — agent confirmed 20 from fully enumerated subdirs but in-progress/deprecated not counted; prior count of 29 included those | ON HOLD (RECURRING — keeping 29 per directory-count methodology; agent undercount) |
+| 20 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
