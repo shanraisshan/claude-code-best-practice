@@ -668,3 +668,15 @@
 | 12 | INVALID | Rule 8A Rejection | Previous session flagged rename `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR` → `CLAUDE_CODE_BASH_MAINTAIN_PROJECT_WORKING_DIR`. Official env-vars page confirms `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR` (without `_CODE_`) is the correct name. No rename | ❌ INVALID (official page confirms current name; prior-session finding was wrong) — NEW |
 | 13 | INVALID | Rule 8A Rejection | Previous session flagged `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` as REMOVED per changelog v2.1.154. Official env-vars page still lists it without any REMOVED tag. Per Rule 8A, no change | ❌ INVALID (official page still lists var; per Rule 8A, changelog alone insufficient to mark REMOVED) — NEW |
 | 14 | INVALID | Rule 8A Rejection | Previous session flagged `skipLfs` for plugin marketplace source types. Official settings page makes no mention of `skipLfs` or LFS. Not added per Rule 8A | ❌ INVALID (not found on official settings page) — NEW |
+
+---
+
+## [2026-06-02 10:47 AM PKT] Claude Code v2.1.160
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.159 → v2.1.160 and header "As of v2.1.159" → "As of v2.1.160" | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Changed Behavior | Update `acceptEdits` description: v2.1.160 always prompts before writing build-tool config files that grant code execution (`.npmrc`, `.yarnrc*`, `bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`) and before writing to shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) and `~/.config/git/` | ✅ COMPLETE (description updated per official v2.1.160 changelog) — NEW |
+| 3 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` as REMOVED in v2.1.160 — "the environment variable is now a no-op" per changelog | ✅ COMPLETE (marked REMOVED with no-op annotation; v2.1.160 attribution added) — RESOLVED (from 2026-06-01 v2.1.159, where it was INVALID per Rule 8A; v2.1.160 changelog now explicitly states "now a no-op") |
+| 4 | MED | Changed Description | Update `workflowKeywordTriggerEnabled` description: trigger keyword renamed from "workflow" to "ultracode" in v2.1.160 per official changelog | ✅ COMPLETE (description updated; "ultracode" keyword noted with v2.1.160 attribution) — NEW |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 20+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
