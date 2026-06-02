@@ -138,3 +138,19 @@
 | 9 | LOW | Sort | Order preserved — K-Dense-AI (26,729 → 27k) stays below the two 27k manual rows (impeccable, addyosmani/agent-skills) per 2026-05-25 precedent; VoltAgent (24k) remains last among research repos | COMPLETE (verified) |
 | 10 | LOW | Note | VoltAgent badge "1,424+" vs direct bold-link enumeration of 1,116 (Δ308) — badge retained as canonical source per twice-settled precedent (2026-04-29, 2026-05-12) | RECURRING (count-source method debated 2026-04-29, badge reaffirmed 2026-05-12, 2026-05-25) |
 | 11 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-02 08:11 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | Update mattpocock/skills ★ from 113k to 114k (~114,000 displayed on GitHub HTML — +1k) | RECURRING (consecutive surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k) |
+| 2 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 143 to 142 (README badge reads "Skills-142-brightgreen"; possible skill removal/reorganization since 2026-05-31) | RECURRING (count drifts logged 2026-05-12, 2026-05-20, 2026-05-31) |
+| 3 | LOW | No Change | anthropics/skills steady at 145k / 17 | COMPLETE (verified, no drift) |
+| 4 | LOW | No Change | wshobson/agents steady at 36k / 155 (README explicitly states 155 skills across 81 plugins) | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | mattpocock/skills active skill count steady at 25 (engineering 10, productivity 4, misc 4, personal 2, in-progress 5; 4 deprecated unchanged) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | K-Dense-AI/scientific-agent-skills ★ steady at 27k (26.9k exact, rounds to 27k) | COMPLETE (verified, no drift) |
+| 7 | LOW | No Change | VoltAgent/awesome-agent-skills steady at 24k / 1,424+ (badge retained as canonical source per settled precedent 2026-04-29, 2026-05-12, 2026-05-25) | COMPLETE (verified, no drift) |
+| 8 | LOW | Sort | Order preserved — no star movements alter row ranking; no reordering needed | COMPLETE (verified) |
+| 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
