@@ -338,3 +338,11 @@ _No tracked drift: frontmatter fields 15/15 match official docs, built-in comman
 ## [2026-06-01 11:08 AM PKT] Claude Code v2.1.159
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 82 built-in commands).
+
+---
+
+## [2026-06-02 11:07 AM PKT] Claude Code v2.1.160
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/effort` — add `ultracode` level (combines `xhigh` reasoning with automatic workflow orchestration; session-only); update signature from `auto` to `ultracode` as final listed level option (v2.1.160 renamed `workflow` → `ultracode`) | ✅ COMPLETE (updated signature and description at #47 in Model tag) |
