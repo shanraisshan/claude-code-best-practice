@@ -138,3 +138,18 @@
 | 9 | LOW | Sort | Order preserved — K-Dense-AI (26,729 → 27k) stays below the two 27k manual rows (impeccable, addyosmani/agent-skills) per 2026-05-25 precedent; VoltAgent (24k) remains last among research repos | COMPLETE (verified) |
 | 10 | LOW | Note | VoltAgent badge "1,424+" vs direct bold-link enumeration of 1,116 (Δ308) — badge retained as canonical source per twice-settled precedent (2026-04-29, 2026-05-12) | RECURRING (count-source method debated 2026-04-29, badge reaffirmed 2026-05-12, 2026-05-25) |
 | 11 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-03 08:13 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | Update anthropics/skills ★ from 145k to 146k (145,722 exact — +1k routine bump) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 113k to 115k (115,376 exact — +2k, sixth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k) |
+| 3 | MEDIUM | Count | Update mattpocock/skills active skills from 25 to 24 (/teach moved to in-progress after brief stable period; in-progress now: review, writing-beats, writing-fragments, writing-shape; stable: 20; total non-deprecated: 24; 4 deprecated unchanged) | RECURRING (count drift logged 2026-05-12, 2026-05-20, 2026-05-31) |
+| 4 | LOW | Count | Update wshobson/agents skill count from 155 to 156 (social-publishing plugin added June 2 — PR #558; now 84 plugins / 192 agents / 156 skills) | RECURRING (count drift logged 2026-05-12, 2026-05-20) |
+| 5 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 143 to 142 (README badge now reads 142; body text says 141, repo description says 140 — minor inconsistency; badge used as canonical source; confidence 0.82) | RECURRING (count drift logged 2026-05-12, 2026-05-20, 2026-05-31) |
+| 6 | LOW | No Change | VoltAgent/awesome-agent-skills — ★ 24k (24,046 exact) and curated count 1,424+ both unchanged; badge confirmed as of May 27 README update | COMPLETE (verified, no drift) |
+| 7 | LOW | Sort | Order preserved — no star crossings; mattpocock (115k) still #2, wshobson (36k) still #3, K-Dense-AI (27k) stays in same position | COMPLETE (verified) |
+| 8 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
