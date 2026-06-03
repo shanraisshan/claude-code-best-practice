@@ -346,3 +346,9 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | Changed Description | Update `/effort` — add `ultracode` level (combines `xhigh` reasoning with automatic workflow orchestration; session-only); update signature from `auto` to `ultracode` as final listed level option (v2.1.160 renamed `workflow` → `ultracode`) | ✅ COMPLETE (updated signature and description at #47 in Model tag) |
+
+---
+
+## [2026-06-03 11:07 AM PKT] Claude Code v2.1.161
+
+No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 82 built-in commands).
