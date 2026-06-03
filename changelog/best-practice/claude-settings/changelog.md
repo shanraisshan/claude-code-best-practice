@@ -680,3 +680,16 @@
 | 3 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` as REMOVED in v2.1.160 — "the environment variable is now a no-op" per changelog | ✅ COMPLETE (marked REMOVED with no-op annotation; v2.1.160 attribution added) — RESOLVED (from 2026-06-01 v2.1.159, where it was INVALID per Rule 8A; v2.1.160 changelog now explicitly states "now a no-op") |
 | 4 | MED | Changed Description | Update `workflowKeywordTriggerEnabled` description: trigger keyword renamed from "workflow" to "ultracode" in v2.1.160 per official changelog | ✅ COMPLETE (description updated; "ultracode" keyword noted with v2.1.160 attribution) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 20+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-03 10:48 AM PKT] Claude Code v2.1.161
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.160 → v2.1.161 and header "As of v2.1.160" → "As of v2.1.161" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Changed Description | Update `CLAUDE_CODE_ENABLE_TASKS` — official env-vars page now describes it as controlling Task tools vs legacy TodoWrite (default Task tools since v2.1.142; set to `0` to revert). Prior description referred to non-interactive mode task tracking | ✅ COMPLETE (description updated per official env-vars page) — NEW |
+| 3 | HIGH | Changed Description | Update `CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING` — enabled by default on Anthropic API; set to `0` to opt out. Prior description said "`1` to enable" (inverted behavior) | ✅ COMPLETE (description updated per official env-vars page) — NEW |
+| 4 | MED | Annotation Fix | Add "not in official docs — unverified" annotation to `CLAUDE_CODE_SESSION_ID` — confirmed NOT on official /en/env-vars page per Rule 5D | ✅ COMPLETE (annotation added) — NEW |
+| 5 | LOW | Ownership Boundary | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` in both files; `claude-cli-startup-flags.md` lacks cross-reference note | ✅ COMPLETE (cross-reference note added to CLI flags file) — NEW |
+| 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` still changelog-only, not on official env-vars page after 23+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
