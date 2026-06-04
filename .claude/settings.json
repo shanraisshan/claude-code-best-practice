@@ -1,5 +1,4 @@
 {
-  "disableAllHooks": false,
   "permissions": {
     "allow": [
       "Edit(*)",
@@ -83,6 +82,7 @@
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
   },
   "enableAllProjectMcpServers": true,
+  "disableAllHooks": false,
   "hooks": {
     "PreToolUse": [
       {
@@ -136,6 +136,19 @@
         ]
       }
     ],
+    "PostToolBatch": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "PostToolBatch"
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "hooks": [
@@ -149,6 +162,19 @@
         ]
       }
     ],
+    "UserPromptExpansion": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "UserPromptExpansion"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "hooks": [
@@ -158,6 +184,19 @@
             "timeout": 5000,
             "async": true,
             "statusMessage": "Notification"
+          }
+        ]
+      }
+    ],
+    "MessageDisplay": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/hooks.py",
+            "timeout": 5000,
+            "async": true,
+            "statusMessage": "MessageDisplay"
           }
         ]
       }
