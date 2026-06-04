@@ -1,7 +1,7 @@
 # HOOKS-README
 contains all the details, scripts, and instructions for the hooks
 
-## Hook Events Overview - [Official 27 Hooks](https://code.claude.com/docs/en/hooks)
+## Hook Events Overview - [Official 30 Hooks](https://code.claude.com/docs/en/hooks)
 Claude Code provides several hook events that run at different points in the workflow:
 
 | # | Hook | Description | Options |
@@ -33,6 +33,9 @@ Claude Code provides several hook events that run at different points in the wor
 | 25 | `CwdChanged` | Runs when the working directory changes during a session (reactive env management, e.g. direnv) | `async`, `timeout: 5000`, `old_cwd`, `new_cwd` |
 | 26 | `FileChanged` | Runs when watched files change during a session (reactive env management, e.g. direnv). **Requires `matcher` with pipe-separated basenames** (e.g. `.envrc\|.env`) to specify which files to watch | `async`, `timeout: 5000`, `file_path`, `changed_reason` |
 | 27 | `PermissionDenied` | Runs after auto mode classifier denies a tool call. Return `{retry: true}` to tell the model it can retry | `async`, `timeout: 5000`, `tool_name`, `tool_input`, `tool_use_id`, `reason` |
+| 28 | `UserPromptExpansion` | Runs when a user-typed slash command or MCP prompt expands into a prompt, before it reaches Claude (can block). **Supports `matcher` on `command_name`** (e.g. `deploy\|review`) | `async`, `timeout: 5000`, `expansion_type`, `command_name`, `command_args`, `command_source`, `prompt` |
+| 29 | `PostToolBatch` | Runs after a full batch of parallel tool calls resolves, before the next model call (can block). No matcher support | `async`, `timeout: 5000`, `tool_calls` (array of `tool_name`, `tool_input`, `result`, `succeeded`) |
+| 30 | `MessageDisplay` | Runs while an assistant message is displayed to the user. Display-only — **cannot block**; can rewrite on-screen text via `displayContent` without changing the transcript. No matcher support | `async`, `timeout: 5000`, `message`, `message_index` |
 
 > **Note:** Hooks 15-17 (`TeammateIdle`, `TaskCreated`, and `TaskCompleted`) require the experimental agent teams feature. Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` when launching Claude Code to enable them.
 
@@ -43,7 +46,7 @@ The following items exist in the [Claude Code Changelog](https://github.com/anth
 | Item | Added In | Changelog Reference | Notes |
 |------|----------|-------------------|-------|
 | `Setup` hook | [v2.1.10](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2110) | "Added new Setup hook event that can be triggered via `--init`, `--init-only`, or `--maintenance` CLI flags for repository setup and maintenance operations" | Not listed in official hooks reference page (26 hooks listed, Setup excluded) |
-| Agent frontmatter hooks | [v2.1.0](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210) | "Added hooks support to agent frontmatter, allowing agents to define PreToolUse, PostToolUse, and Stop hooks scoped to the agent's lifecycle" | Changelog only mentions 3 hooks, but testing confirms **6 hooks** actually fire in agent sessions: PreToolUse, PostToolUse, PermissionRequest, PostToolUseFailure, Stop, SubagentStop. Not all 27 hooks are supported. |
+| Agent frontmatter hooks | [v2.1.0](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210) | "Added hooks support to agent frontmatter, allowing agents to define PreToolUse, PostToolUse, and Stop hooks scoped to the agent's lifecycle" | Changelog only mentions 3 hooks, but testing confirms **6 hooks** actually fire in agent sessions: PreToolUse, PostToolUse, PermissionRequest, PostToolUseFailure, Stop, SubagentStop. Not all 30 hooks are supported. |
 
 ## Prerequisites
 
@@ -120,8 +123,11 @@ Edit `.claude/hooks/config/hooks-config.json` for team-wide defaults:
   "disablePermissionRequestHook": false,
   "disablePostToolUseHook": false,
   "disablePostToolUseFailureHook": false,
+  "disablePostToolBatchHook": false,
   "disableUserPromptSubmitHook": false,
+  "disableUserPromptExpansionHook": false,
   "disableNotificationHook": false,
+  "disableMessageDisplayHook": false,
   "disableStopHook": false,
   "disableSubagentStartHook": false,
   "disableSubagentStopHook": false,
@@ -174,7 +180,7 @@ Claude Code 2.1.0 introduced support for agent-specific hooks defined in agent f
 
 ### Supported Agent Hooks
 
-Agent frontmatter hooks support **6 hooks** (not all 27). The changelog originally mentioned only 3, but testing confirms 6 hooks actually fire in agent sessions:
+Agent frontmatter hooks support **6 hooks** (not all 30). The changelog originally mentioned only 3, but testing confirms 6 hooks actually fire in agent sessions:
 - `PreToolUse`: Runs before the agent uses a tool
 - `PostToolUse`: Runs after the agent completes a tool use
 - `PermissionRequest`: Runs when a tool requires user permission
@@ -182,7 +188,7 @@ Agent frontmatter hooks support **6 hooks** (not all 27). The changelog original
 - `Stop`: Runs when the agent finishes
 - `SubagentStop`: Runs when a subagent completes
 
-> **Note:** The [v2.1.0 changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210) only mentions 3 hooks: *"Added hooks support to agent frontmatter, allowing agents to define PreToolUse, PostToolUse, and Stop hooks scoped to the agent's lifecycle"*. However, testing with the `claude-code-hook-agent` confirms that 6 hooks actually fire in agent sessions. The remaining 21 hooks (e.g., Notification, SessionStart, SessionEnd, etc.) do not fire in agent contexts.
+> **Note:** The [v2.1.0 changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210) only mentions 3 hooks: *"Added hooks support to agent frontmatter, allowing agents to define PreToolUse, PostToolUse, and Stop hooks scoped to the agent's lifecycle"*. However, testing with the `claude-code-hook-agent` confirms that 6 hooks actually fire in agent sessions. The remaining 24 hooks (e.g., Notification, SessionStart, SessionEnd, etc.) do not fire in agent contexts.
 >
 > **Update (Feb 2026):** The [official hooks reference](https://code.claude.com/docs/en/hooks) now states *"All hook events are supported"* for skill/agent frontmatter hooks. This may mean support has expanded beyond the 6 hooks originally tested. Re-testing recommended to verify if additional hooks now fire in agent sessions.
 
@@ -380,7 +386,7 @@ Sends a prompt to a Claude model for single-turn evaluation. The model returns a
 }
 ```
 
-**Supported events:** PreToolUse, PostToolUse, PostToolUseFailure, PermissionRequest, UserPromptSubmit, Stop, SubagentStop, TaskCreated, TaskCompleted. **Command-only events (not supported for prompt/agent types):** ConfigChange, CwdChanged, Elicitation, ElicitationResult, FileChanged, InstructionsLoaded, Notification, PermissionDenied, PostCompact, PreCompact, SessionEnd, SessionStart, Setup, StopFailure, SubagentStart, TeammateIdle, WorktreeCreate, WorktreeRemove.
+**Supported events:** PreToolUse, PostToolUse, PostToolUseFailure, PermissionRequest, UserPromptSubmit, Stop, SubagentStop, TaskCreated, TaskCompleted. **Command-only events (not supported for prompt/agent types):** ConfigChange, CwdChanged, Elicitation, ElicitationResult, FileChanged, InstructionsLoaded, MessageDisplay, Notification, PermissionDenied, PostCompact, PostToolBatch, PreCompact, SessionEnd, SessionStart, Setup, StopFailure, SubagentStart, TeammateIdle, UserPromptExpansion, WorktreeCreate, WorktreeRemove.
 
 ### `type: "agent"`
 
@@ -441,7 +447,7 @@ Every hook receives a JSON object on stdin containing these common fields, in ad
 | `agent_id` | string | Unique subagent identifier. Present when the hook fires inside a subagent context (since v2.1.69) |
 | `agent_type` | string | Agent type name (e.g. `Bash`, `Explore`, `Plan`, or custom). Present when using `--agent <name>` flag or inside a subagent (since v2.1.69) |
 
-> **Note:** Hook-specific fields (e.g., `tool_name` for PreToolUse, `last_assistant_message` for Stop) are listed in the Options column of the [Hook Events Overview](#hook-events-overview---official-27-hooks) table above.
+> **Note:** Hook-specific fields (e.g., `tool_name` for PreToolUse, `last_assistant_message` for Stop) are listed in the Options column of the [Hook Events Overview](#hook-events-overview---official-30-hooks) table above.
 
 ## Hooks Management Commands
 
@@ -487,6 +493,7 @@ Matchers filter which events trigger a hook. Not all hooks support matchers — 
 | `Elicitation` | `server_name` | MCP server name | `"matcher": "my-mcp-server"` |
 | `ElicitationResult` | `server_name` | MCP server name | `"matcher": "my-mcp-server"` |
 | `ConfigChange` | `config_source` | `user_settings`, `project_settings`, `local_settings`, `policy_settings`, `skills` | `"matcher": "project_settings"` |
+| `UserPromptExpansion` | `command_name` | slash command or MCP prompt name (e.g. `deploy`) | `"matcher": "deploy\|review"` |
 | `UserPromptSubmit` | — | No matcher support | Always fires |
 | `Stop` | — | No matcher support | Always fires |
 | `TeammateIdle` | — | No matcher support | Always fires |
@@ -567,13 +574,16 @@ Different hooks use different output schemas for blocking or controlling executi
 | PreToolUse | `hookSpecificOutput.autoAllow` | `true` — auto-approve future uses of this tool (since v2.0.76) |
 | PermissionRequest | `hookSpecificOutput.decision.behavior` | `allow`, `deny` |
 | Stop, SubagentStop, ConfigChange | Top-level `decision` | `block` |
+| PostToolBatch | Top-level `decision` + exit code 2 | `block` — stops the agentic loop before the next model call after a batch of parallel tool calls resolves |
 | PreCompact | `decision` + exit code 2 | `{"decision": "block"}` or exit code 2 — blocks compaction (since v2.1.105) |
 | TeammateIdle, TaskCreated, TaskCompleted | `continue` + exit code 2 | `{"continue": false, "stopReason": "..."}` — JSON decision control added in v2.1.70. TaskCreated also uses exit code 2 to block task creation (stderr fed back to model) |
 | UserPromptSubmit | Can modify `prompt` field | Returns modified prompt via stdout |
+| UserPromptExpansion | Top-level `decision` + `hookSpecificOutput.additionalContext` | `block` prevents the slash command / MCP prompt from expanding; `additionalContext` injects context alongside the expanded prompt |
 | WorktreeCreate | Non-zero exit + stdout path | Non-zero exit fails creation; stdout provides worktree path |
 | Elicitation | `hookSpecificOutput.action` + `hookSpecificOutput.content` | `accept`, `decline`, `cancel` — control MCP elicitation response |
 | ElicitationResult | `hookSpecificOutput.action` + `hookSpecificOutput.content` | `accept`, `decline`, `cancel` — override user response before sending to server |
 | PermissionDenied | `hookSpecificOutput.retry` | `true` — signal that model may retry the denied tool call (v2.1.89+) |
+| MessageDisplay | `hookSpecificOutput.displayContent` | Replaces the on-screen text only — does not change the transcript or what Claude sees (display-only, cannot block) |
 
 ### Universal JSON Output Fields
 
