@@ -3,7 +3,7 @@
 Claude Code Hook Handler
 =============================================
 This script handles events from Claude Code and plays sounds for different hook events.
-Supports all 27 Claude Code hooks: https://code.claude.com/docs/en/hooks
+Supports all 30 Claude Code hooks: https://code.claude.com/docs/en/hooks
 
 Special handling for git commits: plays pretooluse-git-committing.mp3
 
@@ -33,8 +33,11 @@ HOOK_SOUND_MAP = {
     "PermissionRequest": "permissionrequest",
     "PostToolUse": "posttooluse",
     "PostToolUseFailure": "posttoolusefailure",
+    "PostToolBatch": "posttoolbatch",
     "UserPromptSubmit": "userpromptsubmit",
+    "UserPromptExpansion": "userpromptexpansion",
     "Notification": "notification",
+    "MessageDisplay": "messagedisplay",
     "Stop": "stop",
     "SubagentStart": "subagentstart",
     "SubagentStop": "subagentstop",
@@ -175,7 +178,7 @@ def play_sound(sound_name):
                         # Note: Using SND_SYNC instead of SND_ASYNC because the script exits immediately
                         # after this call, which would terminate async playback before it completes
                         winsound.PlaySound(str(file_path),
-                                         winsound.SND_FILENAME | winsound.SND_NODEFAULT)
+                                         winsound.SND_FILENAME | winsound.SND_SYNC | winsound.SND_NODEFAULT)
                         return True
                     else:
                         # winsound not available, fail silently
