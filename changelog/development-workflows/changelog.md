@@ -683,3 +683,27 @@
 | 11 | LOW | Count Verify | omc skills 39→40 (agent self-contradictory: header says 40 but enumeration yields 39 dirs); commands 0→27 (methodology: skills serve as command surface) | ON HOLD (RECURRING — keeping 39 per authoritative directory count; keeping 0 per established methodology) |
 | 12 | LOW | Count Verify | OpenSpec commands 9→8 (Agent 2 conf 0.72; v1.4.0 Kimi/Mistral added; count oscillates 9↔10↔11↔8) | ON HOLD (RECURRING — conf 0.72; keeping 9) |
 | 13 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 216k > ECC 204k > Matt Pocock 115k > Spec Kit 108k > gstack 106k > GSD 64k > OpenSpec 52k > BMAD 49k > omc 36k > agent-skills 27k > CE 19k > HumanLayer 11k | COMPLETE (verified; updates do not affect sort position) |
+
+---
+
+## [2026-06-04 09:24 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 216k to 217k (MCP GitHub verified: 217k) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 204k to 206k (research agent direct API: 206k; MCP search returned 422 for this repo — search API restriction, not deleted) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star Update | Update Matt Pocock Skills ★ from 115k to 117k (MCP GitHub verified: 117k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star Update | Update gstack ★ from 106k to 107k (MCP GitHub verified: 107k) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star Update | Update OpenSpec ★ from 52k to 53k (MCP GitHub verified: 53k — 52,700 actual) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Star Update | Update agent-skills ★ from 27k to 48k (MCP GitHub verified: 48,110 — major viral surge +21k; largest single-day jump seen in this repo's history) | COMPLETE (NEW — updated README table and SKILL COLLECTIONS note: this table is maintained by a separate workflow but agent-skills is now clearly out-of-date there at 27k) |
+| 7 | HIGH | Sort Order | Move agent-skills (48k) above oh-my-claudecode (36k) — new order: ...BMAD 49k > agent-skills 48k > omc 36k... (agent-skills jumped from position 10 to position 9) | COMPLETE (NEW — sort order updated) |
+| 8 | HIGH | Star Update | Update Compound Engineering ★ from 19k to 20k (MCP GitHub verified: 20k — 19,600 actual) | COMPLETE (RECURRING — updated README table) |
+| 9 | MED | Count Update | Update Matt Pocock skills from 28 to 29 (/teach skill confirmed back in in-progress subdir: engineering 10 + productivity 4 + misc 4 + personal 2 + in-progress 5 + deprecated 4 = 29 total folders; /teach was missing in Jun 3 run but re-confirmed today) | COMPLETE (RECURRING — count oscillating 28↔29; /teach presence in in-progress restored) |
+| 10 | MED | Count Update | Update OpenSpec commands from 9 to 11 (agent explicitly lists 11 by name: propose, explore, new, continue, ff, apply, verify, sync, archive, bulk-archive, onboard; v1.4.1 released Jun 3 2026 — count consistent with May 21 confirmation at 11) | COMPLETE (RECURRING — count oscillating 9↔11; applying 11 per explicit enumeration) |
+| 11 | LOW | Count Update | Update Compound Engineering skills from 39 to 40 (39 compound-engineering + 1 coding-tutor; v3.10.0 Jun 3 2026 added ce-polish/ce-promote to compound-engineering pool) | COMPLETE (RECURRING — 39 was set Jun 1 AM; coding-tutor skill consistently present; applying 40) |
+| 12 | LOW | Count Verify | ECC commands 121→79, skills 300+→249 — research agent found 79 commands and README self-reports 249 skills; 12th consecutive run with directory-enum giving different values vs. current methodology | ON HOLD (RECURRING — from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM + Jun 2 + Jun 3 + Jun 4; keeping current values until manual verification) |
+| 13 | LOW | Count Verify | gstack skills 61→43 — agent had trouble fetching recent commits (no commit data retrievable); Jun 2 run confirmed 61 from AGENTS.md authoritative catalog; 43 seems stale | ON HOLD (RECURRING — conf too low due to data access issues; keeping 61) |
+| 14 | LOW | Count Verify | GSD commands 67→83 — 6th oscillation: 67 (Jun 1), 96 (May 25), 67 (Jun 1 PM), 74 (Apr 16), 81 (Apr 18), 85 (Apr 24), 86 (Apr 29), 65 (May 1) | ON HOLD (RECURRING — keeping 67 per last direct enumeration after deprecation cleanup) |
+| 15 | LOW | Count Verify | BMAD agents 6→22 — agent counts across all modules (BMM + BMGD + CIS + BMB); current methodology counts only bmm-module persona-skills (6) | ON HOLD (RECURRING — methodology change only; keeping 6) |
+| 16 | LOW | Count Verify | CE agents 47→43 — agent confirmed 43 filenames via directory listing; README states 51; pagination prevents full enumeration | ON HOLD (RECURRING — keeping 47 as lower-bound per Jun 2 enumeration) |
+| 17 | LOW | Note | agent-skills SKILL COLLECTIONS table entry still shows 27k — that table is maintained by the /workflows:skill-collections workflow; flagging for next skill-collections run | ON HOLD (out of scope for this workflow; /workflows:skill-collections should update) |
