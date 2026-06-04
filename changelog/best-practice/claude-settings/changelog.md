@@ -693,3 +693,13 @@
 | 4 | MED | Annotation Fix | Add "not in official docs — unverified" annotation to `CLAUDE_CODE_SESSION_ID` — confirmed NOT on official /en/env-vars page per Rule 5D | ✅ COMPLETE (annotation added) — NEW |
 | 5 | LOW | Ownership Boundary | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` in both files; `claude-cli-startup-flags.md` lacks cross-reference note | ✅ COMPLETE (cross-reference note added to CLI flags file) — NEW |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` still changelog-only, not on official env-vars page after 23+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-04 10:47 AM PKT] Claude Code v2.1.162
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.161 → v2.1.162 and header "As of v2.1.161" → "As of v2.1.162" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Changed Description | Update `bypassPermissions` description: report said protected paths (`.git`, `.claude`, `.vscode`, `.idea`, `.husky`) "still prompt" — official permissions page confirms all path-based prompts are now skipped. Added new exempt paths: `.config/git`, `.cargo`, `.devcontainer`, `.yarn`, `.mvn`. Only `rm -rf /` and `rm -rf ~` still prompt | ✅ COMPLETE (description corrected; new paths added; v2.1.121/v2.1.126 history preserved) — NEW |
+| 3 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` still changelog-only, not on official env-vars page after 24+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
