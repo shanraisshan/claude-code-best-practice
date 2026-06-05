@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-06-05 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                                                                                                                                 | Status                                                                                                                                                                                                                                        |
+|---|----------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | HIGH     | Star  | Update msitarzewski/agency-agents ★ from 107k to 108k                                                                                                                                  | COMPLETE (GitHub HTML: 108,000 exact; k-boundary crossing; NEW — first 108k milestone)                                                                                                                                                        |
+| 2 | HIGH     | Count | Update msitarzewski/agency-agents agents from 203 to 209                                                                                                                               | COMPLETE (README self-reports 209; per-dir count 210; active commits June 3-5 added Security division, IT Service Manager, Change Management Consultant, Medical Billing Specialist, Business Strategist, Grant Writer, Customer Success Manager; conf 0.88; NEW — net +6 confirmed real change) |
+| 3 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (21k = 21,200)                                                                                                                     | INVALID (no change required; RECURRING)                                                                                                                                                                                                       |
+| 4 | LOW      | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 155 (-1)                                                                                                                          | INVALID (RECURRING oscillation; ±1 within documented ±2 threshold; no confirmed net removal; RECURRING)                                                                                                                                       |
+| 5 | LOW      | Sort  | Verify sort order (108k > 21k — stars descending)                                                                                                                                      | COMPLETE (order preserved; RECURRING)                                                                                                                                                                                                         |
+
+---
+
 ## [2026-06-04 08:42 AM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                                          | Status                                                                                                                                                                                                                             |
