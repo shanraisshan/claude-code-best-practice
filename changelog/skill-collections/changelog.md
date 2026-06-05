@@ -152,3 +152,17 @@
 | 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
 | 6 | LOW | No Change | Sort order preserved — all research repos stay in same relative positions | COMPLETE (verified) |
 | 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-05 08:12 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 146k to 147k (GitHub HTML shows 147k — +1k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04) |
+| 2 | MEDIUM | Star | Update mattpocock/skills ★ from 117k to 118k (GitHub HTML shows 118k — +1k, seventh consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k) |
+| 3 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 142 to 143 (search enumeration yielded 143 confirmed files; prior 2026-06-04 reduction to 142 was an index artifact) | RECURRING (count oscillated 143→142 on 2026-06-04, now restored to 143) |
+| 4 | LOW | No Change | wshobson/agents steady — ★ 36k (36.4k exact, still rounds to 36k) and skills 156 | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k (24.3k) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | Sort order preserved — no star crossings among research repos | COMPLETE (verified) |
+| 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
