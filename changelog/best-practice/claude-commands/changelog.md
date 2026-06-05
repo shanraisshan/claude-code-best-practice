@@ -361,3 +361,9 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/fork <directive>` to Session tag — Spawn a forked subagent that inherits the full conversation and works on the directive while you keep going (standalone since v2.1.161; previously alias of `/branch`) | ✅ COMPLETE (added as #76 in Session tag; alias reference removed from `/branch` row; downstream rows 76-82 renumbered to 77-83; count updated 82 → 83) |
 | 2 | MED | Changed Description | Update `/terminal-setup` — replace "Windsurf" with "Devin Desktop" (renamed in v2.1.162) | ✅ COMPLETE (updated description at #17 in Config tag) |
+
+---
+
+## [2026-06-05 11:07 AM PKT] Claude Code v2.1.165
+
+No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 83 built-in commands).
