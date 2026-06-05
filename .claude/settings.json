@@ -8,14 +8,6 @@
       "WebFetch(domain:*)",
       "WebSearch",
       "mcp__*",
-      "mcp__ide__*",
-      "mcp__chrome-devtools__*",
-      "mcp__claude-in-chrome__*",
-      "mcp__playwright__*",
-      "mcp__reddit-mcp-server__search_reddit",
-      "mcp__reddit-mcp-server__get_post_details",
-      "mcp__tavily-web-search__tavily_search",
-      "mcp__tavily-web-search__tavily_extract",
       "WebFetch(domain:api.open-meteo.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:docs.anthropic.com)",
@@ -54,22 +46,15 @@
     ]
   },
   "spinnerVerbs": {
-    "mode": "replace",
-    "verbs": ["Admiring Shayan's code", "Learning from Shayan", "Studying Shayan's patterns", "Copying Shayan's genius", "Thanking Shayan deeply", "Absorbing Shayan's wisdom", "Following Shayan's lead", "Praising Shayan's repo"]
+    "mode": "append",
+    "verbs": ["Orchestrating", "Delegating", "Verifying", "Composing"]
   },
-  "spinnerTipsOverride": {
-    "tips": [
-      "This is shayan custom tip#1",
-      "This is shayan custom tip#2"
-    ],
-    "excludeDefault": true
-  },
-  
+
   "plansDirectory": "./reports",
   "outputStyle": "Explanatory",
   "statusLine": {
     "type": "command",
-    "command": "echo \"shayan's best practice status line\"",
+    "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/scripts/statusline.py",
     "padding": 0
   },
   "attribution": {
