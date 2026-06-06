@@ -166,3 +166,18 @@
 | 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k (24.3k) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
 | 6 | LOW | No Change | Sort order preserved — no star crossings among research repos | COMPLETE (verified) |
 | 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-06 08:03 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update mattpocock/skills ★ from 118k to 119k (GitHub HTML shows 119k — +1k, eighth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k) |
+| 2 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 143 to 142 (README badge reads "Skills-142-brightgreen"; repo description states "142 ready-to-use skills") | RECURRING (count oscillated 143→142 on 2026-06-04, restored 2026-06-05, dropped again today — badge is authoritative source) |
+| 3 | LOW | No Change | anthropics/skills steady — ★ 147k and skills 17 | COMPLETE (verified, no drift) |
+| 4 | LOW | No Change | wshobson/agents steady — ★ 36.4k → 36k and skills 156 | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24.3k → 24k and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | K-Dense-AI/scientific-agent-skills ★ now 27.4k exact (up from ~26.7k); still rounds to 27k, no display change | COMPLETE (verified, still displays 27k) |
+| 7 | LOW | No Change | Sort order preserved — K-Dense-AI (27.4k exact) stays in current position; manual entries' exact current values unresearched | COMPLETE (verified, manual entries preserved) |
+| 8 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
