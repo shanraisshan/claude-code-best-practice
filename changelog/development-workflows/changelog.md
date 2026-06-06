@@ -707,3 +707,25 @@
 | 15 | LOW | Count Verify | BMAD agents 6→22 — agent counts across all modules (BMM + BMGD + CIS + BMB); current methodology counts only bmm-module persona-skills (6) | ON HOLD (RECURRING — methodology change only; keeping 6) |
 | 16 | LOW | Count Verify | CE agents 47→43 — agent confirmed 43 filenames via directory listing; README states 51; pagination prevents full enumeration | ON HOLD (RECURRING — keeping 47 as lower-bound per Jun 2 enumeration) |
 | 17 | LOW | Note | agent-skills SKILL COLLECTIONS table entry still shows 27k — that table is maintained by the /workflows:skill-collections workflow; flagging for next skill-collections run | ON HOLD (out of scope for this workflow; /workflows:skill-collections should update) |
+
+---
+
+## [2026-06-06 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 217k to 219k (219k confirmed via GitHub page) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 206k to 208k (208k confirmed via GitHub page) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star Update | Update Matt Pocock Skills ★ from 117k to 119k (119k confirmed via GitHub page) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star Update | Update Spec Kit ★ from 108k to 109k (109k confirmed via GitHub page) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count Update | Update oh-my-claudecode skills from 39 to 40 (40 subdirectories confirmed via explicit full enumeration, conf 0.91; v4.14.5 released Jun 4 2026) | COMPLETE (NEW — updated README table) |
+| 6 | LOW | No Change | OpenSpec 53k, GSD 64k, gstack 107k, BMAD 49k, omc 36k, CE 20k, HumanLayer 11k stars unchanged | COMPLETE (verified via GitHub page) |
+| 7 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 219k > ECC 208k > Matt Pocock 119k > Spec Kit 109k > gstack 107k > GSD 64k > OpenSpec 53k > BMAD 49k > agent-skills 48k > omc 36k > CE 20k > HumanLayer 11k | COMPLETE (verified; agent-skills out of scope at 48k) |
+| 8 | LOW | Count Verify | ECC agents 86 (vs 63), commands 79 (vs 121), skills 251+ (vs 300+) — research agent directory-enum differs from current methodology | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM/Jun 2/3/4/6; keeping current values until manual verification) |
+| 9 | LOW | Count Verify | gstack skills 61→51 (agent cites repo changelog "all 51 skills" with eval coverage; Jun 2 run confirmed 61 from AGENTS.md authoritative catalog, conf 0.85) | ON HOLD (contradictory sources; keeping 61 per AGENTS.md confirmation) |
+| 10 | LOW | Count Verify | CE agents 47→43 (directory listing enumerates 43 filenames; README states 51; pagination may prevent full count) | ON HOLD (RECURRING — keeping 47 as lower-bound per Jun 2 enumeration) |
+| 11 | LOW | Count Verify | GSD commands 67→94 (agent confirms 94 via two full-page fetches, conf 0.85; repo deprecated and migrated to open-gsd/gsd-core) | ON HOLD (RECURRING — deprecated repo instability; keeping 67 per Jun 1 post-deprecation cleanup count) |
+| 12 | LOW | Count Verify | OpenSpec commands 11→10 (agent enumerates 10 primary commands + onboard tutorial; Jun 4 run explicitly listed 11 by name) | ON HOLD (RECURRING — oscillating 9↔10↔11; keeping 11) |
+| 13 | LOW | Count Verify | BMAD skills 42→41 (agent: 29 bmm-skills + 12 core-skills = 41; conf 0.75) | ON HOLD (low confidence; keeping 42) |
+| 14 | LOW | Workflow | Superpowers sub-loop label changes proposed: subagent-driven-development top→sub; implementer-subagent→implementer; spec-reviewer-subagent→spec-reviewer; code-quality-reviewer-subagent→code-quality-reviewer; receiving-code-review→final-code-reviewer (conf 0.93) | ON HOLD (Jun 3 run explicitly confirmed -subagent suffix names at same confidence level; deferring rename pending manual verification) |
+| 15 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
