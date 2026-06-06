@@ -210,7 +210,7 @@ These startup-only environment variables are set in your shell before launching 
 |----------|-------------|
 | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` | Enable experimental agent teams. Also env-configurable — see [Settings Reference](./claude-settings.md#environment-variables) |
 | `CLAUDE_CODE_TMPDIR` | Override temp directory for internal files. Also configurable via `env` key — see [Settings Reference](./claude-settings.md#environment-variables-via-env) |
-| `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` | Enable additional directory CLAUDE.md loading |
+| `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` | Enable additional directory CLAUDE.md loading. Also configurable via `env` key — see [Settings Reference](./claude-settings.md#environment-variables-via-env) |
 | `DISABLE_AUTOUPDATER=1` | Disable auto-updates. Also configurable via `env` key — see [Settings Reference](./claude-settings.md#environment-variables-via-env) |
 | `CLAUDE_CODE_EFFORT_LEVEL` | Control thinking depth — see [Settings Reference](./claude-settings.md#environment-variables-via-env) |
 | `USE_BUILTIN_RIPGREP=0` | Use system ripgrep instead of built-in (Alpine Linux) |

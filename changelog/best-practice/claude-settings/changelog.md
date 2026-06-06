@@ -716,3 +716,19 @@
 | 4 | HIGH | Annotation Fix | Remove stale annotation from `skipWebFetchPreflight` — key is now confirmed on official settings page with full description (use case: Bedrock/Vertex/Foundry restrictive egress environments) | ✅ COMPLETE (stale annotation removed; description updated to match official docs) — NEW |
 | 5 | HIGH | Annotation Fix | Remove stale annotation from `CLAUDE_CODE_ENABLE_AUTO_MODE` — key is now confirmed on official env-vars page; description updated to match official wording and fix stale link | ✅ COMPLETE (stale annotation removed; description and link updated per official env-vars page) — NEW |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 25+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-06 10:42 AM PKT] Claude Code v2.1.167
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.163 → v2.1.167 and header "As of v2.1.163" → "As of v2.1.167" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `fallbackModel` to Model Overrides table — configure up to 3 fallback models tried sequentially when the primary model is unavailable (v2.1.166) | ✅ COMPLETE (added to Model Overrides table) — NEW |
+| 3 | HIGH | Permission Syntax | Document glob pattern support in deny rules — `"*"` in the tool-name position of a deny rule matches ALL tools (v2.1.166). Added note to Permission section | ✅ COMPLETE (note added to Tool Permission Syntax section) — NEW |
+| 4 | MED | Annotation Fix | Remove stale annotation from `requiredMinimumVersion` and `requiredMaximumVersion` — both keys are now confirmed on official settings page (were annotated "not yet on official settings page" from v2.1.163 run) | ✅ COMPLETE (stale annotations removed from both keys) — RESOLVED (from 2026-06-05 v2.1.163) |
+| 5 | MED | Missing Env Var | Add `OTEL_RESOURCE_ATTRIBUTES` to OTEL environment variables table — allows key=value pairs as labels on OpenTelemetry metric data points (v2.1.162) | ✅ COMPLETE (added after `OTEL_LOG_RAW_API_BODIES`) — NEW |
+| 6 | MED | Ownership Boundary | Add cross-reference for `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` in settings report (Rule 5B) — var is in both files without a cross-reference | ✅ COMPLETE (cross-reference note added in both files) — NEW |
+| 7 | LOW | Annotation Fix | Upgrade `CLAUDE_CODE_SESSION_ID` annotation from "not in official docs — unverified" to "in v2.1.163 changelog for stdio MCP servers on --resume" | ✅ COMPLETE (annotation upgraded) — NEW |
+| 8 | LOW | Example Update | Fix Quick Reference `"effortLevel": "xhigh"` paired with `"model": "sonnet"` — xhigh is Opus 4.7/4.8 only; Sonnet tops out at `high` | ✅ COMPLETE (changed to `"high"`) — NEW |
+| 9 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 26+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
