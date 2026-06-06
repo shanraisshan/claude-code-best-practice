@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-06-06 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 107k to 108k | COMPLETE (GitHub shows 108k; crosses k-boundary milestone; NEW — first 108k crossing) |
+| 2 | MED | Count | Update msitarzewski/agency-agents agents from 203 to 209 | COMPLETE (README self-reports 209 across 15 divisions; new Security division added Jun 4-5, 2026 with 10 agents; division breakdown: Engineering 31, Design 9, Paid Media 7, Sales 10, Marketing 33, Product 5, Project Management 7, Testing 8, Security 10, Support 6, Spatial Computing 6, Specialized 45, Finance 5, Game Development 17, Academic 5; NEW — confirmed real change via README declaration) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (21.3k → rounds to 21k) | INVALID (no change required; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 vs ~153 (−3) | INVALID (RECURRING oscillation; −3 within ±3 threshold; README self-reports "154+"; no commits after May 27, 2026; no confirmed net removal; no change) |
+| 5 | LOW | Sort | Verify sort order (108k > 21k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-06-04 08:42 AM PKT] Agent Collections Update
 
 | # | Priority | Type  | Action                                                                                                          | Status                                                                                                                                                                                                                             |
