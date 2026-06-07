@@ -166,3 +166,17 @@
 | 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k (24.3k) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
 | 6 | LOW | No Change | Sort order preserved — no star crossings among research repos | COMPLETE (verified) |
 | 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-07 08:09 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update mattpocock/skills ★ from 118k to 120k (GitHub HTML shows 120k — +2k, eighth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k) |
+| 2 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 143 to 142 (README badge reads 142; count oscillated 143→142→143 on 2026-06-04/05, now badge again reads 142) | RECURRING (count oscillated 143→142 on 2026-06-04, restored to 143 on 2026-06-05, now badge reads 142 again) |
+| 3 | LOW | No Change | anthropics/skills steady — ★ 147k and skills 17 (API rate-limited; GitHub HTML confirms 147k) | COMPLETE (verified, no drift) |
+| 4 | LOW | No Change | wshobson/agents steady — ★ 36k (36,445 exact per API) and skills 156 | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k (24,451 exact per API) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | Sort order preserved — mattpocock (120k) stays at row 2; no star crossings among other research repos | COMPLETE (verified) |
+| 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
