@@ -746,3 +746,14 @@
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 27+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
 | 6 | INVALID | Spurious Drift Claim | Re-verified `fallbackModel` (report line 561, type `array`) against v2.1.166 changelog ("up to three fallback models") — report is accurate, including the 3-model cap. No change | ❌ INVALID (report already correct) — NEW |
 | 7 | INVALID | Spurious Drift Claim | Deny-rule glob `"*"` (v2.1.166) already documented in report line 296. No change | ❌ INVALID (already in report) — NEW |
+
+---
+
+## [2026-06-07 10:45 AM PKT] Claude Code v2.1.168
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `MAX_THINKING_TOKENS` env var description — add that `=0` disables extended thinking on Anthropic API (or use `--thinking disabled`). Previously only said "Maximum extended thinking tokens per response" | ✅ COMPLETE (description expanded in claude-settings.md) — RESOLVED (from 2026-06-07 10:34 AM PKT) |
+| 2 | MED | Header Update | Fix header line 6: "As of v2.1.167" → "As of v2.1.168" to match badge and current version | ✅ COMPLETE (header updated in claude-settings.md) — RESOLVED (from 2026-06-07 10:34 AM PKT) |
+| 3 | LOW | MCP Timeout Note | Add note to MCP section: per-server `timeout` values < 1000ms are ignored and fall back to `MCP_TOOL_TIMEOUT` global default (v2.1.162 changelog) | ✅ COMPLETE (note added as version-tagged callout in MCP section) — NEW |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 28+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
