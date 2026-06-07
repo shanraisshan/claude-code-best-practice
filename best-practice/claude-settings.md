@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2006%2C%202026%2010%3A42%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.167-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2007%2C%202026%2010%3A45%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.168-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.167, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.168, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -364,6 +364,8 @@ Configure Model Context Protocol servers for extended capabilities.
 > **Reserved server name (v2.1.128):** `workspace` is a reserved MCP server name. User-defined servers with this name are skipped at load time with a warning logged to the session log. Rename any pre-existing `workspace` server to avoid the collision.
 
 > **`.mcp.json` hot-reload (v2.1.139):** The `/mcp` Reconnect action now re-reads `.mcp.json` from disk before reconnecting, so adding or editing a server no longer requires a session restart. Claude Code also injects `CLAUDE_PROJECT_DIR` into stdio-launched MCP server environments (v2.1.139) so servers can resolve paths relative to the project root.
+
+> **Per-server timeout floor (v2.1.162):** Per-server `timeout` values less than 1000ms are ignored and the global `MCP_TOOL_TIMEOUT` default applies instead. Values ≥ 1000ms are honored as before.
 
 ### MCP Settings
 
@@ -1047,7 +1049,7 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_DEFAULT_SONNET_MODEL_NAME` | Customize the Sonnet entry label in the `/model` picker when using a pinned model on Bedrock/Vertex/Foundry. Defaults to the model ID |
 | `ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION` | Customize the Sonnet entry description in the `/model` picker. Defaults to `Custom model (<model-id>)` |
 | `ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTED_CAPABILITIES` | Override capability detection for a pinned Sonnet model. Comma-separated values (e.g., `effort,thinking`). Required when the pinned model supports features the auto-detection cannot confirm |
-| `MAX_THINKING_TOKENS` | Maximum extended thinking tokens per response |
+| `MAX_THINKING_TOKENS` | Maximum extended thinking tokens per response. Set to `0` to disable extended thinking entirely on the Anthropic API (equivalent to `--thinking disabled`). Applies only when using a fixed thinking budget — on adaptive thinking models (Opus 4.7+), the effort level controls thinking depth instead |
 | `CLAUDE_CODE_AUTO_COMPACT_WINDOW` | Set the context capacity in tokens used for auto-compaction calculations. Defaults to the model's context window (200K standard, 1M for extended context models). Use a lower value (e.g., `500000`) on a 1M model to treat it as 500K for compaction. Capped at actual context window. `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` is applied as a percentage of this value. Setting this decouples the compaction threshold from the status line's `used_percentage` |
 | `DISABLE_AUTO_COMPACT` | Disable automatic context compaction (`1` to disable). Manual `/compact` still works *(not in official docs — unverified)* |
 | `DISABLE_COMPACT` | Disable all compaction — both automatic and manual (`1` to disable) |

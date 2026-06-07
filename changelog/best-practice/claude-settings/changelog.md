@@ -732,3 +732,28 @@
 | 7 | LOW | Annotation Fix | Upgrade `CLAUDE_CODE_SESSION_ID` annotation from "not in official docs — unverified" to "in v2.1.163 changelog for stdio MCP servers on --resume" | ✅ COMPLETE (annotation upgraded) — NEW |
 | 8 | LOW | Example Update | Fix Quick Reference `"effortLevel": "xhigh"` paired with `"model": "sonnet"` — xhigh is Opus 4.7/4.8 only; Sonnet tops out at `high` | ✅ COMPLETE (changed to `"high"`) — NEW |
 | 9 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 26+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-07 10:34 AM PKT] Claude Code v2.1.168
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.167 → v2.1.168 and header "As of v2.1.167" → "As of v2.1.168" | ✅ COMPLETE (badge synced in Phase 2.6; body header text still reads v2.1.167 — flagged as action item #2) — NEW |
+| 2 | MED | Changed Description | Update `MAX_THINKING_TOKENS` env var (line 1050) — v2.1.166 changelog: `MAX_THINKING_TOKENS=0` (and `--thinking disabled`) now disables thinking on models that think by default. Report description only says "Maximum extended thinking tokens per response" | ✋ ON HOLD (awaiting user approval) — NEW |
+| 3 | MED | Header Count | Header line 6 still says "As of v2.1.167" — update to v2.1.168 to match badge | ✋ ON HOLD (awaiting user approval) — NEW |
+| 4 | LOW | Sandbox Predicate Note | Optionally note v2.1.166 fix: `allowedMcpServers`/`deniedMcpServers` predicates now match with `${VAR}` references. Behavior/bug-fix detail, not a new key | ✋ ON HOLD (awaiting user approval — low value, bug-fix detail) — NEW |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 27+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 6 | INVALID | Spurious Drift Claim | Re-verified `fallbackModel` (report line 561, type `array`) against v2.1.166 changelog ("up to three fallback models") — report is accurate, including the 3-model cap. No change | ❌ INVALID (report already correct) — NEW |
+| 7 | INVALID | Spurious Drift Claim | Deny-rule glob `"*"` (v2.1.166) already documented in report line 296. No change | ❌ INVALID (already in report) — NEW |
+
+---
+
+## [2026-06-07 10:45 AM PKT] Claude Code v2.1.168
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `MAX_THINKING_TOKENS` env var description — add that `=0` disables extended thinking on Anthropic API (or use `--thinking disabled`). Previously only said "Maximum extended thinking tokens per response" | ✅ COMPLETE (description expanded in claude-settings.md) — RESOLVED (from 2026-06-07 10:34 AM PKT) |
+| 2 | MED | Header Update | Fix header line 6: "As of v2.1.167" → "As of v2.1.168" to match badge and current version | ✅ COMPLETE (header updated in claude-settings.md) — RESOLVED (from 2026-06-07 10:34 AM PKT) |
+| 3 | LOW | MCP Timeout Note | Add note to MCP section: per-server `timeout` values < 1000ms are ignored and fall back to `MCP_TOOL_TIMEOUT` global default (v2.1.162 changelog) | ✅ COMPLETE (note added as version-tagged callout in MCP section) — NEW |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 28+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
