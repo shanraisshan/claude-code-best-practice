@@ -757,3 +757,25 @@
 | 19 | LOW | Workflow | ECC — agent found v2.0 PRP workflow (plan→prp-prd→prp-plan→prp-implement→tdd-guide-agent→code-review→security-scan→test-coverage→prp-pr); conf 0.80 | ON HOLD (RECURRING from Jun 2; keeping current v1.x workflow until higher confidence) |
 | 20 | LOW | Workflow | BMAD — agent adds bmad-brainstorming as first step, prfaq moves to second (top not sub), check-implementation-readiness removed, sprint-planning(sub) added, checkpoint-preview(sub) added, qa-generate-e2e-tests removed; conf 0.75 | ON HOLD (confidence below threshold; keeping current workflow) |
 | 21 | LOW | Sort Order | No re-sort needed among 11 researched repos — stars-descending preserved: Superpowers 220k > ECC 209k > Matt Pocock 120k > Spec Kit 110k > gstack 108k > GSD 64k > OpenSpec 53k > BMAD 49k > agent-skills 48k > omc 36k > CE 20k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+
+---
+
+## [2026-06-08 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Superpowers ★ from 220k to 221k (221k confirmed via GitHub page + Agent 1 conf 0.92) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star Update | Update Everything Claude Code ★ from 209k to 210k (210k confirmed via GitHub page + Agent 1; v2.0.0-rc.1 cross-harness agentic OS) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star Update | Update Matt Pocock Skills ★ from 120k to 121k (121k confirmed via GitHub page + Agent 1 conf 0.93) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | No Change | Spec Kit 110k, gstack 108k, GSD 64k, OpenSpec 53k, BMAD 49k, omc 36k, CE 20k, HumanLayer 11k stars unchanged | COMPLETE (all verified via GitHub page; match current table values) |
+| 5 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 221k > ECC 210k > Matt Pocock 121k > Spec Kit 110k > gstack 108k > GSD 64k > OpenSpec 53k > BMAD 49k > agent-skills 48k (out of scope) > omc 36k > CE 20k > HumanLayer 11k | COMPLETE (verified; 1k increases do not affect row positions) |
+| 6 | LOW | Count Verify | gstack skills 61→54 — Agent 2 explicitly enumerated 54 SKILL.md-containing root dirs; prior Jun 2 AGENTS.md count of 61 may have included non-skill infrastructure dirs | ON HOLD (RECURRING from Jun 3/4/6/7; 7th different value across 6 runs: 43→47→51→54→61→51→47→54; keeping 61 per established ON HOLD convention) |
+| 7 | LOW | Count Verify | BMAD skills 42→34-36 — Agent 2 arithmetic inconsistency (bmm non-agent 24 + core 12 = 36; or 30 + 12 = 42); count oscillates | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 8 | LOW | Count Verify | OpenSpec commands 11→9 — Agent 2 found 9 TS-CLI commands; Jun 4 explicitly listed 11 by name; count oscillates 9↔10↔11 | ON HOLD (RECURRING from Jun 3/4/6/7; keeping 11 per Jun 4 explicit enumeration) |
+| 9 | LOW | Count Verify | ECC agents 63→86, commands 121→87, skills 251→100+/261 — directory-enum vs README self-report conflict; 14th consecutive run with different values | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM/2/3/4/6/7/8; keeping current values until manual verification) |
+| 10 | LOW | Workflow | Superpowers — Agent 1 proposes removing -subagent suffix: implementer-subagent→implementer, spec-reviewer-subagent→spec-reviewer, code-quality-reviewer-subagent→code-quality-reviewer; conf 0.92 | ON HOLD (RECURRING from Jun 6; Jun 3 run at same confidence confirmed -subagent suffix; deferring rename pending manual verification) |
+| 11 | LOW | Workflow | Matt Pocock — Agent 1 proposes removing tdd-red/tdd-green/tdd-refactor sub-loops, adding prototype/zoom-out; grill-with-docs removed; different from Jun 3 confirmed workflow | ON HOLD (RECURRING — Jun 3 explicitly confirmed TDD sub-loops at conf 0.95; keeping current) |
+| 12 | LOW | Workflow | Spec Kit — Agent 1 proposes reordering: analyze(sub) moves before tasks, taskstoissues moved to end as sub; conf 0.90 | ON HOLD (RECURRING — Jun 2 order confirmed; 4th proposed reorder in consecutive runs) |
+| 13 | LOW | Workflow | Compound Engineering — Agent 2 removes ce-worktree(sub)/ce-polish(sub)/ce-promote, adds ce-debug(sub); conf unstated; partially reverts Jun 7 workflow | ON HOLD (NEW — Jun 7 workflow set at conf 0.90; reverting within same run cycle; deferring) |
+| 14 | LOW | Workflow | ECC — Agent 1 proposes new workflow: plan→tdd(sub)→implement→code-review→security-scan(sub)→test-coverage(sub)→verify→evolve(sub)→ship; v2.0.0-rc.1 architecture | ON HOLD (RECURRING from Jun 2/3/7; keeping current v1.x workflow until higher confidence) |
+| 15 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; counts 33 agents / 67 commands unchanged; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
