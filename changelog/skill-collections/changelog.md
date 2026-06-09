@@ -180,3 +180,18 @@
 | 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k (24,451 exact per API) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
 | 6 | LOW | No Change | Sort order preserved — mattpocock (120k) stays at row 2; no star crossings among other research repos | COMPLETE (verified) |
 | 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-09 08:04 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 147k to 148k (148,122 exact — +1k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 120k to 122k (121,897 exact — +2k, ninth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k) |
+| 3 | MEDIUM | Star | Update wshobson/agents ★ from 36k to 37k (36,532 exact — +1k) | RECURRING (star bumps logged 2026-05-01, 2026-05-12, 2026-05-20) |
+| 4 | MEDIUM | Star | Update K-Dense-AI/scientific-agent-skills ★ from 27k to 28k (27,631 exact — +1k) | RECURRING (star bumps logged 2026-05-20, 2026-05-25, 2026-05-31) |
+| 5 | HIGH | Sort | Promote K-Dense-AI/scientific-agent-skills from row 6 to row 4 — 28k now exceeds both 27k manual entries (impeccable, addyosmani/agent-skills); stars-descending sort enforced on star crossover | NEW |
+| 6 | LOW | Star | Update VoltAgent/awesome-agent-skills ★ from 24k to 25k (24,700 exact — +1k) | RECURRING (star bump logged 2026-05-25, 2026-05-31) |
+| 7 | LOW | No Change | All skill counts steady — anthropics 17, mattpocock 25 (active), wshobson 156, K-Dense-AI 142, VoltAgent 1,424+ (badge) | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
