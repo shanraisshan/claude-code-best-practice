@@ -385,3 +385,11 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-06-08 11:05 AM PKT] Claude Code v2.1.168
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 83 built-in commands).
+
+---
+
+## [2026-06-09 11:04 AM PKT] Claude Code v2.1.169
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/cd [path]` to Session tag — Move the session to a new working directory without breaking the prompt cache | ✅ COMPLETE (added as #73 in Session tag; downstream rows 73–83 renumbered to 74–84; count updated 83 → 84) |
