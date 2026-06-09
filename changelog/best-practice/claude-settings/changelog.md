@@ -777,3 +777,15 @@
 | 1 | LOW | New Env Var (Changelog) | Add `CLAUDE_CODE_ALWAYS_ENABLE_EFFORT` to env vars table — forces the effort parameter on all models (v2.1.154 changelog). Annotated as changelog-only per Rule 5D/8A | ✅ COMPLETE (added after `CLAUDE_EFFORT` row with changelog-only annotation) |
 | 2 | LOW | New Env Var (Changelog) | Add `OTEL_METRICS_INCLUDE_ENTRYPOINT` to OTEL env vars table — includes session entrypoint as a metric attribute (v2.1.161 changelog). Annotated as changelog-only per Rule 5D/8A | ✅ COMPLETE (added after `OTEL_TRACES_EXPORTER` row with changelog-only annotation) |
 | 3 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 29+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-09 10:39 AM PKT] Claude Code v2.1.169
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.168 → v2.1.169 and header "As of v2.1.168" → "As of v2.1.169" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `disableBundledSkills` (boolean, default `false`) to General Settings table — conceals Claude Code's built-in capabilities from the model. Paired with `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` env var. Changelog-only (not yet on official settings page); annotated per Rule 1F (v2.1.169) | ✅ COMPLETE (added after `ultracode` row with changelog-only annotation) — NEW |
+| 3 | MED | New Env Var | Add `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` to Common Environment Variables table — env-var equivalent of `disableBundledSkills` setting. Changelog-only per Rule 5D/8A (v2.1.169) | ✅ COMPLETE (added after `CLAUDE_CODE_ENABLE_AUTO_MODE` with changelog-only annotation) — NEW |
+| 4 | MED | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — determined to be a startup-only variable; belongs in `claude-cli-startup-flags.md`, not in `claude-settings.md`. Per Rule 13 (env vars split across two files) | ✋ ON HOLD (out of scope for this report — add to `claude-cli-startup-flags.md` in a separate run) — NEW |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 30+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
