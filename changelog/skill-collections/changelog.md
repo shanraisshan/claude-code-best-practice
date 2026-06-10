@@ -180,3 +180,19 @@
 | 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 24k (24,451 exact per API) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
 | 6 | LOW | No Change | Sort order preserved — mattpocock (120k) stays at row 2; no star crossings among other research repos | COMPLETE (verified) |
 | 7 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-10 08:09 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 147k to 149k (GitHub HTML shows 149k — +2k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05, 2026-06-07) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 120k to 123k (GitHub HTML shows 123k — +3k, ninth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k) |
+| 3 | MEDIUM | Star | Update wshobson/agents ★ from 36k to 37k (GitHub HTML shows 36.6k, rounds to 37k — +1k threshold crossed) | RECURRING (star bumps logged 2026-05-01, 2026-05-12, 2026-05-20) |
+| 4 | HIGH | Star | Update K-Dense-AI/scientific-agent-skills ★ from 27k to 28k (GitHub HTML shows 27.8k, rounds to 28k — +1k threshold crossed) | RECURRING (star bumps logged 2026-05-20, 2026-05-25, 2026-05-31) |
+| 5 | HIGH | Count | Update K-Dense-AI/scientific-agent-skills count from 142 to 144 (README badge reads 144, category breakdown sums to 144; prior 142 was badge oscillation artifact) | RECURRING (count oscillated 143→142→143→142 across 2026-06-04/05/07, now badge settles at 144) |
+| 6 | HIGH | Sort | Move K-Dense-AI/scientific-agent-skills from row 6 to row 4 — at 28k it now exceeds the two 27k manual entries (impeccable, addyosmani/agent-skills); first time research repo surpasses manual entries in stars | NEW |
+| 7 | MEDIUM | Star | Update VoltAgent/awesome-agent-skills ★ from 24k to 25k (GitHub HTML shows 24.8k, rounds to 25k — +1k threshold crossed) | RECURRING (star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31) |
+| 8 | LOW | No Change | anthropics/skills active count steady at 17; mattpocock/skills active count steady at 25; wshobson/agents count steady at 156; VoltAgent curated count held at 1,424+ (README badge) | COMPLETE (verified, no drift) |
+| 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
