@@ -393,3 +393,11 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/cd [path]` to Session tag — Move the session to a new working directory without breaking the prompt cache | ✅ COMPLETE (added as #73 in Session tag; downstream rows 73–83 renumbered to 74–84; count updated 83 → 84) |
+
+---
+
+## [2026-06-10 11:05 AM PKT] Claude Code v2.1.170
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/advisor [model\|off]` to Model tag — Enable or disable the advisor tool which consults a second model for guidance at key moments | ✅ COMPLETE (added as #47 in Model tag; downstream rows 47–84 renumbered 48–85; count updated 84 → 85) |
