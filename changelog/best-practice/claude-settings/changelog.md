@@ -789,3 +789,22 @@
 | 3 | MED | New Env Var | Add `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` to Common Environment Variables table — env-var equivalent of `disableBundledSkills` setting. Changelog-only per Rule 5D/8A (v2.1.169) | ✅ COMPLETE (added after `CLAUDE_CODE_ENABLE_AUTO_MODE` with changelog-only annotation) — NEW |
 | 4 | MED | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — determined to be a startup-only variable; belongs in `claude-cli-startup-flags.md`, not in `claude-settings.md`. Per Rule 13 (env vars split across two files) | ✋ ON HOLD (out of scope for this report — add to `claude-cli-startup-flags.md` in a separate run) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 30+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-10 10:43 AM PKT] Claude Code v2.1.170
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `advisorModel` to Model Configuration section (string, any scope, v2.1.98+; accepts alias "opus"/"sonnet"/"fable" or full model ID; write with `/advisor`; companion env var `CLAUDE_CODE_DISABLE_ADVISOR_TOOL`) | ✅ COMPLETE (added to Model Overrides table after `fallbackModel`) — NEW |
+| 2 | HIGH | Version Bump | Update report version badge from v2.1.169 → v2.1.170 and header "As of v2.1.169" → "As of v2.1.170" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 3 | HIGH | Stale Annotation | Remove stale annotation from `disableBundledSkills` — now on official settings page; update description per official docs | ✅ COMPLETE (annotation removed, version note added) — NEW |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_CODE_SAFE_MODE` to env vars table (v2.1.170 changelog; disables customizations for troubleshooting; changelog-only annotation) | ✅ COMPLETE (added after `CLAUDE_CODE_ENABLE_AUTO_MODE` with changelog-only annotation) — NEW |
+| 5 | HIGH | Missing Env Vars | Add `ANTHROPIC_DEFAULT_FABLE_MODEL` (+ `_NAME`, `_DESCRIPTION`, `_SUPPORTED_CAPABILITIES` companions) to env vars table — confirmed on official /en/env-vars page | ✅ COMPLETE (added as a group after `ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTED_CAPABILITIES`) — NEW |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_ADVISOR_TOOL` to env vars table — confirmed on official /en/env-vars page | ✅ COMPLETE (added after `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS`) — NEW |
+| 7 | MED | New Model Alias | Add `"fable"` to Model Aliases table (Claude Fable 5, v2.1.170) | ✅ COMPLETE (added after `"opusplan"`) — NEW |
+| 8 | MED | Stale Annotation | Remove stale "changelog-only" annotation from `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` — now confirmed on official /en/env-vars page | ✅ COMPLETE (annotation replaced with version note) — NEW |
+| 9 | MED | New Useful Command | Add `/cd` to Useful Commands table (relocate session to new working directory without breaking prompt cache, v2.1.170) | ✅ COMPLETE (added after `/permissions`) — NEW |
+| 10 | MED | Missing Env Var | Add `API_FORCE_IDLE_TIMEOUT` to env vars table — confirmed on official /en/env-vars page | ✅ COMPLETE (added after `API_TIMEOUT_MS`) — NEW |
+| 11 | LOW | Example Update | Add `advisorModel` to Quick Reference example | ✅ COMPLETE (added `"advisorModel": "opus"` after `effortLevel`) — NEW |
+| 12 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 30+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
