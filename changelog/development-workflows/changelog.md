@@ -825,3 +825,22 @@
 | 12 | LOW | Count Verify | Matt Pocock skills 29→19 active (19 active in engineering/productivity/misc; 29 total including in-progress/personal/deprecated dirs; Agent 1 conf 0.89) | ON HOLD (RECURRING — keeping 29 per directory-count methodology) |
 | 13 | LOW | Count Verify | Superpowers -subagent suffix rename (implementer-subagent→implementer etc.) — Agent 1 found actual template files named implementer-prompt.md; -subagent suffix established since Jun 3 run at conf 0.92 | ON HOLD (RECURRING from Jun 6/7/8; keeping -subagent suffix pending manual verification of canonical step names) |
 | 14 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
+
+---
+
+## [2026-06-11 09:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 223k to 224k | COMPLETE (verified via GitHub API: 224,137) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 212k to 213k | COMPLETE (verified via GitHub API: 213,421) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 123k to 125k | COMPLETE (verified via GitHub API: 125,208) |
+| 4 | HIGH | Workflow | Update Matt Pocock Skills workflow pipeline (removed /grill-with-docs, /to-issues, /tdd-red, /tdd-green, /tdd-refactor; added /triage, /zoom-out; /tdd demoted to sub-loop) | COMPLETE (conf 0.90 — /triage and /zoom-out confirmed in engineering/ folder; /grill-with-docs, /to-issues, tdd sub-steps absent from 19-skill enumeration) |
+| 5 | LOW | No Change | Spec Kit 111k, OpenSpec 54k, GSD 64k, BMAD 49k, oh-my-claudecode 36k, CE 21k, HumanLayer 11k stars unchanged | COMPLETE (verified via GitHub API / search) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 224k > ECC 213k > Matt Pocock 125k > Spec Kit 111k > gstack 109k > GSD 64k > OpenSpec 54k > BMAD 49k > agent-skills 48k (out of scope) > omc 36k > CE 21k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 7 | LOW | Count Verify | gstack skills 61→52 (Agent 2 enumerated 52 root-level SKILL.md dirs) | ON HOLD (RECURRING from Jun 2/3/4/6/7/8/9/10; 10 consecutive runs finding lower counts 35–61; keeping 61 per Jun 2 AGENTS.md authoritative count) |
+| 8 | LOW | Count Verify | OpenSpec commands 11→9 (Agent 2 enumerates 9 TypeScript CLI commands; count oscillates 9↔10↔11) | ON HOLD (RECURRING from Jun 3/4/6/7/8/9/10; keeping 11 per Jun 4 explicit 11-name enumeration) |
+| 9 | LOW | Count Verify | ECC workflow v2.0.0 change proposed | ON HOLD (RECURRING from Jun 2/3/7/8/9/10; deferring until v2.0.0 workflow step names definitively confirmed) |
+| 10 | LOW | Count Verify | Matt Pocock skills 29→19 (19 active in engineering/productivity/misc; 29 total including in-progress/personal/deprecated dirs) | ON HOLD (RECURRING from Jun 2/3/4/6/7/8/9/10; keeping 29 per directory-count methodology) |
+| 11 | LOW | Count Verify | Superpowers -subagent suffix rename (implementer-subagent→implementer etc.) | ON HOLD (RECURRING from Jun 6/7/8/9/10; keeping -subagent suffix pending manual verification) |
+| 12 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
