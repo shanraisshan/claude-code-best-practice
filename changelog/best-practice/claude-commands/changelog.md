@@ -401,3 +401,12 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/advisor [model\|off]` to Model tag — Enable or disable the advisor tool which consults a second model for guidance at key moments | ✅ COMPLETE (added as #47 in Model tag; downstream rows 47–84 renumbered 48–85; count updated 84 → 85) |
+
+---
+
+## [2026-06-11 11:09 AM PKT] Claude Code v2.1.173
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/review` — official docs updated cross-reference from `/ultrareview` to `/code-review ultra` | ✅ COMPLETE (updated description at #57 in Project tag) |
+| 2 | MED | Changed Description | Update `/ultrareview` — official docs now note preferred invocation is `/code-review ultra`; `/ultrareview` remains as an alias | ✅ COMPLETE (updated description at #60 in Project tag) |
