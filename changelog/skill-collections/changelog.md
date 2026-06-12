@@ -199,3 +199,21 @@
 | 10 | LOW | No Change | mattpocock/skills active skill count steady at 25 (engineering 10, misc 4, personal 2, productivity 5, in-progress 4; 4 deprecated excluded) | COMPLETE (verified, no drift) |
 | 11 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
 | 12 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-12 08:11 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 149k to 150k (GitHub displays ~150k — +1k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05, 2026-06-11) |
+| 2 | MEDIUM | Star | Update mattpocock/skills ★ from 125k to 126k (GitHub displays ~126k — +1k, tenth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k) |
+| 3 | MEDIUM | Count | Update K-Dense-AI/scientific-agent-skills count from 144 to 146 (README badge reads 146 and introduction states "146 ready-to-use scientific and research skills" — +2 from prior 144) | RECURRING (count drift logged 2026-05-12, 2026-05-20, 2026-06-04, 2026-06-05, 2026-06-11) |
+| 4 | LOW | No Change | wshobson/agents steady — ★ 37k (GitHub displays 36.6k, still rounds to 37k) and skills 156 | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | K-Dense-AI/scientific-agent-skills ★ steady at 28k (GitHub displays ~28k) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 25k and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 7 | LOW | No Change | mattpocock/skills active skill count steady at 25 (engineering 10, misc 4, personal 2, productivity 5, in-progress 4; 4 deprecated excluded) | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
+| 9 | LOW | No Change | Sort order preserved — no star crossings among research repos or between research and manual rows | COMPLETE (verified) |
+| 10 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+| 11 | LOW | Note | Star exact integers not recoverable from GitHub HTML (rate-limited API, no gh CLI) — k-rounded display values used per table convention | RECURRING (method noted 2026-05-25) |
