@@ -410,3 +410,15 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/review` — official docs updated cross-reference from `/ultrareview` to `/code-review ultra` | ✅ COMPLETE (updated description at #57 in Project tag) |
 | 2 | MED | Changed Description | Update `/ultrareview` — official docs now note preferred invocation is `/code-review ultra`; `/ultrareview` remains as an alias | ✅ COMPLETE (updated description at #60 in Project tag) |
+
+---
+
+## [2026-06-12 11:08 AM PKT] Claude Code v2.1.175
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Argument | Update `/clear` — add `[name]` optional arg to label the previous conversation for retrieval via `/resume` | ✅ COMPLETE (updated signature and description at #75 in Session tag) |
+| 2 | MED | Changed Argument | Update `/context` — add `[all]` optional arg to expand the full context breakdown | ✅ COMPLETE (updated signature and description at #21 in Context tag) |
+| 3 | LOW | Changed Argument | Update `/cd` — change `[path]` (optional) to `<path>` (required) per official docs | ✅ COMPLETE (updated signature at #74 in Session tag) |
+| 4 | LOW | Changed Description | Update `/color` — add "run without an argument to pick a random color" per official docs | ✅ COMPLETE (appended random-color note at #6 in Config tag) |
+| 5 | LOW | Changed Description | Update `/remote-env` — reworded from "Configure the default remote environment for web sessions started with `--remote`" to "Choose the default environment for cloud agents" | ✅ COMPLETE (updated description at #67 in Remote tag) |
