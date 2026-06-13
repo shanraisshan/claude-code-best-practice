@@ -819,3 +819,16 @@
 | 6 | MED | Changed Description | Update `availableModels` — add v2.1.172 note that it also constrains subagent model picker and `advisorModel` picker; add `enforceAvailableModels` cross-reference | ✅ COMPLETE (description updated in General Settings table) — NEW |
 | 7 | LOW | Changed Description | Fix `CLAUDE_CODE_EFFORT_LEVEL` — "xhigh (Opus 4.7 only, v2.1.111)" → "xhigh (Opus 4.7 and 4.8, v2.1.111)" | ✅ COMPLETE (updated in env vars table) — NEW |
 | 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 32+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-13 10:37 AM PKT] Claude Code v2.1.176
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `footerLinksRegexes` to Display Settings table — regex patterns matched against URLs to display as link badges in the footer row (v2.1.176 changelog; not yet on official settings page — annotated per Rule 1F) | ✅ COMPLETE (added after `wheelScrollAccelerationEnabled` with changelog annotation) — NEW |
+| 2 | HIGH | Version Badge | Update report version badge v2.1.175 → v2.1.176 and header "As of v2.1.175" → "As of v2.1.176" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 3 | MED | Changed Description | Update intro line 6: "As of v2.1.175" → "As of v2.1.176" | ✅ COMPLETE (intro updated) — NEW |
+| 4 | LOW | Changed Description | Add Fable 5 1M-context auto-strip note to `"fable"` alias — Fable 5 includes 1M context by default; the `[1m]` suffix is auto-stripped (v2.1.173 changelog) | ✅ COMPLETE (note added to fable alias in Model Aliases table) — NEW |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 33+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 6 | INVALID | Spurious Drift Claims (agent-2) | `workflow-claude-settings-agent` (agent-2) attributed `worktree.baseRef`, `wheelScrollAccelerationEnabled`, and `enforceAvailableModels` to v2.1.176. Verified: `worktree.baseRef` was added in v2.1.133, `wheelScrollAccelerationEnabled` in v2.1.174, `enforceAvailableModels` in v2.1.175 — all already in the report. Per Rule 8A | ❌ INVALID (keys already documented; agent version attribution was wrong) |
