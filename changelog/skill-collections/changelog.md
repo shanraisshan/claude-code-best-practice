@@ -199,3 +199,19 @@
 | 10 | LOW | No Change | mattpocock/skills active skill count steady at 25 (engineering 10, misc 4, personal 2, productivity 5, in-progress 4; 4 deprecated excluded) | COMPLETE (verified, no drift) |
 | 11 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
 | 12 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-13 08:12 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 149k to 150k (149,991 exact — +1k, now rounds to 150k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05, 2026-06-11) |
+| 2 | MEDIUM | Star | Update mattpocock/skills ★ from 125k to 127k (127,018 exact — +2k, tenth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k) |
+| 3 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 144 to 143 (scan_skills.py in SECURITY.md reports "Skills scanned: 143"; prior 144 may have overstated by one) | RECURRING (count oscillated 143→142→143→142→143→144 across prior runs; now 143 per authoritative self-reported scan) |
+| 4 | LOW | No Change | wshobson/agents steady — ★ 37k (36,673 exact) and skills 156 (docs/agent-skills.md confirmed "156 skills across 41 plugins") | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 25k (25,158 exact) and curated count 1,424+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | Sort order preserved — anthropics (150k) stays #1, mattpocock (127k) stays #2; no star crossings among research repos | COMPLETE (verified) |
+| 7 | LOW | No Change | mattpocock/skills active skill count steady at 25 (engineering 10, misc 4, personal 2, productivity 5, in-progress 4; 4 deprecated excluded) | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
+| 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
