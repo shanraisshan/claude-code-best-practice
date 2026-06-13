@@ -865,3 +865,21 @@
 | 12 | LOW | Count Verify | ECC v2.0.0 workflow change proposed by Agent 1 (plan→tdd-workflow→code-review→security-scan(sub)→e2e-runner(sub)→test-coverage(sub)); conf 0.85 | ON HOLD (RECURRING from Jun 2/3/7/8/9/10/11; keeping current v1.x workflow pending v2.0.0 stabilization) |
 | 13 | LOW | Workflow | Workflow changes proposed for Superpowers, Matt Pocock, gstack, BMAD, CE, oh-my-claudecode, OpenSpec — all below confidence threshold or reversing recently-confirmed changes | ON HOLD (RECURRING — see Jun 3/6/7/8/9/10/11 entries; no changes applied) |
 | 14 | LOW | Sort Order | New sort order: Superpowers 225k > ECC 213k > Matt Pocock 126k > Spec Kit 112k > gstack 109k > GSD 64k > agent-skills 55k > OpenSpec 54k > BMAD 49k > omc 36k > CE 21k > HumanLayer 11k | COMPLETE (verified; agent-skills sort position corrected) |
+
+---
+
+## [2026-06-13 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 225k to 226k (226,144 via MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 126k to 127k (127,061 via MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update gstack ★ from 109k to 110k (109,569 via MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update OpenSpec ★ from 54k to 55k (54,546 via MCP GitHub API) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Count | Update Compound Engineering commands from 4 to 1 and skills from 40 to 39 (coding-tutor plugin removed Jun 12, 2026 via commit #929 "chore(coding-tutor): remove deprecated plugin") | COMPLETE (NEW — coding-tutor plugin structurally removed; only triage-prs.md remains in .claude/commands/; 39 skills in compound-engineering/ only) |
+| 6 | LOW | No Change | ECC ★ unverifiable — GitHub search API returned 422 for affaan-m/everything-claude-code; keeping 213k per stars-don't-fall rule | COMPLETE (RECURRING — no action; 213k maintained) |
+| 7 | LOW | No Change | Spec Kit 112k, GSD 64k, BMAD 49k, omc 36k, CE 21k, HumanLayer 11k stars unchanged | COMPLETE (verified via MCP GitHub API) |
+| 8 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 226k > ECC 213k > Matt Pocock 127k > Spec Kit 112k > gstack 110k > GSD 64k > agent-skills 55k (out of scope) > OpenSpec 55k > BMAD 49k > omc 36k > CE 21k > HumanLayer 11k | COMPLETE (verified; agent-skills actual 55,142 > OpenSpec actual 54,546; both display 55k; position unchanged) |
+| 9 | LOW | Count Verify | gstack skills 61→53 — Agent 2 read AGENTS.md and found 53; v1.57-1.58 active development (14 releases in 30 days); count should not decrease during active release cycle | ON HOLD (RECURRING from Jun 2/3/4/6/7/8/9/10/11/12; keeping 61 per established methodology) |
+| 10 | LOW | Count Verify | OpenSpec commands 11→9 — Agent 2 found 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3/4/6/7/8/9/10/11/12; keeping 11) |
+| 11 | LOW | Count Verify | ECC agents/commands/skills — 16th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
