@@ -422,3 +422,11 @@ No priority action items — report is fully in sync with official documentation
 | 3 | LOW | Changed Argument | Update `/cd` — change `[path]` (optional) to `<path>` (required) per official docs | ✅ COMPLETE (updated signature at #74 in Session tag) |
 | 4 | LOW | Changed Description | Update `/color` — add "run without an argument to pick a random color" per official docs | ✅ COMPLETE (appended random-color note at #6 in Config tag) |
 | 5 | LOW | Changed Description | Update `/remote-env` — reworded from "Configure the default remote environment for web sessions started with `--remote`" to "Choose the default environment for cloud agents" | ✅ COMPLETE (updated description at #67 in Remote tag) |
+
+---
+
+## [2026-06-13 11:07 AM PKT] Claude Code v2.1.176
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Scope Decision | 11 bundled skills/workflows (`/batch`, `/claude-api`, `/code-review`, `/debug`, `/deep-research`, `/fewer-permission-prompts`, `/loop`, `/run`, `/run-skill-generator`, `/simplify`, `/verify`) listed in upstream unified table but excluded per report scope; `/deep-research` (Workflow) appears for first time in findings | ❌ INVALID (recurring from v2.1.107/119/139/145/150 — report intentionally scoped to built-in commands only; `/deep-research` is a bundled Workflow and stays excluded) |
