@@ -430,3 +430,9 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | LOW | Scope Decision | 11 bundled skills/workflows (`/batch`, `/claude-api`, `/code-review`, `/debug`, `/deep-research`, `/fewer-permission-prompts`, `/loop`, `/run`, `/run-skill-generator`, `/simplify`, `/verify`) listed in upstream unified table but excluded per report scope; `/deep-research` (Workflow) appears for first time in findings | ❌ INVALID (recurring from v2.1.107/119/139/145/150 — report intentionally scoped to built-in commands only; `/deep-research` is a bundled Workflow and stays excluded) |
+
+---
+
+## [2026-06-14 11:06 AM PKT] Claude Code v2.1.176
+
+No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 85 built-in commands).
