@@ -883,3 +883,21 @@
 | 9 | LOW | Count Verify | gstack skills 61→53 — Agent 2 read AGENTS.md and found 53; v1.57-1.58 active development (14 releases in 30 days); count should not decrease during active release cycle | ON HOLD (RECURRING from Jun 2/3/4/6/7/8/9/10/11/12; keeping 61 per established methodology) |
 | 10 | LOW | Count Verify | OpenSpec commands 11→9 — Agent 2 found 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3/4/6/7/8/9/10/11/12; keeping 11) |
 | 11 | LOW | Count Verify | ECC agents/commands/skills — 16th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
+
+---
+
+## [2026-06-14 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 226k to 227k (via MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 213k to 215k (via WebFetch on GitHub HTML — MCP search API returned 422 for affaan-m/everything-claude-code; GitHub page confirmed 215k) | COMPLETE (RECURRING — updated README table; stars-don't-fall rule satisfied) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 127k to 128k (via MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 4 | MED | Count | Update Compound Engineering skills from 39 to 40 (Agent 2 conf 0.93: 39 ce-* skills + 1 lfg skill = 40; new skill added post-Jun 12 coding-tutor removal) | COMPLETE (NEW — updated README table) |
+| 5 | LOW | No Change | Spec Kit 112k, GSD 64k, BMAD 49k, oh-my-claudecode 36k, OpenSpec 55k, CE 21k, HumanLayer 11k, gstack 110k stars unchanged | COMPLETE (verified via MCP GitHub API) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 227k > ECC 215k > Matt Pocock 128k > Spec Kit 112k > gstack 110k > GSD 64k > agent-skills 55k (out of scope) > OpenSpec 55k > BMAD 49k > omc 36k > CE 21k > HumanLayer 11k | COMPLETE (verified; sort order unchanged) |
+| 7 | LOW | Count Verify | BMAD skills 42→43 — Agent 2 conf 0.85; count has oscillated 37–43 across 20+ runs | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 8 | LOW | Count Verify | gstack skills 61 — Agent 2 found different count (conf 0.78); Jun 2 AGENTS.md enumeration of 61 still authoritative | ON HOLD (RECURRING from Jun 2–14; keeping 61) |
+| 9 | LOW | Count Verify | OpenSpec commands 11 — agent found 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–14; keeping 11) |
+| 10 | LOW | Count Verify | ECC agents/commands/skills — 17th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
+| 11 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
