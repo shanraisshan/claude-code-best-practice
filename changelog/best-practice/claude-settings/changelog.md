@@ -832,3 +832,12 @@
 | 4 | LOW | Changed Description | Add Fable 5 1M-context auto-strip note to `"fable"` alias — Fable 5 includes 1M context by default; the `[1m]` suffix is auto-stripped (v2.1.173 changelog) | ✅ COMPLETE (note added to fable alias in Model Aliases table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 33+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
 | 6 | INVALID | Spurious Drift Claims (agent-2) | `workflow-claude-settings-agent` (agent-2) attributed `worktree.baseRef`, `wheelScrollAccelerationEnabled`, and `enforceAvailableModels` to v2.1.176. Verified: `worktree.baseRef` was added in v2.1.133, `wheelScrollAccelerationEnabled` in v2.1.174, `enforceAvailableModels` in v2.1.175 — all already in the report. Per Rule 8A | ❌ INVALID (keys already documented; agent version attribution was wrong) |
+
+---
+
+## [2026-06-14 10:49 AM PKT] Claude Code v2.1.176
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_CHILD_SESSION` to Common Environment Variables table — set to `1` in subprocesses Claude Code spawns (Bash, PowerShell, Monitor tools, hooks, status line). Not set for stdio MCP servers. Reliably distinguishes nested `claude` sessions from top-level IDE launches unlike `CLAUDECODE`. Nested TUI sessions excluded from `--resume`/`--continue`/history; override with `CLAUDE_CODE_FORCE_SESSION_PERSISTENCE=1`. Confirmed on official /en/env-vars page (v2.1.172) | ✅ COMPLETE (added after `CLAUDECODE` row in env vars table) — NEW |
+| 2 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 34+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
