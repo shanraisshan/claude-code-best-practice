@@ -841,3 +841,14 @@
 |---|----------|------|--------|--------|
 | 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_CHILD_SESSION` to Common Environment Variables table — set to `1` in subprocesses Claude Code spawns (Bash, PowerShell, Monitor tools, hooks, status line). Not set for stdio MCP servers. Reliably distinguishes nested `claude` sessions from top-level IDE launches unlike `CLAUDECODE`. Nested TUI sessions excluded from `--resume`/`--continue`/history; override with `CLAUDE_CODE_FORCE_SESSION_PERSISTENCE=1`. Confirmed on official /en/env-vars page (v2.1.172) | ✅ COMPLETE (added after `CLAUDECODE` row in env vars table) — NEW |
 | 2 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 34+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-15 10:45 AM PKT] Claude Code v2.1.176
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 35+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 2 | INVALID | Spurious Drift Claim | `claude-code-guide` listed `DISABLE_PROMPT_CACHING_FABLE` as missing from env vars table. Not on official /en/env-vars page per Rule 8A. RECURRING (first rejected 2026-06-11 v2.1.172 #7) | ❌ INVALID (Rule 8A — not on official env-vars page) |
+| 3 | INVALID | Spurious Drift Claim | `claude-code-guide` listed `best` as a missing model alias. Not found in the official settings page model aliases section per Rule 8A | ❌ INVALID (Rule 8A — not on official settings page) |
+| 4 | INVALID | Spurious Drift Claim | `claude-code-guide` listed effort values as `fast`/`balanced`/`thorough`. Official /en/env-vars page confirms valid values are `low`, `medium`, `high`, `xhigh`, `max`, `auto`. RECURRING from v2.1.139 and v2.1.145 | ❌ INVALID (agent contradicted by official docs — recurring error) |
