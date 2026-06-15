@@ -901,3 +901,21 @@
 | 9 | LOW | Count Verify | OpenSpec commands 11 — agent found 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–14; keeping 11) |
 | 10 | LOW | Count Verify | ECC agents/commands/skills — 17th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
 | 11 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
+
+---
+
+## [2026-06-15 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 227k to 228k (MCP GitHub API: 228,011 stars) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 128k to 129k (MCP GitHub API: 128,989 stars) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | RESOLVE ON HOLD: gstack skills 61→53 (research agent explicitly enumerated 53 root-level SKILL.md directories by name, specifically excluding infrastructure dirs; supersedes Jun 2 AGENTS.md catalog count of 61) | COMPLETE (RESOLVED — 10-run ON HOLD lifted; updated README table) |
+| 4 | MED | Count | Compound Engineering skills 40→39 (agent enumerated 39 skills by name from plugins/compound-engineering/skills/; Jun 14 had overcounted lfg as additional when it was already one of the 39; no net change since coding-tutor removal Jun 12) | COMPLETE (CORRECTION — updated README table) |
+| 5 | LOW | No Change | ECC ★ unverifiable — GitHub search API returned 422 for affaan-m/everything-claude-code; keeping 215k per stars-don't-fall rule | COMPLETE (RECURRING — no action; 215k maintained) |
+| 6 | LOW | No Change | Spec Kit 112k, GSD 64k, BMAD 49k, omc 36k, OpenSpec 55k, CE 21k, HumanLayer 11k, gstack 110k stars unchanged | COMPLETE (verified via MCP GitHub API) |
+| 7 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 228k > ECC 215k > Matt Pocock 129k > Spec Kit 112k > gstack 110k > GSD 64k > agent-skills 55k (out of scope) > OpenSpec 55k > BMAD 49k > omc 36k > CE 21k > HumanLayer 11k | COMPLETE (verified; sort order unchanged) |
+| 8 | LOW | Count Verify | BMAD skills 42→45 — BMAD followup agent found 45 confirmed skill folders; still oscillating across 20+ runs (previously 37–43) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 9 | LOW | Count Verify | OpenSpec commands 11 — agent found 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–15; keeping 11) |
+| 10 | LOW | Count Verify | ECC agents/commands/skills — 18th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
+| 11 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
