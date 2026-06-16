@@ -852,3 +852,17 @@
 | 2 | INVALID | Spurious Drift Claim | `claude-code-guide` listed `DISABLE_PROMPT_CACHING_FABLE` as missing from env vars table. Not on official /en/env-vars page per Rule 8A. RECURRING (first rejected 2026-06-11 v2.1.172 #7) | ❌ INVALID (Rule 8A — not on official env-vars page) |
 | 3 | INVALID | Spurious Drift Claim | `claude-code-guide` listed `best` as a missing model alias. Not found in the official settings page model aliases section per Rule 8A | ❌ INVALID (Rule 8A — not on official settings page) |
 | 4 | INVALID | Spurious Drift Claim | `claude-code-guide` listed effort values as `fast`/`balanced`/`thorough`. Official /en/env-vars page confirms valid values are `low`, `medium`, `high`, `xhigh`, `max`, `auto`. RECURRING from v2.1.139 and v2.1.145 | ❌ INVALID (agent contradicted by official docs — recurring error) |
+
+---
+
+## [2026-06-16 10:46 AM PKT] Claude Code v2.1.178
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Settings | Add `agentPushNotifEnabled` (boolean, false) and `inputNeededNotifEnabled` (boolean, false) to General Settings table — Remote Control push notification controls. Confirmed on official settings page | ✅ COMPLETE (added to General Settings table after disableRemoteControl) |
+| 2 | HIGH | Missing Setting | Add `autoCompactEnabled` (boolean, true) to General Settings table — auto-compact conversation when context approaches limit. Confirmed on official settings page | ✅ COMPLETE (added after awaySummaryEnabled) |
+| 3 | HIGH | Missing Setting | Add `fileCheckpointingEnabled` (boolean, true) to Plans & Memory Directories table — snapshot files before edits for /rewind restoration. Confirmed on official settings page | ✅ COMPLETE (added after autoMemoryEnabled) |
+| 4 | HIGH | Permission Syntax | Add `Tool(param:value)` row to Tool Permission Syntax table — new parameter-matching syntax (v2.1.178 changelog). Example: `Agent(model:opus)` | ✅ COMPLETE (added after MCP row with wildcard support note) |
+| 5 | MED | Stale Annotation | Remove "(in v2.1.176 changelog, not yet on official settings page)" from `footerLinksRegexes` — now confirmed on official settings page | ✅ COMPLETE (annotation updated to (v2.1.176)) |
+| 6 | MED | Stale Annotation | Remove "*(in v2.1.169 changelog, not yet on official settings page)*" from `disableBundledSkills` and `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` — now confirmed on official page | ✅ COMPLETE (annotations updated to (v2.1.169)) |
+| 7 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 36+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
