@@ -919,3 +919,21 @@
 | 9 | LOW | Count Verify | OpenSpec commands 11 — agent found 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–15; keeping 11) |
 | 10 | LOW | Count Verify | ECC agents/commands/skills — 18th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
 | 11 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
+
+---
+
+## [2026-06-16 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 228k to 229k (MCP GitHub API: 228,976 stars) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 129k to 130k (MCP GitHub API: 130,457 stars) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update agent-skills ★ from 55k to 60k (MCP GitHub API: 60,434 stars; out-of-scope row, positional accuracy update only) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | No Change | ECC ★ unverifiable — GitHub search API returned 422 for affaan-m/everything-claude-code; Agent 1 read stale badge at ~212k (lower than current 215k); keeping 215k per stars-don't-fall rule | COMPLETE (RECURRING — no action; 215k maintained) |
+| 5 | LOW | No Change | Spec Kit 112k, GSD 64k, BMAD 49k, omc 36k, OpenSpec 55k, CE 21k, HumanLayer 11k, gstack 110k stars unchanged | COMPLETE (verified via MCP GitHub API) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 229k > ECC 215k > Matt Pocock 130k > Spec Kit 112k > gstack 110k > GSD 64k > agent-skills 60k > OpenSpec 55k > BMAD 49k > omc 36k > CE 21k > HumanLayer 11k | COMPLETE (verified; sort order unchanged) |
+| 7 | LOW | Count Verify | gstack skills 53 — Agent 2 found 48 via AGENTS.md (conf 0.85); AGENTS.md known to be incomplete; Jun 15 explicit enumeration of 53 still authoritative | ON HOLD (RECURRING — keeping 53) |
+| 8 | LOW | Count Verify | OpenSpec commands 11 — agents found varying counts (9–11); Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–16; keeping 11) |
+| 9 | LOW | Count Verify | BMAD skills 42 — agents oscillating across runs (37–45); keeping established value | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 10 | LOW | Count Verify | ECC agents/commands/skills — 19th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
+| 11 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
