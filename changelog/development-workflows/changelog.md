@@ -937,3 +937,26 @@
 | 9 | LOW | Count Verify | BMAD skills 42 — agents oscillating across runs (37–45); keeping established value | ON HOLD (RECURRING — keeping 42 per established methodology) |
 | 10 | LOW | Count Verify | ECC agents/commands/skills — 19th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 64/84/262 until manual verification) |
 | 11 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
+
+---
+
+## [2026-06-17 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 229k to 230k (MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 215k to 217k (Agent 1 direct GitHub stargazers page — MCP search API returned 422 for affaan-m/everything-claude-code) | COMPLETE (RECURRING — updated README table; stars-don't-fall rule satisfied) |
+| 3 | HIGH | Count | Update ECC agents 64→67 and skills 262→271 (Agent 1 confirmed via README self-report methodology; same methodology as current values) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Star | Update Matt Pocock Skills ★ from 130k to 132k (MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update Spec Kit ★ from 112k to 113k (MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Star | Update gstack ★ from 110k to 111k (MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 7 | MED | Star | Update agent-skills ★ from 60k to 61k (MCP GitHub API: 61,419 stars; out-of-scope row, positional accuracy update only) | COMPLETE (RECURRING — updated README table) |
+| 8 | MED | Star | Update oh-my-claudecode ★ from 36k to 37k (MCP GitHub API) | COMPLETE (RECURRING — updated README table) |
+| 9 | MED | Star | Update Compound Engineering ★ from 21k to 22k (MCP GitHub API: 21,571 stars) | COMPLETE (RECURRING — updated README table) |
+| 10 | LOW | No Change | GSD 64k, OpenSpec 55k, BMAD 49k, HumanLayer 11k stars unchanged | COMPLETE (verified via MCP GitHub API) |
+| 11 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 230k > ECC 217k > Matt Pocock 132k > Spec Kit 113k > gstack 111k > GSD 64k > agent-skills 61k > OpenSpec 55k > BMAD 49k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; sort order unchanged) |
+| 12 | LOW | Count Verify | ECC commands 84 → 139 proposed by Agent 1 (conf 0.85) — 20th consecutive run with differing directory-enum values vs current methodology | ON HOLD (RECURRING — keeping 84 until manual verification; 20-run threshold reached) |
+| 13 | LOW | Count Verify | gstack skills 53 — Agent 2 found different count; Jun 15 explicit enumeration of 53 still authoritative | ON HOLD (RECURRING from Jun 2–17; keeping 53) |
+| 14 | LOW | Count Verify | OpenSpec commands 11 — agents found varying counts (9–11); Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–17; keeping 11) |
+| 15 | LOW | Count Verify | BMAD skills 42 — agents oscillating across runs (37–45); keeping established value | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 16 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
