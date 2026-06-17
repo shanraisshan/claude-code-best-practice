@@ -866,3 +866,16 @@
 | 5 | MED | Stale Annotation | Remove "(in v2.1.176 changelog, not yet on official settings page)" from `footerLinksRegexes` — now confirmed on official settings page | ✅ COMPLETE (annotation updated to (v2.1.176)) |
 | 6 | MED | Stale Annotation | Remove "*(in v2.1.169 changelog, not yet on official settings page)*" from `disableBundledSkills` and `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` — now confirmed on official page | ✅ COMPLETE (annotations updated to (v2.1.169)) |
 | 7 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 36+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-17 10:44 AM PKT] Claude Code v2.1.179
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.178 → v2.1.179 and header "As of v2.1.178" → "As of v2.1.179" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | LOW | Stale Text | Fix `/model` Useful Commands row: "Switch models and adjust Opus 4.6 effort level" → "Switch models and adjust effort level (Opus 4.7 and 4.8)" — Opus 4.6 is superseded | ✅ COMPLETE (updated in Useful Commands table) — NEW |
+| 3 | LOW | Stale Text | Fix `/effort` Useful Commands row: "xhigh (Opus 4.7 only, v2.1.111)" → "xhigh (Opus 4.7 and 4.8, v2.1.111)" — Opus 4.8 also supports xhigh; consistent with env var row fix from v2.1.175 run | ✅ COMPLETE (updated in Useful Commands table) — NEW |
+| 4 | LOW | Ownership Boundary | Add startup-flag cross-link to `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` in settings report — CLI flags file already has cross-link to settings report (v2.1.161), but settings report was missing the reciprocal link. Rule 5B | ✅ COMPLETE (cross-reference note added to settings report line 907) — RECURRING (first identified 2026-06-03 v2.1.161 #5; CLI flags direction was fixed then; settings→flags direction missed) |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 37+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 6 | LOW | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — out of scope for this report per previous run decision; belongs in `claude-cli-startup-flags.md` | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169 #4) |
