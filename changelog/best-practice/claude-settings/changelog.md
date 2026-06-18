@@ -878,4 +878,16 @@
 | 3 | LOW | Stale Text | Fix `/effort` Useful Commands row: "xhigh (Opus 4.7 only, v2.1.111)" → "xhigh (Opus 4.7 and 4.8, v2.1.111)" — Opus 4.8 also supports xhigh; consistent with env var row fix from v2.1.175 run | ✅ COMPLETE (updated in Useful Commands table) — NEW |
 | 4 | LOW | Ownership Boundary | Add startup-flag cross-link to `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` in settings report — CLI flags file already has cross-link to settings report (v2.1.161), but settings report was missing the reciprocal link. Rule 5B | ✅ COMPLETE (cross-reference note added to settings report line 907) — RECURRING (first identified 2026-06-03 v2.1.161 #5; CLI flags direction was fixed then; settings→flags direction missed) |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 37+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-18 10:40 AM PKT] Claude Code v2.1.181
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.179 → v2.1.181 and "As of v2.1.179" → "As of v2.1.181" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `sandbox.allowAppleEvents` (boolean, macOS only, default `false`) to Sandbox Settings table — opt-in for sandboxed commands to send Apple Events; required for `open`, `osascript`, browser auth flows (v2.1.181 changelog) | ✅ COMPLETE (added after sandbox.socatPath with changelog annotation) — NEW |
+| 3 | MED | New Env Var | Add `CLAUDE_CLIENT_PRESENCE_FILE` to Common Environment Variables table — path to a file that suppresses mobile push notifications when present (v2.1.181 changelog) | ✅ COMPLETE (added after CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX with changelog annotation) — NEW |
+| 4 | MED | Useful Commands | Update `/config` entry to mention `key=value` syntax for prompt-based settings configuration: `/config model=sonnet` (v2.1.181 changelog) | ✅ COMPLETE (description updated in Useful Commands table) — NEW |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 38+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
 | 6 | LOW | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — out of scope for this report per previous run decision; belongs in `claude-cli-startup-flags.md` | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169 #4) |
