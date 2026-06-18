@@ -960,3 +960,27 @@
 | 14 | LOW | Count Verify | OpenSpec commands 11 — agents found varying counts (9–11); Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–17; keeping 11) |
 | 15 | LOW | Count Verify | BMAD skills 42 — agents oscillating across runs (37–45); keeping established value | ON HOLD (RECURRING — keeping 42 per established methodology) |
 | 16 | LOW | Workflow | Multiple workflow changes proposed by agents — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow column changes applied) |
+
+---
+
+## [2026-06-18 09:12 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 230k to 231k (MCP GitHub API: 231,296 actual) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 132k to 134k (MCP GitHub API: 133,913 actual — v1.0.0 released Jun 17) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update Matt Pocock skills from 29 to 34 (v1.0.0 released Jun 17: +5 new skills confirmed — ask-matt router, codebase-design, domain-modeling, resolving-merge-conflicts, setup-matt-pocock-skills; taxonomy reclassified from Commands/Skills to User-invoked/Model-invoked) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Workflow | Update Matt Pocock workflow — /diagnose renamed to /diagnosing-bugs (v1.0.0 confirmed rename); /zoom-out removed from pipeline (v1.0.0 confirmed removal); new workflow: /grill-me → /to-prd → /triage → /tdd(sub) → /diagnosing-bugs(sub) → /improve-codebase-architecture → /handoff | COMPLETE (NEW — v1.0.0 renames/removals applied; full pipeline restructure deferred to next entry) |
+| 5 | HIGH | Star | Update Spec Kit ★ from 113k to 114k (MCP GitHub API: 113,518 actual — v0.11.0 released Jun 16) | COMPLETE (RECURRING — updated README table) |
+| 6 | MED | Count | Update Spec Kit commands from 9 to 10 (v0.11.0 Jun 16 added converge.md to templates/commands/; workflow step catalog introduced) | COMPLETE (NEW — updated README table) |
+| 7 | LOW | No Change | ECC ★ — MCP search API returned 422 for affaan-m/everything-claude-code; research agent direct-fetch found 217,384 (rounds to 217k = current); no change | COMPLETE (RECURRING — 217k maintained) |
+| 8 | LOW | No Change | GSD 64k, gstack 111k, OpenSpec 55k, BMAD 49k, omc 37k, CE 22k, HumanLayer 11k stars unchanged | COMPLETE (verified via MCP GitHub API / research agents) |
+| 9 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 231k > ECC 217k > Matt Pocock 134k > Spec Kit 114k > gstack 111k > GSD 64k > agent-skills 61k (out of scope) > OpenSpec 55k > BMAD 49k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 10 | LOW | Count Verify | Superpowers workflow v6.0.0 — research proposes new sub-loop steps (implementing/task-review/fix replacing implementer-subagent/spec-reviewer-subagent/code-quality-reviewer-subagent); actual skill names in repo differ from dispatched anonymous sub-agent names; conf 0.85 | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17; keeping current workflow) |
+| 11 | LOW | Count Verify | ECC skills 271→261 (research says v2.0.0 release notes state 261; Jun 17 run set 271 via README self-report; count should not fall without strong evidence) | ON HOLD (RECURRING — stars-don't-fall applied to skill count; keeping 271) |
+| 12 | LOW | Count Verify | ECC commands 84→125 (research enumerated 125 .md in commands/ + 3 in .claude/; current 84 from v2.0.0 self-report; 22nd consecutive run with differing values) | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM/2/3/4/6/7/8/9/10/11/12/13/14/15/16/17/18; keeping 84) |
+| 13 | LOW | Count Verify | gstack skills 53→59 (research: 53 AGENTS.md named + root SKILL.md + browser-skills + 4 openclaw = 59; conf 0.82; Jun 15 explicit enumeration was 53) | ON HOLD (RECURRING — keeping 53 per Jun 15 explicit enumeration) |
+| 14 | LOW | Count Verify | BMAD skills 42→45 (research: 33 bmm-skills + 12 core-skills = 45; conf 0.82; recurring oscillation 37–45 across 20+ runs) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 15 | LOW | Count Verify | oh-my-claudecode skills 40→45 (research: 45 skill folders from directory listing; conf 0.82; recurring oscillation) | ON HOLD (RECURRING — keeping 40 per established methodology) |
+| 16 | LOW | Workflow | Matt Pocock fuller restructuring — research proposes setup-matt-pocock-skills as first step, grill-with-docs replacing grill-me, to-issues added, implement/domain-modeling sub-steps added, triage removed; v1.0.0 step renames already applied above | ON HOLD (NEW — minimum confirmed changes applied; full restructure deferred pending higher confidence) |
+| 17 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
