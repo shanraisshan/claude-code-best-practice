@@ -460,3 +460,28 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-06-18 11:06 AM PKT] Claude Code v2.1.181
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 85 built-in commands).
+
+---
+
+## [2026-06-19 11:13 AM PKT] Claude Code v2.1.183
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Argument | Update `/config` — add `[key=value ...]` argument hint; expand description to cover key=value syntax (v2.1.181), non-interactive and Remote Control support, and `/config help` shorthand key listing (v2.1.183) | ✅ COMPLETE (updated signature and description at #7 in Config tag) |
+| 2 | MED | Changed Argument | Update `/mcp` — add `[reconnect <server>\|enable\|disable [<server>\|all]]` argument syntax and expand description with subcommand details | ✅ COMPLETE (updated signature and description at #41 in Extensions tag) |
+| 3 | MED | Changed Argument | Update `/plugin` — add `[subcommand]` argument hint; expand description with subcommand list | ✅ COMPLETE (updated signature and description at #42 in Extensions tag) |
+| 4 | MED | Changed Argument | Update `/reload-plugins` — add `[--force]` argument hint and description of prompt-cache invalidation warning | ✅ COMPLETE (updated signature and description at #43 in Extensions tag) |
+| 5 | MED | Changed Argument | Update `/review` — add `[PR]` optional argument hint per official docs | ✅ COMPLETE (updated signature at #57 in Project tag) |
+| 6 | MED | Changed Description | Update `/focus` — change "a summary of tool calls" → "a one-line tool-call summary with edit diffstats"; add "The selection persists across sessions; set `viewMode` in settings to override it."; remove "Useful for reducing visual noise during long sessions." | ✅ COMPLETE (updated description at #8 in Config tag) |
+| 7 | MED | Changed Description | Update `/goal` — add "With no argument, shows the current or most recently achieved goal."; expand clear aliases to include `stop`, `off`, `reset`, `none`, `cancel` | ✅ COMPLETE (updated description at #79 in Session tag) |
+| 8 | MED | Changed Description | Update `/skills` — add "Press `Space` to hide a skill from Claude or the `/` menu, then `Enter` to save" | ✅ COMPLETE (updated description at #45 in Extensions tag) |
+| 9 | MED | Changed Description | Update `/background` — add "Pass a prompt to send one more instruction before detaching. Monitor the session with `claude agents`." | ✅ COMPLETE (updated description at #71 in Session tag) |
+| 10 | MED | Changed Description | Update `/tasks` — reword from "List and manage background tasks. Alias: /bashes" to "View and manage everything running in the background. Also available as /bashes" | ✅ COMPLETE (updated description at #34 in Debug tag) |
+| 11 | LOW | Changed Description | Update `/stop` — add "Only available while attached to a background session;" and "To detach without stopping, use `/exit` or press `←`" | ✅ COMPLETE (updated description at #84 in Session tag) |
+| 12 | LOW | Changed Description | Update `/exit` — add "In an attached background session, this detaches and the session keeps running." | ✅ COMPLETE (updated description at #77 in Session tag) |
+| 13 | LOW | Changed Description | Update `/resume` — add "As of v2.1.144, background sessions appear in the picker marked with `bg`." | ✅ COMPLETE (updated description at #82 in Session tag) |
+| 14 | LOW | Changed Description | Update `/ultrareview` — add "Includes 3 free runs on Pro and Max, then requires usage credits"; trim "Produces a structured review with prioritized findings." | ✅ COMPLETE (updated description at #60 in Project tag) |
+| 15 | LOW | Changed Description | Update `/usage` — add "On a Pro, Max, Team, or Enterprise plan, includes a breakdown of usage by skill, subagent, plugin, and MCP server." | ✅ COMPLETE (updated description at #26 in Context tag) |
+| 16 | LOW | Changed Description | Update `/radio` — add "Prints the stream URL when no browser is available. Not available on Bedrock, Vertex, or Foundry" | ✅ COMPLETE (updated description at #12 in Config tag) |
+| 17 | LOW | Changed Description | Update `/tui` — reword description; add "With no argument, prints the active renderer" | ✅ COMPLETE (updated description at #19 in Config tag) |
+| 18 | LOW | Changed Description | Update `/team-onboarding` — expand with output format detail and Pro/Max plan share link feature | ✅ COMPLETE (updated description at #59 in Project tag) |
