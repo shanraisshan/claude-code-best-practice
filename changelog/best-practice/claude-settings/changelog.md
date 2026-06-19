@@ -891,3 +891,18 @@
 | 4 | MED | Useful Commands | Update `/config` entry to mention `key=value` syntax for prompt-based settings configuration: `/config model=sonnet` (v2.1.181 changelog) | ✅ COMPLETE (description updated in Useful Commands table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 38+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
 | 6 | LOW | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — out of scope for this report per previous run decision; belongs in `claude-cli-startup-flags.md` | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169 #4) |
+
+---
+
+## [2026-06-19 10:46 AM PKT] Claude Code v2.1.183
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.181 → v2.1.183 and "As of v2.1.181" → "As of v2.1.183" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `axScreenReader` (boolean, default `false`) to Display Settings table — renders screen-reader friendly flat text output; pairs with `CLAUDE_AX_SCREEN_READER` env var and `--ax-screen-reader` CLI flag (v2.1.181, confirmed on official settings page) | ✅ COMPLETE (added after footerLinksRegexes) — NEW |
+| 3 | HIGH | New Env Var | Add `CLAUDE_AX_SCREEN_READER` to env vars table — set to `1` to enable screen-reader mode, `0` to force off even when `axScreenReader` is `true` (v2.1.181, confirmed on official /en/env-vars page) | ✅ COMPLETE (added after CLAUDE_CODE_ACCESSIBILITY) — NEW |
+| 4 | HIGH | New Setting | Add `attribution.sessionUrl` (boolean, default `true`) to Attribution Settings table — controls whether the claude.ai session URL appears in commit/PR attribution; applies in web and Remote Control sessions (v2.1.183 changelog, not yet on official settings page) | ✅ COMPLETE (added after prUrlTemplate with changelog annotation) — NEW |
+| 5 | MED | Changed Behavior | Update `autoMode` description: v2.1.183 built-in classifier now also blocks destructive git operations and infra-destroy commands (terraform/pulumi/cdk destroy) unless user explicitly requested them | ✅ COMPLETE (appended to autoMode description) — NEW |
+| 6 | MED | Stale Annotation | Remove "*(in v2.1.181 changelog, not yet on official settings page)*" from `sandbox.allowAppleEvents` — now confirmed on official settings page | ✅ COMPLETE (annotation replaced with version tag v2.1.181) — NEW |
+| 7 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 38+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 8 | LOW | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — out of scope for this report per previous run decision; belongs in `claude-cli-startup-flags.md` | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169 #4) |
