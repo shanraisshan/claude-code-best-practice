@@ -984,3 +984,21 @@
 | 15 | LOW | Count Verify | oh-my-claudecode skills 40→45 (research: 45 skill folders from directory listing; conf 0.82; recurring oscillation) | ON HOLD (RECURRING — keeping 40 per established methodology) |
 | 16 | LOW | Workflow | Matt Pocock fuller restructuring — research proposes setup-matt-pocock-skills as first step, grill-with-docs replacing grill-me, to-issues added, implement/domain-modeling sub-steps added, triage removed; v1.0.0 step renames already applied above | ON HOLD (NEW — minimum confirmed changes applied; full restructure deferred pending higher confidence) |
 | 17 | LOW | Note | GSD repo deprecated → migrated to open-gsd/gsd-core; still tracking original per workflow scope | ON HOLD (RECURRING — user decision on switching tracking to fork) |
+
+---
+
+## [2026-06-19 09:13 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 231k to 233k (232,530 actual via GitHub API — v6.0.0 released Jun 16 2026) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 217k to 218k (~218k from GitHub HTML page — GitHub search API returns 422 for this repo; stars-don't-fall rule applied) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 134k to 136k (135,576 actual via GitHub API — v1.0.0 released Jun 17 2026) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Workflow | Update Superpowers workflow — v6.0.0 removes dispatching-parallel-agents(sub), implementer-subagent(sub), spec-reviewer-subagent(sub), code-quality-reviewer-subagent(sub), receiving-code-review(sub); replaces with implementer(sub), task-reviewer(sub) (research agent conf 0.92 from RELEASE-NOTES.md) | COMPLETE (NEW — v6.0.0 Jun 16 consolidated named sub-agents into anonymous prompt files inside subagent-driven-development; updated README table) |
+| 5 | MED | Star | Update OpenSpec ★ from 55k to 56k (55,557–55,600 actual — confirmed by two independent research agents) | COMPLETE (RECURRING — updated README table) |
+| 6 | MED | Workflow | Update Spec Kit workflow — +/speckit.converge(top) appended as final step (v0.11.0 Jun 16 2026 added converge.md as cross-artifact consistency check; all 10 commands now represented in pipeline) | COMPLETE (NEW — updated README table) |
+| 7 | LOW | No Change | GSD 64k, gstack 111k, BMAD 49k, oh-my-claudecode 37k, CE 22k, HumanLayer 11k stars unchanged | COMPLETE (verified via research agents' direct GitHub API reads) |
+| 8 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 233k > ECC 218k > Matt Pocock 136k > Spec Kit 114k > gstack 111k > GSD 64k > agent-skills 61k (out of scope) > OpenSpec 56k > BMAD 49k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 9 | LOW | Count Verify | BMAD skills 42→43 (marketplace.json conf 0.93) and 42→45 (directory listing conf 0.82) — two agents disagree; oscillating 37–45 across 20+ runs | ON HOLD (RECURRING — agents disagree; keeping 42 per established methodology) |
+| 10 | LOW | Count Verify | ECC agents 67→87, commands 84→98 — 22nd consecutive run with directory-enum giving different values vs README self-report methodology | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM/2/3/4/6/7/8/9/10/11/12/13/14/15/16/17/18/19; keeping 67/84/271 until manual verification) |
+| 11 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to research agents' direct GitHub API reads which are more precise; all confirmed counts match or exceed current table values | COMPLETE (verification method adapted; stars-don't-fall rule applied throughout) |
