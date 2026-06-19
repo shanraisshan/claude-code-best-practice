@@ -1,7 +1,7 @@
 # claude-code-best-practice
 from vibe coding to agentic engineering - practice makes claude perfect
 
-![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.181%20(Jun%2018%2C%202026%209%3A39%20AM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
+![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-v2.1.181%20(Jun%2019%2C%202026%208%3A08%20AM%20PKT)-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) [![Implemented](!/tags/implemented.svg)](implementation/) [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) [![Claude](!/tags/claude.svg)](https://code.claude.com/docs) [![Boris](!/tags/boris-cherny.svg)](#-tips-and-tricks) [![Community](!/tags/community.svg)](#-subscribe) ![Click on these badges below to see the actual sources](!/tags/click-badges.svg)<br>
 <img src="!/tags/a.svg" height="14"> = Agents · <img src="!/tags/c.svg" height="14"> = Commands · <img src="!/tags/s.svg" height="14"> = Skills
@@ -162,13 +162,13 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 
 | Name | ★ | <img src="!/tags/s.svg" height="14"> |
 |------|---|---|
-| [anthropics/skills](https://github.com/anthropics/skills) | 151k | 17 |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | 129k | 25 |
+| [anthropics/skills](https://github.com/anthropics/skills) | 153k | 17 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 136k | 30 |
 | [wshobson/agents](https://github.com/wshobson/agents) | 37k | 156 |
-| [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 28k | 147 |
+| [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 29k | 147 |
 | [impeccable](https://github.com/pbakaus/impeccable) | 27k | 1 (with 7 design domain references) |
 | [agent-skills](https://github.com/addyosmani/agent-skills) | 27k | 21 |
-| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 25k | 1,424+ (curated list) |
+| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 26k | 1,424+ (curated list) |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) | 15k | 246 (across 9 domains) |
 | [shanraisshan/draw-json-architecture-skill](https://github.com/shanraisshan/draw-json-architecture-skill) | 0 | 1 |
 
