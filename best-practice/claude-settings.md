@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2018%2C%202026%2010%3A40%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.181-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2020%2C%202026%2010%3A39%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.183-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.181, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.183, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -110,11 +110,13 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `disableRemoteControl` | boolean | `false` | Disable [Remote Control](https://code.claude.com/docs/en/remote-control): blocks `claude remote-control`, the `--remote-control` flag, auto-start, and the in-session toggle. Typically placed in managed settings for per-device MDM enforcement, but works from any scope (v2.1.128) |
 | `agentPushNotifEnabled` | boolean | `false` | Send proactive push notifications to [Remote Control](https://code.claude.com/docs/en/remote-control) when Claude decides to push (e.g., task complete). Appears in `/config` as **Push when Claude decides** |
 | `inputNeededNotifEnabled` | boolean | `false` | Send a push notification to [Remote Control](https://code.claude.com/docs/en/remote-control) when a permission prompt or question awaits user input. Appears in `/config` as **Push when actions required** |
+| `remoteControlAtStartup` | boolean/null | - | Auto-connect [Remote Control](https://code.claude.com/docs/en/remote-control) on startup. `true` always auto-connects, `false` never auto-connects, unset uses the organization default. Can be set at any scope (v2.1.119+) |
 | `disableAgentView` | boolean | `false` | Set to `true` to turn off [background agents and agent view](https://code.claude.com/docs/en/agent-view): `claude agents`, `--bg`, `/background`, and the on-demand supervisor. Can be set at any scope but typically placed in managed settings. Equivalent to setting the `CLAUDE_CODE_DISABLE_AGENT_VIEW` env var to `1` |
 | `disableWorkflows` | boolean | `false` | Set to `true` to disable [dynamic workflows](https://code.claude.com/docs/en/workflows) (`/workflows`) and the bundled workflow slash commands. Can be set at any scope. Equivalent to the `CLAUDE_CODE_DISABLE_WORKFLOWS` env var. Workflows were introduced in v2.1.154 |
 | `workflowKeywordTriggerEnabled` | boolean | `true` | Whether typing the word "ultracode" in a prompt triggers a [dynamic workflow](https://code.claude.com/docs/en/workflows). Set to `false` to require explicit `/workflows` invocation. Ultracode, `/workflows`, and saved workflow commands are unaffected by this setting. Appears in `/config` as **Workflow keyword trigger** (v2.1.157; trigger keyword renamed workflow→ultracode in v2.1.160) |
 | `ultracode` | boolean | - | **(Session-only — not persisted)** When `true`, the harness authors and runs a workflow for every substantive task by default, maximizing thoroughness regardless of token cost. Appears in the official "Available settings" list but is session-scoped: set via `/effort ultracode`, `--settings`, or the SDK rather than written to `settings.json` (v2.1.154) |
 | `disableBundledSkills` | boolean | `false` | Conceal Claude Code's built-in capabilities (bundled skills) from the model. When `true`, the model cannot invoke built-in skills. Paired with the `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` env var. Useful when strict plugin-only customization is required (v2.1.169) |
+| `disableArtifact` | boolean | `false` | Disable the Artifact web publishing tool. When `true`, Claude cannot create or publish web artifacts. Can be set at any scope |
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 | `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`, `fable`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+ |
 
@@ -179,6 +181,7 @@ Customize attribution messages for git commits and pull requests.
 |-----|------|---------|-------------|
 | `attribution.commit` | string | Co-authored-by | Git commit attribution (supports trailers) |
 | `attribution.pr` | string | Generated message | Pull request description attribution |
+| `attribution.sessionUrl` | boolean | `true` | Include a link to the claude.ai session URL in commits and PRs generated in web sessions or Remote Control sessions. Set to `false` to omit the link. Has no effect in local CLI sessions (v2.1.183) |
 | `prUrlTemplate` | string | - | URL template that controls how the "PR" badge in commit attribution links to the pull request UI. Supports placeholders for the repo host, owner, repo, and PR number. Useful for self-hosted GitLab/Bitbucket/GitHub Enterprise instances where the default `https://github.com/...` URL does not apply (v2.1.119) |
 | `includeCoAuthoredBy` | boolean | `true` | **DEPRECATED** - Use `attribution` instead |
 
@@ -389,6 +392,7 @@ Configure Model Context Protocol servers for extended capabilities.
 | `channelsEnabled` | boolean | Managed only | Allow [channels](https://code.claude.com/docs/en/channels) for Team and Enterprise users. When unset or `false`, channel message delivery is blocked regardless of `--channels` flag |
 | `allowedChannelPlugins` | array | Managed only | Allowlist of channel plugins that may push messages. Replaces the default Anthropic allowlist when set. Undefined = fall back to the default, empty array = block all channel plugins. Requires `channelsEnabled: true`. Each entry is an object with `marketplace` and `plugin` fields (v2.1.84) |
 | `allowAllClaudeAiMcps` | boolean | Managed only | Load claude.ai cloud MCP connectors alongside `managed-mcp.json`. When enabled, claude.ai-hosted MCP connectors are made available in addition to admin-deployed managed MCP servers |
+| `disableClaudeAiConnectors` | boolean | Any | Disable auto-fetching of claude.ai MCP connectors. When `true`, claude.ai cloud connectors are not loaded regardless of any `allowAllClaudeAiMcps` policy (v2.1.182) |
 
 ### MCP Server Matching (Managed Settings)
 
@@ -466,7 +470,7 @@ Configure bash command sandboxing for security.
 | `sandbox.enableWeakerNetworkIsolation` | boolean | `false` | (macOS only) Allow access to system TLS trust (`com.apple.trustd.agent`); reduces security |
 | `sandbox.bwrapPath` | string | - | **(Managed only, Linux/WSL2)** Absolute path to the bubblewrap (`bwrap`) binary. Overrides automatic `PATH` detection. Only honored from managed settings, not user or project settings. Example: `/opt/admin/bwrap` (v2.1.133) |
 | `sandbox.socatPath` | string | - | **(Managed only, Linux/WSL2)** Absolute path to the `socat` binary used for the sandbox network proxy. Overrides automatic `PATH` detection. Only honored from managed settings. Example: `/opt/admin/socat` (v2.1.133) |
-| `sandbox.allowAppleEvents` | boolean | `false` | **(macOS only)** Opt-in for sandboxed commands to send Apple Events. Required for tools that use `open`, `osascript`, or browser authentication flows that depend on Apple Events IPC *(in v2.1.181 changelog, not yet on official settings page)* |
+| `sandbox.allowAppleEvents` | boolean | `false` | **(macOS only)** Opt-in for sandboxed commands to send Apple Events. Required for tools that use `open`, `osascript`, or browser authentication flows that depend on Apple Events IPC (v2.1.181) |
 
 **Example:**
 ```json
@@ -637,6 +641,7 @@ Configure via `env` key:
 | `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` (string array) and optional `excludeDefault` (boolean). When `excludeDefault` is `true`, only custom tips show; when `false` or absent, custom tips merge with built-in tips. As of v2.1.121, `excludeDefault: true` also suppresses time-based spinner tips |
 | `respectGitignore` | boolean | `true` | Respect .gitignore in file picker |
 | `prefersReducedMotion` | boolean | `false` | Reduce animations and motion effects in the UI |
+| `axScreenReader` | boolean | `false` | Enable screen-reader-friendly output mode. When `true`, Claude outputs flat text without decorative box-drawing characters, color, and other terminal UI elements. Appears in `/config` as **Screen reader mode**. Only applies at the User scope — does not read from project or managed settings. Also available via the `--ax-screen-reader` CLI flag (v2.1.181) |
 | `syntaxHighlightingDisabled` | boolean | `false` | Disable syntax highlighting in diffs, code blocks, and file previews. Distinct from the `CLAUDE_CODE_SYNTAX_HIGHLIGHT` env var, which only governs diff output |
 | `fileSuggestion` | object | - | Custom file suggestion command (see File Suggestion Configuration below) |
 | `autoScrollEnabled` | boolean | `true` | Auto-scroll the conversation in fullscreen mode. Set to `false` to disable automatic scrolling (v2.1.110). Versions before v2.1.119 stored this in `~/.claude.json` |
