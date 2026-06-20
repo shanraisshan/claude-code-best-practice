@@ -1002,3 +1002,20 @@
 | 9 | LOW | Count Verify | BMAD skills 42→43 (marketplace.json conf 0.93) and 42→45 (directory listing conf 0.82) — two agents disagree; oscillating 37–45 across 20+ runs | ON HOLD (RECURRING — agents disagree; keeping 42 per established methodology) |
 | 10 | LOW | Count Verify | ECC agents 67→87, commands 84→98 — 22nd consecutive run with directory-enum giving different values vs README self-report methodology | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM/2/3/4/6/7/8/9/10/11/12/13/14/15/16/17/18/19; keeping 67/84/271 until manual verification) |
 | 11 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to research agents' direct GitHub API reads which are more precise; all confirmed counts match or exceed current table values | COMPLETE (verification method adapted; stars-don't-fall rule applied throughout) |
+
+---
+
+## [2026-06-20 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ from 136k to 137k (GitHub API exact: 137,029) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update gstack ★ from 111k to 112k (WebFetch HTML confirmed: 112k) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Workflow | Update Matt Pocock Skills workflow — v1.0.0 (Jun 17 2026): add /ask-matt(top) as first step, /grill-with-docs replaces /grill-me, add /to-issues and /prototype; new pipeline: /ask-matt → /grill-with-docs → /to-prd → /to-issues → /prototype → /triage → /tdd(sub) → /diagnosing-bugs(sub) → /improve-codebase-architecture → /handoff (Agent 1 conf 0.92, skills explicitly enumerated across all 6 subdirs) | COMPLETE (RESOLVED from Jun 18 ON HOLD — fuller restructure confirmed at 0.92 confidence) |
+| 4 | LOW | No Change | Superpowers 233k, ECC 218k, Spec Kit 114k, GSD 64k, OpenSpec 56k, BMAD 49k, omc 37k, CE 22k, HumanLayer 11k stars unchanged | COMPLETE (verified via GitHub API / WebFetch HTML) |
+| 5 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 233k > ECC 218k > Matt Pocock 137k > Spec Kit 114k > gstack 112k > GSD 64k > agent-skills 61k (out of scope) > OpenSpec 56k > BMAD 49k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; 1k increases do not affect row positions) |
+| 6 | LOW | Count Verify | Superpowers workflow: fix-subagent(sub) addition proposed by Agent 1 (conf 0.88) | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17/18/19; keeping current workflow) |
+| 7 | LOW | Count Verify | Spec Kit workflow reorder proposed (analyze after plan, before tasks; conf 0.85) | ON HOLD (NEW — conf below threshold; significant reorder from established Jun 2 order; keeping current) |
+| 8 | LOW | Count Verify | BMAD skills 42→43 — Agent 1 found 31+12=43; follow-up found 30+12=42; agents disagree | ON HOLD (RECURRING — 21st+ consecutive run; oscillating 37-45; keeping 42) |
+| 9 | LOW | Count Verify | oh-my-claudecode commands 0→28 — follow-up confirmed 28 .md in commands/; methodology keeps 0 (skills = command surface) | ON HOLD (RECURRING from Jun 1-19; keeping 0 per methodology) |
+| 10 | LOW | Count Verify | GSD commands 67→96 — follow-up agent found 96 file names in commands/gsd/; deprecated repo | ON HOLD (RECURRING — keeping 67 per Jun 1 post-deprecation convention) |
