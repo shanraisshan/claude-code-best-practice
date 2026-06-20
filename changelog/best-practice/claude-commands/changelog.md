@@ -485,3 +485,9 @@ No priority action items — report is fully in sync with official documentation
 | 16 | LOW | Changed Description | Update `/radio` — add "Prints the stream URL when no browser is available. Not available on Bedrock, Vertex, or Foundry" | ✅ COMPLETE (updated description at #12 in Config tag) |
 | 17 | LOW | Changed Description | Update `/tui` — reword description; add "With no argument, prints the active renderer" | ✅ COMPLETE (updated description at #19 in Config tag) |
 | 18 | LOW | Changed Description | Update `/team-onboarding` — expand with output format detail and Pro/Max plan share link feature | ✅ COMPLETE (updated description at #59 in Project tag) |
+
+---
+
+## [2026-06-20 11:05 AM PKT] Claude Code v2.1.183
+
+No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 85 built-in commands).
