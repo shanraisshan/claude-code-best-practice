@@ -891,3 +891,18 @@
 | 4 | MED | Useful Commands | Update `/config` entry to mention `key=value` syntax for prompt-based settings configuration: `/config model=sonnet` (v2.1.181 changelog) | ✅ COMPLETE (description updated in Useful Commands table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 38+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
 | 6 | LOW | Ownership Question | `CLAUDE_CODE_SAFE_MODE` (v2.1.169, paired with `--safe-mode` startup flag) — out of scope for this report per previous run decision; belongs in `claude-cli-startup-flags.md` | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169 #4) |
+
+---
+
+## [2026-06-20 10:39 AM PKT] Claude Code v2.1.183
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.181 → v2.1.183 and header "As of v2.1.181" → "As of v2.1.183" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 2 | HIGH | New Setting | Add `attribution.sessionUrl` (boolean, default `true`, any scope) to Attribution Settings table — omit claude.ai session link from commits/PRs in web and Remote Control sessions (v2.1.183) | ✅ COMPLETE (added after attribution.pr row) |
+| 3 | HIGH | New Setting | Add `axScreenReader` (boolean, default `false`, User scope) to Display Settings table — screen-reader-friendly flat text output; also available via `--ax-screen-reader` CLI flag (v2.1.181) | ✅ COMPLETE (added to Display Settings table after prefersReducedMotion) |
+| 4 | HIGH | New Setting | Add `disableClaudeAiConnectors` (boolean, default `false`, any scope) to MCP Settings table — disable auto-fetching of claude.ai MCP connectors (v2.1.182) | ✅ COMPLETE (added to MCP Settings table after allowAllClaudeAiMcps) |
+| 5 | HIGH | New Setting | Add `disableArtifact` (boolean, default `false`, any scope) to General Settings table — disable Artifact web publishing tool (confirmed on official settings page) | ✅ COMPLETE (added after disableBundledSkills) |
+| 6 | HIGH | New Setting | Add `remoteControlAtStartup` (boolean/null, any scope) to General Settings table — auto-connect Remote Control on startup; `true`/`false`/unset-for-org-default (v2.1.119+, confirmed on official settings page) | ✅ COMPLETE (added after inputNeededNotifEnabled) |
+| 7 | MED | Annotation Fix | Remove "(in v2.1.181 changelog, not yet on official settings page)" from `sandbox.allowAppleEvents` — now confirmed on official settings page | ✅ COMPLETE (annotation updated to (v2.1.181)) |
+| 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 39+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
