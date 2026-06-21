@@ -1019,3 +1019,24 @@
 | 8 | LOW | Count Verify | BMAD skills 42→43 — Agent 1 found 31+12=43; follow-up found 30+12=42; agents disagree | ON HOLD (RECURRING — 21st+ consecutive run; oscillating 37-45; keeping 42) |
 | 9 | LOW | Count Verify | oh-my-claudecode commands 0→28 — follow-up confirmed 28 .md in commands/; methodology keeps 0 (skills = command surface) | ON HOLD (RECURRING from Jun 1-19; keeping 0 per methodology) |
 | 10 | LOW | Count Verify | GSD commands 67→96 — follow-up agent found 96 file names in commands/gsd/; deprecated repo | ON HOLD (RECURRING — keeping 67 per Jun 1 post-deprecation convention) |
+
+---
+
+## [2026-06-21 09:12 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 233k to 234k (~234k via research agent WebFetch HTML; stars-don't-fall rule applied) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 218k to 219k (~219k via research agent WebFetch HTML — GitHub search API returns 422 for affaan-m/everything-claude-code; stars-don't-fall rule applied) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 137k to 138k (138,392 via GitHub API — v1.0.0 momentum) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | No Change | Spec Kit 114k (114,412), gstack 112k, GSD 64k (64.4k rounds to 64k), OpenSpec 56k (55.8k rounds to 56k), BMAD 49k (49.4k rounds to 49k), omc 37k (36.7k rounds to 37k), CE 22k (21,825), HumanLayer 11k stars unchanged | COMPLETE (verified via research agents' direct GitHub API/HTML reads) |
+| 5 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 234k > ECC 219k > Matt Pocock 138k > Spec Kit 114k > gstack 112k > GSD 64k > agent-skills 61k (out of scope) > OpenSpec 56k > BMAD 49k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; 1k increases do not affect row positions) |
+| 6 | LOW | Count Verify | ECC commands 84→92/94 (Agent 1: directory shows 94 .md files; README states "92 legacy command shims"; prior value 84 from v1.x self-report) | ON HOLD (RECURRING from Apr 13/16/18/24/26 + many subsequent runs; methodology conflict between directory-enum and README self-report; keeping 84) |
+| 7 | LOW | Count Verify | ECC workflow change proposed: /configure-ecc(top) → /plan(top) → /feature-dev(top) → /code-review(top) → /evolve(top) (Agent 1 found this in v2.0.0 README) | ON HOLD (RECURRING from Jun 2/3/7/8/9/10/11/12/13/14/15/16/17/18/19/20; deferring until v2.0.0 workflow step names definitively confirmed stable) |
+| 8 | LOW | Count Verify | BMAD skills 42→45 (dedicated research agent enumerated 33 bmm-skills + 12 core-skills = 45 by explicit name, including bmad-investigate, bmad-quick-dev, bmad-checkpoint-preview) | ON HOLD (RECURRING from Jun 15+; oscillating 37–45 across 20+ runs; keeping 42 per established methodology) |
+| 9 | LOW | Count Verify | gstack skills 53 confirmed (dedicated agent explicitly enumerated 53 root-level SKILL.md dirs by name; matches Jun 15 explicit enumeration; second agent found 48 — dedicated enumeration takes precedence) | ON HOLD (RECURRING — 53 reconfirmed; no change; Agent 3 found 48 but used less thorough enumeration) |
+| 10 | LOW | Count Verify | gstack workflow additions proposed: /autoplan(top) after /plan-ceo-review and /cso(top) after /review (dedicated research agent found these in README workflow; 53 skills confirmed) | ON HOLD (NEW — workflow additions plausible but not yet at confidence threshold to apply; keeping current 13-step workflow) |
+| 11 | LOW | Count Verify | HumanLayer /validate_plan and /iterate_plan sub→top reclassification proposed (Agent found all 10 core workflow commands are user-invokable top-level; 27 commands, 6 agents confirmed unchanged) | ON HOLD (NEW — sub classification retained per workflow semantics intent; keeping current workflow) |
+| 12 | LOW | Count Verify | CE workflow trimming proposed: remove /ce-resolve-pr-feedback(sub), /ce-polish(sub), /ce-promote(top) from pipeline (Agent confirmed these not in current README workflow diagram; 43 agents, 1 command, 39 skills all confirmed unchanged) | ON HOLD (RECURRING — keeping current 11-step pipeline; CE v3.13.x actively evolving) |
+| 13 | LOW | Count Verify | omc commands 0→28 (research agent enumerated 28 .md files in commands/; methodology keeps 0 — skills = command surface; 19 agents, 40 skills confirmed unchanged) | ON HOLD (RECURRING from Jun 1+; keeping 0 per methodology) |
+| 14 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to research agents' direct GitHub API / WebFetch HTML reads; stars-don't-fall rule applied throughout | COMPLETE (RECURRING — verification method adapted; all confirmed counts match or exceed current table values) |
