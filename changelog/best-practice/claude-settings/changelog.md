@@ -906,3 +906,21 @@
 | 6 | HIGH | New Setting | Add `remoteControlAtStartup` (boolean/null, any scope) to General Settings table — auto-connect Remote Control on startup; `true`/`false`/unset-for-org-default (v2.1.119+, confirmed on official settings page) | ✅ COMPLETE (added after inputNeededNotifEnabled) |
 | 7 | MED | Annotation Fix | Remove "(in v2.1.181 changelog, not yet on official settings page)" from `sandbox.allowAppleEvents` — now confirmed on official settings page | ✅ COMPLETE (annotation updated to (v2.1.181)) |
 | 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 39+ consecutive runs. Annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-21 10:47 AM PKT] Claude Code v2.1.185
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update badge v2.1.183 → v2.1.185 and header "As of v2.1.183" → "As of v2.1.185" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_CONNECT_TIMEOUT_MS` — timeout (ms) for connect/TLS/response-header phase; default 60000ms (60s); set `0` to disable and rely on `API_TIMEOUT_MS` alone | ✅ COMPLETE (added after API_FORCE_IDLE_TIMEOUT) |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_AX_SCREEN_READER` — set `1` for screen-reader friendly output (flat text, no borders/animations); set `0` to force off even when `axScreenReader: true`; `--ax-screen-reader` CLI flag takes precedence (v2.1.181+) | ✅ COMPLETE (added after CLAUDE_CODE_ACCESSIBILITY) |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_ARTIFACT` — set `1` to disable the Artifact tool; equivalent to `disableArtifact` setting | ✅ COMPLETE (added after CLAUDE_CODE_DISABLE_BUNDLED_SKILLS) |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_ARTIFACT_AUTO_OPEN` — set `0` to stop Claude Code from auto-opening browser when a new artifact is published | ✅ COMPLETE (added after CLAUDE_CODE_DISABLE_ARTIFACT) |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_FORCE_SESSION_PERSISTENCE` — set `1` to override exclusion of nested interactive sessions from `--resume`/`--continue`/history/`claude agents` | ✅ COMPLETE (added after CLAUDE_CODE_CHILD_SESSION) |
+| 7 | MED | Changed Description | Fix `CLAUDE_CODE_DEBUG_LOGS_DIR` — official docs say "despite the name, this is a file path, not a directory"; current report says "Override debug log file directory path" | ✅ COMPLETE (description updated to clarify file path vs directory) |
+| 8 | MED | Annotation Resolved | Remove "not yet on official env-vars page" annotation from `CLAUDE_CLIENT_PRESENCE_FILE` — confirmed present on official /en/env-vars page | ✅ COMPLETE (annotation removed) |
+| 9 | LOW | Invalid Finding | `disableSkillShellExecution` managed-only annotation proposed but INVALID per official docs — scope is User/Project/Local/Managed (any scope) | ❌ INVALID (official settings page confirms any scope — not managed-only) |
+| 10 | LOW | Invalid Finding | `verbose` missing setting proposed but INVALID per official docs — it is a `/config` session-only parameter, not a persistable `settings.json` key | ❌ INVALID (official settings page confirms not a settings.json key) |
+| 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — 40+ consecutive ON HOLD runs; still not on official /en/env-vars page | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107; annotation retained)
