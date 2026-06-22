@@ -924,3 +924,15 @@
 | 9 | LOW | Invalid Finding | `disableSkillShellExecution` managed-only annotation proposed but INVALID per official docs — scope is User/Project/Local/Managed (any scope) | ❌ INVALID (official settings page confirms any scope — not managed-only) |
 | 10 | LOW | Invalid Finding | `verbose` missing setting proposed but INVALID per official docs — it is a `/config` session-only parameter, not a persistable `settings.json` key | ❌ INVALID (official settings page confirms not a settings.json key) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — 40+ consecutive ON HOLD runs; still not on official /en/env-vars page | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107; annotation retained)
+
+---
+
+## [2026-06-22 10:42 AM PKT] Claude Code v2.1.185
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Ownership | Add `CLAUDE_CODE_SAFE_MODE` / `--safe-mode` (v2.1.169) to `claude-cli-startup-flags.md` — absent from both docs | ✋ ON HOLD (out of scope for this report — belongs in CLI flags; recurring from 2026-06-09 v2.1.169 #4) |
+| 2 | LOW | Changed Description | `forceLoginMethod`: add "Blocks API key authentication in managed settings" clause | ✋ ON HOLD (0.7 confidence from summarized fetch — insufficient content-match depth per Rule 8A) |
+| 3 | LOW | Changed Description | `feedbackSurveyRate`: add "Set to 0 to suppress" note | ✋ ON HOLD (0.6 confidence — not confirmed at content-match depth) |
+| 4 | LOW | Changed Description | `autoScrollEnabled`: add "Permission prompts still scroll" note | ✋ ON HOLD (0.6 confidence — not confirmed at content-match depth) |
+| 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 41+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
