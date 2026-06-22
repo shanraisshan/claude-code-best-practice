@@ -7,7 +7,6 @@
       "Bash(*)",
       "WebFetch(domain:*)",
       "WebSearch",
-      "mcp__*",
       "mcp__ide__*",
       "mcp__chrome-devtools__*",
       "mcp__claude-in-chrome__*",
