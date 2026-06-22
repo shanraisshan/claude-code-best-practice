@@ -12,6 +12,10 @@ from vibe coding to agentic engineering - practice makes claude perfect
 </p>
 
 <p align="center">
+  <img src="!/root/supported-label.svg" alt="Supported by:" height="34">&nbsp;&nbsp;<a href="https://disrupt.com"><img src="!/root/supported-disrupt.svg" alt="Disrupt.com" height="34"></a>&nbsp;&nbsp;<a href="https://claudekit.cc"><img src="!/root/supported-claudekit.svg" alt="ClaudeKit" height="34"></a>
+</p>
+
+<p align="center">
   <img src="!/root/boris-slider.gif" alt="Boris Cherny on Claude Code" width="600"><br>
   Boris Cherny on X (<a href="https://x.com/bcherny/status/2007179832300581177">tweet 1</a> · <a href="https://x.com/bcherny/status/2017742741636321619">tweet 2</a> · <a href="https://x.com/bcherny/status/2021699851499798911">tweet 3</a>)
 </p>
