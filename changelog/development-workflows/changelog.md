@@ -1040,3 +1040,23 @@
 | 12 | LOW | Count Verify | CE workflow trimming proposed: remove /ce-resolve-pr-feedback(sub), /ce-polish(sub), /ce-promote(top) from pipeline (Agent confirmed these not in current README workflow diagram; 43 agents, 1 command, 39 skills all confirmed unchanged) | ON HOLD (RECURRING — keeping current 11-step pipeline; CE v3.13.x actively evolving) |
 | 13 | LOW | Count Verify | omc commands 0→28 (research agent enumerated 28 .md files in commands/; methodology keeps 0 — skills = command surface; 19 agents, 40 skills confirmed unchanged) | ON HOLD (RECURRING from Jun 1+; keeping 0 per methodology) |
 | 14 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to research agents' direct GitHub API / WebFetch HTML reads; stars-don't-fall rule applied throughout | COMPLETE (RECURRING — verification method adapted; all confirmed counts match or exceed current table values) |
+
+---
+
+## [2026-06-22 09:11 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 234k to 235k (235,189 via GitHub API — research agent conf 0.92) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 138k to 140k (140k confirmed from WebFetch HTML — two agents agreed) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Spec Kit ★ from 114k to 115k (115,000 confirmed from WebFetch HTML — two agents agreed) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update BMAD-METHOD ★ from 49k to 50k (49,500 ≈ 49.5k from WebFetch HTML → rounds to 50k per stars-don't-fall rule) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Workflow | Update Superpowers workflow — v6.0.0 rewrote review system: add fix-subagent(sub) + final-code-reviewer(sub) after task-reviewer(sub). New pipeline: brainstorming → using-git-worktrees → writing-plans → subagent-driven-development → implementer(sub) → task-reviewer(sub) → fix-subagent(sub) → final-code-reviewer(sub) → test-driven-development(sub) → requesting-code-review → verification-before-completion → finishing-a-development-branch (conf 0.92 via direct SKILL.md read) | COMPLETE (RESOLVED — proposed since Jun 6; raised to 0.92 confidence this run via authoritative SKILL.md read; updated README table) |
+| 6 | LOW | No Change | ECC 219k, gstack 112k, GSD 64k, OpenSpec 56k, omc 37k, CE 22k, HumanLayer 11k stars unchanged | COMPLETE (verified via research agents' GitHub API/HTML reads) |
+| 7 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 235k > ECC 219k > Matt Pocock 140k > Spec Kit 115k > gstack 112k > GSD 64k > agent-skills 61k (out of scope) > OpenSpec 56k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 8 | LOW | Count Verify | ECC commands 84→92 (agents found 92 .md in commands/; README self-report vs directory-enum conflict) | ON HOLD (RECURRING from Apr 13+; 24th consecutive run; keeping 84 per established convention) |
+| 9 | LOW | Count Verify | BMAD skills 42→44/46 (two agents found 44 and 46 respectively; new skill bmad-forge-idea also detected) | ON HOLD (RECURRING — 22nd+ consecutive run; oscillating 37-46; keeping 42 per established methodology) |
+| 10 | LOW | Count Verify | gstack skills 53→54 (Agent 2 found extra "design" directory; established Jun 15 explicit enumeration confirmed 53) | ON HOLD (RECURRING — 54 found but less thorough enumeration; keeping 53 per established methodology) |
+| 11 | LOW | Count Verify | omc commands 0→28 (research agent confirmed 28 .md in commands/; methodology keeps 0 — skills = command surface) | ON HOLD (RECURRING from Jun 1+; keeping 0 per methodology) |
+| 12 | LOW | Count Verify | ECC workflow change proposed (v2.0.0 new step names vs established pipeline) | ON HOLD (RECURRING from Jun 2+; deferring until v2.0.0 workflow definitively confirmed stable) |
+| 13 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to research agents' GitHub API / WebFetch HTML reads; stars-don't-fall rule applied throughout | COMPLETE (RECURRING — verification method adapted; all counts confirmed ≥ current table values) |
