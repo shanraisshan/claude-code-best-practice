@@ -590,3 +590,5 @@ Get the maximum out of this repo by following these steps:
 If you like my work, buy me a doodh patti 🍵 on
 
 <a href="https://buy.polar.sh/polar_cl_R6wjUESl8RiJD0iVaTyStBUV6WNuYvDmLJ0si1XXj4C"><img src="!/tags/polar.svg" alt="Polar" width="40" height="40" align="center"></a> <a href="https://buy.polar.sh/polar_cl_R6wjUESl8RiJD0iVaTyStBUV6WNuYvDmLJ0si1XXj4C"><strong>Polar</strong></a>
+
+**Want your brand in the header?** Header placements are available — email [shanraisshan@gmail.com](mailto:shanraisshan@gmail.com).
