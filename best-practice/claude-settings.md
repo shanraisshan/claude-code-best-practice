@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2022%2C%202026%2010%3A42%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.185-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2023%2C%202026%2010%3A57%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.186-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.185, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.186, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -91,6 +91,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `enforceAvailableModels` | boolean | `false` | **(Managed only)** When `true`, the `availableModels` allowlist also constrains the Default model option — users cannot select a model outside the allowlist even via the Default slot. Without this flag, `availableModels` leaves the Default option unrestricted. Pair with `availableModels` for full model lockdown (v2.1.175) |
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
 | `defaultShell` | string | `"bash"` | Default shell for input-box `!` commands. Accepts `"bash"` (default) or `"powershell"`. Setting `"powershell"` routes interactive `!` commands through PowerShell on Windows. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` (v2.1.84). **v2.1.120:** When PowerShell is available, it is used as the fallback shell on Windows even without Git for Windows installed. **v2.1.126:** When PowerShell is enabled, it is treated as the *primary* shell instead of defaulting to Bash. PowerShell 7 detection now also covers Microsoft Store installs, MSI installs not on PATH, and `.NET` global tool installs |
+| `respondToBashCommands` | boolean | `true` | Claude automatically responds after a `!` shell command runs. Set to `false` to disable automatic post-command analysis. By default (`true`), Claude analyzes the output of every `!` command; set to `false` when you frequently run shell commands and do not want automatic follow-up responses (v2.1.186) |
 | `includeGitInstructions` | boolean | `true` | Include built-in commit and PR workflow instructions and the git status snapshot in Claude's system prompt. The `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` environment variable takes precedence over this setting when set |
 | `voice` | object | - | Voice dictation configuration. Object with three fields: `enabled` (boolean — push-to-talk on/off), `mode` (string — `"hold"` for hold-to-talk or `"tap"` for tap-to-toggle), and `autoSubmit` (boolean — submit transcript immediately when dictation ends). Written automatically when you run `/voice`. Requires a Claude.ai account (v2.1.118 expanded structure) |
 | `voiceEnabled` | boolean | - | **DEPRECATED** — legacy alias for `voice.enabled`. Use the `voice` object instead to get `mode` and `autoSubmit` controls |
@@ -647,7 +648,7 @@ Configure via `env` key:
 | `autoScrollEnabled` | boolean | `true` | Auto-scroll the conversation in fullscreen mode. Set to `false` to disable automatic scrolling (v2.1.110). Versions before v2.1.119 stored this in `~/.claude.json` |
 | `editorMode` | string | `"normal"` | Key binding mode for the input prompt: `"normal"` or `"vim"`. Appears in `/config` as **Editor mode**. Versions before v2.1.119 stored this in `~/.claude.json` |
 | `showTurnDuration` | boolean | `true` | Show turn duration messages after responses (e.g., "Cooked for 1m 6s"). Versions before v2.1.119 stored this in `~/.claude.json` |
-| `teammateMode` | string | `"auto"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"`, or `"tmux"`. See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode). Versions before v2.1.119 stored this in `~/.claude.json` |
+| `teammateMode` | string | `"auto"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"`, `"tmux"`, or `"iterm2"` (force iTerm2 split panes — shows a warning when auto mode would have chosen differently, v2.1.186). See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode). Versions before v2.1.119 stored this in `~/.claude.json` |
 | `terminalProgressBarEnabled` | boolean | `true` | Show the terminal progress bar in supported terminals (ConEmu, Ghostty 1.2.0+, and iTerm2 3.6.6+). Appears in `/config` as **Terminal progress bar**. Versions before v2.1.119 stored this in `~/.claude.json` |
 | `preferredNotifChannel` | string | `"auto"` | Method for task-complete and permission-prompt notifications. Values: `"auto"`, `"terminal_bell"`, `"iterm2"`, `"iterm2_with_bell"`, `"kitty"`, `"ghostty"`, `"notifications_disabled"`. Default `"auto"` sends a desktop notification in iTerm2, Ghostty, and Kitty and does nothing in other terminals. Set `"terminal_bell"` to ring the bell character in any terminal. Appears in `/config` as **Notifications**. See [Get a terminal bell or notification](https://code.claude.com/docs/en/terminal-config#get-a-terminal-bell-or-notification) |
 | `wheelScrollAccelerationEnabled` | boolean | `true` | Disable mouse-wheel scroll acceleration in fullscreen mode. Set to `false` to use fixed per-tick scroll steps instead of the OS-level acceleration curve (v2.1.174) |
@@ -904,7 +905,7 @@ Set environment variables for all Claude Code sessions.
 | `MAX_MCP_OUTPUT_TOKENS` | Max MCP output tokens (default: 25000). Warning displayed when output exceeds 10,000 tokens |
 | `API_TIMEOUT_MS` | Timeout in ms for API requests (default: 600000) |
 | `API_FORCE_IDLE_TIMEOUT` | Override the 5-minute idle timeout for streaming connections. Set to `0` to disable the idle timeout entirely, `1` to enforce it on all connections, or leave unset for the default (auto-enabled on slow or unreliable gateways that frequently stall). Useful for slow API gateways (v2.1.169) |
-| `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | Timeout in milliseconds for the connect, TLS, and response-header phase of a streaming API request (default: `60000` / 60 seconds). If no response headers arrive within this window, the request is aborted and retried. Set to `0` to disable and rely on `API_TIMEOUT_MS` alone |
+| `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | **REMOVED in v2.1.186** — The separate connect/TLS/response-header phase timeout has been removed. Use `API_TIMEOUT_MS` for per-request timeout control. Previously set the timeout in milliseconds for the connect, TLS, and response-header phase of a streaming API request (default: `60000` / 60 seconds) |
 | `BASH_MAX_TIMEOUT_MS` | Bash command timeout |
 | `BASH_MAX_OUTPUT_LENGTH` | Max bash output length |
 | `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | Auto-compact threshold percentage (1-100). Default is ~95%. Set lower (e.g., `50`) to trigger compaction earlier. Values above 95% have no effect. Use `/context` to monitor current usage. Example: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=50 claude` |
@@ -1026,7 +1027,8 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` | Set to `1` to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers). Use for defense-in-depth when subprocesses should not inherit API keys (v2.1.83) |
 | `CLAUDE_CODE_SCRIPT_CAPS` | JSON object limiting how many times specific scripts may be invoked per session when `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is set. Keys are substrings matched against the command text; values are integer call limits. For example, `{"deploy.sh": 2}` allows `deploy.sh` to be called at most twice. Matching is substring-based; runtime fan-out via `xargs` or `find -exec` is not detected — this is a defense-in-depth control |
 | `CLAUDE_CODE_PERFORCE_MODE` | Set to `1` to enable Perforce-aware write protection. When set, Edit, Write, and NotebookEdit fail with a `p4 edit <file>` hint if the target file lacks the owner-write bit, which Perforce clears on synced files until `p4 edit` opens them. Prevents Claude Code from bypassing Perforce change tracking (v2.1.98) |
-| `CLAUDE_CODE_MAX_RETRIES` | Override API request retry count (default: 10) |
+| `CLAUDE_CODE_MAX_RETRIES` | Override API request retry count (default: 10, capped at a maximum of 15 as of v2.1.183). For unattended sessions that need to survive beyond 15 failures, use `CLAUDE_CODE_RETRY_WATCHDOG` instead |
+| `CLAUDE_CODE_RETRY_WATCHDOG` | Set to `1` to enable a persistent retry watchdog for unattended sessions. Retries beyond the `CLAUDE_CODE_MAX_RETRIES` cap when the session needs to survive extended outages. Use when `CLAUDE_CODE_MAX_RETRIES` alone is insufficient for long-running unattended workflows (v2.1.183) *(in v2.1.183 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY` | Max parallel read-only tools (default: 10) |
 | `CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS` | Disable built-in subagent types in SDK mode (`1` to disable) |
 | `CLAUDE_AGENT_SDK_MCP_NO_PREFIX` | Skip `mcp__<server>__` prefix for MCP tools in SDK mode (`1` to enable) |
@@ -1119,6 +1121,8 @@ Set environment variables for all Claude Code sessions.
 | `/memory` | View/edit all memory files |
 | `/agents` | Manage subagents |
 | `/mcp` | Manage MCP servers |
+| `claude mcp login <name>` | Authenticate to a named MCP server without opening the interactive menu. Useful for SSH and headless environments (v2.1.186) |
+| `claude mcp logout <name>` | Sign out of a named MCP server's authentication session (v2.1.186) |
 | `/hooks` | View configured hooks |
 | `/plugin` | Manage plugins |
 | `claude plugin tag` | Tag a plugin version in a marketplace for distribution. Run from the marketplace repo with the plugin name and version (v2.1.118) |
@@ -1151,6 +1155,7 @@ Set environment variables for all Claude Code sessions.
   "awaySummaryEnabled": false,
   "includeGitInstructions": true,
   "defaultShell": "bash",
+  "respondToBashCommands": true,
   "plansDirectory": "./plans",
   "claudeMdExcludes": ["**/vendor/**/CLAUDE.md"],
   "effortLevel": "high",
