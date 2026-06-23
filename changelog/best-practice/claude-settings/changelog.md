@@ -936,3 +936,18 @@
 | 3 | LOW | Changed Description | `feedbackSurveyRate`: add "Set to 0 to suppress" note | ✋ ON HOLD (0.6 confidence — not confirmed at content-match depth) |
 | 4 | LOW | Changed Description | `autoScrollEnabled`: add "Permission prompts still scroll" note | ✋ ON HOLD (0.6 confidence — not confirmed at content-match depth) |
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 41+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-23 10:57 AM PKT] Claude Code v2.1.186
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update badge v2.1.185 → v2.1.186 and header "As of v2.1.185" → "As of v2.1.186" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 2 | HIGH | New Setting | Add `respondToBashCommands` (boolean, default `true`) to General Settings table — controls whether Claude auto-responds after `!` shell commands; set `false` to disable (v2.1.186, confirmed on official settings page) | ✅ COMPLETE (added after defaultShell) |
+| 3 | HIGH | Removed Env Var | Annotate `CLAUDE_CODE_CONNECT_TIMEOUT_MS` as **REMOVED in v2.1.186** — use `API_TIMEOUT_MS` instead; confirmed removed on official env-vars page | ✅ COMPLETE (removal annotation added) |
+| 4 | MED | Changed Description | Update `teammateMode` description to add `"iterm2"` as explicit option (force iTerm2 split panes with warning, v2.1.186) | ✅ COMPLETE (description updated) |
+| 5 | MED | Changed Description | Update `CLAUDE_CODE_MAX_RETRIES` description — add "capped at a maximum of 15 as of v2.1.183" | ✅ COMPLETE (description updated) |
+| 6 | MED | Missing Env Var | Add `CLAUDE_CODE_RETRY_WATCHDOG` — persistent retry watchdog for unattended sessions beyond `CLAUDE_CODE_MAX_RETRIES` cap (v2.1.183 changelog) | ✅ COMPLETE (added after CLAUDE_CODE_MAX_RETRIES, annotated as changelog-only) |
+| 7 | LOW | New CLI Commands | Add `claude mcp login <name>` and `claude mcp logout <name>` to Useful Commands — headless MCP server auth (v2.1.186) | ✅ COMPLETE (added to Useful Commands table) |
+| 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — 41+ consecutive ON HOLD runs; still not on official /en/env-vars page | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107; annotation retained) |
