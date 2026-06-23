@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-06-23 08:36 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 114k to 115k | COMPLETE (GitHub API: 115,171 exact; crosses k-boundary; NEW — milestone crossing; conf 0.88) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 271 vs 232 (per-directory + README canonical; strategy/ officially dropped as division Jun 18) | INVALID (RECURRING oscillation; same 232↔271 swing documented across 20+ prior runs; conf 0.88 insufficient to revert from June 15 code-search result; "Drop strategy/ as a division" Jun 18 adds context but no confirmed net change vs current table 271; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (22k = 22,276) | INVALID (no change required; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 vs 155 (−1) | INVALID (RECURRING ±1 oscillation; within threshold; no confirmed net removal; no change) |
+| 5 | LOW | Sort | Verify sort order (115k > 22k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-06-18 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
