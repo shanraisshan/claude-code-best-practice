@@ -936,3 +936,15 @@
 | 3 | LOW | Changed Description | `feedbackSurveyRate`: add "Set to 0 to suppress" note | ✋ ON HOLD (0.6 confidence — not confirmed at content-match depth) |
 | 4 | LOW | Changed Description | `autoScrollEnabled`: add "Permission prompts still scroll" note | ✋ ON HOLD (0.6 confidence — not confirmed at content-match depth) |
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 41+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-24 10:44 AM PKT] Claude Code v2.1.187
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `sandbox.credentials` (boolean, default `false`, v2.1.187) to Sandbox Settings table — blocks sandboxed commands from reading credential files and secret environment variables | ✅ COMPLETE (added to Sandbox Settings table after sandbox.allowAppleEvents) |
+| 2 | HIGH | Changed Behavior | Add `"iterm2"` to `teammateMode` valid values — force iTerm2 split-pane display for agent teammates (v2.1.186) | ✅ COMPLETE (added to Display Settings table teammateMode row) |
+| 3 | HIGH | New Setting | Add `respondToBashCommands` (boolean, default `true`, v2.1.186) to General Settings table — controls whether Claude auto-responds after `!` shell commands | ✅ COMPLETE (added to General Settings table after advisorModel) |
+| 4 | MED | Version Bump | Update report version badge from v2.1.185 → v2.1.187 and header "As of v2.1.185" → "As of v2.1.187" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 42+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
