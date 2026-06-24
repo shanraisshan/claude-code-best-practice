@@ -1083,3 +1083,25 @@
 | 14 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 236k > ECC 220k > Matt Pocock 142k > Spec Kit 115k > gstack 113k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 56k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
 | 15 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to research agents' direct GitHub API reads; stars-don't-fall rule applied throughout | COMPLETE (RECURRING — verification method adapted; all confirmed counts match or exceed current table values) |
 | 16 | LOW | Note | BMAD v6.9.0 released Jun 22 2026: bmad-forge-idea (adversarial idea-testing core skill), bmad-architecture ground-up rewrite, party-mode savable custom parties + persistent memory, memlog.py shared working-memory primitive, Astro 5→6 clearing XSS/SSRF advisories | COMPLETE (context only; no count change applied) |
+
+---
+
+## [2026-06-24 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 236k to 237k (237k via WebFetch GitHub HTML — Agent 1 conf 0.97) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 220k to 221k (220,652 via Agent 1 direct GitHub API — WebFetch shows stale README badge at 211.9k; stars-don't-fall rule applied) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 142k to 144k (143,603 via Agent 1 direct GitHub API / WebFetch confirmed 144k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update gstack ★ from 113k to 114k (114,258 via Agent 2 direct GitHub API / WebFetch confirmed 114k) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Workflow | Update Compound Engineering workflow — v3.14.0 (Jun 24 2026): prepend /ce-strategy(top) and /ce-ideate(top); append /ce-product-pulse(top); new 8-step pipeline: /ce-strategy → /ce-ideate → /ce-brainstorm → /ce-plan → /ce-work → /ce-code-review → /ce-compound → /ce-product-pulse (Agent 2 conf 0.92; all 8 skills enumerated in 27-skill list) | COMPLETE (NEW — v3.14.0 major refactor today) |
+| 6 | LOW | No Change | Spec Kit 115k, OpenSpec 56k, GSD 65k, BMAD 50k, omc 37k, CE 22k, HumanLayer 11k stars unchanged | COMPLETE (verified via WebFetch GitHub HTML) |
+| 7 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 237k > ECC 221k > Matt Pocock 144k > Spec Kit 115k > gstack 114k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 56k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; gstack 114k still below Spec Kit 115k) |
+| 8 | LOW | Count Verify | gstack skills 53→69 — Agent 2 enumerated 69 root-level dirs including infrastructure dirs (bin, lib, docs, test, hosts, supabase, scripts, extension, gstack); Jun 15 explicit enumeration excluded infrastructure dirs to get 53 | ON HOLD (RECURRING — keeping 53 per Jun 15 explicit enumeration methodology) |
+| 9 | LOW | Count Verify | ECC commands 84→95 (Agent 1: 92 root + 3 .claude/commands/; same methodology conflict as prior 28 runs) | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1 AM/PM/2/3/4/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24; keeping 84) |
+| 10 | LOW | Count Verify | OpenSpec commands 11→9 — Agent 2 enumerates 9 TypeScript CLI commands; Jun 4 explicit 11-name enumeration still stands | ON HOLD (RECURRING from Jun 3–24; keeping 11) |
+| 11 | LOW | Count Verify | BMAD skills 42→39 — Agent 2 conf 0.72; oscillating 37-45 across 20+ runs; v6.9.0 active release cycle | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 12 | LOW | Count Verify | GSD stars 65k borderline — Agent 2 exact 64,488 (rounds to 64k); WebFetch shows 64.5k; Jun 23 rounded 64.5k up to 65k; deprecated repo (archived May 31 2026) | ON HOLD (stars-don't-fall rule applied; keeping 65k; borderline case noted) |
+| 13 | LOW | Workflow | Superpowers workflow change proposed — removes task-reviewer/fix-subagent/final-code-reviewer; adds code-reviewer/systematic-debugging; conf 0.97; contradicts Jun 22 conf 0.92 confirmed pipeline | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23; keeping current workflow) |
+| 14 | LOW | Workflow | Multiple other workflow changes proposed (ECC v2.0, Matt Pocock, Spec Kit reorder, gstack, omc, BMAD) — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow changes applied except CE) |
+| 15 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to WebFetch GitHub HTML; Agent API counts used where WebFetch showed stale README badge (ECC) | COMPLETE (RECURRING — verification method adapted; stars-don't-fall rule applied throughout) |
