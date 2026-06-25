@@ -515,3 +515,13 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-06-24 11:06 AM PKT] Claude Code v2.1.187
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 85 built-in commands).
+
+---
+
+## [2026-06-25 11:07 AM PKT] Claude Code v2.1.191
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/model [model]` — docs now emphasize saving as default for new sessions; add `s` key for session-only switch | ✅ COMPLETE (updated description to match official docs) |
+| 2 | MED | Changed Description | Update `/review [PR]` — docs now reference `/code-review` engine and note that no-argument invocation lists open PRs | ✅ COMPLETE (updated description to match official docs) |
+| 3 | MED | Changed Description | Update `/install-github-app` — expanded to "Install the Claude GitHub App for a repository, with an optional step to set up GitHub Actions workflows and secrets" | ✅ COMPLETE (updated description to match official docs) |
