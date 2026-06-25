@@ -948,3 +948,16 @@
 | 3 | HIGH | New Setting | Add `respondToBashCommands` (boolean, default `true`, v2.1.186) to General Settings table — controls whether Claude auto-responds after `!` shell commands | ✅ COMPLETE (added to General Settings table after advisorModel) |
 | 4 | MED | Version Bump | Update report version badge from v2.1.185 → v2.1.187 and header "As of v2.1.185" → "As of v2.1.187" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 42+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-25 10:47 AM PKT] Claude Code v2.1.191
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Bug Fix | Fix `sandbox.credentials` type: previous run added it as `boolean` (WRONG) — official settings page confirms it is an `object` with `files` and `envVars` sub-keys that passes credentials into the sandbox | ✅ COMPLETE (corrected type, default, and description in Sandbox Settings table) |
+| 2 | HIGH | New Env Var | Add `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` (default `8`, v2.1.191) to Environment Variables table — caps the number of times a blocking Stop hook can defer session end | ✅ COMPLETE (added near CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS) |
+| 3 | MED | New Env Var | Add `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` (default `300000` / 5 min, v2.1.189, changelog-only) to Environment Variables table — idle timeout for remote MCP tool calls | ✅ COMPLETE (added near MCP_TIMEOUT entries, annotated changelog-only) |
+| 4 | MED | Scope Check | `enforceAvailableModels` scope: report says "(Managed only)", official page reportedly says scope "Any" — needs human verification before changing | ✋ ON HOLD (pending manual check of official settings page scope column) |
+| 5 | MED | Version Bump | Update report version badge from v2.1.187 → v2.1.191 and header "As of v2.1.187" → "As of v2.1.191" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 6 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 43+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
