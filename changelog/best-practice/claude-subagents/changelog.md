@@ -405,3 +405,11 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 No drift detected on the two tracked dimensions — all 16 frontmatter fields and 5 built-in agents match.
 
 **Watch item (recurring):** `prompt` remains in the `--agents` CLI JSON field enumeration in the official docs but is absent from the "Supported frontmatter fields" table. Still not a drift finding for file-based frontmatter tracking.
+
+---
+
+## [2026-06-25 11:34 AM PKT] Claude Code v2.1.191
+
+No drift detected on the two tracked dimensions — all 16 frontmatter fields and 5 built-in agents match.
+
+**Watch item (recurring):** `prompt` remains in the `--agents` CLI JSON field enumeration in the official docs but is absent from the "Supported frontmatter fields" table. Still not a drift finding for file-based frontmatter tracking.
