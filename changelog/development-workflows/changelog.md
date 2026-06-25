@@ -1105,3 +1105,22 @@
 | 13 | LOW | Workflow | Superpowers workflow change proposed — removes task-reviewer/fix-subagent/final-code-reviewer; adds code-reviewer/systematic-debugging; conf 0.97; contradicts Jun 22 conf 0.92 confirmed pipeline | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23; keeping current workflow) |
 | 14 | LOW | Workflow | Multiple other workflow changes proposed (ECC v2.0, Matt Pocock, Spec Kit reorder, gstack, omc, BMAD) — all below confidence threshold or contradict recently-confirmed values | ON HOLD (RECURRING — no workflow changes applied except CE) |
 | 15 | LOW | Note | shields.io star verification blocked (host not in network allowlist) — fell back to WebFetch GitHub HTML; Agent API counts used where WebFetch showed stale README badge (ECC) | COMPLETE (RECURRING — verification method adapted; stars-don't-fall rule applied throughout) |
+
+---
+
+## [2026-06-25 09:16 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Everything Claude Code ★ from 221k to 222k (WebFetch GitHub HTML confirmed 221,900+; api.github.com returned N/A due to 422 restriction; stars-don't-fall rule applied) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 144k to 145k (api.github.com: 145,117 exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | MED | Count | Update Matt Pocock Skills skills count from 34 to 35 (Agent 1 enumerated 35 skill folders at skills/ root; confirmed) | COMPLETE (NEW — first count increase for this repo) |
+| 4 | HIGH | Star | Update gstack ★ from 114k to 115k (api.github.com: 114,995; rounds to 115k) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count | Update gstack skills count from 53 to 55 (Agent 1 via llms.txt index enumerated 55 skill dirs; excludes infrastructure dirs consistent with Jun 15 methodology) | COMPLETE (NEW — llms.txt-based enumeration consistent with filtering approach) |
+| 6 | LOW | Sort Order | Sort order check: Spec Kit 115,314 vs gstack 114,995 — both round to 115k but Spec Kit (higher exact) stays above gstack; no re-sort needed | COMPLETE (verified; descending order maintained) |
+| 7 | LOW | No Change | Superpowers 237k, Spec Kit 115k, GSD 65k, OpenSpec 56k, BMAD 50k, omc 37k, CE 22k, HumanLayer 11k — all stars unchanged | COMPLETE (verified via api.github.com) |
+| 8 | LOW | Count Verify | ECC commands 84→92 (Agent 1: 92 root commands/ dir; same methodology conflict; 30th+ consecutive run) | ON HOLD (RECURRING — keeping 84 per v2.0.0 self-report methodology) |
+| 9 | LOW | Count Verify | BMAD skills 42→46 (Agent 1: 33 bmm + 13 core = 46 explicit enumeration; oscillating 37-46 across 20+ runs; active v6.9+ release cycle) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 10 | LOW | Count Verify | OpenSpec commands 11→9 (agent enumerated 9; Jun 4 explicit 11-name enumeration still stands) | ON HOLD (RECURRING from Jun 3–25; keeping 11) |
+| 11 | LOW | Count Verify | GSD stars 65k borderline — exact count near 64.5k; deprecated/archived repo (archived May 31 2026) | ON HOLD (RECURRING — stars-don't-fall rule; keeping 65k) |
+| 12 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl for 10/11 repos; ECC resolved via WebFetch GitHub HTML | COMPLETE (RECURRING — verification method adapted) |
