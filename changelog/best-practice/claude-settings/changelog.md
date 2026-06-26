@@ -948,3 +948,17 @@
 | 3 | HIGH | New Setting | Add `respondToBashCommands` (boolean, default `true`, v2.1.186) to General Settings table — controls whether Claude auto-responds after `!` shell commands | ✅ COMPLETE (added to General Settings table after advisorModel) |
 | 4 | MED | Version Bump | Update report version badge from v2.1.185 → v2.1.187 and header "As of v2.1.185" → "As of v2.1.187" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 42+ consecutive ON HOLD runs; annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-26 10:46 AM PKT] Claude Code v2.1.193
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Behavior | Update `sandbox.credentials` type from `boolean \| false` to object with `files` (array) and `envVars` (array) sub-fields per official settings page (v2.1.191+ change; entry was added as boolean in v2.1.187, evolved to object) | ✅ COMPLETE (type and description updated in Sandbox Settings table) |
+| 2 | HIGH | New Setting | Add `autoMode.classifyAllShell` (boolean) to `autoMode` description — routes all Bash/PowerShell commands through auto-mode classifier instead of only arbitrary-code-execution patterns (v2.1.193 changelog) | ✅ COMPLETE (added to autoMode description and Quick Reference JSON example) |
+| 3 | HIGH | Version Bump | Update report version badge v2.1.187 → v2.1.193 and header "As of v2.1.187" → "As of v2.1.193" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 4 | MED | New Env Var | Add `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP` to env vars section — disable memory-pressure reaping of idle background shell commands (v2.1.193 changelog, not yet on official env-vars page) | ✅ COMPLETE (added with changelog annotation) |
+| 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 43+ consecutive ON HOLD runs (since v2.1.107, 2026-04-14); Rule 10B escalation threshold exceeded but still not on official env-vars page or JSON schema | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
+| 6 | LOW | Suspect Key | `OTEL_LOG_ASSISTANT_RESPONSES` — possible new OTEL env var for `claude_code.assistant_response` event added in v2.1.193, not confirmed on official env-vars page | ✋ ON HOLD (new — pending official confirmation) |
+| 7 | LOW | Potential New Setting | `skillDirectories` — listed on official settings page but description truncated; type, default, and scope unconfirmed | ✋ ON HOLD (new — pending official confirmation) |
