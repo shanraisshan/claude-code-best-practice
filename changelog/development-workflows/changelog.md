@@ -1124,3 +1124,21 @@
 | 10 | LOW | Count Verify | OpenSpec commands 11→9 (agent enumerated 9; Jun 4 explicit 11-name enumeration still stands) | ON HOLD (RECURRING from Jun 3–25; keeping 11) |
 | 11 | LOW | Count Verify | GSD stars 65k borderline — exact count near 64.5k; deprecated/archived repo (archived May 31 2026) | ON HOLD (RECURRING — stars-don't-fall rule; keeping 65k) |
 | 12 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl for 10/11 repos; ECC resolved via WebFetch GitHub HTML | COMPLETE (RECURRING — verification method adapted) |
+
+---
+
+## [2026-06-26 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 237k to 239k (api.github.com: 238,835 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 145k to 147k (api.github.com: 146,520 exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Spec Kit ★ from 115k to 116k (api.github.com: 115,556 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update gstack ★ from 115k to 116k (api.github.com: 115,935 exact) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Sort Order | Swap gstack/Spec Kit rows — gstack exact 115,935 > Spec Kit exact 115,556; both display 116k; gstack moves to row 4, Spec Kit to row 5 | COMPLETE (NEW — first sort swap between these two repos) |
+| 6 | HIGH | Star | Update OpenSpec ★ from 56k to 57k (api.github.com: 56,665 exact) | COMPLETE (RECURRING — updated README table) |
+| 7 | LOW | No Change | ECC 222k (api 422; agent 221,802 ≈ 222k), GSD 65k (64,521), BMAD 50k (49,694), omc 37k (36,989), CE 22k (22,048), HumanLayer 11k (11,061) — all unchanged | COMPLETE (verified via api.github.com) |
+| 8 | LOW | Count Verify | gstack skills 55→53 (Agent 2 enumerated 53 specific SKILL.md dirs by name; Jun 15 also found 53; Jun 25 set 55 via llms.txt; conflict) | ON HOLD (RECURRING — keeping 55 per Jun 25 llms.txt methodology) |
+| 9 | LOW | Count Verify | ECC commands 84→95 (same recurring methodology conflict; 31st+ consecutive run) | ON HOLD (RECURRING — keeping 84 per v2.0.0 self-report) |
+| 10 | LOW | Count Verify | BMAD skills 42→38 (Agent 2: 25 non-agent bmm + 13 core = 38; oscillating 37-46 range across 20+ runs) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 11 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl; ECC returned 422 error — agent reported 221,802; stars-don't-fall rule applied | COMPLETE (RECURRING — verification method adapted) |
