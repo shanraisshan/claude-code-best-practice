@@ -962,3 +962,16 @@
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 43+ consecutive ON HOLD runs (since v2.1.107, 2026-04-14); Rule 10B escalation threshold exceeded but still not on official env-vars page or JSON schema | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
 | 6 | LOW | Suspect Key | `OTEL_LOG_ASSISTANT_RESPONSES` — possible new OTEL env var for `claude_code.assistant_response` event added in v2.1.193, not confirmed on official env-vars page | ✋ ON HOLD (new — pending official confirmation) |
 | 7 | LOW | Potential New Setting | `skillDirectories` — listed on official settings page but description truncated; type, default, and scope unconfirmed | ✋ ON HOLD (new — pending official confirmation) |
+
+---
+
+## [2026-06-27 10:44 AM PKT] Claude Code v2.1.195
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.193 → v2.1.195 and header "As of v2.1.193" → "As of v2.1.195" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Missing Env Var | Add `OTEL_LOG_ASSISTANT_RESPONSES` to Common Environment Variables table — controls logging of model responses in OTel; defaults to follow `OTEL_LOG_USER_PROMPTS`. Promoted from ON HOLD (v2.1.193 #6) after changelog confirmation | ✅ COMPLETE (added to env vars table after OTEL_LOG_USER_PROMPTS) — RECURRING (first seen: 2026-06-26) |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` to Common Environment Variables table — disables mouse click, drag, and hover events in fullscreen while preserving wheel scroll (v2.1.195) | ✅ COMPLETE (added to env vars table after CLAUDE_CODE_DISABLE_MOUSE) — NEW |
+| 4 | LOW | Suspect Key | `CLAUDE_CODE_SAFE_MODE` — startup-only var, belongs in `claude-cli-startup-flags.md` per prior runs | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169) |
+| 5 | LOW | Suspect Key | `skillDirectories` — still not confirmed with sufficient detail on official settings page | ✋ ON HOLD (pending official confirmation — recurring from 2026-06-26 v2.1.193 #7) |
+| 6 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 44+ consecutive runs | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
