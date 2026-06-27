@@ -1142,3 +1142,23 @@
 | 9 | LOW | Count Verify | ECC commands 84→95 (same recurring methodology conflict; 31st+ consecutive run) | ON HOLD (RECURRING — keeping 84 per v2.0.0 self-report) |
 | 10 | LOW | Count Verify | BMAD skills 42→38 (Agent 2: 25 non-agent bmm + 13 core = 38; oscillating 37-46 range across 20+ runs) | ON HOLD (RECURRING — keeping 42 per established methodology) |
 | 11 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl; ECC returned 422 error — agent reported 221,802; stars-don't-fall rule applied | COMPLETE (RECURRING — verification method adapted) |
+
+---
+
+## [2026-06-27 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 239k to 240k (api.github.com: 239,514 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 147k to 148k (api.github.com: 147,593 exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update gstack ★ from 116k to 117k (api.github.com: 116,697 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | MED | Workflow | Update OpenSpec workflow: explore-first 9-step pipeline replacing 5-step pipeline (Jun 24 2026 docs overhaul added /opsx:explore entry point, /opsx:new /opsx:continue /opsx:ff as spec sub-loops, /opsx:sync before archive) | COMPLETE (NEW — explore-first framing per Jun 24 overhaul) |
+| 5 | MED | Workflow | Update BMAD workflow: v6.9.0 14-step pipeline replacing 11-step pipeline (new bmad-forge-idea first step, bmad-edit-prd sub-loop, bmad-create-story sub-loop, bmad-dev-auto sub-loop, bmad-sprint-status and bmad-checkpoint-preview top-level; removed bmad-prfaq and bmad-check-implementation-readiness) | COMPLETE (NEW — v6.9.0 released Jun 22 2026) |
+| 6 | LOW | Count | Update Compound Engineering skills 27→26 (v3.15.0 Jun 27 2026 consolidated ce-plan by removing ce-brainstorm as separate skill) | COMPLETE (NEW — v3.15.0 same-day release; workflow column unchanged, /ce-brainstorm still listed as a step) |
+| 7 | LOW | Count Verify | ECC commands 84→130 (agent found 130 via directory listing; 32nd+ consecutive methodology conflict) | ON HOLD (RECURRING — keeping 84 per v2.0.0 self-report methodology) |
+| 8 | LOW | Count Verify | gstack skills 55→53 (agent enumerated 53 SKILL.md dirs; 3rd consecutive run at 53; Jun 25 llms.txt set 55) | ON HOLD (RECURRING — keeping 55 per Jun 25 llms.txt methodology) |
+| 9 | LOW | Count Verify | BMAD skills 42→46 (agent: 46 across bmm + core skills dirs; oscillating 37-46 range across 20+ runs) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 10 | LOW | Count Verify | omc commands 0→28 (agent found 28 md files in commands/; methodology: skills = command surface, count stays 0) | ON HOLD (RECURRING — skills-as-commands methodology) |
+| 11 | LOW | Count Verify | GSD workflow differs from table (frozen/archived repo, last commit May 31 2026; no upstream change expected) | ON HOLD (RECURRING — frozen repo) |
+| 12 | LOW | Note | ECC repo renamed affaan-m/everything-claude-code → affaan-m/ECC; 222k confirmed via api.github.com redirect (-L flag); table link preserved as-is (redirect still resolves) | COMPLETE (context note) |
+| 13 | LOW | Sort Order | Sort order verified unchanged: Superpowers 240k > ECC 222k > Matt Pocock 148k > gstack 117k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 57k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (no row moves needed) |
