@@ -539,3 +539,9 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | LOW | Scope Decision | Review `when_to_use` field — present in report (count 16) but official reference table lists only 15 fields; field is still mentioned inline in docs under the `description` row | ✋ ON HOLD (field still referenced inline in official docs — not removing until it is explicitly absent from reference table) |
+
+---
+
+## [2026-06-28 11:06 AM PKT] Claude Code v2.1.195
+
+No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 85 built-in commands).
