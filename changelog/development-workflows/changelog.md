@@ -1162,3 +1162,18 @@
 | 11 | LOW | Count Verify | GSD workflow differs from table (frozen/archived repo, last commit May 31 2026; no upstream change expected) | ON HOLD (RECURRING — frozen repo) |
 | 12 | LOW | Note | ECC repo renamed affaan-m/everything-claude-code → affaan-m/ECC; 222k confirmed via api.github.com redirect (-L flag); table link preserved as-is (redirect still resolves) | COMPLETE (context note) |
 | 13 | LOW | Sort Order | Sort order verified unchanged: Superpowers 240k > ECC 222k > Matt Pocock 148k > gstack 117k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 57k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (no row moves needed) |
+
+---
+
+## [2026-06-28 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Count | Update gstack skills 55→53 (llms.txt at repo root now returns 404; direct per-directory API enumeration confirms 53 SKILL.md files across 4 consecutive runs Jun 15/26/27/28; Jun 25 basis for 55 no longer exists) | COMPLETE (RESOLVED — reverting to consistent direct-count value) |
+| 2 | LOW | No Change | Stars verified via api.github.com: Superpowers 240,143 (240k), ECC 222,705 (222k), Matt Pocock 148,461 (148k), gstack 117,336 (117k), Spec Kit 115,941 (116k), GSD 64,561 (65k), OpenSpec 57,198 (57k), BMAD 49,775 (50k), omc 37,079 (37k), CE 22,154 (22k), HumanLayer 11,070 (11k) — all unchanged | COMPLETE (verified via api.github.com) |
+| 3 | LOW | Count Verify | ECC commands 84 (33rd+ consecutive methodology conflict; agent directory listing differs from v2.0.0 self-report) | ON HOLD (RECURRING — keeping 84 per v2.0.0 self-report methodology) |
+| 4 | LOW | Count Verify | BMAD skills 42→44 (agent found 44 across bmm + core dirs; oscillating 37-46 range across 20+ runs) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 5 | LOW | Count Verify | omc commands 0 (agent directory listing vs skills-as-commands methodology) | ON HOLD (RECURRING — skills-as-commands methodology) |
+| 6 | LOW | Count Verify | GSD workflow (frozen/archived repo, last commit May 31 2026; no upstream change expected) | ON HOLD (RECURRING — frozen repo) |
+| 7 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl for all repos; ECC (-L flag for redirect); stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — verification method adapted) |
+| 8 | LOW | Sort Order | Sort order verified unchanged: Superpowers 240k > ECC 222k > Matt Pocock 148k > gstack 117k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 57k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (no row moves needed) |
