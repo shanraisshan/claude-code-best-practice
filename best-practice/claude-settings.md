@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2026%2C%202026%2010%3A46%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.193-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2028%2C%202026%2010%3A42%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.195-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.193, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.195, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -906,7 +906,7 @@ Set environment variables for all Claude Code sessions.
 | `MAX_MCP_OUTPUT_TOKENS` | Max MCP output tokens (default: 25000). Warning displayed when output exceeds 10,000 tokens |
 | `API_TIMEOUT_MS` | Timeout in ms for API requests (default: 600000) |
 | `API_FORCE_IDLE_TIMEOUT` | Override the 5-minute idle timeout for streaming connections. Set to `0` to disable the idle timeout entirely, `1` to enforce it on all connections, or leave unset for the default (auto-enabled on slow or unreliable gateways that frequently stall). Useful for slow API gateways (v2.1.169) |
-| `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | Timeout in milliseconds for the connect, TLS, and response-header phase of a streaming API request (default: `60000` / 60 seconds). If no response headers arrive within this window, the request is aborted and retried. Set to `0` to disable and rely on `API_TIMEOUT_MS` alone |
+| `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | **REMOVED in v2.1.186** — this env var is a no-op. Use `API_TIMEOUT_MS` instead to configure the overall request timeout |
 | `BASH_MAX_TIMEOUT_MS` | Bash command timeout |
 | `BASH_MAX_OUTPUT_LENGTH` | Max bash output length |
 | `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | Auto-compact threshold percentage (1-100). Default is ~95%. Set lower (e.g., `50`) to trigger compaction earlier. Values above 95% have no effect. Use `/context` to monitor current usage. Example: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=50 claude` |
@@ -1047,6 +1047,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_SCROLL_SPEED` | Mouse wheel scroll multiplier for fullscreen rendering. Increase for faster scrolling, decrease for finer control |
 | `CLAUDE_CODE_DISABLE_VIRTUAL_SCROLL` | Set to `1` to disable virtual scrolling in fullscreen rendering and render every message in the transcript. Use if scrolling in fullscreen mode shows blank regions where messages should appear |
 | `CLAUDE_CODE_DISABLE_MOUSE` | Set to `1` to disable mouse tracking in fullscreen rendering. Useful when mouse events interfere with terminal multiplexers or accessibility tools |
+| `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` | Set to `1` to disable mouse click interactions in fullscreen rendering while preserving mouse-wheel scroll. Useful when click events interfere with terminal selection or accessibility tools but scroll functionality is still desired (v2.1.195) |
 | `CLAUDE_CODE_HIDE_CWD` | Set to `1` to hide the current working directory in the Claude Code startup logo banner. Useful in screen recordings, demos, or shared sessions where the CWD path leaks information about the host or project layout (v2.1.119) |
 | `CLAUDE_CODE_ACCESSIBILITY` | Set to `1` to keep native terminal cursor visible for screen readers and accessibility tools |
 | `CLAUDE_AX_SCREEN_READER` | Set to `1` to render screen-reader friendly output: flat text without decorative borders or animations. Set to `0` to force screen-reader mode off even when the `axScreenReader` setting is `true`. The `--ax-screen-reader` CLI flag takes precedence (v2.1.181+) |
