@@ -248,3 +248,19 @@
 | 7 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
 | 8 | LOW | No Change | Sort order preserved — no star crossings among research repos or vs manual rows | COMPLETE (verified) |
 | 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-28 08:08 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 154k to 156k (155,933 exact via GitHub API — +2k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05, 2026-06-11, 2026-06-15, 2026-06-19, 2026-06-24) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 144k to 148k (148,424 exact via GitHub API — +4k, thirteenth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k, 2026-06-15 +4k, 2026-06-19 +7k, 2026-06-24 +8k) |
+| 3 | MEDIUM | Count | Update mattpocock/skills active skills from 30 to 31 (+1; 35 total SKILL.md files, 4 in deprecated/ excluded, yielding 31 active) | RECURRING (count drift logged 2026-05-12, 2026-05-31, 2026-06-19) |
+| 4 | LOW | Count | Update wshobson/agents skill count from 156 to 158 (GitHub code search total_count=158 confirmed; incomplete_results=false) | RECURRING (count drift logged 2026-05-12, 2026-05-20, 2026-06-04) |
+| 5 | LOW | No Change | K-Dense-AI/scientific-agent-skills steady — ★ 29k (29,476 exact) and skills 147 | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 26k (26,657 exact) and curated count 1,497+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 7 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | Sort order preserved — anthropics (156k) > mattpocock (148k) > wshobson (37k) > K-Dense-AI (29k) > VoltAgent (26k); no star crossings among research repos or vs manual rows | COMPLETE (verified) |
+| 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
