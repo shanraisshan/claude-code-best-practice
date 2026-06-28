@@ -962,3 +962,19 @@
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 43+ consecutive ON HOLD runs (since v2.1.107, 2026-04-14); Rule 10B escalation threshold exceeded but still not on official env-vars page or JSON schema | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
 | 6 | LOW | Suspect Key | `OTEL_LOG_ASSISTANT_RESPONSES` — possible new OTEL env var for `claude_code.assistant_response` event added in v2.1.193, not confirmed on official env-vars page | ✋ ON HOLD (new — pending official confirmation) |
 | 7 | LOW | Potential New Setting | `skillDirectories` — listed on official settings page but description truncated; type, default, and scope unconfirmed | ✋ ON HOLD (new — pending official confirmation) |
+
+---
+
+## [2026-06-28 10:39 AM PKT] Claude Code v2.1.195
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge v2.1.193 → v2.1.195 and header "As of v2.1.193" → "As of v2.1.195" | ✅ COMPLETE (badge and header updated in Phase 2.6) |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` to Common Environment Variables table — disables mouse click interactions in fullscreen while preserving wheel scroll (v2.1.195). Confirmed in changelog | ✅ COMPLETE (added after CLAUDE_CODE_DISABLE_MOUSE in env vars table) |
+| 3 | MED | Removed Env Var | Mark `CLAUDE_CODE_CONNECT_TIMEOUT_MS` as REMOVED in v2.1.186 — official /en/env-vars page lists it under deprecated section; use `API_TIMEOUT_MS` instead. Added in v2.1.185 run, removed one version later, missed by 4 subsequent runs | ✅ COMPLETE (marked REMOVED with redirect to API_TIMEOUT_MS) |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — 44+ consecutive ON HOLD runs since v2.1.107 (2026-04-14); annotation "in v2.1.85 changelog, not yet on official env-vars page" remains accurate | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_ASSISTANT_RESPONSES` — still changelog-only (v2.1.193), not on official /en/env-vars page. Defer per Rule 8A | ✋ ON HOLD (recurring from 2026-06-26 v2.1.193) |
+| 6 | LOW | Potential New Setting | `skillDirectories` — listed on official settings page but type, default, and scope unconfirmed. Defer per Rule 8A | ✋ ON HOLD (recurring from 2026-06-26 v2.1.193) |
+| 7 | INVALID | Spurious Drift Claim | `sandbox.credentials` polarity — report says "block/strip" semantics; report wording aligns with v2.1.187 changelog and claude-code-guide example (`mode: "deny"`). Per Rule 8A | ❌ INVALID (report wording confirmed by changelog and agent example) |
+| 8 | INVALID | Spurious Drift Claim | `sandbox.network.disableOutbound` — flagged at 0.7 confidence by workflow agent; not on official settings page. Per Rule 8A | ❌ INVALID (insufficient source-verified evidence) |
+| 9 | INVALID | Spurious Drift Claim | `claude-code-guide` listed effort values as `fast`/`balanced`/`thorough` — official docs confirm: `low`, `medium`, `high`, `xhigh`, `max`, `auto`. RECURRING from multiple prior runs | ❌ INVALID (agent contradicted by official docs — recurring error) |
