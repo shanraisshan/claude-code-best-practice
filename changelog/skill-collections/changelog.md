@@ -264,3 +264,18 @@
 | 7 | LOW | No Change | anthropics/skills skill count steady at 17 | COMPLETE (verified, no drift) |
 | 8 | LOW | No Change | Sort order preserved — anthropics (156k) > mattpocock (148k) > wshobson (37k) > K-Dense-AI (29k) > VoltAgent (26k); no star crossings among research repos or vs manual rows | COMPLETE (verified) |
 | 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-06-29 08:05 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update mattpocock/skills ★ from 148k to 149k (149,490 exact — +1k, fourteenth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k, 2026-06-15 +4k, 2026-06-19 +7k, 2026-06-24 +8k, 2026-06-28 +4k) |
+| 2 | MEDIUM | Star | Update K-Dense-AI/scientific-agent-skills ★ from 29k to 30k (29,527 exact — +1k, crosses 30k rounding threshold) | RECURRING (star bumps logged 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-11, 2026-06-19) |
+| 3 | LOW | Star | Update VoltAgent/awesome-agent-skills ★ from 26k to 27k (26,755 exact — +1k, crosses 27k rounding threshold) | RECURRING (star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-19) |
+| 4 | LOW | No Change | anthropics/skills steady — ★ 156k (156,309 exact) and skills 17 | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | wshobson/agents steady — ★ 37k (37,297 exact) and skills 158 | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | Skill counts steady — mattpocock 31 active (4 deprecated excluded), K-Dense-AI 147, VoltAgent 1,497+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 7 | LOW | No Change | Sort order preserved — K-Dense-AI (30k) remains above manual rows (27k); VoltAgent (26,755 exact → rounds to 27k but < 27,000) stays below manual 27k rows per K-Dense-AI tie-breaking precedent (2026-06-11) | COMPLETE (verified) |
+| 8 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
