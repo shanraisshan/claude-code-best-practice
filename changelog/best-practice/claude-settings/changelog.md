@@ -962,3 +962,16 @@
 | 5 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — 43+ consecutive ON HOLD runs (since v2.1.107, 2026-04-14); Rule 10B escalation threshold exceeded but still not on official env-vars page or JSON schema | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
 | 6 | LOW | Suspect Key | `OTEL_LOG_ASSISTANT_RESPONSES` — possible new OTEL env var for `claude_code.assistant_response` event added in v2.1.193, not confirmed on official env-vars page | ✋ ON HOLD (new — pending official confirmation) |
 | 7 | LOW | Potential New Setting | `skillDirectories` — listed on official settings page but description truncated; type, default, and scope unconfirmed | ✋ ON HOLD (new — pending official confirmation) |
+
+---
+
+## [2026-06-29 10:37 AM PKT] Claude Code v2.1.195
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` to Common Environment Variables table — disables mouse interactions in fullscreen while preserving wheel scroll (v2.1.195 changelog; not on official env-vars page — annotated per Rule 5D/8A) | ✅ COMPLETE (added after `CLAUDE_CODE_DISABLE_MOUSE` with changelog annotation) — NEW |
+| 2 | HIGH | Version Bump | Update report version badge from v2.1.193 → v2.1.195 and header "As of v2.1.193" → "As of v2.1.195" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 3 | MED | Missing Env Var | Add `OTEL_LOG_ASSISTANT_RESPONSES` to OTEL env vars section — controls logging of model responses to telemetry (v2.1.193 changelog; not on official env-vars page — annotated per Rule 5D/8A) | ✅ COMPLETE (added after `OTEL_LOG_USER_PROMPTS` with changelog annotation) — RECURRING (first seen 2026-06-26 v2.1.193 #6) |
+| 4 | LOW | Annotation | Annotate `spinnerTipsEnabled` as "in JSON schema, not on official settings page" per Rule 1F — key has been in report without official backing annotation | ✅ COMPLETE (annotation added to description) — NEW |
+| 5 | LOW | Resolve ON HOLD | `skillDirectories` (ON HOLD from 2026-06-26 v2.1.193 #7) — NOT found on official settings page per direct verification this run; prior run finding was based on truncated fetch | ❌ INVALID (not on official settings page per direct check) — RECURRING (first seen 2026-06-26) |
+| 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 44+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
