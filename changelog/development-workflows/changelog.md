@@ -1177,3 +1177,28 @@
 | 6 | LOW | Count Verify | GSD workflow (frozen/archived repo, last commit May 31 2026; no upstream change expected) | ON HOLD (RECURRING — frozen repo) |
 | 7 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl for all repos; ECC (-L flag for redirect); stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — verification method adapted) |
 | 8 | LOW | Sort Order | Sort order verified unchanged: Superpowers 240k > ECC 222k > Matt Pocock 148k > gstack 117k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 57k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (no row moves needed) |
+
+---
+
+## [2026-06-29 09:05 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 240k to 241k (api.github.com: 240,803 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 222k to 223k (api.github.com: 223,131 exact; -L redirect affaan-m/ECC) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update ECC skills from 271 to 272 (Agent 1: 271 root skills/ + 1 .claude/skills/everything-claude-code = 272 total) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Star | Update Matt Pocock Skills ★ from 148k to 150k (api.github.com: 149,579 exact — 2k jump) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update gstack ★ from 117k to 118k (api.github.com: 117,807 exact) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Workflow | Update Spec Kit workflow: remove /speckit.clarify and /speckit.taskstoissues from canonical pipeline; reclassify /speckit.analyze and /speckit.checklist as sub-loop (fff3b0); 8-step from 10-step (Agent 1 conf 0.95, v0.11.9 2026-06-26; all 10 commands still present — clarify/taskstoissues are optional/auxiliary steps, not part of happy path) | COMPLETE (NEW — updated README table) |
+| 7 | LOW | No Change | Spec Kit 116k, GSD 65k, OpenSpec 57k, BMAD 50k, omc 37k, CE 22k, HumanLayer 11k stars unchanged | COMPLETE (verified via api.github.com) |
+| 8 | LOW | No Change | GSD 33 agents / 67 commands / 0 skills confirmed matching current table (archived repo) | COMPLETE (verified by Agent 2) |
+| 9 | LOW | No Change | CE 0 agents / 1 command / 26 skills confirmed matching current table | COMPLETE (verified by Agent 2) |
+| 10 | LOW | No Change | omc 19 agents / 0 commands / 40 skills confirmed matching current table | COMPLETE (verified by Agent 2) |
+| 11 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 241k > ECC 223k > Matt Pocock 150k > gstack 118k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 57k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 12 | LOW | Count Verify | ECC commands 84→95 (92 root + 3 .claude/; 34th consecutive methodology conflict vs v2.0.0 self-report) | ON HOLD (RECURRING — keeping 84 per established convention) |
+| 13 | LOW | Count Verify | BMAD skills 42→38 (Agent 2: 25 non-agent bmm + 13 core = 38; oscillating 37-46 across 20+ runs; active v6.9+ release cycle) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 14 | LOW | Workflow | Superpowers workflow — agent proposes using-superpowers → brainstorming → writing-plans → subagent-driven-development → dispatching-parallel-agents(sub) → executing-plans(sub) → test-driven-development(sub) → requesting-code-review → receiving-code-review → finishing-a-development-branch (conf 0.97); contradicts Jun 22 0.92 confirmed pipeline | ON HOLD (RECURRING from Jun 6+; keeping current 12-step workflow) |
+| 15 | LOW | Workflow | ECC workflow change proposed (v2.0.0 multi-harness pipeline: plan-prd → multi-plan → multi-execute sub-loops; conf 0.92); yet another variant — prior proposals also differ from each other | ON HOLD (RECURRING — no workflow change applied) |
+| 16 | LOW | Workflow | Matt Pocock workflow: setup-matt-pocock-skills → grill-with-docs → triage → to-prd → to-issues → implement → tdd(sub) → diagnosing-bugs(sub) → codebase-design(sub) → improve-codebase-architecture → handoff (conf 0.94); contradicts Jun 20 0.92 confirmed pipeline | ON HOLD (RECURRING — keeping current 10-step pipeline) |
+| 17 | LOW | Workflow | gstack, OpenSpec, BMAD, CE, omc, HumanLayer workflow changes proposed — all contradict recently-confirmed pipelines or use different naming conventions | ON HOLD (RECURRING — no workflow changes applied) |
+| 18 | LOW | Note | shields.io star verification blocked (403 proxy error) — fell back to api.github.com curl for all 11 repos; ECC used -L redirect flag; stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — verification method adapted) |
