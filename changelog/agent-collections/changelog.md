@@ -10,6 +10,17 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-06-29 08:36 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 116k to 118k | COMPLETE (GitHub API: 117,753 exact; crosses two k-boundaries (117k and 118k); NEW — two-k jump in one day; conf 0.85) |
+| 2 | HIGH | Star | Update VoltAgent/awesome-claude-code-subagents ★ from 22k to 23k | COMPLETE (GitHub API: 22,528 exact; 22.528k crosses .5 boundary → rounds to 23k; NEW — milestone crossing; mirrors May 25 and Jun 10 precedents; conf 0.92) |
+| 3 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 vs 154 (−2) | INVALID (RECURRING ±2 oscillation; manual git tree count 11+30+16+17+13+15+14+16+11+11=154; same finding as Jun 28 INVALID ruling; within established oscillation range; no change) |
+| 4 | LOW | Sort | Verify sort order (118k > 23k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-06-28 08:35 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
