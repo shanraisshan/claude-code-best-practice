@@ -551,3 +551,11 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-06-29 11:07 AM PKT] Claude Code v2.1.195
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 85 built-in commands).
+
+---
+
+## [2026-06-30 11:07 AM PKT] Claude Code v2.1.196
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/design-login` to Auth tag — Authorize design-system access for `/design-sync` with your claude.ai account | ✅ COMPLETE (added as #1 in Auth tag; existing rows 1–85 renumbered to 2–86; count updated 85 → 86) |
