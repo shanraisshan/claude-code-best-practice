@@ -975,3 +975,15 @@
 | 4 | LOW | Annotation | Annotate `spinnerTipsEnabled` as "in JSON schema, not on official settings page" per Rule 1F — key has been in report without official backing annotation | ✅ COMPLETE (annotation added to description) — NEW |
 | 5 | LOW | Resolve ON HOLD | `skillDirectories` (ON HOLD from 2026-06-26 v2.1.193 #7) — NOT found on official settings page per direct verification this run; prior run finding was based on truncated fetch | ❌ INVALID (not on official settings page per direct check) — RECURRING (first seen 2026-06-26) |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 44+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-06-30 10:42 AM PKT] Claude Code v2.1.196
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Version Bump | Update report version badge from v2.1.195 → v2.1.196 and header "As of v2.1.195" → "As of v2.1.196". v2.1.196 has no new settings keys; behavioral changes only (org/role default model display in `/model`, `claude mcp list/get` security hardening for untrusted `.mcp.json`) | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | LOW | Spurious Drift Claim | `best` model alias flagged by claude-code-guide agent — not found on official settings page per direct verification; per Rule 8A, not added | ❌ INVALID (Rule 8A — not on official settings page) — NEW |
+| 3 | LOW | Spurious Drift Claim | `CLAUDE_CODE_CONNECT_TIMEOUT_MS` removal claimed by claude-code-guide; contradicted by official docs (still listed) and report history (added v2.1.185 run); per Rule 8A, no action | ❌ INVALID (Rule 8A — official docs still list the var; report history contradicts removal claim) — NEW |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 45+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 5 | LOW | Recurring ON HOLD | `CLAUDE_CODE_SAFE_MODE` — startup-only (set by `--safe-mode`); belongs in `claude-cli-startup-flags.md`, not this report | ✋ ON HOLD (out of scope — recurring from 2026-06-09 v2.1.169 #4) |
