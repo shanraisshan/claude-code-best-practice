@@ -1202,3 +1202,23 @@
 | 16 | LOW | Workflow | Matt Pocock workflow: setup-matt-pocock-skills → grill-with-docs → triage → to-prd → to-issues → implement → tdd(sub) → diagnosing-bugs(sub) → codebase-design(sub) → improve-codebase-architecture → handoff (conf 0.94); contradicts Jun 20 0.92 confirmed pipeline | ON HOLD (RECURRING — keeping current 10-step pipeline) |
 | 17 | LOW | Workflow | gstack, OpenSpec, BMAD, CE, omc, HumanLayer workflow changes proposed — all contradict recently-confirmed pipelines or use different naming conventions | ON HOLD (RECURRING — no workflow changes applied) |
 | 18 | LOW | Note | shields.io star verification blocked (403 proxy error) — fell back to api.github.com curl for all 11 repos; ECC used -L redirect flag; stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — verification method adapted) |
+
+---
+
+## [2026-06-30 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 241k to 242k (api.github.com: 241,665 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 223k to 224k (api.github.com: 223,554 exact; -L redirect affaan-m/ECC) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 150k to 151k (api.github.com: 150,746 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update OpenSpec ★ from 57k to 58k (api.github.com: 57,760 exact — first time crossing 58k) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Count | Update ECC skills from 272 to 277 (10 commits Jun 30 2026: loop-design-check skill added, growth-log skill added, react-native-patterns rules pack, delivery-gate Stop hook, and additional skill dirs — confirmed +5 from directory count) | COMPLETE (NEW — updated README table) |
+| 6 | MED | Count | Update Matt Pocock skills from 35 to 36 (Agent 1 explicitly enumerated 36 folders: engineering/14 + productivity/5 + misc/4 + personal/2 + in-progress/7 + deprecated/4; writing-great-skills confirmed in productivity subdir) | COMPLETE (NEW — updated README table) |
+| 7 | LOW | Count | Update Compound Engineering skills from 26 to 27 (v3.16.0 Jun 30 2026 added ce-pov skill — project-grounded verdict skill; Agent 2 enumerated all 27 by name) | COMPLETE (NEW — updated README table) |
+| 8 | LOW | Count Verify | ECC commands 84→95 (Agent 1: 92 root + 3 .claude/commands/; 35th consecutive run with directory-enum differing from v2.0.0 self-report methodology) | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May 1/12/21 + Jun 1-29; keeping 84 per v2.0.0 self-report) |
+| 9 | LOW | Count Verify | BMAD skills 42→46 (Agent 2: 33 bmm-skills + 13 core-skills; oscillating 37-46 across 20+ runs; active v6.9+ release cycle; conf 0.82) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 10 | LOW | Workflow | Superpowers workflow: Agent 1 lists 14 skills; current workflow uses implementer/task-reviewer/fix-subagent/final-code-reviewer which are NOT actual SKILL.md directories; Agent 1 proposes brainstorming → using-git-worktrees → writing-plans → subagent-driven-development → dispatching-parallel-agents(sub) → test-driven-development(sub) → executing-plans(sub) → requesting-code-review → receiving-code-review(sub) → verification-before-completion → finishing-a-development-branch (all steps ARE actual skill dirs) | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29; keeping Jun 22 confirmed 12-step workflow) |
+| 11 | LOW | Workflow | Multiple other workflow changes proposed (Spec Kit reinstates clarify/taskstoissues, CE removes strategy/ideate/product-pulse steps, gstack/omc/BMAD/HumanLayer variants) — all contradict recently-confirmed pipelines or below confidence threshold | ON HOLD (RECURRING — no workflow changes applied) |
+| 12 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 242k > ECC 224k > Matt Pocock 151k > gstack 118k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 58k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 13 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl for all 11 repos (ECC via -L redirect flag); stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — verification method adapted) |
