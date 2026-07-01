@@ -1222,3 +1222,17 @@
 | 11 | LOW | Workflow | Multiple other workflow changes proposed (Spec Kit reinstates clarify/taskstoissues, CE removes strategy/ideate/product-pulse steps, gstack/omc/BMAD/HumanLayer variants) — all contradict recently-confirmed pipelines or below confidence threshold | ON HOLD (RECURRING — no workflow changes applied) |
 | 12 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 242k > ECC 224k > Matt Pocock 151k > gstack 118k > Spec Kit 116k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 58k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
 | 13 | LOW | Note | shields.io star verification blocked — fell back to api.github.com curl for all 11 repos (ECC via -L redirect flag); stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — verification method adapted) |
+
+---
+
+## [2026-07-01 09:06 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 242k to 243k (api.github.com: 242,696 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Spec Kit ★ from 116k to 117k (api.github.com: 116,755 exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 151k to 152k (api.github.com: 151,946 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | Count Verify | BMAD skills 42→44 (Agent 2: reports 44; oscillating 37-46 across 20+ runs; conf 0.82) | ON HOLD (RECURRING — keeping 42 per established methodology) |
+| 5 | LOW | Workflow | Multiple workflow changes proposed (Superpowers, Spec Kit, ECC, Matt Pocock, others) — all contradict recently-confirmed pipelines | ON HOLD (RECURRING — no workflow changes applied) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 243k > ECC 224k > Matt Pocock 152k > gstack 118k > Spec Kit 117k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 58k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 7 | LOW | Note | shields.io star verification blocked (403 proxy error) — fell back to api.github.com curl for all 11 repos; ECC used -L redirect flag | COMPLETE (RECURRING — verification method adapted) |
