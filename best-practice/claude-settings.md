@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2029%2C%202026%2010%3A37%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.195-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2001%2C%202026%2010%3A40%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.197-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.195, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.197, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -86,6 +86,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `autoUpdatesChannel` | string | `"latest"` | Release channel: `"stable"` or `"latest"` |
 | `minimumVersion` | string | - | Prevent the auto-updater from downgrading below a specific version. Automatically set when switching to the stable channel and choosing to stay on the current version until stable catches up. Used with `autoUpdatesChannel` |
 | `alwaysThinkingEnabled` | boolean | `false` | Enable extended thinking by default for all sessions |
+| `thinkingBudgetTokens` | number | - | Set a fixed token budget for extended thinking per response. When set, limits the number of thinking tokens to the specified value. If unset, Claude Code uses a dynamic budget based on the model and effort level. Works alongside `alwaysThinkingEnabled` |
 | `skipWebFetchPreflight` | boolean | `false` | Skip the WebFetch domain safety check that sends each requested hostname to `api.anthropic.com` before fetching. Set to `true` in environments that block outbound traffic to Anthropic, such as Bedrock, Vertex AI, or Foundry deployments with restrictive egress |
 | `availableModels` | array | - | Restrict which models users can select via `/model`, `--model`, Config tool, or `ANTHROPIC_MODEL`. Does not affect the Default option. As of v2.1.172, also constrains the model picker for subagent dispatching and the `advisorModel` picker. Use `enforceAvailableModels: true` to additionally constrain the Default model option. Example: `["sonnet", "haiku"]` |
 | `enforceAvailableModels` | boolean | `false` | **(Managed only)** When `true`, the `availableModels` allowlist also constrains the Default model option — users cannot select a model outside the allowlist even via the Default slot. Without this flag, `availableModels` leaves the Default option unrestricted. Pair with `availableModels` for full model lockdown (v2.1.175) |
@@ -117,6 +118,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `ultracode` | boolean | - | **(Session-only — not persisted)** When `true`, the harness authors and runs a workflow for every substantive task by default, maximizing thoroughness regardless of token cost. Appears in the official "Available settings" list but is session-scoped: set via `/effort ultracode`, `--settings`, or the SDK rather than written to `settings.json` (v2.1.154) |
 | `disableBundledSkills` | boolean | `false` | Conceal Claude Code's built-in capabilities (bundled skills) from the model. When `true`, the model cannot invoke built-in skills. Paired with the `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` env var. Useful when strict plugin-only customization is required (v2.1.169) |
 | `disableArtifact` | boolean | `false` | Disable the Artifact web publishing tool. When `true`, Claude cannot create or publish web artifacts. Can be set at any scope |
+| `enableArtifact` | boolean | - | **(v2.1.196+)** User-level opt-in for the Artifact web publishing tool. When set to `true`, enables Artifact for the user even when no organization policy requires it. `disableArtifact: true` takes precedence and overrides this setting |
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 | `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`, `fable`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+ |
 | `respondToBashCommands` | boolean | `true` | Whether Claude automatically responds after a `!` shell command completes. Set to `false` to disable the automatic follow-up response when a `!` bash command finishes (v2.1.186) |
@@ -205,8 +207,9 @@ Scripts for dynamic authentication token generation.
 | Key | Type | Description |
 |-----|------|-------------|
 | `apiKeyHelper` | string | Shell script path that outputs auth token (sent as `X-Api-Key` header) |
-| `forceLoginMethod` | string | Restrict login to `"claudeai"` or `"console"` accounts |
+| `forceLoginMethod` | string | Restrict login to `"claudeai"`, `"console"`, or `"gateway"` accounts. Use `"gateway"` for organization-managed Claude gateway deployments. **(Managed only)** |
 | `forceLoginOrgUUID` | string \| array | Require login to belong to a specific organization. Accepts a single UUID string (which also pre-selects that organization during login) or an array of UUIDs where any listed organization is accepted without pre-selection. When set in managed settings, login fails if the authenticated account does not belong to a listed organization; an empty array fails closed and blocks login with a misconfiguration message |
+| `forceLoginGatewayUrl` | string | **(Managed only)** Pre-fill the Claude gateway URL on the login screen when `forceLoginMethod` is `"gateway"`. Avoids requiring users to manually enter the gateway URL. Typically set alongside `forceLoginMethod: "gateway"` |
 | `gcpAuthRefresh` | string | Custom script that refreshes GCP Application Default Credentials when they expire or cannot be loaded. Run by Claude Code before retrying authentication. Useful when ADC are short-lived and require an org-specific helper to renew. Example: `"gcloud auth application-default login"` |
 
 **Example:**
@@ -384,7 +387,7 @@ Configure Model Context Protocol servers for extended capabilities.
 
 | Key | Type | Scope | Description |
 |-----|------|-------|-------------|
-| `enableAllProjectMcpServers` | boolean | Any | Auto-approve all `.mcp.json` servers |
+| `enableAllProjectMcpServers` | boolean | Any | Auto-approve all `.mcp.json` servers. **Security note (v2.1.196):** `.mcp.json` servers no longer self-approve — explicit opt-in via `enableAllProjectMcpServers: true` or `enabledMcpjsonServers` is now required |
 | `enabledMcpjsonServers` | array | Any | Allowlist specific server names |
 | `disabledMcpjsonServers` | array | Any | Blocklist specific server names |
 | `allowedMcpServers` | array | Managed only | Allowlist with name/command/URL matching |
@@ -510,6 +513,7 @@ Configure Claude Code plugins and marketplaces.
 | `pluginConfigs` | object | Any | Per-plugin MCP server configs (keyed by `plugin@marketplace`) *(in JSON schema, not on official settings page)* |
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces. Each entry can match by source string, `hostPattern`, or `pathPattern` — as of v2.1.119 the `hostPattern` and `pathPattern` matchers are correctly enforced before any download touches the filesystem, so blocked marketplaces never reach disk |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
+| `disableSideloadFlags` | boolean | Managed only | Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` startup flags. When `true`, users cannot bypass `strictKnownMarketplaces` by passing sideload flags at launch. Use in managed environments to enforce marketplace-only plugin distribution (v2.1.193) |
 
 **Marketplace source types:** `github`, `git`, `directory`, `hostPattern`, `settings`, `url`, `npm`, `file`. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository.
 
@@ -649,7 +653,7 @@ Configure via `env` key:
 | `autoScrollEnabled` | boolean | `true` | Auto-scroll the conversation in fullscreen mode. Set to `false` to disable automatic scrolling (v2.1.110). Versions before v2.1.119 stored this in `~/.claude.json` |
 | `editorMode` | string | `"normal"` | Key binding mode for the input prompt: `"normal"` or `"vim"`. Appears in `/config` as **Editor mode**. Versions before v2.1.119 stored this in `~/.claude.json` |
 | `showTurnDuration` | boolean | `true` | Show turn duration messages after responses (e.g., "Cooked for 1m 6s"). Versions before v2.1.119 stored this in `~/.claude.json` |
-| `teammateMode` | string | `"auto"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"`, `"tmux"`, or `"iterm2"` (force iTerm2 split panes regardless of auto-detection, v2.1.186). See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode). Versions before v2.1.119 stored this in `~/.claude.json` |
+| `teammateMode` | string | `"in-process"` | How [agent team](https://code.claude.com/docs/en/agent-teams) teammates display: `"auto"` (picks split panes in tmux or iTerm2, in-process otherwise), `"in-process"` (default since v2.1.179), `"tmux"`, or `"iterm2"` (force iTerm2 split panes regardless of auto-detection, v2.1.186). See [choose a display mode](https://code.claude.com/docs/en/agent-teams#choose-a-display-mode). Versions before v2.1.119 stored this in `~/.claude.json` |
 | `terminalProgressBarEnabled` | boolean | `true` | Show the terminal progress bar in supported terminals (ConEmu, Ghostty 1.2.0+, and iTerm2 3.6.6+). Appears in `/config` as **Terminal progress bar**. Versions before v2.1.119 stored this in `~/.claude.json` |
 | `preferredNotifChannel` | string | `"auto"` | Method for task-complete and permission-prompt notifications. Values: `"auto"`, `"terminal_bell"`, `"iterm2"`, `"iterm2_with_bell"`, `"kitty"`, `"ghostty"`, `"notifications_disabled"`. Default `"auto"` sends a desktop notification in iTerm2, Ghostty, and Kitty and does nothing in other terminals. Set `"terminal_bell"` to ring the bell character in any terminal. Appears in `/config` as **Notifications**. See [Get a terminal bell or notification](https://code.claude.com/docs/en/terminal-config#get-a-terminal-bell-or-notification) |
 | `wheelScrollAccelerationEnabled` | boolean | `true` | Disable mouse-wheel scroll acceleration in fullscreen mode. Set to `false` to use fixed per-tick scroll steps instead of the OS-level acceleration curve (v2.1.174) |
@@ -963,7 +967,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
 | `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | **REMOVED in v2.1.160** — the environment variable is now a no-op. Fast mode runs on the default model regardless of this variable. Previously pinned [fast mode](https://code.claude.com/docs/en/fast-mode) to Claude Opus 4.6 instead of the default (v2.1.142–v2.1.159) |
 | `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` | Set to `1` to disable the non-streaming fallback when a streaming request fails mid-stream. Streaming errors propagate to the retry layer instead. Useful when a proxy or gateway causes the fallback to produce duplicate tool execution (v2.1.83) |
-| `CLAUDE_ENABLE_STREAM_WATCHDOG` | Abort stalled streams (`1` to enable) |
+| `CLAUDE_ENABLE_STREAM_WATCHDOG` | Stream idle watchdog that aborts stalled streams. Enabled by default as of v2.1.163; set to `0` to disable |
 | `CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING` | Enabled by default on the Anthropic API (v2.1.139+); set to `0` to opt out |
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Disable auto memory (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING` | Disable file checkpointing for `/rewind` (`1` to disable) |
@@ -1133,6 +1137,7 @@ Set environment variables for all Claude Code sessions.
 | `/skills` | View and manage skills |
 | `/permissions` | View and manage permission rules |
 | `/usage-credits` | View remaining usage credits and limits. Renamed from `/extra-usage` in v2.1.144 (the old name still works) |
+| `claude gateway` | Manage Claude Gateway connections for organization-managed deployments. Requires `forceLoginMethod: "gateway"` in managed settings (v2.1.195) |
 | `--doctor` | Diagnose configuration issues |
 | `--debug` | Debug mode with hook execution details |
 
