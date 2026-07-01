@@ -975,3 +975,22 @@
 | 4 | LOW | Annotation | Annotate `spinnerTipsEnabled` as "in JSON schema, not on official settings page" per Rule 1F — key has been in report without official backing annotation | ✅ COMPLETE (annotation added to description) — NEW |
 | 5 | LOW | Resolve ON HOLD | `skillDirectories` (ON HOLD from 2026-06-26 v2.1.193 #7) — NOT found on official settings page per direct verification this run; prior run finding was based on truncated fetch | ❌ INVALID (not on official settings page per direct check) — RECURRING (first seen 2026-06-26) |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 44+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-07-01 10:40 AM PKT] Claude Code v2.1.197
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.195 → v2.1.197 and header "As of v2.1.195" → "As of v2.1.197" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Missing Setting | Add `enableArtifact` (boolean, v2.1.196+) to General Settings table — user-level opt-in for the Artifact web publishing tool | ✅ COMPLETE (added after `disableArtifact` in General Settings table) — NEW |
+| 3 | HIGH | Missing Setting | Add `forceLoginGatewayUrl` (string, Managed only) to Authentication Helpers table — pre-fills gateway URL when `forceLoginMethod: "gateway"` | ✅ COMPLETE (added to Authentication Helpers table after `forceLoginOrgUUID`) — NEW |
+| 4 | HIGH | Changed Description | Add `"gateway"` as third value for `forceLoginMethod` (alongside `"claudeai"` and `"console"`) | ✅ COMPLETE (description updated in Authentication Helpers table) — NEW |
+| 5 | HIGH | Missing Setting | Add `disableSideloadFlags` (boolean, Managed only, v2.1.193) to Plugin Settings table — rejects `--plugin-dir` and `--plugin-url` startup flags | ✅ COMPLETE (added at end of Plugin Settings table) — NEW |
+| 6 | MED | Changed Description | Fix `CLAUDE_ENABLE_STREAM_WATCHDOG` — now enabled by default as of v2.1.163; set to `0` to disable (old description implied opt-in with `1`) | ✅ COMPLETE (description updated to reflect default-on behavior) — NEW |
+| 7 | MED | Missing Setting | Add `thinkingBudgetTokens` (number) to General Settings table — fixed token budget for extended thinking per response | ✅ COMPLETE (added after `alwaysThinkingEnabled` in General Settings table) — NEW |
+| 8 | MED | Changed Default | Fix `teammateMode` default from `"auto"` → `"in-process"` (changed in v2.1.179 per CLI reference) | ✅ COMPLETE (Default column updated; description updated to note "default since v2.1.179") — NEW |
+| 9 | MED | New Command | Add `claude gateway` to Useful Commands table (v2.1.195) | ✅ COMPLETE (added to Useful Commands table) — NEW |
+| 10 | LOW | MCP Security | Add v2.1.196 `.mcp.json` self-approval security hardening note to `enableAllProjectMcpServers` description | ✅ COMPLETE (security note added to `enableAllProjectMcpServers` description in MCP Settings table) — NEW |
+| 11 | LOW | Model Alias | Update `"sonnet"` alias to point to Claude Sonnet 5 per v2.1.197 changelog | ✋ ON HOLD (claude-code-guide agent returned `claude-sonnet-4-6` contradicting workflow-claude-settings-agent finding; per Rule 8A skipping until confirmed by official settings docs) — NEW |
+| 12 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 45+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
