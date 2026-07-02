@@ -994,3 +994,14 @@
 | 10 | LOW | MCP Security | Add v2.1.196 `.mcp.json` self-approval security hardening note to `enableAllProjectMcpServers` description | ✅ COMPLETE (security note added to `enableAllProjectMcpServers` description in MCP Settings table) — NEW |
 | 11 | LOW | Model Alias | Update `"sonnet"` alias to point to Claude Sonnet 5 per v2.1.197 changelog | ✋ ON HOLD (claude-code-guide agent returned `claude-sonnet-4-6` contradicting workflow-claude-settings-agent finding; per Rule 8A skipping until confirmed by official settings docs) — NEW |
 | 12 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 45+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-07-02 10:44 AM PKT] Claude Code v2.1.198
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.197 → v2.1.198 and header "As of v2.1.197" → "As of v2.1.198" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Model Alias | Update `"sonnet"` alias to Claude Sonnet 5 — confirmed by v2.1.197 CHANGELOG ("Introducing Claude Sonnet 5: now the default model") and both research agents; resolves #11 from previous run | ✅ COMPLETE (description updated in Model Aliases table) — RECURRING (first seen: 2026-07-01 v2.1.197 #11, now resolved) |
+| 3 | MED | Model Alias | Update `"sonnet[1m]"` to note redundancy on Sonnet 5 (native 1M context since v2.1.197) — analogous to `"fable[1m]"` which already carries this note | ✅ COMPLETE (note added to sonnet[1m] row) — NEW |
+| 4 | MED | Env Var | Resolve `OTEL_LOG_TOOL_DETAILS` ON HOLD — now officially documented in Monitoring docs (code.claude.com/docs/en/monitoring-usage) as of v2.1.198; confirmed by both research agents | ✅ COMPLETE (description updated, changelog caveat replaced with official monitoring docs reference) — RECURRING (first seen: 2026-04-14 v2.1.107, now resolved after 45+ ON HOLD runs) |
