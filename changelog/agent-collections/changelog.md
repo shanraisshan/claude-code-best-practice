@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-02 08:44 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 121k to 124k | COMPLETE (GitHub page: ~124,000 exact; crosses 122k, 123k, 124k boundaries; +3k since Jul 1; sustained growth after Jun 29 native Agency Agents app launch; NEW — milestone crossing; conf 0.95) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 232 vs 233 (git-tree per-dir: +1 from Network Engineer added Jun 30 + additional, but ±1 within margin) | INVALID (±1 margin of error; RECURRING; no confirmed net addition beyond ±1 threshold) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23k = 22,700) | INVALID (no change required; 22.7k rounds to 23k; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 vs 154 (per-category exact enumeration, README badge "subagents-154"; conf 0.92) | INVALID (RECURRING ±2 oscillation; same proposal as Jul 1 run — also marked INVALID; maintenance-only commits in Jun with no confirmed net agent additions or removals) |
+| 5 | LOW | Sort | Verify sort order (124k > 23k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-01 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
