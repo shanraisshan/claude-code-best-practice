@@ -1236,3 +1236,23 @@
 | 5 | LOW | Workflow | Multiple workflow changes proposed (Superpowers, Spec Kit, ECC, Matt Pocock, others) — all contradict recently-confirmed pipelines | ON HOLD (RECURRING — no workflow changes applied) |
 | 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 243k > ECC 224k > Matt Pocock 152k > gstack 118k > Spec Kit 117k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 58k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
 | 7 | LOW | Note | shields.io star verification blocked (403 proxy error) — fell back to api.github.com curl for all 11 repos; ECC used -L redirect flag | COMPLETE (RECURRING — verification method adapted) |
+
+---
+
+## [2026-07-02 09:22 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 243k to 244k (MCP GitHub search: 243,616 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 224k to 225k (MCP GitHub search: 224,728 exact; affaan-m/ECC redirect) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 152k to 153k (MCP GitHub search: 153,305 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update gstack ★ from 118k to 119k (MCP GitHub search: 118,740 exact) | COMPLETE (RECURRING — updated README table) |
+| 5 | LOW | No Change | Spec Kit 117k (117,196), GSD 65k (64,627 archived), OpenSpec 58k (58,225), BMAD 50k (49,966), omc 37k (37,290), CE 22k (22,429), HumanLayer 11k (11,081) — all unchanged | COMPLETE (verified via MCP GitHub search) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 244k > ECC 225k > Matt Pocock 153k > gstack 119k > Spec Kit 117k > GSD 65k > agent-skills 61k (out of scope) > OpenSpec 58k > BMAD 50k > omc 37k > CE 22k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 7 | LOW | Count Verify | ECC agents 67→96, commands 84→136 (Agent 1: 96 .md in agents/, 133 root commands + 3 .claude/commands/; same recurring methodology conflict vs 67 published surface / 84 v2.0.0 self-report) | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May/Jun series; keeping 67 agents, 84 commands per established convention) |
+| 8 | LOW | Count Verify | GSD commands 67→106 (Agent 2 found 106 .md files in commands/gsd/; Jun 29 confirmed 67 matching table; frozen archived repo since May 31 2026) | ON HOLD (RECURRING — frozen repo; Jun 29 direct confirmation stands; keeping 67) |
+| 9 | LOW | Count Verify | BMAD agents 6→17, skills 42→30 (Agent 2: 17 agent-persona skills in src/bmm-skills/, 30 total skills; oscillating 37-46 range for skills across 20+ runs) | ON HOLD (RECURRING — keeping 6 agents, 42 skills per established methodology) |
+| 10 | LOW | Workflow | Spec Kit workflow change proposed — remove /speckit.analyze(sub) and /speckit.checklist(sub); insert /speckit.clarify between specify and plan (conf from Agent 1; contradicts Jun 29 COMPLETE 8-step pipeline) | ON HOLD (RECURRING — keeping Jun 29 confirmed pipeline) |
+| 11 | LOW | Workflow | Superpowers workflow change proposed — implement-task/review-task/test-driven-development replacing implementer/task-reviewer/fix-subagent/final-code-reviewer (conf from Agent 1; contradicts established Jun 22 12-step pipeline) | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29+; keeping current pipeline) |
+| 12 | LOW | Workflow | ECC/Matt Pocock/gstack/OpenSpec/BMAD/CE/omc/HumanLayer workflow changes proposed — all contradict recently-confirmed pipelines | ON HOLD (RECURRING — no workflow changes applied) |
+| 13 | LOW | Note | shields.io star verification blocked (empty response from proxy); MCP GitHub search_repositories used instead — returns live stargazers_count from GitHub API; all 11 repos verified | COMPLETE (RECURRING — verification method adapted; MCP search is authoritative for this session) |
