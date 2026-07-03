@@ -297,3 +297,21 @@
 | 7 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 27k (27,052 exact) and curated count 1,497+ (README badge confirmed) | COMPLETE (verified, no drift) |
 | 8 | LOW | No Change | Sort order preserved — anthropics (157k) > mattpocock (153k) > wshobson (37k) > K-Dense-AI (30k) > manual rows (27k) > VoltAgent (27k); no star crossings | COMPLETE (verified) |
 | 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-07-03 08:11 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update anthropics/skills ★ from 157k to 158k (157,742 exact via GitHub API — +1k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05, 2026-06-11, 2026-06-15, 2026-06-19, 2026-06-24, 2026-06-28, 2026-07-01) |
+| 2 | MEDIUM | Count | Update anthropics/skills skill count from 12 to 17 (search_code total_count=18, incomplete_results=false; 1 excluded: template/SKILL.md is boilerplate skeleton; 17 in skills/ directory — restores prior count; yesterday's 12 was via full-tree enumeration of main branch, today's 17 via search_code which may include non-main branches; methodology discrepancy noted) | RECURRING (count oscillated 17→12 on 2026-07-02 via tree enumeration; search_code method returns 17; prior stable value 17 held 2026-04-28 through 2026-07-01) |
+| 3 | HIGH | Star | Update mattpocock/skills ★ from 153k to 154k (154,487 exact via GitHub API — +1k, sixteenth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k, 2026-06-15 +4k, 2026-06-19 +7k, 2026-06-24 +8k, 2026-06-28 +4k, 2026-07-01 +4k, 2026-07-02 +1k) |
+| 4 | MEDIUM | Count | Update mattpocock/skills active skills from 32 to 34 (154,487 exact; search_code total_count=39, 1 false-positive in .changeset/ excluded=38 actual SKILL.md, 4 in deprecated/ excluded=34 active; in-progress counted as active per instructions) | RECURRING (count drift logged 2026-05-12, 2026-05-31, 2026-06-19, 2026-06-28, 2026-07-01) |
+| 5 | HIGH | Count | Update wshobson/agents skill count from 158 to 147 (37,454 exact; search_code total_count=147, incomplete_results=false — significant drop of -11 from prior 158) | NEW (first downward count movement for wshobson/agents; prior counts: 152→153→155→156→158→147) |
+| 6 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 148 to 147 (29,978 exact; search_code total_count=147, incomplete_results=false — -1 from prior 148) | RECURRING (count oscillated 148→149→148→147; oscillation pattern logged 2026-06-04/05/07, 2026-07-02) |
+| 7 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 27k (27,149 exact) and curated count 1,497+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | wshobson/agents ★ steady at 37k (37,454 exact — still rounds to 37k) | COMPLETE (verified, no drift) |
+| 9 | LOW | No Change | K-Dense-AI/scientific-agent-skills ★ steady at 30k (29,978 exact — still rounds to 30k) | COMPLETE (verified, no drift) |
+| 10 | LOW | No Change | Sort order preserved — anthropics (158k) > mattpocock (154k) > wshobson (37k) > K-Dense-AI (30k) > manual rows (27k) > VoltAgent (27k); no star crossings | COMPLETE (verified) |
+| 11 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
