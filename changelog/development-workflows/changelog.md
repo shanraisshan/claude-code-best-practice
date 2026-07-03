@@ -1256,3 +1256,28 @@
 | 11 | LOW | Workflow | Superpowers workflow change proposed — implement-task/review-task/test-driven-development replacing implementer/task-reviewer/fix-subagent/final-code-reviewer (conf from Agent 1; contradicts established Jun 22 12-step pipeline) | ON HOLD (RECURRING from Jun 6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29+; keeping current pipeline) |
 | 12 | LOW | Workflow | ECC/Matt Pocock/gstack/OpenSpec/BMAD/CE/omc/HumanLayer workflow changes proposed — all contradict recently-confirmed pipelines | ON HOLD (RECURRING — no workflow changes applied) |
 | 13 | LOW | Note | shields.io star verification blocked (empty response from proxy); MCP GitHub search_repositories used instead — returns live stargazers_count from GitHub API; all 11 repos verified | COMPLETE (RECURRING — verification method adapted; MCP search is authoritative for this session) |
+
+---
+
+## [2026-07-03 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 244k to 245k (MCP GitHub: 244,637 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 153k to 155k (MCP GitHub: 154,558 exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update agent-skills ★ from 61k to 69k (MCP GitHub: 68,632 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update Compound Engineering ★ from 22k to 23k (MCP GitHub: 22,510 exact) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Sort Order | Moved agent-skills (69k) above Get Shit Done (65k) — new order: Superpowers 245k > ECC 225k > Matt Pocock 155k > gstack 119k > Spec Kit 117k > agent-skills 69k > GSD 65k > OpenSpec 58k > BMAD 50k > omc 37k > CE 23k > HumanLayer 11k | COMPLETE (NEW — position swap applied to README table) |
+| 6 | MED | Workflow | Update OpenSpec workflow from 9-step to 4-step: /opsx:explore → /opsx:propose → /opsx:apply → /opsx:archive (June 23 breaking change replaced workspaces/initiatives with "stores" abstraction; new canonical happy path confirmed by Agent 2) | COMPLETE (NEW — workflow updated in README table) |
+| 7 | MED | Workflow | Update oh-my-claudecode workflow from team-* pattern to: setup → ultragoal → autopilot → delegate(sub) → execute(sub) → verify(sub) (v4.15.1 released June 27; Agent 2 traced new canonical flow) | COMPLETE (NEW — workflow updated in README table) |
+| 8 | MED | Workflow | Update Compound Engineering workflow from 8-step to 6-step: /ce-brainstorm → /ce-plan → /ce-work(sub) → /ce-simplify-code(sub) → /ce-code-review → /ce-compound (July 1 release; ce-strategy/ce-ideate/ce-product-pulse removed from canonical path; Agent 2 confirmed) | COMPLETE (NEW — workflow updated in README table) |
+| 9 | MED | Count | Update oh-my-claudecode skills from 40 to 47 (Agent 2: two page fetches returned 46 and 47; active repo v4.15.1; not on ON HOLD list; using 47 as most recent fetch) | COMPLETE (NEW — updated README table) |
+| 10 | LOW | No Change | ECC 225k, gstack 119k, Spec Kit 117k, GSD 65k, OpenSpec 58k, BMAD 50k, oh-my-claudecode 37k, HumanLayer 11k — all stars unchanged (MCP GitHub verified) | COMPLETE (verified via MCP GitHub search_repositories) |
+| 11 | LOW | Count Verify | ECC agents 67, commands 84 — recurring methodology conflict (agent finds higher counts vs 67/84 self-report) | ON HOLD (RECURRING — keeping 67 agents, 84 commands) |
+| 12 | LOW | Count Verify | GSD commands 67 — Agent 2 found 94; repo archived June 26, 2026 (read-only); frozen at last confirmed count | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 13 | LOW | Count Verify | BMAD skills 42 — Agent 2 found 44 (31 bmm-skills + 13 core-skills); oscillating range across 20+ runs; README claims "12+" agents (floor 6 confirmed) | ON HOLD (RECURRING — keeping 6 agents, 42 skills) |
+| 14 | LOW | Count Verify | gstack skills 53 — Agent 2 found 47 (README states "47 primary skills"); Jun 28 confirmed 53; recurring oscillation | ON HOLD (RECURRING — keeping 53) |
+| 15 | LOW | Count Verify | OpenSpec commands 11 — Agent 2 found 10; Jun 4 explicit enumeration confirmed 11; June 23 breaking change may have removed 1 | ON HOLD (RECURRING — keeping 11 per Jun 4 explicit count) |
+| 16 | LOW | Count Verify | HumanLayer commands 27 — Agent 2 found 34 (27 explicit + 7 not fully enumerated); repo "pretty much all deprecated" per README | ON HOLD (NEW — partial enumeration; keeping 27 until confident full count) |
+| 17 | LOW | Workflow | Superpowers workflow unchanged — agent proposals rejected (RECURRING from 20+ runs) | ON HOLD (RECURRING — keeping Jun 22 confirmed 12-step pipeline) |
+| 18 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (returns live stargazers_count) | COMPLETE (RECURRING — MCP verification method authoritative) |
