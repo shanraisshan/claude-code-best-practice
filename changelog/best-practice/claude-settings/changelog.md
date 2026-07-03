@@ -994,3 +994,19 @@
 | 10 | LOW | MCP Security | Add v2.1.196 `.mcp.json` self-approval security hardening note to `enableAllProjectMcpServers` description | ✅ COMPLETE (security note added to `enableAllProjectMcpServers` description in MCP Settings table) — NEW |
 | 11 | LOW | Model Alias | Update `"sonnet"` alias to point to Claude Sonnet 5 per v2.1.197 changelog | ✋ ON HOLD (claude-code-guide agent returned `claude-sonnet-4-6` contradicting workflow-claude-settings-agent finding; per Rule 8A skipping until confirmed by official settings docs) — NEW |
 | 12 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 45+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+
+---
+
+## [2026-07-03 10:42 AM PKT] Claude Code v2.1.199
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.197 → v2.1.199 and header "As of v2.1.197" → "As of v2.1.199" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Model Alias | Update `"sonnet"` alias to point to Claude Sonnet 5 on the Anthropic API (native 1M-token context, v2.1.197); Claude Sonnet 4.6 on Bedrock/Vertex/Foundry | ✅ COMPLETE (Model Aliases table updated; both agents confirm Sonnet 5 this run) — RECURRING (first seen 2026-07-01 #11) |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_AFK_TIMEOUT_MS` (v2.1.198) — AskUserQuestion dialog auto-continue timeout (default 60000ms) | ✅ COMPLETE (added after `CLAUDE_CODE_CONNECT_TIMEOUT_MS`) — NEW |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_AFK_COUNTDOWN_MS` (v2.1.198) — countdown display delay before auto-continue (default 20000ms) | ✅ COMPLETE (added after `CLAUDE_AFK_TIMEOUT_MS`) — NEW |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_BG_EXIT_HANDOFF` (v2.1.198) — prevent background task handoff when supervisor restarts | ✅ COMPLETE (added after `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP`) — NEW |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS` (v2.1.198) — disable built-in Explore and Plan subagents | ✅ COMPLETE (added after `CLAUDE_CODE_DISABLE_AGENT_VIEW`) — NEW |
+| 7 | HIGH | Missing Env Var | Add `CLAUDE_CODE_BRIDGE_SESSION_ID` (v2.1.199) — read-only Remote Control session ID in Bash/hook subprocesses | ✅ COMPLETE (added after `CLAUDE_CODE_REMOTE_SESSION_ID`) — NEW |
+| 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 46+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 9 | LOW | Unconfirmed Env Var | `CLAUDE_CODE_RETRY_WATCHDOG` — flagged by workflow agent at 0.85 confidence but NOT found on official env-vars page per Rule 8A | ✋ ON HOLD (not on official env-vars page; will re-check next run) — NEW |
