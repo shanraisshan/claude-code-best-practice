@@ -571,3 +571,11 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-07-02 11:06 AM PKT] Claude Code v2.1.198
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 86 built-in commands).
+
+---
+
+## [2026-07-03 11:06 AM PKT] Claude Code v2.1.199
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/agents` — behavior changed in v2.1.198: now prints a reminder to ask Claude or edit `.claude/agents/`/`~/.claude/agents/` directly, rather than opening an interactive management UI | ✅ COMPLETE (updated description at #38 in Extensions tag) |
