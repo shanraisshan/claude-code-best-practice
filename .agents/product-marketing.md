@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-*Last updated: 2026-07-03*
+*Last updated: 2026-07-04*
 
 ## Product Overview
 **One-liner:** From vibe coding to agentic engineering — practice makes Claude perfect.
@@ -107,4 +107,4 @@
 
 ---
 
-*Note: This document was auto-drafted from the repo's README and has not yet been reviewed/corrected by the maintainer. Run `/product-marketing` to refine it.*
+*Reviewed and confirmed by the maintainer on 2026-07-04. Run `/product-marketing` to update.*
