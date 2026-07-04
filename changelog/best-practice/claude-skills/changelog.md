@@ -425,3 +425,11 @@ No drift detected — frontmatter fields (16) and bundled skills (11) are fully 
 ## [2026-07-03 10:03 AM PKT] Claude Code v2.1.199
 
 No drift detected — frontmatter fields (16) and bundled skills (12) are fully synchronized with official docs.
+
+---
+
+## [2026-07-04 10:03 AM PKT] Claude Code v2.1.201
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Factual Correction | Fix `dataviz` introduced version in bundled skills table — report says v2.1.187 but official changelog and commands reference both say v2.1.198 | ✅ COMPLETE (corrected introduced version v2.1.187 → v2.1.198 in row 12 of bundled skills table) |
