@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2003%2C%202026%2010%3A42%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.199-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2004%2C%202026%2010%3A47%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.201-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.199, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.201, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -122,6 +122,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 | `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`, `fable`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+ |
 | `respondToBashCommands` | boolean | `true` | Whether Claude automatically responds after a `!` shell command completes. Set to `false` to disable the automatic follow-up response when a `!` bash command finishes (v2.1.186) |
+| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Ask user question timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. (v2.1.200) |
 
 **Example:**
 ```json
@@ -206,7 +207,7 @@ Scripts for dynamic authentication token generation.
 
 | Key | Type | Description |
 |-----|------|-------------|
-| `apiKeyHelper` | string | Shell script path that outputs auth token (sent as `X-Api-Key` header) |
+| `apiKeyHelper` | string | Shell script path that outputs auth token (sent as both `X-Api-Key` and `Authorization: Bearer` headers) |
 | `forceLoginMethod` | string | Restrict login to `"claudeai"`, `"console"`, or `"gateway"` accounts. Use `"gateway"` for organization-managed Claude gateway deployments. **(Managed only)** |
 | `forceLoginOrgUUID` | string \| array | Require login to belong to a specific organization. Accepts a single UUID string (which also pre-selects that organization during login) or an array of UUIDs where any listed organization is accepted without pre-selection. When set in managed settings, login fails if the authenticated account does not belong to a listed organization; an empty array fails closed and blocks login with a misconfiguration message |
 | `forceLoginGatewayUrl` | string | **(Managed only)** Pre-fill the Claude gateway URL on the login screen when `forceLoginMethod` is `"gateway"`. Avoids requiring users to manually enter the gateway URL. Typically set alongside `forceLoginMethod: "gateway"` |
@@ -269,7 +270,7 @@ Control what tools and operations Claude can perform.
 | `permissions.ask` | array | Rules requiring user confirmation |
 | `permissions.deny` | array | Rules blocking tool use (highest precedence) |
 | `permissions.additionalDirectories` | array | Extra directories Claude can access |
-| `permissions.defaultMode` | string | Default permission mode. In Remote environments, only `acceptEdits` and `plan` are honored (v2.1.70+) |
+| `permissions.defaultMode` | string | Default permission mode. Valid values: `"default"`, `"manual"` (alias for `"default"`, v2.1.200), `"acceptEdits"`, `"dontAsk"`, `"bypassPermissions"`, `"auto"`, `"plan"`. In Remote environments, only `acceptEdits` and `plan` are honored (v2.1.70+) |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
 | `permissions.skipDangerousModePermissionPrompt` | boolean | Skip the confirmation prompt shown before entering bypass permissions mode via `--dangerously-skip-permissions` or `defaultMode: "bypassPermissions"`. Ignored when set in project settings (`.claude/settings.json`) to prevent untrusted repositories from auto-bypassing the prompt |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
@@ -282,6 +283,7 @@ Control what tools and operations Claude can perform.
 | Mode | Behavior |
 |------|----------|
 | `"default"` | Standard permission checking with prompts |
+| `"manual"` | Alias for `"default"` introduced in v2.1.200 — same standard permission checking with prompts. The rename improves clarity across the CLI, VS Code, and JetBrains UIs. Accepted wherever `"default"` is accepted |
 | `"acceptEdits"` | Automatically accepts file edits **and common filesystem commands** (`mkdir`, `touch`, `mv`, `cp`, etc.) for paths in the working directory or `additionalDirectories`. **v2.1.160:** Always prompts before writing build-tool config files that grant code execution (`.npmrc`, `.yarnrc*`, `bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`, etc.) and before writing to shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) and `~/.config/git/` |
 | `"dontAsk"` | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
 | `"bypassPermissions"` | Skip all permission checks (dangerous). All path-based prompts are skipped — writes to `.git`, `.config/git`, `.claude`, `.vscode`, `.idea`, `.husky`, `.cargo`, `.devcontainer`, `.yarn`, and `.mvn` no longer prompt (**v2.1.121** exempted `.claude/commands/`, `.claude/agents/`, `.claude/skills/`, and `.claude/worktrees/`; **v2.1.126** removed all remaining path-based prompts). Only removals targeting the filesystem root or home directory (`rm -rf /`, `rm -rf ~`) still prompt as a circuit breaker against model error |
@@ -912,7 +914,7 @@ Set environment variables for all Claude Code sessions.
 | `API_TIMEOUT_MS` | Timeout in ms for API requests (default: 600000) |
 | `API_FORCE_IDLE_TIMEOUT` | Override the 5-minute idle timeout for streaming connections. Set to `0` to disable the idle timeout entirely, `1` to enforce it on all connections, or leave unset for the default (auto-enabled on slow or unreliable gateways that frequently stall). Useful for slow API gateways (v2.1.169) |
 | `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | Timeout in milliseconds for the connect, TLS, and response-header phase of a streaming API request (default: `60000` / 60 seconds). If no response headers arrive within this window, the request is aborted and retried. Set to `0` to disable and rely on `API_TIMEOUT_MS` alone |
-| `CLAUDE_AFK_TIMEOUT_MS` | How many milliseconds of idle time before an unanswered AskUserQuestion dialog auto-continues without you (default: `60000` / 60 seconds). To keep questions open while away, set a large value such as `86400000` (24 hours). Setting to `0` closes the dialog immediately (does not disable the timeout) (v2.1.198) |
+| `CLAUDE_AFK_TIMEOUT_MS` | How many milliseconds before an unanswered AskUserQuestion dialog auto-continues, when `askUserQuestionTimeout` is set to a duration. As of v2.1.200, the default is `"never"` (no auto-continue) controlled by `askUserQuestionTimeout`; this env var applies only when a timeout duration is active. Setting to `0` closes the dialog immediately. To keep questions open, prefer `askUserQuestionTimeout: "never"` (v2.1.198; default changed v2.1.200) |
 | `CLAUDE_AFK_COUNTDOWN_MS` | How many milliseconds before auto-continue the on-screen countdown appears on an unanswered AskUserQuestion dialog (default: `20000` / 20 seconds) (v2.1.198) |
 | `BASH_MAX_TIMEOUT_MS` | Bash command timeout |
 | `BASH_MAX_OUTPUT_LENGTH` | Max bash output length |
