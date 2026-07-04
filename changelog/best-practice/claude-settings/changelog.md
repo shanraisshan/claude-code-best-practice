@@ -1010,3 +1010,17 @@
 | 7 | HIGH | Missing Env Var | Add `CLAUDE_CODE_BRIDGE_SESSION_ID` (v2.1.199) — read-only Remote Control session ID in Bash/hook subprocesses | ✅ COMPLETE (added after `CLAUDE_CODE_REMOTE_SESSION_ID`) — NEW |
 | 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 46+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
 | 9 | LOW | Unconfirmed Env Var | `CLAUDE_CODE_RETRY_WATCHDOG` — flagged by workflow agent at 0.85 confidence but NOT found on official env-vars page per Rule 8A | ✋ ON HOLD (not on official env-vars page; will re-check next run) — NEW |
+
+---
+
+## [2026-07-04 10:47 AM PKT] Claude Code v2.1.201
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.199 → v2.1.201 and header "As of v2.1.199" → "As of v2.1.201" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `askUserQuestionTimeout` to General Settings table — string, default `"never"`, values `"60s"/"5m"/"10m"/"never"`. Controls auto-continue behavior for unanswered AskUserQuestion dialogs. Confirmed on official settings page (v2.1.200) | ✅ COMPLETE (added after `respondToBashCommands` in General Settings table) — NEW |
+| 3 | HIGH | New Permission Mode | Add `"manual"` alias row to Permission Modes table and update `permissions.defaultMode` description — v2.1.200 introduced `"manual"` as an alias for `"default"` for UI clarity across CLI, VS Code, and JetBrains. Confirmed in v2.1.200 changelog | ✅ COMPLETE (added to Permission Modes table; defaultMode description updated) — NEW |
+| 4 | MED | Changed Description | Update `CLAUDE_AFK_TIMEOUT_MS` — v2.1.200 changed the default behavior: AskUserQuestion dialogs no longer auto-continue by default (`askUserQuestionTimeout: "never"` is the new default). `CLAUDE_AFK_TIMEOUT_MS` now applies only when `askUserQuestionTimeout` is explicitly set to a duration | ✅ COMPLETE (description updated to clarify v2.1.200 semantics) — NEW |
+| 5 | LOW | Changed Description | Update `apiKeyHelper` — description said only `X-Api-Key`; official docs confirm the script output is also sent as `Authorization: Bearer` header. Completed. | ✅ COMPLETE (description updated in Authentication Helpers table) — NEW |
+| 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 47+ consecutive runs | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
+| 7 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official env-vars page per Rule 8A verification | ✋ ON HOLD (recurring from 2026-07-03 v2.1.199) |
