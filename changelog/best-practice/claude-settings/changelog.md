@@ -1024,3 +1024,12 @@
 | 5 | LOW | Changed Description | Update `apiKeyHelper` — description said only `X-Api-Key`; official docs confirm the script output is also sent as `Authorization: Bearer` header. Completed. | ✅ COMPLETE (description updated in Authentication Helpers table) — NEW |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 47+ consecutive runs | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
 | 7 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official env-vars page per Rule 8A verification | ✋ ON HOLD (recurring from 2026-07-03 v2.1.199) |
+
+---
+
+## [2026-07-05 10:45 AM PKT] Claude Code v2.1.201
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 48+ consecutive runs; entry annotated "(in v2.1.85 changelog, not yet on official env-vars page)" | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
+| 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official env-vars page per Rule 8A verification | ✋ ON HOLD (recurring from 2026-07-03 v2.1.199) |
