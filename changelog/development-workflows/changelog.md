@@ -1306,3 +1306,21 @@
 | 16 | LOW | Count Verify | oh-my-claudecode skills 47 — agent finds 40 via SKILL.md search; Jul 3 set to 47 as COMPLETE; recurring oscillation | ON HOLD (RECURRING — keeping 47) |
 | 17 | LOW | Workflow | Superpowers workflow unchanged — agent proposals rejected (RECURRING from 20+ runs) | ON HOLD (RECURRING — keeping Jun 22 confirmed 12-step pipeline) |
 | 18 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (returns live stargazers_count) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-05 09:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ from 156k to 157k (MCP GitHub: 156,704 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | LOW | No Change | Superpowers 246k, ECC 226k, gstack 119k, Spec Kit 118k, GSD 65k, OpenSpec 59k, BMAD 50k, oh-my-claudecode 37k, Compound Engineering 23k, HumanLayer 11k — all stars unchanged (MCP GitHub verified) | COMPLETE (verified via MCP GitHub search_repositories) |
+| 3 | LOW | Count Verify | ECC agents 67, commands 84 — recurring methodology conflict | ON HOLD (RECURRING — keeping 67 agents, 84 commands) |
+| 4 | LOW | Count Verify | GSD commands 67 — repo archived; frozen at last confirmed count | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 5 | LOW | Count Verify | BMAD skills 42 — oscillating range across runs; keeping established value | ON HOLD (RECURRING — keeping 6 agents, 42 skills) |
+| 6 | LOW | Count Verify | gstack skills 53 — agent finds 47; recurring oscillation vs 53 established Jun 28 | ON HOLD (RECURRING — keeping 53) |
+| 7 | LOW | Count Verify | OpenSpec commands 11 — agent finds 10; Jun 4 explicit enumeration confirmed 11 | ON HOLD (RECURRING — keeping 11 per Jun 4 explicit count) |
+| 8 | LOW | Count Verify | HumanLayer commands 27 — partial enumeration; keeping 27 until confident full count | ON HOLD (RECURRING — keeping 27) |
+| 9 | LOW | Count Verify | oh-my-claudecode skills 47 — agent finds fewer via SKILL.md search; keeping Jul 3 confirmed 47 | ON HOLD (RECURRING — keeping 47) |
+| 10 | LOW | Workflow | Superpowers workflow unchanged — agent proposals rejected (RECURRING from 20+ runs) | ON HOLD (RECURRING — keeping Jun 22 confirmed 12-step pipeline) |
+| 11 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (returns live stargazers_count) | COMPLETE (RECURRING — MCP verification method authoritative) |
