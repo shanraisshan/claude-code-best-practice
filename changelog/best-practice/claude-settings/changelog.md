@@ -1033,3 +1033,12 @@
 |---|----------|------|--------|--------|
 | 1 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 48+ consecutive runs; entry annotated "(in v2.1.85 changelog, not yet on official env-vars page)" | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
 | 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official env-vars page per Rule 8A verification | ✋ ON HOLD (recurring from 2026-07-03 v2.1.199) |
+
+---
+
+## [2026-07-06 10:43 AM PKT] Claude Code v2.1.201
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Suspect Key Resolution | `OTEL_LOG_TOOL_DETAILS` — Rule 10B escalation at 49 consecutive ON HOLD runs: resolved. Variable IS already in report at line 1076 annotated "(in v2.1.85 changelog, not yet on official env-vars page)". Recurring action "Add to env vars table" was a false positive — variable added and annotated in an earlier run. Official /en/env-vars page still does not list it | ❌ INVALID (already in report with correct annotation; no action needed — RECURRING 49 runs) |
+| 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official env-vars page per Rule 8A and live /en/env-vars verification this run | ✋ ON HOLD (4 consecutive runs; escalation threshold is 5 — recurring from 2026-07-03 v2.1.199) |
