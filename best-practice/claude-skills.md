@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jun%2029%2C%202026%2010%3A07%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.195-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2007%2C%202026%2010%3A03%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.202-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -37,7 +37,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(10)**
+## ![Official](../!/tags/official.svg) **(12)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -51,6 +51,8 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 8 | `verify` | Build and run the app to confirm a code change does what it should, without falling back to tests or type checks. Requires v2.1.145 |
 | 9 | `run-skill-generator` | Teaches `/run` and `/verify` how to build and launch the project — records a per-project launch recipe at `.claude/skills/run-<name>/`. Requires v2.1.145 |
 | 10 | `simplify` | Review changed code for cleanup opportunities (reuse, simplification, efficiency, abstraction level), four review agents in parallel. From v2.1.154 it does **not** hunt for correctness bugs — use `/code-review` for that |
+| 11 | `design-sync` | Convert React design system components to Claude Design format and upload. Supports optional name argument (e.g., `/design-sync Acme DS`). First-time sync verifies all components (can be slow on large repos). Available on Anthropic API only — unavailable on Bedrock, Google Cloud Agent Platform, or Microsoft Foundry. Introduced v2.1.196 |
+| 12 | `dataviz` | Design charts, graphs, and dashboards with a validated color-palette system for accessible, consistent visualizations across light and dark themes. Introduced v2.1.198 |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
