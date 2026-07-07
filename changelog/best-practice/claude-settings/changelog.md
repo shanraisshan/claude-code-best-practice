@@ -1042,3 +1042,15 @@
 |---|----------|------|--------|--------|
 | 1 | LOW | Suspect Key Resolution | `OTEL_LOG_TOOL_DETAILS` — Rule 10B escalation at 49 consecutive ON HOLD runs: resolved. Variable IS already in report at line 1076 annotated "(in v2.1.85 changelog, not yet on official env-vars page)". Recurring action "Add to env vars table" was a false positive — variable added and annotated in an earlier run. Official /en/env-vars page still does not list it | ❌ INVALID (already in report with correct annotation; no action needed — RECURRING 49 runs) |
 | 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official env-vars page per Rule 8A and live /en/env-vars verification this run | ✋ ON HOLD (4 consecutive runs; escalation threshold is 5 — recurring from 2026-07-03 v2.1.199) |
+
+---
+
+## [2026-07-07 10:44 AM PKT] Claude Code v2.1.202
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.201 → v2.1.202 and header "As of v2.1.201" → "As of v2.1.202" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_NOTIFICATION_PRESENCE_CHECK` — set to `1` to send push notifications regardless of active user presence. Confirmed on official /en/env-vars page (v2.1.193). Added after `CLAUDE_CLIENT_PRESENCE_FILE` | ✅ COMPLETE (added after `CLAUDE_CLIENT_PRESENCE_FILE`) — NEW |
+| 3 | HIGH | Suspect Key Resolution (Rule 10B) | `CLAUDE_CODE_RETRY_WATCHDOG` — 5 consecutive ON HOLD runs; Rule 10B escalation threshold reached. Key confirmed in v2.1.199 changelog but NOT on official /en/env-vars page. Resolved by adding with annotation "*(in v2.1.199 changelog, not on official env-vars page)*" after `CLAUDE_CODE_MAX_RETRIES` | ✅ COMPLETE (added with changelog-only annotation) — RECURRING (5 runs) |
+| 4 | LOW | Unconfirmed Setting | "Dynamic workflow size" feature (v2.1.202 changelog) — exact `settings.json` key unconfirmed on official settings page per Rule 8A | ✋ ON HOLD (new; awaiting official settings page confirmation) |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 50+ consecutive runs; entry annotated "(in v2.1.85 changelog, not yet on official env-vars page)" | ✋ ON HOLD (recurring from 2026-04-14 v2.1.107) |
