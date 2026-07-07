@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-07 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (128k = 128,251) | INVALID (no change required; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents unchanged (235 = 235; per-division enumeration confirmed; healthcare division stable; RECURRING) | INVALID (no change required) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23k = 22,968) | INVALID (no change required; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → ~154 (−2; conf 0.82; badge 154; no new agent files Jun 24–Jul 7; 6 unverified categories; true count likely 150-156) | INVALID (RECURRING ±2 oscillation; 22+ consecutive INVALID rulings; no confirmed net removal; no change) |
+| 5 | LOW | Sort | Verify sort order (128k > 23k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-06 08:47 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
