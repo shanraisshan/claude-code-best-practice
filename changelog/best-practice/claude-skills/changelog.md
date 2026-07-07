@@ -397,3 +397,25 @@ No drift detected — frontmatter fields (16) and bundled skills (10) are fully 
 ## [2026-06-29 10:07 AM PKT] Claude Code v2.1.195
 
 No drift detected — frontmatter fields (16) and bundled skills (10) are fully synchronized with official docs.
+
+---
+
+## [2026-06-30 10:07 AM PKT] Claude Code v2.1.196
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Skill | Add `design-sync` to official bundled skills table — converts React design system and uploads to Claude Design; supports optional name argument (e.g., `/design-sync Acme DS`); first-time sync verifies all components (can take hours on large repos); available on Anthropic API only (unavailable on Bedrock, Google Cloud Agent Platform, Microsoft Foundry). Count updated 10→11 | ✅ COMPLETE (added as row 11, count updated 10→11) |
+
+---
+
+## [2026-07-02 10:03 AM PKT] Claude Code v2.1.198
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Skill | Add `dataviz` to official bundled skills table — design charts, graphs, and dashboards with a color-palette validator for accessible, consistent visualizations; introduced in v2.1.198. Count updated 11→12 | ✅ COMPLETE (added as row 12, count updated 11→12) |
+
+---
+
+## [2026-07-07 10:03 AM PKT] Claude Code v2.1.202
+
+No drift detected — frontmatter fields (16) and bundled skills (12) are fully synchronized with official docs.
