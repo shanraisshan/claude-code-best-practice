@@ -1356,3 +1356,23 @@
 | 23 | LOW | Count Verify | HumanLayer commands 27 — partial enumeration; keeping 27 until confident full count | ON HOLD (RECURRING — keeping 27) |
 | 24 | LOW | Count Verify | oh-my-claudecode skills 47 — agent finds fewer via SKILL.md search; Jul 3 confirmed 47 | ON HOLD (RECURRING — keeping 47) |
 | 25 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (returns live stargazers_count) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-07 09:26 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 247k to 248k (exact: 247,895 — rounds up; Agent 1 conf 0.95 via MCP search_repositories) | COMPLETE (NEW) |
+| 2 | HIGH | Star | Update ECC ★ from 226k to 227k (exact: 226,724 — rounds up; Agent 1 conf 0.95 via MCP search_repositories) | COMPLETE (NEW) |
+| 3 | HIGH | Star | Update Matt Pocock ★ from 158k to 159k (exact: 158,893 — rounds up; Agent 1 conf 0.95 via MCP search_repositories) | COMPLETE (NEW) |
+| 4 | HIGH | Count | Update oh-my-claudecode skills from 47 to 40 (7 skills removed; repo pushed July 7, 2026 — today; Agent 2 conf 0.93 via code search total_count: 40) | COMPLETE (RESOLVED — Jul 6 ON HOLD resolved; July 7 push confirms active removal; skills count definitively 40) |
+| 5 | MED | Count Verify | ECC commands 84→93 (Agent 1 full A-Z listing finds 93; no commits since July 4 so count was 93 pre-baseline too; implies July 6 baseline of 84 was undercount) | ON HOLD (RECURRING from 37th+ consecutive run — directory count 93 vs v2.0.0 self-report 84; keeping 84 per established convention until definitive resolution) |
+| 6 | LOW | No Change | Spec Kit ★118k 0/10/0, gstack ★120k 0/0/53, GSD ★65k 33/67/0, OpenSpec ★59k 0/11/0, BMAD ★50k 8/0/42, CE ★23k 0/1/29, HumanLayer ★11k 6/27/0 — all unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 7 | LOW | Count Verify | GSD commands 67 — repo archived May 31, 2026; frozen at last confirmed count; GitHub code search returns 0 (indexing limitation on archived repos) | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 8 | LOW | Count Verify | BMAD skills 42 — code search inconclusive; 6 bmad-agent-* SKILL.md files confirmed by Agent 2 but baseline 8 kept; skills oscillating range | ON HOLD (RECURRING — keeping 42 skills, 8 agents per established methodology) |
+| 9 | LOW | Count Verify | gstack skills 53 — Agent 2 confirmed via code search (53 subdirectory SKILL.md files excl. root router); matches baseline | COMPLETE (RECURRING — confirmed at 53) |
+| 10 | LOW | Count Verify | OpenSpec commands 11 — npm-embedded architecture; code search returns 0 for .claude/commands/; Jun 4 explicit enumeration of 11 from docs/commands.md still authoritative | ON HOLD (RECURRING — keeping 11 per Jun 4 explicit count) |
+| 11 | LOW | Count Verify | HumanLayer commands 27 — last push June 19, 2026; counts stable; Agent 2 conf 0.95 enumerating 27 command files confirmed | COMPLETE (RECURRING — keeping 27, confirmed) |
+| 12 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 248k > ECC 227k > Matt Pocock 159k > gstack 120k > Spec Kit 118k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 59k > BMAD 50k > omc 37k > CE 23k > HumanLayer 11k | COMPLETE (verified; all 3 star increases stay in same relative positions) |
+| 13 | LOW | Note | shields.io and api.github.com Bash curl both blocked by proxy; MCP GitHub search_repositories used for all star verification | COMPLETE (RECURRING — MCP verification method authoritative) |
