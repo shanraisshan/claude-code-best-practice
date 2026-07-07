@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2006%2C%202026%2011%3A07%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.201-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2007%2C%202026%2011%3A07%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.202-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -98,7 +98,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | 55 | `/add-dir <path>` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Add a working directory for file access during the current session. Most `.claude/` configuration is not discovered from the added directory |
 | 56 | `/diff` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files |
 | 57 | `/init` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Initialize project with a `CLAUDE.md` guide. Set `CLAUDE_CODE_NEW_INIT=1` for an interactive flow that also walks through skills, hooks, and personal memory files |
-| 58 | `/review [PR]` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Review a GitHub pull request by number, using the same review engine as `/code-review`. With no arguments, lists open PRs |
+| 58 | `/review [PR]` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Review a GitHub pull request by number with a fast, single-pass review. For a deeper review, use `/code-review`. With no arguments, lists open PRs |
 | 59 | `/security-review` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Analyze pending changes on the current branch for security vulnerabilities. Reviews the git diff and identifies risks like injection, auth issues, and data exposure |
 | 60 | `/team-onboarding` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide. For claude.ai subscribers on Pro, Max, Team, and Enterprise plans, also returns a share link teammates can open directly in Claude Code |
 | 61 | `/ultrareview [PR]` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Run a deep, multi-agent code review in a cloud sandbox. The preferred invocation is `/code-review ultra`; `/ultrareview` remains as an alias. Includes 3 free runs on Pro and Max, then requires usage credits |
