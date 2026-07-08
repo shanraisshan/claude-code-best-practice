@@ -1376,3 +1376,21 @@
 | 11 | LOW | Count Verify | HumanLayer commands 27 — last push June 19, 2026; counts stable; Agent 2 conf 0.95 enumerating 27 command files confirmed | COMPLETE (RECURRING — keeping 27, confirmed) |
 | 12 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 248k > ECC 227k > Matt Pocock 159k > gstack 120k > Spec Kit 118k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 59k > BMAD 50k > omc 37k > CE 23k > HumanLayer 11k | COMPLETE (verified; all 3 star increases stay in same relative positions) |
 | 13 | LOW | Note | shields.io and api.github.com Bash curl both blocked by proxy; MCP GitHub search_repositories used for all star verification | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-08 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 248k to 249k (exact: 248,908; Agent 1 via MCP search_repositories) | COMPLETE (NEW) |
+| 2 | HIGH | Star | Update Matt Pocock ★ from 159k to 160k (exact: 160,041; Agent 1 via MCP search_repositories) | COMPLETE (NEW) |
+| 3 | HIGH | Star | Update Spec Kit ★ from 118k to 119k (exact: 118,632; Agent 1 via MCP search_repositories) | COMPLETE (NEW) |
+| 4 | HIGH | Star | Update oh-my-claudecode ★ from 37k to 38k (exact: 37,536 — crossed 37.5k threshold; Agent 2 via MCP search_repositories) | COMPLETE (NEW) |
+| 5 | HIGH | Count | Update ECC commands from 84 to 139 (Agent 1 exhaustive: 139 .md files in root commands/, 0 subfolders; no commits since Jul 6; prior 84 was undercounting root commands/ vs .claude/commands/ confusion) | COMPLETE (RESOLVED — 38th+ consecutive run finally resolved; exhaustive enumeration definitively 139) |
+| 6 | HIGH | Count | Update OpenSpec commands from 11 to 12 (new /opsx:update command merged Jul 7; profiles.ts CORE_WORKFLOWS now ['propose','explore','apply','update','sync','archive']; Agent 2 conf 0.93) | COMPLETE (RESOLVED — Jun 4 ON HOLD resolved by confirmed new command) |
+| 7 | HIGH | Count | Update BMAD agents from 8 to 6 (exhaustive search total_count=6 all returned: bmad-agent-analyst, bmad-agent-pm, bmad-agent-dev, bmad-agent-tech-writer, bmad-agent-architect, bmad-agent-ux-designer; prior 8 was measurement error; no removing commits found) | COMPLETE (NEW — prior 8 was measurement error, definitively 6) |
+| 8 | HIGH | Count | Update BMAD skills from 42 to 47 (exhaustive: 33 in src/bmm-skills + 14 in src/core-skills = 47; definitively above oscillating range 37-46; full enumeration confirmed by code search total_count) | COMPLETE (RESOLVED — oscillating 37-46 range resolved by definitive enumeration at 47) |
+| 9 | LOW | No Change | ECC ★227k 67/139/277, gstack ★120k 0/0/53, GSD ★65k 33/67/0 (archived), OpenSpec ★59k 0/12/0, BMAD ★50k 6/0/47, CE ★23k 0/1/29, HumanLayer ★11k 6/27/0 — all unchanged (stars verified via MCP) | COMPLETE (verified) |
+| 10 | LOW | Count Verify | GSD commands 67 — archived May 31, 2026; frozen at last confirmed count | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 11 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 249k > ECC 227k > Matt Pocock 160k > gstack 120k > Spec Kit 119k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 59k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; all 4 star increases remain in same relative positions) |
