@@ -1394,3 +1394,18 @@
 | 9 | LOW | No Change | ECC ★227k 67/139/277, gstack ★120k 0/0/53, GSD ★65k 33/67/0 (archived), OpenSpec ★59k 0/12/0, BMAD ★50k 6/0/47, CE ★23k 0/1/29, HumanLayer ★11k 6/27/0 — all unchanged (stars verified via MCP) | COMPLETE (verified) |
 | 10 | LOW | Count Verify | GSD commands 67 — archived May 31, 2026; frozen at last confirmed count | ON HOLD (RECURRING — archived repo; keeping 67) |
 | 11 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 249k > ECC 227k > Matt Pocock 160k > gstack 120k > Spec Kit 119k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 59k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; all 4 star increases remain in same relative positions) |
+
+---
+
+## [2026-07-09 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 249k to 250k (MCP GitHub: 250,036 exact — crossed 250k milestone!) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 160k to 162k (MCP GitHub: 161,606 exact — 2k jump) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Workflow | Update Matt Pocock Skills workflow from 10-step to 11-step: to-prd renamed to-spec, to-issues renamed to-tickets, implement added between diagnosing-bugs and code-review (v1.1 released Jul 8 2026; Agent 1 conf 0.96; CHANGELOG confirmed renames and skill additions) | COMPLETE (NEW — v1.1 workflow confirmed by repo CHANGELOG) |
+| 4 | HIGH | Star | Update gstack ★ from 120k to 121k (MCP GitHub: 120,592 exact) | COMPLETE (RECURRING — updated README table) |
+| 5 | LOW | Sort Order | Sort order verified unchanged: Superpowers 250k > ECC 227k > Matt Pocock 162k > gstack 121k > Spec Kit 119k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 59k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; no re-sort needed) |
+| 6 | LOW | Count Verify | ECC commands 139→97 (Agent 1: 94 root commands/ labeled "legacy command shims" + 3 .claude/commands/; README updated "legacy" label but no deletion commits found; methodology conflict continues vs Jul 8 RESOLVED baseline of 139) | ON HOLD (RECURRING from 39th+ run — keeping 139 per established convention) |
+| 7 | LOW | Count Verify | ECC skills 277→278+ (Agent 1: README now says "278+ skills"; below confidence threshold without full directory enumeration) | ON HOLD (keeping 277 until full enumeration confirms +1) |
+| 8 | LOW | Note | shields.io star verification blocked; MCP GitHub search_repositories used for all 3 changed repos (returns live stargazers_count; independently verified at 250,036 / 161,606 / 120,592 exact) | COMPLETE (RECURRING — MCP verification method authoritative) |
