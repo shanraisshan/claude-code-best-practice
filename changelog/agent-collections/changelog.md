@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-09 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | Update msitarzewski/agency-agents agents from 235 to 243 | COMPLETE (research conf 0.90; 40+ commits in 30 days; Jul 8: +5 new agents (FedRAMP/RMF, USWDS Dev, Section 508, WordPress Perf, Drupal Perf); Jul 7: +3 agents (Test Automation, i18n, Payments); +8 exceeds ±3 oscillation threshold; NEW — real change confirmed) |
+| 2 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 157 (+1) | INVALID (RECURRING ±1 oscillation; no new agent .md files in last 30 days — only sponsor/README maintenance commits; research conf 0.85; within oscillation threshold; no change) |
+| 3 | LOW | Star | msitarzewski/agency-agents ★ unchanged (129k = ~129,000) | INVALID (no change required; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23k = ~23,100) | INVALID (no change required; 23,100 rounds to 23k; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (129k > 23k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-08 08:44 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
