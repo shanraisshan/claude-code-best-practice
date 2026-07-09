@@ -1260,3 +1260,23 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 11 | LOW | Verification | Anchors stable: `#organize-rules-with-clauderules`, `#eliminate-prompts-with-auto-mode`, `#bundled-skills`, `#track-a-running-review`, `#run-a-bundled-workflow` | ✅ COMPLETE (all stable) |
 | 12 | LOW | Verification | Location Column Factual Accuracy (rule #8) — all Locations verified accurate; Bundled Skills partially incomplete (see #4) | ✅ COMPLETE (Locations accurate; one flagged as ON HOLD) |
 | 13 | LOW | Verification | Both agents cross-check — workflow-concepts-agent (188-page docs sweep, 44 concepts verified) and claude-code-guide (120+ features inventory) aligned; no contradictions; no NEW actionable findings beyond recurring ON HOLD items | ✅ COMPLETE (agents aligned; no NEW items) |
+
+---
+
+## [2026-07-09 09:42 AM PKT] Claude Code v2.1.205
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Stale URL (recurring) | Commands URL `/slash-commands` not in official sitemap — redirects to `/skills`; canonical commands reference is `/en/commands`; also TIPS references | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user has chosen to keep as-is across 60+ runs) |
+| 2 | MED | Missing Concept (recurring) | claude-code-guide agent flagged Desktop App, VS Code, JetBrains, Sessions, Context Window, Prompt Caching, Headless Mode as missing standalone rows | ❌ INVALID (RECURRING from 2026-03-10; user considers platform/runtime surfaces covered as Settings/Memory sub-links) |
+| 3 | MED | Stale Beta Badge (recurring) | Voice Dictation (`/en/voice-dictation`) — docs page contains NO beta/preview/experimental language; confidence 0.65 | ⏸️ ON HOLD (RECURRING from 2026-06-25; below 0.7 auto-apply threshold; requires user review) |
+| 4 | MED | Location Update (recurring) | Bundled Skills Location column lists `/code-review`, `/batch` but official docs enumerate 9+ bundled skills; confidence 0.70 | ⏸️ ON HOLD (RECURRING from 2026-06-27; which subset to display requires user judgement) |
+| 5 | MED | Stale Beta Badge (recurring) | Artifacts (`/en/artifacts`) — docs page contains NO beta/preview/experimental language; confidence 0.60 | ⏸️ ON HOLD (RECURRING from 2026-07-03; below 0.7 auto-apply threshold; requires user review) |
+| 6 | LOW | Verification | Latest version confirmed v2.1.205 via raw CHANGELOG.md — v2.1.205: auto mode rule blocking transcript tampering, JSON schema silent failures fix, message loss at turn limits fix, Windows worktree NTFS junction deletion fix; nothing CONCEPTS-worthy | ✅ COMPLETE (bug-fix release; no CONCEPTS drift) |
+| 7 | LOW | Verification | All 44 external CONCEPTS URLs validated against llms.txt sitemap — only recurring `/slash-commands` redirect flagged; all other URLs resolve correctly | ✅ COMPLETE (no NEW broken URLs) |
+| 8 | LOW | Verification | All 22+ local badge/link target files validated via Glob — `best-practice/` (8 files), `implementation/` (6 files), `reports/`, `.claude/`, `.mcp.json`, `CLAUDE.md`, `orchestration-workflow/` targets all exist | ✅ COMPLETE (no missing local files) |
+| 9 | LOW | Verification | Beta Badge Currency (rule #7) — 13 beta badges confirmed on docs pages; Voice Dictation ON HOLD (see #3); Artifacts ON HOLD (see #5) | ✅ COMPLETE (13 verified; 2 ON HOLD) |
+| 10 | LOW | Verification | Command rename scan (rule #9) — v2.1.205 CHANGELOG contains no command/skill renames or removals; `/code-review`, `/batch`, `/advisor`, `/dataviz` all current | ✅ COMPLETE (no rename drift) |
+| 11 | LOW | Verification | Anchors stable: `#organize-rules-with-clauderules`, `#eliminate-prompts-with-auto-mode`, `#bundled-skills`, `#track-a-running-review`, `#run-a-bundled-workflow` | ✅ COMPLETE (all stable) |
+| 12 | LOW | Verification | Location Column Factual Accuracy (rule #8) — all Locations verified accurate; Bundled Skills partially incomplete (see #4) | ✅ COMPLETE (Locations accurate; one flagged as ON HOLD) |
+| 13 | LOW | Verification | claude-code-guide agent (95+ concept inventory) corroborated existing CONCEPTS coverage; no contradictions; no NEW actionable findings beyond recurring ON HOLD items | ✅ COMPLETE (agent aligned; no NEW items) |
