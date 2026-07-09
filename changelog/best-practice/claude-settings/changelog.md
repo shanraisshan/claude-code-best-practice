@@ -1066,3 +1066,14 @@
 | 3 | LOW | Unconfirmed Setting | "Dynamic workflow size" feature (v2.1.202 changelog) — exact `settings.json` key unconfirmed on official settings page per Rule 8A | ✋ ON HOLD (RECURRING from 2026-07-07 v2.1.202; exact key not found on official settings page) |
 | 4 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; not yet on official page) |
 | 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 51+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 51+ consecutive runs) |
+
+---
+
+## [2026-07-09 10:47 AM PKT] Claude Code v2.1.205
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `dynamicWorkflowSize` to General Settings table. Raw changelog confirms: `v2.1.202: dynamicWorkflowSize (advisory guideline for workflow agent counts)` and `v2.1.205: dynamicWorkflowSize (small/medium/large for workflow agent counts)`. Type: string, values: `"small"`, `"medium"`, `"large"`. Inserted after `ultracode` row | ✅ COMPLETE (added to General Settings table; key confirmed in raw changelog — RECURRING from 2026-07-07 v2.1.202 ON HOLD, now resolved) |
+| 2 | HIGH | MCP Setting Change | Update reserved MCP server names callout (line ~382) to add `Claude Browser` and `Claude Preview` alongside existing `workspace`. Confirmed on official settings page and v2.1.205 changelog | ✅ COMPLETE (callout updated to list all three reserved names) — NEW |
+| 3 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; not yet on official page) |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 52+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 52+ consecutive runs) |
