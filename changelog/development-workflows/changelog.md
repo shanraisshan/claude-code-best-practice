@@ -1409,3 +1409,25 @@
 | 6 | LOW | Count Verify | ECC commands 139→97 (Agent 1: 94 root commands/ labeled "legacy command shims" + 3 .claude/commands/; README updated "legacy" label but no deletion commits found; methodology conflict continues vs Jul 8 RESOLVED baseline of 139) | ON HOLD (RECURRING from 39th+ run — keeping 139 per established convention) |
 | 7 | LOW | Count Verify | ECC skills 277→278+ (Agent 1: README now says "278+ skills"; below confidence threshold without full directory enumeration) | ON HOLD (keeping 277 until full enumeration confirms +1) |
 | 8 | LOW | Note | shields.io star verification blocked; MCP GitHub search_repositories used for all 3 changed repos (returns live stargazers_count; independently verified at 250,036 / 161,606 / 120,592 exact) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-10 09:22 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 250k to 251k (MCP GitHub: 251,028 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ from 227k to 228k (GitHub HTML: 228k confirmed; MCP GitHub API returns 422 for this repo) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update ECC skills from 277 to 278 (README explicitly states 278; dual-agent consensus — RESOLVED from Jul 9 ON HOLD item 7) | COMPLETE (RESOLVED — Jul 9 ON HOLD confirmed by both research agents independently) |
+| 4 | HIGH | Star | Update Matt Pocock Skills ★ from 162k to 163k (MCP GitHub: 163,314 exact) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update OpenSpec ★ from 59k to 60k (MCP GitHub: 59,633 exact — crosses 59.5k rounding threshold) | COMPLETE (RECURRING — updated README table) |
+| 6 | LOW | No Change | Spec Kit 119k 0/10/0, gstack 121k 0/0/53, GSD 65k archived 33/67/0, BMAD 50k 6/0/47, omc 38k 19/0/40, CE 23k 0/1/29, HumanLayer 11k 6/27/0 — all unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 7 | LOW | Sort Order | Sort order verified unchanged: Superpowers 251k > ECC 228k > Matt Pocock 163k > gstack 121k > Spec Kit 119k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 60k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (no re-sort needed) |
+| 8 | LOW | Count Verify | ECC commands 139→97 — agents find 94 root legacy shims + 3 .claude/commands/; README labels commands/ "94 legacy command shims"; keeping 139 per established convention | ON HOLD (RECURRING — keeping 139) |
+| 9 | LOW | Count Verify | GSD commands 67 — archived May 31, 2026; frozen at last confirmed count | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 10 | LOW | Count Verify | BMAD skills 47 — Agent 2 confirms 33 bmm-skills + 14 core-skills = 47; count unchanged and stable | COMPLETE (RECURRING — confirmed at 47) |
+| 11 | LOW | Count Verify | gstack skills 53 — Agent 2 confirms 53 SKILL.md subdirs; count unchanged | COMPLETE (RECURRING — confirmed at 53) |
+| 12 | LOW | Count Verify | OpenSpec commands 12 — Agent 2 confirms 12 /opsx:* commands; count unchanged | COMPLETE (RECURRING — confirmed at 12) |
+| 13 | LOW | Count Verify | HumanLayer commands 27 — Agent 2 confirms 27 command files; count unchanged | COMPLETE (RECURRING — confirmed at 27) |
+| 14 | LOW | Count Verify | oh-my-claudecode skills 40 — Agent 2 confirms 40 skills (set Jul 7 2026); count unchanged | COMPLETE (RECURRING — confirmed at 40) |
+| 15 | LOW | Note | shields.io Bash curl blocked; MCP GitHub search_repositories used for star verification: Superpowers 251,028; Matt Pocock 163,314; OpenSpec 59,633; ECC 228k from HTML (API 422 recurring) | COMPLETE (RECURRING — MCP verification method authoritative) |
