@@ -457,3 +457,11 @@ No drift detected — frontmatter fields (16) and bundled skills (12) are fully 
 ## [2026-07-09 10:03 AM PKT] Claude Code v2.1.205
 
 No drift detected — frontmatter fields (16) and bundled skills (12) are fully synchronized with official docs.
+
+---
+
+## [2026-07-10 10:02 AM PKT] Claude Code v2.1.206
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Skill | Add `doctor` to official bundled skills table — reclassified from built-in command to bundled skill in v2.1.205; the one bundled skill exempt from `disableBundledSkills`, stays typable even when that setting is on. Count updated 12→13 | ✅ COMPLETE (added as row 13, count updated 12→13) |
