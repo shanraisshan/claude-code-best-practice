@@ -1077,3 +1077,18 @@
 | 2 | HIGH | MCP Setting Change | Update reserved MCP server names callout (line ~382) to add `Claude Browser` and `Claude Preview` alongside existing `workspace`. Confirmed on official settings page and v2.1.205 changelog | ✅ COMPLETE (callout updated to list all three reserved names) — NEW |
 | 3 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; not yet on official page) |
 | 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 52+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 52+ consecutive runs) |
+
+---
+
+## [2026-07-10 10:48 AM PKT] Claude Code v2.1.206
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge v2.1.205 → v2.1.206 and header "As of v2.1.205" → "As of v2.1.206" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Changed Behavior | Mark `CLAUDE_CODE_CONNECT_TIMEOUT_MS` as REMOVED in v2.1.186 per official /en/env-vars page; strikethrough name, replace description with pointer to `API_TIMEOUT_MS` / `API_FORCE_IDLE_TIMEOUT` | ✅ COMPLETE (marked REMOVED in env vars table) — RECURRING (added 2026-06-21 v2.1.185 #2; removed in v2.1.186) |
+| 3 | MED | Missing Env Var | Add `ANTHROPIC_FOUNDRY_AUTH_TOKEN` — bearer token for Microsoft Foundry; takes precedence over `ANTHROPIC_FOUNDRY_API_KEY`; confirmed on official /en/env-vars page | ✅ COMPLETE (added after `ANTHROPIC_FOUNDRY_API_KEY`) — NEW |
+| 4 | MED | Stale Annotation | Remove "not yet on official env-vars page" annotation from `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP` — now confirmed on official /en/env-vars page | ✅ COMPLETE (annotation removed; version note retained as "(v2.1.193)") — RECURRING (first annotated 2026-06-26 v2.1.193 #4) |
+| 5 | MED | Stale Annotation | Remove "not on official env-vars page" annotation from `CLAUDE_CODE_RETRY_WATCHDOG` — now confirmed on official /en/env-vars page | ✅ COMPLETE (annotation removed; version note retained as "(v2.1.199)") — RECURRING (first seen 2026-07-03 v2.1.199 #9; Rule 10B escalation resolved) |
+| 6 | MED | Stale Annotation | Remove "not yet on official env-vars page" annotation from `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` — now confirmed on official /en/env-vars page | ✅ COMPLETE (annotation removed; version note retained as "(v2.1.195)") — RECURRING (first annotated 2026-06-29 v2.1.195 #1) |
+| 7 | MED | Stale Annotation | Remove "not yet on official env-vars page" annotation from `OTEL_LOG_ASSISTANT_RESPONSES` — now confirmed on official /en/env-vars page | ✅ COMPLETE (annotation removed; version note retained as "(v2.1.193)") — RECURRING (first annotated 2026-06-26 v2.1.193 #6) |
+| 8 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 53+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 53+ consecutive runs) |
