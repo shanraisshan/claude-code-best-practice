@@ -1431,3 +1431,25 @@
 | 13 | LOW | Count Verify | HumanLayer commands 27 — Agent 2 confirms 27 command files; count unchanged | COMPLETE (RECURRING — confirmed at 27) |
 | 14 | LOW | Count Verify | oh-my-claudecode skills 40 — Agent 2 confirms 40 skills (set Jul 7 2026); count unchanged | COMPLETE (RECURRING — confirmed at 40) |
 | 15 | LOW | Note | shields.io Bash curl blocked; MCP GitHub search_repositories used for star verification: Superpowers 251,028; Matt Pocock 163,314; OpenSpec 59,633; ECC 228k from HTML (API 422 recurring) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-11 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 251k to 252k (MCP GitHub: 251,886 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 163k to 165k (MCP GitHub: 164,808 exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update Matt Pocock Skills skills from 38 to 39 (setup-ts-deep-modules added Jul 10; Agent 1 conf 0.96 from explicit subdirectory enumeration: 17 engineering + 7 in-progress + 5 productivity + 4 misc + 4 deprecated + 2 personal = 39) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Workflow | Update OpenSpec workflow — correct stale command names from Jul 6 entry: replace new-change/apply-change/verify-change/archive-change with actual names /opsx:new → /opsx:ff(sub) → /opsx:apply → /opsx:verify → /opsx:archive (Agent 2 confirmed via docs/commands.md and skill-generation.ts; "new-change" suffix was fictional from Jul 6 run) | COMPLETE (RESOLVED from Jul 6 — naming correction applied; /opsx:ff fast-forward sub-loop added to pipeline) |
+| 5 | LOW | No Change | ECC 228k (API 422 recurring; stars-don't-fall rule: WebFetch shows stale README self-report of 211.9K+; keeping 228k confirmed Jul 10) | COMPLETE (RECURRING — stars-don't-fall rule applied) |
+| 6 | LOW | No Change | gstack 121k 0/0/53, Spec Kit 119k 0/10/0, GSD 65k archived 33/67/0, BMAD 50k 6/0/47, omc 38k 19/0/40, CE 23k 0/1/29, HumanLayer 11k 6/27/0 — all unchanged (Agent 2 confirmed each) | COMPLETE (verified) |
+| 7 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 252k > ECC 228k > Matt Pocock 165k > gstack 121k > Spec Kit 119k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 60k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 8 | LOW | Count Verify | ECC commands 139→94 (Agent 1: 94 root commands/ labeled "94 legacy command shims" by README; matches Jul 9/10 pattern; 40th+ consecutive lower count from directory enumeration vs Jul 8 RESOLVED 139 baseline) | ON HOLD (RECURRING from Apr 13–Jul 10 series; keeping 139 per established convention) |
+| 9 | LOW | Count Verify | GSD commands 67 — repo archived May 31, 2026; Agent 2 confirmed 67 via GitHub contents API; frozen at last confirmed count | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 10 | LOW | Count Verify | BMAD skills 47 — Agent 2 confirmed 33 bmm-skills + 14 core-skills = 47; count stable | COMPLETE (RECURRING — confirmed at 47) |
+| 11 | LOW | Count Verify | gstack skills 53 — Agent 2 confirmed Jul 7 count stable; no new skills added in recent releases | COMPLETE (RECURRING — confirmed at 53) |
+| 12 | LOW | Count Verify | OpenSpec commands 12 — Agent 2 confirmed 12 /opsx:* commands including /opsx:update (added Jul 7); count stable | COMPLETE (RECURRING — confirmed at 12) |
+| 13 | LOW | Count Verify | HumanLayer commands 27 — last push Jun 19 2026; Agent 2 confirmed 27 command files | COMPLETE (RECURRING — confirmed at 27) |
+| 14 | LOW | Count Verify | oh-my-claudecode skills 40 — Agent 2 confirmed 40 via search total_count (set Jul 7); v4.15.3 bug-fix release, no new skills | COMPLETE (RECURRING — confirmed at 40) |
+| 15 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for star verification (Superpowers 251,886; Matt Pocock 164,808 exact); ECC API 422 recurring — kept 228k via stars-don't-fall rule | COMPLETE (RECURRING — MCP verification method authoritative) |
