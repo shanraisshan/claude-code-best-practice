@@ -1077,3 +1077,19 @@
 | 2 | HIGH | MCP Setting Change | Update reserved MCP server names callout (line ~382) to add `Claude Browser` and `Claude Preview` alongside existing `workspace`. Confirmed on official settings page and v2.1.205 changelog | ✅ COMPLETE (callout updated to list all three reserved names) — NEW |
 | 3 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; not yet on official page) |
 | 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 52+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 52+ consecutive runs) |
+
+---
+
+## [2026-07-11 10:43 AM PKT] Claude Code v2.1.207
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.205 → v2.1.207 and header "As of v2.1.205" → "As of v2.1.207" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `browserExternalPageTools` to Managed-only policy keys table. Managed-only string setting; set to `"disabled"` to prevent Claude from using tools to read or act on external pages in the desktop app's Browser pane. Users can still navigate externally; local dev server previews are unaffected. Confirmed on official settings page | ✅ COMPLETE (added to Managed-only policy keys table after `requiredMaximumVersion`) — NEW |
+| 3 | MED | Behavioral Change | Update `autoMode` description: v2.1.207 removed `.claude/settings.local.json` scope to prevent repo injection. Now only available in user (`~/.claude/settings.json`) and managed settings | ✅ COMPLETE (updated scope note in autoMode row) — NEW |
+| 4 | MED | Model Alias Change | Update `"opus"` alias description: Bedrock, Vertex, and Claude Platform on AWS now default to Opus 4.8 (was 4.6). Confirmed in v2.1.207 changelog: "Changed default model across Bedrock, Vertex, and Claude Platform on AWS to Claude Opus 4.8" | ✅ COMPLETE (opus alias description updated) — NEW |
+| 5 | MED | Stale Annotation | Remove "*(in JSON schema, not on official settings page)*" annotation from `spinnerTipsEnabled` — confirmed on official /en/settings page | ✅ COMPLETE (annotation removed from Display Settings table) — NEW |
+| 6 | MED | Env Var Update | Update `CLAUDE_CODE_ENABLE_AUTO_MODE`: v2.1.207 makes auto mode available on Bedrock/Vertex/Foundry by default — opt-in no longer required. Note: official /en/permission-modes docs page still shows opt-in as required (likely not updated for v2.1.207 yet); updated per raw changelog which is authoritative for version-specific changes | ✅ COMPLETE (env var entry updated with v2.1.207 note) — NEW |
+| 7 | MED | Example Update | Remove `CLAUDE_CODE_ENABLE_AUTO_MODE: "1"` from Quick Reference complete example — no longer needed as of v2.1.207 | ✅ COMPLETE (removed from env block in Quick Reference example) — NEW |
+| 8 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; not yet on official page) |
+| 9 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 53+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 53+ consecutive runs) |
