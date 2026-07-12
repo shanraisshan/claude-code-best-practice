@@ -1453,3 +1453,23 @@
 | 13 | LOW | Count Verify | HumanLayer commands 27 — last push Jun 19 2026; Agent 2 confirmed 27 command files | COMPLETE (RECURRING — confirmed at 27) |
 | 14 | LOW | Count Verify | oh-my-claudecode skills 40 — Agent 2 confirmed 40 via search total_count (set Jul 7); v4.15.3 bug-fix release, no new skills | COMPLETE (RECURRING — confirmed at 40) |
 | 15 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for star verification (Superpowers 251,886; Matt Pocock 164,808 exact); ECC API 422 recurring — kept 228k via stars-don't-fall rule | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-12 09:28 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 252k to 253k (MCP GitHub search_repositories) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ from 228k to 229k (Agent 1 HTML WebFetch confirmed 229k; MCP GitHub API returns 422 recurring — stars-don't-fall rule applied) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 165k to 166k (MCP GitHub search_repositories) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ from 119k to 120k (MCP GitHub search_repositories) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Count | Update gstack skills from 53 to 57 (Agent 2 confirmed 65 total dirs minus 8 non-skill dirs = 57; methodology shift from code-search to directory listing explains prior 53 count; two independent directory fetches agree on 65 dirs) | COMPLETE (NEW — updated README table) |
+| 6 | HIGH | Workflow | Add /plan-devex-review step to gstack pipeline (Agent 2 found new skill between /plan-eng-review and /plan-design-review; gstack now 9-step workflow) | COMPLETE (NEW — updated README table) |
+| 7 | HIGH | Workflow | Remove /opsx:propose from OpenSpec pipeline (v1.5.0 removed workspace/initiative model; Agent 2 listed 11 specific command names; /opsx:propose confirmed absent in repo) | COMPLETE (RESOLVED from Jul 11 confirmed-at-12 — updated README table) |
+| 8 | HIGH | Count | Update OpenSpec commands from 12 to 11 (v1.5.0 removed /opsx:propose; v1.6.0 added /opsx:update; net -1; Agent 2 enumerated all 11) | COMPLETE (RESOLVED from Jul 11 — updated README table) |
+| 9 | LOW | No Change | gstack 121k (stars unchanged), BMAD 50k 6/0/47, omc 38k 19/0/40, CE 23k 0/1/29, HumanLayer 11k 6/27/0 — all unchanged | COMPLETE (verified via research agents) |
+| 10 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 253k > ECC 229k > Matt Pocock 166k > gstack 121k > Spec Kit 120k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 60k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 11 | LOW | Count Verify | ECC commands 139 — methodology conflict persists (directory listing yields lower count vs README-reported 139 baseline) | ON HOLD (RECURRING from Apr 13 series — keeping 139) |
+| 12 | LOW | Count Verify | GSD commands 67 — repo archived May 31, 2026; counts frozen | ON HOLD (RECURRING — archived repo; keeping 67) |
+| 13 | LOW | Note | MCP GitHub search_repositories used for star verification; shields.io and api.github.com Bash curl blocked; ECC API 422 recurring — stars-don't-fall rule applied | COMPLETE (RECURRING — MCP verification method authoritative) |
