@@ -1,6 +1,6 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2011%2C%202026%2010%3A43%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.207-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2012%2C%202026%2010%3A45%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.207-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
 A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.207, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
@@ -514,7 +514,7 @@ Configure Claude Code plugins and marketplaces.
 | `pluginSuggestionMarketplaces` | array | Managed only | Allowlist of marketplace names whose plugins may appear as contextual install suggestions during a session. Restricts which marketplaces can surface "you might want this plugin" prompts (v2.1.152) |
 | `skippedMarketplaces` | array | Any | Marketplaces user declined to install *(in JSON schema, not on official settings page)* |
 | `skippedPlugins` | array | Any | Plugins user declined to install *(in JSON schema, not on official settings page)* |
-| `pluginConfigs` | object | Any | Per-plugin MCP server configs (keyed by `plugin@marketplace`) *(in JSON schema, not on official settings page)* |
+| `pluginConfigs` | object | Any | Per-plugin MCP server configs (keyed by `plugin@marketplace`). As of v2.1.207, no longer read from project-level `.claude/settings.json` or `.claude/settings.local.json`; only user, `--settings`, and managed settings are honored *(in JSON schema, not on official settings page)* |
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces. Each entry can match by source string, `hostPattern`, or `pathPattern` — as of v2.1.119 the `hostPattern` and `pathPattern` matchers are correctly enforced before any download touches the filesystem, so blocked marketplaces never reach disk |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 | `disableSideloadFlags` | boolean | Managed only | Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` startup flags. When `true`, users cannot bypass `strictKnownMarketplaces` by passing sideload flags at launch. Use in managed environments to enforce marketplace-only plugin distribution (v2.1.193) |
@@ -997,6 +997,7 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_FOUNDRY_API_KEY` | API key for Microsoft Foundry authentication |
 | `ANTHROPIC_FOUNDRY_BASE_URL` | Base URL for Foundry resource |
 | `ANTHROPIC_FOUNDRY_RESOURCE` | Foundry resource name |
+| `ANTHROPIC_FOUNDRY_AUTH_TOKEN` | Azure authentication token for Foundry (alternative to service principal auth, v2.1.203+) |
 | `AWS_BEARER_TOKEN_BEDROCK` | Bedrock API key for authentication |
 | `ANTHROPIC_SMALL_FAST_MODEL` | **DEPRECATED** — Use `ANTHROPIC_DEFAULT_HAIKU_MODEL` instead |
 | `ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION` | AWS region for deprecated Haiku-class model override |
