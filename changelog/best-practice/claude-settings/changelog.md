@@ -1104,3 +1104,13 @@
 | 2 | MED | Behavioral Change | Update `pluginConfigs` description: as of v2.1.207, no longer read from project-level `.claude/settings.json` or `.claude/settings.local.json`; only user, `--settings`, and managed settings honored. Mirrors `autoMode` project-scope restriction from previous run | ✅ COMPLETE (description updated with v2.1.207 restriction note) — NEW |
 | 3 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; not yet on official page) |
 | 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 54+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 54+ consecutive runs) |
+
+---
+
+## [2026-07-13 10:46 AM PKT] Claude Code v2.1.207
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Type | Fix `strictKnownMarketplaces` type: `array` → `boolean`; update description to "When `true`, only the official Anthropic marketplace is permitted; no additional or custom marketplaces may be installed". Confirmed boolean on official settings page by two independent sources (workflow agent + direct doc fetch) | ✅ COMPLETE (type and description updated in Plugin Settings table) — NEW |
+| 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 10 consecutive runs) |
+| 3 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 55+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 55+ consecutive runs) |
