@@ -1473,3 +1473,19 @@
 | 11 | LOW | Count Verify | ECC commands 139 — methodology conflict persists (directory listing yields lower count vs README-reported 139 baseline) | ON HOLD (RECURRING from Apr 13 series — keeping 139) |
 | 12 | LOW | Count Verify | GSD commands 67 — repo archived May 31, 2026; counts frozen | ON HOLD (RECURRING — archived repo; keeping 67) |
 | 13 | LOW | Note | MCP GitHub search_repositories used for star verification; shields.io and api.github.com Bash curl blocked; ECC API 422 recurring — stars-don't-fall rule applied | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-13 09:24 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ from 166k to 167k (MCP GitHub search_repositories: 167,116) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update gstack ★ from 121k to 122k (MCP GitHub search_repositories: 121,506) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update oh-my-claudecode skills from 40 to 41 (new skill confirmed Jul 12; confidence 0.92 across 3x verification) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update Compound Engineering skills from 29 to 30 (ce-babysit-pr skill added Jul 12; confirmed 3x at confidence 0.90) | COMPLETE (NEW — updated README table) |
+| 5 | LOW | No Change | Superpowers 253k, ECC 229k, Spec Kit 120k, BMAD 50k 6/0/47, OpenSpec 60k 0/11/0, GSD 65k 33/67/0, HumanLayer 11k 6/27/0, agent-skills 69k — all unchanged | COMPLETE (verified via research agents) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 253k > ECC 229k > Matt Pocock 167k > gstack 122k > Spec Kit 120k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 60k > BMAD 50k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; no position changes needed) |
+| 7 | LOW | Count Verify | ECC commands 139 — directory listing yields lower count vs README-reported 139 baseline | ON HOLD (RECURRING from Apr 13 series — keeping 139) |
+| 8 | LOW | Count Verify | BMAD skills 47→45 detected (automator deprecation may explain -2); confidence 0.72 below threshold | ON HOLD (NEW — confidence below 0.75 threshold; keeping 47 pending verification) |
+| 9 | LOW | Note | MCP GitHub search_repositories used for star verification; shields.io and api.github.com Bash curl blocked; ECC API 422 recurring — stars-don't-fall rule applied | COMPLETE (RECURRING — MCP verification method authoritative) |
