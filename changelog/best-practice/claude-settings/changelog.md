@@ -1114,3 +1114,14 @@
 | 1 | MED | Changed Type | Fix `strictKnownMarketplaces` type: `array` → `boolean`; update description to "When `true`, only the official Anthropic marketplace is permitted; no additional or custom marketplaces may be installed". Confirmed boolean on official settings page by two independent sources (workflow agent + direct doc fetch) | ✅ COMPLETE (type and description updated in Plugin Settings table) — NEW |
 | 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 10 consecutive runs) |
 | 3 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 55+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 55+ consecutive runs) |
+
+---
+
+## [2026-07-14 10:46 AM PKT] Claude Code v2.1.208
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `vimInsertModeRemaps` to Display Settings table after `editorMode` row. Maps two-key sequences (e.g., `jj` to Escape) in vim insert mode for the input prompt. Confirmed in v2.1.208 changelog | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 2 | HIGH | New Env Var | Add `CLAUDE_CODE_PROCESS_WRAPPER` to env vars table after `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY`. Routes Claude Code self-spawns through a required wrapper executable for both agent view and background service contexts. In v2.1.208 changelog only, not on official env-vars page | ✅ COMPLETE (added with changelog-only annotation) — NEW |
+| 3 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 11 consecutive runs) |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 56+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 56+ consecutive runs) |
