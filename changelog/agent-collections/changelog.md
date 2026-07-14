@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-14 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | msitarzewski/agency-agents agents 254→239 (−15; conf 0.80; 17 dirs vs prior 22 dirs; git tree API blocked) | INVALID (RECURRING methodological oscillation; git tree API blocked; web-scraped 17 dirs vs Jul 10's 22 dirs; Jul 11 showed 238, Jul 12 showed 262 — same oscillation band; no change) |
+| 2 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156→154 (−2; conf 0.93; README "154+") | INVALID (RECURRING ±2 oscillation; 25th+ consecutive INVALID ruling; no new agent files in 30-day window; maintenance-only commits Jul 7-10; README "154+" consistent with both 154 and 156; no change) |
+| 3 | LOW | Star | msitarzewski/agency-agents ★ unchanged (131k = 131,168) | INVALID (no change required; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23k = 23,286) | INVALID (no change required; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (131k > 23k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-12 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
