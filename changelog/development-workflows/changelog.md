@@ -1432,6 +1432,7 @@
 | 14 | LOW | Count Verify | oh-my-claudecode skills 40 — Agent 2 confirms 40 skills (set Jul 7 2026); count unchanged | COMPLETE (RECURRING — confirmed at 40) |
 | 15 | LOW | Note | shields.io Bash curl blocked; MCP GitHub search_repositories used for star verification: Superpowers 251,028; Matt Pocock 163,314; OpenSpec 59,633; ECC 228k from HTML (API 422 recurring) | COMPLETE (RECURRING — MCP verification method authoritative) |
 
+
 ---
 
 ## [2026-07-11 09:19 AM PKT] Development Workflows Update
@@ -1489,3 +1490,24 @@
 | 7 | LOW | Count Verify | ECC commands 139 — directory listing yields lower count vs README-reported 139 baseline | ON HOLD (RECURRING from Apr 13 series — keeping 139) |
 | 8 | LOW | Count Verify | BMAD skills 47→45 detected (automator deprecation may explain -2); confidence 0.72 below threshold | ON HOLD (NEW — confidence below 0.75 threshold; keeping 47 pending verification) |
 | 9 | LOW | Note | MCP GitHub search_repositories used for star verification; shields.io and api.github.com Bash curl blocked; ECC API 422 recurring — stars-don't-fall rule applied | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-14 09:24 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 253k to 254k (MCP GitHub: 254,031 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 167k to 169k (MCP GitHub: 168,696 exact — 2k jump) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Spec Kit ★ from 120k to 121k (MCP GitHub: 120,750 exact — v0.12.14 released Jul 13, new community extensions) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update OpenSpec ★ from 60k to 61k (MCP GitHub: 60,662 exact — v1.6.0 released) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update BMAD-METHOD ★ from 50k to 51k (MCP GitHub: 50,545 exact — active dev, Antigravity CLI platform added) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Count | Update gstack skills from 57 to 61 (Agent 2: 68 total SKILL.md files minus 7 non-root = 61; new skills include spec, guard, careful, freeze/unfreeze, context-save/restore, benchmark-models — v1.60.1.0) | COMPLETE (NEW — updated README table) |
+| 7 | HIGH | Count | Update OpenSpec commands from 11 to 12 (/opsx:update and /opsx:sync added in v1.6.0; canonical workflow restructured) | COMPLETE (NEW — updated README table) |
+| 8 | HIGH | Workflow | Update OpenSpec workflow from 6-step to 9-step: /opsx:propose re-added as entry point, /opsx:update(sub) and /opsx:sync added, /opsx:verify changed from top to sub (v1.6.0 confirmed by Agent 2) | COMPLETE (RESOLVED from Jul 12 — v1.6.0 canonical workflow confirmed) |
+| 9 | HIGH | Workflow | Update oh-my-claudecode workflow: team-* skill names replaced with deepinit(top) → plan(top) → ultrawork(sub) → ultraqa(sub) → verify(sub) → release(top) — current team-plan/team-prd/team-exec/team-verify/team-fix absent from Agent 2 enumerated 41-skill list; deepinit/plan/ultrawork/ultraqa/verify/release all confirmed present | COMPLETE (NEW — updated README table; current workflow used stale non-existent skill names) |
+| 10 | MED | Count Verify | BMAD skills 47→45 (Jul 13 ON HOLD) — RESOLVED: Agent 2 confirmed 33 bmm-skills + 14 core-skills = 47 via search_code; 45 detection was incorrect | COMPLETE (RESOLVED from Jul 13 ON HOLD — keeping 47 confirmed) |
+| 11 | LOW | No Change | gstack 122k (MCP: 121,715), GSD 65k archived (MCP: 64,749), omc 38k (MCP: 37,733), CE 23k (MCP: 23,149), HumanLayer 11k (MCP: 11,112), ECC 229k (API 422 recurring; stars-don't-fall rule applied) — all unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 12 | LOW | Sort Order | Sort order verified unchanged: Superpowers 254k > ECC 229k > Matt Pocock 169k > gstack 122k > Spec Kit 121k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 61k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count Verify | ECC commands 139→97 (Agent 1: README states "94 legacy command shims" + 3 .claude/commands = 97; prior ON HOLD baseline 139) | ON HOLD (RECURRING from Apr 13 series — keeping 139 per established convention) |
+| 14 | LOW | Note | shields.io and api.github.com Bash curl blocked (403); MCP GitHub search_repositories used for all star verification (returns live stargazers_count); ECC API 422 recurring — stars-don't-fall rule applied | COMPLETE (RECURRING — MCP verification method authoritative) |
