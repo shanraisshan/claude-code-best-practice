@@ -1114,3 +1114,16 @@
 | 1 | MED | Changed Type | Fix `strictKnownMarketplaces` type: `array` → `boolean`; update description to "When `true`, only the official Anthropic marketplace is permitted; no additional or custom marketplaces may be installed". Confirmed boolean on official settings page by two independent sources (workflow agent + direct doc fetch) | ✅ COMPLETE (type and description updated in Plugin Settings table) — NEW |
 | 2 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 10 consecutive runs) |
 | 3 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 55+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 55+ consecutive runs) |
+
+---
+
+## [2026-07-15 10:45 AM PKT] Claude Code v2.1.210
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `fastMode` (boolean, default `false`) to Core Configuration table after `fastModePerSessionOptIn`. Confirmed on official settings page | ✅ COMPLETE (added to Core Configuration table) — NEW |
+| 2 | HIGH | Missing Setting | Add `vimInsertModeRemaps` (object, v2.1.208) to Display & UX table after `editorMode`. Confirmed in v2.1.208 changelog | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_PROCESS_WRAPPER` to env vars table after `CLAUDE_CODE_PERFORCE_MODE`. Confirmed in v2.1.208 changelog (not yet on official env-vars page) | ✅ COMPLETE (added with "not yet on official env-vars page" annotation) — NEW |
+| 4 | MED | Behavioral Note | Add v2.1.210 startup warning note for `Write(path)`, `NotebookEdit(path)`, `Glob(path)` permission rules suggesting `Edit(path)`/`Read(path)` alternatives. Confirmed in v2.1.210 changelog | ✅ COMPLETE (added blockquote note after Tool Permission Syntax table) — NEW |
+| 5 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 11 consecutive runs) |
+| 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 56+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 56+ consecutive runs) |
