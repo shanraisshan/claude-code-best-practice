@@ -652,3 +652,13 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-07-14 11:10 AM PKT] Claude Code v2.1.208
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 86 built-in commands).
+
+---
+
+## [2026-07-15 11:08 AM PKT] Claude Code v2.1.210
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/doctor` — reword to reflect bundled-Skill reclassification (v2.1.205) and add `Alias: /checkup` (v2.1.207) | ✅ COMPLETE (description updated and /checkup alias added at #29 in Debug tag) |
+| 2 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205) — report's own note excludes bundled skills, but `/doctor` is exempt from `disableBundledSkills`; consider whether to remove the row | ✋ ON HOLD (recurring from 2026-07-13 — factual updates applied above; removal decision pending user) |
+| 3 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #54 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
