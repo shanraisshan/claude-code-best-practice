@@ -1432,7 +1432,6 @@
 | 14 | LOW | Count Verify | oh-my-claudecode skills 40 — Agent 2 confirms 40 skills (set Jul 7 2026); count unchanged | COMPLETE (RECURRING — confirmed at 40) |
 | 15 | LOW | Note | shields.io Bash curl blocked; MCP GitHub search_repositories used for star verification: Superpowers 251,028; Matt Pocock 163,314; OpenSpec 59,633; ECC 228k from HTML (API 422 recurring) | COMPLETE (RECURRING — MCP verification method authoritative) |
 
-
 ---
 
 ## [2026-07-11 09:19 AM PKT] Development Workflows Update
@@ -1511,3 +1510,20 @@
 | 12 | LOW | Sort Order | Sort order verified unchanged: Superpowers 254k > ECC 229k > Matt Pocock 169k > gstack 122k > Spec Kit 121k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 61k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (no re-sort needed) |
 | 13 | LOW | Count Verify | ECC commands 139→97 (Agent 1: README states "94 legacy command shims" + 3 .claude/commands = 97; prior ON HOLD baseline 139) | ON HOLD (RECURRING from Apr 13 series — keeping 139 per established convention) |
 | 14 | LOW | Note | shields.io and api.github.com Bash curl blocked (403); MCP GitHub search_repositories used for all star verification (returns live stargazers_count); ECC API 422 recurring — stars-don't-fall rule applied | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-15 09:30 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 254k to 255k (MCP research: 255k confirmed; +1k) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ from 229k to 230k (MCP research: 230k; ECC API 422 recurring — bypassed via renamed affaan-m/ECC repo search) | COMPLETE (NEW — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 169k to 171k (MCP research: 171k; +2k jump confirmed) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update Matt Pocock Skills skills from 39 to 40 (to-questionnaire skill added Jul 14 PR #572, in-progress subdir confirmed; conf 0.95) | COMPLETE (NEW — updated README table) |
+| 5 | MED | Sort Order | Sort order verified unchanged: Superpowers 255k > ECC 230k > Matt Pocock 171k > gstack 122k > Spec Kit 121k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 61k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (no re-sort needed) |
+| 6 | LOW | Count | ECC commands 139→141 (Agent 1 conf 0.82; 41st consecutive run) | ON HOLD (RECURRING — keeping 139 per Jul 8 exhaustive baseline; apply only at conf ≥0.90) |
+| 7 | LOW | Count | gstack skills 61→53 (Agent 2 via AGENTS.md conf 0.75; contradicts directory-count methodology) | ON HOLD (RECURRING — keeping 61 per directory methodology) |
+| 8 | LOW | Workflow | OpenSpec: agent proposed removing /opsx:propose (conf 0.82; contradicts Jul 14 COMPLETE re-add) | ON HOLD (RECURRING — keeping current 9-step) |
+| 9 | LOW | Workflow | Spec Kit: agent proposed re-adding /speckit.taskstoissues (conf 0.90; contradicts Jun 29 COMPLETE removal) | ON HOLD (RECURRING — keeping current workflow) |
+| 10 | LOW | Note | shields.io Bash curl blocked (empty response — proxy); MCP GitHub used for star verification; GSD archived (frozen 33/67/0) | COMPLETE (RECURRING — MCP verification method authoritative) |
