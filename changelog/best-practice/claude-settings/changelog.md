@@ -1127,3 +1127,16 @@
 | 4 | MED | Behavioral Note | Add v2.1.210 startup warning note for `Write(path)`, `NotebookEdit(path)`, `Glob(path)` permission rules suggesting `Edit(path)`/`Read(path)` alternatives. Confirmed in v2.1.210 changelog | ✅ COMPLETE (added blockquote note after Tool Permission Syntax table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 11 consecutive runs) |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 56+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 56+ consecutive runs) |
+
+---
+
+## [2026-07-16 10:41 AM PKT] Claude Code v2.1.211
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Missing Env Var | Add `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` to Common Environment Variables table — include subagent text and thinking blocks in stream-json output (v2.1.211 changelog; not yet on official /en/env-vars page). Inserted after `CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS` | ✅ COMPLETE (added with changelog-only annotation) — NEW |
+| 2 | LOW | Version Bump | Update report version badge v2.1.210 → v2.1.211 and header "As of v2.1.210" → "As of v2.1.211"; Last Updated date Jul 15, 2026 → Jul 16, 2026 | ✅ COMPLETE (badge, header, and body text updated in Phase 2.6) — NEW |
+| 3 | LOW | Behavior Note | Add note that integer env vars accept scientific notation (`1e6`) and digit-separator spellings (`64_000`) (v2.1.211 changelog). Added as a callout above the Common Environment Variables table | ✅ COMPLETE (note added to env section intro) — NEW |
+| 4 | LOW | Unconfirmed Env Var | `CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS` — surfaced by /en/env-vars page WebFetch but NOT confirmed by either research agent's thorough sweep. Per Rule 8A, defer to next run | ✋ ON HOLD (new — pending official confirmation by independent agent) |
+| 5 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
+| 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
