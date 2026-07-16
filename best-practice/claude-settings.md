@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2015%2C%202026%2010%3A45%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.210-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2016%2C%202026%2010%3A45%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.211-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.210, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.211, Claude Code exposes **80+ settings** and **200+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -855,6 +855,8 @@ Set environment variables for all Claude Code sessions.
 }
 ```
 
+> **Note (v2.1.211):** Integer environment variables (e.g., `CLAUDE_CODE_MAX_OUTPUT_TOKENS`, `MAX_THINKING_TOKENS`, `MCP_TOOL_TIMEOUT`) now accept scientific notation and digit-separator spellings: `1e6`, `64_000`, `1_000_000`. All three forms are equivalent to their decimal value.
+
 ### Common Environment Variables
 
 | Variable | Description |
@@ -934,6 +936,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_ADVISOR_TOOL` | Set to `1` to disable the advisor tool and the `/advisor` command. Env-var equivalent of omitting advisor usage. Pair with `advisorModel` for advisor configuration (min v2.1.98) |
 | `CLAUDE_CODE_DISABLE_AGENT_VIEW` | Set to `1` to turn off background agents and agent view (`claude agents`, `--bg`, `/background`, on-demand supervisor). Env-var equivalent of the `disableAgentView` setting *(referenced on official settings page; not listed on the env-vars page)* |
 | `CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS` | Set to `1` to disable the built-in Explore and Plan subagents. Claude explores with search tools or the general-purpose subagent instead. Plan mode reads files directly rather than launching Explore and Plan agents (v2.1.198) |
+| `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` | Set to `1` to include subagent text and thinking blocks in stream-json (`-p --output-format stream-json`) output. When enabled, text and thinking content from spawned subagents is forwarded to the outer stream alongside tool-result events. Equivalent to the `--forward-subagent-text` CLI flag *(in v2.1.211 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` | Enable the experimental agent teams feature (`1` to enable). Allows spawning coordinated teams of subagents within a session. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
 | `CLAUDE_CODE_DISABLE_WORKFLOWS` | Set to `1` to disable [dynamic workflows](https://code.claude.com/docs/en/workflows) (`/workflows`) and the bundled workflow slash commands. Env-var equivalent of the `disableWorkflows` setting |
 | `CLAUDE_CODE_ENABLE_AUTO_MODE` | **As of v2.1.207, auto mode is available on Bedrock, Vertex AI, and Foundry by default — this opt-in is no longer required.** Previously (v2.1.158–v2.1.206): set to `1` to make [auto mode](https://code.claude.com/docs/en/permission-modes#eliminate-prompts-with-auto-mode) available on those providers. Use `disableAutoMode: "disable"` in settings to turn auto mode off |
