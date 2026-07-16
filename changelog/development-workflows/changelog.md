@@ -1527,3 +1527,19 @@
 | 8 | LOW | Workflow | OpenSpec: agent proposed removing /opsx:propose (conf 0.82; contradicts Jul 14 COMPLETE re-add) | ON HOLD (RECURRING — keeping current 9-step) |
 | 9 | LOW | Workflow | Spec Kit: agent proposed re-adding /speckit.taskstoissues (conf 0.90; contradicts Jun 29 COMPLETE removal) | ON HOLD (RECURRING — keeping current workflow) |
 | 10 | LOW | Note | shields.io Bash curl blocked (empty response — proxy); MCP GitHub used for star verification; GSD archived (frozen 33/67/0) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-16 09:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star Update | Update Matt Pocock Skills ★ from 171k to 173k (MCP GitHub: 172,606 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star Update | Update Spec Kit ★ from 121k to 122k (MCP GitHub: 121,633 exact — mathematical rounding) | COMPLETE (RECURRING — updated README table) |
+| 3 | LOW | No Change | Superpowers 255k (255,488), ECC 230k (230,177), gstack 122k (122,128), GSD 65k (frozen/archived), OpenSpec 61k (61,088), BMAD 51k (50,658), omc 38k (37,793), CE 23k (23,233), HumanLayer 11k (11,120) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 4 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 255k > ECC 230k > Matt Pocock 173k > gstack 122k > Spec Kit 122k (actual 121,633 < gstack 122,128) > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 61k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 5 | LOW | Count Verify | ECC commands 139→94 (Agent 1: README/AGENTS.md self-reports 94; 42nd+ consecutive run with directory-enum giving different value vs Jul 8 exhaustive 139 baseline) | ON HOLD (RECURRING from Apr 13/16/18/24/26 + May/Jun/Jul series; keeping 139 per established convention) |
+| 6 | LOW | Count Verify | BMAD skills 47→45 (Agent 2: 31 bmm-skills + 14 core-skills = 45; no removal commits found; oscillating 37-47 range across 20+ runs) | ON HOLD (RECURRING — no removal evidence; keeping 47 per Jul 8 exhaustive enumeration) |
+| 7 | LOW | Note | Superpowers v6.1.1 pushed today (Jul 16, 2026) — no count/workflow changes; v6.1.1 fixed Codex plugin regression | COMPLETE (context only; no table change) |
+| 8 | LOW | Note | CE very active (8 commits Jul 15-16 2026); counts 0/1/30 confirmed stable | COMPLETE (context only; no table change) |
+| 9 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (returns live stargazers_count) | COMPLETE (RECURRING — MCP verification method authoritative) |
