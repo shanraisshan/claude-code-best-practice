@@ -662,3 +662,12 @@ No priority action items — report is fully in sync with official documentation
 | 1 | MED | Changed Description | Update `/doctor` — reword to reflect bundled-Skill reclassification (v2.1.205) and add `Alias: /checkup` (v2.1.207) | ✅ COMPLETE (description updated and /checkup alias added at #29 in Debug tag) |
 | 2 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205) — report's own note excludes bundled skills, but `/doctor` is exempt from `disableBundledSkills`; consider whether to remove the row | ✋ ON HOLD (recurring from 2026-07-13 — factual updates applied above; removal decision pending user) |
 | 3 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #54 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+
+---
+
+## [2026-07-16 11:07 AM PKT] Claude Code v2.1.211
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row #29 from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+| 2 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #54 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
