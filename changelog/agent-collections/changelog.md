@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-17 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 131k to 132k | COMPLETE (GitHub API: 132,092 exact; crosses k-boundary; RECURRING daily growth; conf 0.87) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 254→245 (−9; conf 0.87; strategy/ exclusion boundary; 17 dirs vs prior 22 dirs) | INVALID (RECURRING methodological oscillation; strategy/ docs confirmed non-agent by content: nexus-strategy.md, EXECUTIVE-BRIEF.md, QUICKSTART.md, 7 playbooks/ phase docs, 2 coordination/ template docs = 9 files; 245+9=254 exactly matches Jul 10 count when strategy/ was included; no new agent removals; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23k = 23,419) | INVALID (no change required; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156→~154 (−2; conf 0.82; categories 03-07/10 estimated; maintenance-only commits Jun 17–Jul 10) | INVALID (RECURRING ±2 oscillation; 26th+ consecutive INVALID ruling; no new agent files since Jun 12; no change) |
+| 5 | LOW | Sort | Verify sort order (132k > 23k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-14 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
