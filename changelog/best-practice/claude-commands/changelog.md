@@ -671,3 +671,13 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row #29 from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
 | 2 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #54 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+
+---
+
+## [2026-07-17 11:08 AM PKT] Claude Code v2.1.212
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/subtask <directive>` to Session tag — in-session subagent behavior split from `/fork` in v2.1.212, which now copies the conversation to a background session (count 86 → 87) | ✅ COMPLETE (added as #86 in Session tag; `/workflows` renumbered to #87; count updated 86 → 87) |
+| 2 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row #29 from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+| 3 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #54 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
