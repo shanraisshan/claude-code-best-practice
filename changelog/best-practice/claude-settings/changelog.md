@@ -1127,3 +1127,21 @@
 | 4 | MED | Behavioral Note | Add v2.1.210 startup warning note for `Write(path)`, `NotebookEdit(path)`, `Glob(path)` permission rules suggesting `Edit(path)`/`Read(path)` alternatives. Confirmed in v2.1.210 changelog | ✅ COMPLETE (added blockquote note after Tool Permission Syntax table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 11 consecutive runs) |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 56+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 56+ consecutive runs) |
+
+---
+
+## [2026-07-17 10:46 AM PKT] Claude Code v2.1.212
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS` (default `60000`ms) — AWS default credential chain timeout for Bedrock, Claude on AWS, and Mantle. Confirmed on official /en/env-vars page (v2.1.207) | ✅ COMPLETE (added to env vars table after CLAUDE_CODE_SKIP_BEDROCK_AUTH) — NEW |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_BEDROCK_CONTENT_TYPE_GUARD` — skip Bedrock streaming content-type check. Confirmed on official /en/env-vars page (v2.1.208) | ✅ COMPLETE (added to env vars table after CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS) — NEW |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` — forward subagent text output to parent stream; pairs with `--forward-subagent-text` flag. Confirmed in v2.1.211 changelog | ✅ COMPLETE (added with "not yet on official env-vars page" annotation) — NEW |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` (default `200`) — session-wide WebSearch cap. Confirmed in v2.1.212 changelog | ✅ COMPLETE (added with "not yet on official env-vars page" annotation) — NEW |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` (default `200`) — per-session subagent spawn cap. Confirmed in v2.1.212 changelog | ✅ COMPLETE (added with "not yet on official env-vars page" annotation) — NEW |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` (default `120000`ms) — threshold for auto-backgrounding long MCP calls. Confirmed in v2.1.212 changelog | ✅ COMPLETE (added after MAX_MCP_OUTPUT_TOKENS) — NEW |
+| 7 | MED | Changed Behavior | Note `forceLoginMethod` enforcement scope expanded to VS Code, SDK, `setup-token`, and `install-github-app` login paths in v2.1.212 | ✅ COMPLETE (added to forceLoginMethod description) — NEW |
+| 8 | MED | Changed Behavior | Note "always allow" permission rules now saved at repository root (`.claude/settings.json`) since v2.1.211 | ✅ COMPLETE (added note after Evaluation order paragraph in Permission Syntax section) — NEW |
+| 9 | LOW | Changed Behavior | Note integer env vars accept scientific notation (e.g., `1e6`) and digit separators (e.g., `64_000`) as of v2.1.211 | ✅ COMPLETE (added blockquote note before env vars table) — NEW |
+| 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — NOT on official env-vars page; 12 consecutive ON HOLD runs | ❌ INVALID (entry already annotated in report as changelog-only; annotation IS the resolution per rule 10B; no further tracking needed) — RECURRING from 2026-07-03 |
+| 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — NOT on official env-vars page; 57+ consecutive ON HOLD runs | ❌ INVALID (entry already annotated in report as changelog-only; annotation IS the resolution per rule 10B; no further tracking needed) — RECURRING from 2026-04-14 |
