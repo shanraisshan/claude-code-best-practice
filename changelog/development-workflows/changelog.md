@@ -1543,3 +1543,21 @@
 | 7 | LOW | Note | Superpowers v6.1.1 pushed today (Jul 16, 2026) — no count/workflow changes; v6.1.1 fixed Codex plugin regression | COMPLETE (context only; no table change) |
 | 8 | LOW | Note | CE very active (8 commits Jul 15-16 2026); counts 0/1/30 confirmed stable | COMPLETE (context only; no table change) |
 | 9 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (returns live stargazers_count) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-17 09:22 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 255k to 256k (MCP GitHub: 256,085 exact — both agents independently confirm) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 173k to 174k (MCP GitHub: 174,488 exact — both agents independently confirm) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update Matt Pocock Skills skills from 40 to 41 (batch-grill-me skill added Jul 16; both agents confirm 41; conf 0.94) | COMPLETE (NEW — updated README table) |
+| 4 | MED | Count | Update Compound Engineering skills from 30 to 31 (ce-handoff skill added Jul 16; Agent 2 conf 0.93) | COMPLETE (NEW — updated README table) |
+| 5 | LOW | No Change | ECC 230k (API 422 recurring; stars-don't-fall rule applied), gstack 122k, Spec Kit 122k, GSD 65k (frozen/archived), OpenSpec 61k, BMAD 51k, omc 38k, HumanLayer 11k — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 6 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 256k > ECC 230k > Matt Pocock 174k > gstack 122k > Spec Kit 122k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 61k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 7 | LOW | Workflow | Superpowers: Agent 1 proposes 12-step workflow adding systematic-debugging(sub) + receiving-code-review(sub) (conf 0.96); Agent 2 confirms current 10-step (conf 0.96) — agents disagree | ON HOLD (NEW — agents disagree at equal confidence; keeping current 10-step workflow until consensus or version release confirms change) |
+| 8 | LOW | Workflow | Matt Pocock Skills: Agent 1 proposes new 9-step workflow (removes ask-matt, grill-me, prototype, diagnosing-bugs; adds setup-matt-pocock-skills, triage); Agent 2 confirms current 11-step (conf 0.94) — agents disagree | ON HOLD (NEW — agents disagree; keeping current 11-step workflow per Jul 9 COMPLETE baseline) |
+| 9 | LOW | Count Verify | ECC commands 139→94 (Agent 1: "94 legacy command shims" per README; 43rd+ consecutive run with directory-enum giving lower value vs Jul 8 baseline 139) | ON HOLD (RECURRING — keeping 139 per established convention) |
+| 10 | LOW | Count Verify | gstack skills 61→53 (Agent 2: live directory enum 53; contradicts Jul 12 directory-count baseline of 61; no removal commits confirmed) | ON HOLD (RECURRING — keeping 61 per established directory-count methodology) |
+| 11 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification; both agents independently confirmed identical exact counts for all changed repos | COMPLETE (RECURRING — MCP verification method authoritative) |
