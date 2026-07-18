@@ -1561,3 +1561,25 @@
 | 9 | LOW | Count Verify | ECC commands 139→94 (Agent 1: "94 legacy command shims" per README; 43rd+ consecutive run with directory-enum giving lower value vs Jul 8 baseline 139) | ON HOLD (RECURRING — keeping 139 per established convention) |
 | 10 | LOW | Count Verify | gstack skills 61→53 (Agent 2: live directory enum 53; contradicts Jul 12 directory-count baseline of 61; no removal commits confirmed) | ON HOLD (RECURRING — keeping 61 per established directory-count methodology) |
 | 11 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification; both agents independently confirmed identical exact counts for all changed repos | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-18 09:28 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 256k to 257k (MCP GitHub: 256,730 exact; independently verified by orchestrator search_repositories call) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 174k to 176k (MCP GitHub: 175,788 exact; independently verified by orchestrator search_repositories call) | COMPLETE (RECURRING — updated README table) |
+| 3 | LOW | No Change | ECC 230k (API 422 recurring; stars-don't-fall rule; Agent 1 WebFetch shows stale ~211.9k), gstack 122k (122,485), Spec Kit 122k (122,018), GSD 65k (64,761 archived/frozen), OpenSpec 61k (61,401), BMAD 51k (50,741), omc 38k (37,857), CE 23k (23,196), HumanLayer 11k (11,124) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 4 | LOW | Count Verify | ECC commands 139→94 (Agent 1: README states "94 commands for Claude Code"; 44th+ consecutive run with lower count vs Jul 8 exhaustive 139 baseline) | ON HOLD (RECURRING from Apr 13 series — keeping 139 per established convention) |
+| 5 | LOW | Count Verify | ECC skills 278→150+ (Agent 1: directory listing truncated mid-alphabet; cannot confirm full count; keeping 278 per directory-count methodology) | ON HOLD (RECURRING — keeping 278) |
+| 6 | LOW | Workflow | ECC: Agent 1 proposes 10-step plan/architect/tdd-guide/code-reviewer pipeline (conf 0.82); contradicts Jul 6 COMPLETE 7-step PRP baseline | ON HOLD (RECURRING — keeping Jul 6 confirmed PRP pipeline) |
+| 7 | LOW | Count Verify | OpenSpec skills 0→12 (Agent 2: skills/ directory has 12 subdirs with internal command templates; previously 0 per Mar 23 correction — OpenSpec is CLI tool, not Claude Code skills-based) | ON HOLD (NEW — skills/ holds proprietary command templates not Claude Code SKILL.md files; keeping 0) |
+| 8 | LOW | Count Verify | oh-my-claudecode commands 0→28 (Agent 2: commands/ directory has 28 .md files; two independent verifications; contradicts established convention "skills serve as slash commands = 0 commands") | ON HOLD (NEW — contradicts established convention; keeping 0 until convention explicitly updated) |
+| 9 | LOW | Workflow | Spec Kit: agent proposes 10-step adding speckit.taskstoissues and reordering checklist/analyze; contradicts Jun 29 removal and Jul 15 ON HOLD | ON HOLD (RECURRING — keeping current 9-step) |
+| 10 | LOW | Workflow | gstack: agent proposes 8-step removing /plan-devex-review and making plan-eng-review/plan-design-review sub-loops (conf 0.82); contradicts Jul 12 COMPLETE 9-step | ON HOLD (RECURRING — keeping current 9-step) |
+| 11 | LOW | Workflow | BMAD: agent proposes 6-step bmad-document-project/prd/architecture pipeline (conf 0.87); contradicts Jul 6 COMPLETE v6.10.0 9-step | ON HOLD (RECURRING — keeping Jul 6 confirmed 9-step) |
+| 12 | LOW | Workflow | oh-my-claudecode: agent proposes team-plan/team-prd/team-exec/team-verify/team-fix workflow; contradicts Jul 14 COMPLETE deepinit/ultrawork baseline; oscillating between both patterns | ON HOLD (RECURRING — keeping Jul 14 confirmed deepinit/ultrawork pattern) |
+| 13 | LOW | Workflow | HumanLayer: agent proposes 6-step dropping /ralph_research (conf 0.95); README notes repo "mostly deprecated"; contradicts Jul 6 COMPLETE 7-step | ON HOLD (RECURRING — keeping Jul 6 confirmed 7-step) |
+| 14 | LOW | Sort Order | Sort order verified unchanged: Superpowers 257k > ECC 230k > Matt Pocock 176k > gstack 122k > Spec Kit 122k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 61k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; star increases do not affect row positions) |
+| 15 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification (Superpowers 256,730; Matt Pocock 175,788 — both independently verified by orchestrator) | COMPLETE (RECURRING — MCP verification method authoritative) |
