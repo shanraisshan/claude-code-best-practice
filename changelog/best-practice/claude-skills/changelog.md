@@ -507,3 +507,9 @@ No drift detected — frontmatter fields (16) and bundled skills (13) are fully 
 ## [2026-07-17 10:03 AM PKT] Claude Code v2.1.212
 
 No drift detected — frontmatter fields (16) and bundled skills (13) are fully synchronized with official docs.
+
+---
+
+## [2026-07-18 10:04 AM PKT] Claude Code v2.1.214
+
+No drift detected — frontmatter fields (16) and bundled skills (13) are fully synchronized with official docs.
