@@ -1127,3 +1127,21 @@
 | 4 | MED | Behavioral Note | Add v2.1.210 startup warning note for `Write(path)`, `NotebookEdit(path)`, `Glob(path)` permission rules suggesting `Edit(path)`/`Read(path)` alternatives. Confirmed in v2.1.210 changelog | ✅ COMPLETE (added blockquote note after Tool Permission Syntax table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 11 consecutive runs) |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 56+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 56+ consecutive runs) |
+
+---
+
+## [2026-07-18 10:48 AM PKT] Claude Code v2.1.214
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.210 → v2.1.214 and header "As of v2.1.210" → "As of v2.1.214" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Settings Hierarchy Change | Add v2.1.211 git-root note to `.claude/settings.local.json` row: when the project root is inside a git repo, the file is placed at the git root regardless of the working directory. Confirmed in v2.1.211 changelog | ✅ COMPLETE (note added to hierarchy table row 3) — NEW |
+| 3 | HIGH | Permission Syntax Change | Add `dir/**` allow-rule narrowing callout: an allow rule for `Tool(dir/**)` is narrowed to match deny rules that restrict a sub-path such as `Tool(dir/sensitive/*)`. Confirmed in v2.1.211 changelog | ✅ COMPLETE (blockquote added after Tool Permission Syntax table) — NEW |
+| 4 | HIGH | MCP Setting Change | Document MCP auto-backgrounding behavior (v2.1.212): long-running MCP tool calls that exceed `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` (default 2 min) continue in background. Added as a blockquote note in the MCP section | ✅ COMPLETE (blockquote added to MCP Server Configuration section) — NEW |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` — threshold in ms after which a long-running MCP tool call is auto-backgrounded (default: `120000`, 0 = disable). Confirmed in v2.1.212 changelog | ✅ COMPLETE (added after `MAX_MCP_OUTPUT_TOKENS`) — NEW |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` — max WebSearch calls per session (default: `200`); resets on `/clear`. Confirmed in v2.1.212 changelog | ✅ COMPLETE (added after `CLAUDE_CODE_MAX_TURNS`) — NEW |
+| 7 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` — max Agent/Task spawns per session (default: `200`); resets on `/clear`. Confirmed in v2.1.212 changelog | ✅ COMPLETE (added after `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`) — NEW |
+| 8 | HIGH | Missing Env Var | Add `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` — set to `1` to include subagent text/thinking blocks in parent `stream-json` output. Env-var twin of `--forward-subagent-text`. Confirmed in v2.1.211 changelog | ✅ COMPLETE (added after `CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING`) — NEW |
+| 9 | HIGH | Missing Env Var | Add `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` — max byte length for OTel content attributes (default: `60000`); longer fields are truncated. Confirmed in v2.1.214 changelog | ✅ COMPLETE (added after `OTEL_LOG_TOOL_DETAILS`) — NEW |
+| 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
+| 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
