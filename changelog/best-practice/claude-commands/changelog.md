@@ -681,3 +681,14 @@ No priority action items — report is fully in sync with official documentation
 | 1 | HIGH | New Command | Add `/subtask <directive>` to Session tag — in-session subagent behavior split from `/fork` in v2.1.212, which now copies the conversation to a background session (count 86 → 87) | ✅ COMPLETE (added as #86 in Session tag; `/workflows` renumbered to #87; count updated 86 → 87) |
 | 2 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row #29 from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
 | 3 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #54 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+
+---
+
+## [2026-07-18 11:09 AM PKT] Claude Code v2.1.214
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/bug [report]` to Debug tag — standalone command split from `/feedback` in v2.1.212; you choose how much session history to include and confirm on a consent screen; Alias: `/share` (count 87 → 88) | ✅ COMPLETE (added as #29 in Debug tag; all Debug-onward rows renumbered 30–88; count updated 87 → 88) |
+| 2 | MED | Changed Description | Update `/feedback [report]` — removed `/bug` and `/share` aliases; description changed to "Send product feedback about Claude Code. Opens the same dialog as `/bug`" | ✅ COMPLETE (updated at #31 in Debug tag) |
+| 3 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+| 4 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
