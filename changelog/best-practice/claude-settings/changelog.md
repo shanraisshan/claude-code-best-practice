@@ -1127,3 +1127,21 @@
 | 4 | MED | Behavioral Note | Add v2.1.210 startup warning note for `Write(path)`, `NotebookEdit(path)`, `Glob(path)` permission rules suggesting `Edit(path)`/`Read(path)` alternatives. Confirmed in v2.1.210 changelog | ✅ COMPLETE (added blockquote note after Tool Permission Syntax table) — NEW |
 | 5 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 11 consecutive runs) |
 | 6 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 56+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 56+ consecutive runs) |
+
+---
+
+## [2026-07-19 10:44 AM PKT] Claude Code v2.1.215
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Env Var | Add `CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS` (Bedrock credential chain timeout, default 60000ms, v2.1.207). Confirmed on official env-vars page | ✅ COMPLETE (added to env vars table after `CLAUDE_CODE_SKIP_BEDROCK_AUTH`) — NEW |
+| 2 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_BEDROCK_CONTENT_TYPE_GUARD` (disable Bedrock content-type guard, v2.1.208). Confirmed on official env-vars page | ✅ COMPLETE (added to env vars table after `CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS`) — NEW |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` (per-session web search limit, default 200, v2.1.212). In v2.1.212 changelog, not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY`) — NEW |
+| 4 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` (per-session subagent limit, default 200, v2.1.212). In v2.1.212 changelog, not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`) — NEW |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` (auto-background slow MCP calls >2min, v2.1.212). In v2.1.212 changelog, not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `MCP_CONNECTION_NONBLOCKING`) — NEW |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` (forward subagent text to parent session, v2.1.211). In v2.1.211 changelog, not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `CLAUDE_CODE_SUBAGENT_MODEL`) — NEW |
+| 7 | HIGH | Missing Env Var | Add `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` (OTel payload max size, default 60KB, v2.1.215). In v2.1.215 changelog, not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `OTEL_LOG_TOOL_DETAILS`) — NEW |
+| 8 | MED | Changed Behavior | Update `sandbox.credentials` description to mention `mode` field: `"deny"` blocks entirely, `"mask"` with `injectHosts` selectively exposes credentials to trusted hosts (v2.1.199) | ✅ COMPLETE (description updated in Sandbox Settings table) — NEW |
+| 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
+| 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
+| 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
