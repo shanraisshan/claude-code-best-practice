@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-20 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 132k to 134k | COMPLETE (GitHub API: 134,073 exact; crosses two k-boundaries (133k, 134k); +2k since Jul 18 run; consistent with sustained daily growth; NEW — milestone crossing; conf 1.0) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 249 (−14; conf 0.82; per-division enumeration: academic:6, design:9, engineering:54, finance:5, game-dev:5, gis:13, healthcare:3, marketing:36, paid-media:7, product:5, project-management:7, sales:9, security:12, spatial-computing:6, specialized:56, strategy:1, support:6, testing:9) | INVALID (RECURRING methodological oscillation; conf 0.82 insufficient; −14 within documented oscillation range for this repo; specialized/ ambiguity noted (agent reported 56 after correcting hallucinated 76/67 model totals); no confirmed net removal; Jul 18's 263 via Hermes roster is higher-confidence anchor; no change) |
+| 3 | HIGH | Star | Update VoltAgent/awesome-claude-code-subagents ★ from 23k to 24k | COMPLETE (GitHub API: 23,520 exact; 23.52k crosses .5-boundary → rounds to 24k; same .5-rounds-up precedent as Jun 10 (21.5k→22k) and Jun 30 (22.6k→23k) runs; NEW — milestone crossing; conf 0.95) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 154 (−2; conf 0.95; 10-category enumeration: core-dev:11, lang-specialists:30, infra:16, quality-security:17, data-ai:13, dev-exp:15, specialized-domains:14, business-product:16, meta-orchestration:11, research-analysis:11) | INVALID (RECURRING ±2 oscillation; 27th+ consecutive INVALID ruling; no new agent files in last 30 days — all 8 commits since Jun 20 were documentation-only; 154 matches repo self-description "154+ subagents"; no change) |
+| 5 | LOW | Sort | Verify sort order (134k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-18 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
