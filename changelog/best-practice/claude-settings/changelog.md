@@ -1145,3 +1145,14 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-20 10:46 AM PKT] Claude Code v2.1.215
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `disableBrowserExternalNavigation` (boolean, Managed only) to managed-only policy keys table — confirmed on official settings page; separate from `browserExternalPageTools` (disables navigation entirely, not just tool usage) | ✅ COMPLETE (added after `browserExternalPageTools` in managed-only table) — NEW |
+| 2 | LOW | Version Attribution | `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` tagged as "v2.1.215 changelog" but research agent notes changelog attributes it to v2.1.214 (confidence 0.5) — not actioning per Rule 8A | ✋ ON HOLD (unresolved — source confidence too low) |
+| 3 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING; 13 consecutive runs) |
+| 4 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page; annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING; 58+ consecutive runs) |
