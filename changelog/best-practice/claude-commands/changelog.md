@@ -704,3 +704,12 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-07-20 11:08 AM PKT] Claude Code v2.1.215
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 88 built-in commands).
+
+---
+
+## [2026-07-21 11:10 AM PKT] Claude Code v2.1.216
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/fork [prompt]` — v2.1.212 split changed behavior from "in-session forked subagent" to "copy conversation into a new background session and keep working here"; argument updated from `<directive>` to `[prompt]` | ✅ COMPLETE (updated signature and description at #80 in Session tag) |
+| 2 | HIGH | Changed Description | Update `/subtask <task>` — v2.1.212 split moved the forked-subagent behavior here; official now reads "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes."; argument updated from `<directive>` to `<task>` | ✅ COMPLETE (updated signature and description at #87 in Session tag) |
