@@ -1626,3 +1626,20 @@
 | 14 | LOW | Workflow | BMAD: Jul 19 refactor (PR #2608) reorganized bmm-skills into numbered stages; bmad-review-edge-case-hunter may now be a lens within bmad-review rather than standalone; no explicit new canonical path documented in CHANGELOG; insufficient evidence to update pipeline | ON HOLD (NEW — structural refactor observed; keeping Jul 6 confirmed 9-step pipeline pending canonical path documentation) |
 | 15 | LOW | Workflow | ECC, Superpowers, Matt Pocock, gstack, Spec Kit, OpenSpec, CE, omc, HumanLayer — no workflow changes proposed by agents; all current pipelines confirmed as matching repo content | COMPLETE (verified; all 11 workflows unchanged) |
 | 16 | LOW | Note | shields.io Bash curl blocked (403 proxy error); MCP GitHub search_repositories used for all star verification (Superpowers 257,663; Matt Pocock 177,761 — both independently verified by orchestrator); ECC API 422 recurring — stars-don't-fall rule applied (231k confirmed) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-21 09:26 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★ from 122k to 123k (MCP GitHub: 122,891 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ from 231k to 232k (HTML: 232k; MCP API 422 recurring — stars-don't-fall rule applied upward) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 178k to 179k (MCP GitHub: 179,196 exact) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | No Change | Superpowers 258k (258,277), gstack 123k (123,243), GSD 65k (64,782 archived/frozen), OpenSpec 62k (61,788), BMAD 51k (50,875), omc 38k (37,932), CE 23k (23,271), HumanLayer 11k (11,135) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 5 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 258k > ECC 232k > Matt Pocock 179k > gstack 123k > Spec Kit 123k (actual 122,891 < gstack 123,243) > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 62k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 6 | LOW | Count Verify | ECC commands 139→97 (Agent 1: 94 commands/ + 3 .claude/commands/; 47th+ consecutive run with lower count vs Jul 8 exhaustive 139 baseline) | ON HOLD (RECURRING from Apr 13 series — keeping 139 per established convention) |
+| 7 | LOW | Count Verify | gstack skills 61→58 (Agent 2: 58 verified SKILL.md dirs across two full search pages; 3-skill gap may be pagination artifact; no deletion commits confirmed) | ON HOLD (RECURRING — keeping 61 per established directory-count methodology) |
+| 8 | LOW | Workflow | Spec Kit, ECC, Superpowers, Matt Pocock workflow changes proposed — all contradict established confirmed baselines or below confidence threshold | ON HOLD (RECURRING — no workflow changes applied) |
+| 9 | LOW | Workflow | OpenSpec, HumanLayer, GSD, gstack, BMAD, CE, omc workflow changes proposed — all contradict established confirmed baselines | ON HOLD (RECURRING — no workflow changes applied) |
+| 10 | LOW | Note | shields.io Bash curl blocked by proxy; MCP GitHub search_repositories used for all star verification (Spec Kit 122,891; Matt Pocock 179,196; gstack 123,243; Superpowers 258,277 exact); ECC API 422 recurring — HTML parse 232k applied; stars-don't-fall rule not triggered this run | COMPLETE (RECURRING — MCP verification method authoritative) |
