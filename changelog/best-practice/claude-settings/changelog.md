@@ -1145,3 +1145,21 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-22 10:47 AM PKT] Claude Code v2.1.217
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `emojiCompletionEnabled` (boolean, default `true`, any scope, v2.1.217) to Display Settings table. Confirmed on official settings page | ✅ COMPLETE (added to Display Settings table after `footerLinksRegexes`) — NEW |
+| 2 | HIGH | Missing Setting | Add `sandbox.filesystem.disabled` (boolean, Managed only, v2.1.216) to Sandbox Settings table. Confirmed on official settings page | ✅ COMPLETE (added after `sandbox.filesystem.allowManagedReadPathsOnly`) — NEW |
+| 3 | HIGH | Missing Setting | Add `disableBrowserExternalNavigation` (boolean, Managed only) to Managed-only policy keys table. Confirmed on official settings page | ✅ COMPLETE (added after `browserExternalPageTools`) — NEW |
+| 4 | HIGH | Missing Setting | Add `skillDirectories` (array, any scope) to General Settings — corrects v2.1.195 INVALID finding; setting now confirmed present on official settings page | ✅ COMPLETE (added to General Settings after `skillListingBudgetFraction`) — RESOLVED (was INVALID since 2026-06-29) |
+| 5 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` (default `20`, v2.1.213/v2.1.217) to env vars table. Confirmed in v2.1.217 changelog; not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`) — NEW |
+| 6 | HIGH | Missing Env Var | Add `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` (v2.1.217) to env vars table. Confirmed in v2.1.217 changelog; not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation after `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`) — NEW |
+| 7 | MED | Behavioral Change | Document v2.1.214 permission path-anchor change: single-segment `dir/**` rules now anchor to project cwd only. Added note to Tool Permission Syntax section after symlink resolution | ✅ COMPLETE (path-anchor note added after symlink resolution block) — NEW |
+| 8 | LOW | Example Update | Add `emojiCompletionEnabled: true` to Quick Reference complete example | ✅ COMPLETE (added after `syntaxHighlightingDisabled`) — NEW |
+| 9 | LOW | Unverified Env Var | `FORCE_HYPERLINK` — present in v2.1.213 changelog but NOT confirmed on official /en/env-vars page per Rule 8A; deferred to next run | ✋ ON HOLD (changelog-only, not confirmed on official page — Rule 8A) |
+| 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
+| 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
