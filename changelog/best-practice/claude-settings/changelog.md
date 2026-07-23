@@ -1145,3 +1145,15 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-23 10:45 AM PKT] Claude Code v2.1.218
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `emojiCompletionEnabled` (boolean, default `true`) to Display Settings table — emoji shortcode autocomplete, e.g. `:heart:` → ❤️ (v2.1.217). Confirmed in official changelog ("disable via `emojiCompletionEnabled`") and official settings docs | ✅ COMPLETE (added to Display Settings after `vimInsertModeRemaps`) — NEW |
+| 2 | HIGH | New Setting | Add `sandbox.filesystem.disabled` (boolean) to Sandbox Settings filesystem sub-keys — skips filesystem isolation while keeping network egress control (v2.1.216). Confirmed in official changelog ("New `sandbox.filesystem.disabled` setting skips filesystem isolation while controlling egress"). Scope restriction documented: only honored from user/managed/--settings, NOT from project or local settings | ✅ COMPLETE (added before `sandbox.filesystem.allowWrite` with full scope restriction note) — NEW |
+| 3 | MED | Changed Type/Description | Fix `footerLinksRegexes` type (`array` → `object[]`) and description — official settings docs confirm each entry is an object with `type` (`"regex"`), `pattern` (regex with named capture groups), `url` (template with `{name}` placeholders), and optional `label` fields, not a bare string array. Also added scope restriction note (user/--settings/managed only — not project/local) | ✅ COMPLETE (type corrected and description rewritten in Display Settings table) — NEW |
+| 4 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs — Rule 10B: human review recommended: remove from report or confirm via JSON schema) |
+| 5 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs — Rule 10B: human review recommended) |
