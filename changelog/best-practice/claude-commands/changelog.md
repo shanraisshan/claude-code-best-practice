@@ -719,3 +719,12 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-07-22 11:07 AM PKT] Claude Code v2.1.217
 
 No priority action items — report is fully in sync with official documentation (16 frontmatter fields, 88 built-in commands).
+
+---
+
+## [2026-07-23 11:11 AM PKT] Claude Code v2.1.218
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Command | Remove `/powerup` from Debug tag — absent from official docs in independent verification (two agent fetches + direct page check) | ✅ COMPLETE (removed row 34; rows 35–88 renumbered to 34–86; count updated 88 → 86) |
+| 2 | HIGH | Removed Command | Remove `/remote-env` from Remote tag — absent from official docs in independent verification (two agent fetches + direct page check) | ✅ COMPLETE (removed row 69; downstream rows renumbered; count finalized at 86) |
