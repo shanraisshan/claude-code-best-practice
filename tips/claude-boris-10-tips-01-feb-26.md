@@ -104,7 +104,7 @@ For easier Claude-juggling, use `/statusline` to customize your status bar to al
 
 Use voice dictation. You speak 3x faster than you type, and your prompts get way more detailed as a result. (hit fn x2 on macOS)
 
-See: [Terminal Setup Docs](https://code.claude.com/docs/en/termin...)
+See: [Terminal Setup Docs](https://code.claude.com/docs/en/terminal-config)
 
 <a href="https://x.com/bcherny/status/2017742753971769626"><img src="assets/boris-26-2-1/7.png" alt="Terminal and environment setup" width="50%" /></a>
 
