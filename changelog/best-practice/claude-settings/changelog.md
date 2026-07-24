@@ -1145,3 +1145,17 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-24 10:45 AM PKT] Claude Code v2.1.218
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update badge and header from v2.1.215 → v2.1.218. Three new versions released since last run | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | New Setting | Add `emojiCompletionEnabled` (boolean, default `true`) to Display Settings table after `vimInsertModeRemaps`. Shows emoji suggestions on `:shortcode` input; set `false` to disable. Confirmed on official settings page (v2.1.217) | ✅ COMPLETE (added to Display Settings table and Quick Reference example) — NEW |
+| 3 | HIGH | New Setting | Add `sandbox.filesystem.disabled` (boolean, default `false`) to Sandbox filesystem table after `allowManagedReadPathsOnly`. Completely disables sandbox filesystem rules when `true`. Confirmed in v2.1.216 changelog | ✅ COMPLETE (added to Sandbox Settings table and Quick Reference example) — NEW |
+| 4 | HIGH | New Setting | Add `disableBrowserExternalNavigation` (boolean, managed only) to Managed-only policy keys table. Turns off external browsing in the desktop app's Browser pane for both users and Claude. Confirmed on official settings page | ✅ COMPLETE (added to Managed-only policy keys table) — NEW |
+| 5 | HIGH | New Setting | Add `disableMobileSimulatorTools` (boolean, managed only) to Managed-only policy keys table. Blocks Claude's tools for the desktop app's iOS Simulator pane while preserving manual user access. Confirmed on official settings page | ✅ COMPLETE (added to Managed-only policy keys table) — NEW |
+| 6 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
+| 7 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
