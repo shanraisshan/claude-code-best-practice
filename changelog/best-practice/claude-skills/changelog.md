@@ -543,3 +543,13 @@ No drift detected — frontmatter fields (16) and bundled skills (13) are fully 
 ## [2026-07-23 10:03 AM PKT] Claude Code v2.1.218
 
 No drift detected — frontmatter fields (16) and bundled skills (13) are fully synchronized with official docs.
+
+---
+
+## [2026-07-24 10:04 AM PKT] Claude Code v2.1.218
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `background` field to frontmatter table — only applies with `context: fork`; set to `false` to wait for the forked subagent's result in the current turn instead of running in the background (default: `true`). Count updated 16→17 | ✅ COMPLETE (added `background` after `agent` in frontmatter table, count updated 16→17) |
+| 2 | MED | New Skill | Investigate `deep-research` as a potential bundled skill — changelog v2.1.216 changed its invocation to manual-only, but official docs also use it as a user-authored skill example, making bundled status ambiguous | ✋ ON HOLD (naming ambiguity: docs use `deep-research` as both a bundled invocation example and a user-authored skill example; needs human review to confirm bundled status before adding) |
+| 3 | LOW | New Skill | Investigate `ultrareview` as a potential bundled skill — changelog v2.1.218 mentions fixing `/ultrareview` with descriptive arguments, suggesting it may be a bundled max-effort code-review variant | ✋ ON HOLD (low confidence: changelog mention is insufficient to confirm bundled status; needs human review) |
