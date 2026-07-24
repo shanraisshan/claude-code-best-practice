@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2023%2C%202026%2011%3A12%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.218-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Jul%2024%2C%202026%2011%3A07%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.218-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -14,7 +14,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 
 ---
 
-## Frontmatter Fields (16)
+## Frontmatter Fields (17)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -32,6 +32,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `xhigh`, `max`) |
 | `context` | string | No | Set to `fork` to run the command in an isolated subagent context |
 | `agent` | string | No | Subagent type when `context: fork` is set (default: `general-purpose`) |
+| `background` | boolean | No | Only applies with `context: fork`. Set to `false` to wait for the forked subagent's result in the turn that invoked the skill, instead of running it in the background. Default: `true`. Requires v2.1.218+ |
 | `shell` | string | No | Shell for `` !`command` `` blocks — accepts `bash` (default) or `powershell`. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` |
 | `hooks` | object | No | Lifecycle hooks scoped to this command |
 
