@@ -1145,3 +1145,20 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-21 10:45 AM PKT] Claude Code v2.1.216
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.215 → v2.1.216 and header "As of v2.1.215" → "As of v2.1.216" | ✅ COMPLETE (badge + header updated as mandatory maintenance) — NEW |
+| 2 | HIGH | Missing Setting | Add `sandbox.filesystem.disabled` (boolean, default `false`, v2.1.216) to Sandbox Settings table — skips filesystem isolation while maintaining network egress control. Confirmed in v2.1.216 changelog | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 3 | HIGH | Permission Syntax | Document single-segment `dir/**` allow rule restriction (v2.1.214/v2.1.216): `Edit(src/**)` auto-approves only paths starting at `<cwd>/src`; use `Edit(**/src/**)` for any-depth matching. Confirmed in v2.1.214/v2.1.216 changelog | ✅ COMPLETE (added behavioral note after Tool Permission Syntax table) — NEW |
+| 4 | MED | Permission Syntax | Document docker daemon-redirect prompting: docker commands with `--url`, `--connection`, `--identity`, or Podman remote mode now trigger explicit permission prompts (v2.1.214). Confirmed in v2.1.214 changelog | ✅ COMPLETE (added note to Permissions section) — NEW |
+| 5 | MED | New Tool Note | Add `EndConversation` tool note (v2.1.214) — Claude can terminate sessions with highly abusive users. Confirmed in v2.1.214 changelog | ✅ COMPLETE (added to Useful Commands / built-in notes) — NEW |
+| 6 | MED | Version Attribution | Fix `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` annotation: report says "v2.1.215 changelog" but official changelog shows v2.1.214. Confirmed in raw changelog | ✅ COMPLETE (annotation updated to v2.1.214 changelog) — NEW |
+| 7 | MED | Missing Setting | Add `disableBrowserExternalNavigation` (boolean, Managed only) to managed-only settings. Listed on official settings page but low confidence due to partial page garbling — kept as ON HOLD pending cleaner fetch | ✋ ON HOLD (official settings page listed it but fetch was partially garbled — verify on next run) — NEW |
+| 8 | LOW | Status Line | Add `subagentStatusLine` payload note to Status Line section (v2.1.216) — custom agent rows now include reasoning effort field. Confirmed in v2.1.216 changelog | ✅ COMPLETE (added note to Status Line / Display & UX section) — NEW |
+| 9 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
+| 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
