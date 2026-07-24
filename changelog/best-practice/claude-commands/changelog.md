@@ -728,3 +728,11 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Command | Remove `/powerup` from Debug tag — absent from official docs in independent verification (two agent fetches + direct page check) | ✅ COMPLETE (removed row 34; rows 35–88 renumbered to 34–86; count updated 88 → 86) |
 | 2 | HIGH | Removed Command | Remove `/remote-env` from Remote tag — absent from official docs in independent verification (two agent fetches + direct page check) | ✅ COMPLETE (removed row 69; downstream rows renumbered; count finalized at 86) |
+
+---
+
+## [2026-07-24 11:07 AM PKT] Claude Code v2.1.218
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `background` to frontmatter table — only applies with `context: fork`; set to `false` to wait for the forked subagent's result instead of running in the background; default `true`; requires v2.1.218+ (count 16 → 17) | ✅ COMPLETE (added after `agent` field; heading updated 16 → 17) |
