@@ -1679,3 +1679,27 @@
 | 7 | LOW | Count Verify | BMAD skills 47→57 (Agent 2: repo pushed Jul 23; bmad-review consolidated, v6-shim skills added, bmad-deep-recon added; 0.71 confidence below 0.75 threshold; direct file access blocked for verification) | ON HOLD (NEW — confidence below 0.75 threshold; keeping 47 pending stronger evidence) |
 | 8 | LOW | Workflow | All 11 workflows confirmed unchanged — Superpowers 10-step, ECC 7-step PRP, Matt Pocock 11-step, gstack 9-step, Spec Kit 9-step, GSD 6-step (archived), OpenSpec 9-step, BMAD 9-step, omc 6-step, CE 6-step, HumanLayer 7-step | COMPLETE (RECURRING — no workflow changes applied) |
 | 9 | LOW | Note | shields.io and api.github.com Bash curl both blocked; MCP GitHub search_repositories used for all star verification; ECC API 422 recurring — HTML WebFetch shows stale "211.9k+" README badge; stars-don't-fall rule applied (keeping 232k) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-24 09:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★ from 123k to 124k (MCP GitHub: 123,525 exact — independently verified by orchestrator search_repositories call) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 183k to 185k (MCP GitHub: 185,044 exact — independently verified by orchestrator search_repositories call) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ from 232k to 233k (HTML parse: 233k; MCP API 422 recurring — stars-don't-fall rule applied upward) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | No Change | Superpowers 260k (MCP: 260,154), gstack 124k (Agent 2: 123,975), GSD 65k (64,782 archived/frozen), OpenSpec 62k (62,357), BMAD 51k (51,041), omc 38k (38,018), CE 23k (23,373), HumanLayer 11k (11,148) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 5 | LOW | Sort Order | No re-sort needed — gstack (123,975 actual) stays above Spec Kit (123,525 actual), both rounding to 124k; order: Superpowers 260k > ECC 233k > Matt Pocock 185k > gstack 124k > Spec Kit 124k > agent-skills 69k (out of scope) > GSD 65k > OpenSpec 62k > BMAD 51k > omc 38k > CE 23k > HumanLayer 11k | COMPLETE (verified; no position changes required) |
+| 6 | LOW | Count Verify | ECC commands 139→94 (Agent 1: full enumeration found 94 .md files in commands/; 49th+ consecutive run with lower count vs Jul 8 exhaustive 139 baseline) | ON HOLD (RECURRING from Apr 13 series — keeping 139 per established convention) |
+| 7 | LOW | Count Verify | ECC skills 278→279 (Agent 1: README self-reports 279; GitHub pagination blocked full directory count past 100 items) | ON HOLD (RECURRING — keeping 278 per established directory-count methodology) |
+| 8 | LOW | Count Verify | gstack skills 61→59 (Agent 2: SKILL.md + SKILL.md.tmpl dual-file pattern: 118 search_code results / 2 = 59; confidence 0.85 below 0.90 threshold) | ON HOLD (RECURRING — keeping 61 per established directory-count methodology) |
+| 9 | LOW | Count Verify | BMAD skills 47→41 (Agent 2: 57 SKILL.md total - 13 v6-shims - 3 test fixtures = 41; confidence 0.88 below 0.90 threshold; v6-shims exclusion ambiguity persists) | ON HOLD (RECURRING — keeping 47 pending 0.90+ confidence or deletion commits) |
+| 10 | LOW | Count Verify | BMAD agents 6→0 (Agent 2: agent personas embedded as bmad-agent-* skills, not separate agent files; contradicts Jul 20 confirmed convention of counting bmad-agent-* folders as agents) | ON HOLD (RECURRING — keeping 6 per Jul 20 confirmed convention) |
+| 11 | LOW | Workflow | Superpowers: Agent 1 confirms 14 skills incl. receiving-code-review and systematic-debugging; proposes removing executing-plans(sub) and adding receiving-code-review(sub); v6.2.0 released Jul 24 2026 | ON HOLD (RECURRING from Jul 16 — agents disagree at equal confidence; keeping current 10-step) |
+| 12 | LOW | Workflow | Matt Pocock Skills: Agent 1 proposes new 11-step starting with setup-matt-pocock-skills(top) and replacing grill-me(sub)/prototype(sub) with domain-modeling(sub) | ON HOLD (RECURRING from Jul 16 — keeping current 11-step baseline) |
+| 13 | LOW | Workflow | BMAD: Agent 2 proposes bmad-product-brief/bmad-prd/bmad-architecture 7-step (Jul 19 refactor context; confidence 0.88); contradicts Jul 23 COMPLETE 9-step baseline | ON HOLD (RECURRING — keeping Jul 6 confirmed 9-step) |
+| 14 | LOW | Workflow | oh-my-claudecode: Agent 2 proposes deep-interview(top)/team-plan(sub)/team-prd(sub)/team-exec(sub)/team-verify(sub)/team-fix(sub) pattern; contradicts Jul 14 COMPLETE deepinit/ultrawork baseline | ON HOLD (RECURRING — keeping Jul 14 confirmed pattern) |
+| 15 | LOW | Workflow | HumanLayer: Agent 2 proposes 6-step research_codebase→create_plan→implement_plan→validate_plan→describe_pr→commit dropping ralph_research; repo deprecated per README | ON HOLD (RECURRING — keeping Jul 6 confirmed 7-step) |
+| 16 | LOW | Workflow | OpenSpec: Agent 2 proposes 4-step simplified opsx:explore→propose→apply→archive; contradicts Jul 14 COMPLETE 9-step baseline | ON HOLD (RECURRING — keeping current 9-step) |
+| 17 | LOW | Note | MCP GitHub search_repositories used for all star verification (Spec Kit 123,525; Matt Pocock 185,044; Superpowers 260,154 — all independently verified by orchestrator; ECC API 422 recurring — stars-don't-fall rule applied at 233k) | COMPLETE (RECURRING — MCP verification method authoritative) |
