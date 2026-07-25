@@ -1145,3 +1145,28 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-25 10:54 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Behavior | Fix `advisorModel` description: remove `"fable"` as a supported alias — official docs confirm fable silently attaches no advisor and raises no error; only `opus`/`sonnet` work | ✅ COMPLETE (description updated in General Settings table) — NEW |
+| 2 | HIGH | Bug Fix | Fix Quick Reference example: `"advisorModel": "fable"` → `"advisorModel": "sonnet"` (fable silently fails with no advisor attached) | ✅ COMPLETE (example updated in Quick Reference) — NEW |
+| 3 | HIGH | Changed Behavior | Fix `askUserQuestionTimeout` `/config` label from "Ask user question timeout" → "Question auto-continue timeout"; add "Not read from project or local settings" | ✅ COMPLETE (description updated in General Settings table) — NEW |
+| 4 | HIGH | Missing Setting | Add `toolOverrideHeaders` (object, custom HTTP headers for all Claude Code tool HTTP requests, v2.1.217) to General Settings table | ✅ COMPLETE (added to General Settings table) — NEW |
+| 5 | HIGH | Missing Setting | Add `workflowSizeGuideline` (string, settings-file key for Dynamic workflow size guideline; `/config` row hides when set; v2.1.219) to General Settings table | ✅ COMPLETE (added to General Settings table after `dynamicWorkflowSize`) — NEW |
+| 6 | HIGH | Missing Setting | Add `sandbox.filesystem.disabled` (boolean, disable filesystem isolation while keeping network egress control active, v2.1.216) to Sandbox Settings table | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 7 | HIGH | Missing Setting | Add `sandbox.network.strictAllowlist` (boolean, deny non-allowlisted hosts without prompting, v2.1.219) to Sandbox Settings table | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 8 | HIGH | Missing Setting | Add `emojiCompletionEnabled` (boolean, default `true`, show emoji in tab-completion suggestions, v2.1.217) to Display Settings table | ✅ COMPLETE (added to Display Settings table after `outputStyle`) — NEW |
+| 9 | HIGH | Changed Behavior | Update `"opus"` model alias to Claude Opus 5 (v2.1.219; was Opus 4.8); note native 1M context and fast mode change (Opus 4.7 removed from fast mode) | ✅ COMPLETE (Model Aliases table updated) — NEW |
+| 10 | HIGH | Changed Behavior | Update Effort Level table: add Opus 5 to XHigh and High rows; update `effortLevel` description to include Opus 5 and `"max"` level; update effort note | ✅ COMPLETE (Effort Level section updated) — NEW |
+| 11 | MED | Changed Behavior | Fix `fallbackModel` non-merge exception: update description and L70 array concatenation note to clarify `fallbackModel` does NOT merge across settings files | ✅ COMPLETE (description and hierarchy note updated) — NEW |
+| 12 | MED | Missing Env Var | Add `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` (concurrent subagent task cap, default 20, v2.1.217) to env vars table | ✅ COMPLETE (added after `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`) — NEW |
+| 13 | MED | Missing Env Var | Add `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` (spawn depth limit, default 3; v2.1.217 disabled nesting, v2.1.219 set default depth 3) to env vars table | ✅ COMPLETE (added after `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`) — NEW |
+| 14 | MED | Missing Env Var | Add `FORCE_HYPERLINK` (=0 opts out of forced footer PR badge hyperlinks, v2.1.217) to env vars table | ✅ COMPLETE (added before `CLAUDE_CODE_NO_FLICKER`) — NEW |
+| 15 | LOW | Broken Link | Fix broken link in `toolOverrideHeaders` entry: removed dead `https://code.claude.com/docs/en/sandbox#tool-http-headers` URL (404) | ✅ COMPLETE (link removed, description retained) — NEW |
+| 16 | LOW | Changed Behavior | Update hook events redirect note: 25 → 26 hook events (DirectoryAdded added in v2.1.219) | ✅ COMPLETE (count updated in hooks redirect note) — NEW |
+| 17 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
+| 18 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
