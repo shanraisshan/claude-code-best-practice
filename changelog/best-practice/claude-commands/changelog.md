@@ -736,3 +736,16 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Field | Add `background` to frontmatter table — only applies with `context: fork`; set to `false` to wait for the forked subagent's result instead of running in the background; default `true`; requires v2.1.218+ (count 16 → 17) | ✅ COMPLETE (added after `agent` field; heading updated 16 → 17) |
+
+---
+
+## [2026-07-25 11:11 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Reinstated Command | Re-add `/powerup` to Config tag — confirmed present in official docs; was incorrectly removed in v2.1.218 run based on failed agent fetch (count 86 → 88) | ✅ COMPLETE (added as #12 in Config tag; downstream rows 12–86 renumbered 13–87) |
+| 2 | HIGH | Reinstated Command | Re-add `/remote-env` to Remote tag — confirmed present in official docs; was incorrectly removed in v2.1.218 run based on failed agent fetch (count as above) | ✅ COMPLETE (added as #69 in Remote tag; downstream rows 69–87 renumbered 70–88; count finalized at 88) |
+| 3 | MED | Changed Description | Update `/advisor` — remove `fable` from accepted model names; docs confirm `/advisor fable` is rejected since v2.1.210 | ✅ COMPLETE (updated description at #49 in Model tag; now lists `opus`, `sonnet` only) |
+| 4 | LOW | Changed URL | Update Sources section — `https://code.claude.com/docs/en/slash-commands` now redirects to the Skills page; built-in commands moved to `https://code.claude.com/docs/en/commands` | ✅ COMPLETE (updated link text from "Slash Commands" to "Commands" and URL in Sources section) |
+| 5 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+| 6 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #55 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
