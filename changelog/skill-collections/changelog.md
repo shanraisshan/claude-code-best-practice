@@ -433,3 +433,20 @@
 | 7 | LOW | No Change | wshobson/agents ★ steady at 38k (37,941 exact — still rounds to 38k) | COMPLETE (verified, no drift) |
 | 8 | LOW | No Change | Sort order preserved — mattpocock (172k) > anthropics (161k) > wshobson (38k) > K-Dense-AI (31k) > VoltAgent (28k) > manual rows (27k); no star crossings | COMPLETE (verified) |
 | 9 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246), Egonex-AI/Understand-Anything (67k/8) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
+## [2026-07-25 08:09 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MEDIUM | Star | Update mattpocock/skills ★ from 185k to 187k (186,920 exact via GitHub MCP — +2k, twenty-fourth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k, 2026-06-15 +4k, 2026-06-19 +7k, 2026-06-24 +8k, 2026-06-28 +4k, 2026-07-01 +4k, 2026-07-02 +1k, 2026-07-04 +3k, 2026-07-06 +2k, 2026-07-08 +3k, 2026-07-13 +7k, 2026-07-14 +2k, 2026-07-16 +3k, 2026-07-17 +2k, 2026-07-24 +11k) |
+| 2 | HIGH | Count | Update wshobson/agents skill count from 180 to 154 (38,204 exact; GitHub code search total_count=154 incomplete_results=false — -26 from prior 180; consistent with the oscillating pattern of this repo's code search results across sessions) | RECURRING (count oscillated 152→153→155→156→158→147→149→150→162→175→180→154; GitHub code search pagination is authoritative) |
+| 3 | LOW | Count | Update K-Dense-AI/scientific-agent-skills count from 149 to 150 (31,679 exact — README badge now reads 150, +1 from prior 149) | RECURRING (count drift logged 2026-05-12, 2026-05-20, 2026-06-04, 2026-06-05, 2026-06-11, 2026-06-15, 2026-07-01, 2026-07-04, 2026-07-06, 2026-07-14) |
+| 4 | LOW | No Change | anthropics/skills steady — ★ 164k (163,973 exact) and skills 17 (18 SKILL.md total; template/SKILL.md excluded) | COMPLETE (verified, no drift) |
+| 5 | LOW | No Change | mattpocock/skills active skill count steady at 37 (41 total SKILL.md; 4 in deprecated/ excluded; 9 in-progress counted as active) | COMPLETE (verified, no drift) |
+| 6 | LOW | No Change | K-Dense-AI/scientific-agent-skills ★ steady at 32k (31,679 exact — still rounds to 32k) | COMPLETE (verified, no drift) |
+| 7 | LOW | No Change | wshobson/agents ★ steady at 38k (38,204 exact — still rounds to 38k) | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 29k (28,866 exact) and curated count 1,497+ (README badge confirmed) | COMPLETE (verified, no drift) |
+| 9 | LOW | No Change | Sort order preserved — mattpocock (187k) > anthropics (164k) > Egonex-AI (67k, manual) > wshobson (38k) > K-Dense-AI (32k) > VoltAgent (29k) > manual rows (27k, 27k, 15k); no star crossings | COMPLETE (verified) |
+| 10 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246), Egonex-AI/Understand-Anything (67k/8) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
