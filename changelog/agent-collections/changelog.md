@@ -10,6 +10,19 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-07-26 08:48 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 136k to 137k | COMPLETE (HTML page: 137k exact; crosses k-boundary; NEW — milestone crossing; ~15 new agents added in last 30 days consistent with sustained growth; conf 0.72 on stars but HTML-extracted directly) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents: research range 269–292 (current 287) | INVALID (RECURRING; engineering dir uncertain 58–81 across 3 independent WebFetch runs; 287 is within reported range 269–292; conf 0.72 insufficient to override Jul 25 conf 0.88 update to 287; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23.7k rounds to 24k) | INVALID (no change required; 23.7k rounds to 24k; no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 vs 154 (−2; badge self-reports 154; conf 0.93) | INVALID (RECURRING ±2 oscillation; 30+ consecutive INVALID ruling; no new agent .md files in last 30 days — maintenance-only commits Jul 8–10 and Jun 24; no confirmed net removal; no change) |
+| 5 | LOW | Sort | Verify sort order (137k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
+
 ## [2026-07-25 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
