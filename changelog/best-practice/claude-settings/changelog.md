@@ -1145,3 +1145,26 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-26 10:40 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update version badge from v2.1.215 → v2.1.220 and "Last Updated" date from Jul 19 → Jul 26, 2026; update body "As of v2.1.215" → "As of v2.1.220" | ✅ COMPLETE (badge and body text updated) — NEW |
+| 2 | HIGH | New Setting | Add `disableMobileSimulatorTools` (boolean, default `false`, managed-only) to Managed Policy Keys table after `browserExternalPageTools`. Confirmed in v2.1.218+ changelog | ✅ COMPLETE (added to Managed Policy Keys table) — NEW |
+| 3 | HIGH | New Setting | Add `disableBrowserExternalNavigation` (boolean, default `false`, managed-only) to Managed Policy Keys table. Confirmed in v2.1.218+ changelog | ✅ COMPLETE (added to Managed Policy Keys table) — NEW |
+| 4 | HIGH | Key Rename | Rename `maxSkillDescriptionChars` → `skillListingMaxDescChars` in General Settings table and Quick Reference example. Confirmed in v2.1.218 changelog | ✅ COMPLETE (table row and Quick Reference example both updated) — NEW |
+| 5 | HIGH | Key Rename | Rename `dynamicWorkflowSize` → `workflowSizeGuideline`; correct default from `-` → `"unrestricted"`; add `"unrestricted"` as valid value. Confirmed in v2.1.215 changelog | ✅ COMPLETE (table row updated with corrected name and default) — NEW |
+| 6 | HIGH | New Setting | Add `sandbox.filesystem.disabled` (boolean, default `false`, v2.1.216) to Sandbox Settings table after `sandbox.credentials`. Confirmed in v2.1.216 changelog | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 7 | HIGH | New Setting | Add `sandbox.network.strictAllowlist` (boolean, default `false`, v2.1.219) to Sandbox Settings table. Confirmed in v2.1.219 changelog | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 8 | HIGH | Model Alias Update | Update `"opus"` alias: Claude Opus 5 is now the default on Anthropic API as of v2.1.219 (replaces Opus 4.8). Confirmed in v2.1.219 changelog | ✅ COMPLETE (Model Aliases table row updated) — NEW |
+| 9 | HIGH | New Setting | Add `emojiCompletionEnabled` (boolean, default `true`, v2.1.217) to Display Settings table after `axScreenReader`. Confirmed in v2.1.217 changelog | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 10 | HIGH | New Env Var | Add `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` (nested subagent depth limit, default `3`, v2.1.219) to env vars table after `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`. Confirmed in v2.1.219 changelog | ✅ COMPLETE (added with version annotation) — NEW |
+| 11 | MED | New Env Var | Add `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` (max concurrent subagents, default `20`, v2.1.217) to env vars table after `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`. Confirmed in v2.1.217 changelog | ✅ COMPLETE (added with version annotation) — NEW |
+| 12 | MED | Stale Annotation | Remove "(in JSON schema, not on official settings page)" annotation from `pluginConfigs` row — key is now present on the official settings page | ✅ COMPLETE (annotation removed from Plugin Settings table) — NEW |
+| 13 | MED | New Setting | Add `theme` (string, default `"default"`, v2.1.119) to Display Settings table before `outputStyle`. Confirmed as long-standing key in official settings page | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 14 | MED | Quick Reference | Add `emojiCompletionEnabled: true` to Quick Reference JSON example | ✅ COMPLETE (added to Quick Reference example) — NEW |
+| 15 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
+| 16 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
