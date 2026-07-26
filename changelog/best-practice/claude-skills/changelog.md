@@ -564,3 +564,9 @@ No new drift detected — frontmatter fields (17) and bundled skills (13) are fu
 |---|----------|------|--------|--------|
 | 1 | MED | Resolved ON HOLD | `deep-research` (held 2026-07-24): confirmed `/deep-research` is tagged Workflow in the commands reference, not a bundled skill | ❌ INVALID (commands reference marks it as Workflow — correctly absent from bundled skills table) |
 | 2 | LOW | Resolved ON HOLD | `ultrareview` (held 2026-07-24): confirmed not a bundled skill — absent from commands reference bundled skills list | ❌ INVALID (absent from official commands reference; changelog mention was insufficient to confirm bundled status) |
+
+---
+
+## [2026-07-26 10:04 AM PKT] Claude Code v2.1.220
+
+No drift detected — frontmatter fields (17) and bundled skills (13) are fully synchronized with official docs.
