@@ -749,3 +749,9 @@ No priority action items — report is fully in sync with official documentation
 | 4 | LOW | Changed URL | Update Sources section — `https://code.claude.com/docs/en/slash-commands` now redirects to the Skills page; built-in commands moved to `https://code.claude.com/docs/en/commands` | ✅ COMPLETE (updated link text from "Slash Commands" to "Commands" and URL in Sources section) |
 | 5 | LOW | Scope Decision | `/doctor` now a bundled Skill (v2.1.205), exempt from `disableBundledSkills`; report footer excludes bundled skills — consider whether to remove row from Debug tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
 | 6 | LOW | Scope Decision | `/ultraplan` classified as Workflow in official docs; currently listed at #55 in Model tag | ✋ ON HOLD (recurring from 2026-07-13 — pending user decision on scope alignment) |
+
+---
+
+## [2026-07-26 11:09 AM PKT] Claude Code v2.1.220
+
+No priority action items — report is fully in sync with official documentation (17 frontmatter fields, 88 built-in commands).
