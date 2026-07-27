@@ -1145,3 +1145,29 @@
 | 9 | MED | Missing Commands | Add `claude auto-mode reset` (reset auto-mode classification, `--yes` to skip confirmation, v2.1.212), `/fork` (fork session into isolated subagent, v2.1.212), and `/subtask` (launch isolated subtask, v2.1.212) to Useful Commands | ✅ COMPLETE (all three added to Useful Commands table) — NEW |
 | 10 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 12 consecutive runs) |
 | 11 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 57+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 57+ consecutive runs) |
+
+---
+
+## [2026-07-27 10:47 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Model Update | Add Opus 5 (`claude-opus-5`) to Model Aliases table; update `"opus"` alias description to show Opus 5 as default on Anthropic API as of v2.1.219 (1M context native, $10/$50 per Mtok). Confirmed in v2.1.219 changelog | ✅ COMPLETE (opus alias updated, opus alias description updated to show Opus 5) — NEW |
+| 2 | HIGH | Missing Setting | Add `emojiCompletionEnabled` (boolean, default `true`, v2.1.217) to Display Settings. Verified on official settings page with `min-version: 2.1.217` marker and in v2.1.217 changelog | ✅ COMPLETE (added to Display Settings table and Quick Reference example) — NEW |
+| 3 | HIGH | Missing Setting | Add `sandbox.network.strictAllowlist` (boolean, default `false`, v2.1.219) to Sandbox Settings. Confirmed in v2.1.219 changelog | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 4 | HIGH | Missing Setting | Add `sandbox.filesystem.disabled` (boolean, default `false`, v2.1.216) to Sandbox Settings. Confirmed in v2.1.216 changelog | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 5 | HIGH | Missing Setting | Add `disableBrowserExternalNavigation` (managed only, boolean, JSON boolean `true` only) to Managed-only policy keys. Verified on official settings page | ✅ COMPLETE (added to Managed-only policy keys table) — NEW |
+| 6 | HIGH | Missing Setting | Add `disableMobileSimulatorTools` (managed only, boolean, JSON boolean `true` only) to Managed-only policy keys. Verified on official settings page | ✅ COMPLETE (added to Managed-only policy keys table) — NEW |
+| 7 | HIGH | Missing Setting | Add `workflowSizeGuideline` (string, default `"medium"`, v2.1.219) to General Settings. Confirmed in v2.1.219 changelog: "Added `workflowSizeGuideline` settings key so the advisory Dynamic workflow size guideline can be set from any settings file" | ✅ COMPLETE (added to General Settings table and Quick Reference example) — NEW |
+| 8 | HIGH | Broken Example | Fix Quick Reference example: `"advisorModel": "fable"` silently attaches no advisor as of v2.1.210+. Changed to `"opus"`. Confirmed via CLI reference and v2.1.210 changelog | ✅ COMPLETE (changed fable → opus in Quick Reference) — NEW |
+| 9 | HIGH | Deprecated Env Var | Mark `CLAUDE_CODE_CONNECT_TIMEOUT_MS` as REMOVED in v2.1.186. Official env-vars page lists it under deprecated/legacy. Use `API_TIMEOUT_MS` instead | ✅ COMPLETE (updated to show REMOVED status with replacement pointer) — NEW |
+| 10 | HIGH | Wrong Env Var Name | Rename `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR` → `CLAUDE_CODE_BASH_MAINTAIN_PROJECT_WORKING_DIR`. Official env-vars page uses the `CLAUDE_CODE_` prefix; old name silently no-ops | ✅ COMPLETE (name corrected) — NEW |
+| 11 | MED | Effort Level Update | Add `Ultracode` row to Effort Level table (v2.1.203+) and update `effortLevel` setting description to include `max` and `ultracode`. Confirmed via CLI reference and v2.1.203 changelog | ✅ COMPLETE (Ultracode row added; effortLevel description and /effort command updated) — NEW |
+| 12 | MED | advisorModel Behavior | Update `advisorModel` description: `"fable"` no longer attaches an advisor as of v2.1.210+. Confirmed in CLI reference ("Cannot use Fable 5 as advisor") | ✅ COMPLETE (description updated with v2.1.210+ caveat) — NEW |
+| 13 | MED | Wrong Attribution | Fix `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` annotation: says "v2.1.215 changelog" but was added in v2.1.214. Confirmed in changelog | ✅ COMPLETE (attribution corrected to v2.1.214) — NEW |
+| 14 | MED | Changed Behavior | Update `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`: v2.1.219 added nested-subagent forwarding at depth 2+. Confirmed in v2.1.219 changelog | ✅ COMPLETE (description updated) — NEW |
+| 15 | MED | Hooks Count | Update hooks section from "25 hook events" to "26" — v2.1.219 added `DirectoryAdded` hook event. Confirmed in v2.1.219 changelog | ✅ COMPLETE (count updated in hooks redirect section) — NEW |
+| 16 | MED | MCP Interpolation | Add note about `${VAR}` interpolation in `allowedMcpServers`/`deniedMcpServers` entries (v2.1.219). Confirmed in v2.1.219 changelog | ✅ COMPLETE (note added to MCP Server Matching section) — NEW |
+| 17 | LOW | Missing Source | Add CLI Reference to Sources section — authoritative for `--permission-mode`, `--effort`, and `--advisor` values | ✅ COMPLETE (CLI reference added to Sources) — NEW |
+| 18 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
+| 19 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
