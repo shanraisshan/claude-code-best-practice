@@ -755,3 +755,12 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-07-26 11:09 AM PKT] Claude Code v2.1.220
 
 No priority action items — report is fully in sync with official documentation (17 frontmatter fields, 88 built-in commands).
+
+---
+
+## [2026-07-27 11:12 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Command | Remove `/doctor` from Debug tag — reclassified as bundled `[Skill]` since v2.1.205; report's own scope disclaimer excludes bundled skills; count updated 88 → 87 | ✅ COMPLETE (removed row 31; rows 32–88 renumbered 31–87; count heading updated to 87) |
+| 2 | MED | Changed Argument | Update `/ultrareview` — argument hint changed from `[PR]` to `[PR or branch]` per official docs; branch name changes the comparison base | ✅ COMPLETE (updated at row 61 in Project tag) |
