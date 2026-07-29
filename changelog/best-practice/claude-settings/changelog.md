@@ -1171,3 +1171,49 @@
 | 17 | LOW | Missing Source | Add CLI Reference to Sources section — authoritative for `--permission-mode`, `--effort`, and `--advisor` values | ✅ COMPLETE (CLI reference added to Sources) — NEW |
 | 18 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
 | 19 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
+
+---
+
+## [2026-07-29 11:03 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | P0-Fix | Fixed `showThinkingSummaries` description: was "SDK callers always receive summaries regardless of this setting" — corrected to "This setting has no effect in non-interactive mode (`-p`), Agent SDK, or IDE extensions such as VS Code" | COMPLETE (description corrected to match official docs) |
+| 2 | HIGH | P0-Fix | Renamed `maxSkillDescriptionChars` → `skillListingMaxDescChars` throughout (General Settings table, Quick Reference example) — key was renamed in official docs | COMPLETE (renamed in table + QR example) |
+| 3 | HIGH | P0-Fix | Fixed `viewMode` description: changed "Ctrl+O selection" → "`/focus` selection" — `/focus` is the correct slash command per official docs | COMPLETE (description corrected) |
+| 4 | HIGH | P0-Fix | Fixed `Tool(param:value)` permission row: removed invalid `Bash(cmd:npm run *)` example; clarified pattern only applies to deny/ask rules; listed non-matchable fields | COMPLETE (example corrected, scope clarified) |
+| 5 | HIGH | P0-Fix | Fixed deny rule glob note: added `EndConversation` carve-out; added warning that unanchored allow globs are silently skipped (not errors) | COMPLETE (note updated with official behavior) |
+| 6 | HIGH | P0-Fix | Fixed `strictKnownMarketplaces`: type changed from `boolean` to array allowlist description per official docs | COMPLETE (type/description corrected) |
+| 7 | HIGH | P0-Fix | Fixed `effortLevel`: removed `"max"` and `"ultracode"` from valid settings.json values; added "not a valid `settings.json` value" notes to Ultracode/Max rows in Effort Level table — they are CLI/session-only | COMPLETE (clarified CLI-only scope for max/ultracode) |
+| 8 | HIGH | P0-Fix | Fixed permission example: `"mcp__*"` → `"mcp__github__*"` in both allow array and Quick Reference example — `mcp__*` by itself does not match tool names | COMPLETE (fixed in Permission Syntax section and QR example) |
+| 9 | HIGH | P0-Fix | Fixed `MCP_CONNECTION_NONBLOCKING` inverted semantics: as of v2.1.142 non-blocking is DEFAULT; set to `0` to restore blocking behavior | COMPLETE (semantics corrected) |
+| 10 | HIGH | Missing Setting | Added `verbose` (boolean, default false) to General Settings | COMPLETE (added to General Settings table) |
+| 11 | HIGH | Missing Setting | Added `processWrapper` (string/null) and `remote.defaultEnvironmentId` (string) to General Settings | COMPLETE (added to General Settings table) |
+| 12 | HIGH | Missing Setting | Added `theme` (string, default "dark") to Display Settings table | COMPLETE (added to Display Settings table) |
+| 13 | HIGH | Missing Setting | Added `diffTool` (string, default "auto") to Global Config (`~/.claude.json`) section | COMPLETE (added to Global Config section) |
+| 14 | HIGH | Missing Setting | Added `permissionExplainerEnabled` (boolean, default true) to Global Config section | COMPLETE (added to Global Config section) |
+| 15 | HIGH | Missing Setting | Added `statusLine.hideVimModeIndicator` field to Status Line Configuration table | COMPLETE (added to Status Line table) |
+| 16 | HIGH | Missing Setting | Added `sandbox.network.tlsTerminate` and `sandbox.credentials.allowPlaintextInject` to Sandbox Settings | COMPLETE (both added to Sandbox Settings table) |
+| 17 | HIGH | Missing Env Var | Added `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` (v2.1.217, default 3 as of v2.1.219) to env vars | COMPLETE (added to Environment Variables table) |
+| 18 | HIGH | Missing Env Var | Added `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` (v2.1.217, default 20) to env vars | COMPLETE (added to Environment Variables table) |
+| 19 | HIGH | Missing Env Var | Added 10 new `VERTEX_REGION_*` entries for current model family (Claude 4.5–5, Fable 5, Haiku 4.5) | COMPLETE (all 10 added to VERTEX_REGION table) |
+| 20 | HIGH | Hooks Count | Updated hooks section from "26 hook events" to "30 hook events" — confirmed 30 events on official hooks page | COMPLETE (count updated in hooks redirect section) |
+| 21 | MED | Accuracy Fix | `workflowSizeGuideline`: added `"unrestricted"` to valid values; added note about hiding the /config row | COMPLETE (description updated) |
+| 22 | MED | Accuracy Fix | Fixed `/` prefix path resolution description: changed to "relative to the **settings source file**" per official docs | COMPLETE (path resolution corrected) |
+| 23 | MED | Accuracy Fix | Removed "deprecated" claim from `:*` suffix note; explained it's only recognized at end of tool name | COMPLETE (description corrected) |
+| 24 | MED | Accuracy Fix | Process wrapper strip list: added `command`, `builtin` (shell builtins), zsh's `noglob`; added warning about env runners (devbox/mise/npx/docker) | COMPLETE (strip list and warnings updated) |
+| 25 | MED | Accuracy Fix | `bypassPermissions`: expanded exceptions to include `ask` rules, connector tools, and `requiresUserInteraction` MCP tools; added v2.1.208 substitution forms note | COMPLETE (exceptions list updated) |
+| 26 | MED | Accuracy Fix | `dontAsk`: added exceptions note (mirrors bypassPermissions exceptions) | COMPLETE (exceptions note added) |
+| 27 | MED | Accuracy Fix | `permissions.defaultMode`: added "`auto` is ignored in project settings" restriction per official docs | COMPLETE (restriction note added) |
+| 28 | MED | Accuracy Fix | Added `Read` deny blocks `Edit` note (v2.1.208 behavior) | COMPLETE (note added) |
+| 29 | MED | Accuracy Fix | Added `dir/**` scoping fix note (v2.1.214) to path resolution section | COMPLETE (note added) |
+| 30 | MED | Accuracy Fix | `sandbox.filesystem.disabled`: added scope restriction note per official docs | COMPLETE (restriction noted) |
+| 31 | MED | Accuracy Fix | `sandbox.network.strictAllowlist`: added scope restriction, `WebFetch(domain:...)` allowlist inclusion, and in-process WebFetch caveat | COMPLETE (all three notes added) |
+| 32 | MED | Accuracy Fix | `sandbox.credentials`: added prerequisite note that `mask` mode requires `sandbox.network.tlsTerminate` | COMPLETE (prerequisite noted) |
+| 33 | MED | Accuracy Fix | `pluginConfigs`: fixed description from "MCP server configs" to "non-sensitive userConfig option values"; removed stale "not on official settings page" tag | COMPLETE (description and tag corrected) |
+| 34 | MED | Accuracy Fix | `footerLinksRegexes`: rewrote description (prior description was wrong about matching URLs) | COMPLETE (description rewritten) |
+| 35 | MED | Accuracy Fix | v2.1.119 migration note: added `theme` and `verbose` to list of migrated keys | COMPLETE (migration note updated) |
+| 36 | MED | Quick Reference | Updated `modelOverrides` in QR and Model Configuration examples from `claude-opus-4-6` → `claude-opus-5` | COMPLETE (examples updated to current model) |
+| 37 | LOW | Stale Annotation | Stripped "not in official docs" stale tags from 21 env vars that are now confirmed on official /en/env-vars page | COMPLETE (tags removed from: CLAUDE_CODE_SESSION_ID, AI_AGENT, DISABLE_UPDATES, CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP, ENABLE_PROMPT_CACHING_1H, FORCE_PROMPT_CACHING_5M, CLAUDE_EFFORT, CLAUDE_CODE_FORWARD_SUBAGENT_TEXT, CLAUDE_CODE_PROCESS_WRAPPER, CLAUDE_CODE_RETRY_WATCHDOG, CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS, CLAUDE_CODE_DISABLE_MOUSE_CLICKS, OTEL_LOG_TOOL_DETAILS, CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH, OTEL_LOG_RAW_API_BODIES, OTEL_LOG_USER_PROMPTS, OTEL_LOG_ASSISTANT_RESPONSES, OTEL_METRICS_INCLUDE_ENTRYPOINT, CLAUDE_CODE_FORK_SUBAGENT, DISABLE_AUTO_COMPACT, CLAUDE_CODE_MAX_TURNS, CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION, CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION) |
+| 38 | LOW | Resolved ON HOLD | `CLAUDE_CODE_RETRY_WATCHDOG` (14 consecutive runs ON HOLD): stale "not on official env-vars page" tag removed — now confirmed on official page | COMPLETE (tag removed; ON HOLD resolved after 14 runs) |
+| 39 | LOW | Resolved ON HOLD | `OTEL_LOG_TOOL_DETAILS` (59+ consecutive runs ON HOLD): stale "not yet on official env-vars page" tag removed — now confirmed on official page | COMPLETE (tag removed; ON HOLD resolved after 59+ runs) |
