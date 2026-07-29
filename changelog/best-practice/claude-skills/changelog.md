@@ -582,3 +582,12 @@ No drift detected — frontmatter fields (17) and bundled skills (13) are fully 
 ## [2026-07-28 10:09 AM PKT] Claude Code v2.1.220
 
 No drift detected — frontmatter fields (17) and bundled skills (13) are fully synchronized with official docs.
+
+---
+
+## [2026-07-29 10:06 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Skill | Add `review` to official bundled skills table — fast single-pass, read-only review of a GitHub pull request; became Skill-tool-invocable in v2.1.108; from v2.1.186–v2.1.201 used the `/code-review medium` engine; v2.1.202 reverted to fast single-pass. Count updated 13→15 | ✅ COMPLETE (added as row 14, count updated 13→15) |
+| 2 | HIGH | New Skill | Add `security-review` to official bundled skills table — review the current diff for security vulnerabilities and suggest fixes; supports `--fix` and `--comment` flags; became Skill-tool-invocable in v2.1.108. Count updated 13→15 | ✅ COMPLETE (added as row 15, count updated 13→15) |
