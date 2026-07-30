@@ -1171,3 +1171,39 @@
 | 17 | LOW | Missing Source | Add CLI Reference to Sources section — authoritative for `--permission-mode`, `--effort`, and `--advisor` values | ✅ COMPLETE (CLI reference added to Sources) — NEW |
 | 18 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated "*(in v2.1.199 changelog, not on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 13 consecutive runs) |
 | 19 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 58+ consecutive runs; entry annotated "*(in v2.1.85 changelog, not yet on official env-vars page)*" | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 58+ consecutive runs) |
+
+---
+
+## [2026-07-30 10:55 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Key Rename | Rename `maxSkillDescriptionChars` → `skillListingMaxDescChars` in General Settings table and Quick Reference example. Official settings page uses `skillListingMaxDescChars` (v2.1.105) | ✅ COMPLETE (both table row and Quick Reference updated) — NEW |
+| 2 | HIGH | Wrong Env Var Name | Correct `CLAUDE_CODE_BASH_MAINTAIN_PROJECT_WORKING_DIR` → `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR`. Reverts incorrect fix from 2026-07-27 run — official env-vars page uses shorter form without `CODE_` prefix | ✅ COMPLETE (env var name corrected) — NEW |
+| 3 | HIGH | Broken Example | Remove `mcp__*` from `permissions.allow` in section example and Quick Reference. Unanchored MCP glob is invalid in allow; moved to deny section where it is valid | ✅ COMPLETE (example and Quick Reference fixed) — NEW |
+| 4 | HIGH | Wrong Note | Fix v2.1.210 note: `Write`/`NotebookEdit`/`Glob` rules "continue to work" is incorrect — these rules are NEVER CONSULTED because Claude Code uses `Edit`/`Read` tool names, so any allow rules on `Write`/`NotebookEdit` silently have no effect | ✅ COMPLETE (note rewritten to warn about no-op behavior) — NEW |
+| 5 | HIGH | Missing Setting | Add `useEnterpriseMcpConfigOnly` (boolean, managed only) to MCP Settings table | ✅ COMPLETE (added to MCP Settings table) — NEW |
+| 6 | HIGH | Missing Settings | Add `theme` (string, display theme) and `verbose` (boolean, verbose output) to Display Settings table | ✅ COMPLETE (both added to Display Settings table) — NEW |
+| 7 | HIGH | Missing Settings | Add `diffTool` (string) and `permissionExplainerEnabled` (boolean) to Global Config Settings (`~/.claude.json`) table | ✅ COMPLETE (both added to Global Config table) — NEW |
+| 8 | HIGH | Missing Settings | Add `sandbox.tlsTerminate` (boolean) and `sandbox.credentials.allowPlaintextInject` (boolean) to Sandbox Settings. Add security notes to `sandbox.allowAppleEvents` | ✅ COMPLETE (both new keys added with security warnings; allowAppleEvents note added) — NEW |
+| 9 | HIGH | Wrong Description | Fix `wheelScrollAccelerationEnabled`: description was inverted — said "Disable mouse-wheel scroll acceleration" but the key ENABLES it when `true` | ✅ COMPLETE (description corrected) — NEW |
+| 10 | HIGH | Wrong Description | Fix `footerLinksRegexes`: description incorrect — patterns match turn output (not URLs); structure is array of objects with `pattern`/`url`/`label` fields (not just regex strings) | ✅ COMPLETE (description updated with correct behavior and structure) — NEW |
+| 11 | HIGH | Hooks Count | Update hooks section count from "26" to "30" hook events (official docs now list 30 events as of v2.1.219+) | ✅ COMPLETE (count updated in hooks redirect section) — NEW |
+| 12 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` and `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` to env vars table | ✅ COMPLETE (both added near subagent-related vars) — NEW |
+| 13 | HIGH | Missing Env Vars | Add `CLAUDE_PID` (read-only, parent process PID) and `FORCE_HYPERLINK` (force OSC 8 hyperlinks) to env vars table | ✅ COMPLETE (both added) — NEW |
+| 14 | HIGH | Wrong Counts | Update header claim "80+ settings" → "126 settings" and "200+ environment variables" → "308 environment variables" to reflect actual table counts | ✅ COMPLETE (header updated) — NEW |
+| 15 | HIGH | Missing Sub-Keys | Add `timeoutMs` and `refreshIntervalMs` optional fields to `policyHelper` object shape description | ✅ COMPLETE (policyHelper description updated with full object shape) — NEW |
+| 16 | HIGH | Hierarchy Update | Add `policyHelper` output as highest-precedence item in managed-tier precedence chain | ✅ COMPLETE (managed-tier precedence sentence updated) — NEW |
+| 17 | HIGH | Missing Setting | Add `processWrapper` (string) to General Settings — persistent equivalent of `CLAUDE_CODE_PROCESS_WRAPPER` env var (v2.1.208) | ✅ COMPLETE (added to General Settings table) — NEW |
+| 18 | MED | Missing Value | Add `"unrestricted"` as 4th valid value for `workflowSizeGuideline` setting | ✅ COMPLETE (value added to description) — NEW |
+| 19 | MED | Wrong Description | Fix `strictKnownMarketplaces`: was described as "only official Anthropic marketplace"; actually it's an allowlist restricting to IT-approved marketplaces | ✅ COMPLETE (description updated) — NEW |
+| 20 | MED | Wrong Annotation | Remove "not on official settings page" annotation from `pluginConfigs` — it IS on the official settings page | ✅ COMPLETE (annotation removed) — NEW |
+| 21 | MED | Unverified Key | Annotate `thinkingBudgetTokens` as "*(not in official docs or JSON schema — unverified)*" | ✅ COMPLETE (annotation added) — NEW |
+| 22 | MED | Superseded Key | Annotate `dynamicWorkflowSize` as "*(not in official docs — unverified; superseded by `workflowSizeGuideline` as of v2.1.219)*" | ✅ COMPLETE (annotation added) — NEW |
+| 23 | MED | Array Semantics | Add note that `fallbackModel` and `availableModels` are replaced (not concatenated) across scopes — exception to the standard array-merge behavior | ✅ COMPLETE (exception note added to Settings Hierarchy section) — NEW |
+| 24 | MED | Missing Env Vars | Add Vertex region env vars for newer models: `VERTEX_REGION_CLAUDE_SONNET_4_5`, `_SONNET_4_6`, `_OPUS_4_6`, `_HAIKU_4_5` | ✅ COMPLETE (all four added to Vertex region vars section) — NEW |
+| 25 | MED | Cross-Reference | Update `CLAUDE_CODE_PROCESS_WRAPPER` to note its `processWrapper` settings-key counterpart | ✅ COMPLETE (annotation updated) — NEW |
+| 26 | LOW | Sandbox Credentials | `sandbox.credentials` element type: description may be wrong (arrays of paths/names vs arrays of objects with path/name/mode). Could not confirm exact object schema from official docs | ✋ ON HOLD (needs official verification) |
+| 27 | LOW | Plugin Marketplace | Marketplace source types count: report lists 8 types vs official 5. Could not confirm definitive 5-item list to apply the fix safely | ✋ ON HOLD (needs official confirmation of correct list) |
+| 28 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199; 14 consecutive runs) |
+| 29 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 59+ consecutive runs | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107; 59+ consecutive runs) |
