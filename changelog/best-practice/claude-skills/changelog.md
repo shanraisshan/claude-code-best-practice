@@ -591,3 +591,11 @@ No drift detected — frontmatter fields (17) and bundled skills (13) are fully 
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Skill | Add `review` to official bundled skills table — fast single-pass, read-only review of a GitHub pull request; became Skill-tool-invocable in v2.1.108; from v2.1.186–v2.1.201 used the `/code-review medium` engine; v2.1.202 reverted to fast single-pass. Count updated 13→15 | ✅ COMPLETE (added as row 14, count updated 13→15) |
 | 2 | HIGH | New Skill | Add `security-review` to official bundled skills table — review the current diff for security vulnerabilities and suggest fixes; supports `--fix` and `--comment` flags; became Skill-tool-invocable in v2.1.108. Count updated 13→15 | ✅ COMPLETE (added as row 15, count updated 13→15) |
+
+---
+
+## [2026-07-30 10:08 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Potential Removed Skill | `review` (row 14) and `security-review` (row 15) are in local report but lack the `**[Skill]**` marker in the official commands reference — investigate whether this is a docs omission or a product removal | ✋ ON HOLD (likely a docs omission — both skills remain live and Skill-tool-invocable in the current session; awaiting human review before removing) |
