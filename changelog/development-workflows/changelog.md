@@ -1827,3 +1827,25 @@
 | 15 | LOW | Workflow | Superpowers — Agent 1 proposes 12-step (adds systematic-debugging/receiving-code-review/verification-before-completion; removes re-reviewer/final-code-reviewer; test-driven-development sub→top) vs current confirmed 11-step set Jul 28 | ON HOLD (RECURRING from Jul 16/27/28 series — keeping current Jul 28 confirmed pipeline) |
 | 16 | LOW | Workflow | ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines from Jul 28 or below confidence threshold | ON HOLD (RECURRING — no workflow changes applied) |
 | 17 | LOW | Note | shields.io Bash curl blocked (proxy, empty response); api.github.com blocked for ECC (422 recurring); MCP GitHub search_repositories used for all star verification (all 11 repos + agent-skills independently verified) | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-07-30 09:27 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★ from 124k to 125k (exact: 124,514 via MCP GitHub search_repositories) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ from 235k to 236k (HTML since API 422 recurring; stars-don't-fall rule from 234,957 → ~236k; Agent 1 via HTML page) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★ from 193k to 195k (exact: 194,882 via MCP GitHub search_repositories) | COMPLETE (NEW — 2k jump; updated README table) |
+| 4 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 263k > ECC 236k > Matt Pocock 195k > gstack 125k (125,189) > Spec Kit 125k (124,514 — gstack stays 4th) > agent-skills 81k > GSD 65k > OpenSpec 63k > BMAD 51k > omc 38k > CE 24k > HumanLayer 11k | COMPLETE (verified; order maintained) |
+| 5 | LOW | No Change | Superpowers 263k (MCP: 263,415), gstack 125k (MCP: 125,189), OpenSpec 63k (MCP: 63,109), GSD 65k (MCP: 64,798 archived), BMAD 51k (MCP: 51,262), omc 38k (MCP: 38,177), CE 24k (MCP: 23,608), HumanLayer 11k (MCP: 11,187), agent-skills 81k (MCP: 80,930) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 6 | LOW | Count Verify | GSD commands 67→93 discrepancy from Jul 29 — today Agent 2 re-confirms 67 commands in commands/gsd/ (same enumeration: add-tests through workstreams, 67 total) | COMPLETE (RESOLVED from Jul 29 ON HOLD — 67 baseline confirmed; Jul 29 agent count of 93 was erroneous) |
+| 7 | LOW | Count Verify | ECC commands 139→94 (Agent 1: 94 .md files in commands/ per v2.1.0 release notes "94 command shims"; .claude/commands/ adds 3 more = 97 total; prior recurring at 139→131) | ON HOLD (RECURRING — keeping 139 per established convention) |
+| 8 | LOW | Count Verify | ECC skills 278→281 (Agent 1: v2.1.0 release notes state 281 skills) | ON HOLD (RECURRING — keeping 278 per established directory-count methodology) |
+| 9 | LOW | Count Verify | gstack skills 61→55 (Agent 2: README states "47 slash-command skills plus 8 power tools = 55"; 3 root dirs unverified; confidence 0.72) | ON HOLD (RECURRING — keeping 61; confidence below 0.90 threshold) |
+| 10 | LOW | Count Verify | BMAD skills 47→50+ (Agent 2: minimum 50, possibly 53–58; pagination errors on 2 of 5 bmm-skills phase dirs; confidence 0.80) | ON HOLD (RECURRING — keeping 47; count range ambiguous) |
+| 11 | LOW | Count Verify | OpenSpec skills 0→12 (Agent 2: 12 skill dirs confirmed for 6th consecutive run) | ON HOLD (RECURRING from Jul 25–29 — keeping 0 per established convention pending migration confirmation) |
+| 12 | LOW | Count Verify | OpenSpec commands 12→10 (Agent 2: 10 /opsx:* commands from README; confidence 0.92) | ON HOLD (RECURRING from Jul 29 — keeping 12 pending directory vs README count reconciliation) |
+| 13 | LOW | Workflow | Superpowers — Agent 1 proposes 8-step (removes implementer/task-reviewer/re-reviewer/final-code-reviewer subs; adds executing-plans sub; test-driven-development sub→top) vs current 11-step | ON HOLD (RECURRING from Jul 16/27/28/29 — keeping current confirmed pipeline) |
+| 14 | LOW | Workflow | ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines or below confidence threshold | ON HOLD (RECURRING — no workflow changes applied) |
+| 15 | LOW | Note | shields.io Bash curl blocked (proxy, empty response); api.github.com blocked for ECC (422 recurring); MCP GitHub search_repositories used for all star verification (12 repos including agent-skills independently verified) | COMPLETE (RECURRING — MCP verification method authoritative) |
