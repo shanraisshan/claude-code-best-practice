@@ -136,7 +136,7 @@ Read these files:
 >
 > **Repo 1: Fission-AI/OpenSpec** (https://github.com/Fission-AI/OpenSpec)
 > **Repo 2: humanlayer/humanlayer** (https://github.com/humanlayer/humanlayer)
-> **Repo 3: gsd-build/get-shit-done** (https://github.com/gsd-build/get-shit-done)
+> **Repo 3: open-gsd/gsd-core** (https://github.com/open-gsd/gsd-core)
 > **Repo 4: garrytan/gstack** (https://github.com/garrytan/gstack)
 > **Repo 5: bmad-code-org/BMAD-METHOD** (https://github.com/bmad-code-org/BMAD-METHOD)
 > **Repo 6: EveryInc/compound-engineering-plugin** (https://github.com/EveryInc/compound-engineering-plugin)
