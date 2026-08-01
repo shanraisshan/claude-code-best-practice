@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-01 08:47 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ 137k → 138k | INVALID (conf 0.45 below 0.88 threshold; HTML-only extraction; GitHub API blocked this run; growth trend consistent but unverifiable; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 255 (−8; code search incomplete_results:false; 15 dirs; engineering/58 + specialized/57 + marketing/36 + game-dev/21 + gis/13 + security/12 + design/10 + spatial-computing/6 + academic/6 + sales/9 + paid-media/7 + product/5 + finance/5 + healthcare/3 + project-management/7 = 255) | INVALID (RECURRING oscillation band 254–287; 255 within band; code search methodology differs from per-dir HTML enumeration used in prior runs; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (23.9k rounds to 24k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 153-154 (−2/−3; per-category: 01:11 + 02:30 + 03:16 + 04:17 + 05:13 + 06:15 + 07:14 + 08:16 + 09:11 + 10:10-11 = 153-154) | INVALID (RECURRING 32nd+ consecutive INVALID ruling; ±3 oscillation; maintenance-only commits Jul 8–31; no new agent .md files confirmed; no change) |
+| 5 | LOW | Sort | Verify sort order (137k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-07-29 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
