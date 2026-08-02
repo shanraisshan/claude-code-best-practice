@@ -617,3 +617,13 @@ No new drift detected — frontmatter fields (17) and bundled skills (15) are fu
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | MED | Resolved ON HOLD | `review` and `security-review` classification (held since 2026-07-30): official commands reference now confirms both are labeled **Skill** with 15 total bundled skills — report count of 15 is correct | ❌ INVALID (commands reference confirms both as bundled skills; report count of 15 is correct and no reclassification needed) |
+
+---
+
+## [2026-08-02 10:05 AM PKT] Claude Code v2.1.220
+
+No new frontmatter drift detected — frontmatter fields (17) are fully synchronized with official docs.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Potential Removed Skills | `review` (row 14) and `security-review` (row 15) are not marked `**[Skill]**` in the official commands reference — raw marker count yields 13 bundled skills; official skills docs describe these two as built-in commands reachable via the Skill tool, not bundled skills. Count should be 13, not 15 | ✋ ON HOLD (recurring from 2026-07-30; 2026-08-01 run marked INVALID based on commands reference, but today's raw marker count re-confirms 13 bundled skills; awaiting human review before removing rows 14–15 or updating count) |
