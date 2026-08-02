@@ -10,6 +10,17 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-02 08:49 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ 137k → 138k (HTML "138k"; API blocked 2nd consecutive day; growth trajectory ~1k/day from Jul 28 confirmed 137,123) | INVALID (conf 0.55 below 0.72 minimum for HTML-only stars; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 269 (+6; explicit per-dir enumeration of 21 category dirs; July additions including Economy Designer, Rust Refactoring Specialist, LLM Post-Training Engineer confirmed) | INVALID (within oscillation band 254–287; conf 0.78 < 0.88 threshold; RECURRING) |
+| 3 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 155 (−1; cat-09-meta-orchestration: scan 11 vs README 14; possible post-Jun-24 deletions; conf 0.80) | INVALID (RECURRING 32nd+ consecutive INVALID; ±1 oscillation; no confirmed net removal; no change) |
+| 4 | LOW | Sort | Verify sort order (137k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-01 08:47 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
