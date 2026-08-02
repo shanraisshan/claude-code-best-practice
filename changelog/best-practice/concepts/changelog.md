@@ -1757,3 +1757,23 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 | 11 | LOW | Verification | Location Column Factual Accuracy (rule #8) — all Locations verified accurate; Bundled Skills partially incomplete (see #3) | ✅ COMPLETE (Locations accurate; one flagged as ON HOLD) |
 | 12 | LOW | Verification | Sitemap at 174 pages — no new CONCEPTS-worthy feature pages; v2.1.220 is same version as yesterday | ✅ COMPLETE (no new CONCEPTS-worthy pages) |
 | 13 | LOW | Verification | Both agents cross-check — workflow-concepts-agent (174-page docs sweep, 44 concepts verified) and claude-code-guide (90-feature inventory) aligned; no contradictions; no NEW actionable findings beyond recurring ON HOLD items | ✅ COMPLETE (agents aligned; no NEW items) |
+
+---
+
+## [2026-08-02 09:42 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Missing Concept (recurring) | Both agents (workflow-concepts-agent: 174-page docs sweep, 44 concepts verified; claude-code-guide: 139-feature inventory) re-flagged Sessions, Desktop App, VS Code, JetBrains, Mobile, Prompt Library, Context Window as missing standalone rows | ❌ INVALID (RECURRING from 2026-03-10; user considers platform/runtime surfaces and reference pages covered as Settings/Memory sub-links — not standalone concepts) |
+| 2 | MED | Stale Beta Badge (recurring) | Voice Dictation (`/en/voice-dictation`) — docs page contains NO beta/preview/experimental language; confidence 0.65 | ⏸️ ON HOLD (RECURRING from 2026-06-25; below 0.7 auto-apply threshold; requires user review) |
+| 3 | MED | Location Update (recurring) | Bundled Skills Location column lists `/code-review`, `/batch` but official docs enumerate 12+ bundled skills; confidence 0.70 | ⏸️ ON HOLD (RECURRING from 2026-06-27; which subset to display requires user judgement) |
+| 4 | MED | Stale Beta Badge (recurring) | Artifacts (`/en/artifacts`) — docs page contains NO beta/preview/experimental language; confidence 0.60 | ⏸️ ON HOLD (RECURRING from 2026-07-03; below 0.7 auto-apply threshold; requires user review) |
+| 5 | LOW | Verification | Same version as yesterday (v2.1.220); no new release; seventh consecutive day at this version | ✅ COMPLETE (no version bump) |
+| 6 | LOW | Verification | All 44+ external CONCEPTS URLs validated against llms.txt sitemap — all resolve correctly; no broken links | ✅ COMPLETE (all URLs valid) |
+| 7 | LOW | Verification | All 26+ local badge/link target files validated via Glob — `best-practice/` (8 files), `implementation/` (6 files), `reports/` (9 files), `.claude/`, `.mcp.json`, `CLAUDE.md`, `orchestration-workflow/` targets all exist | ✅ COMPLETE (no missing local files) |
+| 8 | LOW | Verification | Beta Badge Currency (rule #7) — Advisor confirmed "experimental"; Ultrareview confirmed "research preview"; Fast Mode confirmed "research preview"; Channels confirmed "research preview"; Ultraplan confirmed "research preview"; Agent Teams confirmed "experimental"; Agent View confirmed "research preview"; Code Review confirmed "research preview"; Computer Use confirmed "research preview"; No Flicker Mode confirmed "research preview"; Routines confirmed "research preview"; Claude Code Web confirmed "research preview"; Voice Dictation ON HOLD (see #2); Artifacts ON HOLD (see #4) | ✅ COMPLETE (all 12 checked beta badges confirmed current; 2 ON HOLD) |
+| 9 | LOW | Verification | Command rename scan (rule #9) — v2.1.220 CHANGELOG contains no command/skill renames or removals; `/code-review`, `/batch` confirmed current on `/en/commands` and `/en/skills#bundled-skills` | ✅ COMPLETE (no rename drift) |
+| 10 | LOW | Verification | Anchors stable: `#organize-rules-with-clauderules`, `#eliminate-prompts-with-auto-mode`, `#bundled-skills`, `#track-a-running-review`, `#run-a-bundled-workflow`, `#let-claude-use-your-computer` all confirmed present on target pages via WebFetch | ✅ COMPLETE (all CONCEPTS anchors stable) |
+| 11 | LOW | Verification | Location Column Factual Accuracy (rule #8) — all Locations verified accurate; Bundled Skills partially incomplete (see #3) | ✅ COMPLETE (Locations accurate; one flagged as ON HOLD) |
+| 12 | LOW | Verification | Sitemap at 174 pages — no new CONCEPTS-worthy feature pages; v2.1.220 is same version as yesterday | ✅ COMPLETE (no new CONCEPTS-worthy pages) |
+| 13 | LOW | Verification | Both agents cross-check — workflow-concepts-agent (174-page docs sweep, 44 concepts verified) and claude-code-guide (139-feature inventory) aligned; no contradictions; no NEW actionable findings beyond recurring ON HOLD items | ✅ COMPLETE (agents aligned; no NEW items) |
