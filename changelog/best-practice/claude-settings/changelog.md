@@ -1203,3 +1203,29 @@
 | 23 | LOW | Resolved Suspect Key | `OTEL_LOG_TOOL_DETAILS` — confirmed present on official /en/env-vars page (was ON HOLD for 58+ consecutive runs). Removed stale "*(not yet on official env-vars page)*" annotation | ✅ COMPLETE (annotation removed) — RESOLVED (ON HOLD since 2026-04-14; 58+ runs) |
 | 24 | LOW | Stale Annotation | `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` — removed stale "*(not yet on official env-vars page)*" annotation; confirmed in official env-vars page | ✅ COMPLETE (annotation removed) — NEW |
 | 25 | LOW | Missing Sources | Added 3 source links to Sources section: model configuration page, statusline reference, additional env-vars coverage | ✅ COMPLETE (sources added) — NEW |
+---
+
+## [2026-08-01 10:52 AM PKT] Claude Code v2.1.220
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Content | Update header settings/env var counts: "80+" → "160+", "200+" → "320+" (actual table counts: ~164 settings, 329+ env vars) | ✅ COMPLETE (counts updated) — NEW |
+| 2 | HIGH | Missing Section | Add "When edits take effect" subsection: hot-reload behavior for most keys; read-once keys (`model`, `outputStyle`) with mid-session alternatives | ✅ COMPLETE (subsection added to Settings Hierarchy) — NEW |
+| 3 | HIGH | Missing Section | Add managed-settings validation table: per-field fail-open vs fail-closed semantics for 8 managed keys; `requiredMin/MaxVersion` fail-open note; `claude doctor` tip | ✅ COMPLETE (table added to Settings Hierarchy) — NEW |
+| 4 | HIGH | Wrong Description | `requiredMinimumVersion` / `requiredMaximumVersion` — implied fail-closed; official docs: both **fail open** (stripped rather than enforced on invalid value). Added explicit "Fail open" note to both rows | ✅ COMPLETE (fail-open note added) — NEW |
+| 5 | HIGH | Missing Env Vars | `NO_COLOR`, `FORCE_COLOR`, `OTEL_EXPORTER_OTLP_PROTOCOL` — absent from env vars table; all confirmed on official env-vars / settings page | ✅ COMPLETE (all 3 added) — NEW |
+| 6 | HIGH | Missing Key | `env` settings key itself had no table row; only a prose section header. Added row documenting: empty-string override behavior, subprocess-only scope for color vars, identity vars ignored (v2.1.195+) | ✅ COMPLETE (row added) — NEW |
+| 7 | MED | Wrong Description | `fallbackModel` — missing "does not merge across files" note; it is an exception to the general array-concatenation rule at line 72 | ✅ COMPLETE (merge exception noted) — NEW |
+| 8 | MED | Missing Content | `--settings` (key-level, session-only, ≤ 2 MiB) and `--setting-sources` (`user,project,local`) never named at hierarchy priority 2 | ✅ COMPLETE (added to priority 2 row) — NEW |
+| 9 | MED | Wrong Description | `askUserQuestionTimeout` — missing "Not read from project or local settings" scope restriction (confirmed v2.1.200 introduced the restriction) | ✅ COMPLETE (scope restriction added) — NEW |
+| 10 | MED | Wrong Description | `disableSideloadFlags` — missing bypass caveat: does not block `claude mcp add`, `.mcp.json`, or SDK `setMcpServers()` | ✅ COMPLETE (caveat added) — NEW |
+| 11 | MED | Wrong Description | `channelsEnabled` — stated universal default-deny; official: **behavioral inversion for API-key auth** (allowed by default unless managed settings block it). Split description for claude.ai Team/Enterprise vs Console/API-key | ✅ COMPLETE (description split) — NEW |
+| 12 | MED | Missing Marker | `forceLoginOrgUUID` — missing **(Managed only)** marker; siblings `forceLoginMethod` and `forceLoginGatewayUrl` were correctly marked | ✅ COMPLETE (marker added) — NEW |
+| 13 | MED | Wrong Description | `autoMode.classifyAllShell` — described as "routes all shell commands through classifier"; official: **suspends existing `permissions.allow` Bash/PowerShell rules** (materially different — allow rules are suspended, not just supplemented) | ✅ COMPLETE (description corrected) — NEW |
+| 14 | MED | Missing Scope | `enableArtifact` — missing "Ignored in project/local settings" restriction (only honored from user, `--settings`, managed) | ✅ COMPLETE (scope restriction added) — NEW |
+| 15 | MED | Missing Content | v2.1.214 `Edit(src/**)` scoping fix: single-segment glob patterns now scope to top-level subtree only (breaking change for anyone relying on old depth-agnostic behavior) | ✅ COMPLETE (note added to Tool Permission Syntax) — NEW |
+| 16 | MED | Missing Content | v2.1.218 auto-mode change: dangerous-rm, background-`&`, suspicious-Windows-path checks no longer open dialogs; classifier adjudicates | ✅ COMPLETE (note added to `"auto"` mode row) — NEW |
+| 17 | MED | Missing Key | `subagentStatusLine` — absent from Display Settings table; v2.1.214 adds effort.level to subagent status line payloads | ✅ COMPLETE (row added) — NEW |
+| 18 | MED | Stale Example | `modelOverrides` example used `claude-opus-4-6` / `claude-sonnet-4-6` ARNs — two generations stale (Opus 5, Sonnet 5, Opus 4.8 current) | ✅ COMPLETE (example updated to Opus 5 / Sonnet 5 / Opus 4.8) — NEW |
+| 19 | LOW | Restyle | `dynamicWorkflowSize` — listed as live key despite being superseded by `workflowSizeGuideline` in v2.1.219; restyled as DEPRECATED (matching `voiceEnabled` pattern) | ✅ COMPLETE (deprecated styling applied) — NEW |
+| 20 | LOW | Duplicate Link | Duplicate Sources entry — same `/docs/en/env-vars` URL listed twice under different labels; removed the second occurrence | ✅ COMPLETE (duplicate removed) — NEW |
