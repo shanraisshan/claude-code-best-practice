@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-07 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 138k to 139k | COMPLETE (research: ~139,000 exact; crosses k-boundary; NEW — milestone crossing; conf 0.90) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 292 (+29; engineering/80 + specialized/57 + marketing/36 + game-development/21 + gis/13 + security/12 + design/10 + sales/9 + testing/9 + academic/6 + support/6 + spatial-computing/6 + paid-media/7 + product/5 + project-management/7 + finance/5 + healthcare/3 = 292; conf 0.65) | INVALID (RECURRING oscillation; conf 0.65 below 0.88 threshold; engineering/ dir uncertain 58–80 across runs; oscillation band 254–292; 12+ new agents confirmed in Jul commits but count confidence insufficient; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24.1k rounds to 24k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 155 (−1; per-category: 12+30+16+17+13+15+14+16+11+11 = 155; conf 0.92; wordpress-master.md possible duplicate) | INVALID (RECURRING ±1 oscillation; 35th+ consecutive INVALID ruling; within documented oscillation band 154–156; no new agent .md files since Jun 22; no change) |
+| 5 | LOW | Sort | Verify sort order (139k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-03 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
