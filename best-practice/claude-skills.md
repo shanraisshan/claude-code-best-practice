@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2002%2C%202026%2010%3A05%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.220-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2007%2C%202026%2010%3A08%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.224-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -14,7 +14,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## Frontmatter Fields (17)
+## Frontmatter Fields (20)
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -35,6 +35,9 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | `hooks` | object | No | Lifecycle hooks scoped to this skill |
 | `paths` | string/list | No | Glob patterns that limit when the skill auto-activates. Accepts a comma-separated string or YAML list — Claude loads the skill only when working with matching files |
 | `shell` | string | No | Shell for `` !`command` `` blocks — `bash` (default) or `powershell`. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` |
+| `metadata` | YAML map | No | Free-form YAML map for your own key-value data (e.g., entitlement or catalog fields) read by your own tooling from `SKILL.md`. Claude Code does not act on its contents; drops values that aren't a map. Do not reuse frontmatter field names (e.g., `paths`) as keys |
+| `license` | string | No | License covering the skill. Part of the [Agent Skills](https://agentskills.io) spec. Claude Code accepts the field but does not act on it |
+| `compatibility` | string | No | Environment requirements for the skill (max 500 chars), such as intended products or system prerequisites. Part of the [Agent Skills](https://agentskills.io) spec. Claude Code accepts the field but does not act on it |
 
 ---
 
