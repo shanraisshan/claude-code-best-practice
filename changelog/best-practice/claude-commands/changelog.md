@@ -800,3 +800,15 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-08-02 11:11 AM PKT] Claude Code v2.1.220
 
 No priority action items — report is fully in sync with official documentation (17 frontmatter fields, 87 built-in commands).
+
+---
+
+## [2026-08-07 11:22 AM PKT] Claude Code v2.1.224
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `metadata` to frontmatter table — free-form YAML map for own key-value data; Claude Code ignores the value (Agent Skills spec passthrough; count 17 → 20) | ✅ COMPLETE (added as 17th field before `hooks`; heading updated 17 → 20) |
+| 2 | HIGH | New Field | Add `license` to frontmatter table — license covering the skill per Agent Skills spec; Claude Code accepts but does not act on it (count 17 → 20) | ✅ COMPLETE (added as 18th field) |
+| 3 | HIGH | New Field | Add `compatibility` to frontmatter table — environment requirements per Agent Skills spec; accepts up to 500 characters; Claude Code accepts but does not act on it (count 17 → 20) | ✅ COMPLETE (added as 19th field) |
+| 4 | HIGH | New Command | Add `/autocompact [auto\|<tokens>]` to Context tag — set the auto-compact window; pass a token count like `500k` or `auto` to reset; saves to settings; requires v2.1.221+ | ✅ COMPLETE (added as #23 in Context tag; downstream rows 23–87 renumbered 24–88; count updated 87 → 88) |
+| 5 | HIGH | Changed Description | Update `/review [PR]` — alias of `/code-review` since v2.1.223; accepts diff, PR number, branch, or path; same effort levels and flags; `/code-review ultra` for deep review | ✅ COMPLETE (updated description at #59 in Project tag) |
