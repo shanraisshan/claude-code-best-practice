@@ -627,3 +627,15 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | MED | Potential Removed Skills | `review` (row 14) and `security-review` (row 15) are not marked `**[Skill]**` in the official commands reference — raw marker count yields 13 bundled skills; official skills docs describe these two as built-in commands reachable via the Skill tool, not bundled skills. Count should be 13, not 15 | ✋ ON HOLD (recurring from 2026-07-30; 2026-08-01 run marked INVALID based on commands reference, but today's raw marker count re-confirms 13 bundled skills; awaiting human review before removing rows 14–15 or updating count) |
+
+---
+
+## [2026-08-07 10:08 AM PKT] Claude Code v2.1.224
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `metadata` to frontmatter table — free-form YAML map for own key-value data read by external tooling from `SKILL.md`; Claude Code accepts but does not act on it; part of the Agent Skills spec. Count updated 17→20 | ✅ COMPLETE (added to frontmatter table after `shell`, count updated 17→20) |
+| 2 | HIGH | New Field | Add `license` to frontmatter table — license covering the skill; part of Agent Skills spec; Claude Code accepts but does not act on it. Count updated 17→20 | ✅ COMPLETE (added to frontmatter table after `metadata`, count updated 17→20) |
+| 3 | HIGH | New Field | Add `compatibility` to frontmatter table — environment requirements for the skill (max 500 chars), intended products or system prerequisites; part of Agent Skills spec; Claude Code accepts but does not act on it. Count updated 17→20 | ✅ COMPLETE (added to frontmatter table after `license`, count updated 17→20) |
+| 4 | HIGH | Removed Skill | `review` (row 14) confirmed changed to alias of `/code-review` in v2.1.223 — no longer a distinct bundled skill; changelog v2.1.223: "Changed `/review` to be an alias of `/code-review`"; remove row 14 from bundled skills table | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 5 | MED | Potential Removed Skill | `security-review` (row 15) not marked `**[Skill]**` in official commands reference — official docs list 13 bundled skills; may be a docs omission since skill remains Skill-tool-invocable in live session | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
