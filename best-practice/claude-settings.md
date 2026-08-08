@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2007%2C%202026%2010%3A48%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.224-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2008%2C%202026%2010%3A47%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.226-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.224, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.226, Claude Code exposes **130+ settings** and **335 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -37,7 +37,7 @@ Settings apply in order of precedence (highest to lowest):
 |----------|----------|-------|---------|---------|
 | 1 | Managed settings | Organization | Yes (deployed by IT) | Security policies that cannot be overridden |
 | 2 | Command line arguments | Session | N/A | Temporary single-session overrides |
-| 3 | `.claude/settings.local.json` | Project | No (git-ignored) | Personal project-specific |
+| 3 | `.claude/settings.local.json` | Project | No (git-ignored) | Personal project-specific. As of v2.1.211, this file is resolved from the **git repository root** (not the CWD) — one file covers every subdirectory and worktree. Outside a git repo (or when the repo root is your home directory) it falls back to the starting directory. A pre-v2.1.211 file left in the starting directory is still read; when both are present the repo-root copy wins for scalar keys, but permission rules from both remain active. |
 | 4 | `.claude/settings.json` | Project | Yes (committed) | Team-shared settings |
 | 5 | `~/.claude/settings.json` | User | N/A | Global personal defaults |
 
@@ -50,7 +50,9 @@ Settings apply in order of precedence (highest to lowest):
 
 Within the managed tier, precedence is: server-managed > MDM/OS-level policies > file-based (`managed-settings.d/*.json` + `managed-settings.json`) > HKCU registry (Windows only). Only one managed source wins for most keys; sources do not merge across tiers. Within the file-based tier, drop-in files and the base file are merged together.
 
-**Exception — admin-source union keys:** The following keys are honored when *any* admin-controlled managed source sets them, not just the winning source: `sandbox.network.allowManagedDomainsOnly`, `sandbox.network.allowedDomains` (when `allowManagedDomainsOnly` is set), `sandbox.filesystem.allowManagedReadPathsOnly`, `sandbox.filesystem.allowRead` (when `allowManagedReadPathsOnly` is set), `allowAllClaudeAiMcps`, `sandbox.bwrapPath`, `sandbox.socatPath`, `forceRemoteSettingsRefresh`, and `env` (which merges **per key** across all admin sources rather than taking the highest-precedence source's entire object).
+**Exception — admin-source union keys:** The following keys are honored when *any* admin-controlled managed source sets them, not just the winning source: `sandbox.network.allowManagedDomainsOnly`, `sandbox.network.allowedDomains` (when `allowManagedDomainsOnly` is set), `sandbox.filesystem.allowManagedReadPathsOnly`, `sandbox.filesystem.allowRead` (when `allowManagedReadPathsOnly` is set), `allowAllClaudeAiMcps`, `sandbox.bwrapPath`, `sandbox.socatPath`, `forceRemoteSettingsRefresh`, and `env` (which merges **per key** across all admin sources rather than taking the highest-precedence source's entire object). **Note:** the HKCU (Windows user-level registry) source is explicitly excluded from this union — only MDM, server-managed, and file-based admin sources participate.
+
+**Restrictive-value exceptions:** `crossSessionInbound` and `isolatePeerMachines` apply even from lower-priority scopes when stricter — project/local settings can restrict cross-session messaging further than managed settings, but cannot relax a restriction set above them. This is a safety mechanism: untrusted repos cannot open their Claude Code sessions up for inbound connections.
 
 > **Note:** As of v2.1.75, the deprecated Windows fallback path `C:\ProgramData\ClaudeCode\managed-settings.json` has been removed. Use `C:\Program Files\ClaudeCode\managed-settings.json` instead.
 
@@ -119,6 +121,9 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `agentPushNotifEnabled` | boolean | `false` | Send proactive push notifications to [Remote Control](https://code.claude.com/docs/en/remote-control) when Claude decides to push (e.g., task complete). Appears in `/config` as **Push when Claude decides** |
 | `inputNeededNotifEnabled` | boolean | `false` | Send a push notification to [Remote Control](https://code.claude.com/docs/en/remote-control) when a permission prompt or question awaits user input. Appears in `/config` as **Push when actions required** |
 | `remoteControlAtStartup` | boolean/null | - | Auto-connect [Remote Control](https://code.claude.com/docs/en/remote-control) on startup. `true` always auto-connects, `false` never auto-connects, unset uses the organization default. **Scope exception:** `false` in project or local settings applies even against a managed `true` (user and project settings can opt out). Only user settings, `--settings`, and managed settings can set it to `true` (v2.1.119+) |
+| `crossSessionInbound` | string | - | Control inbound cross-session messages from peers. Values: `"accept"` (forward all), `"hold"` (queue until approved), `"refuse"` (block all). Applies a **restrictive-value exception**: a stricter project/local value wins over managed or user settings on the `accept < hold < refuse` ladder — lower-priority scopes can restrict further but cannot relax a higher-priority restriction. Overrides resolved as: managed → `--settings` → user, first value wins; project/local apply only when stricter. (v2.1.224) |
+| `dialogExpiry` | string | `"5m"` | Timeout for dialogs forwarded to a remote client (Remote Control / SDK host) before auto-cancelling. Values: `"60s"`, `"5m"`, `"10m"`, `"never"`. Overridable per-session via `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS`. Only honored from user settings, managed settings, or `--settings`. (v2.1.224) |
+| `isolatePeerMachines` | boolean | `false` | Require explicit approval before a `SendMessage` crosses to a session on a **different machine**. Prompts even in `bypassPermissions` mode. A `true` value from any settings scope applies (restrictive-value exception — lower-priority scopes can turn this on but cannot turn it off if a higher-priority scope enables it). (v2.1.224) |
 | `disableAgentView` | boolean | `false` | Set to `true` to turn off [background agents and agent view](https://code.claude.com/docs/en/agent-view): `claude agents`, `--bg`, `/background`, and the on-demand supervisor. Can be set at any scope but typically placed in managed settings. Equivalent to setting the `CLAUDE_CODE_DISABLE_AGENT_VIEW` env var to `1` |
 | `disableWorkflows` | boolean | `false` | Set to `true` to disable [dynamic workflows](https://code.claude.com/docs/en/workflows) (`/workflows`) and the bundled workflow slash commands. Can be set at any scope. Equivalent to the `CLAUDE_CODE_DISABLE_WORKFLOWS` env var. Workflows were introduced in v2.1.154 |
 | `workflowKeywordTriggerEnabled` | boolean | `true` | Whether typing the word "ultracode" in a prompt triggers a [dynamic workflow](https://code.claude.com/docs/en/workflows). Set to `false` to require explicit `/workflows` invocation. Ultracode, `/workflows`, and saved workflow commands are unaffected by this setting. Appears in `/config` as **Ultracode keyword trigger** (v2.1.157; trigger keyword renamed workflow→ultracode in v2.1.160) |
@@ -131,7 +136,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 | `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+. **v2.1.210+:** Setting `"fable"` no longer attaches an advisor — Fable 5 is temporarily unavailable in the advisor picker; use `"opus"` or `"sonnet"` instead |
 | `respondToBashCommands` | boolean | `true` | Whether Claude automatically responds after a `!` shell command completes. Set to `false` to disable the automatic follow-up response when a `!` bash command finishes (v2.1.186) |
-| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Only honored from project and local settings — managed and user settings values are ignored. (v2.1.200) |
+| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Only honored from user settings (`~/.claude/settings.json`) and `--settings` — project and local settings values are ignored. Set via `/config` as **Question auto-continue timeout**, which writes this key to user settings. (v2.1.200) |
 | `theme` | string | `"dark"` | UI color theme. Values: `"auto"` (follow OS), `"dark"`, `"light"`, `"dark-daltonized"`, `"light-daltonized"`, `"dark-ansi"`, `"light-ansi"`, `"custom:<slug>"`, `"custom:<plugin>:<slug>"`. Plugin-provided themes use the `custom:` prefix |
 | `verbose` | boolean | `false` | Show full tool output instead of truncated summaries. Equivalent to running with `--verbose`; persists the verbose view across sessions |
 | `switchModelsOnFlag` | boolean | `true` | Automatically switch to the fallback model when a safety classifier flags a request. When `false`, flagged requests are blocked rather than rerouted (v2.1.170) |
@@ -382,7 +387,7 @@ Control what tools and operations Claude can perform.
 
 Hook configuration (events, properties, matchers, exit codes, environment variables, and HTTP hooks) is maintained in a dedicated repository:
 
-> **[claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks)** — Complete hook reference with sound notification system, all 26 hook events, HTTP hooks, matcher patterns, exit codes, and environment variables.
+> **[claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks)** — Complete hook reference with sound notification system, all 30 hook events, HTTP hooks, matcher patterns, exit codes, and environment variables.
 
 Hook-related settings keys (`hooks`, `disableAllHooks` (also disables any custom status line), `allowManagedHooksOnly`, `allowedHttpHookUrls`, `httpHookAllowedEnvVars`) are documented there.
 
@@ -500,11 +505,22 @@ Configure bash command sandboxing for security.
 | `sandbox.allowAppleEvents` | boolean | `false` | **(macOS only)** Opt-in for sandboxed commands to send Apple Events. Required for tools that use `open`, `osascript`, or browser authentication flows that depend on Apple Events IPC. **Warning:** Enabling this removes code-execution isolation — Apple Events can be used to execute code in other applications (v2.1.181) |
 | `sandbox.credentials` | object | — | Fine-grained control over which credential files and environment variables are blocked from sandboxed subprocess environments. Object with two arrays: `files` (array of credential file entries — see sub-keys below) and `envVars` (array of `{name: string, mode: string, injectHosts?: string[]}` entries — `mode` is `"deny"` (default, strips the var) or `"mask"` (substitutes a placeholder, only honored from user settings/managed/`--settings`; `deny` takes precedence when same var appears with both modes) with `injectHosts` selectively exposing the value to listed hosts only). An individual invalid entry is stripped with a warning; the valid subset is enforced. (v2.1.187; per-entry object shape since v2.1.191; per-entry `mode` and `injectHosts` since v2.1.199) |
 | `sandbox.credentials.files[].path` | string | — | Absolute or `~/`-prefixed path to the credential file to protect |
-| `sandbox.credentials.files[].mode` | string | `"deny"` | `"deny"` blocks sandboxed reads of the file; `"mask"` intercepts reads and substitutes placeholder values so commands can still run but cannot exfiltrate the raw credential. **`mask` mode only honored from user settings, managed settings, or `--settings`** (v2.1.187 deny; v2.1.221 mask) |
+| `sandbox.credentials.files[].mode` | string | `"deny"` | `"deny"` blocks sandboxed reads of the file; `"mask"` intercepts reads and substitutes placeholder values so commands can still run but cannot exfiltrate the raw credential. **`mask` mode only honored from user settings, managed settings, or `--settings`**. On macOS with filesystem isolation enabled, `mask` falls back to `deny` before the substitution pattern runs. (v2.1.187 deny; v2.1.221 mask) |
+| `sandbox.credentials.files[].decode` | string | — | Set to `"jwt"` to replace a verified JWT in the file with a structurally valid fake token. Allows commands to parse the token shape without accessing claims. Cannot combine with `extract`. (v2.1.224) |
+| `sandbox.credentials.files[].maskClaims` | string[] | — | Array of named top-level JWT payload claims to mask individually instead of replacing the whole token. Requires `decode: "jwt"`. (v2.1.224) |
 | `sandbox.credentials.files[].extract` | string | — | Regex with a single capture group used to locate credential values within the file for masking. Required when `mode` is `"mask"` and the file is not a well-known format. Example: `"oauth_token:\\s*(\\S+)"` (v2.1.221) |
 | `sandbox.credentials.files[].injectHosts` | array | — | Hostnames that receive the real credential value via the TLS-termination proxy even when `mode` is `"mask"`. Requires `sandbox.network.tlsTerminate` to be configured (v2.1.199) |
 | `sandbox.credentials.files[].onExtractNoMatch` | string | `"warn"` | Behavior when the `extract` regex matches nothing: `"warn"` (log a warning, allow read), `"deny"` (block the read), or `"error"` (abort the sandboxed command) (v2.1.221) |
 | `sandbox.credentials.files[].maskDuplicates` | boolean | `false` | When `true`, also mask occurrences of the extracted credential value that appear in other files and env vars read during the same sandboxed command (v2.1.221) |
+| `sandbox.credentials.envVars[].name` | string | — | Name of the environment variable to protect in sandboxed subprocess environments |
+| `sandbox.credentials.envVars[].mode` | string | `"deny"` | `"deny"` strips the variable; `"mask"` substitutes a placeholder. `deny` takes precedence when the same var appears with both modes. `mask` only honored from user settings, managed settings, or `--settings` |
+| `sandbox.credentials.envVars[].extract` | string | — | Regex with a single capture group used to locate the credential value within the env var string (e.g., a password inside a `DATABASE_URL`). Cannot combine with `decode`. (v2.1.224) |
+| `sandbox.credentials.envVars[].decode` | string | — | Set to `"jwt"` to decode and mask the JWT stored in this env var instead of the raw string. Cannot combine with `extract`. (v2.1.224) |
+| `sandbox.credentials.envVars[].maskClaims` | string[] | — | Named top-level JWT payload claims to mask individually. Requires `decode: "jwt"`. (v2.1.224) |
+| `sandbox.credentials.envVars[].onExtractNoMatch` | string | `"warn"` | Behavior when the `extract` regex matches nothing: `"warn"` (log warning, allow), `"deny"` (block), `"error"` (abort command). Only `"warn"` is accepted on a `decode` entry. (v2.1.224) |
+| `sandbox.credentials.envVars[].injectHosts` | string[] | — | Hostnames that receive the real env var value via the TLS-termination proxy even when `mode` is `"mask"`. Requires `sandbox.network.tlsTerminate` to be configured (v2.1.199) |
+| `sandbox.credentials.awsPairs` | object[] | — | Groups of AWS credential env var names for SigV4 re-signing when using non-standard variable names. Each entry is `{accessKeyIdVar, secretAccessKeyVar, sessionTokenVar?}`. Only honored from user settings, managed settings, or `--settings`. (v2.1.224) |
+| `sandbox.credentials.sigv4` | object | — | SigV4 re-signing policy for outbound requests from the sandboxed environment. Object with `streaming`, `presigned`, and `sigv4a` keys, each accepting `"deny"` (default — block the request) or `"passthrough"` (allow without re-signing). (v2.1.224) |
 | `sandbox.network.tlsTerminate` | object | — | TLS termination configuration for sandboxed bash commands. When set, Claude Code acts as a TLS man-in-the-middle for outbound HTTPS from the sandbox, enabling credential masking (`sandbox.credentials` `mask` mode). Set to `{}` to generate an ephemeral certificate authority for the session, or set `caCertPath` and `caKeyPath` to provide your own CA. **Only honored from user settings, managed settings, or `--settings`** — ignored in `.claude/settings.json` and `.claude/settings.local.json`. Experimental (v2.1.199) |
 | `sandbox.credentials.allowPlaintextInject` | boolean | `false` | Allow `mask` credential substitution to also apply on **plain HTTP requests** (where the upstream identity is unverified and the credential travels in cleartext). When `false` (default), credential injection via `injectHosts` is restricted to TLS-terminated HTTPS connections only, preventing credentials from being sent over unencrypted channels. Use only in trusted local environments where cleartext exposure is acceptable (v2.1.199) |
 
@@ -675,6 +691,7 @@ Configure via `env` key:
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `statusLine` | object | - | Custom status line configuration |
+| `subagentStatusLine` | object | - | Custom status line configuration for the agent panel (background agents / agent view). Same shape as `statusLine` — `{type: "command", command: "..."}`. The command receives a JSON object on stdin with `columns` and `tasks[]` (each with `id`, `name`, `type`, `status`, `description`, `label`, `startTime`, `model`, `effort`, `contextWindowSize`, `tokenCount`). Subject to the same `disableAllHooks` gate as `statusLine`. Plugins can ship a default. (v2.1.205+) |
 | `outputStyle` | string | `"default"` | Output style (e.g., `"Explanatory"`) |
 | `spinnerTipsEnabled` | boolean | `true` | Show tips while waiting |
 | `spinnerVerbs` | object | - | Custom spinner verbs with `mode` ("append" or "replace") and `verbs` array |
@@ -779,7 +796,7 @@ The status line command receives a JSON object on stdin. For the full JSON schem
 | `cost.total_duration_ms` | Total wall-clock time since session started, in milliseconds |
 | `cost.total_api_duration_ms` | Total time spent waiting for API responses, in milliseconds |
 | `cost.total_lines_added`, `cost.total_lines_removed` | Lines of code changed during the session |
-| `context_window.total_input_tokens`, `context_window.total_output_tokens` | Cumulative token counts across the session |
+| `context_window.total_input_tokens`, `context_window.total_output_tokens` | Token counts **currently in the context window**, from the most recent API response. Input includes cache reads and writes. (Not cumulative across the session — reflects the last API call's window.) |
 | `context_window.context_window_size` | Maximum context window size in tokens (200000 default, 1000000 for extended context) |
 | `context_window.used_percentage` | Pre-calculated percentage of context window used |
 | `context_window.remaining_percentage` | Pre-calculated percentage of context window remaining |
@@ -790,11 +807,13 @@ The status line command receives a JSON object on stdin. For the full JSON schem
 | `rate_limits.seven_day.used_percentage` | Seven-day rate limit usage percentage |
 | `rate_limits.seven_day.resets_at` | Seven-day rate limit reset timestamp (Unix epoch seconds) |
 | `session_id` | Unique session identifier |
-| `session_name` | Custom session name set with `--name` or `/rename`. Absent if no custom name set |
+| `session_name` | Custom session name set with `--name` or `/rename`. Falls back to the AI-generated session title when no custom name has been set |
 | `transcript_path` | Path to conversation transcript file |
 | `version` | Claude Code version |
 | `output_style.name` | Name of the current output style |
-| `vim.mode` | Current vim mode (`NORMAL` or `INSERT`) when vim mode is enabled |
+| `vim.mode` | Current vim mode (`NORMAL`, `INSERT`, `VISUAL`, or `VISUAL LINE`) when vim mode is enabled |
+| `fast_mode` | Whether fast mode is active for the current session |
+| `prompt_id` | UUID of the prompt currently in flight; matches the OTel `prompt.id` attribute |
 | `agent.name` | Agent name when running with `--agent` flag or agent settings |
 | `effort.level` | Current reasoning effort (`low`, `medium`, `high`, `xhigh`, or `max`). Reflects the live session value, including mid-session `/effort` changes. Absent when the current model does not support the effort parameter (v2.1.121) |
 | `thinking.enabled` | Whether extended thinking is enabled for the session (v2.1.121) |
@@ -803,7 +822,8 @@ The status line command receives a JSON object on stdin. For the full JSON schem
 | `worktree.branch` | Git branch name for the worktree. Absent for hook-based worktrees |
 | `worktree.original_cwd` | Directory before entering the worktree |
 | `worktree.original_branch` | Git branch checked out before entering the worktree. Absent for hook-based worktrees |
-| `github` | GitHub repository and pull-request information for the current branch when detected — repo identity and the associated PR (v2.1.145) |
+| `workspace.repo.host`, `workspace.repo.owner`, `workspace.repo.name` | Git remote origin parsed into host, owner, and repository name. Absent when no `origin` remote is detected (v2.1.145+) |
+| `pr.number`, `pr.url`, `pr.review_state` | Associated pull request: number, URL, and review state (`approved`, `pending`, `changes_requested`, or `draft`). Each field is independently absent when no PR is associated (v2.1.145+) |
 
 ### File Suggestion Configuration
 
@@ -956,6 +976,8 @@ Set environment variables for all Claude Code sessions.
 | `API_TIMEOUT_MS` | Timeout in ms for API requests (default: 600000) |
 | `API_FORCE_IDLE_TIMEOUT` | Override the 5-minute idle timeout for streaming connections. Set to `0` to disable the idle timeout entirely, `1` to enforce it on all connections, or leave unset for the default (auto-enabled on slow or unreliable gateways that frequently stall). Useful for slow API gateways (v2.1.169) |
 | `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | **REMOVED in v2.1.186.** This variable is a no-op. Use `API_TIMEOUT_MS` instead. Previously controlled the connect, TLS, and response-header phase timeout for streaming API requests |
+| `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` | Override the `dialogExpiry` setting for the current session. Controls how long a dialog forwarded to a remote client (Remote Control / SDK host) is held open before auto-cancelling. Accepts millisecond values corresponding to `dialogExpiry` string values (e.g., `300000` for `"5m"`). (v2.1.224) |
+| `CLAUDE_CODE_MESSAGING_SOCKET` | Per-session Unix socket path exported by Claude Code for cross-session messaging. **Ignored when set in the `env` settings block** — this is a read-only system variable set by Claude Code itself; it cannot be injected via settings. Set automatically in Bash tool and hook subprocesses. (v2.1.224) |
 | `CLAUDE_AFK_TIMEOUT_MS` | How many milliseconds before an unanswered AskUserQuestion dialog auto-continues, when `askUserQuestionTimeout` is set to a duration. As of v2.1.200, the default is `"never"` (no auto-continue) controlled by `askUserQuestionTimeout`; this env var applies only when a timeout duration is active. Setting to `0` closes the dialog immediately. To keep questions open, prefer `askUserQuestionTimeout: "never"` (v2.1.198; default changed v2.1.200) |
 | `CLAUDE_AFK_COUNTDOWN_MS` | How many milliseconds before auto-continue the on-screen countdown appears on an unanswered AskUserQuestion dialog (default: `20000` / 20 seconds) (v2.1.198) |
 | `BASH_MAX_TIMEOUT_MS` | Bash command timeout |
@@ -1103,6 +1125,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS` | Disable built-in subagent types in SDK mode (`1` to disable) |
 | `CLAUDE_AGENT_SDK_MCP_NO_PREFIX` | Skip `mcp__<server>__` prefix for MCP tools in SDK mode (`1` to enable) |
 | `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS` | Stall timeout in ms for background subagents (default: 600000 / 10 minutes). The subagent is killed if it produces no output for this duration |
+| `CLAUDE_SUBAGENT_BG_SHELL_MAX_MS` | Maximum wall-clock time in ms a background shell command spawned by a subagent is permitted to run. Commands exceeding this limit are killed. Use to cap runaway shell commands in deeply nested agentic workflows |
 | `MCP_CONNECTION_NONBLOCKING` | Set to `true` in `-p` mode to skip the MCP connection wait entirely. Bounds `--mcp-config` server connections at 5s instead of blocking on the slowest server *(in v2.1.89 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` | Duration in milliseconds after which a slow MCP tool call is automatically backgrounded (default: `120000` / 2 minutes). MCP calls that exceed this threshold continue running in the background without blocking the agent turn *(in v2.1.212 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` | Idle timeout in ms for MCP tool calls. The tool call is cancelled if it produces no streaming response within this window. Use when a gateway or MCP server hangs silently — distinct from `MCP_TOOL_TIMEOUT`, which is a total wall-clock limit (v2.1.187) |
@@ -1287,6 +1310,9 @@ Set environment variables for all Claude Code sessions.
   "workflowSizeGuideline": "medium",
   "syntaxHighlightingDisabled": false,
   "emojiCompletionEnabled": true,
+  "crossSessionInbound": "hold",
+  "dialogExpiry": "5m",
+  "isolatePeerMachines": false,
 
   "worktree": {
     "symlinkDirectories": ["node_modules"],
@@ -1399,3 +1425,4 @@ Set environment variables for all Claude Code sessions.
 - [Claude Code GitHub Settings Examples](https://github.com/feiskyer/claude-code-settings)
 - [Claude Code Permissions Reference](https://code.claude.com/docs/en/permissions)
 - [Claude Code Sandbox Reference](https://code.claude.com/docs/en/sandboxing)
+- [Claude Code Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging)
