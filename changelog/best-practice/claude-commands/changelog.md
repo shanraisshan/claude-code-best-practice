@@ -812,3 +812,14 @@ No priority action items — report is fully in sync with official documentation
 | 3 | HIGH | New Field | Add `compatibility` to frontmatter table — environment requirements per Agent Skills spec; accepts up to 500 characters; Claude Code accepts but does not act on it (count 17 → 20) | ✅ COMPLETE (added as 19th field) |
 | 4 | HIGH | New Command | Add `/autocompact [auto\|<tokens>]` to Context tag — set the auto-compact window; pass a token count like `500k` or `auto` to reset; saves to settings; requires v2.1.221+ | ✅ COMPLETE (added as #23 in Context tag; downstream rows 23–87 renumbered 24–88; count updated 87 → 88) |
 | 5 | HIGH | Changed Description | Update `/review [PR]` — alias of `/code-review` since v2.1.223; accepts diff, PR number, branch, or path; same effort levels and flags; `/code-review ultra` for deep review | ✅ COMPLETE (updated description at #59 in Project tag) |
+
+---
+
+## [2026-08-08 11:09 AM PKT] Claude Code v2.1.226
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Command | Remove `/ultraplan <prompt>` from Model tag — removed in v2.1.222 per changelog ("Removed ultraplan feature"); official docs row is a tombstone ("Removed. Use plan mode instead."); count updated 88 → 87 then 89 after additions | ✅ COMPLETE (removed row 55; Model tag renumbered; count finalized at 89) |
+| 2 | HIGH | New Command | Add `/import [codex\|gemini] [--dry-run] [--yes]` to Config tag — bring configuration from other coding agents (Codex, Gemini CLI) into Claude Code; inserted alphabetically between `/focus` and `/keybindings`; requires v2.1.213+ (count 88 → 89) | ✅ COMPLETE (added as #10 in Config tag; downstream rows 10–88 renumbered 11–89; count updated to 89) |
+| 3 | HIGH | New Command | Add `/list-agents` to Session tag — list subagents and other Claude Code sessions Claude can message; alias `/peers`; only available where cross-session messaging is enabled; requires v2.1.224+ (count +1 = 89) | ✅ COMPLETE (added as #82 in Session tag after `/goal`; downstream rows 82–88 renumbered 83–89) |
+| 4 | LOW | Changed Description | Update `/security-review` — official docs tightened to "Reviews the diff between your branch and origin's default branch" and adds "Needs an `origin` remote" | ✅ COMPLETE (updated description at #60 in Project tag) |
