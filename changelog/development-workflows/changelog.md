@@ -1977,3 +1977,38 @@
 | 25 | LOW | Workflow | GSD, gstack, BMAD, omc, CE — workflow changes proposed by Agent 2; all contradict established confirmed baselines from Jul 28/Aug 1 or below confidence threshold | ON HOLD (RECURRING — no workflow changes applied) |
 | 26 | LOW | Note | shields.io Bash curl blocked (proxy, empty response — recurring); MCP GitHub search_repositories used for all 12 star verifications (11 repos + agent-skills); all MCP verifications independently performed by orchestrator post-research; changelog file gap Aug 3→Aug 7 (badge showed Aug 07 08:45 PKT; possible prior failed append due to 293KB file size; this run appended successfully) | COMPLETE (RECURRING — MCP verification method authoritative) |
 | 15 | LOW | Note | shields.io Bash curl blocked (proxy, recurring); MCP GitHub search_repositories used for all 12 star verifications (11 repos + agent-skills; ECC API 422 recurring — stars-don't-fall rule applied at 237k); all verifications independently performed by orchestrator | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-08-08 09:26 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★268k→269k (MCP: 268,812) | COMPLETE (NEW) |
+| 2 | HIGH | Star | Update ECC ★238k→239k (GitHub page: ~239k; API 422 recurring) | COMPLETE (NEW) |
+| 3 | HIGH | Star | Update Matt Pocock ★207k→209k (MCP: 208,997) | COMPLETE (NEW) |
+| 4 | HIGH | Star | Update OpenSpec ★64k→64.2k (MCP: 64,227) | COMPLETE (NEW) |
+| 5 | HIGH | Star | Update oh-my-claudecode ★38k→38.4k (MCP: 38,425) | COMPLETE (NEW) |
+| 6 | HIGH | Star | Update Compound Engineering ★24k→24.1k (MCP: 24,104) | COMPLETE (NEW) |
+| 7 | HIGH | Star | Update HumanLayer ★11k→11.2k (MCP: 11,206) | COMPLETE (NEW) |
+| 8 | HIGH | Count | Update CE agents 0→39 (Agent 2: 39 sub-agents confirmed via search_code in skills/ce-*/references/agents/*.md — path plugins/compound-engineering/agents/ does not exist; agents embedded in skill reference folders) | COMPLETE (NEW) |
+| 9 | HIGH | Count | Update HumanLayer commands 27→31 (Agent 2: directory listing consistently shows 31 total in .claude/commands/) | COMPLETE (NEW) |
+| 10 | HIGH | Count | Update Matt Pocock skills 41→29 (Agent 1: 29 active — engineering(18)/productivity(7)/misc(4); deprecated/ empty; in-progress(6) unshipped not counted) | COMPLETE (RESOLVED from Aug 7 ON HOLD — confirmed reduction is genuine) |
+| 11 | HIGH | Workflow | Update Superpowers — v6.2.0 restructure: SDD now top-level with explicit sub-loops (implement/task-review/re-review/final-code-review); dispatching-parallel-agents and executing-plans removed from canonical path; test-driven-development promoted to top-level | COMPLETE (NEW — v6.2.0 Jul 24 2026) |
+| 12 | HIGH | Workflow | Update Matt Pocock — grill-me added before grill-with-docs; wayfinder/diagnosing-bugs/improve-codebase-architecture removed; code-review promoted to top-level; handoff added at end | COMPLETE (RESOLVED from Aug 7 ON HOLD — Aug 6 changes confirmed new canonical pipeline) |
+| 13 | HIGH | Workflow | Update gstack — simplified from 11 to 7 canonical steps per README (office-hours/plan-ceo-review/plan-eng-review/implement/review/qa/ship); plan-design-review/autoplan/land-and-deploy/retro removed from canonical path | COMPLETE (RESOLVED from Aug 7 ON HOLD) |
+| 14 | HIGH | Workflow | Update OpenSpec — /opsx:continue removed from canonical path; /opsx:verify promoted to top-level (was sub-loop); Aug 5 template refactor consolidated apply instruction body | COMPLETE (RESOLVED from Aug 7 ON HOLD) |
+| 15 | HIGH | Workflow | Update BMAD — bmad-forge-idea replaces bmad-brainstorming as entry point; agent personas removed from pipeline; new canonical: forge-idea/prd/architecture/create-epics-and-stories/sprint-planning/build/code-review(sub)/correct-course(sub)/retrospective | COMPLETE (RESOLVED from Aug 7 ON HOLD — Aug 3 bmad-forge-idea added) |
+| 16 | HIGH | Workflow | Update oh-my-claudecode — new team-based pipeline: deepinit/plan/team-plan(sub)/team-prd(sub)/team-exec(sub)/team-verify(sub)/team-fix(sub)/release | COMPLETE (RESOLVED from Aug 7 ON HOLD) |
+| 17 | HIGH | Workflow | Update Compound Engineering — new pipeline: ce-pov/ce-plan/ce-ideate/ce-work/ce-code-review(sub)/ce-debug(sub)/ce-test-browser(sub)/ce-commit-push-pr/ce-babysit-pr; Aug 5-6 added babysit-pr/commit-push-pr | COMPLETE (RESOLVED from Aug 7 ON HOLD) |
+| 18 | HIGH | Workflow | Update HumanLayer — research_codebase replaces ralph_research as first step; order corrected to validate_plan before implement_plan; iterate_plan(sub) repositioned; local_review added | COMPLETE (RESOLVED from Aug 7 ON HOLD) |
+| 19 | LOW | Sort Order | No re-sort needed — order unchanged: Superpowers 269k > ECC 239k > Matt Pocock 209k > gstack 127k > Spec Kit 126k > agent-skills 83k (OOS) > GSD 65k > OpenSpec 64.2k > BMAD 52k > omc 38.4k > CE 24.1k > HumanLayer 11.2k | COMPLETE (verified) |
+| 20 | LOW | No Change | Spec Kit 126k (MCP: 125,801 rounds to 126k; stars-don't-fall applied) | COMPLETE (no change) |
+| 21 | LOW | No Change | gstack 127k (MCP: 126,836 rounds to 127k) | COMPLETE (no change) |
+| 22 | LOW | No Change | GSD 65k (MCP: 64,739; stars-don't-fall applied; repo archived Jun 26 2026) | COMPLETE (no change; FROZEN) |
+| 23 | LOW | No Change | BMAD 52k (MCP: 51,624; stars-don't-fall applied) | COMPLETE (no change) |
+| 24 | LOW | Count Verify | ECC commands 139→94 (Agent 1: README states 94; recurring vs Jul 8 exhaustive 139 baseline) | ON HOLD (RECURRING — keeping 139 per established convention) |
+| 25 | LOW | Count Verify | ECC skills 278→282 (Agent 1: README self-reports 282; Itô skills added Aug 7) | ON HOLD (RECURRING — keeping 278 per directory-count methodology) |
+| 26 | LOW | Count Verify | gstack skills 61→53 (Agent 2: 53 root-level SKILL.md dirs confirmed via search_code; browser-skills/openclaw excluded as nested) | ON HOLD (RECURRING — keeping 61 per established baseline) |
+| 27 | LOW | Count Verify | BMAD skills 47→31 (Agent 2: 31 active excluding v6-shims; 49 if shims included) | ON HOLD (RECURRING — keeping 47 per Jul 8 exhaustive enumeration) |
+| 28 | LOW | Note | shields.io Bash curl blocked (proxy, recurring); MCP GitHub search_repositories used for all star verifications; ECC API 422 recurring — GitHub page HTML used; stars-don't-fall rule applied to spec-kit/gstack/GSD/BMAD | COMPLETE (RECURRING — MCP verification method authoritative) |
