@@ -639,3 +639,12 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 | 3 | HIGH | New Field | Add `compatibility` to frontmatter table — environment requirements for the skill (max 500 chars), intended products or system prerequisites; part of Agent Skills spec; Claude Code accepts but does not act on it. Count updated 17→20 | ✅ COMPLETE (added to frontmatter table after `license`, count updated 17→20) |
 | 4 | HIGH | Removed Skill | `review` (row 14) confirmed changed to alias of `/code-review` in v2.1.223 — no longer a distinct bundled skill; changelog v2.1.223: "Changed `/review` to be an alias of `/code-review`"; remove row 14 from bundled skills table | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 5 | MED | Potential Removed Skill | `security-review` (row 15) not marked `**[Skill]**` in official commands reference — official docs list 13 bundled skills; may be a docs omission since skill remains Skill-tool-invocable in live session | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+
+---
+
+## [2026-08-08 10:06 AM PKT] Claude Code v2.1.226
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — collapsed into `/code-review` alias in v2.1.223; commands reference no longer marks it **[Skill]**; report description describes pre-v2.1.223 behavior and is now stale | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) not marked **[Skill]** in commands reference — official docs list 13 bundled skills; skill remains Skill-tool-invocable per CHANGELOG but structural bundled-skill classification requires human review | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
