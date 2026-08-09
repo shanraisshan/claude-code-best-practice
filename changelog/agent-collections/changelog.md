@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-09 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 139k to 140k | COMPLETE (research: "Star 140k" confirmed via two independent page fetches; crosses k-boundary; NEW — milestone crossing; conf 0.83 on stars but HTML-confirmed direct) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 271 (+8; per-div tree count: engineering/58 + specialized/57 + marketing/36 + game-development/21 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + paid-media/7 + project-management/7 + academic/6 + support/6 + spatial-computing/6 + finance/5 + product/5 + healthcare/3 + integrations/mcp-memory/1 = 271; conf 0.83; active additions Jul 10–Aug 6 including Rust Refactoring Specialist, LLM Post-Training Engineer, UI Finish-Gate Reviewer, Privacy Engineer, GaussDB Expert, RAG Pipeline Engineer, Resume Tailor, Economy Designer) | INVALID (RECURRING oscillation; conf 0.83 below 0.88 threshold; oscillation band 254-292 across 37+ runs; engineering/ dir uncertain 58–80 across runs; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24.1k rounds to 24k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 154 (−2; per-category: 11+30+16+17+13+15+14+16+11+11 = 154; conf 0.84; only 2 commits Jul 10–31, both documentation-only — no new agent files) | INVALID (RECURRING ±2 oscillation; oscillation band 154–156 well-documented; 38th+ consecutive INVALID ruling; low activity confirmed; no change) |
+| 5 | LOW | Sort | Verify sort order (140k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-08 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
