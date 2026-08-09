@@ -648,3 +648,12 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Skill | Remove `review` (row 14) — collapsed into `/code-review` alias in v2.1.223; commands reference no longer marks it **[Skill]**; report description describes pre-v2.1.223 behavior and is now stale | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 2 | MED | Potential Removed Skill | `security-review` (row 15) not marked **[Skill]** in commands reference — official docs list 13 bundled skills; skill remains Skill-tool-invocable per CHANGELOG but structural bundled-skill classification requires human review | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
+
+---
+
+## [2026-08-09 10:09 AM PKT] Claude Code v2.1.226
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference shows no **[Skill]** marker; local description still describes pre-v2.1.223 standalone behavior | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) — docs classify as built-in command reachable via Skill tool, not a bundled skill; official docs list 13 bundled skills (excludes both `review` and `security-review`); commands reference shows no **[Skill]** marker | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
