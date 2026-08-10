@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-10 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 140k to 141k | COMPLETE (GitHub API: 140,948 exact; crosses k-boundary; NEW — milestone crossing; conf 0.87) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 270 (+7; per-dir enumeration: engineering/58 + specialized/57 + marketing/36 + game-development/21 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + project-management/7 + paid-media/7 + support/6 + spatial-computing/6 + academic/6 + product/5 + finance/5 + healthcare/3 = 270; conf 0.87; active additions Jul–Aug 2026 including economy-designer, rust-refactor-specialist, llm-post-training-engineer, ui-finish-gate-reviewer, data-visualization-engineer, privacy-engineer, gaussdb-expert, rag-pipeline-engineer, resume-tailor) | INVALID (RECURRING oscillation; conf 0.87 just below 0.88 threshold; oscillation band 254–292 well-documented; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24,163 rounds to 24k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 158 (+2; README lists 158 entries across 10 categories; ~152-153 actual local .md files; ~5-6 are external links; conf 0.82; no new local agents in last 30 days — all commits Jul 7–31 maintenance-only) | INVALID (RECURRING ±2 oscillation; conf 0.82; no confirmed local .md additions in 30 days; no change) |
+| 5 | LOW | Sort | Verify sort order (141k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-09 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
