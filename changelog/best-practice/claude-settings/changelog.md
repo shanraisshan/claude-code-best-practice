@@ -1262,3 +1262,21 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-10 10:46 AM PKT] Claude Code v2.1.226
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope documented BACKWARDS: report said "project/local only" but official docs say "user/`--settings`/managed only" (Global-Only setting — silently ignored in project and local). Confirmed on official settings docs page | COMPLETE (scope corrected to Global-Only) — NEW |
+| 2 | HIGH | Missing Setting | Add `crossSessionInbound` (string, values: accept/hold/refuse) to General Settings table. Introduced v2.1.224. Controls inbound cross-session SendMessage traffic. Confirmed on official settings docs page | COMPLETE (added to General Settings table) — RECURRING (first seen: 2026-08-07, item 21 ON HOLD) |
+| 3 | HIGH | Missing Setting | Add `dialogExpiry` (string, default "5m", Global-Only) to General Settings table. Introduced v2.1.224. Dialog deadline for Remote Control clients. Confirmed on official settings docs page | COMPLETE (added to General Settings table) — RECURRING (first seen: 2026-08-07, item 21 ON HOLD) |
+| 4 | HIGH | Missing Sub-Key | Add `sandbox.credentials.files[].maskClaims` (array) to Sandbox table. Introduced v2.1.224. Decodes JWT and masks only named claims instead of whole token. Confirmed on official settings docs page | COMPLETE (added to Sandbox table) — RECURRING (first seen: 2026-08-07, item 22 ON HOLD) |
+| 5 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.226; update env-var count 311 → 335; update settings count 127+ → 130+. v2.1.225 and v2.1.226 are bug-fix-only — no new settings keys | COMPLETE (badge, version, and counts updated) — NEW |
+| 6 | MED | Missing Concept | Add "Global-Only Settings" concept note to Settings Hierarchy section (keys honored only from user/`--settings`/managed). Add "Settings Reload Behavior" documentation (which keys apply mid-session vs. session-start). Add "Schema Validation" tolerant-vs-strict note. Confirmed on official settings docs page | COMPLETE (all three added to hierarchy section) — NEW |
+| 7 | MED | Incomplete Table | Add `/status` command to Useful Commands table — shows active config files and settings sources. Confirmed on official settings docs page | COMPLETE (added to Useful Commands) — NEW |
+| 8 | MED | Example Update | Update Quick Reference example: add `crossSessionInbound`, `dialogExpiry`, and `permissions.ask` array. All confirmed on official settings docs page | COMPLETE (Quick Reference updated) — NEW |
+| 9 | MED | Stale Caveat | Remove "not in official permissions docs — unverified" annotation from `MCP(server:tool)` shorthand. Official permissions page now documents `MCP(server:tool)` form (e.g., `MCP(github:get_issue)`). Confidence 0.6 | COMPLETE (caveat removed, syntax description updated) — NEW |
+| 10 | LOW | Broken Anchor | Fix broken anchor in `claude-cli-startup-flags.md:211`: `#environment-variables` → `#environment-variables-via-env`. All other cross-links in that file already used the correct anchor | COMPLETE (anchor fixed) — NEW |
+| 11 | LOW | Incomplete Description | Update `CLAUDE_CODE_RESUME_INTERRUPTED_TURN`: add note that falsy values (`0`, empty string) are explicitly honored to disable auto-resume as of v2.1.221 | COMPLETE (falsy-value behavior noted) — NEW |
