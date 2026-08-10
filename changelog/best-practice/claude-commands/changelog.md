@@ -833,3 +833,9 @@ No priority action items — report is fully in sync with official documentation
 | 1 | LOW | Changed Argument | Update `/btw` — argument changed from `<question>` (required) to `[question]` (optional) since v2.1.212; without an argument, reopens overlay on most recent side question | ✅ COMPLETE (argument syntax and description updated at #75 in Session tag) |
 | 2 | LOW | Changed Description | Update `/status` — add Session kind row detail (background job · attached / unattended / interactive, added v2.1.221) to description | ✅ COMPLETE (added Session kind info at #29 in Context tag) |
 | 3 | LOW | Changed Description | Update `/skills` — add type-to-filter note; correct Space behavior from "hides a skill" to "cycles visibility (four states via skill overrides)" | ✅ COMPLETE (description updated to match official docs at #48 in Extensions tag) |
+
+---
+
+## [2026-08-10 11:26 AM PKT] Claude Code v2.1.226
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 89 built-in commands).
