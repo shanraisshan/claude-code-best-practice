@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-12 08:44 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 141k to 144k | COMPLETE (GitHub API: 143,500 exact; crosses three k-boundaries (142k, 143k, 144k); NEW — milestone crossing; conf 0.87) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 270 (+7; commit-authoritative 270 across 17 dirs + integrations/mcp-memory/1 = 271 tree; conf 0.87 below 0.88 threshold; oscillation band 254–292 well-documented) | INVALID (RECURRING oscillation; conf 0.87 below 0.88 threshold; within oscillation band 254–292; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24,221 rounds to 24k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 156 → 154 (−2; per-category: 11+30+16+17+13+15+14+16+11+11 = 154; conf 0.95; README self-reports "154+"; no new agent .md files since Jun 24 — all commits Jul 10–Aug 10 README maintenance only) | INVALID (RECURRING ±2 oscillation; conf 0.95; no confirmed new agent .md additions; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (144k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-10 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
