@@ -674,3 +674,12 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference has no separate [Skill] marker; local description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 2 | MED | Potential Removed Skill | `security-review` (row 15) — not marked [Skill] in commands reference; official docs list 13 bundled skills total; no changelog corroboration of removal in last 10 versions; may be a docs-side classification issue rather than a product removal | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
+
+---
+
+## [2026-08-12 10:10 AM PKT] Claude Code v2.1.228
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) — official docs classify it as a "built-in command reachable via the Skill tool" (same category as `/init`), not a bundled skill; commands reference lists 13 [Skill]-marked rows, neither `review` nor `security-review` among them | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
