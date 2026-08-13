@@ -1262,3 +1262,20 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-13 10:52 AM PKT] Claude Code v2.1.229
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.229; update counts from "127+ settings / 311 env vars" to "129+ settings / 317+ env vars". Confirmed via official settings docs | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Settings | Add `crossSessionInbound` (string, `"accept"` default) to General Settings — controls inbound session message handling. Confirmed on official settings docs page (v2.1.220). Previously ON HOLD | COMPLETE (added to General Settings table) — RESOLVED (first seen: 2026-08-07, ON HOLD 1 run) |
+| 3 | HIGH | Missing Settings | Add `dialogExpiry` (string, `"5m"` default) to General Settings — auto-delivery timeout for remote dialogs when no client is connected. Confirmed on official settings docs page (v2.1.220). Previously ON HOLD | COMPLETE (added to General Settings table) — RESOLVED (first seen: 2026-08-07, ON HOLD 1 run) |
+| 4 | HIGH | Time-Sensitive Change | Add callout after Permission Modes table: auto mode becomes default for Pro/Max/Team plans starting August 14, 2026. Confirmed via v2.1.229 changelog and official docs | COMPLETE (callout added after Permission Modes table) — NEW |
+| 5 | HIGH | Wrong Description | Fix `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`: the 200-subagent-per-session spawn cap was REMOVED in v2.1.224; this env var is no longer active. Confirmed in v2.1.224 changelog | COMPLETE (marked as removed in v2.1.224, note concurrency/depth limits still apply) — NEW |
+| 6 | MED | Missing Source Type | Add `command` to marketplace source types list (runs a shell command to derive the marketplace manifest). Confirmed via v2.1.229 changelog | COMPLETE (added to source types paragraph) — NEW |
+| 7 | MED | Stale Model List | Update effort model note at line 648: add Opus 5, Sonnet 5, Fable 5 to list of models supporting effort levels. Confirmed via official docs | COMPLETE (Opus 5, Sonnet 5, Fable 5 added) — NEW |
+| 8 | MED | Missing Env Vars | Add 4 env vars from official env-vars page: `ANTHROPIC_PROFILE`, `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `CLAUDE_AX_STARTUP_QUIET_MS`. Confirmed on official env-vars page | COMPLETE (all 4 added with official source annotation) — NEW |
+| 9 | MED | Missing Env Vars | Add 2 env vars from changelog: `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229 — workflow fan-out stagger), `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT` (v2.1.223 — bypass context window check for unknown models). Not yet on official env-vars page | COMPLETE (both added with changelog-only annotation) — NEW |
+| 10 | LOW | Unverified Keys | JWT masking options (`decode: "jwt"`, `maskClaims`, `awsPairs`, `sigv4`) for `sandbox.credentials.files[]` — ON HOLD 2nd consecutive run. Escalation threshold: 5 runs (per Rule 10B) | ON HOLD (not yet on official docs; changelog-only — 2 of 5 runs before escalation required) — RECURRING (first seen: 2026-08-07) |
