@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-13 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 141k to 145k | COMPLETE (GitHub API: 144,673 exact; crosses four k-boundaries (142k, 143k, 144k, 145k); NEW — milestone crossing; conf 0.91) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 263 → 255 (−8; per-dir count across 17 dirs: engineering/58 + specialized/57 + marketing/36 + gis/13 + security/12 + design/10 + sales/9 + testing/9 + project-management/7 + paid-media/7 + spatial-computing/6 + academic/6 + support/6 + game-development/6 + product/5 + finance/5 + healthcare/3 = 255; conf 0.91; strategy/ and integrations/ excluded) | INVALID (RECURRING oscillation; 255 within documented band 254-292; same count as Aug 8 INVALID ruling; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,250 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents 156 → 158 (+2; per-directory count across 10 category dirs; repo badge confirms "158 subagents"; two new agents confirmed Jul 30 — email-deliverability-engineer + landing-page-copywriter; conf 0.97) | COMPLETE (confirmed real change; badge matches; new additions verified; conf above threshold; NEW) |
+| 5 | LOW | Sort | Verify sort order (145k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-10 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
