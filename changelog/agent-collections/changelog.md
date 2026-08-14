@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-14 08:51 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | Update msitarzewski/agency-agents agents from 263 to 270 | COMPLETE (search_code per-directory verified; incomplete_results:false; game-development correctly counted including subdirs (21 = 6 root + 4 unity + 4 unreal-engine + 3 godot + 3 roblox-studio + 1 blender) vs prior runs that counted root-only (6); conf 0.97 > 0.88 threshold; +7; NEW) |
+| 2 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 152 (−6; search_code 0.95; PR #308 Aug 12 edited 7 meta-orchestration agents by removing fabricated metrics; badge still "158+"; no confirmed file deletions) | INVALID (RECURRING oscillation; badge unchanged at "158+"; PR #308 was content edits not file deletions; within historical band 150-158; no change) |
+| 3 | LOW | Star | msitarzewski/agency-agents ★ unchanged (145k = 145,248) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,281) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (145k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-13 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
