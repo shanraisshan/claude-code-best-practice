@@ -857,3 +857,14 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-08-13 11:22 AM PKT] Claude Code v2.1.229
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 89 built-in commands).
+
+---
+
+## [2026-08-14 11:18 AM PKT] Claude Code v2.1.232
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/advisor` — add `fable` model option (requires Fable 5 access) to accepted model names; introduced in v2.1.232 | ✅ COMPLETE (updated model list at #50 in Model tag) |
+| 2 | MED | Changed Description | Update `/add-dir` — add Tab-completion on partial paths and note that a successful add runs `DirectoryAdded` hooks (v2.1.219+) | ✅ COMPLETE (updated description at #56 in Project tag) |
+| 3 | MED | Changed Description | Update `/insights` — specify HTML report format, sessions scoped to this machine only, and "Not available in cloud sessions" | ✅ COMPLETE (updated description at #27 in Context tag) |
+| 4 | MED | Changed Description | Update `/resume` — add note that a still-running background session cannot be resumed from the picker; must attach via `claude agents` or stop it first | ✅ COMPLETE (updated description at #85 in Session tag) |
