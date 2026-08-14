@@ -1,7 +1,7 @@
 # claude-code-best-practice
 from vibe coding to agentic engineering - practice makes claude perfect
 
-![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-Aug%2013%2C%202026%209%3A48%20AM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
+![updated with Claude Code](https://img.shields.io/badge/updated_with_Claude_Code-Aug%2014%2C%202026%208%3A16%20AM%20PKT-white?style=flat&labelColor=555) <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars"></a><br>
 
 [![Best Practice](!/tags/best-practice.svg)](best-practice/) [![Implemented](!/tags/implemented.svg)](implementation/) [![Orchestration Workflow](!/tags/orchestration-workflow.svg)](orchestration-workflow/orchestration-workflow.md) [![Claude](!/tags/claude.svg)](https://code.claude.com/docs) [![Boris](!/tags/boris-cherny.svg)](#-tips-and-tricks) [![Community](!/tags/community.svg)](#-subscribe) ![Click on these badges below to see the actual sources](!/tags/click-badges.svg)<br>
 <img src="!/tags/a.svg" height="14"> = Agents · <img src="!/tags/c.svg" height="14"> = Commands · <img src="!/tags/s.svg" height="14"> = Skills
@@ -170,12 +170,12 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 
 | Name | ★ | <img src="!/tags/s.svg" height="14"> |
 |------|---|---|
-| [mattpocock/skills](https://github.com/mattpocock/skills) | 199k | 37 |
-| [anthropics/skills](https://github.com/anthropics/skills) | 166k | 17 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 217k | 29 |
+| [anthropics/skills](https://github.com/anthropics/skills) | 169k | 17 |
 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | 67k | 8 |
-| [wshobson/agents](https://github.com/wshobson/agents) | 38k | 169 |
-| [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 32k | 159 |
-| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 29k | 1,497+ (curated list) |
+| [wshobson/agents](https://github.com/wshobson/agents) | 39k | 165 |
+| [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 33k | 164 |
+| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 30k | 1,497+ (curated list) |
 | [impeccable](https://github.com/pbakaus/impeccable) | 27k | 1 (with 7 design domain references) |
 | [agent-skills](https://github.com/addyosmani/agent-skills) | 27k | 21 |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) | 15k | 246 (across 9 domains) |
