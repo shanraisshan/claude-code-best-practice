@@ -692,3 +692,12 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 2 | MED | Resolved ON HOLD | `security-review` (row 15) ON HOLD from 2026-07-30: two independent research agents confirm commands reference lists `security-review` as one of 14 official bundled skills | ❌ INVALID (confirmed bundled — both agents independently count security-review in the 14 official bundled skills; recurring ambiguity resolved; row 15 is correct, no action needed) |
+
+---
+
+## [2026-08-14 10:06 AM PKT] Claude Code v2.1.232
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) — commands reference does not mark it **[Skill]**; official docs classify 13 bundled skills; today's research agent again confirms absence of **[Skill]** marker despite 2026-08-13 run marking INVALID | ✋ ON HOLD (recurring from 2026-07-30; classification remains ambiguous across runs; awaiting human review before removing) |
