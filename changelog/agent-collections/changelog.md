@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-15 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 145k to 146k | COMPLETE (GitHub API: 145,509 exact; 145.509k crosses .5 boundary → rounds to 146k; RECURRING — daily k-boundary crossing; conf 0.93) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents unchanged (270 = 270; engineering/58 + specialized/57 + marketing/36 + game-development/21 + gis/13 + security/12 + testing/9 + paid-media/7 + support/6 + finance/5 + product/5 + healthcare/3 + sales/8 + design/10 + project-management/7 + spatial-computing/6 + academic/6 + integrations/mcp-memory/1 = 270; conf 0.93) | INVALID (no change; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,315) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 152 (−6; search_code 0.95; exhaustive two-page categories/ search with NOT filename:README filter; 4 new agents added Aug 12 — email-deliverability-engineer, landing-page-copywriter, docs-drift-editor, x-api-integration; badge still "158+"; no confirmed file deletions) | INVALID (RECURRING oscillation; 3rd consecutive day at 152; badge unchanged at "158+"; no confirmed net removal; within documented oscillation band 150-158; same ruling as Aug 14; no change) |
+| 5 | LOW | Sort | Verify sort order (146k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-14 08:51 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
