@@ -1262,3 +1262,24 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-15 10:49 AM PKT] Claude Code v2.1.233
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.233; update header counts "127+ settings / 311 env vars" → "133+ settings / 338+ env vars". Confirmed via official settings docs | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Resolved ON HOLD | Add `dialogExpiry` (string, `"5m"`, user/managed/`--settings` only) and `crossSessionInbound` (string, unset) to General Settings — both confirmed on official settings page. Was ON HOLD item #21 from 2026-08-07 awaiting docs page update | ✅ COMPLETE (both added to General Settings table) — RESOLVED (ON HOLD since 2026-08-07; 1 run) |
+| 3 | HIGH | New Setting | Add `disableCommandPluginSources` (boolean, Managed only) to Plugin Settings. Blocks the `command` plugin source; follows `allowManagedHooksOnly` when unset. Confirmed on official settings page (v2.1.229) | ✅ COMPLETE (added to Plugin Settings table) — NEW |
+| 4 | HIGH | New Settings | Add `additionalMarketplaces` (array, alias for `extraKnownMarketplaces`) and `allowedMarketplaces` (array, alias for `strictKnownMarketplaces`) to Plugin Settings. Both v2.1.232, both Managed only. Confirmed on official settings page | ✅ COMPLETE (both added to Plugin Settings table) — NEW |
+| 5 | HIGH | New Setting | Add `sandbox.ripgrep` (object) to Sandbox Settings with scope restriction: only honored from user/managed/`--settings` as of v2.1.232. Confirmed in v2.1.232 changelog | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 6 | HIGH | New Env Var | Add `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (WebFetch response cache TTL, default 15 min). Confirmed on official env-vars page (v2.1.233) | ✅ COMPLETE (added to env vars table) — NEW |
+| 7 | HIGH | New Env Var | Add `CLAUDE_CODE_ENABLE_TODO_TOOLS` (set to `1` to restore todo/task tools on Opus 4.8/Sonnet 5/Fable 5/Mythos 5+ where they were removed). Confirmed on official env-vars page (v2.1.233) | ✅ COMPLETE (added to env vars table) — NEW |
+| 8 | MED | New Env Var | Add `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` (overrides `dialogExpiry` in ms for the current process). Confirmed on official settings env table (v2.1.224) | ✅ COMPLETE (added to env vars table) — NEW |
+| 9 | MED | New Source Type | Add `command` marketplace source type (v2.1.229) and GitLab marketplace support (v2.1.232) to Plugin source types note. Confirmed in changelog | ✅ COMPLETE (source types note updated) — NEW |
+| 10 | MED | Changed Behavior | Update `blockedMarketplaces`: add bare repo URL entries and URL-typed entry behavior (v2.1.232). Confirmed in changelog | ✅ COMPLETE (description updated) — NEW |
+| 11 | MED | Changed Behavior | Update `CLAUDE_CODE_FORK_SUBAGENT`: subagent forking is on by default as of v2.1.232; description updated to reflect on-by-default and opt-out with `0`. Confirmed in v2.1.232 changelog | ✅ COMPLETE (description updated) — NEW |
+| 12 | MED | Hooks Count | Update hooks redirect: "all 26 hook events" → "all 30 hook events". Hooks repo badge shows 30 official events (latest: `MessageDisplay`, `DirectoryAdded`). Confirmed via hooks repo | ✅ COMPLETE (count updated) — NEW |
+| 13 | MED | Changed Description | Add read-once startup note to `model` setting: "Read once at startup; use `/model` to change the active model mid-session." Confirmed on official settings page | ✅ COMPLETE (note added) — NEW |
+| 14 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `awsPairs`, `sigv4`) for `sandbox.credentials.files[]` — neither agent explicitly confirmed these on the official settings page (one agent cites changelog only, confidence 0.90 but no docs page URL). Carrying forward from 2026-08-07 item #22 | ✋ ON HOLD (not confirmed on official settings page — awaiting docs page update; 2 consecutive runs) — RECURRING (first seen 2026-08-07) |
