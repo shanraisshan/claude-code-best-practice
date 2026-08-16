@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-16 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 150 (−8; search_code path:categories 160 total .md − 10 README.md = 150; PR #308 Aug 12 grounded 7 meta-orchestration agents by removing fabricated metrics; badge still "158+"; conf 0.88) | INVALID (RECURRING oscillation; conf 0.88 borderline; badge unchanged at "158+"; −8 within documented oscillation band 150–158; PR #308 was content/metadata edits not confirmed file deletions; 8th+ consecutive INVALID ruling for count decrease; no change) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (146k = 145,639 exact) | INVALID (no k-boundary crossed; conf 0.96; RECURRING) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents unchanged (270 = 270; all 17 dirs verified; engineering/58 + specialized/57 + marketing/36 + game-development/21 + gis/13 + security/12 + design/10 + sales/9 + testing/9 + project-management/7 + paid-media/7 + spatial-computing/6 + support/6 + academic/6 + finance/5 + product/5 + healthcare/3; conf 0.96) | INVALID (no change; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,346 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (146k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-15 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
