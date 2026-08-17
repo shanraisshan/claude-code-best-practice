@@ -1703,11 +1703,100 @@ todoapp/
     </div>
 
     <!-- ============================================================ -->
+    <!-- SLIDE 40: Agent Memory Scopes &mdash; Agents-section capstone -->
+    <!-- ============================================================ -->
+    <div class="slide" data-slide="40" data-level="agents">
+        <h1>&#x1F9E0; Agent Memory Scopes</h1>
+        <p style="font-style: italic; color: #666; margin: -24px 0 24px 0;">Persistent knowledge across sessions and projects</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 0 0 24px 0;">
+            <div class="col-card" style="border-left: 4px solid #1976d2;">
+                <span style="display: inline-block; background: #1976d2; color: #fff; padding: 3px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px;">&#x1F464; User</span>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Scope:</strong> Every project on this machine</p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Persistence:</strong> &#x2705; saved between sessions</p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Visibility:</strong> Personal &mdash; not shared with teammates</p>
+                <p style="font-size: 0.78rem; margin: 0 0 8px; color: #666;"><strong>Storage:</strong> <code style="font-size: 0.72rem;">~/.claude/agent-memory/&lt;agent&gt;/</code></p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Use case:</strong> Cross-project preferences &mdash; the recommended default</p>
+                <p style="font-size: 0.82rem; margin: 0; font-style: italic; color: #444;"><strong>Example:</strong> A <code style="font-size: 0.72rem;">timezone-agent</code> that remembers you always want Dubai + Karachi time &mdash; in every repo you open.</p>
+            </div>
+            <div class="col-card" style="border-left: 4px solid #2e7d32;">
+                <span style="display: inline-block; background: #2e7d32; color: #fff; padding: 3px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px;">&#x1F4C1; Project</span>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Scope:</strong> This project ONLY</p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Persistence:</strong> &#x2705; saved between sessions</p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Visibility:</strong> Project-level &mdash; version-controlled &amp; shared with the team</p>
+                <p style="font-size: 0.78rem; margin: 0 0 8px; color: #666;"><strong>Storage:</strong> <code style="font-size: 0.72rem;">.claude/agent-memory/&lt;agent&gt;/</code></p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Use case:</strong> Domain-specific knowledge the whole team should share</p>
+                <p style="font-size: 0.82rem; margin: 0; font-style: italic; color: #444;"><strong>Example:</strong> This repo&rsquo;s own <code style="font-size: 0.72rem;">weather-agent</code> &mdash; its temperature-reading history, committed to git.</p>
+            </div>
+            <div class="col-card" style="border-left: 4px solid #f57f17;">
+                <span style="display: inline-block; background: #f57f17; color: #fff; padding: 3px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px;">&#x23F1;&#xFE0F; Local</span>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Scope:</strong> This project ONLY</p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Persistence:</strong> &#x2705; saved between sessions &mdash; but git-ignored</p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Visibility:</strong> Personal to you &mdash; never committed, never shared</p>
+                <p style="font-size: 0.78rem; margin: 0 0 8px; color: #666;"><strong>Storage:</strong> <code style="font-size: 0.72rem;">.claude/agent-memory-local/&lt;agent&gt;/</code></p>
+                <p style="font-size: 0.86rem; margin: 0 0 6px;"><strong>Use case:</strong> Project-specific knowledge that&rsquo;s personal, not team policy</p>
+                <p style="font-size: 0.82rem; margin: 0; font-style: italic; color: #444;"><strong>Example:</strong> Your own scratch notes while debugging a project&rsquo;s agents &mdash; not ready to share yet.</p>
+            </div>
+        </div>
+
+        <div class="code-block" style="margin: 0 0 20px 0;"><span class="comment">---</span>
+<span class="key">name:</span> <span class="string">weather-agent</span>
+<span class="key">memory:</span> <span class="string">project</span>
+<span class="comment">---</span>
+<span class="comment"># This agent remembers across sessions &mdash; but only within this project.</span></div>
+
+        <p style="font-size: 0.98rem; margin: 0 0 16px 0;">The real <code>weather-agent</code> in this repo uses <strong>project</strong> scope: its temperature readings (<code>.claude/agent-memory/weather-agent/recent-readings.md</code>) are specific to <em>this</em> repo&rsquo;s workflow and worth sharing with teammates, so they&rsquo;re committed to git. A hypothetical <code>timezone-agent</code>, by contrast, would use <strong>user</strong> scope &mdash; your timezone preference doesn&rsquo;t belong to any one project, and it&rsquo;s personal, not a team decision.</p>
+
+        <div class="trigger-box" style="margin: 0;">
+            <h4>Rule of thumb</h4>
+            <p>Choose the narrowest scope that meets your needs.</p>
+        </div>
+
+        <div class="pillar-footer">
+            <div class="pillar-mini-card" style="border-left: 4px solid #009688;">
+                <span class="pmc-emoji">&#x1F9D1;&#x200D;&#x1F4BC;</span>
+                <span class="pmc-title">Agents</span>
+                <span class="pmc-subtitle">&mdash; the specialists</span>
+                <span class="pmc-body">A dedicated Claude worker &mdash; own context, own tools, own focus. Each runs in isolation.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; fresh working memory per run</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #9c27b0;">
+                <span class="pmc-emoji">&#x1F4DD;</span>
+                <span class="pmc-title">CLAUDE.md</span>
+                <span class="pmc-subtitle">&mdash; your memory</span>
+                <span class="pmc-body">Knowledge <em>you</em> provide to the model. Read every session. Keep it under 200 lines.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; 200-line problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #4caf50;">
+                <span class="pmc-emoji">&#x1F3AF;</span>
+                <span class="pmc-title">Skills</span>
+                <span class="pmc-subtitle">&mdash; the know-how</span>
+                <span class="pmc-body">What the specialist (or Claude) can actually do. Loaded on demand &mdash; only when needed.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; progressive disclosure</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #3f51b5;">
+                <span class="pmc-emoji">&#x1F4AD;</span>
+                <span class="pmc-title">Context</span>
+                <span class="pmc-subtitle">&mdash; the working memory</span>
+                <span class="pmc-body">What Claude holds in his head now &mdash; fresh every new chat. Finite budget; compact at ~50%.</span>
+                <span class="pmc-badge" style="background: #fce4ec; color: #c62828;">&#x26A0;&#xFE0F; dumb-zone problem</span>
+            </div>
+            <div class="pillar-mini-card inactive" style="border-left: 3px solid #ef6c00;">
+                <span class="pmc-emoji">&#x1F4D8;</span>
+                <span class="pmc-title">Workflows</span>
+                <span class="pmc-subtitle">&mdash; the instruction manual</span>
+                <span class="pmc-body">Repeatable step-by-step recipes &mdash; like an AC install guide. Deterministic, reproducible.</span>
+                <span class="pmc-badge" style="background: #e8f5e9; color: #2e7d32;">&#x2705; reproducible recipes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
     <!-- NEW SLIDE 27: CLAUDE.md concept intro                         -->
     <!-- ============================================================ -->
 
     <!-- Slide 32: CLAUDE.md concept intro -->
-    <div class="slide section-slide" data-slide="40">
+    <div class="slide section-slide" data-slide="41">
         <div class="slide-viewport-content">
             <h1>&#x1F4DD; CLAUDE.md</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -1763,7 +1852,7 @@ todoapp/
     </div>
 
     <!-- Slide 33: Create your first CLAUDE.md — /init -->
-    <div class="slide" data-slide="41" data-level="claude-md">
+    <div class="slide" data-slide="42" data-level="claude-md">
         <div style="min-height: calc(100vh - 120px);">
             <h1>Create your first CLAUDE.md &mdash; <code>/init</code></h1>
             <div style="max-width: 600px;">
@@ -1817,7 +1906,7 @@ todoapp/
     </div>
 
     <!-- Slide 34: CLAUDE.md — the real thing (screenshot) -->
-    <div class="slide" data-slide="42" data-level="claude-md">
+    <div class="slide" data-slide="43" data-level="claude-md">
         <div style="min-height: calc(100vh - 120px);">
             <h1>&#x1F4DD; CLAUDE.md &mdash; the real thing</h1>
             <div style="display: flex; align-items: center; justify-content: center;">
@@ -1864,7 +1953,7 @@ todoapp/
     </div>
 
     <!-- Slide 35: claude-code-best-practice Tips & Tricks (CLAUDE.md) -->
-    <div class="slide" data-slide="43" data-level="claude-md">
+    <div class="slide" data-slide="44" data-level="claude-md">
         <h1><code>claude-code-best-practice</code> Tips &amp; Tricks</h1>
         <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
             <img src="../assets/concepts/claudemd/claudemd-tips.png" alt="Claude Code tips and tricks for CLAUDE.md" style="max-width: 1200px; max-height: 80vh; width: auto; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: contain;" />
@@ -1909,7 +1998,7 @@ todoapp/
     </div>
 
     <!-- Slide 36: CLAUDE.md problem — keep it under 200 lines -->
-    <div class="slide" data-slide="44" data-level="claude-md">
+    <div class="slide" data-slide="45" data-level="claude-md">
         <div style="min-height: calc(100vh - 120px);">
             <h1>&#x26A0;&#xFE0F; CLAUDE.md problem &mdash; keep it under 200 lines</h1>
             <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
@@ -1960,7 +2049,7 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide: Skills -->
-    <div class="slide section-slide" data-slide="45">
+    <div class="slide section-slide" data-slide="46">
         <div class="slide-viewport-content">
             <h1>&#x1F3AF; Skills</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -2021,7 +2110,7 @@ todoapp/
     <!-- NEW SLIDE 38: Create your first skill                         -->
     <!-- ============================================================ -->
 
-    <div class="slide" data-slide="46" data-level="skills">
+    <div class="slide" data-slide="47" data-level="skills">
         <div style="min-height: calc(100vh - 120px);">
             <h1>Create your first skill</h1>
             <div class="two-col" style="margin-top: 28px;">
@@ -2084,7 +2173,7 @@ todoapp/
     <!-- Slide 39: Skills — a real one (screenshot)                    -->
     <!-- ============================================================ -->
 
-    <div class="slide" data-slide="47" data-level="skills">
+    <div class="slide" data-slide="48" data-level="skills">
         <div style="min-height: calc(100vh - 200px);">
             <h1>&#x1F3AF; Skills &mdash; a real one</h1>
             <div style="display: flex; align-items: center; justify-content: center;">
@@ -2134,7 +2223,7 @@ todoapp/
     <!-- Slide 40: Skill config fields with frontmatter (was 39)       -->
     <!-- ============================================================ -->
 
-    <div class="slide" data-slide="48" data-level="skills">
+    <div class="slide" data-slide="49" data-level="skills">
         <h1>Skill config fields with frontmatter</h1>
         <p style="font-style: italic; color: #666; margin: 8px 0 20px 0;">Most fields control how and when the skill loads &mdash; enforced by the harness. Only <code>description</code> lives in prompt-land.</p>
         <div style="margin: 0 0 24px 0;">
@@ -2229,7 +2318,7 @@ todoapp/
     <!-- ============================================================ -->
 
     <!-- Slide: Context -->
-    <div class="slide section-slide" data-slide="49">
+    <div class="slide section-slide" data-slide="50">
         <div class="slide-viewport-content">
             <h1>&#x1F4AD; Context</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -2288,7 +2377,7 @@ todoapp/
     </div>
 
     <!-- Slide 42: Context — Claude's Brain -->
-    <div class="slide" data-slide="50" data-level="context">
+    <div class="slide" data-slide="51" data-level="context">
         <div style="min-height: calc(100vh - 120px);">
             <h1>&#x1F9E0; Claude's Brain</h1>
             <div class="analogy-box">
@@ -2364,7 +2453,7 @@ todoapp/
     </div>
 
     <!-- Slide 43: Context — What Loads at Session Start -->
-    <div class="slide" data-slide="51" data-level="context">
+    <div class="slide" data-slide="52" data-level="context">
         <div style="min-height: calc(100vh - 120px);">
             <h1>What Loads at Session Start</h1>
             <p>The moment you open Claude Code, certain things land in Claude's brain <strong>before you've typed a word</strong>. The rest waits in the wings &mdash; only loaded when you actually need it. This is called <strong>progressive disclosure</strong>.</p>
@@ -2437,7 +2526,7 @@ todoapp/
     </div>
 
     <!-- Slide 44: Context — Lost in the Middle (Liu et al., Stanford 2023) -->
-    <div class="slide" data-slide="52" data-level="context">
+    <div class="slide" data-slide="53" data-level="context">
         <div style="min-height: calc(100vh - 120px);">
             <h1 style="text-align: center;">&#x1F4C4; Lost in the Middle</h1>
             <p style="text-align: center; color: #666; font-style: italic; font-size: 1.1rem; margin-top: -20px; margin-bottom: 30px;">by Nelson F. Liu &middot; Stanford University &middot; 2023</p>
@@ -2512,7 +2601,7 @@ todoapp/
     </div>
 
     <!-- Slide 45: Workflow concept-intro -->
-    <div class="slide section-slide" data-slide="53" data-level="workflow">
+    <div class="slide section-slide" data-slide="54" data-level="workflow">
         <div class="slide-viewport-content">
             <h1>&#x1F4D8; Workflow</h1>
             <div style="text-align: center; margin: 12px auto 20px auto;">
@@ -2565,7 +2654,7 @@ todoapp/
     </div>
 
     <!-- Slide 46: Orchestration Workflow diagram -->
-    <div class="slide" data-slide="54" data-level="workflow">
+    <div class="slide" data-slide="55" data-level="workflow">
         <div style="min-height: calc(100vh - 120px);">
             <h1>&#x1F4CB; Orchestration Workflow</h1>
             <img src="../../orchestration-workflow/orchestration-workflow.svg" alt="Command → Agent → Skill architecture flow"
@@ -2611,7 +2700,7 @@ todoapp/
     </div>
 
     <!-- Slide 47: Workflow in action (GIF) -->
-    <div class="slide" data-slide="55" data-level="workflow">
+    <div class="slide" data-slide="56" data-level="workflow">
         <div style="min-height: calc(100vh - 120px);">
             <h1>&#x1F4F9; Workflow in action</h1>
             <div style="text-align: center; margin: 24px 0;">
@@ -2660,7 +2749,7 @@ todoapp/
 
 
     <!-- Slide 50: Thank you -->
-    <div class="slide section-slide" data-slide="56">
+    <div class="slide section-slide" data-slide="57">
         <div class="slide-viewport-content">
             <h1>&#x1F64F; Thank you!</h1>
             <div style="margin: 20px auto 28px auto; text-align: center;">
