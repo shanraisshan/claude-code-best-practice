@@ -138,6 +138,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 - [Peter Steinberger (Creator of OpenClaw) Workflow](https://youtu.be/8lF7HmQ_RgY?t=2582)
 - Boris Cherny (Creator of Claude Code) Workflow — [13 Tips](tips/claude-boris-13-tips-03-jan-26.md) · [10 Tips](tips/claude-boris-10-tips-01-feb-26.md) · [12 Tips](tips/claude-boris-12-tips-12-feb-26.md) · [2 Tips](tips/claude-boris-2-tips-25-mar-26.md) · [15 Tips](tips/claude-boris-15-tips-30-mar-26.md) · [6 Tips](tips/claude-boris-6-tips-16-apr-26.md) [![Boris](!/tags/boris-cherny.svg)](https://x.com/bcherny)
 - Thariq (Anthropic) Workflow — [Skills](tips/claude-thariq-tips-17-mar-26.md) · [Session Management](tips/claude-thariq-tips-16-apr-26.md) [![Thariq](!/tags/thariq.svg)](https://x.com/trq212)
+- [UIZZE](https://github.com/uizze/uizze) — anti-ui-slop Skill for Claude Code and other agents: research the interface, define a design contract, cover required states, and run a pre-ship quality gate. The full workflow is grounded in 800,000+ real web and iOS screens. [Free Skill source](https://uizze.com/.well-known/agent-skills/anti-ui-slop/SKILL.md)
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
