@@ -2228,3 +2228,32 @@
 | 20 | LOW | Count Verify | OpenSpec commands 12 confirmed (Agent 2: 12 /opsx:* commands) | COMPLETE (RECURRING — no change; 12 confirmed) |
 | 21 | LOW | Workflow | Superpowers, ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines from Aug 8 or prior | ON HOLD (RECURRING — no workflow changes applied) |
 | 22 | LOW | Note | shields.io Bash curl blocked (proxy, recurring); MCP GitHub search_repositories used for all 12 star verifications (11 repos + agent-skills OOS; ECC API 422 recurring — stars-don't-fall rule applied at 240k); all verifications independently performed by orchestrator post-research | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-08-17 09:28 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★129k→130k (MCP: 129,592 — crosses 129.5k rounding midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★240k→241k (WebFetch github.com HTML: 241k; API 422 recurring — stars-don't-fall rule; first confirmed increase past 240k) | COMPLETE (NEW — first time crossing 241k threshold) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★218k→219k (MCP: 219,475) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 273k > ECC 241k > Matt Pocock 219k > Spec Kit 130k > gstack 128k > agent-skills 88k (OOS) > OpenSpec 65k > GSD 65k > BMAD 52k > omc 38.6k > CE 24.3k > HumanLayer 11.3k | COMPLETE (verified; all changes maintain same relative positions) |
+| 5 | LOW | No Change | Superpowers 273k (MCP: 272,878), gstack 128k (MCP: 128,293), OpenSpec 65k (MCP: 65,107), GSD 65k (MCP: 64,687 — archived/frozen; stars-don't-fall), BMAD 52k (MCP: 51,971 — stars-don't-fall), omc 38.6k (MCP: 38,601), CE 24.3k (MCP: 24,316), HumanLayer 11.3k (MCP: 11,290), agent-skills 88k (MCP: 87,815 — OOS row) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 6 | LOW | Count | CE skills 32→33 (Agent 2: 33 individually enumerated in root skills/; 3rd consecutive confirmation: Aug 15=1st, Aug 16=2nd, Aug 17=3rd; Aug 14 outlier at 45 treated as noise) | COMPLETE (NEW — 3rd consecutive confirmation; updated README table) |
+| 7 | LOW | Count Verify | ECC agents 67→68 (Agent 1: 68 .md files in agents/ dir confirmed; conflicts with 67/68/96/100 signals across prior days; count instability persists) | ON HOLD (RECURRING — conflicting count signals across days; keeping 67 per established baseline) |
+| 8 | LOW | Count Verify | ECC commands 139→94 (Agent 1: 94 confirmed in root commands/; recurring vs Jul 8 exhaustive 139 baseline) | ON HOLD (RECURRING — keeping 139 per established convention) |
+| 9 | LOW | Count Verify | ECC skills 278→285 (Agent 1: 285 per README statement; directory not independently verifiable at full depth) | ON HOLD (RECURRING — keeping 278 per directory-count methodology) |
+| 10 | LOW | Count Verify | gstack skills 61→53 (Agent 2: 53 root-level dirs with SKILL.md; prior runs: 48–57; confidence 0.80) | ON HOLD (RECURRING — keeping 61 per established directory-count baseline) |
+| 11 | LOW | Count Verify | BMAD skills 47→25 (Agent 2: 25 = 10 plan-skills + 7 ship-skills + 8 core-skills; v6-shims excluded; count varies 25–49 across runs) | ON HOLD (RECURRING — keeping 47; v6-shims boundary instability) |
+| 12 | LOW | Count Verify | OpenSpec skills 0→12 (Agent 2: 12 skill dirs confirmed in skills/; 19th consecutive run confirming skills exist) | ON HOLD (RECURRING from Jul 25–Aug 16 — 19th consecutive confirmation; keeping 0 per established convention) |
+| 13 | LOW | Count Verify | Spec Kit commands 10 confirmed (Agent 1: 10 in templates/commands/) | COMPLETE (RECURRING — no change; 10 confirmed) |
+| 14 | LOW | Count Verify | Matt Pocock skills 29 active confirmed (Agent 1: 29 active = 18 engineering + 7 productivity + 4 misc; 6 in-progress excluded per convention) | COMPLETE (RECURRING — no change; 29 active confirmed) |
+| 15 | LOW | Count Verify | Superpowers skills 14 confirmed (Agent 1: 14 in skills/) | COMPLETE (RECURRING — no change; 14 confirmed) |
+| 16 | LOW | Count Verify | GSD agents 33, commands 67, skills 0 confirmed (Agent 2; archived Jun 26 2026; frozen) | COMPLETE (RECURRING — no change; counts confirmed) |
+| 17 | LOW | Count Verify | omc agents 19, skills 41 confirmed (Agent 2; 19 agents, 41 skills) | COMPLETE (RECURRING — no change; counts confirmed) |
+| 18 | LOW | Count Verify | HumanLayer agents 6, commands 27, skills 0 confirmed (Agent 2; repo deprecated Jun 2026; frozen) | COMPLETE (RECURRING — no change; all counts confirmed) |
+| 19 | LOW | Count Verify | BMAD agents 5 confirmed (Agent 2: 5 persona skills in src/bmm-skills/agents/) | COMPLETE (RECURRING — no change; 5 confirmed) |
+| 20 | LOW | Count Verify | OpenSpec commands 12 confirmed (Agent 2: 12 /opsx:* commands) | COMPLETE (RECURRING — no change; 12 confirmed) |
+| 21 | LOW | Workflow | Superpowers, ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines from Aug 8 or prior | ON HOLD (RECURRING — no workflow changes applied) |
+| 22 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — empty response); MCP GitHub search_repositories used for all 12 star verifications (11 repos + agent-skills OOS; ECC API 422 recurring — WebFetch github.com HTML confirms 241k); all verifications independently performed by orchestrator post-research | COMPLETE (RECURRING — MCP verification method authoritative) |
