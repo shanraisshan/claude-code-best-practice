@@ -532,7 +532,7 @@ Get the maximum out of this repo by following these steps:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=shanraisshan/claude-code-best-practice&type=Date&v=2)](https://star-history.com/#shanraisshan/claude-code-best-practice&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=shanraisshan/claude-code-best-practice&type=Date&v=2)](https://star-history.dera.page/#shanraisshan/claude-code-best-practice&Date)
 
 <a href="https://github.com/shanraisshan/claude-code-best-practice/stargazers"><img src="https://img.shields.io/github/stars/shanraisshan/claude-code-best-practice?style=flat&label=%E2%98%85&labelColor=555&color=white" alt="GitHub Stars" align="center"></a> stars and counting
 
