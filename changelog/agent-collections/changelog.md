@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-17 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | msitarzewski/agency-agents agents 270 → 271 (+1; strategy/nexus-strategy.md newly included in count; conf 0.85) | INVALID (RECURRING oscillation; +1 within ±2 threshold; strategy/ boundary previously excluded in Aug 14 run that established 270; conf 0.85 borderline; no confirmed net new agent addition beyond boundary judgment; no change) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (146k = 145,866 exact) | INVALID (no k-boundary crossed; conf 0.95; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,382 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents unchanged (158 = 158; all 10 dirs confirmed; conf 0.95) | INVALID (no change; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (146k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-16 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
