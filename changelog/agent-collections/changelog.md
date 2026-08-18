@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-18 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | msitarzewski/agency-agents agents 270 → 284 (+14; engineering/73+specialized/57+marketing/43+game-development/21+gis/13+security/12+design/10+sales/9+project-management/7+paid-media/7+spatial-computing/6+support/6+academic/6+product/5+finance/5+healthcare/3+strategy/1=284; README claims "230+" undercounted; conf 0.74; engineering was paginated at 58 before, now 73 confirmed) | COMPLETE (NEW; count increase confirmed via directory listing; engineering 58→73 explains most of the +14 delta; table updated 270→284) |
+| 2 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 160 (+2; 10 categories counted: 12+31+16+17+13+16+16+17+11+11=160; 4 of 10 dirs directly verified; README says "158+"; Aug 12 merges: docs-editor+x-api-integration+email-deliverability+landing-page-copywriter; conf 0.80) | COMPLETE (NEW; +2 increase consistent with 4 new agents merged Aug 12; within prior oscillation band 150–160; conf 0.80 acceptable; table updated 158→160) |
+| 3 | LOW | Star | msitarzewski/agency-agents ★ unchanged (146k = 146,000 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,400 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Sort order verified (146k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-16 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
