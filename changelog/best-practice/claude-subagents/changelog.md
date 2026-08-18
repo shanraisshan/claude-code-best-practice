@@ -890,3 +890,12 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
 | 2 | HIGH | New Agent | Add `fork` to Official Claude Agents table — inherits full parent conversation, system prompt, model, and message history; requested via Agent tool or `/subtask`; cannot spawn further forks (model: inherits, tools: same as main session) | NEW |
+
+---
+
+## [2026-08-18 11:37 AM PKT] Claude Code v2.1.234
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
+| 2 | HIGH | New Agent | Add `fork` to Official Claude Agents table — inherits full parent conversation, system prompt, model, and message history; requested via Agent tool or `/subtask`; cannot spawn further forks (model: inherits, tools: same as main session) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-17) |
