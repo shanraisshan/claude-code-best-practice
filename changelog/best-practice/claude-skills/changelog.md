@@ -728,3 +728,12 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 2 | MED | Potential Removed Skill | `security-review` (row 15) — not marked [Skill] in commands reference; official docs list 13 bundled skills; agent also notes description drift (row 15 mentions `--fix`/`--comment` flags but official docs row no longer does); classification remains ambiguous across runs | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or updating description) |
+
+---
+
+## [2026-08-18 10:09 AM PKT] Claude Code v2.1.234
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; v2.1.233 changelog explicitly mentions fixing "bundled skill aliases (`/checkup`, `/review`) reporting Unknown command", confirming alias-only status; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) — official skills docs now explicitly state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", definitively classifying it as a built-in command reachable via Skill tool, not a bundled skill; this is the strongest doc-level evidence yet for reclassification | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or moving to a separate built-in-commands-via-Skill section) |
