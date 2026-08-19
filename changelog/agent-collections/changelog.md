@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-19 08:44 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (146k = 146,137 exact) | INVALID (no k-boundary crossed; conf 0.95; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents unchanged (270 = 270; 17 category dirs confirmed; conf 0.95) | INVALID (no change; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24k = 24,450 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 161 (+3; README table sums to 161 across 10 categories; git tree confirms 158 matching table; 4 new agents added Aug 12 — email-deliverability-engineer, landing-page-copywriter, docs-drift-editor, x-api-integration; README headline still "158+"; conf 0.80) | INVALID (RECURRING oscillation; conf 0.80 below 0.88 threshold; git tree count = 158 matches current table; README headline "158+" unchanged; within oscillation band 150-161; no confirmed net change) |
+| 5 | LOW | Sort | Verify sort order (146k > 24k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-16 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
