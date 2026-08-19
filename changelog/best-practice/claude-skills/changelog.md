@@ -737,3 +737,12 @@ No new frontmatter drift detected — frontmatter fields (17) are fully synchron
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; v2.1.233 changelog explicitly mentions fixing "bundled skill aliases (`/checkup`, `/review`) reporting Unknown command", confirming alias-only status; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 2 | MED | Potential Removed Skill | `security-review` (row 15) — official skills docs now explicitly state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", definitively classifying it as a built-in command reachable via Skill tool, not a bundled skill; this is the strongest doc-level evidence yet for reclassification | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or moving to a separate built-in-commands-via-Skill section) |
+
+---
+
+## [2026-08-19 10:05 AM PKT] Claude Code v2.1.235
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; docs `/review` row carries no [Skill] marker and is documented as "Alias of `/code-review`"; changelog v2.1.233 confirms alias-only status by fixing "bundled skill aliases like `/checkup` and `/review` reporting Unknown command". Row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 15→14 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) — not marked [Skill] in commands reference; official docs list 13 bundled skills; no changelog corroboration of removal in last 10 versions (v2.1.225–v2.1.235); classification remains ambiguous across runs | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
