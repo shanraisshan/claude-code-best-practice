@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2018%2C%202026%2011%3A12%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.234-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2019%2C%202026%2011%3A13%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.235-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -100,7 +100,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | 53 | `/model [model]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Switch the AI model and save it as your default for new sessions. Press `s` on a row to switch for the current session only. For models that support it, use left/right arrows to adjust effort level. When switching mid-conversation after prior output, Claude warns before applying the change |
 | 54 | `/passes` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Share a free week of Claude Code with friends. Only visible if your account is eligible |
 | 55 | `/plan [description]` | ![Model](https://img.shields.io/badge/Model-E67E22?style=flat) | Enter plan mode directly from the prompt. Pass an optional description to enter plan mode and immediately start with that task, for example `/plan fix the auth bug` |
-| 56 | `/add-dir <path>` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Add a working directory for file access during the current session. Supports Tab-completion on partial paths. Most `.claude/` configuration is not discovered from the added directory. A successful add runs your `DirectoryAdded` hooks |
+| 56 | `/add-dir <path>` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Add a working directory for file access during the current session. Supports Tab-completion on partial paths. From v2.1.234, Claude Code asks you to confirm the directory right away, mid-turn; before v2.1.234 it queued the command until the turn finished. Most `.claude/` configuration is not discovered from the added directory. A successful add runs your `DirectoryAdded` hooks |
 | 57 | `/diff` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files |
 | 58 | `/init` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Initialize project with a `CLAUDE.md` guide. Set `CLAUDE_CODE_NEW_INIT=1` for an interactive flow that also walks through skills, hooks, and personal memory files |
 | 59 | `/review [PR]` | ![Project](https://img.shields.io/badge/Project-27AE60?style=flat) | Alias of `/code-review`. Reviews the current diff, or a PR number, branch, or path you pass. Accepts the same effort levels and flags. For a deep cloud review, use `/code-review ultra` |
