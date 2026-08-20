@@ -900,3 +900,9 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | LOW | Changed Description | Update `/add-dir` — add mid-turn confirmation behavior introduced in v2.1.234 (asks to confirm the directory right away instead of queuing until turn end) | ✅ COMPLETE (additive detail appended to description at #56 in Project tag) |
+
+---
+
+## [2026-08-20 11:11 AM PKT] Claude Code v2.1.237
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 89 built-in commands).
