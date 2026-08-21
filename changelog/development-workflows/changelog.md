@@ -2363,3 +2363,20 @@
 | 2 | MED | Count | Update Everything Claude Code commands from 139 to 146 | COMPLETE (agent found 146 .md files in commands/ dir) |
 | 3 | HIGH | Star | Verify star counts for all 11 repos | ON HOLD (GitHub API blocked by proxy 403; gh CLI not found; MCP tools restricted to shanraisshan/claude-code-best-practice only; applying never-fall rule, all current star values kept) |
 | 4 | LOW | Sort | Re-sort table by stars descending | INVALID (star counts unchanged, sort order unchanged) |
+
+---
+
+## [2026-08-21 09:18 AM PKT] Development Workflows Update (Agent Complete Findings)
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Count | Correct ECC commands: 146→94 (earlier partial-output gave 146; completed Agent 1 confirms README states 94 legacy command shims; directory listing also 94) | COMPLETE (corrected prior error from this run) |
+| 2 | MED | Count | Update ECC skills from 278 to 286 (README and CHANGELOG trajectory at v2.0.0 confirms 286) | COMPLETE (Agent 1 complete output) |
+| 3 | MED | Count | Update Matt Pocock skills from 29 to 35 (Agent 1 fully enumerated 5 category subdirectories: engineering=18, productivity=7, misc=4, in-progress=6, deprecated=0; total=35) | COMPLETE (Agent 1 complete output) |
+| 4 | MED | Count | Update OpenSpec skills from 0 to 12 (Agent 2 found 12 skill directories at repo root; skills and commands are 1:1 mapped in this repo) | COMPLETE (Agent 2 complete output) |
+| 5 | MED | Count | Update oh-my-claudecode skills from 41 to 45 (Agent 2 reports 45 skill folders; prior enumeration missed 4) | COMPLETE (Agent 2 complete output) |
+| 6 | LOW | Count | gstack skills ~54 proposed (Agent 2, confidence 0.65) vs current 61 | ON HOLD (decrease + low confidence; keeping 61) |
+| 7 | LOW | Count | BMAD skills 43 proposed (Agent 2, confidence 0.78) vs current 47 | ON HOLD (decrease + low confidence; keeping 47) |
+| 8 | HIGH | Star | Verify star counts for all 11 repos via completed agents | ON HOLD (HTML scraping confidence 0.5; API blocked 403; gh CLI missing; MCP restricted; never-fall rule applied; all stars unchanged) |
+| 9 | LOW | Workflow | Workflow changes proposed by both agents for multiple repos (ECC, omc, OpenSpec, Superpowers, Matt Pocock) | ON HOLD (RECURRING — established baselines kept) |
+| 10 | LOW | Sort | Re-sort by stars descending | INVALID (star counts unchanged, sort order unchanged) |
