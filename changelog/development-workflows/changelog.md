@@ -2352,3 +2352,14 @@
 | 24 | LOW | Workflow | Matt Pocock — Agent 1 proposes 8-step: removes grill-me, replaces handoff with improve-codebase-architecture; contradicts Aug 8 COMPLETE 9-step baseline | ON HOLD (RECURRING — keeping current 9-step pipeline) |
 | 25 | LOW | Workflow | ECC, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines from Aug 8 or prior | ON HOLD (RECURRING — no workflow changes applied) |
 | 26 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — empty response); MCP GitHub search_repositories used for all 12 star verifications (11 repos + agent-skills OOS; ECC API 422 recurring — stars-don't-fall rule applied at 241k); all verifications independently performed by orchestrator post-research | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-08-21 09:13 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | Update Everything Claude Code agents from 67 to 68 | COMPLETE (agent found 68 .md files in agents/ dir) |
+| 2 | MED | Count | Update Everything Claude Code commands from 139 to 146 | COMPLETE (agent found 146 .md files in commands/ dir) |
+| 3 | HIGH | Star | Verify star counts for all 11 repos | ON HOLD (GitHub API blocked by proxy 403; gh CLI not found; MCP tools restricted to shanraisshan/claude-code-best-practice only; applying never-fall rule, all current star values kept) |
+| 4 | LOW | Sort | Re-sort table by stars descending | INVALID (star counts unchanged, sort order unchanged) |
