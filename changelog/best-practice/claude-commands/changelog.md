@@ -906,3 +906,9 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-08-20 11:11 AM PKT] Claude Code v2.1.237
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 89 built-in commands).
+
+---
+
+## [2026-08-21 11:15 AM PKT] Claude Code v2.1.238
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 89 built-in commands).
