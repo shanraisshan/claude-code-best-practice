@@ -1262,3 +1262,22 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-21 10:46 AM PKT] Claude Code v2.1.238
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.238; update counts from "127+ settings / 311 env vars" to "228+ settings / 335 env vars". Confirmed via changelog and official docs | COMPLETE (badge, version, and header counts updated) — NEW |
+| 2 | HIGH | Missing Settings (ON HOLD resolved) | Add `crossSessionInbound` and `dialogExpiry` to General Settings — both v2.1.224 Remote Control keys previously ON HOLD. Now confirmed via official settings docs page. Added after `remoteControlAtStartup` | COMPLETE (both keys added to General Settings table) — RECURRING (first seen: 2026-08-07) |
+| 3 | HIGH | Missing Settings (ON HOLD resolved) | Add 4 missing `sandbox.credentials.files[]` sub-keys: `decode` (jwt decode), `maskClaims` (JWT claim masking), `awsPairs` (AWS key-pair masking), `sigv4` (SigV4 header masking) — all v2.1.224, previously ON HOLD. Confirmed in changelog | COMPLETE (all 4 sub-keys added to Sandbox table) — RECURRING (first seen: 2026-08-07) |
+| 4 | HIGH | Wrong Version | Fix `sandbox.credentials.files[].extract` and `onExtractNoMatch` version attribution: v2.1.221 → v2.1.224 (correct version from changelog) | COMPLETE (version corrected in both rows) — NEW |
+| 5 | HIGH | Unverified Key | Annotate `sandbox.credentials.files[].maskDuplicates` as unverified: zero occurrences in 5,693-line changelog and not on official settings page. Added `*(in JSON schema, not on official settings page — unverified)*` annotation | COMPLETE (unverified annotation added) — NEW |
+| 6 | HIGH | Missing Setting | Add `sandbox.ripgrep` — path to ripgrep binary for Grep tool inside sandbox (v2.1.224). Confirmed in changelog | COMPLETE (added to Sandbox Settings table) — NEW |
+| 7 | HIGH | Missing Settings | Add `keybindingFlavor` (v2.1.238, keyboard shortcut scheme: default/vscode) and `spellcheck` (v2.1.235, spell-check in prompt input) to Display Settings. Confirmed in changelog | COMPLETE (both keys added to Display Settings table) — NEW |
+| 8 | HIGH | Removed Setting | Mark `teammateDefaultModel` as REMOVED in v2.1.234. Was in Global Config Settings. Confirmed in changelog | COMPLETE (row updated with REMOVED note) — NEW |
+| 9 | HIGH | Wrong Description | Fix `CLAUDE_CODE_ENABLE_TASKS`: description said "Task tools are the default in all modes" — superseded by v2.1.233 where todo tools are removed by default on newer models. Updated to reflect both v2.1.142 and v2.1.233 behavior | COMPLETE (description updated) — NEW |
+| 10 | HIGH | Wrong Description | Fix `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`: 200-subagent cap was removed in v2.1.224; var is now a no-op. Confirmed in changelog | COMPLETE (description corrected, marked as no-op) — NEW |
+| 11 | HIGH | Plugin Settings | Add `additionalMarketplaces` (v2.1.232 alias for `extraKnownMarketplaces`) and `allowedMarketplaces` (v2.1.232 alias for `strictKnownMarketplaces` with array support) to Plugin Settings. Add `command` source type (v2.1.229). Add `headersHelper` marketplace field note (v2.1.238). Confirmed in changelog | COMPLETE (alias keys, command source type, headersHelper documented) — NEW |
+| 12 | MED | Missing Env Vars | Add 7 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.225), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.226), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.227), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.228), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.233), `CLAUDE_CODE_GOAL_CHECKIN_MINUTES` (v2.1.231), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.236). All confirmed in changelog; annotated as not yet on official env-vars page | COMPLETE (all 7 env vars added with changelog-only annotations) — NEW |
