@@ -1262,3 +1262,22 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-22 10:50 AM PKT] Claude Code v2.1.239
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.239; update intro text to v2.1.239 | ✅ COMPLETE (badge and intro updated) — NEW |
+| 2 | HIGH | Resolved ON HOLD | Add `crossSessionInbound` (string) to General Settings. Cross-session messages sent to a session running with bypassed permissions are held for approval; messages to other sessions auto-deliver. Annotated as changelog-only. Confirmed in v2.1.224 changelog | ✅ COMPLETE (added to General Settings table with changelog annotation) — RESOLVED (ON HOLD from 2026-08-07 v2.1.224; 1 consecutive run) |
+| 3 | HIGH | Resolved ON HOLD | Add `dialogExpiry` (number) to General Settings. Expiry duration for cross-session modal dialogs awaiting user input. Annotated as changelog-only. Confirmed in v2.1.224 changelog | ✅ COMPLETE (added to General Settings table with changelog annotation) — RESOLVED (ON HOLD from 2026-08-07 v2.1.224; 1 consecutive run) |
+| 4 | HIGH | Missing Setting | Add `spellcheck` (boolean, default `false`, v2.1.235) to Display Settings. Underlines misspelled words in the prompt input as you type, using `aspell`, `hunspell`, or `ispell`. Confirmed in v2.1.235 changelog | ✅ COMPLETE (added to Display Settings table with changelog annotation) — NEW |
+| 5 | HIGH | Missing Setting | Add `keybindingFlavor` (string, default `"classic"`, v2.1.238) to Display Settings. Set to `"readline"` to make Ctrl+W delete back to previous whitespace (as in Bash). Confirmed in v2.1.238 changelog | ✅ COMPLETE (added to Display Settings table with changelog annotation) — NEW |
+| 6 | HIGH | Changed Description | Update `outputStyle` description to include `"Concise"` as a built-in value (v2.1.237). Concise style leads with results and skips preamble while doing the work just as thoroughly. Confirmed in v2.1.237 changelog | ✅ COMPLETE (description updated) — NEW |
+| 7 | HIGH | New Setting Aliases | Add `additionalMarketplaces` (friendly alias for `extraKnownMarketplaces`, Project scope) and `allowedMarketplaces` (friendly alias for `strictKnownMarketplaces`, Managed only) to Plugin Settings table. Confirmed in v2.1.232 changelog | ✅ COMPLETE (both aliases added to Plugin Settings table) — NEW |
+| 8 | HIGH | Missing Env Var | Add `ANTHROPIC_DEFAULT_MODEL` — sets the model new sessions start on; a `/model` pick still overrides it and persists across restarts. Confirmed in v2.1.236 changelog and official env-vars page | ✅ COMPLETE (added to env vars table without annotation) — NEW |
+| 9 | MED | Missing Env Vars | Add `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233 — opt-in memory cgroup limit for Bash tool on Linux) and `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233 — WebFetch session cache TTL in ms, default 900000). Changelog-only; not yet on official env-vars page | ✅ COMPLETE (both added with changelog annotation) — NEW |
+| 10 | MED | Missing Env Var | Add `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234 — custom short name for per-project transcript directory). Changelog-only; not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation) — NEW |
+| 11 | MED | Missing Env Var | Add `CLAUDE_CODE_DEFER_SHUTDOWN_MAX_MIN` (v2.1.238 — keep serving attached sessions on SIGTERM until N minutes, then exit). Changelog-only; not yet on official env-vars page | ✅ COMPLETE (added with changelog annotation) — NEW |
+| 12 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — still not on official settings page | ✋ ON HOLD (not yet on official docs — awaiting docs page update; 2 consecutive runs) |
