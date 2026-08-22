@@ -912,3 +912,12 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-08-21 11:15 AM PKT] Claude Code v2.1.238
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 89 built-in commands).
+
+---
+
+## [2026-08-22 11:13 AM PKT] Claude Code v2.1.239
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/artifacts` to Session tag — list artifacts you own or that are shared with you, attach one to the session, open it in your browser, or copy its link; available where artifacts are; requires v2.1.208+; attaching with `Enter` requires v2.1.216 (count 89 → 90) | ✅ COMPLETE (added as #73 in Session tag; downstream rows 73–89 renumbered 74–90; count heading updated to 90) |
+| 2 | HIGH | Changed Description | Update `/list-agents` — behavioral reversal in v2.1.239: agent-team teammates ARE now listed (previously absent); added "Teammate rows and the first line showing this session's own name require v2.1.239 or later" | ✅ COMPLETE (removed incorrect "agent-team teammates aren't listed" clause; updated description at #83 in Session tag) |
