@@ -1262,3 +1262,18 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-11 10:51 AM PKT] Claude Code v2.1.227
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `dialogExpiry` (string, default `"5m"`, values `"60s"/"5m"/"10m"/"never"`) to General Settings. Controls deadline for dialogs forwarded to remote clients. Confirmed on official settings docs page (v2.1.224) | COMPLETE (added to General Settings table) — RESOLVED (first seen: 2026-08-07, was ON HOLD) |
+| 2 | HIGH | Missing Setting | Add `crossSessionInbound` (string, values `"accept"/"hold"/"refuse"`) to General Settings. Controls inbound cross-session message handling for bypass-permissions sessions. Confirmed on official settings docs page (v2.1.224) | COMPLETE (added to General Settings table) — RESOLVED (first seen: 2026-08-07, was ON HOLD) |
+| 3 | HIGH | Missing Settings | Add sandbox credential-masking keys confirmed on official sandboxing docs: `files[].decode` (JWT-aware masking), `files[].maskClaims` (per-claim masking), `envVars[].extract`, `envVars[].onExtractNoMatch`, `envVars[].decode`, `envVars[].maskClaims` (v2.1.224), plus top-level `credentials.awsPairs` (custom AWS credential grouping) and `credentials.sigv4` (per-form SigV4 passthrough) | COMPLETE (all 8 sub-keys added to Sandbox table) — RESOLVED (first seen: 2026-08-07, was ON HOLD) |
+| 4 | HIGH | Changed Behavior | Update `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`: mark 200-subagent cap as REMOVED in v2.1.224. Long-running sessions no longer refuse new agents; concurrency and depth limits still apply. Confirmed in v2.1.224 changelog | COMPLETE (description updated with cap removal note) — NEW |
+| 5 | HIGH | Wrong Description | Fix `tui` setting: default `"default"` → `"auto"`, values `"fullscreen"/"default"` → `"auto"/"classic"/"fullscreen"`. Confirmed on official settings docs page | COMPLETE (default and values corrected) — NEW |
+| 6 | MED | Missing Env Var | Add `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT` (v2.1.219 — set to `1` to restore pre-enforcement behavior for sessions on unrecognized model IDs). Confirmed in v2.1.219 changelog | COMPLETE (added to env vars table) — NEW |
+| 7 | MED | Missing Env Var | Add `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` (v2.1.224 — overrides `dialogExpiry` in milliseconds for remote client dialogs). Confirmed via official settings docs (pairs with `dialogExpiry`) | COMPLETE (added to env vars table near CLAUDE_AFK_TIMEOUT_MS) — NEW |
+| 8 | LOW | Version Metadata | Update version badge v2.1.224 → v2.1.227; update date to Aug 11, 2026 10:51 AM PKT; update header counts to 129+ settings / 313 env vars | COMPLETE (badge and header updated) — NEW |
