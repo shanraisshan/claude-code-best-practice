@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2007%2C%202026%2010%3A48%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.224-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2022%2C%202026%2010%3A43%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.239-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.224, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.239, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -137,6 +137,8 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `switchModelsOnFlag` | boolean | `true` | Automatically switch to the fallback model when a safety classifier flags a request. When `false`, flagged requests are blocked rather than rerouted (v2.1.170) |
 | `processWrapper` | string | - | Corporate launcher command used for background processes (e.g., a credential-injecting wrapper). Only honored from managed settings, user settings (`~/.claude/settings.json`), or `--settings`; ignored from project and local settings to prevent untrusted repos from hijacking background process launches (v2.1.210) |
 | `remote.defaultEnvironmentId` | string | - | Default environment ID to use when launching remote sessions or background agents via `--remote` without an explicit environment ID. When set, Claude Code selects this environment automatically rather than prompting. Only honored from user and managed settings (v2.1.200+) |
+| `crossSessionInbound` | string | - | Controls inbound cross-session message delivery. Cross-session messages sent to a session running with bypassed permissions are held for approval; messages to other sessions auto-deliver. *(in v2.1.224 changelog, not yet on official settings page)* |
+| `dialogExpiry` | number | - | Expiry duration for cross-session modal dialogs awaiting user input. Controls how long a cross-session message dialog is held before expiring *(in v2.1.224 changelog, not yet on official settings page)* |
 
 **Example:**
 ```json
@@ -545,6 +547,8 @@ Configure Claude Code plugins and marketplaces.
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces. Each entry can match by source string, `hostPattern`, or `pathPattern` — as of v2.1.119 the `hostPattern` and `pathPattern` matchers are correctly enforced before any download touches the filesystem, so blocked marketplaces never reach disk |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 | `disableSideloadFlags` | boolean | Managed only | Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` startup flags. When `true`, users cannot bypass `strictKnownMarketplaces` by passing sideload flags at launch. Use in managed environments to enforce marketplace-only plugin distribution (v2.1.193) |
+| `additionalMarketplaces` | object | Project | Friendly alias for `extraKnownMarketplaces`. Add custom plugin marketplaces via `.claude/settings.json` (v2.1.232) |
+| `allowedMarketplaces` | boolean | Managed only | Friendly alias for `strictKnownMarketplaces`. When `true`, only the official Anthropic marketplace is permitted (v2.1.232) |
 
 **Marketplace source types:** `github`, `git`, `directory`, `settings`, `url`, `npm`, `file`, `archive`. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository. Use `source: 'archive'` for zip-based plugin installation with SHA-256 pinning (v2.1.224). Note: `hostPattern` is a *matcher* field for `blockedMarketplaces`, not a source type.
 
@@ -675,7 +679,7 @@ Configure via `env` key:
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `statusLine` | object | - | Custom status line configuration |
-| `outputStyle` | string | `"default"` | Output style (e.g., `"Explanatory"`) |
+| `outputStyle` | string | `"default"` | Output style. Built-in values: `"default"`, `"Explanatory"`, `"Concise"` (v2.1.237: Concise leads with results and skips preamble while doing the work just as thoroughly). Set via `/config` as **Output style** |
 | `spinnerTipsEnabled` | boolean | `true` | Show tips while waiting |
 | `spinnerVerbs` | object | - | Custom spinner verbs with `mode` ("append" or "replace") and `verbs` array |
 | `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` (string array) and optional `excludeDefault` (boolean). When `excludeDefault` is `true`, only custom tips show; when `false` or absent, custom tips merge with built-in tips. As of v2.1.121, `excludeDefault: true` also suppresses time-based spinner tips |
@@ -694,6 +698,8 @@ Configure via `env` key:
 | `wheelScrollAccelerationEnabled` | boolean | `true` | Disable mouse-wheel scroll acceleration in fullscreen mode. Set to `false` to use fixed per-tick scroll steps instead of the OS-level acceleration curve (v2.1.174) |
 | `footerLinksRegexes` | array | - | Array of objects matched against **turn output** (tool results, file contents, fetched pages, Claude's responses) to display as link badges in the footer row. Each entry is `{type, pattern, url, label}` where `pattern` is a regex with named capture groups and `url`/`label` may reference those groups. Matched patterns produce a clickable badge at the bottom of the chat UI. Capped at 5 badges per turn; URL max 2048 chars; allowed schemes: `http`, `https`, `vscode`, `cursor`, `windsurf`, `zed`, `jetbrains`, `idea`, `slack`, `linear`, `notion`, `figma`, `vscode-insiders`. User/`--settings`/managed only (v2.1.176) |
 | `emojiCompletionEnabled` | boolean | `true` | Enable emoji shortcode autocomplete in the prompt input (e.g., `:tada:` → 🎉). Set to `false` to disable. Requires v2.1.217+ |
+| `spellcheck` | boolean | `false` | Underlines misspelled words in the prompt input as you type, using your installed `aspell`, `hunspell`, or `ispell`. Set to `true` to enable *(in v2.1.235 changelog, not yet on official settings page)* |
+| `keybindingFlavor` | string | `"classic"` | Keyboard binding flavor for the prompt input. Set to `"readline"` to make Ctrl+W delete back to the previous whitespace (as in Bash); the default `"classic"` behavior is unchanged *(in v2.1.238 changelog, not yet on official settings page)* |
 
 ### Global Config Settings (`~/.claude.json`)
 
@@ -915,6 +921,7 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION` | Display description for the custom model entry in the `/model` picker. Defaults to `Custom model (<model-id>)` when not set |
 | `ANTHROPIC_CUSTOM_MODEL_OPTION_SUPPORTED_CAPABILITIES` | Override capability detection for the custom model entry. Comma-separated values (e.g., `effort,thinking`). Required when the custom model supports features the auto-detection cannot confirm. See [model configuration](https://code.claude.com/docs/en/model-config#customize-pinned-model-display-and-capabilities) |
 | `ANTHROPIC_MODEL` | Name of the model to use. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs. Overrides the `model` setting |
+| `ANTHROPIC_DEFAULT_MODEL` | Sets the model new sessions start on. A `/model` pick still overrides it and persists across restarts. Equivalent to the `model` setting but environment-scoped (v2.1.236) |
 | `INIT_PROMPT` | Custom system prompt injected at session initialization |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL` | Override the Haiku model alias with a custom model ID (e.g., for third-party deployments) |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME` | Customize the Haiku entry label in the `/model` picker when using a pinned model on Bedrock/Vertex/Foundry. Defaults to the model ID |
@@ -1225,6 +1232,10 @@ Set environment variables for all Claude Code sessions.
 | `MCP_DISCOVERY_CACHE` | Path to a local cache file for MCP server discovery results. When set, Claude Code reads discovery results from this file instead of querying the discovery endpoint on startup, reducing latency in environments with many MCP servers |
 | `USE_BUILTIN_RIPGREP` | Set to `1` to use Claude Code's bundled ripgrep binary for the Grep tool instead of any `rg` found on `PATH`. Useful when the system `rg` version is incompatible or not installed. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
 | `ANTHROPIC_BEDROCK_REGION_PREFIX` | Region prefix for Bedrock cross-region inference profile IDs. When set, Claude Code prepends this value to Bedrock model IDs to construct cross-region inference profile ARNs automatically (v2.1.224) *(in v2.1.224 changelog; not yet on official env-vars page)* |
+| `CLAUDE_CODE_TOOL_MEMORY_LIMIT` | Opt-in memory cgroup limit for Bash tool commands on Linux so a runaway build cannot stall the session *(in v2.1.233 changelog, not yet on official env-vars page)* |
+| `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` | Configure the WebFetch session URL cache TTL in milliseconds (default: 900000 / 15 minutes) *(in v2.1.233 changelog, not yet on official env-vars page)* |
+| `CLAUDE_CODE_PROJECT_DIR_NAME` | Hosts that give each session its own config directory can set a short name for the per-project transcript directory *(in v2.1.234 changelog, not yet on official env-vars page)* |
+| `CLAUDE_CODE_DEFER_SHUTDOWN_MAX_MIN` | On SIGTERM, keep serving attached sessions, park what is left after this many minutes, then exit *(in v2.1.238 changelog, not yet on official env-vars page)* |
 
 ---
 
