@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2007%2C%202026%2010%3A48%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.224-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2009%2C%202026%2010%3A56%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.226-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.224, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.226, Claude Code exposes **127+ settings** and **335 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -131,12 +131,14 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 | `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+. **v2.1.210+:** Setting `"fable"` no longer attaches an advisor — Fable 5 is temporarily unavailable in the advisor picker; use `"opus"` or `"sonnet"` instead |
 | `respondToBashCommands` | boolean | `true` | Whether Claude automatically responds after a `!` shell command completes. Set to `false` to disable the automatic follow-up response when a `!` bash command finishes (v2.1.186) |
-| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Only honored from project and local settings — managed and user settings values are ignored. (v2.1.200) |
+| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Only honored from user settings (`~/.claude/settings.json`) — project, local, and managed settings values are ignored. (v2.1.200) |
 | `theme` | string | `"dark"` | UI color theme. Values: `"auto"` (follow OS), `"dark"`, `"light"`, `"dark-daltonized"`, `"light-daltonized"`, `"dark-ansi"`, `"light-ansi"`, `"custom:<slug>"`, `"custom:<plugin>:<slug>"`. Plugin-provided themes use the `custom:` prefix |
 | `verbose` | boolean | `false` | Show full tool output instead of truncated summaries. Equivalent to running with `--verbose`; persists the verbose view across sessions |
 | `switchModelsOnFlag` | boolean | `true` | Automatically switch to the fallback model when a safety classifier flags a request. When `false`, flagged requests are blocked rather than rerouted (v2.1.170) |
 | `processWrapper` | string | - | Corporate launcher command used for background processes (e.g., a credential-injecting wrapper). Only honored from managed settings, user settings (`~/.claude/settings.json`), or `--settings`; ignored from project and local settings to prevent untrusted repos from hijacking background process launches (v2.1.210) |
 | `remote.defaultEnvironmentId` | string | - | Default environment ID to use when launching remote sessions or background agents via `--remote` without an explicit environment ID. When set, Claude Code selects this environment automatically rather than prompting. Only honored from user and managed settings (v2.1.200+) |
+| `crossSessionInbound` | string | `"accept"` | Controls how cross-session messages addressed to this session are handled. Values: `"accept"` (receive and display incoming messages), `"hold"` (queue without displaying; deliver when changed to `"accept"`), `"refuse"` (reject incoming messages). Managed via the [Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging) feature (v2.1.224) |
+| `dialogExpiry` | string | `"5m"` | Deadline for a forwarded remote client dialog to be answered before it is auto-dismissed. Values: `"60s"`, `"5m"`, `"10m"`, `"never"`. Overridden at the env-var level by `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` (v2.1.224) |
 
 **Example:**
 ```json
@@ -505,6 +507,10 @@ Configure bash command sandboxing for security.
 | `sandbox.credentials.files[].injectHosts` | array | — | Hostnames that receive the real credential value via the TLS-termination proxy even when `mode` is `"mask"`. Requires `sandbox.network.tlsTerminate` to be configured (v2.1.199) |
 | `sandbox.credentials.files[].onExtractNoMatch` | string | `"warn"` | Behavior when the `extract` regex matches nothing: `"warn"` (log a warning, allow read), `"deny"` (block the read), or `"error"` (abort the sandboxed command) (v2.1.221) |
 | `sandbox.credentials.files[].maskDuplicates` | boolean | `false` | When `true`, also mask occurrences of the extracted credential value that appear in other files and env vars read during the same sandboxed command (v2.1.221) |
+| `sandbox.credentials.files[].decode` | boolean | `false` | When `true`, treat the credential file as a JWT and decode it before masking, so each claim value is individually masked rather than the raw JWT string (v2.1.224) |
+| `sandbox.credentials.files[].maskClaims` | array | — | List of JWT claim names to mask individually when `decode` is `true`. When empty or omitted, all claims are masked (v2.1.224) |
+| `sandbox.credentials.files[].awsPairs` | boolean | `false` | When `true`, treat the file as AWS credential pairs and automatically extract and mask access key ID and secret key pairs (v2.1.224) |
+| `sandbox.credentials.files[].sigv4` | object | — | SigV4 signing configuration. Adds AWS SigV4 request signing for requests to listed hosts, using credentials extracted from this file entry. Object shape: `{hosts: string[], region: string, service: string}` (v2.1.224) |
 | `sandbox.network.tlsTerminate` | object | — | TLS termination configuration for sandboxed bash commands. When set, Claude Code acts as a TLS man-in-the-middle for outbound HTTPS from the sandbox, enabling credential masking (`sandbox.credentials` `mask` mode). Set to `{}` to generate an ephemeral certificate authority for the session, or set `caCertPath` and `caKeyPath` to provide your own CA. **Only honored from user settings, managed settings, or `--settings`** — ignored in `.claude/settings.json` and `.claude/settings.local.json`. Experimental (v2.1.199) |
 | `sandbox.credentials.allowPlaintextInject` | boolean | `false` | Allow `mask` credential substitution to also apply on **plain HTTP requests** (where the upstream identity is unverified and the credential travels in cleartext). When `false` (default), credential injection via `injectHosts` is restricted to TLS-terminated HTTPS connections only, preventing credentials from being sent over unencrypted channels. Use only in trusted local environments where cleartext exposure is acceptable (v2.1.199) |
 
@@ -886,6 +892,8 @@ Set environment variables for all Claude Code sessions.
 }
 ```
 
+> **Note:** Some variables cannot be injected via `env`: identity vars (`ANTHROPIC_API_KEY`, `CLAUDE_CODE_OAUTH_TOKEN`, etc.) have dedicated settings paths; `CLAUDE_CODE_MESSAGING_SOCKET` is a subprocess-injected socket path; and `NO_COLOR`/`FORCE_COLOR` are passed to subprocesses by the shell environment, not settable here.
+
 ### Common Environment Variables
 
 | Variable | Description |
@@ -958,6 +966,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | **REMOVED in v2.1.186.** This variable is a no-op. Use `API_TIMEOUT_MS` instead. Previously controlled the connect, TLS, and response-header phase timeout for streaming API requests |
 | `CLAUDE_AFK_TIMEOUT_MS` | How many milliseconds before an unanswered AskUserQuestion dialog auto-continues, when `askUserQuestionTimeout` is set to a duration. As of v2.1.200, the default is `"never"` (no auto-continue) controlled by `askUserQuestionTimeout`; this env var applies only when a timeout duration is active. Setting to `0` closes the dialog immediately. To keep questions open, prefer `askUserQuestionTimeout: "never"` (v2.1.198; default changed v2.1.200) |
 | `CLAUDE_AFK_COUNTDOWN_MS` | How many milliseconds before auto-continue the on-screen countdown appears on an unanswered AskUserQuestion dialog (default: `20000` / 20 seconds) (v2.1.198) |
+| `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` | Override the `dialogExpiry` setting for cross-session messaging dialog deadlines. Millisecond duration. When set, this env var takes precedence over the `dialogExpiry` setting (v2.1.224) |
 | `BASH_MAX_TIMEOUT_MS` | Bash command timeout |
 | `BASH_MAX_OUTPUT_LENGTH` | Max bash output length |
 | `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | Auto-compact threshold percentage (1-100). Default is ~95%. Set lower (e.g., `50`) to trigger compaction earlier. Values above 95% have no effect. Use `/context` to monitor current usage. Example: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=50 claude` |
@@ -997,6 +1006,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_THINKING` | Force-disable extended thinking (`1` to disable) |
 | `DISABLE_INTERLEAVED_THINKING` | Prevent interleaved-thinking beta header from being sent (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_1M_CONTEXT` | Hold all 1M context window models to the 200K context size via auto-compaction. As of v2.1.223, this applies to all 1M models (not just one). Set to `1` to disable 1M context across your deployment |
+| `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT` | Set to `1` to allow sessions to exceed the assumed context window for unrecognized model IDs. By default, Claude Code enforces the built-in context window size for all models; setting this disables enforcement for models not in the known-models list (v2.1.223) |
 | `CLAUDE_CODE_ACCOUNT_UUID` | Override account UUID for authentication |
 | `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Disable git-related system prompt instructions |
 | `CLAUDE_CODE_ATTRIBUTION_HEADER` | Set to `0` to omit the Claude Code attribution block from the system prompt |
@@ -1032,7 +1042,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_USER_EMAIL` | Provide user email synchronously for authentication |
 | `CLAUDE_CODE_ORGANIZATION_UUID` | Provide organization UUID synchronously for authentication |
 | `CLAUDE_CONFIG_DIR` | Custom config directory (overrides default `~/.claude`) |
-| `CLAUDE_CODE_TMPDIR` | Override the temp directory used for internal temp files. Claude Code appends `/claude/` to this path. Default: `/tmp` on Unix/macOS, `os.tmpdir()` on Windows |
+| `CLAUDE_CODE_TMPDIR` | Override the temp directory used for internal temp files. Claude Code appends `/claude/` to this path. Default: `/tmp` on Unix/macOS, `os.tmpdir()` on Windows. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
 | `ANTHROPIC_CUSTOM_HEADERS` | Custom headers for API requests (`Name: Value` format, newline-separated for multiple headers) |
 | `CLAUDE_CODE_EXTRA_BODY` | JSON object to merge into the top level of every API request body. Use to inject vendor-specific fields (e.g., routing hints for a custom gateway) |
 | `CLAUDE_CODE_PROPAGATE_TRACEPARENT` | Set to `1` to propagate the W3C `traceparent` header through requests when routing through a custom proxy, linking Claude Code traces to your upstream telemetry |
@@ -1097,7 +1107,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_RETRY_WATCHDOG` | Raise the retry count for non-capacity API errors to 300. The standard retry cap (`CLAUDE_CODE_MAX_RETRIES`, default: 10) still applies for capacity errors (v2.1.199) |
 | `CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY` | Max parallel read-only tools (default: 10) |
 | `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` | Maximum web searches allowed per session (default: `200`). Prevents runaway tool use in long agentic sessions *(in v2.1.212 changelog, not yet on official env-vars page)* |
-| `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` | Maximum subagents that can be spawned per session (default: `200`). Prevents resource exhaustion in deeply nested agentic workflows *(in v2.1.212 changelog, not yet on official env-vars page)* |
+| ~~`CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`~~ | **REMOVED in v2.1.224.** The per-session subagent spawn cap has been removed. Concurrency and depth limits still apply via `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` and `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` |
 | `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` | Maximum number of subagents that run concurrently (default: `20`). Limits parallel agent fan-out; excess agents queue and run as slots free up (v2.1.217) |
 | `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` | Maximum nesting depth for subagents (default: `3` as of v2.1.219). Subagents at the depth limit cannot spawn further subagents (v2.1.217) |
 | `CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS` | Disable built-in subagent types in SDK mode (`1` to disable) |
@@ -1189,7 +1199,7 @@ Set environment variables for all Claude Code sessions.
 | `TASK_MAX_OUTPUT_LENGTH` | Maximum output length in bytes for background task results. Results exceeding this limit are truncated |
 | `MAX_STRUCTURED_OUTPUT_RETRIES` | Maximum number of retries when a structured output (schema-constrained tool call) fails validation. Default: `3` |
 | `DEBUG` | Set to `claude:*` or other debug namespaces to enable verbose debug logging. Equivalent to the `--debug` flag for most purposes |
-| `FORCE_HYPERLINK` | Set to `1` to force OSC 8 hyperlink rendering even in terminals that did not explicitly advertise support. Use when your terminal supports hyperlinks but is not auto-detected |
+| `FORCE_HYPERLINK` | Since v2.1.217, OSC 8 hyperlink rendering for footer badges is **on by default** (auto-detected or forced). Set to `0` to opt out of footer-badge hyperlinks. Set to `1` to force hyperlink rendering even in terminals that did not explicitly advertise support |
 | `DISABLE_GROWTHBOOK` | Set to `1` to disable the GrowthBook feature-flag client, preventing outbound calls to the feature-flag CDN. Useful in air-gapped or firewall-restricted environments |
 | `DISABLE_PROMPT_CACHING_FABLE` | Set to `1` to disable prompt caching specifically for Fable model requests |
 | `CLAUDE_CODE_FORCE_STRIKETHROUGH` | Set to `1` to force-enable strikethrough text rendering for deleted lines in diff output even in terminals that did not confirm support |
@@ -1287,6 +1297,8 @@ Set environment variables for all Claude Code sessions.
   "workflowSizeGuideline": "medium",
   "syntaxHighlightingDisabled": false,
   "emojiCompletionEnabled": true,
+  "crossSessionInbound": "accept",
+  "dialogExpiry": "5m",
 
   "worktree": {
     "symlinkDirectories": ["node_modules"],
@@ -1399,3 +1411,4 @@ Set environment variables for all Claude Code sessions.
 - [Claude Code GitHub Settings Examples](https://github.com/feiskyer/claude-code-settings)
 - [Claude Code Permissions Reference](https://code.claude.com/docs/en/permissions)
 - [Claude Code Sandbox Reference](https://code.claude.com/docs/en/sandboxing)
+- [Claude Code Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging)

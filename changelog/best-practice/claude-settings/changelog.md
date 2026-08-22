@@ -1262,3 +1262,23 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-09 10:56 AM PKT] Claude Code v2.1.226
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Inverted Scope | Fix `askUserQuestionTimeout`: scope documented as "project and local" but official docs confirm "user settings only"; update description | COMPLETE (scope corrected) — NEW |
+| 2 | HIGH | New Setting | Add `crossSessionInbound` (string, default `"accept"`, v2.1.224) to General Settings table — cross-session message delivery control (`"accept"`/`"hold"`/`"refuse"`) | COMPLETE (added) — RECURRING (ON HOLD since 2026-08-07 v2.1.224 #21) |
+| 3 | HIGH | New Setting | Add `dialogExpiry` (string, default `"5m"`, v2.1.224) to General Settings table — deadline for forwarded remote client dialogs | COMPLETE (added) — RECURRING (ON HOLD since 2026-08-07 v2.1.224 #21) |
+| 4 | HIGH | New Sandbox Sub-Keys | Add `sandbox.credentials.files[].decode`, `maskClaims`, `awsPairs`, `sigv4` (v2.1.224) — JWT-aware and AWS SigV4 credential masking | COMPLETE (added to sandbox table) — RECURRING (ON HOLD since 2026-08-07 v2.1.224 #22) |
+| 5 | HIGH | Version Bump | Update badge v2.1.224 → v2.1.226; update "311 environment variables" → "335" in header; update "As of v2.1.224" → "As of v2.1.226" | COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 6 | MED | Removed Env Var | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` as REMOVED in v2.1.224 (spawn cap removed; concurrency/depth limits still apply) | COMPLETE (REMOVED marker added) — NEW |
+| 7 | MED | Missing Env Var | Add `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT` (v2.1.223) — allow sessions past assumed context window for unknown model IDs | COMPLETE (added after CLAUDE_CODE_DISABLE_1M_CONTEXT) — NEW |
+| 8 | MED | Missing Env Var | Add `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` — override for `dialogExpiry` setting at env var level (v2.1.224) | COMPLETE (added near AFK timeout vars) — NEW |
+| 9 | MED | Changed Description | Update `FORCE_HYPERLINK`: footer badge hyperlinks now ON by default since v2.1.217; document `=0` opt-out | COMPLETE (description updated) — NEW |
+| 10 | MED | Env Preamble | Add exclusion note to env section: identity vars, `CLAUDE_CODE_MESSAGING_SOCKET`, `NO_COLOR`/`FORCE_COLOR` not injectable via `env` field | COMPLETE (note added after env example block) — NEW |
+| 11 | LOW | New Source | Add https://code.claude.com/docs/en/cross-session-messaging to Sources section | COMPLETE (source added) — NEW |
+| 12 | LOW | Example Update | Add `crossSessionInbound` and `dialogExpiry` to Quick Reference complete example | COMPLETE (added) — NEW |
+| 13 | LOW | Ownership Cross-Ref | Add back-reference to CLI Startup Flags in `CLAUDE_CODE_TMPDIR` entry | COMPLETE (cross-ref added) — NEW |
