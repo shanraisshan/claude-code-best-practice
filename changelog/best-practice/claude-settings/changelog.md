@@ -1262,3 +1262,28 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-18 10:46 AM PKT] Claude Code v2.1.234
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Correctness Bug | Fix `askUserQuestionTimeout` scope rule — completely inverted. Report said "honored from project and local settings"; official docs say the exact opposite: **Not read from project or local settings** (honored from managed, user, `--settings`). Updated to reflect docs verbatim (v2.1.200) | COMPLETE (scope rule corrected) — NEW |
+| 2 | HIGH | Version Metadata | Update badge and header: v2.1.224 → v2.1.234; "311 environment variables" → "335 env vars"; "127+ settings" → "130+" | COMPLETE (badge, version, and counts updated) — NEW |
+| 3 | HIGH | Wrong Description | Fix `advisorModel` stale note — "fable temporarily unavailable" was lifted in v2.1.232; Fable 5 now available in `/advisor` for eligible orgs. Updated description to list all three aliases (`fable`, `opus`, `sonnet`) | COMPLETE (stale restriction removed) — NEW |
+| 4 | HIGH | Wrong Description | Fix `CLAUDE_CODE_ENABLE_TASKS` polarity — as of v2.1.233, Task/Todo tools are **disabled by default** on newer models (was previously enabled by default since v2.1.142). Updated description to reflect reversed default | COMPLETE (polarity corrected) — NEW |
+| 5 | HIGH | Missing Settings | Add `crossSessionInbound` (string, default `"accept"`, v2.1.224) and `dialogExpiry` (string, default `"5m"`, v2.1.224) to General Settings. Both confirmed on official settings docs page. Resolves ON HOLD item #21 from 2026-08-07 | COMPLETE (both settings added; item 21 resolved) — RESOLVED (first seen: 2026-08-07) |
+| 6 | HIGH | Missing Setting | Add `disableCommandPluginSources` (boolean, Managed only, v2.1.229) to Plugin Settings. Blocks `command` marketplace source type. Confirmed on official settings docs page | COMPLETE (added to Plugin Settings table) — NEW |
+| 7 | HIGH | Missing Feature | Add `command` marketplace source type to the source-types list (v2.1.229). Also noted GitLab repo support added in v2.1.232 | COMPLETE (command source type added) — NEW |
+| 8 | HIGH | Missing Env Vars | Add 6 new env vars: `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.233), `CLAUDE_AX_PREPARK_MS` (v2.1.233), `CLAUDE_AX_STARTUP_QUIET_MS` (v2.1.233), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234). All confirmed on official env-vars page or changelog | COMPLETE (all 6 env vars added) — NEW |
+| 9 | HIGH | Missing Env Var | Add `ANTHROPIC_PROFILE` (name of Anthropic profile for credential selection). Confirmed on official env-vars page | COMPLETE (added to env vars table) — NEW |
+| 10 | HIGH | Removed Setting | Mark `teammateDefaultModel` as **Removed in v2.1.234**. Was in Global Config Settings table | COMPLETE (marked as removed) — NEW |
+| 11 | MED | Missing Setting | Add `sandbox.ripgrep` (string, custom ripgrep path) to Sandbox Settings. v2.1.232 changed its precedence rules | COMPLETE (added to Sandbox Settings table) — NEW |
+| 12 | MED | Missing Settings | Add `additionalMarketplaces` and `allowedMarketplaces` aliases (v2.1.232) to Plugin Settings, annotated as changelog-only (not yet on official settings page) | COMPLETE (both aliases added with annotation) — NEW |
+| 13 | MED | Missing Note | Add Bash input redirections permission-checking note (v2.1.232) — permission rules now apply to `<`, `<<`, `<(...)` in addition to output redirections | COMPLETE (note added to Bash wildcard section) — NEW |
+| 14 | MED | Wrong Description | Fix `CLAUDE_CODE_EFFORT_LEVEL` — described `max` as "(Opus 4.6 only)" which contradicts General Settings table listing Fable 5, Opus 5, Sonnet 5, Opus 4.8, 4.7, 4.6, Sonnet 4.6. Updated to match the correct model list | COMPLETE (effort level models corrected) — NEW |
+| 15 | MED | Wrong Description | Fix `/model` command description — "(Opus 4.7 and 4.8)" is stale; updated to "(Fable 5, Opus 5, Sonnet 5, Opus 4.7, Opus 4.8)" | COMPLETE (model list updated) — NEW |
+| 16 | MED | Stale Description | Update `CLAUDE_CODE_FORK_SUBAGENT` — subagent forking is now the default as of v2.1.232 (previously required opt-in `=1`). Updated to note this | COMPLETE (description updated) — NEW |
+| 17 | MED | Stale Description | Update `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` — v2.1.224 removed the 200-subagent spawn cap. The hard limit may no longer apply in current versions | COMPLETE (cap-removal noted) — NEW |
+| 18 | LOW | ON HOLD (carried) | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — still not on official settings page, changelog-only. Run count: 2 | ON HOLD (still not confirmed on official docs — awaiting docs page update) — RECURRING (first seen: 2026-08-07) |
