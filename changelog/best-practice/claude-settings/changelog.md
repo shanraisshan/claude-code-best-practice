@@ -1262,3 +1262,24 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-20 10:44 AM PKT] Claude Code v2.1.237
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Wrong Description | Fix `askUserQuestionTimeout` scope: report said "Only honored from project and local settings — managed and user settings values are ignored" but official docs say "User only, not read from project/local/managed" — scope was exactly backwards | ✅ COMPLETE (scope corrected to "User only") — NEW |
+| 2 | HIGH | New Settings | Add `crossSessionInbound` and `dialogExpiry` to General Settings — now confirmed on official settings page as v2.1.224+ keys | ✅ COMPLETE (both keys added to General Settings table) — RESOLVED (ON HOLD since 2026-08-07) |
+| 3 | HIGH | New Setting | Add `disableCommandPluginSources` managed-only setting (v2.1.229) to Managed-only policy keys — confirmed on official settings page | ✅ COMPLETE (added to Managed-only policy keys) — NEW |
+| 4 | HIGH | New Env Var | Add `ANTHROPIC_DEFAULT_MODEL` to Common Environment Variables — sets the default starting model per session, distinct from `ANTHROPIC_MODEL` which forces the model for the entire session. Confirmed on official env-vars page (v2.1.236) | ✅ COMPLETE (added after `ANTHROPIC_MODEL`) — NEW |
+| 5 | HIGH | Version Metadata | Update badge from v2.1.224 → v2.1.237 and header counts from "127+ settings / 311 env vars" to "133+ settings / 318 env vars" | ✅ COMPLETE (badge and header updated) — NEW |
+| 6 | MED | Changed Behavior | Update `outputStyle` to document "Concise" mode added in v2.1.237 alongside existing "default" and "Explanatory" values | ✅ COMPLETE (description updated with Concise mode) — NEW |
+| 7 | MED | New Setting | Add `spellcheck` to Display Settings — enables inline misspelled-word underlining via aspell/hunspell/ispell (v2.1.235 changelog) | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 8 | MED | New Settings | Add `additionalMarketplaces` and `allowedMarketplaces` as alias keys in Plugin Settings — friendlier alternatives to `extraKnownMarketplaces` (v2.1.232 changelog) | ✅ COMPLETE (both aliases added to Plugin Settings table) — NEW |
+| 9 | MED | New Env Vars | Add `CLAUDE_AX_PREPARK_MS` and `CLAUDE_AX_STARTUP_QUIET_MS` — accessibility timing controls for screen-reader mode. Confirmed on official env-vars page | ✅ COMPLETE (both added after `CLAUDE_AX_SCREEN_READER`) — NEW |
+| 10 | MED | New Env Var | Add `CLAUDE_CODE_PROJECT_DIR_NAME` — overrides per-project transcript subdirectory name (v2.1.234 changelog) | ✅ COMPLETE (added near session env vars) — NEW |
+| 11 | MED | New Env Var | Add `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` — configures WebFetch session URL cache TTL, default 15 minutes (v2.1.233 changelog) | ✅ COMPLETE (added near API timeout env vars) — NEW |
+| 12 | MED | New Env Var | Add `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` — stagger delay for workflow fan-out agent launches (v2.1.229 changelog) | ✅ COMPLETE (added after `CLAUDE_CODE_DISABLE_WORKFLOWS`) — NEW |
+| 13 | LOW | New Env Var | Add `notify_when_idle` — macOS/Linux system notification for idle cross-session SendMessage targeting (v2.1.236 changelog) | ✅ COMPLETE (added near Remote Control notification env vars) — NEW |
+| 14 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — still changelog-only, not yet on official settings page | ✋ ON HOLD (changelog-only; 2 consecutive runs ON HOLD — escalation at 5) — RECURRING (first seen: 2026-08-07) |
