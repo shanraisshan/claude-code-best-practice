@@ -1262,3 +1262,26 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-14 11:04 AM PKT] Claude Code v2.1.232
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Resolved ON HOLD | Add `crossSessionInbound` (string enum: `"accept"`/`"hold"`/`"refuse"`) — was ON HOLD since 2026-08-07, now confirmed on official settings page (v2.1.224+) | COMPLETE (added to General Settings) — RESOLVED (first ON HOLD: 2026-08-07) |
+| 2 | HIGH | Resolved ON HOLD | Add `dialogExpiry` (string, default `"5m"`, values: 60s/5m/10m/never) — was ON HOLD since 2026-08-07, now confirmed on official settings page (v2.1.224+) | COMPLETE (added to General Settings) — RESOLVED (first ON HOLD: 2026-08-07) |
+| 3 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: report stated "honored from project and local, ignored from managed and user" — this is exactly backwards. Official docs: "Not read from project or local settings." Fixed to "user and managed only" | COMPLETE (scope corrected in General Settings) — NEW |
+| 4 | HIGH | New Settings | Add `isolatePeerMachines` (boolean, applies from any scope) — requires explicit approval before SendMessage reaches sessions on other machines, prompts even in bypassPermissions (v2.1.224+) | COMPLETE (added to General Settings) — NEW |
+| 5 | HIGH | New Settings | Add `disableCommandPluginSources` (boolean, Managed only) — blocks command-sourced plugin installation; unset follows `allowManagedHooksOnly` (v2.1.229+) | COMPLETE (added to Plugin Settings) — NEW |
+| 6 | HIGH | Env Var Count | Update header env var count from "311" to "346" (table had 335 rows; 11 new vars added this run; prior count was stale) | COMPLETE (header and badge updated to v2.1.232) — NEW |
+| 7 | HIGH | New Env Vars | Add 11 confirmed missing env vars: `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_PROFILE`, `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS`, `CLAUDE_AX_STARTUP_QUIET_MS`, `CLAUDE_SUBAGENT_BG_SHELL_MAX_MS`, `CLAUDE_CODE_MESSAGING_SOCKET`, `CLAUDE_CODE_MESSAGING_TOKEN`, `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS`, `MCP_SDK_GENERATION`, `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT` | COMPLETE (all 11 added to env vars section) — NEW |
+| 8 | MED | Wrong Description | Fix `advisorModel`: stale note said Fable was unavailable; v2.1.232 restored Fable 5 as valid advisor model for orgs with Fable access | COMPLETE (description updated) — NEW |
+| 9 | MED | Wrong Description | Fix `strictKnownMarketplaces`: described as "official-only flag" but it is actually an admin-managed allowlist (`[]` = total lockdown including Anthropic's marketplace) | COMPLETE (description corrected in Plugin Settings) — NEW |
+| 10 | MED | Wrong Description | Fix `diffTool`: described as "external command path" but is actually an enum (`"auto"` / `"terminal"`) controlling where diffs display when an IDE is connected | COMPLETE (description corrected in Global Config Settings) — NEW |
+| 11 | MED | Wrong Note | Fix marketplace source types note: `hostPattern` and `pathPattern` ARE valid source types (not just matcher fields); add `command` source type (v2.1.229+) | COMPLETE (marketplace source types note corrected) — NEW |
+| 12 | MED | New Settings | Add `promptSuggestionEnabled` (boolean, default `true`) — controls ghost-text prompt predictions in the input; `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION` env var takes precedence | COMPLETE (added to General Settings) — NEW |
+| 13 | MED | New Settings | Add `subagentStatusLine` (object) — custom command that rewrites rows in the subagent task display, same structure as `statusLine` | COMPLETE (added to Display Settings) — NEW |
+| 14 | MED | Status Line Fields | Add `fast_mode` (boolean) and `prompt_id` (UUID, appears after first user input) to Status Line Input Fields table | COMPLETE (both fields added) — NEW |
+| 15 | LOW | Confirmed Drift | Sandbox credential sub-keys `files[].decode`, `files[].maskClaims`, `credentials.awsPairs`, `credentials.sigv4`, and env var sub-keys — now confirmed in official settings docs (0.95 confidence). Not applied this run due to complexity; recommend dedicated sandbox update | ON HOLD (confirmed in official docs — schedule follow-up run) — NEW |
+| 16 | LOW | New Env Var | `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` added (v2.1.229) — stagger delay between workflow agent starts | COMPLETE (included in item 7) — NEW |
