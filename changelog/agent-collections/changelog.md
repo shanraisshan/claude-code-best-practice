@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-23 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | msitarzewski/agency-agents agents 270→286 (+16; code search total .md 330 − 44 non-agent = 286; engineering/ + specialized/ + marketing/ + 14 other division dirs; strategy/ and integrations/ excluded; conf 0.91) | INVALID (RECURRING oscillation; within documented band 254-292; methodology variance — total-minus-excluded vs per-dir enumeration; same oscillation as Jul 25 287 which was later reverted; no change) |
+| 2 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158→149 (−9; code search total .md 167 − 18 non-agent = 149; Aug 12 PR #308 ground meta-orchestration quality fix; conf 0.93) | INVALID (RECURRING oscillation; PR #308 previously ruled content edits not file deletions on Aug 22 run; −9 below documented oscillation floor 150; 10th+ consecutive INVALID for VoltAgent count decrease; no change) |
+| 3 | LOW | Star | msitarzewski/agency-agents ★ unchanged (147k = 147,388) | INVALID (no k-boundary crossed; conf 0.91; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 24,552) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (147k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-22 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
