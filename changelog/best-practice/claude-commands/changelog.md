@@ -921,3 +921,12 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/artifacts` to Session tag — list artifacts you own or that are shared with you, attach one to the session, open it in your browser, or copy its link; available where artifacts are; requires v2.1.208+; attaching with `Enter` requires v2.1.216 (count 89 → 90) | ✅ COMPLETE (added as #73 in Session tag; downstream rows 73–89 renumbered 74–90; count heading updated to 90) |
 | 2 | HIGH | Changed Description | Update `/list-agents` — behavioral reversal in v2.1.239: agent-team teammates ARE now listed (previously absent); added "Teammate rows and the first line showing this session's own name require v2.1.239 or later" | ✅ COMPLETE (removed incorrect "agent-team teammates aren't listed" clause; updated description at #83 in Session tag) |
+
+---
+
+## [2026-08-23 11:10 AM PKT] Claude Code v2.1.241
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/auto-mode-setup` to Config tag — Draft `autoMode.environment` entries from project and recent sessions; requires Pro/Max/Team and v2.1.228+; on native Windows requires v2.1.233+ (count 90 → 91) | ✅ COMPLETE (added as #7 in Config tag, alphabetically before `/color`; downstream rows 7–90 renumbered 8–91; count heading updated to 91) |
+| 2 | MED | Changed Argument | Update `/effort` signature from `[low\|medium\|high\|xhigh\|max\|ultracode]` to `[level\|auto\|status]`; add `status` subcommand that prints current level without opening picker; note `-p` mode works outside effort hold | ✅ COMPLETE (signature and description updated at #52 in Model tag) |
