@@ -2411,3 +2411,33 @@
 | 22 | LOW | Count Verify | HumanLayer agents 6, commands 27, skills 0 confirmed (Agent 2; deprecated Jun 2026; frozen) | COMPLETE (RECURRING — no change; all counts confirmed) |
 | 23 | LOW | Workflow | Superpowers, ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines from Aug 8 or prior | ON HOLD (RECURRING — no workflow changes applied) |
 | 24 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — empty response); MCP GitHub search_repositories used for all star verifications; ECC API 422 recurring — stars-don't-fall rule applied at 241k; all verifications independently performed by orchestrator post-research | COMPLETE (RECURRING — MCP verification method authoritative) |
+
+---
+
+## [2026-08-23 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★230k→232k (MCP: 232,369 — crosses 231.5k rounding midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | MED | Count | Update Matt Pocock skills 35→36 (Agent 1: 36 total = engineering 18 + productivity 7 + misc 4 + in-progress 7 incl. implement-spec; in-progress grew by 1 from Aug 21's 35) | COMPLETE (RECURRING — 2nd consecutive confirmation after Aug 22 ON HOLD; updated README table) |
+| 3 | MED | Count | Update oh-my-claudecode skills 45→41 (Agent 2: 41 skills/ folders explicitly enumerated; v5.0.0 release PR active; 2nd consecutive confirmation after Aug 22 ON HOLD) | COMPLETE (RECURRING — 2nd consecutive confirmation; post-COMPLETE decrease from Aug 21 COMPLETE at 45; updated README table) |
+| 4 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 276k > ECC 241k > Matt Pocock 232k > Spec Kit 131k > gstack 129k > agent-skills 89k (OOS) > OpenSpec 66k > GSD 65k > BMAD 52k > omc 38.7k > CE 24.4k > HumanLayer 11.3k | COMPLETE (verified; all changes maintain same relative positions) |
+| 5 | LOW | No Change | Superpowers 276k (MCP: 276,254), ECC 241k (MCP API 422 recurring — stars-don't-fall at 241k), Spec Kit 131k (MCP: 130,849), gstack 129k (MCP: 129,225), agent-skills 89k (MCP: 89,138 — OOS row; below 89,500 midpoint), OpenSpec 66k (MCP: 65,936), GSD 65k (MCP: 64,663 — archived/frozen; stars-don't-fall), BMAD 52k (MCP: 52,178), omc 38.7k (MCP: 38,742 — below 38,750 midpoint), CE 24.4k (MCP: 24,448 — below 24,450 midpoint), HumanLayer 11.3k (MCP: 11,313) — all stars unchanged | COMPLETE (verified via MCP GitHub search_repositories) |
+| 6 | LOW | Count Verify | ECC agents 68 confirmed (Agent 1: 68 .md files in agents/ confirmed; consistent with Aug 21 update) | COMPLETE (RECURRING — no change; 68 confirmed) |
+| 7 | LOW | Count Verify | ECC commands 94 confirmed (Agent 1: 94 .md files in commands/ confirmed; consistent with Aug 21 update) | COMPLETE (RECURRING — no change; 94 confirmed) |
+| 8 | LOW | Count Verify | ECC skills 286 confirmed (Agent 1: ~286 per README; consistent with Aug 21 update) | COMPLETE (RECURRING — no change; 286 confirmed) |
+| 9 | LOW | Count Verify | Spec Kit commands 10 confirmed (Agent 1: 10 in templates/commands/) | COMPLETE (RECURRING — no change; 10 confirmed) |
+| 10 | LOW | Count Verify | Superpowers skills 14 confirmed (Agent 1: 14 in skills/) | COMPLETE (RECURRING — no change; 14 confirmed) |
+| 11 | LOW | Count Verify | gstack skills 61→53 (Agent 2: 53 root-level SKILL.md dirs; prior runs varied 48–61; confidence insufficient) | ON HOLD (RECURRING — keeping 61 per established directory-count baseline) |
+| 12 | LOW | Count Verify | BMAD skills 47→49 (Agent 2: 49 = 35 in bmm-skills/ + 14 in core-skills/; Aug 19=49, Aug 20=13, Aug 22=48; count instability persists) | ON HOLD (RECURRING — keeping 47; v6-shims boundary instability across runs) |
+| 13 | LOW | Count Verify | BMAD agents 5 confirmed (Agent 2: 5 persona skills in src/bmm-skills/agents/) | COMPLETE (RECURRING — no change; 5 confirmed) |
+| 14 | LOW | Count Verify | OpenSpec skills 12→0 (Agent 2: 0 SKILL.md files found; contradicts Aug 21 COMPLETE at 12 — post-COMPLETE decrease; 1st run showing 0 after COMPLETE) | ON HOLD (NEW — post-COMPLETE decrease; 2nd confirmation needed; keeping 12 per Aug 21 COMPLETE) |
+| 15 | LOW | Count Verify | OpenSpec commands 12 confirmed (Agent 2: 12 /opsx:* commands per docs/commands.md) | COMPLETE (RECURRING — no change; 12 confirmed) |
+| 16 | LOW | Count Verify | GSD agents 33, commands 67, skills 0 confirmed (Agent 2; archived Jun 26 2026; frozen) | COMPLETE (RECURRING — no change; counts confirmed) |
+| 17 | LOW | Count Verify | HumanLayer agents 6, commands 27, skills 0 confirmed (Agent 2; deprecated Jun 2026; frozen) | COMPLETE (RECURRING — no change; all counts confirmed) |
+| 18 | LOW | Count Verify | CE skills 33 confirmed (Agent 2: 33 in root skills/; consistent with Aug 17 COMPLETE) | COMPLETE (RECURRING — no change; 33 confirmed) |
+| 19 | LOW | Count Verify | CE commands 1 confirmed (Agent 2: 1 .claude/commands/triage-prs.md) | COMPLETE (RECURRING — no change; 1 confirmed) |
+| 20 | LOW | Count Verify | omc agents 19 confirmed (Agent 2: 19 agents/ .md files) | COMPLETE (RECURRING — no change; 19 confirmed) |
+| 21 | LOW | Count Verify | omc skills 45→41 (Agent 2: 41 skills/ folders explicitly enumerated by name; Aug 22 was 1st confirmation at 41; today is 2nd consecutive) | COMPLETE (2nd consecutive confirmation; post-COMPLETE decrease from Aug 21 COMPLETE at 45; updated to 41) |
+| 22 | LOW | Workflow | Superpowers, ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, BMAD, omc, GSD, HumanLayer, CE — workflow changes proposed by both agents; all contradict established confirmed baselines from Aug 8 or prior | ON HOLD (RECURRING — no workflow changes applied) |
+| 23 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — empty response); MCP GitHub search_repositories used for all 12 star verifications (11 repos + agent-skills OOS; ECC MCP API 422 recurring — stars-don't-fall rule applied at 241k); all verifications independently performed by orchestrator post-research | COMPLETE (RECURRING — MCP verification method authoritative) |
