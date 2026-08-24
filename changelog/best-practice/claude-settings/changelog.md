@@ -1262,3 +1262,18 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-24 10:57 AM PKT] Claude Code v2.1.241
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Settings | Add `keybindingFlavor` (v2.1.238, Any file) and `spellcheck` (User or managed) to Display & UX section. Confirmed on official settings-reference page | COMPLETE (both added to Display Settings table) — NEW |
+| 2 | HIGH | New Settings | Add `crossSessionInbound`, `dialogExpiry`, `isolatePeerMachines`, and `syncClaudeAiSkills` to Core Configuration. All confirmed on official settings-reference and settings pages; `crossSessionInbound` and `dialogExpiry` were ON HOLD from v2.1.224 run | COMPLETE (all 4 added to General Settings table) — RECURRING (first seen: 2026-08-07 for crossSessionInbound/dialogExpiry) |
+| 3 | HIGH | New Env Vars | Add `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, default model for new sessions) and `CLAUDE_AX_PREPARK_MS` (v2.1.233+, screen-reader write delay). Both confirmed on official env-vars page | COMPLETE (both added to Environment Variables table) — NEW |
+| 4 | MED | Changed Behavior | Update `outputStyle` description to include new `"Concise"` built-in value (v2.1.237). Confirmed in changelog | COMPLETE (description updated) — NEW |
+| 5 | MED | Deprecated Setting | Update `teammateDefaultModel` with removal notice — removed in v2.1.234; teammates now follow lead's model. Confirmed on official settings-reference page | COMPLETE (removal notice added to Global Config table) — NEW |
+| 6 | MED | Stale Annotation | Remove "*(not in official docs — unverified)*" from `skipWebFetchPreflight` — confirmed in official settings-reference page as "Any file" scope | COMPLETE (annotation removed) — RECURRING (first seen: 2026-03-07) |
+| 7 | MED | Stale Annotation | Remove "*(in JSON schema, not on official settings page)*" from `sandbox.ignoreViolations` — confirmed in official settings-reference page as "Any file" scope | COMPLETE (annotation updated to confirmed description) — RECURRING (first seen: 2026-03-05) |
+| 8 | LOW | Version Metadata | Update version badge v2.1.224 → v2.1.241; update counts from "127+ settings / 311 env vars" to "133+ settings / 313 env vars" | COMPLETE (badge and header updated) — NEW |
