@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-24 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ 147k → 148k (HTML scrape: "Star 148k"; GitHub API inaccessible; conf 0.55) | INVALID (conf 0.55 below 0.88 threshold; HTML-only extraction; API inaccessible; Aug 23 API-confirmed 147,388; 148k requires ~612 more stars from that baseline — plausible at ~171 stars/day growth but unverifiable; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents unchanged (270 = 270; same per-dir breakdown as prior COMPLETE Aug 14) | INVALID (no change; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24.6k rounds to 25k; no k-boundary crossed) | INVALID (no change; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 162 (README table 162; Aug 12 PRs #296 #299 #305 added agents; conf 0.85) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; 2 of 4 purported additions [email-deliverability, landing-page-copywriter] appear already counted in Aug 13 COMPLETE [156→158]; remaining net +2 within ±2 oscillation; 11th+ consecutive INVALID ruling for VoltAgent count; no change) |
+| 5 | LOW | Sort | Verify sort order (147k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-23 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
