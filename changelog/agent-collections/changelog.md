@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-25 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 147k to 148k | COMPLETE (HTML-confirmed 0.85 across multiple fetches; RECURRING from Aug 24 HTML read; growth trend consistent: API-confirmed 147,388 on Aug 23 + ~171 stars/day × 2 days ≈ 147,730 → rounds to 148k; k-boundary crossing) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 270 → 284 (per-dir enumeration floor across 17 dirs: engineering/87 + specialized/57 + marketing/36 + game-development/6 + gis/13 + security/12 + design/10 + sales/9 + testing/9 + project-management/7 + paid-media/7 + spatial-computing/6 + support/6 + academic/6 + finance/5 + product/5 + healthcare/3 = 284; conf 0.65; possible truncation in marketing/specialized may yield ~305) | INVALID (RECURRING oscillation; conf 0.65 below 0.88 threshold; within oscillation band 254-292; game-development "25+" README summary contradicted by 6-file directory listing; no change) |
+| 3 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → ~167 (README states 158+; 4 new agents confirmed Aug 12; per-category estimate 167; 6 of 10 dirs verified; conf 0.75) | INVALID (RECURRING oscillation; conf 0.75 below 0.88 threshold; 4 confirmed additions but overall count unverifiable; within oscillation threshold; no change) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24.6k rounds to 25k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (148k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-24 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
