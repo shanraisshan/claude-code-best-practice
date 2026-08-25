@@ -1260,5 +1260,24 @@
 | 18 | MED | Wrong Description | Fix `fallbackModel`: add no-merge note — highest-precedence file supplies entire chain; `"default"` keyword expands to account default; extra entries beyond 3 are silently ignored. Confirmed on official settings docs page | COMPLETE (no-merge behavior documented) — NEW |
 | 19 | LOW | Missing Source | Add [Claude Code Sandbox Reference](https://code.claude.com/docs/en/sandboxing) to Sources section — the sandbox docs page covers mask/credential/network isolation details where significant drift was found | COMPLETE (source added) — NEW |
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
-| 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
-| 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+| 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ✅ COMPLETE (confirmed in v2.1.232 changelog; added to General Settings table) — RESOLVED (first seen: 2026-08-07) |
+| 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ✋ ON HOLD (still changelog-only, not yet on official settings page) — RECURRING (first seen: 2026-08-07) |
+
+---
+
+## [2026-08-25 10:50 AM PKT] Claude Code v2.1.245
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.245; update header from "127+ settings / 311 env vars" to "145+ settings / 341 env vars". Confirmed via official changelog (v2.1.245 is latest) | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Settings | Add `modelPicker`, `promptCacheTtl`, `subagentPromptCacheTtl`, `modelPricing` (all v2.1.243). Confirmed in v2.1.243 changelog | ✅ COMPLETE (added to Model Configuration section) — NEW |
+| 3 | HIGH | Missing Setting | Add `keybindingFlavor` (v2.1.238) — readline vs classic keybinding mode. Confirmed in v2.1.238 changelog | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 4 | HIGH | Missing Setting | Add `spellcheck` (v2.1.235) — aspell/hunspell/ispell integration. Confirmed in v2.1.235 changelog | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 5 | HIGH | Missing Settings | Add `crossSessionInbound` and `dialogExpiry` (v2.1.232). Previously ON HOLD (v2.1.224 #21), now confirmed in v2.1.232 changelog | ✅ COMPLETE (added to General Settings table) — RESOLVED (first seen: 2026-08-07) |
+| 6 | HIGH | Missing Settings | Add `additionalMarketplaces` and `allowedMarketplaces` as friendly aliases for `extraKnownMarketplaces` and `strictKnownMarketplaces` (v2.1.232). Confirmed in v2.1.232 changelog | ✅ COMPLETE (added to Plugins table with alias notes) — NEW |
+| 7 | HIGH | Missing Setting | Add `disableCommandPluginSources` (v2.1.229). Confirmed in v2.1.229 changelog | ✅ COMPLETE (added to Plugins table) — NEW |
+| 8 | HIGH | Missing Env Vars | Add `ANTHROPIC_DEFAULT_MODEL` (v2.1.236), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.233), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229). All confirmed in respective version changelogs | ✅ COMPLETE (all 6 added to env vars table) — NEW |
+| 9 | HIGH | Stale Description | Update `CLAUDE_CODE_ENABLE_TASKS`: task tools removed from Opus 4.8+ by default in v2.1.233; add `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` as the re-enablement mechanism. Confirmed in v2.1.233 changelog | ✅ COMPLETE (description updated; new env var added) — NEW |
+| 10 | MED | Missing Source Type | Add `command` as marketplace source type (v2.1.229). Confirmed in v2.1.229 changelog | ✅ COMPLETE (added to source types list) — NEW |
+| 11 | MED | Settings Hierarchy | Add "restrictive-value-wins" exception keys: `isolatePeerMachines`, `crossSessionInbound`, `syncClaudeAiSkills`. Confirmed from official settings-reference page (agent 1 finding) | ✅ COMPLETE (added to hierarchy section) — NEW |
+| 12 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) — still not on official settings page | ✋ ON HOLD (still changelog-only, not yet on official settings page) — RECURRING (first seen: 2026-08-07) |
