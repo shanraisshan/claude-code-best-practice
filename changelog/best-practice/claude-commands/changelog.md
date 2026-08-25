@@ -930,3 +930,11 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/auto-mode-setup` to Config tag — Draft `autoMode.environment` entries from project and recent sessions; requires Pro/Max/Team and v2.1.228+; on native Windows requires v2.1.233+ (count 90 → 91) | ✅ COMPLETE (added as #7 in Config tag, alphabetically before `/color`; downstream rows 7–90 renumbered 8–91; count heading updated to 91) |
 | 2 | MED | Changed Argument | Update `/effort` signature from `[low\|medium\|high\|xhigh\|max\|ultracode]` to `[level\|auto\|status]`; add `status` subcommand that prints current level without opening picker; note `-p` mode works outside effort hold | ✅ COMPLETE (signature and description updated at #52 in Model tag) |
+
+---
+
+## [2026-08-25 11:16 AM PKT] Claude Code v2.1.245
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/rate-limit-options` to Context tag — show ways to keep working when a claude.ai usage limit blocks a request; doesn't appear in command menu, type it in full; wait-and-continue rows require v2.1.234+ (count 91 → 92) | ✅ COMPLETE (added as #29 in Context tag alphabetically between `/insights` and `/stats`; downstream rows 29–91 renumbered 30–92; count heading updated to 92) |
