@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-26 08:44 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 157 (−1; all 10 category dirs fetched individually: core-dev/11 + lang-specialists/30 + infra/16 + quality-security/17 + data-ai/13 + devex/16 + specialized-domains/16 + biz-product/17 + meta-orchestration/11 + research-analysis/10 = 157; README header claims "158+" — discrepancy traced to search-specialist listed in README summary for research-analysis (11 items) but absent from directory (10 files); conf 0.92) | INVALID (RECURRING oscillation; −1 within documented ±2 oscillation band; 40+ consecutive INVALID rulings for VoltAgent count; README badge still reports "158+"; no confirmed file deletion in recent commits — Aug 12 PR #308 was content edits; no change) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (148k = 148,040 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents unchanged (270 = 270; engineering/58 + specialized/57 + marketing/36 + game-development/21 + gis/13 + security/12 + design/10 + testing/8 + sales/9 + project-management/7 + paid-media/7 + academic/6 + support/6 + spatial-computing/6 + finance/5 + product/5 + healthcare/3 + integrations/mcp-memory/1 = 270; conf 0.88) | INVALID (no change; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24.6k rounds to 25k; 24,638 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (148k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-25 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
