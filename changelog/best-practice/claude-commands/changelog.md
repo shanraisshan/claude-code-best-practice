@@ -938,3 +938,9 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/rate-limit-options` to Context tag — show ways to keep working when a claude.ai usage limit blocks a request; doesn't appear in command menu, type it in full; wait-and-continue rows require v2.1.234+ (count 91 → 92) | ✅ COMPLETE (added as #29 in Context tag alphabetically between `/insights` and `/stats`; downstream rows 29–91 renumbered 30–92; count heading updated to 92) |
+
+---
+
+## [2026-08-26 11:25 AM PKT] Claude Code v2.1.246
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
