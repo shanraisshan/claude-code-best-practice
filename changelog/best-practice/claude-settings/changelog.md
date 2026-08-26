@@ -1262,3 +1262,29 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-26 10:46 AM PKT] Claude Code v2.1.246
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.246; update counts from "127+ settings / 311 env vars" to "135+ settings / 315 env vars" | ✅ COMPLETE (badge, header, and version references updated) — NEW |
+| 2 | HIGH | New Setting | Add `crossSessionInbound` (string, any scope, v2.1.232) — control how this session handles messages from other Claude Code sessions (`"accept"/"hold"/"refuse"`). Confirmed on official settings-reference page | ✅ COMPLETE (added to General Settings table) — RESOLVED ON HOLD (first seen: 2026-08-07) |
+| 3 | HIGH | New Setting | Add `dialogExpiry` (number ms, user/managed, v2.1.232) — milliseconds before an unapproved cross-session dialog expires. Confirmed on official settings-reference page | ✅ COMPLETE (added to General Settings table) — RESOLVED ON HOLD (first seen: 2026-08-07) |
+| 4 | HIGH | New Setting | Add `spellcheck` (object, user/managed, v2.1.235) — underline misspelled words using aspell/hunspell/ispell. Confirmed on official settings-reference page | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 5 | HIGH | New Setting | Add `keybindingFlavor` (string, any scope, v2.1.238) — keybinding style: `"readline"` makes Ctrl+W delete to previous whitespace. Confirmed on official settings-reference page | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 6 | HIGH | New Setting | Add `promptCacheTtl` (number seconds, any scope, v2.1.243) — prompt cache lifetime for main conversation (3600 or 300 seconds). Confirmed on official settings-reference page | ✅ COMPLETE (added to Model Configuration table) — NEW |
+| 7 | HIGH | New Setting | Add `subagentPromptCacheTtl` (number seconds, any scope, v2.1.243) — prompt cache lifetime for subagents (default 300 seconds). Confirmed on official settings-reference page | ✅ COMPLETE (added to Model Configuration table) — NEW |
+| 8 | HIGH | New Setting | Add `modelPicker` (object, user/managed, v2.1.243) — customize which models appear in `/model` picker. No merge across files; ignored in project/local settings. Confirmed on official settings-reference page | ✅ COMPLETE (added to Model Configuration table) — NEW |
+| 9 | HIGH | New Env Var | Add `ANTHROPIC_DEFAULT_MODEL` (v2.1.236) — model that new sessions start on by default; applies only when no `model` key is set in any settings file. Confirmed on official env-vars page | ✅ COMPLETE (added to env vars table) — NEW |
+| 10 | HIGH | Changed Behavior | Update `outputStyle`: add built-in `"Concise"` style (leads with results, skips preamble, added v2.1.237). Add hot-reload note: read once at session start. Confirmed in official changelog | ✅ COMPLETE (description expanded) — NEW |
+| 11 | HIGH | Deprecated Setting | Mark `teammateDefaultModel` as removed in v2.1.234. "Default teammate model" `/config` option was also removed. Add removal note to Global Config Settings table | ✅ COMPLETE (removal note added) — NEW |
+| 12 | HIGH | Source Structure | Add `https://code.claude.com/docs/en/settings-reference` as primary reference source. `/docs/en/settings` is now a how-to page (scope/precedence guidance), not a key list | ✅ COMPLETE (settings-reference added to Sources, old entry relabeled) — NEW |
+| 13 | MED | Wrong Description | Update `model` key description: add `fable` to accepted aliases list. Confirmed in official settings-reference | ✅ COMPLETE (fable added to alias list) — NEW |
+| 14 | MED | New Setting | Add `subagentStatusLine` (object, any scope) — custom status line command for subagent task display. Same config format as `statusLine`. Confirmed on official settings-reference page | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 15 | MED | New Setting | Add `autoContinueAtUsageLimit` (boolean, any scope) — auto-resume when rate limit resets. Confirmed on official settings-reference page | ✅ COMPLETE (added to General Settings table) — NEW |
+| 16 | MED | New Setting | Add `terminalTitleFromRename` (boolean, any scope) — update terminal title on `/rename`. Confirmed on official settings-reference page | ✅ COMPLETE (added to General Settings table) — NEW |
+| 17 | MED | New Commands | Add `claude ultrareview` (non-interactive code review, v2.1.227+) and `claude import codex/gemini` (import config from other agents, v2.1.213+) to Useful Commands table | ✅ COMPLETE (both added to Useful Commands) — NEW |
+| 18 | MED | Stale Annotation | Remove "not yet on official env-vars page" caveat from `ANTHROPIC_BEDROCK_REGION_PREFIX` — now confirmed on official env-vars page | ✅ COMPLETE (caveat removed) — NEW |
+| 19 | LOW | ON HOLD | JWT masking options (`sandbox.credentials.files[].decode`, `maskClaims`) and credential grouping (`awsPairs`, `sigv4`) from v2.1.224 — agent 2 confirms these exist on official settings-reference but details remain insufficient for accurate documentation | ✋ ON HOLD (need to verify exact key structure and scope before documenting) — RECURRING (first seen: 2026-08-07) |
