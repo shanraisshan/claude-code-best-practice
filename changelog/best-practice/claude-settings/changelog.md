@@ -1262,3 +1262,39 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-27 10:48 AM PKT] Claude Code v2.1.247
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.224 → v2.1.247; update header "As of v2.1.224" → "As of v2.1.247"; update counts from "127+ settings / 311 env vars" to "150+ settings / 342 env vars" | ✅ COMPLETE (badge, header, counts updated in Phase 2.6) — NEW |
+| 2 | HIGH | New Setting | Add `feedbackDrafts` (string `"notify"`/`"quiet"`/`"off"`, default `"notify"`, User or managed, v2.1.247) to General Settings table | ✅ COMPLETE (added to General Settings) — NEW |
+| 3 | HIGH | New Setting | Add `modelPicker` (object `{options: [], replaceBuiltInOptions?: boolean}`, User or managed, v2.1.243) to Model Configuration section after `effortLevel` | ✅ COMPLETE (added to Model Overrides table) — NEW |
+| 4 | HIGH | New Setting | Add `promptCacheTtl` (string `"5m"`/`"1h"`, Any file, v2.1.243) to Plans & Memory section | ✅ COMPLETE (added to Plans & Memory table) — NEW |
+| 5 | HIGH | New Setting | Add `subagentPromptCacheTtl` (string `"5m"`/`"1h"`, Any file, v2.1.242) to Plans & Memory section | ✅ COMPLETE (added to Plans & Memory table) — NEW |
+| 6 | HIGH | New Setting | Add `keybindingFlavor` (string `"classic"`/`"readline"`, default `"classic"`, Any file, v2.1.238) to Display Settings table | ✅ COMPLETE (added to Display Settings) — NEW |
+| 7 | HIGH | New Setting | Add `spellcheck` (object `{enabled: boolean, checker: string, language: string}`, User or managed, v2.1.235) to Display Settings table | ✅ COMPLETE (added to Display Settings) — NEW |
+| 8 | HIGH | New Setting | Add `autoContinueAtUsageLimit` (boolean, default `true`, User or managed, v2.1.234) to General Settings table | ✅ COMPLETE (added to General Settings) — NEW |
+| 9 | HIGH | Resolved ON HOLD | `crossSessionInbound` (v2.1.232) — confirmed on official settings page. Add to General Settings: string `"accept"`/`"hold"`/`"refuse"`, Any file, stricter-wins scope semantics | ✅ COMPLETE (added to General Settings) — RESOLVED (ON HOLD since 2026-08-07 v2.1.224 #21) |
+| 10 | HIGH | Resolved ON HOLD | `dialogExpiry` (v2.1.224+) — confirmed on official settings page. Add to General Settings: string `"60s"`/`"5m"`/`"10m"`/`"never"`, default `"5m"`, User or managed | ✅ COMPLETE (added to General Settings) — RESOLVED (ON HOLD since 2026-08-07 v2.1.224 #21) |
+| 11 | HIGH | New Setting | Add `isolatePeerMachines` (boolean, Any file — `true` wins from any scope) to General Settings table | ✅ COMPLETE (added to General Settings) — NEW |
+| 12 | HIGH | Resolved ON HOLD | `sandbox.credentials.awsPairs` (array of `{accessKeyIdVar, secretAccessKeyVar, sessionTokenVar?}`) and `sandbox.credentials.sigv4` (object `{streaming, presigned, sigv4a}`, all `"deny"` by default) — confirmed on official settings page (v2.1.232). Add to Sandbox Settings | ✅ COMPLETE (added to Sandbox Settings) — RESOLVED (ON HOLD since 2026-08-07 v2.1.224 #22) |
+| 13 | HIGH | New Setting | Add `sandbox.ripgrep` (object `{command: string, args?: string[]}`, User or managed only — project settings cannot override, v2.1.232) to Sandbox Settings | ✅ COMPLETE (added to Sandbox Settings) — NEW |
+| 14 | HIGH | Resolved Annotation | Remove stale `*(in JSON schema, not on official settings page)*` from `sandbox.ignoreViolations` — now on official settings page | ✅ COMPLETE (annotation removed) — RESOLVED |
+| 15 | HIGH | Wrong Scope | Fix `allowedMcpServers` / `deniedMcpServers` scope: "Managed only" → "Any file"; entries from every scope merge. `allowManagedMcpServersOnly` is what restricts to managed | ✅ COMPLETE (scope corrected in MCP Settings table) — NEW |
+| 16 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope description: "project and local settings only" → actual scope is User or managed | ✅ COMPLETE (scope corrected in General Settings) — NEW |
+| 17 | HIGH | Deprecated Setting | Mark `teammateDefaultModel` as **REMOVED in v2.1.234** in Global Config Settings table — teammates now follow the lead's model | ✅ COMPLETE (marked removed) — NEW |
+| 18 | HIGH | New Setting | Add `disableCommandPluginSources` (boolean, Managed only, v2.1.229) to Plugin Settings table | ✅ COMPLETE (added to Plugin Settings) — NEW |
+| 19 | HIGH | Changed Description | Update `spinnerTipsOverride` for v2.1.247: individual tips may now be objects `{id, text, cooldownSessions, priority}`; max 200 tips; project/local settings contribute plain strings only; add `tipsFile` (path) and `label` (string) top-level fields | ✅ COMPLETE (description expanded) — NEW |
+| 20 | HIGH | Changed Description | Update `outputStyle` description to include `"Concise"` as a built-in style value (v2.1.237) | ✅ COMPLETE (Concise value added) — NEW |
+| 21 | HIGH | Model Alias | Fix `opus` alias: now resolves to Opus 5 on Bedrock, Vertex AI, Google Cloud Agent Platform, and Claude Platform on AWS (previous: Opus 4.8 on those providers since v2.1.207) | ✅ COMPLETE (opus alias description updated) — NEW |
+| 22 | HIGH | Model Alias | Fix `sonnet` alias: Sonnet 4.5 on Bedrock & Google Cloud Agent Platform; Sonnet 4.6 on Claude Platform on AWS; Sonnet 4.5 on Microsoft Foundry | ✅ COMPLETE (sonnet alias clarified by provider) — NEW |
+| 23 | HIGH | Missing Model Alias | Add `best` alias — Claude Fable 5 where the org has access, otherwise latest Opus | ✅ COMPLETE (added to Model Aliases table) — NEW |
+| 24 | HIGH | Missing Env Vars | Add priority env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.233), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233), `CLAUDE_CODE_PROMPT_CACHE_TTL`, `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL`, `CLAUDE_CODE_SEND_FEEDBACK` | ✅ COMPLETE (added to env vars table) — NEW |
+| 25 | HIGH | New Settings | Add `enableWorkflows` (boolean, Any file — enable workflows even on Pro), `promptSuggestionEnabled` (boolean, default `true`, Any file), `terminalTitleFromRename` (boolean, default `true`, Any file), `subagentStatusLine` (object, Any file), `syncClaudeAiSkills` (boolean, User/local/managed), `skipAutoPermissionPrompt` (boolean, User or managed), `sshHostAllowlist` (array, Managed), `disableDesktopLocalSessions` (boolean JSON only, Managed) | ✅ COMPLETE (added to respective sections) — NEW |
+| 26 | MED | New Setting | Add `modelPricing` (Managed only, v2.1.243) to Model Configuration managed section | ✅ COMPLETE (added to Model Overrides table) — NEW |
+| 27 | MED | New Source | Add `https://code.claude.com/docs/en/settings-reference` to Sources — canonical per-key reference (216 keys with Scope/Type/Default) | ✅ COMPLETE (added to Sources section) — NEW |
+| 28 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still NOT on official /en/env-vars page; entry annotated accordingly | ✋ ON HOLD (RECURRING from 2026-07-03 v2.1.199) |
+| 29 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page | ✋ ON HOLD (RECURRING from 2026-04-14 v2.1.107) |
