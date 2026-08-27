@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2007%2C%202026%2010%3A48%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.224-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2027%2C%202026%2010%3A48%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.247-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.224, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.247, Claude Code exposes **150+ settings** and **342 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -67,6 +67,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `browserExternalPageTools` | string | - | **(Managed only)** Set to `"disabled"` to prevent Claude from using tools to read or act on external pages in the desktop app's Browser pane. Users can still navigate to external sites themselves, and local dev server previews are unaffected |
 | `disableBrowserExternalNavigation` | boolean | - | **(Managed only)** Set to `true` (JSON boolean only — string `"true"` is silently ignored) to prevent Claude from navigating the desktop app's Browser pane to external URLs. Only JSON boolean `true` is honored |
 | `disableMobileSimulatorTools` | boolean | - | **(Managed only)** Set to `true` (JSON boolean only — a malformed value logs a warning) to remove mobile simulator tools from Claude. Only JSON boolean `true` is honored |
+| `disableDesktopLocalSessions` | boolean | - | **(Managed only)** Set to `true` (JSON boolean only) to prevent users from starting new local sessions in the Desktop app. Only cloud-based (remote) sessions may be launched when this is enabled |
 
 **Important**:
 - `deny` rules have highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
@@ -131,12 +132,21 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
 | `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+. **v2.1.210+:** Setting `"fable"` no longer attaches an advisor — Fable 5 is temporarily unavailable in the advisor picker; use `"opus"` or `"sonnet"` instead |
 | `respondToBashCommands` | boolean | `true` | Whether Claude automatically responds after a `!` shell command completes. Set to `false` to disable the automatic follow-up response when a `!` bash command finishes (v2.1.186) |
-| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Only honored from project and local settings — managed and user settings values are ignored. (v2.1.200) |
+| `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Scope: User or managed. (v2.1.200) |
 | `theme` | string | `"dark"` | UI color theme. Values: `"auto"` (follow OS), `"dark"`, `"light"`, `"dark-daltonized"`, `"light-daltonized"`, `"dark-ansi"`, `"light-ansi"`, `"custom:<slug>"`, `"custom:<plugin>:<slug>"`. Plugin-provided themes use the `custom:` prefix |
 | `verbose` | boolean | `false` | Show full tool output instead of truncated summaries. Equivalent to running with `--verbose`; persists the verbose view across sessions |
 | `switchModelsOnFlag` | boolean | `true` | Automatically switch to the fallback model when a safety classifier flags a request. When `false`, flagged requests are blocked rather than rerouted (v2.1.170) |
 | `processWrapper` | string | - | Corporate launcher command used for background processes (e.g., a credential-injecting wrapper). Only honored from managed settings, user settings (`~/.claude/settings.json`), or `--settings`; ignored from project and local settings to prevent untrusted repos from hijacking background process launches (v2.1.210) |
 | `remote.defaultEnvironmentId` | string | - | Default environment ID to use when launching remote sessions or background agents via `--remote` without an explicit environment ID. When set, Claude Code selects this environment automatically rather than prompting. Only honored from user and managed settings (v2.1.200+) |
+| `autoContinueAtUsageLimit` | boolean | `true` | Whether Claude Code automatically continues past usage limit pauses without prompting the user. Set to `false` to require manual confirmation at each usage limit boundary. User or managed scope (v2.1.234) |
+| `crossSessionInbound` | string | - | How this session handles inbound cross-session messages (from `claude send` or the SDK's cross-session messaging). Values: `"accept"` (deliver messages immediately), `"hold"` (queue until accepted), `"refuse"` (reject). Scope: Any file with stricter-wins semantics — the most restrictive value from any settings file wins (v2.1.232) |
+| `dialogExpiry` | string | `"5m"` | How long before an unanswered interactive dialog is automatically dismissed. Values: `"60s"`, `"5m"` (default), `"10m"`, `"never"`. User or managed scope (v2.1.224+) |
+| `isolatePeerMachines` | boolean | - | When `true`, peer machines in a multi-machine session cannot send tool calls to each other. `true` wins from any settings scope — a project setting can restrict even when managed settings do not set this. Any file scope |
+| `feedbackDrafts` | string | `"notify"` | How Claude Code surfaces unsent feedback drafts from previous sessions. Values: `"notify"` (show a notification on startup), `"quiet"` (save drafts silently), `"off"` (discard drafts). User or managed scope (v2.1.247) |
+| `enableWorkflows` | boolean | - | Enable dynamic workflows even on plans where workflows are otherwise off (e.g., Pro). Complementary to `disableWorkflows`. Any file scope |
+| `promptSuggestionEnabled` | boolean | `true` | Show AI-generated prompt suggestions in the input box. Set to `false` to disable. Any file scope |
+| `skipAutoPermissionPrompt` | boolean | - | Skip the interactive permission prompt when Claude Code starts without a `--permission-mode` flag. User or managed scope |
+| `terminalTitleFromRename` | boolean | `true` | Update the terminal window title when the session is renamed (via `/rename` or the API). Set to `false` to keep the original terminal title. Any file scope |
 
 **Example:**
 ```json
@@ -160,6 +170,8 @@ Store plan and auto-memory files in custom locations.
 | `autoMemoryDirectory` | string | - | Custom directory for auto-memory storage. Accepts `~/`-expanded paths. Not accepted in project settings (`.claude/settings.json`) to prevent redirecting memory writes to sensitive locations; accepted from policy, local, and user settings |
 | `autoMemoryEnabled` | boolean | `true` | Enable [auto memory](https://code.claude.com/docs/en/memory). When `false`, Claude does not read from or write to the auto-memory directory. Can also be toggled with `/memory` during a session, or disabled via the `CLAUDE_CODE_DISABLE_AUTO_MEMORY` env var |
 | `fileCheckpointingEnabled` | boolean | `true` | Snapshot files before each edit so you can restore them with `/rewind`. Set to `false` to skip checkpointing and save disk space. Also disableable via the `CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING` env var |
+| `promptCacheTtl` | string | - | Prompt cache TTL for the main session. Values: `"5m"` (5-minute cache, default Anthropic API behavior) or `"1h"` (1-hour extended cache, reduces cost for long sessions). Any file scope (v2.1.243) |
+| `subagentPromptCacheTtl` | string | - | Prompt cache TTL for subagent sessions. Values: `"5m"` or `"1h"`. Separate from `promptCacheTtl` so subagents can use a different cache duration. Any file scope (v2.1.242) |
 
 **Example:**
 ```json
@@ -409,8 +421,8 @@ Configure Model Context Protocol servers for extended capabilities.
 | `enableAllProjectMcpServers` | boolean | Any | Auto-approve all `.mcp.json` servers. **Security note (v2.1.196):** `.mcp.json` servers no longer self-approve — explicit opt-in via `enableAllProjectMcpServers: true` or `enabledMcpjsonServers` is now required |
 | `enabledMcpjsonServers` | array | Any | Allowlist specific server names |
 | `disabledMcpjsonServers` | array | Any | Blocklist specific server names |
-| `allowedMcpServers` | array | Managed only | Allowlist with name/command/URL matching |
-| `deniedMcpServers` | array | Managed only | Blocklist with matching |
+| `allowedMcpServers` | array | Any file | Allowlist with name/command/URL matching. Entries from all settings scopes merge. Once the allowlist contains any `serverCommand` entry, a stdio server must match a `serverCommand` entry; similarly for `serverUrl` and remote servers — a `serverName` match alone no longer admits that kind of server. Built-in servers (Claude in Chrome, IDE-provided) are exempt from the allowlist; the denylist still applies to them |
+| `deniedMcpServers` | array | Any file | Blocklist with matching. Entries from all settings scopes merge |
 | `allowManagedMcpServersOnly` | boolean | Managed only | Only allow MCP servers explicitly listed in managed allowlist |
 | `channelsEnabled` | boolean | Managed only | Allow [channels](https://code.claude.com/docs/en/channels) for Team and Enterprise users. When unset or `false`, channel message delivery is blocked regardless of `--channels` flag |
 | `allowedChannelPlugins` | array | Managed only | Allowlist of channel plugins that may push messages. Replaces the default Anthropic allowlist when set. Undefined = fall back to the default, empty array = block all channel plugins. Requires `channelsEnabled: true`. Each entry is an object with `marketplace` and `plugin` fields (v2.1.84) |
@@ -477,7 +489,7 @@ Configure bash command sandboxing for security.
 | `sandbox.excludedCommands` | array | `[]` | Commands to run outside sandbox |
 | `sandbox.allowUnsandboxedCommands` | boolean | `true` | Allow `dangerouslyDisableSandbox`. When set to `false`, the escape hatch is completely disabled and all commands must run sandboxed (or be in `excludedCommands`). Useful for enterprise policies that require strict sandboxing |
 | `sandbox.filesystem.disabled` | boolean | `false` | Skip filesystem isolation while keeping network egress control active. When `true`, the sandbox does not restrict file access but network egress stays confined to `sandbox.network.allowedDomains`. **Only honored from user settings, managed settings, or `--settings`** — ignored in `.claude/settings.json` and `.claude/settings.local.json` (v2.1.216) |
-| `sandbox.ignoreViolations` | object | `{}` | Map of command patterns to path arrays — suppress violation warnings *(in JSON schema, not on official settings page)* |
+| `sandbox.ignoreViolations` | object | `{}` | Map of command patterns to path arrays — suppress violation warnings for specific paths. Example: `{"git": ["/home/user/.gitconfig"]}` |
 | `sandbox.enableWeakerNestedSandbox` | boolean | `false` | **(Linux and WSL2 only)** Enable weaker sandbox for unprivileged Docker environments (reduces security) |
 | `sandbox.network.allowUnixSockets` | array | `[]` | **(macOS only)** Specific Unix socket paths accessible in sandbox. Ignored on Linux and WSL2, where the seccomp filter cannot inspect socket paths; use `allowAllUnixSockets` instead |
 | `sandbox.network.allowAllUnixSockets` | boolean | `false` | Allow all Unix sockets (overrides `allowUnixSockets`). On Linux and WSL2 this is the only way to permit Unix sockets, since it skips the seccomp filter that otherwise blocks `socket(AF_UNIX, ...)` calls |
@@ -507,6 +519,9 @@ Configure bash command sandboxing for security.
 | `sandbox.credentials.files[].maskDuplicates` | boolean | `false` | When `true`, also mask occurrences of the extracted credential value that appear in other files and env vars read during the same sandboxed command (v2.1.221) |
 | `sandbox.network.tlsTerminate` | object | — | TLS termination configuration for sandboxed bash commands. When set, Claude Code acts as a TLS man-in-the-middle for outbound HTTPS from the sandbox, enabling credential masking (`sandbox.credentials` `mask` mode). Set to `{}` to generate an ephemeral certificate authority for the session, or set `caCertPath` and `caKeyPath` to provide your own CA. **Only honored from user settings, managed settings, or `--settings`** — ignored in `.claude/settings.json` and `.claude/settings.local.json`. Experimental (v2.1.199) |
 | `sandbox.credentials.allowPlaintextInject` | boolean | `false` | Allow `mask` credential substitution to also apply on **plain HTTP requests** (where the upstream identity is unverified and the credential travels in cleartext). When `false` (default), credential injection via `injectHosts` is restricted to TLS-terminated HTTPS connections only, preventing credentials from being sent over unencrypted channels. Use only in trusted local environments where cleartext exposure is acceptable (v2.1.199) |
+| `sandbox.credentials.awsPairs` | array | - | AWS credential pair definitions for sandboxed commands. Each entry is an object `{accessKeyIdVar: string, secretAccessKeyVar: string, sessionTokenVar?: string}` identifying the env var names holding the credential values. Claude Code can then apply masking or deny rules to those variables by name. User or managed scope (v2.1.232) |
+| `sandbox.credentials.sigv4` | object | all `"deny"` | Controls how SigV4-signed outbound requests from sandboxed commands are handled. Object with three fields: `streaming` (string `"deny"`/`"allow"`), `presigned` (string `"deny"`/`"allow"`), `sigv4a` (string `"deny"`/`"allow"`). Defaults to `"deny"` for all three. User or managed scope (v2.1.232) |
+| `sandbox.ripgrep` | object | - | Custom ripgrep binary for the `Grep` tool inside sandboxed environments. Object `{command: string, args?: string[]}` where `command` is the path to the `rg` binary. **Only honored from user settings, managed settings, or `--settings`** — project settings cannot override the sandbox ripgrep binary (security hardening, v2.1.232) |
 
 **Example:**
 ```json
@@ -545,6 +560,8 @@ Configure Claude Code plugins and marketplaces.
 | `blockedMarketplaces` | array | Managed only | Block specific plugin marketplaces. Each entry can match by source string, `hostPattern`, or `pathPattern` — as of v2.1.119 the `hostPattern` and `pathPattern` matchers are correctly enforced before any download touches the filesystem, so blocked marketplaces never reach disk |
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 | `disableSideloadFlags` | boolean | Managed only | Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` startup flags. When `true`, users cannot bypass `strictKnownMarketplaces` by passing sideload flags at launch. Use in managed environments to enforce marketplace-only plugin distribution (v2.1.193) |
+| `disableCommandPluginSources` | boolean | Managed only | Block plugin commands (slash commands from plugin sources) from loading. When `true`, only built-in and managed-source commands are available; user/project-sourced plugin commands are suppressed (v2.1.229) |
+| `syncClaudeAiSkills` | boolean | - | Sync skills from claude.ai to this Claude Code session. When `false`, claude.ai-hosted skills are not loaded. `false` wins from any of user, local, or managed settings. User, local, or managed scope |
 
 **Marketplace source types:** `github`, `git`, `directory`, `settings`, `url`, `npm`, `file`, `archive`. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository. Use `source: 'archive'` for zip-based plugin installation with SHA-256 pinning (v2.1.224). Note: `hostPattern` is a *matcher* field for `blockedMarketplaces`, not a source type.
 
@@ -590,8 +607,9 @@ Configure Claude Code plugins and marketplaces.
 | Alias | Description |
 |-------|-------------|
 | `"default"` | Recommended for your account type |
-| `"sonnet"` | Latest Sonnet model (Claude Sonnet 5 on the Anthropic API — native 1M-token context, introduced v2.1.197; Claude Sonnet 4.6 on Bedrock/Vertex/Foundry) |
-| `"opus"` | Latest Opus model (**Claude Opus 5** (`claude-opus-5`) on the Anthropic API as of v2.1.219 — 1M-token context native; Opus 4.8 on Bedrock, Vertex, and Claude Platform on AWS as of v2.1.207). Opus 5 and Opus 4.8 are the fast-mode models (Opus 4.7 removed from fast mode in v2.1.219). Opus 5 supports `ultracode` effort; Opus 4.8 defaults to `high` and supports `xhigh` |
+| `"sonnet"` | Latest Sonnet model. **Anthropic API:** Claude Sonnet 5 (native 1M-token context, v2.1.197+). **Bedrock & Google Cloud Agent Platform:** Claude Sonnet 4.5. **Claude Platform on AWS:** Claude Sonnet 4.6. **Microsoft Foundry:** Claude Sonnet 4.5 |
+| `"opus"` | Latest Opus model. **Anthropic API:** Claude Opus 5 (`claude-opus-5`, 1M-token context native, v2.1.219+). **Bedrock, Vertex AI, Google Cloud Agent Platform, Claude Platform on AWS:** Claude Opus 5 (v2.1.247+; previously Opus 4.8 since v2.1.207). **Microsoft Foundry:** Claude Opus 4.6. Opus 5 supports `ultracode` effort |
+| `"best"` | Claude Fable 5 where the organization has access; otherwise latest Opus |
 | `"haiku"` | Fast Haiku model |
 | `"sonnet[1m]"` | Sonnet with 1M token context |
 | `"opus[1m]"` | Opus with 1M token context (default on Max, Team, and Enterprise since v2.1.75) |
@@ -614,6 +632,8 @@ Map Anthropic model IDs to provider-specific model IDs for Bedrock, Vertex, or F
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `effortLevel` | string | - | Persist the effort level across sessions. Accepts `"low"`, `"medium"`, `"high"`, `"xhigh"` (Fable 5, Opus 5, Sonnet 5, Opus 4.7, Opus 4.8, v2.1.111). **`"max"` and `"ultracode"` are session-only and are not accepted here** — set them via `/effort` or `--settings` for a single session but do not write them to `settings.json`. Written automatically when you run `/effort <level>`. The default effort is `high` on every model that supports effort, except Opus 4.7 which defaults to `xhigh`. Unsupported levels fall back to the highest supported level on the active model |
+| `modelPicker` | object | - | Customize the `/model` picker menu. Fields: `options` (array of model IDs or aliases to show in the picker) and `replaceBuiltInOptions` (boolean — when `true`, only the listed `options` appear; when `false` or absent, custom options are prepended before the built-in list). User or managed scope (v2.1.243) |
+| `modelPricing` | object | - | **(Managed only)** Override displayed pricing in the model picker and `/usage` output. Object keyed by model ID with per-model pricing values. Lets admins show negotiated enterprise pricing rather than public list prices (v2.1.243) |
 | `fallbackModel` | array | - | Up to 3 fallback model IDs tried sequentially when the primary model is unavailable (e.g., rate-limited or capacity issue). Each entry is a model ID or alias; `"default"` expands to the account default. Claude Code attempts the primary model first; if it fails, each fallback is tried in order. Stops at the first successful response. **Unlike most array settings, this key does not merge across settings files** — the highest-precedence file that defines it supplies the entire chain; entries beyond 3 (after deduplication) are silently ignored (v2.1.166) |
 | `modelOverrides` | object | - | Map model picker entries to provider-specific IDs (e.g., Bedrock inference profile ARNs). Each key is a model picker entry name, each value is the provider model ID |
 
@@ -675,10 +695,10 @@ Configure via `env` key:
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `statusLine` | object | - | Custom status line configuration |
-| `outputStyle` | string | `"default"` | Output style (e.g., `"Explanatory"`) |
+| `outputStyle` | string | `"default"` | Output style. Built-in values: `"default"`, `"Concise"` (v2.1.237 — shorter responses), `"Explanatory"` (educational detail). Plugin-provided styles are also accepted |
 | `spinnerTipsEnabled` | boolean | `true` | Show tips while waiting |
 | `spinnerVerbs` | object | - | Custom spinner verbs with `mode` ("append" or "replace") and `verbs` array |
-| `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` (string array) and optional `excludeDefault` (boolean). When `excludeDefault` is `true`, only custom tips show; when `false` or absent, custom tips merge with built-in tips. As of v2.1.121, `excludeDefault: true` also suppresses time-based spinner tips |
+| `spinnerTipsOverride` | object | - | Custom spinner tips. Fields: `tips` (array of strings or objects `{id, text, cooldownSessions?, priority?}` — up to 200 entries; in project/local settings only plain strings are accepted), `tipsFile` (path to a file containing additional tips, one per line), `label` (string — custom label replacing the default "Thinking…" text), and `excludeDefault` (boolean — when `true`, only custom tips show; built-in and time-based tips suppressed). As of v2.1.121, `excludeDefault: true` also suppresses time-based tips. Object-form tips added in v2.1.247 |
 | `respectGitignore` | boolean | `true` | Respect .gitignore in file picker |
 | `prefersReducedMotion` | boolean | `false` | Reduce animations and motion effects in the UI |
 | `axScreenReader` | boolean | `false` | Enable screen-reader-friendly output mode. When `true`, Claude outputs flat text without decorative box-drawing characters, color, and other terminal UI elements. Appears in `/config` as **Screen reader mode**. Only applies at the User scope — does not read from project or managed settings. Also available via the `--ax-screen-reader` CLI flag (v2.1.181) |
@@ -694,6 +714,11 @@ Configure via `env` key:
 | `wheelScrollAccelerationEnabled` | boolean | `true` | Disable mouse-wheel scroll acceleration in fullscreen mode. Set to `false` to use fixed per-tick scroll steps instead of the OS-level acceleration curve (v2.1.174) |
 | `footerLinksRegexes` | array | - | Array of objects matched against **turn output** (tool results, file contents, fetched pages, Claude's responses) to display as link badges in the footer row. Each entry is `{type, pattern, url, label}` where `pattern` is a regex with named capture groups and `url`/`label` may reference those groups. Matched patterns produce a clickable badge at the bottom of the chat UI. Capped at 5 badges per turn; URL max 2048 chars; allowed schemes: `http`, `https`, `vscode`, `cursor`, `windsurf`, `zed`, `jetbrains`, `idea`, `slack`, `linear`, `notion`, `figma`, `vscode-insiders`. User/`--settings`/managed only (v2.1.176) |
 | `emojiCompletionEnabled` | boolean | `true` | Enable emoji shortcode autocomplete in the prompt input (e.g., `:tada:` → 🎉). Set to `false` to disable. Requires v2.1.217+ |
+| `keybindingFlavor` | string | `"classic"` | Keyboard shortcut style for the input box. Values: `"classic"` (default — Claude Code's original shortcuts) or `"readline"` (Emacs/readline-style navigation, e.g., Ctrl+A moves to start of line). Any file scope (v2.1.238) |
+| `spellcheck` | object | - | Spell-checking configuration for the input box. Fields: `enabled` (boolean — turn spell check on/off), `checker` (string — spell check engine, e.g., `"enchant"`), `language` (string — language code, e.g., `"en_US"`). User or managed scope (v2.1.235) |
+| `subagentStatusLine` | object | - | Custom status line configuration for subagent sessions, independent of the main session's `statusLine` setting. Same shape as `statusLine`: `{type: "command", command: string, padding?: number, refreshInterval?: number}`. Any file scope |
+| `promptSuggestionEnabled` | boolean | `true` | Show AI-generated prompt suggestions in the input box when the conversation is idle. Set to `false` to disable. Any file scope |
+| `terminalTitleFromRename` | boolean | `true` | Update the terminal window title when the session is renamed via `/rename` or the SDK. Set to `false` to keep the original terminal title unchanged. Any file scope |
 
 ### Global Config Settings (`~/.claude.json`)
 
@@ -706,7 +731,7 @@ These IDE-related preferences are stored in `~/.claude.json`, **not** `settings.
 | `autoConnectIde` | boolean | `false` | Automatically connect to a running IDE when Claude Code starts from an external terminal. Appears in `/config` as **Auto-connect to IDE (external terminal)** when running outside a VS Code or JetBrains terminal |
 | `autoInstallIdeExtension` | boolean | `true` | Automatically install the Claude Code IDE extension when running from a VS Code terminal. Appears in `/config` as **Auto-install IDE extension**. Can also be disabled via `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL` env var |
 | `externalEditorContext` | boolean | `false` | Prepend Claude's previous response as `#`-commented context when you open the external editor with `Ctrl+G`. Set to `true` to enable |
-| `teammateDefaultModel` | string | `null` | Default model for [agent-team](https://code.claude.com/docs/en/agent-teams) teammates when the lead dispatches them. `null` inherits the lead's model. Listed under "Global config settings" on the official settings page |
+| `teammateDefaultModel` | string | `null` | **REMOVED in v2.1.234** — teammates now follow the lead's model automatically. Previously used to set a custom model for agent-team teammates. No longer read by Claude Code |
 | `diffTool` | string | - | External diff tool command invoked when viewing file diffs. When set, Claude Code spawns this command with the two file paths as arguments instead of rendering the built-in diff view |
 | `permissionExplainerEnabled` | boolean | `true` | Show an AI-generated natural-language explanation of why a permission is being requested alongside the permission prompt. Set to `false` to suppress the explanation and show only the raw tool call |
 
@@ -715,6 +740,7 @@ These IDE-related preferences are stored in `~/.claude.json`, **not** `settings.
 | Key | Type | Description |
 |-----|------|-------------|
 | `sshConfigs` | object[] | SSH connection definitions surfaced as a dropdown in Desktop. Each entry must include `id`, `name`, and `sshHost`; optionally `sshPort`, `sshIdentityFile`, and `startDirectory`. Only honored from managed and user settings — project settings values are ignored |
+| `sshHostAllowlist` | array | **(Managed only)** Allowlist of hostname patterns (glob-style) for SSH connections the user may initiate from the Desktop app. When set, only hosts matching a listed pattern are permitted; all others are refused. Example: `["*.corp.example.com", "dev-*.internal"]` |
 
 **Field reference:**
 
@@ -915,6 +941,7 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION` | Display description for the custom model entry in the `/model` picker. Defaults to `Custom model (<model-id>)` when not set |
 | `ANTHROPIC_CUSTOM_MODEL_OPTION_SUPPORTED_CAPABILITIES` | Override capability detection for the custom model entry. Comma-separated values (e.g., `effort,thinking`). Required when the custom model supports features the auto-detection cannot confirm. See [model configuration](https://code.claude.com/docs/en/model-config#customize-pinned-model-display-and-capabilities) |
 | `ANTHROPIC_MODEL` | Name of the model to use. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs. Overrides the `model` setting |
+| `ANTHROPIC_DEFAULT_MODEL` | Sets the model new sessions start on. Unlike `ANTHROPIC_MODEL`, a `/model` pick overrides and persists past this env var (v2.1.236) |
 | `INIT_PROMPT` | Custom system prompt injected at session initialization |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL` | Override the Haiku model alias with a custom model ID (e.g., for third-party deployments) |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME` | Customize the Haiku entry label in the `/model` picker when using a pinned model on Bedrock/Vertex/Foundry. Defaults to the model ID |
@@ -990,7 +1017,11 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_GLOB_HIDDEN` | Set to `false` to exclude dotfiles from results when Claude invokes the Glob tool. Included by default. Does not affect `@` file autocomplete, `ls`, Grep, or Read |
 | `CLAUDE_CODE_GLOB_NO_IGNORE` | Set to `false` to make the Glob tool respect `.gitignore` patterns. By default, Glob returns all matching files including gitignored ones. Does not affect `@` file autocomplete, which has its own `respectGitignore` setting |
 | `CLAUDE_CODE_GLOB_TIMEOUT_SECONDS` | Timeout in seconds for Glob file discovery |
-| `CLAUDE_CODE_ENABLE_TASKS` | Controls whether sessions use the structured Task tools (`TaskCreate`, `TaskUpdate`, `TaskGet`, `TaskList`) or the legacy `TodoWrite` tool. As of v2.1.142, Task tools are the default in all modes. Set to `0` to revert to `TodoWrite` |
+| `CLAUDE_CODE_ENABLE_TASKS` | Controls whether sessions use the structured Task tools (`TaskCreate`, `TaskUpdate`, `TaskGet`, `TaskList`) or the legacy `TodoWrite` tool. As of v2.1.142, Task tools were the default in all modes. **Note (v2.1.233):** Todo/task tools are no longer available by default on Opus 4.8, Sonnet 5, Fable 5, and newer models — set to `1` to restore them on those models |
+| `CLAUDE_CODE_ENABLE_TODO_TOOLS` | Set to `1` to enable `TodoWrite` and task tools on models where they are no longer available by default (Opus 4.8, Sonnet 5, Fable 5, and newer as of v2.1.233) |
+| `CLAUDE_CODE_PROJECT_DIR_NAME` | Override the display name for the current project directory shown in the session header and terminal title. Default is the actual directory name (v2.1.234) |
+| `CLAUDE_CODE_PROMPT_CACHE_TTL` | Prompt cache TTL for main sessions. Values: `5m` or `1h`. Equivalent to the `promptCacheTtl` settings key |
+| `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` | Prompt cache TTL for subagent sessions. Values: `5m` or `1h`. Equivalent to the `subagentPromptCacheTtl` settings key |
 | `CLAUDE_CODE_SIMPLE` | Set to `1` to run with a minimal system prompt and only the Bash, file read, and file edit tools. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
 | `CLAUDE_CODE_EXIT_AFTER_STOP_DELAY` | Auto-exit SDK mode after idle duration (ms) |
 | `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` | Disable adaptive thinking (`1` to disable) |
@@ -1100,6 +1131,11 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` | Maximum subagents that can be spawned per session (default: `200`). Prevents resource exhaustion in deeply nested agentic workflows *(in v2.1.212 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` | Maximum number of subagents that run concurrently (default: `20`). Limits parallel agent fan-out; excess agents queue and run as slots free up (v2.1.217) |
 | `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` | Maximum nesting depth for subagents (default: `3` as of v2.1.219). Subagents at the depth limit cannot spawn further subagents (v2.1.217) |
+| `CLAUDE_CODE_TOOL_MEMORY_LIMIT` | Memory limit in bytes for individual tool outputs. Outputs exceeding this limit are truncated before being returned to Claude. Prevents memory exhaustion from large tool results (v2.1.233) |
+| `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` | Cache TTL in milliseconds for WebFetch responses. Responses fetched within this window are served from cache without re-fetching. Set to `0` to disable caching (v2.1.233) |
+| `CLAUDE_CODE_GOAL_CHECKIN_MINUTES` | Interval in minutes for the goal check-in feature — Claude proactively asks whether it's still on track toward the original goal. Set to `0` to disable |
+| `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS` | Timeout in milliseconds for user-facing dialogs (permission prompts, AskUserQuestion). When the timeout elapses without user input, the dialog auto-dismisses with a default response |
+| `CLAUDE_CODE_SEND_FEEDBACK` | Set to `1` to enable the feedback submission tool, allowing Claude to surface feedback drafts from the session |
 | `CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS` | Disable built-in subagent types in SDK mode (`1` to disable) |
 | `CLAUDE_AGENT_SDK_MCP_NO_PREFIX` | Skip `mcp__<server>__` prefix for MCP tools in SDK mode (`1` to enable) |
 | `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS` | Stall timeout in ms for background subagents (default: 600000 / 10 minutes). The subagent is killed if it produces no output for this duration |
@@ -1390,6 +1426,7 @@ Set environment variables for all Claude Code sessions.
 ## Sources
 
 - [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
+- [Claude Code Settings Reference](https://code.claude.com/docs/en/settings-reference) — canonical per-key reference (216 keys with Scope/Type/Default)
 - [Claude Code CLI Reference](https://code.claude.com/docs/en/cli-reference)
 - [Claude Code Model Configuration](https://code.claude.com/docs/en/model-config)
 - [Claude Code Status Line Reference](https://code.claude.com/docs/en/statusline)
