@@ -1262,3 +1262,29 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-28 10:46 AM PKT] Claude Code v2.1.250
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout`: report said "only honored from project and local settings" but official says "User or managed" — description was exactly inverted, actively misleading users | COMPLETE (scope corrected) — NEW |
+| 2 | HIGH | Missing Source | Add `https://code.claude.com/docs/en/settings-reference` to Sources — now the authoritative per-key index; `/docs/en/settings` is a conceptual overview only | COMPLETE (source added as primary reference) — NEW |
+| 3 | HIGH | Missing Settings | Add `modelPicker`, `promptCacheTtl`, `subagentPromptCacheTtl` to Model Configuration (v2.1.243) | COMPLETE (all 3 added) — NEW |
+| 4 | HIGH | Wrong Scope | Fix `allowedMcpServers` and `deniedMcpServers` scope: "Managed only" → "Any" per official settings-reference | COMPLETE (scope updated) — NEW |
+| 5 | HIGH | Wrong Nesting | Fix `skipDangerousModePermissionPrompt`: was listed as `permissions.skipDangerousModePermissionPrompt` (nested); official shows it as a top-level key in User/local/managed scope | COMPLETE (nesting corrected) — NEW |
+| 6 | HIGH | Missing Permission Behavior | Add `Read` deny cascade note: a `Read` deny rule also blocks `Edit` and `Write` on the same path (v2.1.208/228). Also add `MultiEdit` to the never-consulted allow-rule list | COMPLETE (cascade note and MultiEdit added) — NEW |
+| 7 | HIGH | Missing Hierarchy Note | Add v2.1.211 note: `.claude/settings.local.json` now resolves to git repo root rather than the starting directory | COMPLETE (note added) — NEW |
+| 8 | HIGH | ON HOLD Resolved | `crossSessionInbound` and `dialogExpiry` (v2.1.224 run #21 ON HOLD): both now confirmed on official settings-reference — add to General Settings | COMPLETE (both added; #21 resolved) — RESOLVED (first seen: 2026-08-07) |
+| 9 | MED | Missing Settings | Add managed-only policy keys: `sshHostAllowlist`, `managedSourcesBehavior`, `disableDesktopLocalSessions`, `modelPricing` (v2.1.243) | COMPLETE (all 4 added to Managed-only Policy Keys table) — NEW |
+| 10 | MED | Missing Settings | Add General Settings: `autoContinueAtUsageLimit` (v2.1.234), `desktopSessionCleanupPeriodDays` (v2.1.248), `syncClaudeAiSkills`, `isolatePeerMachines`, `enableWorkflows`, `promptSuggestionEnabled`, `feedbackDrafts` (v2.1.247), `skipAutoPermissionPrompt` | COMPLETE (all 8 added) — NEW |
+| 11 | MED | Missing Settings | Add Display & UX settings: `spellcheck` (v2.1.235), `keybindingFlavor` (v2.1.238), `subagentStatusLine`, `terminalTitleFromRename` | COMPLETE (all 4 added) — NEW |
+| 12 | MED | Missing Settings | Add Sandbox settings: `sandbox.ripgrep` (v2.1.233), `sandbox.credentials.sigv4`, `sandbox.credentials.awsPairs`. Also resolves v2.1.224 run #22 ON HOLD on JWT/sigv4/awsPairs | COMPLETE (all 3 added; #22 resolved) — RESOLVED (first seen: 2026-08-07) |
+| 13 | MED | Missing Plugin Features | Add `disableCommandPluginSources` (managed), `additionalMarketplaces`/`allowedMarketplaces` aliases (v2.1.232), `command` marketplace source type (v2.1.229) | COMPLETE (all added) — NEW |
+| 14 | MED | Incomplete Description | Update `spinnerTipsOverride`: add v2.1.247 extended format with rich tip objects `{id, text, cooldownSessions, priority}` and `tipsFile` key | COMPLETE (description updated) — NEW |
+| 15 | MED | Incomplete Description | Update `outputStyle`: add "Concise" value added in v2.1.237 | COMPLETE (Concise option documented) — NEW |
+| 16 | MED | Missing Non-Merging Key | Add `modelPicker` to the non-merging list in the hierarchy section (v2.1.242+) | COMPLETE (noted in hierarchy bullet) — NEW |
+| 17 | LOW | Missing Env Vars | Add 11 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.233), `SELF_HOSTED_RUNNER_CLIENT_LABEL` (v2.1.248), `ANTHROPIC_PROFILE`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_FEDERATION_RULE_ID`, `CLAUDE_AX_PREPARK_MS`, `CLAUDE_AX_STARTUP_QUIET_MS` | COMPLETE (all 11 added) — NEW |
+| 18 | LOW | Missing Commands | Add 3 missing commands: `claude remote-control --continue` (v2.1.229), `/claude-api upgrade` (v2.1.239), `/claude-api cost-optimize` (v2.1.247) | COMPLETE (all 3 added) — NEW |
+| 19 | LOW | Badge Update | Update Last Updated badge (Aug 07 → Aug 28, 2026) and version badge (v2.1.224 → v2.1.250) | COMPLETE (badges updated) — NEW |
