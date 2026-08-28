@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-08-28 08:44 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 148k to 149k | COMPLETE (GitHub search API: 148,508 exact; crosses k-boundary; conf 0.99; RECURRING — milestone crossing) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 270 → 259 (per-dir enumeration; engineering/59 + specialized/58 + marketing/36 + security/12 + gis/13 + project-management/7 + paid-media/7 + sales/9 + testing/9 + support/6 + design/10 + game-development/6 + spatial-computing/6 + academic/6 + healthcare/3 + finance/5 + product/5 + research/1 + strategy/1 = 259; conf 0.85) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; within oscillation band 254-292; first-pass count hallucinated 78 for engineering — corrected to 59 via pagination check; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 24,691; rounds to 25k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 166 (+8; per-category: 01:11 + 02:38 + 03:16 + 04:17 + 05:13 + 06:16 + 07:16 + 08:17 + 09:11 + 10:11 = 166; conf 0.87; 8 of 38 in category 02 from model summary not explicit listing) | INVALID (conf 0.87 below 0.88 threshold; category 02-language-specialists partial uncertainty; 166 is above documented oscillation band 150-158 but insufficient confidence; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (149k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-27 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
