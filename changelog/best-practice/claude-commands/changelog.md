@@ -953,3 +953,11 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/permissions` — add Auto mode tab detail (view or edit classifier rules and review recent auto mode denials), added v2.1.246 | ✅ COMPLETE (description updated at #13 in Config tag) |
 | 2 | MED | Changed Description | Update `/skills` — keybinding changed: `Space` **or** `Enter` cycles visibility; `Esc` saves and closes (was `Space` to cycle, `Enter` to save) | ✅ COMPLETE (description updated at #50 in Extensions tag) |
+
+---
+
+## [2026-08-28 11:19 AM PKT] Claude Code v2.1.250
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/usage-credits` — add Team/Enterprise path: members without billing access send a credits request to admin from the CLI (v2.1.248); add `DISABLE_EXTRA_USAGE_COMMAND=1` note | ✅ COMPLETE (description updated at #33 in Context tag) |
