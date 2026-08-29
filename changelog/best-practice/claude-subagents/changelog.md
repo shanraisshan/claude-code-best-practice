@@ -985,3 +985,12 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
+
+---
+
+## [2026-08-29 11:39 AM PKT] Claude Code v2.1.251
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only) | ✋ ON HOLD (awaiting user approval — NEW) |
+| 2 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
