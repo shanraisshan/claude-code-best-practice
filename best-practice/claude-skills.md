@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2028%2C%202026%2010%3A08%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.250-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2029%2C%202026%2010%3A02%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.251-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(15)**
+## ![Official](../!/tags/official.svg) **(16)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -60,6 +60,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 13 | `doctor` | Setup/health checkup for your Claude Code configuration. The one bundled skill exempt from `disableBundledSkills` — stays typable even when that setting is on. Reclassified from a built-in command to a bundled skill in v2.1.205 |
 | 14 | `review` | Fast single-pass, read-only review of a GitHub pull request. For a multi-agent deep dive, use `/code-review <level> <pr#>` instead. From v2.1.186–v2.1.201 used the `/code-review medium` engine; v2.1.202 reverted to a fast single-pass review. Became Skill-tool-invocable in v2.1.108 |
 | 15 | `security-review` | Review the current diff for security vulnerabilities and suggest fixes. Pass `--fix` to apply findings or `--comment` to post them as inline GitHub PR comments. Became Skill-tool-invocable in v2.1.108 |
+| 16 | `workflow-authoring` | Load the reference for writing dynamic workflow scripts: script API, resume behavior, quality patterns, and worked examples. Claude normally loads it on its own before writing a script. Available only when dynamic workflows are enabled. Requires v2.1.248 |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
