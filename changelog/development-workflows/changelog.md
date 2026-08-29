@@ -2557,3 +2557,29 @@
 | 13 | LOW | Workflow | omc — Agent 2 reports: deepinit(top) → ralplan(top) → team(top) → team-plan(sub) → team-prd(sub) → team-exec(sub) → team-verify(sub) → team-fix(sub); differs from Aug 27 finding; step names still fluctuating between runs | ON HOLD (RECURRING — workflow still fluctuating; keeping current deepinit/plan-based workflow; stable 2nd confirmation needed) |
 | 14 | LOW | Workflow | Superpowers, ECC, Matt Pocock, Spec Kit, gstack, OpenSpec, GSD, BMAD, HumanLayer — all workflow changes proposed by agents; all contradict established confirmed baselines or are 1st-confirmation only | ON HOLD (RECURRING — no workflow changes applied) |
 | 15 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — empty response); WebFetch github.com HTML used for all 4 star-updated repos (Superpowers 278.7k, Matt Pocock 239.3k, OpenSpec 66.5k, BMAD 52.4k — all confirmed); agent data used for unchanged repos | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+
+---
+
+## [2026-08-29 09:22 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Matt Pocock stars 239k → 240k (240,325 live via MCP) | COMPLETE (NEW) |
+| 2 | HIGH | Star | OpenSpec stars 66.5k → 66.6k (66,584 live via MCP) | COMPLETE (NEW) |
+| 3 | HIGH | Star | GSD stars 65k → 64.6k (64,628 live via MCP — archived repo, star loss expected) | COMPLETE (NEW — applied live count despite decrease; stars-don't-fall rule applies to stale badge regressions, not authoritative live API) |
+| 4 | HIGH | Star | omc stars 38.8k → 38.9k (38,855 live via MCP) | COMPLETE (NEW) |
+| 5 | HIGH | Star | CE stars 24.6k → 24.7k (24,659 live via MCP) | COMPLETE (NEW) |
+| 6 | HIGH | Count | GSD commands 67 → 85 (85 .md files confirmed in commands/gsd/ — was previously undercounted) | COMPLETE (NEW) |
+| 7 | MED | Count | gstack skills 61 → 58 (58 root-level SKILL.md dirs; Agent 2 enumerated all 58 explicitly) | COMPLETE (RESOLVED — was ON HOLD count-instability; agent 2 provided full enumeration) |
+| 8 | MED | Count | BMAD skills 47 → 40 (plan:10 + ship:7 + bmm-v6-shims:14 + core-skills:9 = 40 after Jul-19 refactor) | COMPLETE (RESOLVED — was ON HOLD; Jul-19 structural refactor confirmed reduced count) |
+| 9 | MED | Count | omc skills 31 → 32 (wiki skill added) | COMPLETE (NEW) |
+| 10 | MED | Workflow | Superpowers — replaced invented step names (implement/task-review/re-review/final-code-review) with actual skill names: test-driven-development(sub) → executing-plans(sub) → verification-before-completion(sub) → receiving-code-review(sub) | COMPLETE (RESOLVED — was ON HOLD; stale invented names replaced with real skill names) |
+| 11 | MED | Workflow | ECC — replaced generic plan/test/implement/review/verify/remember/improve with actual commands: ecc:plan → tdd-workflow(sub) → implement → code-review → build-fix(sub) → security-scan(sub) → e2e-testing(sub) → test-coverage(sub) → save-session | COMPLETE (RESOLVED — was ON HOLD; actual ECC command names applied) |
+| 12 | MED | Workflow | Matt Pocock — trimmed to canonical path: grill-with-docs → to-spec → to-tickets → implement → tdd(sub) → code-review(sub) → improve-codebase-architecture | COMPLETE (RESOLVED — was ON HOLD; retro skill (Aug 24) confirmed; setup/grill-me/handoff removed as non-canonical) |
+| 13 | MED | Workflow | gstack — added design sub-loop steps (plan-design-review/design-shotgun/design-html as fff3b0) and retro; plan-ceo-review/plan-eng-review reclassified as sub-loops | COMPLETE (RESOLVED — was ON HOLD; agent 2 provided full 7-stage sprint pipeline) |
+| 14 | MED | Workflow | BMAD — bmad-forge-idea → bmad-help (renamed); bmad-sprint-planning removed; bmad-correct-course → bmad-qa-generate-e2e-tests | COMPLETE (RESOLVED — was ON HOLD; new BMAD delivery loop from Aug 29 research) |
+| 15 | MED | Workflow | omc — deepinit → deep-interview; plan → ralplan (canonical skills per TR-141 README research) | COMPLETE (RESOLVED — was ON HOLD; 2nd agent confirmation with README-sourced evidence) |
+| 16 | LOW | Workflow | CE — ce-code-review reclassified top (ddf4ff) per agent research; ce-compound-refresh not added (not confirmed as canonical) | COMPLETE (NEW — ce-code-review is a distinct top-level phase per CE compound loop documentation) |
+| 17 | LOW | Workflow | HumanLayer — no workflow change (deprecated repo; keeping current workflow) | ON HOLD (RECURRING — deprecated) |
+| 18 | LOW | Workflow | Spec Kit, OpenSpec, GSD — no workflow changes (current workflows more accurate than agent proposals) | ON HOLD (RECURRING — current versions preserved) |
+| 19 | LOW | Note | Star verification: MCP GitHub search_repositories used for all 11 repos; shields.io Bash curl skipped (blocked by proxy); all star counts authoritative live counts | COMPLETE (RECURRING — MCP verification method) |
