@@ -848,3 +848,14 @@ No new frontmatter drift detected — frontmatter fields (20) are fully synchron
 | 1 | HIGH | New Skill | Add `workflow-authoring` to official bundled skills table — loads the reference for writing dynamic workflow scripts (script API, resume behavior, quality patterns, worked examples); available only when dynamic workflows are enabled; confirmed `[Skill]`-marked in commands reference as of v2.1.251; introduced v2.1.248. Count updated 15→16 | ✅ COMPLETE (added as row 16, count updated 15→16) |
 | 2 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference has no separate [Skill] marker for `/review`; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count would update 16→15 after removal | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 3 | MED | Potential Removed Skill | `security-review` (row 15) — official skills docs explicitly state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a bundled skill; commands reference carries no [Skill] marker; no changelog corroboration of removal in last 10 versions (v2.1.241–v2.1.251) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
+
+---
+
+## [2026-08-30 10:06 AM PKT] Claude Code v2.1.251
+
+No new drift detected — frontmatter fields (20) are fully synchronized with official docs.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 14) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; docs explicitly document it as "Alias of `/code-review`"; changelog v2.1.223 announced the change; row 14 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Official docs list 14 bundled skills. Count should update 16→15 | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 15) — commands reference carries no [Skill] marker; official skills docs state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a distinct bundled skill; official docs list 14 bundled skills (excludes both `review` and `security-review`); no changelog corroboration of removal in last 10 versions (v2.1.241–v2.1.251) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing) |
