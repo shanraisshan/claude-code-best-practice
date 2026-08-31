@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2007%2C%202026%2010%3A48%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.224-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Aug%2031%2C%202026%2010%3A50%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.251-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.224, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.251, Claude Code exposes **127+ settings** and **311 environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -71,7 +71,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 **Important**:
 - `deny` rules have highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
 - Managed settings may lock or override local behavior even if local files specify different values.
-- Array settings (e.g., `permissions.allow`) are **concatenated and deduplicated** across scopes — entries from all levels are combined, not replaced. **Exceptions:** `fallbackModel` and `availableModels` do **not** merge — the highest-precedence settings file that defines them supplies the entire value. For `availableModels`, a managed-source value applies as-is and lower scopes cannot extend it.
+- Array settings (e.g., `permissions.allow`) are **concatenated and deduplicated** across scopes — entries from all levels are combined, not replaced. **Exceptions:** `fallbackModel`, `availableModels`, `modelPicker`, and `modelSettings` do **not** merge — the highest-precedence settings file that defines them supplies the entire value. For `availableModels`, a managed-source value applies as-is and lower scopes cannot extend it.
 
 ---
 
@@ -382,7 +382,7 @@ Control what tools and operations Claude can perform.
 
 Hook configuration (events, properties, matchers, exit codes, environment variables, and HTTP hooks) is maintained in a dedicated repository:
 
-> **[claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks)** — Complete hook reference with sound notification system, all 26 hook events, HTTP hooks, matcher patterns, exit codes, and environment variables.
+> **[claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks)** — Complete hook reference with sound notification system, all 28 hook events, HTTP hooks, matcher patterns, exit codes, and environment variables.
 
 Hook-related settings keys (`hooks`, `disableAllHooks` (also disables any custom status line), `allowManagedHooksOnly`, `allowedHttpHookUrls`, `httpHookAllowedEnvVars`) are documented there.
 
@@ -678,7 +678,7 @@ Configure via `env` key:
 | `outputStyle` | string | `"default"` | Output style (e.g., `"Explanatory"`) |
 | `spinnerTipsEnabled` | boolean | `true` | Show tips while waiting |
 | `spinnerVerbs` | object | - | Custom spinner verbs with `mode` ("append" or "replace") and `verbs` array |
-| `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` (string array) and optional `excludeDefault` (boolean). When `excludeDefault` is `true`, only custom tips show; when `false` or absent, custom tips merge with built-in tips. As of v2.1.121, `excludeDefault: true` also suppresses time-based spinner tips |
+| `spinnerTipsOverride` | object | - | Custom spinner tips with `tips` array and optional `excludeDefault` (boolean). Each entry in `tips` may be a plain string **or** a structured object `{id, text, cooldownSessions?, priority?}` — `cooldownSessions` sets how many sessions must pass before the tip shows again; `priority` controls display order. When `excludeDefault` is `true`, only custom tips show; when `false` or absent, custom tips merge with built-in tips. As of v2.1.121, `excludeDefault: true` also suppresses time-based spinner tips |
 | `respectGitignore` | boolean | `true` | Respect .gitignore in file picker |
 | `prefersReducedMotion` | boolean | `false` | Reduce animations and motion effects in the UI |
 | `axScreenReader` | boolean | `false` | Enable screen-reader-friendly output mode. When `true`, Claude outputs flat text without decorative box-drawing characters, color, and other terminal UI elements. Appears in `/config` as **Screen reader mode**. Only applies at the User scope — does not read from project or managed settings. Also available via the `--ax-screen-reader` CLI flag (v2.1.181) |
@@ -706,7 +706,6 @@ These IDE-related preferences are stored in `~/.claude.json`, **not** `settings.
 | `autoConnectIde` | boolean | `false` | Automatically connect to a running IDE when Claude Code starts from an external terminal. Appears in `/config` as **Auto-connect to IDE (external terminal)** when running outside a VS Code or JetBrains terminal |
 | `autoInstallIdeExtension` | boolean | `true` | Automatically install the Claude Code IDE extension when running from a VS Code terminal. Appears in `/config` as **Auto-install IDE extension**. Can also be disabled via `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL` env var |
 | `externalEditorContext` | boolean | `false` | Prepend Claude's previous response as `#`-commented context when you open the external editor with `Ctrl+G`. Set to `true` to enable |
-| `teammateDefaultModel` | string | `null` | Default model for [agent-team](https://code.claude.com/docs/en/agent-teams) teammates when the lead dispatches them. `null` inherits the lead's model. Listed under "Global config settings" on the official settings page |
 | `diffTool` | string | - | External diff tool command invoked when viewing file diffs. When set, Claude Code spawns this command with the two file paths as arguments instead of rendering the built-in diff view |
 | `permissionExplainerEnabled` | boolean | `true` | Show an AI-generated natural-language explanation of why a permission is being requested alongside the permission prompt. Set to `false` to suppress the explanation and show only the raw tool call |
 
@@ -916,6 +915,7 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_CUSTOM_MODEL_OPTION_SUPPORTED_CAPABILITIES` | Override capability detection for the custom model entry. Comma-separated values (e.g., `effort,thinking`). Required when the custom model supports features the auto-detection cannot confirm. See [model configuration](https://code.claude.com/docs/en/model-config#customize-pinned-model-display-and-capabilities) |
 | `ANTHROPIC_MODEL` | Name of the model to use. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs. Overrides the `model` setting |
 | `INIT_PROMPT` | Custom system prompt injected at session initialization |
+| `ANTHROPIC_DEFAULT_MODEL` | Override the default model for all Claude Code sessions. Accepts aliases (`sonnet`, `opus`, `haiku`) or full model IDs. Takes precedence over the `model` setting when set |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL` | Override the Haiku model alias with a custom model ID (e.g., for third-party deployments) |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME` | Customize the Haiku entry label in the `/model` picker when using a pinned model on Bedrock/Vertex/Foundry. Defaults to the model ID |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION` | Customize the Haiku entry description in the `/model` picker. Defaults to `Custom model (<model-id>)` |
@@ -954,6 +954,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_MCP_ALLOWLIST_ENV` | Spawn stdio MCP servers with a safe baseline environment only, stripping most inherited env vars to prevent credential leakage into untrusted server processes |
 | `MAX_MCP_OUTPUT_TOKENS` | Max MCP output tokens (default: 25000). Warning displayed when output exceeds 10,000 tokens |
 | `API_TIMEOUT_MS` | Timeout in ms for API requests (default: 600000) |
+| `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` | TTL in milliseconds for the WebFetch tool's response cache. Cached responses are reused within a session to avoid redundant fetches. Set to `0` to disable caching |
 | `API_FORCE_IDLE_TIMEOUT` | Override the 5-minute idle timeout for streaming connections. Set to `0` to disable the idle timeout entirely, `1` to enforce it on all connections, or leave unset for the default (auto-enabled on slow or unreliable gateways that frequently stall). Useful for slow API gateways (v2.1.169) |
 | `CLAUDE_CODE_CONNECT_TIMEOUT_MS` | **REMOVED in v2.1.186.** This variable is a no-op. Use `API_TIMEOUT_MS` instead. Previously controlled the connect, TLS, and response-header phase timeout for streaming API requests |
 | `CLAUDE_AFK_TIMEOUT_MS` | How many milliseconds before an unanswered AskUserQuestion dialog auto-continues, when `askUserQuestionTimeout` is set to a duration. As of v2.1.200, the default is `"never"` (no auto-continue) controlled by `askUserQuestionTimeout`; this env var applies only when a timeout duration is active. Setting to `0` closes the dialog immediately. To keep questions open, prefer `askUserQuestionTimeout: "never"` (v2.1.198; default changed v2.1.200) |
@@ -1023,6 +1024,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_ATTACHMENTS` | Disable attachment processing (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_CLAUDE_MDS` | Prevent loading CLAUDE.md files (`1` to disable) |
 | `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` | Load CLAUDE.md memory files from additional directories specified via `--add-dir` at startup (`1` to enable). Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
+| `CLAUDE_CODE_PROJECT_DIR_NAME` | Override the project directory name used in session context and status line display. Useful when Claude Code is launched from a subdirectory or wrapper script that changes the working directory |
 | `CLAUDE_CODE_DISABLE_POLICY_SKILLS` | Skip loading skills from the system-wide managed skills directory (`1` to disable) |
 | `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` | Auto-resume if previous session ended mid-turn (`1` to enable) |
 | `CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS` | Maximum age in ms of an interrupted turn that will be auto-resumed on restart. Turns older than this are skipped. Only applies when `CLAUDE_CODE_RESUME_INTERRUPTED_TURN=1` |
@@ -1087,7 +1089,7 @@ Set environment variables for all Claude Code sessions.
 | `CCR_FORCE_BUNDLE` | Set to `1` to force `claude --remote` to bundle and upload your local repository even when GitHub access is available. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
 | `CLAUDE_CODE_GIT_BASH_PATH` | Windows only: path to the Git Bash executable (`bash.exe`). Use when Git Bash is installed but not in your PATH |
 | `DISABLE_COST_WARNINGS` | Disable cost warning messages |
-| `CLAUDE_CODE_SUBAGENT_MODEL` | Override model for subagents (e.g., `haiku`, `sonnet`) |
+| `CLAUDE_CODE_SUBAGENT_MODEL` | Set the **default** model for subagents (e.g., `haiku`, `sonnet`). As of v2.1.251, this sets a default rather than a hard override — subagents can still switch models via their own agent configuration |
 | `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` | Set to `1` to forward subagent streaming text output to the parent session in real time. By default, subagent output is buffered until the subagent completes. As of v2.1.219, forwarding also works for nested subagents at depth 2+ (v2.1.211) |
 | `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` | Set to `1` to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers). Use for defense-in-depth when subprocesses should not inherit API keys (v2.1.83) |
 | `CLAUDE_CODE_SCRIPT_CAPS` | JSON object limiting how many times specific scripts may be invoked per session when `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is set. Keys are substrings matched against the command text; values are integer call limits. For example, `{"deploy.sh": 2}` allows `deploy.sh` to be called at most twice. Matching is substring-based; runtime fan-out via `xargs` or `find -exec` is not detected — this is a defense-in-depth control |
@@ -1389,6 +1391,7 @@ Set environment variables for all Claude Code sessions.
 
 ## Sources
 
+- [Claude Code Settings Reference](https://code.claude.com/docs/en/settings-reference) — canonical key index for all settings.json keys
 - [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
 - [Claude Code CLI Reference](https://code.claude.com/docs/en/cli-reference)
 - [Claude Code Model Configuration](https://code.claude.com/docs/en/model-config)
