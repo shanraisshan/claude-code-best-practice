@@ -953,3 +953,9 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/permissions` — add Auto mode tab detail (view or edit classifier rules and review recent auto mode denials), added v2.1.246 | ✅ COMPLETE (description updated at #13 in Config tag) |
 | 2 | MED | Changed Description | Update `/skills` — keybinding changed: `Space` **or** `Enter` cycles visibility; `Esc` saves and closes (was `Space` to cycle, `Enter` to save) | ✅ COMPLETE (description updated at #50 in Extensions tag) |
+
+---
+
+## [2026-08-31 11:21 AM PKT] Claude Code v2.1.251
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
