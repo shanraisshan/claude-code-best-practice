@@ -956,6 +956,26 @@ No priority action items — report is fully in sync with official documentation
 
 ---
 
+## [2026-08-28 11:19 AM PKT] Claude Code v2.1.250
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/usage-credits` — add Team/Enterprise path: members without billing access send a credits request to admin from the CLI (v2.1.248); add `DISABLE_EXTRA_USAGE_COMMAND=1` note | ✅ COMPLETE (description updated at #33 in Context tag) |
+
+---
+
+## [2026-08-29 11:12 AM PKT] Claude Code v2.1.251
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
+
+---
+
+## [2026-08-30 11:11 AM PKT] Claude Code v2.1.251
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
+
+---
+
 ## [2026-08-31 11:21 AM PKT] Claude Code v2.1.251
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
