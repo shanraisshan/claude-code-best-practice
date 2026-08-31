@@ -2603,3 +2603,22 @@
 | 11 | LOW | Count Verify | omc skills 32 confirmed (Agent 2: 32 folders); CE skills 33 confirmed; CE commands 1 confirmed; HumanLayer 6a/27c confirmed; OpenSpec 0a/12c/12s confirmed | COMPLETE (RECURRING — no change; all confirmed) |
 | 12 | LOW | Workflow | Superpowers, ECC, Spec Kit, Matt Pocock, gstack, BMAD, omc, CE, GSD, HumanLayer — all workflow changes proposed by agents; all 1st-confirmation only or contradict established baselines | ON HOLD (RECURRING — no workflow changes applied) |
 | 13 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — 403 CONNECT rejection); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check); all star decisions confirmed by WebFetch matching agent GitHub API data | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+
+---
+
+## [2026-08-31 09:22 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★279k→280k (Agent 1: 280k; WebFetch: 279.7k — crosses 279,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★244k→245k (Agent 1: 245k; WebFetch: 245k — crosses 244,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Matt Pocock Skills ★241k→242k (Agent 1: 242k; WebFetch: 242k — crosses 241,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 4 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 280k > ECC 245k > Matt Pocock 242k > Spec Kit 132k > gstack 130k > agent-skills 89k (OOS) > OpenSpec 66.7k > GSD 64.6k > BMAD 52.5k > omc 38.9k > CE 24.7k > HumanLayer 11.4k | COMPLETE (verified; all changes maintain same relative positions) |
+| 5 | LOW | No Change | Spec Kit 132k (WebFetch: 132.4k — below 132,500 midpoint), gstack 130k (WebFetch: 130.5k; Agent 2 API: 130,496 — below 130,500 midpoint), OpenSpec 66.7k (Agent 2: 66,732 — below 66,750 midpoint), GSD 64.6k (WebFetch: 64.6k; archived), BMAD 52.5k (Agent 2: 52,487 — below 52,500 midpoint), omc 38.9k (WebFetch: 38.9k), CE 24.7k (WebFetch: 24.7k), HumanLayer 11.4k (WebFetch: 11.4k) | COMPLETE (verified via WebFetch and agent API data) |
+| 6 | LOW | Count Verify | ECC commands 94 confirmed (Agent 1: README canonical 94; directory listing showed 150 — volatile across runs: 94 table, 131 Aug 30, 150 today; not 2nd consecutive confirmation of any elevated count) | ON HOLD (RECURRING — directory count volatile; keeping 94 per README canonical) |
+| 7 | LOW | Count Verify | GSD commands 85→67 (Agent 2: 67 confirmed; 2nd consecutive from Aug 30 ON HOLD; archived repo; Aug 29 established baseline at 85) | ON HOLD (RECURRING — archived repo; keeping 85 per established baseline) |
+| 8 | LOW | Count Verify | gstack skills 58→~50 (Agent 2: ~50 root-level SKILL.md dirs; 8th+ run showing <58; keeping 58) | ON HOLD (RECURRING — persistent count-instability; keeping 58 per established baseline) |
+| 9 | LOW | Count Verify | BMAD skills 40→10 (Agent 2: 10 skills in 2 dirs only — was 30 on Aug 30 ON HOLD; regression further; count still highly unstable) | ON HOLD (RECURRING — count instability persists; keeping 40 per Aug 29 COMPLETE baseline) |
+| 10 | LOW | Count Verify | Matt Pocock skills 37 confirmed (Agent 1: 18 eng + 7 productivity + 4 misc + 8 in-progress = 37); Superpowers skills 14 confirmed; omc skills 32 confirmed (Agent 2); CE skills 33 confirmed (Agent 2: 33 enumerated); CE commands 1 confirmed; HumanLayer 6a/27c confirmed; OpenSpec 0a/12c/12s confirmed; BMAD agents 5 confirmed | COMPLETE (RECURRING — no change; all confirmed) |
+| 11 | LOW | Workflow | Superpowers, ECC, Spec Kit, Matt Pocock, gstack, OpenSpec, BMAD, omc, CE, GSD, HumanLayer — all workflow changes proposed by agents; all 1st-confirmation only or contradict established baselines | ON HOLD (RECURRING — no workflow changes applied) |
+| 12 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — connect_rejected); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check); ECC commands directory listing volatile (94 canonical README, 131 Aug 30, 150 today); all star decisions confirmed by WebFetch matching agent data | COMPLETE (RECURRING — WebFetch verification method authoritative) |
