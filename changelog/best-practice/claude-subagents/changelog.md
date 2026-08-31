@@ -1004,3 +1004,20 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 | 1 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
 | 2 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
 | 3 | HIGH | New Agent | Add `fork` to Official Claude Agents table — inherits full parent conversation, system prompt, model, and message history; requested via Agent tool or `/subtask`; cannot spawn further forks (model: same as main session, tools: same as main session) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-17; docs inconsistently list/omit this agent across recent versions) |
+
+---
+
+## [2026-08-31 11:41 AM PKT] Claude Code v2.1.251
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
+| 2 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
+
+**Watch item (recurring):** `prompt` remains in the `--agents` CLI JSON field enumeration in the official docs but is absent from the "Supported frontmatter fields" table. Still not a drift finding for file-based frontmatter tracking.
+
+**Watch item (recurring):** Official docs reference `fable` as a model alias and `claude-opus-5` as the example full model ID; the report's `model` field description still shows `claude-opus-4-6` and omits `fable`. Out of scope for tracked dimensions.
+
+**Watch item (recurring):** `Explore`'s model is described in official docs as inheriting from the main conversation (capped at Opus on the Claude API); the report's built-in agents table lists it as `haiku`. Value change within an existing row — out of scope for tracked dimensions, but worth updating.
+
+**Watch item (new):** Official docs now list `manual` as a valid `permissionMode` value (alias for `default`, requires v2.1.200+). Our report lists `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, `plan` — `manual` is absent. This is a value addition within an existing field description, not a field add/remove — out of scope for tracked dimensions, but worth noting.
