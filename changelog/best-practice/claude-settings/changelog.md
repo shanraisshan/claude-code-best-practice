@@ -1262,3 +1262,22 @@
 | 20 | LOW | New Env Var | Add `ANTHROPIC_BEDROCK_REGION_PREFIX` (v2.1.224 changelog — cross-region inference prefix). Not yet on official env-vars page; annotated as changelog-only | COMPLETE (annotated as changelog-only) — NEW |
 | 21 | LOW | New Settings | `crossSessionInbound` and `dialogExpiry` noted in v2.1.224 changelog. Not yet on official settings page — confidence 0.75 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
 | 22 | LOW | Unverified Keys | v2.1.224 JWT masking options (`decode`, `maskClaims`, `awsPairs`/`sigv4`) for `sandbox.credentials.files[]` — not yet on official settings page, changelog-only, confidence 0.70 | ON HOLD (not yet on official docs — awaiting docs page update) — NEW |
+
+---
+
+## [2026-08-31 10:50 AM PKT] Claude Code v2.1.251
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.224 → v2.1.251 and header "As of v2.1.224" → "As of v2.1.251" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Removed Setting | Remove `teammateDefaultModel` from Global Config Settings (`~/.claude.json`) table — key confirmed removed in v2.1.234; no longer on official settings page | ✅ COMPLETE (row deleted from Global Config table) — NEW |
+| 3 | HIGH | Hook Count | Update "26 hook events" → "28 hook events" in Hooks redirect section — `PreModelSwitch` and `PostModelSwitch` events added between v2.1.224 and v2.1.251 | ✅ COMPLETE (count updated) — NEW |
+| 4 | HIGH | Missing Settings | 17 new settings keys confirmed on official settings page missing from report: `modelSettings`, `modelPicker`, `promptCacheTtl`, `subagentPromptCacheTtl`, `crossSessionInbound`, `isolatePeerMachines`, `autoContinueAtUsageLimit`, `enableWorkflows`, `managedSourcesBehavior`, `syncClaudeAiSkills`, `dialogExpiry`, `keybindingFlavor`, `spellcheck`, `skipAutoPermissionPrompt`, `feedbackDrafts`, `modelPricing`, `disableCommandPluginSources` | ✋ ON HOLD (descriptions/types/defaults not preserved through context compaction; safe addition requires official-source text per Rule 8A — next run must fetch and apply) — NEW |
+| 5 | HIGH | Missing Sandbox Settings | 3 new sandbox keys confirmed missing: `sandbox.ripgrep`, `sandbox.credentials.awsPairs`, `sandbox.credentials.sigv4` | ✋ ON HOLD (same reason as #4 — full descriptions required per Rule 8A) — NEW |
+| 6 | MED | Changed Description | Update `spinnerTipsOverride`: `tips` array now supports structured `{id, text, cooldownSessions, priority}` objects in addition to plain strings — enables per-tip cooldown and priority control | ✅ COMPLETE (description updated to reflect structured tip schema) — NEW |
+| 7 | MED | Changed Description | Update `CLAUDE_CODE_SUBAGENT_MODEL` — as of v2.1.251 this sets a **default** model for subagents (not a hard override); subagents can still switch models via their own configuration | ✅ COMPLETE (description updated) — NEW |
+| 8 | MED | Hierarchy Update | Add `modelPicker` and `modelSettings` to the non-merging array exception list in the Settings Hierarchy section — both keys are winner-takes-all (like `fallbackModel` and `availableModels`) | ✅ COMPLETE (exceptions added) — NEW |
+| 9 | MED | Missing Env Vars | Add 3 env vars confirmed on official /en/env-vars page: `ANTHROPIC_DEFAULT_MODEL`, `CLAUDE_CODE_PROJECT_DIR_NAME`, `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` | ✅ COMPLETE (all 3 added to env vars table) — NEW |
+| 10 | MED | Missing Source | Add `https://code.claude.com/docs/en/settings-reference` to Sources section — now the canonical key index for all settings.json keys | ✅ COMPLETE (added as first source) — NEW |
+| 11 | LOW | Recurring ON HOLD | `crossSessionInbound` and `dialogExpiry` — still not confirmed on official settings page (ON HOLD from 2026-08-07 v2.1.224 #21) | ✋ ON HOLD (recurring from 2026-08-07 v2.1.224) — RECURRING (first seen: 2026-08-07) |
+| 12 | LOW | Recurring ON HOLD | JWT masking options (`decode`, `maskClaims`, `awsPairs`, `sigv4`) for `sandbox.credentials.files[]` — still not confirmed on official settings page (ON HOLD from 2026-08-07 v2.1.224 #22) | ✋ ON HOLD (recurring from 2026-08-07 v2.1.224) — RECURRING (first seen: 2026-08-07) |
