@@ -979,3 +979,13 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-08-31 11:21 AM PKT] Claude Code v2.1.251
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
+
+---
+
+## [2026-09-01 11:20 AM PKT] Claude Code v2.1.252
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/radio` — remove "Not available on Bedrock, Vertex, or Foundry" restriction reversed by v2.1.251 changelog; official docs row now reads simply "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available." | ✅ COMPLETE (restriction clause removed; description now matches official docs) |
+| 2 | MED | Changed Description | Update `/usage` — generalize plan breakdown wording from "by skill, subagent, plugin, and MCP server" to "what counts against your plan limits" per official docs (v2.1.243 added Loops breakdown; v2.1.251 added Spend limit bar) | ✅ COMPLETE (description updated to match official docs) |
+| 3 | LOW | Changed Description | Update `/effort` — add v2.1.252 detail about saving the selected level as the default for the current model | ✋ ON HOLD (agent flagged but no exact official docs text available to apply safely; defer to next run for verification) |
