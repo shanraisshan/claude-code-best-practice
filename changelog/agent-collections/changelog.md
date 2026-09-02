@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-02 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 149k to 150k | COMPLETE (GitHub API: 149,554 exact; crosses k-boundary; NEW — milestone crossing; Hermes plugin confirmed 272→273 in same commit batch; conf 0.97) |
+| 2 | MED | Count | Update msitarzewski/agency-agents agents from 270 to 273 | COMPLETE (Hermes auto-counter confirms "272 → 273 for research division" in PR #807; +3 net over 30 days including Knowledge Graph Engineer, Master Plan Architect, Research Synthesist; conf 0.97 > 0.88 threshold; NEW) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24,793 rounds to 25k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 152 (conf 0.85; code search path:categories NOT filename:README total_count:152; Aug 12 quality overhaul cut 8 meta-orchestration agents from ~286 to ~66-101 lines; 4 new agents added; net possibly −6) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; net −6 within documented oscillation band; repo does NOT have badge update confirming 152; no change) |
+| 5 | LOW | Sort | Verify sort order (150k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-08-30 08:44 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
