@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-03 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (150k = 149,765 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 273 → 247–310+ range (conf 0.70; README lower bound 247; eng/59 marketing/36 specialized/58 all exceed README counts; actual estimated 260–310+) | INVALID (RECURRING oscillation; conf 0.70 below 0.88 threshold; 273 within estimated range; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 24,824 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 = 158 (all 10 categories enumerated; conf 0.87; exact match) | INVALID (exact match; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (150k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-02 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
