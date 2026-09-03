@@ -953,3 +953,60 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/permissions` — add Auto mode tab detail (view or edit classifier rules and review recent auto mode denials), added v2.1.246 | ✅ COMPLETE (description updated at #13 in Config tag) |
 | 2 | MED | Changed Description | Update `/skills` — keybinding changed: `Space` **or** `Enter` cycles visibility; `Esc` saves and closes (was `Space` to cycle, `Enter` to save) | ✅ COMPLETE (description updated at #50 in Extensions tag) |
+<<<<<<< Updated upstream
+=======
+
+---
+
+## [2026-08-28 11:19 AM PKT] Claude Code v2.1.250
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/usage-credits` — add Team/Enterprise path: members without billing access send a credits request to admin from the CLI (v2.1.248); add `DISABLE_EXTRA_USAGE_COMMAND=1` note | ✅ COMPLETE (description updated at #33 in Context tag) |
+
+---
+
+## [2026-08-29 11:12 AM PKT] Claude Code v2.1.251
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
+
+---
+
+## [2026-08-30 11:11 AM PKT] Claude Code v2.1.251
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
+
+---
+
+## [2026-08-31 11:21 AM PKT] Claude Code v2.1.251
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
+
+---
+
+## [2026-09-01 11:20 AM PKT] Claude Code v2.1.252
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/radio` — remove "Not available on Bedrock, Vertex, or Foundry" restriction reversed by v2.1.251 changelog; official docs row now reads simply "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available." | ✅ COMPLETE (restriction clause removed; description now matches official docs) |
+| 2 | MED | Changed Description | Update `/usage` — generalize plan breakdown wording from "by skill, subagent, plugin, and MCP server" to "what counts against your plan limits" per official docs (v2.1.243 added Loops breakdown; v2.1.251 added Spend limit bar) | ✅ COMPLETE (description updated to match official docs) |
+| 3 | LOW | Changed Description | Update `/effort` — add v2.1.252 detail about saving the selected level as the default for the current model | ✋ ON HOLD (agent flagged but no exact official docs text available to apply safely; defer to next run for verification) |
+
+---
+
+## [2026-09-02 11:15 AM PKT] Claude Code v2.1.258
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/usage-credits` — remove `DISABLE_EXTRA_USAGE_COMMAND=1` note no longer present in official docs | ✅ COMPLETE (deprecated env-var note removed) |
+| 2 | LOW | Changed Description | Update `/skills` — filtering matches name, description, or source; drop "four states via skill overrides" phrasing; add cycling exclusions for plugin skills, `disable-model-invocation: true` skills, and managed `skillOverrides` entries | ✅ COMPLETE (description updated to match official docs) |
+| 3 | LOW | Changed Description | Update `/subtask` — add v2.1.212+ requirement and "Not available when agent view is off" | ✅ COMPLETE (version requirement and availability note added) |
+| 4 | LOW | Changed Description | Update `/scroll-speed` — add "Only available in fullscreen rendering" and "Not available in JetBrains terminals" | ✅ COMPLETE (availability qualifiers added) |
+| 5 | LOW | Changed Description | Update `/tasks` — narrow scope to "background work in the current session, including subagents that have finished" | ✅ COMPLETE (description narrowed to match official docs) |
+| 6 | LOW | Changed Description | Update `/effort` — v2.1.252 saving-as-default detail and v2.1.257 `s` key for session-only effort not yet in official docs table | ✋ ON HOLD (recurring from 2026-09-01 — official docs still do not include either detail; defer to next run) |
+
+---
+
+## [2026-09-03 11:16 AM PKT] Claude Code v2.1.259
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 92 built-in commands).
