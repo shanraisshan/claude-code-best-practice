@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-05 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (150k = 150,096 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 273 → 257-278 (conf 0.68; per-dir: academic/6 + design/10 + engineering/59 + finance/5 + game-development/6 + gis/13 + healthcare/3 + marketing/36 + paid-media/7 + product/5 + project-management/7 + research/1 + sales/9 + security/12 + spatial-computing/6 + specialized/58 + support/6 + testing/8 = 257 floor; engineering stated 79 vs listed 59; specialized stated 67 vs listed 58; true range 257-278) | INVALID (RECURRING oscillation; conf 0.68 below 0.88 threshold; within oscillation band 254-315+; engineering/specialized directory counting uncertainty persists; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 24,865; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → ~162 (conf 0.78; README category sums to 162; 2 of 10 categories spot-checked; repo self-declares "158+"; new agents: email-deliverability, landing-page-copywriter, docs-editor, X API integration added Aug 2026) | INVALID (RECURRING oscillation; conf 0.78 below 0.88 threshold; within oscillation band 158-162; 9 of 10 categories unverified; no confirmed net file change above threshold; no change) |
+| 5 | LOW | Sort | Verify sort order (150k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-04 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
