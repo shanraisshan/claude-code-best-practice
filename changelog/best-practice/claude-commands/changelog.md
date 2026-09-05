@@ -1023,3 +1023,16 @@ No priority action items — report is fully in sync with official documentation
 | 6 | LOW | Changed Description | `/cost` — v2.1.260 changelog adds likely-cause display for prompt-cache misses. Official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
 | 7 | LOW | Changed Description | `/reload-plugins` — v2.1.260 changelog notes headless session availability. Official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
 | 8 | LOW | Changed Description | `/effort` — v2.1.252 saving-as-default detail and v2.1.257 `s` key for session-only effort not yet in official docs table | ✋ ON HOLD (recurring from 2026-09-01/02 — official docs still do not include either detail; defer to next run) |
+
+---
+
+## [2026-09-05 11:11 AM PKT] Claude Code v2.1.261
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/skill-doctor` to Extensions tag — Show which loaded skills go unused and what each costs in context, so you can prune them; count updated 92 → 93 (v2.1.261) | ✅ COMPLETE (added as #50 in Extensions tag; downstream rows 51–93 renumbered) |
+| 2 | MED | Changed Description | Update `/diff` — official docs now read "Review the changes in your working tree, including the edits Claude has made so far" (v2.1.260, resolves ON HOLD from 2026-09-04) | ✅ COMPLETE (description updated at #60 in Project tag) |
+| 3 | LOW | Changed Description | `/advisor` — v2.1.260 changelog adds text form for desktop app, Remote Control, and headless sessions; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-09-04 — official docs still do not include this detail) |
+| 4 | LOW | Changed Description | `/cost` — v2.1.260 changelog adds likely-cause display for prompt-cache misses; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-09-04 — official docs still do not include this detail) |
+| 5 | LOW | Changed Description | `/reload-plugins` — v2.1.260 changelog notes headless session availability; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-09-04 — official docs still do not include this detail) |
+| 6 | LOW | Changed Description | `/effort` — v2.1.252 saving-as-default detail and v2.1.257 `s` key for session-only effort not yet in official docs table | ✋ ON HOLD (recurring from 2026-09-01/02/04 — official docs still do not include either detail) |
