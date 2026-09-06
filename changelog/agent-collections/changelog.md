@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-06 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (150k = 150,264 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 273 → ~270 (conf 0.79; search_code filtered 277 total .md − residual non-agent docs = ~270 conservative; README lags at "230+"; game-development subdirs and i18n files inflate raw count; conf 0.79 below 0.88 threshold) | INVALID (RECURRING oscillation; conf 0.79 below 0.88 threshold; within oscillation band 254-315+; methodology variance persists; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 24,881 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 150 (conf 0.87; categories/ search 160 total .md − 10 category README.md = 150; README self-reports "158+"; per-category sums = 162; ~8-file gap within GitHub search API estimation tolerance; PR #305 Aug 12 added email-deliverability-engineer + landing-page-copywriter) | INVALID (RECURRING oscillation; conf 0.87 below 0.88 threshold; within oscillation band 150-162; repo README self-reports "158+"; 8-file gap within documented API tolerance; no confirmed net file change above threshold; no change) |
+| 5 | LOW | Sort | Verify sort order (150k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-05 08:42 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
