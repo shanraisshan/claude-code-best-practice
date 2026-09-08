@@ -1283,3 +1283,35 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-08 10:47 AM PKT] Claude Code v2.1.263
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.263; update header from "140+ settings" to "220+ settings". Confirmed via official settings-reference page and CHANGELOG.md (11 versions: v2.1.253–v2.1.263) | ✅ COMPLETE (badge, version, and header count updated) — NEW |
+| 2 | HIGH | Wrong Type | Fix `disableAutoMode` type: was documented as `string` (set to `"disable"`); official settings-reference shows `boolean`. Correct usage is `true`/`false`. Confirmed in official settings-reference | ✅ COMPLETE (type corrected to boolean) — NEW |
+| 3 | HIGH | Hook Attribution | Fix `PreModelSwitch`/`PostModelSwitch` hook attribution: report said v2.1.252 but these were added in v2.1.251. Confirmed in CHANGELOG.md | ✅ COMPLETE (attribution corrected to v2.1.251) — NEW |
+| 4 | HIGH | Wrong Scope | Fix `allowedMcpServers` scope: was "Managed only" — changed to "Any file" in v2.1.259. Confirmed in official settings-reference and v2.1.259 changelog | ✅ COMPLETE (scope updated) — NEW |
+| 5 | HIGH | Wrong Scope | Fix `deniedMcpServers` scope: was "Managed only" — changed to "Any file" in v2.1.259. Confirmed in official settings-reference and v2.1.259 changelog | ✅ COMPLETE (scope updated) — NEW |
+| 6 | HIGH | Stale Annotation | Remove stale "in JSON schema, not on official settings page" annotation from `sandbox.ignoreViolations` — this key is now documented on the official settings-reference page. Confirmed in official settings-reference | ✅ COMPLETE (annotation removed, description updated) — NEW |
+| 7 | HIGH | Removed Key | Remove `permissionExplainerEnabled` from active settings: removed in v2.1.257. Marked with strikethrough and removal notice. Confirmed in v2.1.257 changelog | ✅ COMPLETE (key marked removed) — NEW |
+| 8 | HIGH | Missing Settings | Add `bashOutputMaxChars` (number, 30000 default, v2.1.256+) and `taskOutputMaxChars` (number, 30000 default, v2.1.256+) to General Settings. Confirmed in official settings-reference | ✅ COMPLETE (both keys added) — NEW |
+| 9 | HIGH | Missing Setting | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean, v2.1.256+) to Permission Keys table. Confirmed in official settings-reference | ✅ COMPLETE (key added) — NEW |
+| 10 | HIGH | Missing Setting | Add `managedMcpServers` (object, Managed only, v2.1.259+) to MCP Settings table. Confirmed in official settings-reference | ✅ COMPLETE (key added) — NEW |
+| 11 | MED | Deprecated Key | Mark `keybindingFlavor` as deprecated in v2.1.261. Confirmed in v2.1.261 changelog | ✅ COMPLETE (deprecation notice added) — NEW |
+| 12 | MED | Missing Setting | Add `sandbox.ripgrep` (string, path to custom rg binary, v2.1.256+) to Sandbox Settings. Confirmed in official settings-reference | ✅ COMPLETE (key added) — NEW |
+| 13 | MED | Missing Settings | Add `timeFormat` (string, 12h/24h, v2.1.258+) and `timeZone` (string, IANA timezone, v2.1.258+) to Display Settings. Confirmed in official settings-reference | ✅ COMPLETE (both keys added) — NEW |
+| 14 | MED | Missing Settings | Add `promptSuggestionEnabled` (boolean, v2.1.260+), `enableWorkflows` (boolean, v2.1.261+), `isolatePeerMachines` (boolean managed-only, v2.1.262+), `syncClaudeAiSkills` (boolean, v2.1.262+), `disableDesktopLocalSessions` (boolean managed-only, v2.1.262+), `sshHostAllowlist` (array managed-only, v2.1.263+). Confirmed in official settings-reference | ✅ COMPLETE (all 6 added) — NEW |
+| 15 | MED | Missing Setting | Add `managedSourcesBehavior` (string, first-wins/merge, v2.1.259+) to Managed-only policy keys. Confirmed in official settings-reference | ✅ COMPLETE (key added) — NEW |
+| 16 | MED | Missing Setting | Add `skipAutoPermissionPrompt` (boolean, v2.1.258+) to Permission Keys. Confirmed in official settings-reference | ✅ COMPLETE (key added) — NEW |
+| 17 | MED | Missing Setting | Add `oidc.scope_on_refresh` (string, v2.1.262+) to new OIDC Settings subsection under AWS & Cloud Credentials. Confirmed in official settings-reference | ✅ COMPLETE (key added in new section) — NEW |
+| 18 | MED | Wrong Scope | Fix `modelPicker`: add note that project and local settings are ignored — only user and managed settings are honored. Confirmed in official settings-reference | ✅ COMPLETE (scope restriction noted) — NEW |
+| 19 | MED | Wrong Scope | Fix `permissions.defaultMode`: add note that `"bypassPermissions"` is ignored in project/local settings (v2.1.258+), similar to existing `"auto"` restriction. Confirmed in official settings-reference | ✅ COMPLETE (restriction noted) — NEW |
+| 20 | MED | Model Update | Update `"fable"` alias: now resolves to Claude Fable 5.1 (updated in v2.1.261). Confirmed in v2.1.261 changelog | ✅ COMPLETE (description updated) — NEW |
+| 21 | MED | Sources Count | Update sources annotation from "~180 keys" to "~196 keys" for settings-reference page, noting report covers additional schema/changelog-only keys. Confirmed by inspection | ✅ COMPLETE (count updated) — NEW |
+| 22 | LOW | Wrong Attribution | Update hook events attribution: hooks blurb said v2.1.252 for PreModelSwitch/PostModelSwitch (covered by item 3 above) | ✅ COMPLETE (covered by item 3) — DUPLICATE |
+| 23 | LOW | Unverified — Skipped | `Bash(git * main)` pattern warning: research agents flagged potential startup warning for this example pattern in newer versions. No official source confirmation found — skipped per Rule 8A | ⚠️ SKIPPED (no official source — Rule 8A) — UNVERIFIED |
+| 24 | LOW | Unverified — Skipped | `disableArtifact` deprecation: research agents flagged possible deprecation. No official source confirmation found on settings-reference page — skipped per Rule 8A | ⚠️ SKIPPED (no official source — Rule 8A) — UNVERIFIED |
+| 25 | LOW | Unverified — Skipped | `askUserQuestionTimeout` scope fix: research agents flagged possible scope change. Current "project and local only" scope not contradicted by official page — skipped per Rule 8A | ⚠️ SKIPPED (no contradicting official source — Rule 8A) — UNVERIFIED |
