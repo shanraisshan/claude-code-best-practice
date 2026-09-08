@@ -159,6 +159,7 @@ Methodology: [Cross-Model (Claude Code + Codex) Workflow](development-workflows/
 | [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) | 32k | Router | Gemini CLI, Codex, Claude Code, Antigravity | Wraps each CLI as an OpenAI/Gemini/Claude/Codex-compatible API service |
 | [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) | 18k | Plugin | Codex / GPT-5 | Official OpenAI plugin: `/codex:review`, `/codex:adversarial-review`, `/codex:rescue` inside Claude Code |
 | [BeehiveInnovations/pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) | 12k | MCP | Gemini, OpenAI, Azure, Grok, Ollama, OpenRouter (50+ models) | Multi-model MCP server (formerly `zen-mcp-server`) — call other models as Claude tools |
+| [Continuum-AI-Corp/OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | 173 | Fork | any OpenAI- or Anthropic-compatible endpoint, or one gateway | Records a Claude Code run, then re-runs the *same* recorded work on other models: `orca compare last --models a,b,c --verify "npm test"` restores the git tree to a checkpoint, replays up to it, and goes live from there on each model in its own worktree — the verify command's exit code is the verdict. Also replays a run offline with the network off. |
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
