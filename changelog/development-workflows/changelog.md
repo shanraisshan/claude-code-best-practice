@@ -2895,3 +2895,29 @@
 | 27 | LOW | Workflow | omc — Agent 2 proposes: deep-interview(top) → ralplan(top) → execute(top) → verify(sub) → team(top); drops team-plan/team-prd/team-exec/team-verify/team-fix, adds execute; 1st consecutive of this condensed variant | ON HOLD (NEW — 1st consecutive; different from Sep 07/08 ON HOLD variants; keeping current workflow) |
 | 28 | LOW | Workflow | HumanLayer — Agent 2 proposes: ralph_research(top) → ralph_plan(top) → validate_plan(sub) → iterate_plan(sub) → implement_plan(top) → describe_pr(top) → create_handoff(sub); drops local_review, adds ralph_research/ralph_plan/create_handoff, reorders; 1st consecutive; repo deprecated | ON HOLD (NEW — 1st consecutive; repo deprecated; keeping current workflow) |
 | 29 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — 403 CONNECT rejection); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check); all star decisions confirmed by WebFetch matching agent data | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+
+---
+
+## [2026-09-10 09:16 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 283k to 284k (WebFetch: 284.1k — crosses 283,500 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 257k to 258k (WebFetch: 258k — crosses 257,500 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 3 | HIGH | Star | Update Everything Claude Code ★ from 254k to 255k (WebFetch: 255k — crosses 254,500 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 4 | HIGH | Star | Update OpenSpec ★ from 67.7k to 67.8k (WebFetch: 67.8k — crosses 67,750 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 5 | LOW | Star | Spec Kit ★ boundary case: WebFetch returned 134.5k — exactly at 134,500 midpoint; ambiguous whether crosses to 135k territory; keep 134k | ON HOLD (NEW — boundary case; keeping 134k per conservative convention) |
+| 6 | LOW | Count Verify | Superpowers skills 14→unchanged (Agent 1: confirmed 14) | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Count Verify | Spec Kit commands 10→unchanged (Agent 1: confirmed 10) | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Count Verify | ECC agents 68→94 / commands 94→140 / skills 286→200+ (Agent 1: 94a/140c/200+s; 1st consecutive) | ON HOLD (NEW — 1st consecutive; keeping 68/94/286 per convention) |
+| 9 | LOW | Count Verify | Matt Pocock skills 37→unchanged (Agent 1: confirmed 37) | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Count Verify | OpenSpec commands 12→10 (Agent 2 star data available; directory access blocked; alternating 10/12 pattern; 3rd consecutive 10) | ON HOLD (RECURRING — alternating; keeping 12) |
+| 11 | LOW | Count Verify | gstack stars 132k→unchanged (WebFetch: ~132k; no midpoint crossing) | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Count Verify | BMAD stars 52.8k→unchanged (WebFetch: ~52.8k; no midpoint crossing) | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Count Verify | GSD stars 64.6k→unchanged (WebFetch: ~64.6k; archived repo baseline maintained) | COMPLETE (RECURRING — no change; archived) |
+| 14 | LOW | Count Verify | omc stars 39.1k→unchanged (WebFetch: ~39.1k; no midpoint crossing) | COMPLETE (RECURRING — no change) |
+| 15 | LOW | Count Verify | CE stars 25k→unchanged (WebFetch: ~25k; no midpoint crossing) | COMPLETE (RECURRING — no change) |
+| 16 | LOW | Count Verify | HumanLayer stars 11.5k→unchanged (WebFetch: ~11.5k; no midpoint crossing) | COMPLETE (RECURRING — no change) |
+| 17 | LOW | Workflow | All workflow proposals (Superpowers, Spec Kit, ECC, Matt Pocock, OpenSpec, GSD, gstack, BMAD, CE, omc, HumanLayer) — all 1st consecutive or recurring ON HOLD from prior runs | ON HOLD (RECURRING — no 2nd consecutive confirmation for any workflow change; all kept as current) |
+| 18 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — 403 CONNECT rejection); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check) | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+| 19 | LOW | Sort | Star order after updates: Superpowers 284k > Matt Pocock 258k > ECC 255k > Spec Kit 134k > gstack 132k > agent-skills 89k (OOS) > OpenSpec 67.8k > GSD 64.6k > BMAD 52.8k > omc 39.1k > CE 25k > HumanLayer 11.5k — same relative order | COMPLETE (no re-sort needed) |
