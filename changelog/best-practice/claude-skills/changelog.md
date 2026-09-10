@@ -971,3 +971,14 @@ No drift detected — frontmatter fields (20) and bundled skills (18) are fully 
 |---|----------|------|--------|--------|
 | 1 | HIGH | Removed Skill | Remove `review` (row 15) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; docs state "Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request by number"; row 15 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 18→17 after removal | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
 | 2 | MED | Potential Removed Skill | `security-review` (row 16) — not marked [Skill] in commands reference; official docs classify it as a built-in command reachable via the Skill tool, not a distinct bundled skill; no changelog corroboration of removal in last 10 versions (v2.1.257–v2.1.266); still appears in live session skill listings | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
+
+---
+
+## [2026-09-10 10:03 AM PKT] Claude Code v2.1.267
+
+No drift detected — frontmatter fields (20) and bundled skills (18) are fully synchronized with official docs. No new bundled skills or frontmatter fields in v2.1.267 (changelog shows only an `effort:` frontmatter bug fix on an already-documented field).
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Removed Skill | Remove `review` (row 15) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; docs state "Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request by number"; row 15 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 18→17 after removal | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 2 | MED | Potential Removed Skill | `security-review` (row 16) — not marked [Skill] in commands reference; official docs classify it as a built-in command reachable via the Skill tool, not a distinct bundled skill; no changelog corroboration of removal in last 10 versions (v2.1.258–v2.1.267); still appears in live session skill listings | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
