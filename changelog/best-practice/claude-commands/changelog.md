@@ -1064,3 +1064,13 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-09-09 11:17 AM PKT] Claude Code v2.1.266
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 93 built-in commands).
+
+---
+
+## [2026-09-10 11:11 AM PKT] Claude Code v2.1.267
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Argument | Update `/import` — add `cursor` as third import source (v2.1.265); update description to name Cursor explicitly and note `v2.1.265 or later` requirement | ✅ COMPLETE (command column updated from `[codex\|gemini]` to `[codex\|gemini\|cursor]`; description updated at #11 in Config tag) |
+| 2 | MED | Changed Description | Update `/advisor` — in non-interactive (`-p`) and Remote Control modes, with no argument it prints the current advisor as text instead of opening the picker; requires v2.1.260 (resolves recurring ON HOLD from v2.1.260–v2.1.266 runs) | ✅ COMPLETE (non-interactive text-form note added at #53 in Model tag) |
+| 3 | LOW | Changed Description | Update `/review` — `--comment` posts findings to GitHub PR review comments **or GitLab merge request notes** (v2.1.257+, reconfirmed in v2.1.267 docs) | ✋ ON HOLD (agent reported this from a compressed page section; defer to next run for independent re-verification before applying) |
