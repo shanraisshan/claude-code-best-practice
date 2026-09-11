@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2001%2C%202026%2010%3A39%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.252-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2011%2C%202026%2010%3A43%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.268-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.252, Claude Code exposes **140+ settings** and **315+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.268, Claude Code exposes **145+ settings** and **315+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -142,6 +142,8 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `autoContinueAtUsageLimit` | boolean | - | When `true`, Claude Code automatically continues the session when a usage limit (API rate limit, daily cap) resets instead of waiting for user input. Appears in `/config` as **Auto-continue at usage limit** (v2.1.234) |
 | `feedbackDrafts` | boolean | `true` | When `true`, Claude Code queues bug-report drafts in the background when it encounters surprising errors. Set to `false` to disable background draft queuing. Gates the `SendFeedback` tool. Appears in `/config` as **Feedback drafts** (v2.1.247) |
 | `desktopSessionCleanupPeriodDays` | number | - | Age cutoff in days for cleaning up desktop session data (separate from transcript cleanup controlled by `cleanupPeriodDays`). Inactive desktop session artifacts older than this threshold are removed during the startup cleanup sweep (v2.1.248) |
+| `bashOutputMaxChars` | number | `8000` | Maximum inline characters Claude shows for a bash command result before truncating. Raise up to `128000` (128K) for commands that emit large structured output (e.g., `jq` on a big JSON file, test suite reports). Lowering speeds up rendering for verbose commands. Set via the `env` field or user settings (v2.1.268) |
+| `taskOutputMaxChars` | number | `8000` | Maximum inline characters Claude shows for a background-task (agent) result before truncating. Raise up to `128000` (128K) for tasks with large output. Mirrors `bashOutputMaxChars` but applies to Task tool results (v2.1.268) |
 
 **Example:**
 ```json
@@ -416,6 +418,7 @@ Configure Model Context Protocol servers for extended capabilities.
 | `disabledMcpjsonServers` | array | Any | Blocklist specific server names |
 | `allowedMcpServers` | array | Managed only | Allowlist with name/command/URL matching |
 | `deniedMcpServers` | array | Managed only | Blocklist with matching |
+| `managedMcpServers` | array | Managed only | Organization-deployed remote MCP servers (HTTP/SSE) pushed to all users. Each entry specifies `name`, `type` (`"http"` or `"sse"`), and `url`. Managed servers load regardless of `allowedMcpServers`; they cannot be blocked by user or project settings. Use for centrally managed tools (databases, internal APIs) (v2.1.265+) |
 | `allowManagedMcpServersOnly` | boolean | Managed only | Only allow MCP servers explicitly listed in managed allowlist |
 | `channelsEnabled` | boolean | Managed only | Allow [channels](https://code.claude.com/docs/en/channels) for Team and Enterprise users. When unset or `false`, channel message delivery is blocked regardless of `--channels` flag |
 | `allowedChannelPlugins` | array | Managed only | Allowlist of channel plugins that may push messages. Replaces the default Anthropic allowlist when set. Undefined = fall back to the default, empty array = block all channel plugins. Requires `channelsEnabled: true`. Each entry is an object with `marketplace` and `plugin` fields (v2.1.84) |
@@ -624,6 +627,7 @@ Map Anthropic model IDs to provider-specific model IDs for Bedrock, Vertex, or F
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `effortLevel` | string | - | Persist the effort level across sessions. Accepts `"low"`, `"medium"`, `"high"`, `"xhigh"` (Fable 5, Opus 5, Sonnet 5, Opus 4.7, Opus 4.8, v2.1.111). **`"max"` and `"ultracode"` are session-only and are not accepted here** — set them via `/effort` or `--settings` for a single session but do not write them to `settings.json`. Written automatically when you run `/effort <level>`. The default effort is `high` on every model that supports effort, except Opus 4.7 which defaults to `xhigh`. Unsupported levels fall back to the highest supported level on the active model. **As of v2.1.243, `/effort` saves defaults per-model via `modelSettings`** — use `modelSettings` when you want different effort defaults per model |
+| `maxEffortLevel` | string/object | - | Cap the effort level applied to the session, enforced across all providers (Anthropic API, Bedrock, Vertex, Foundry). Accepts the same values as `effortLevel` (`"low"`, `"medium"`, `"high"`, `"xhigh"`). Can also be an object keyed by model alias to set per-model caps (e.g., `{"opus": "xhigh", "haiku": "medium"}`). Useful in managed settings to prevent cost overruns from high-effort models. `/effort max` is still available as a session-only override, but managed settings can block it with `disableAutoMode` semantics (v2.1.267) |
 | `modelSettings` | object | - | Per-model saved effort levels and configuration, keyed by model alias or ID. Each entry contains `effortLevel` and optionally other per-model overrides. `/effort` writes to this key as of v2.1.243, enabling different default effort levels on different models. **Does not merge across settings files** — the highest-precedence file that defines it supplies the entire object. Example: `{"opus": {"effortLevel": "xhigh"}, "sonnet": {"effortLevel": "high"}}` |
 | `modelPicker` | object | - | Curate and order the `/model` picker with labeled, ordered rows. Overrides the default model list when set. **Does not merge across settings files** — the highest-precedence file that defines it supplies the entire list. Example: `[{"id": "opus", "label": "Opus 5 (reasoning)"}, {"id": "sonnet", "label": "Sonnet 5 (balanced)"}]` (v2.1.242+) |
 | `modelPricing` | object | - | **(Managed only)** Contracted per-model rates and discount multipliers applied to usage cost reporting. Allows organizations to configure accurate cost attribution when using negotiated pricing tiers rather than public list prices (v2.1.243+) |
@@ -711,6 +715,8 @@ Configure via `env` key:
 | `spellcheck` | object | - | Spell-check underlines in the prompt input. Requires an installed spell-check binary (`aspell`, `hunspell`, or `ispell`). Object with `enabled` (boolean) and `binary` (string — path to the spell checker). Set via `/config`. Requires v2.1.235+ (binary path required as of v2.1.236) |
 | `promptCacheTtl` | string | - | Keep the 1-hour prompt cache tier active on the main conversation for API-key and cloud-provider users who have access to extended cache TTLs. When unset, the default 5-minute cache TTL applies. Example: `"1h"`. Pairs with `subagentPromptCacheTtl` (v2.1.243+) |
 | `subagentPromptCacheTtl` | string | - | Keep the 5-minute prompt cache tier active for subagents when set. Controls the cache TTL for subagent turns separately from the main conversation. Use with `promptCacheTtl` for independent control of caching behavior in orchestrated workflows (v2.1.243+) |
+| `timeFormat` | string | `"12h"` | Time format for timestamps displayed in the UI and transcript. Values: `"12h"` (12-hour with AM/PM), `"24h"` (24-hour local time), `"24h-utc"` (24-hour UTC), or a strftime pattern (e.g., `"%H:%M:%S"`) for full control. Pairs with `timeZone` (v2.1.257) |
+| `timeZone` | string | - | Timezone identifier for timestamp display (e.g., `"America/New_York"`, `"Asia/Karachi"`, `"UTC"`). When unset, the system timezone is used. Pairs with `timeFormat` (v2.1.257) |
 
 ### Global Config Settings (`~/.claude.json`)
 
@@ -806,6 +812,7 @@ The status line command receives a JSON object on stdin. For the full JSON schem
 | `rate_limits.five_hour.resets_at` | Five-hour rate limit reset timestamp (Unix epoch seconds) |
 | `rate_limits.seven_day.used_percentage` | Seven-day rate limit usage percentage |
 | `rate_limits.seven_day.resets_at` | Seven-day rate limit reset timestamp (Unix epoch seconds) |
+| `prompt_cache.miss_reason` | When the prompt cache was missed on the last turn, the likely cause: `"model_changed"`, `"effort_changed"`, `"context_cleared"`, `"tools_changed"`, or `"unknown"`. Absent when the cache hit or information is not available (v2.1.268) |
 | `session_id` | Unique session identifier |
 | `session_name` | Custom session name set with `--name` or `/rename`. Absent if no custom name set |
 | `transcript_path` | Path to conversation transcript file |
@@ -1105,6 +1112,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_GIT_BASH_PATH` | Windows only: path to the Git Bash executable (`bash.exe`). Use when Git Bash is installed but not in your PATH |
 | `DISABLE_COST_WARNINGS` | Disable cost warning messages |
 | `CLAUDE_CODE_SUBAGENT_MODEL` | Default model for subagents (e.g., `haiku`, `sonnet`). **As of v2.1.238 (breaking change):** changed from an override to a default — agent definitions that explicitly set a model and subagent tool calls that pass an explicit model now take precedence over this variable |
+| `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` | Force-override the model used for every subagent, ignoring per-spawn `model:` overrides in agent definitions and `Agent()` tool calls that pass an explicit model. Use when you want a single model applied uniformly across all subagents regardless of individual agent definitions (v2.1.267) |
 | `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` | Set to `1` to forward subagent streaming text output to the parent session in real time. By default, subagent output is buffered until the subagent completes. As of v2.1.219, forwarding also works for nested subagents at depth 2+ (v2.1.211) |
 | `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` | Set to `1` to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers). Use for defense-in-depth when subprocesses should not inherit API keys (v2.1.83) |
 | `CLAUDE_CODE_SCRIPT_CAPS` | JSON object limiting how many times specific scripts may be invoked per session when `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is set. Keys are substrings matched against the command text; values are integer call limits. For example, `{"deploy.sh": 2}` allows `deploy.sh` to be called at most twice. Matching is substring-based; runtime fan-out via `xargs` or `find -exec` is not detected — this is a defense-in-depth control |
