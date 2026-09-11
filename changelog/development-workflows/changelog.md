@@ -2921,3 +2921,30 @@
 | 17 | LOW | Workflow | All workflow proposals (Superpowers, Spec Kit, ECC, Matt Pocock, OpenSpec, GSD, gstack, BMAD, CE, omc, HumanLayer) — all 1st consecutive or recurring ON HOLD from prior runs | ON HOLD (RECURRING — no 2nd consecutive confirmation for any workflow change; all kept as current) |
 | 18 | LOW | Note | shields.io Bash curl blocked (proxy, recurring — 403 CONNECT rejection); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check) | COMPLETE (RECURRING — WebFetch verification method authoritative) |
 | 19 | LOW | Sort | Star order after updates: Superpowers 284k > Matt Pocock 258k > ECC 255k > Spec Kit 134k > gstack 132k > agent-skills 89k (OOS) > OpenSpec 67.8k > GSD 64.6k > BMAD 52.8k > omc 39.1k > CE 25k > HumanLayer 11.5k — same relative order | COMPLETE (no re-sort needed) |
+
+---
+
+## [2026-09-11 09:22 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 284k to 285k (Agent: 284,802; WebFetch: 284.8k — crosses 284,500 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 258k to 259k (Agent: 258,998; WebFetch: 259.0k — crosses 258,500 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 3 | HIGH | Star | Update Everything Claude Code ★ from 255k to 256k (Agent: 256k; WebFetch: 256k — crosses 255,500 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 4 | HIGH | Star | Update Spec Kit ★ from 134k to 135k (Agent: 135,206; WebFetch: 135k — crosses 134,500 midpoint; Sep 10 was boundary case at exactly 134,500; today confirmed above midpoint) | COMPLETE (RESOLVED — Sep 10 was ON HOLD boundary; today confirmed COMPLETE) |
+| 5 | HIGH | Star | Update OpenSpec ★ from 67.8k to 67.9k (Agent: 67,915; WebFetch: 67.9k — crosses 67,850 midpoint) | COMPLETE (RECURRING — daily incremental growth) |
+| 6 | HIGH | Star | Update BMAD-METHOD ★ from 52.8k to 52.9k (Agent: 52,871; WebFetch: 52.9k — crosses 52,850 midpoint) | COMPLETE (NEW — first time BMAD crosses this midpoint) |
+| 7 | LOW | Star | gstack ★ boundary: Agent API 132,486 < 132,500 midpoint; WebFetch shows "132.5k" display but raw count below midpoint — keep 132k per convention | ON HOLD (RECURRING — below midpoint; keeping 132k) |
+| 8 | LOW | Star | GSD 64.6k, omc 39.1k, CE 25k, HumanLayer 11.5k — no midpoint crossings confirmed | COMPLETE (RECURRING — no change) |
+| 9 | HIGH | Count | Update Compound Engineering skills from 33 to 35 (Agent: 35 in skills/; Sep 09 was 1st consecutive, Sep 11 is 2nd consecutive → APPLY) | COMPLETE (NEW — 2nd consecutive confirmation; update applied) |
+| 10 | LOW | Count Verify | ECC agents/commands/skills volatile (Agent: multiple conflicting counts across checks; confidence 0.65; 1st/ongoing consecutive uncertain) | ON HOLD (RECURRING — low confidence; keeping 68a/94c/286s) |
+| 11 | LOW | Count Verify | gstack skills 58→53 (Agent: 53 root-level SKILL.md dirs; recurring < 58 across multiple runs; volatile) | ON HOLD (RECURRING — unstable; keeping 58 baseline) |
+| 12 | LOW | Count Verify | GSD commands 85→67 (archived repo; Agent count uncertain; recurring fluctuation) | ON HOLD (RECURRING — archived repo; keeping 85) |
+| 13 | LOW | Count Verify | OpenSpec commands 12→9 (alternating 9/10/12 across runs; 1st consecutive of 9) | ON HOLD (RECURRING — alternating counts; keeping 12) |
+| 14 | LOW | Count Verify | OpenSpec skills 12→16 (Agent: 16; different from Sep 10 reading of 7; new variant; 1st consecutive of 16) | ON HOLD (NEW — 1st consecutive of this value; keeping 12 per established count) |
+| 15 | LOW | Count Verify | BMAD skills 29→35 (Sep 10 was 1st consecutive; today's agent result did not confirm 2nd consecutive — count fluctuating) | ON HOLD (RECURRING — awaiting 2nd consecutive; keeping 29) |
+| 16 | LOW | Count Verify | omc commands 0→16 (Sep 10 was 1st consecutive; skills-serve-as-slash-commands methodology established) | ON HOLD (RECURRING — methodology keeps 0; 1st consecutive) |
+| 17 | LOW | Count Verify | Spec Kit skills 0→2 (GitHub Actions skills, not Claude Code .claude/skills/ location; INVALID methodology) | INVALID (RECURRING — not Claude Code skills; keeping 0) |
+| 18 | LOW | Sort | Star order after updates: Superpowers 285k > Matt Pocock 259k > ECC 256k > Spec Kit 135k > gstack 132k > agent-skills 89k (OOS) > OpenSpec 67.9k > GSD 64.6k > BMAD 52.9k > omc 39.1k > CE 25k > HumanLayer 11.5k — same relative order | COMPLETE (no re-sort needed) |
+| 19 | LOW | Workflow | All workflow proposals (Superpowers, Spec Kit, ECC, Matt Pocock, OpenSpec, GSD, gstack, BMAD, CE, omc, HumanLayer) — all ongoing ON HOLD; no 2nd consecutive confirmation for any workflow change | ON HOLD (RECURRING — keeping all current confirmed workflows) |
+| 20 | LOW | Note | shields.io Bash curl blocked by proxy (403 CONNECT rejection; recurring); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check) | COMPLETE (RECURRING — WebFetch verification method authoritative) |
