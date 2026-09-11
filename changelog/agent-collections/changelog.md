@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-11 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 151k to 152k | COMPLETE (research agent GitHub API: 151,574 exact; crosses 151.5k boundary → rounds to 152k; RECURRING — milestone crossing; conf 1.0 on stars) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 273 → ~303 (+30; research range 295-305; Sep 9 commit #845 confirmed +6 new specialists: China Network, Platform, Focus Music, PDF Engine, ATS Validator, Universal Document Compiler; conf 0.75 below 0.88 threshold) | INVALID (RECURRING oscillation; conf 0.75 below 0.88 threshold; oscillation band 254-315+; no change) |
+| 3 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → ~149 (−9; code search 167 total .md − 18 non-agent = 149; conf 0.85 below 0.88 threshold; no commits since Aug 12) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; within documented oscillation band 150-158; no change) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (24,995 rounds to 25k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (152k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-09 08:44 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
