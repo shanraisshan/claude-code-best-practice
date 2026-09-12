@@ -1283,3 +1283,27 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-03 10:52 AM PKT] Claude Code v2.1.259
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Security Change | Add v2.1.257 note to `permissions.defaultMode`: `"bypassPermissions"` is now silently ignored in project and local settings — only works from managed settings or `--permission-mode` flag | ✅ COMPLETE (note added) — NEW |
+| 2 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: was "project and local only" — corrected to "user settings and managed settings only" | ✅ COMPLETE (scope corrected) — NEW |
+| 3 | HIGH | Wrong Type | Fix `feedbackDrafts` type: was `boolean`/`true` — corrected to `string` with values `"notify"` (default), `"quiet"`, `"off"` | ✅ COMPLETE (type and description updated) — NEW |
+| 4 | HIGH | Missing Settings | Add `enableWorkflows`, `isolatePeerMachines`, `syncClaudeAiSkills` to General Settings (confirmed in settings-reference page and changelog) | ✅ COMPLETE (all three added) — NEW |
+| 5 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` to Permissions section (confirmed in settings-reference page) | ✅ COMPLETE (added) — NEW |
+| 6 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (changelog annotation; not yet on official settings-reference page) | ✅ COMPLETE (added with annotation) — NEW |
+| 7 | HIGH | Missing Settings | Add `sandbox.ripgrep` to Sandbox table (confirmed in settings-reference page) | ✅ COMPLETE (added) — NEW |
+| 8 | HIGH | Missing Settings | Add `sshHostAllowlist`, `disableDesktopLocalSessions`, `managedSourcesBehavior` to Workspace Settings (confirmed managed-only keys) | ✅ COMPLETE (all three added) — NEW |
+| 9 | HIGH | Missing Settings | Add `promptSuggestionEnabled`, `subagentStatusLine` to Display Settings; add `timeFormat`, `timeZone` (changelog annotation) | ✅ COMPLETE (all four added) — NEW |
+| 10 | HIGH | Stale Description | Update `spinnerTipsOverride` to document v2.1.247 structured entry format `{id, text, cooldownSessions, priority, tipsFile, label}` | ✅ COMPLETE (description updated) — NEW |
+| 11 | HIGH | Removed Setting | Mark `permissionExplainerEnabled` as removed in v2.1.257 (confirmed in changelog) | ✅ COMPLETE (marked removed) — NEW |
+| 12 | HIGH | MCP Scope Change | Update `allowedMcpServers`/`deniedMcpServers` scope from "Managed only" to "Any" (v2.1.259); add `managedMcpServers` (changelog annotation) | ✅ COMPLETE (scope updated, new key added) — NEW |
+| 13 | HIGH | Model Alias | Update `"fable"` model alias to Fable 5.1 (`claude-fable-5-1`, v2.1.257); update `advisorModel` reference | ✅ COMPLETE (updated) — NEW |
+| 14 | MED | Wrong Version | Fix `PreModelSwitch`/`PostModelSwitch` version attribution in hooks redirect blurb: v2.1.252 → v2.1.251 | ✅ COMPLETE (corrected) — NEW |
+| 15 | MED | Stale Example | Fix `ANTHROPIC_DEFAULT_FABLE_MODEL` example: `claude-fable-5` → `claude-fable-5-1` | ✅ COMPLETE (updated) — NEW |
+| 16 | MED | Missing Env Var | Add `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` (changelog annotation; not on official env-vars page) | ✅ COMPLETE (added with annotation) — NEW |
+| 17 | LOW | Badge | Update version badge v2.1.252 → v2.1.259; update header count to 150+ settings | ✅ COMPLETE (badge and header updated) — NEW |
