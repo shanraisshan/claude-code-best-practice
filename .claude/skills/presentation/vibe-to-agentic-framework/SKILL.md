@@ -167,4 +167,4 @@ When creating or modifying slides, consider:
 
 All other slides inherit the level from the last `data-level` attribute set before them. Slides 1–9 (Intro + Prerequisites) have no level and keep the bar hidden until slide 2 shows "Low" (slides 2–9 are below the first level transition at slide 10, so the bar shows empty/zero until slide 10).
 
-**Note:** The main presentation (`presentation/index.html`) caps at **High** level — `data-level="pro"` is not used. The Pro tick mark remains visible on the journey bar as the theoretical ceiling, but the fill never reaches it. The video presentation (`1-video-workflow.html`) caps at **Medium** level.
+**Note:** The main presentation (`presentation/vibe-coding-to-agentic-engineering/index.html`) caps at **High** level — `data-level="pro"` is not used. The Pro tick mark remains visible on the journey bar as the theoretical ceiling, but the fill never reaches it. The video presentation (`1-video-workflow.html`) caps at **Medium** level.
