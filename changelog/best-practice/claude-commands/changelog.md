@@ -1084,3 +1084,11 @@ No priority action items — report is fully in sync with official documentation
 | 1 | LOW | Changed Description | Re-verify `/review` — `--comment` GitLab merge request note detail (ON HOLD from 2026-09-10) | ❌ INVALID (independent agent re-fetch of official docs at code.claude.com/docs/en/commands found no GitLab MR note detail; description matches report as-is; closing this ON HOLD) |
 
 _No frontmatter or command drift (20 frontmatter fields, 93 built-in commands still in sync). Version badge bumped v2.1.267 → v2.1.268._
+
+---
+
+## [2026-09-12 11:09 AM PKT] Claude Code v2.1.269
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/output-style [name]` to Config tag — List and switch output styles, including over Remote Control and in cloud and other headless sessions | ✅ COMPLETE (added as #13 in Config tag; downstream rows 13–93 renumbered to 14–94; count updated 93 → 94) |
