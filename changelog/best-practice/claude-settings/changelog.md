@@ -1283,3 +1283,48 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-05 10:48 AM PKT] Claude Code v2.1.261
+
+**Audited by:** workflow-claude-settings-agent + claude-code-guide (parallel), synthesized by Claude Code session  
+**Sources consulted:** `code.claude.com/docs/en/settings-reference`, `code.claude.com/docs/en/env-vars`, `raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md`  
+**Previous version:** v2.1.252 (9 releases behind)
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge from `Sep 01, 2026 10:39 AM PKT / v2.1.252` to `Sep 05, 2026 10:48 AM PKT / v2.1.261`; update header counts from "140+ settings / 315+ env vars" to "~216 settings / 340+ env vars". Confirmed via official settings-reference page (216 keys indexed) and env-vars page | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Type Fix | Fix `disableAutoMode` type: `string` ("disable") → `boolean` (Set to `true` to disable auto-mode). Confirmed on official settings-reference page | ✅ COMPLETE (type corrected) — NEW |
+| 3 | HIGH | Type Fix | Fix `askUserQuestionTimeout` type: `string` → `number` (milliseconds). Also corrected scope from "project and local only" → "User or managed". Confirmed on official settings-reference page | ✅ COMPLETE (type and scope corrected) — NEW |
+| 4 | HIGH | Type Fix | Fix `dialogExpiry` type: `string` → `number` (milliseconds). Confirmed on official settings-reference page | ✅ COMPLETE (type corrected) — NEW |
+| 5 | HIGH | Type Fix | Fix `sandbox.network.allowMachLookup` type: `array []` → `boolean false`. Confirmed on official settings-reference page | ✅ COMPLETE (type corrected) — NEW |
+| 6 | HIGH | Removed Key | Mark `permissionExplainerEnabled` as **REMOVED in v2.1.257** — no longer on settings-reference page. Confirmed via changelog v2.1.257 | ✅ COMPLETE (marked REMOVED) — NEW |
+| 7 | MED | Deprecated Key | Mark `keybindingFlavor` as **DEPRECATED — has no effect**. Confirmed on settings-reference page (deprecated annotation) | ✅ COMPLETE (marked DEPRECATED) — NEW |
+| 8 | MED | Deprecated Key | Mark `disableArtifact` as **DEPRECATED — use `enableArtifact` instead**. Confirmed via settings-reference page (enableArtifact is now the canonical key) | ✅ COMPLETE (marked DEPRECATED) — NEW |
+| 9 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean, Any file, v2.1.260) to Permission Keys table. Confirmed in v2.1.260 changelog and settings-reference | ✅ COMPLETE (key added) — NEW |
+| 10 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` (boolean, User or managed) to Permission Keys table. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 11 | HIGH | Missing Description | Add v2.1.257 restriction note to `permissions.defaultMode`: "bypassPermissions" mode is now blocked in remote and enterprise sessions. Confirmed in v2.1.257 changelog | ✅ COMPLETE (restriction note added) — NEW |
+| 12 | HIGH | Scope Fix | Fix `allowedMcpServers` scope: Managed → Any file (per-project/user allowed). Also added v2.1.259 behavior change note (now an allowlist, not simple flag). Confirmed on settings-reference page | ✅ COMPLETE (scope and behavior updated) — NEW |
+| 13 | HIGH | Scope Fix | Fix `deniedMcpServers` scope: Managed → Any file. Confirmed on settings-reference page | ✅ COMPLETE (scope corrected) — NEW |
+| 14 | HIGH | Missing Settings | Add `managedMcpServers` (array of objects, Managed, v2.1.259) to MCP Settings table — org-provisioned MCP server configurations. Confirmed in v2.1.259 changelog and settings-reference | ✅ COMPLETE (key added) — NEW |
+| 15 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string enum: `keep`/`replace`, Managed, v2.1.257) to Managed-only policy keys — controls how org sources interact with user sources. Confirmed in v2.1.257 changelog | ✅ COMPLETE (key added) — NEW |
+| 16 | HIGH | Missing Settings | Add `bashOutputMaxChars` (number, Any file, default 100000, v2.1.261) to General Settings — caps bash stdout returned to model. Confirmed in v2.1.261 changelog and settings-reference | ✅ COMPLETE (key added) — NEW |
+| 17 | HIGH | Missing Settings | Add `taskOutputMaxChars` (number, Any file, default 80000, v2.1.261) to General Settings — caps task/agent output returned to model. Confirmed in v2.1.261 changelog and settings-reference | ✅ COMPLETE (key added) — NEW |
+| 18 | HIGH | Missing Settings | Add `isolatePeerMachines` (boolean, Any file) to General Settings — prevents cross-session peer connections. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 19 | HIGH | Missing Settings | Add `syncClaudeAiSkills` (boolean, Any file) to General Settings — controls cloud skill sync. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 20 | HIGH | Missing Settings | Add `enableWorkflows` (boolean, Any file) to General Settings — enables workflow execution. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 21 | MED | Missing Settings | Add `promptSuggestionEnabled` (boolean, Any file) to Display Settings — toggles prompt-suggestion chips in UI. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 22 | MED | Missing Settings | Add `timeZone` (string IANA timezone, v2.1.257) to Display Settings — sets timezone for date/time display in sessions. Confirmed in v2.1.257 changelog and settings-reference | ✅ COMPLETE (key added) — NEW |
+| 23 | HIGH | Missing Settings | Add `disableDesktopLocalSessions` (boolean, Managed) to Workspace & Teams — prevents local sessions in desktop app. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 24 | HIGH | Missing Settings | Add `sshHostAllowlist` (array of strings, Managed) to Workspace & Teams — restricts SSH remote connections to specified hosts. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 25 | MED | Missing Settings | Add `sandbox.ripgrep` (string path, User or managed) to Sandbox Settings — custom ripgrep binary path inside sandbox. Confirmed on settings-reference page | ✅ COMPLETE (key added) — NEW |
+| 26 | MED | Wrong Version | Fix `PreModelSwitch`/`PostModelSwitch` hook version from v2.1.252 → v2.1.251. Confirmed in v2.1.251 changelog | ✅ COMPLETE (version corrected) — NEW |
+| 27 | MED | Missing Content | Update `fable` model alias entry to mention Fable 5.1 (v2.1.257). Confirmed in v2.1.257 changelog | ✅ COMPLETE (description updated) — NEW |
+| 28 | HIGH | Missing Content | Add `best` model alias (v2.1.257) — resolves to the best available model. Confirmed in v2.1.257 changelog and settings-reference | ✅ COMPLETE (alias added) — NEW |
+| 29 | MED | Missing Source | Add `managed-settings` and `settings-example` links to Sources section. Confirmed by fetching both URLs (200 OK) | ✅ COMPLETE (sources added) — NEW |
+| 30 | HIGH | Missing Env Vars | Add `ANTHROPIC_PROFILE` (named API profile), `ANTHROPIC_ORGANIZATION_ID` (org ID header), `ANTHROPIC_FEDERATION_RULE_ID` (federation rule) to env vars table. Confirmed on official env-vars page | ✅ COMPLETE (all 3 added) — NEW |
+| 31 | MED | Missing Env Vars | Add `CLAUDE_AX_PREPARK_MS` (v2.1.233, pre-park delay for AX interactions) and `CLAUDE_AX_STARTUP_QUIET_MS` (v2.1.217, startup quiet period for AX) to env vars table. Confirmed in changelog | ✅ COMPLETE (both added) — NEW |
+| 32 | HIGH | Missing Env Vars | Add `BETA_TRACING_ENDPOINT` and `ENABLE_BETA_TRACING_DETAILED` (v2.1.261, OpenTelemetry tracing) to env vars table. Confirmed in v2.1.261 changelog | ✅ COMPLETE (both added) — NEW |
+| 33 | MED | Key Count | Update Sources section key count reference from ~180 → ~216. Confirmed via official settings-reference page | ✅ COMPLETE (count updated) — NEW |
+| 34 | LOW | Cross-file | Verify all external source links — all 13 links in Sources section confirmed 200 OK or verified valid. 2 new links added (`managed-settings`, `settings-example`) confirmed reachable | ✅ COMPLETE (all links verified) — NEW |
