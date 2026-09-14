@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-14 09:38 PM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents from 158 to 161 (+3; PRs #310+#314 Sep 14 added auth-integration-engineer, webhook-engineer to 01-core-development and memory-curator to 09-meta-orchestration; repo self-reports "161+"; conf 0.97) | COMPLETE (NEW — confirmed additions, repo count matches tree exactly) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 273 vs 265-271 (git tree 265 core + 1 strategy + 5 examples = 271; conf 0.92; oscillation band 254-292 well-documented; direction negative; methodology variance on examples/ and strategy/ inclusion; no confirmed net removals) | INVALID (RECURRING oscillation; within documented band; methodology variance; no change) |
+| 3 | LOW | Star | msitarzewski/agency-agents ★ unchanged (152k = 152,267 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,065 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (152k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-13 08:42 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
