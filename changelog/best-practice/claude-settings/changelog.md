@@ -1283,3 +1283,26 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-14 10:46 AM PKT] Claude Code v2.1.270
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope (was inverted — said "project/local only" but actually honored from user/managed/`--settings` scopes) | ✅ COMPLETE (scope text corrected) — NEW |
+| 2 | HIGH | Stale Setting | Update `keybindingFlavor` to no-op note — setting removed in v2.1.261 when word-editing keys were unified to Bash style | ✅ COMPLETE (no-op annotation added) — NEW |
+| 3 | HIGH | Wrong Scope | Fix `allowedMcpServers`/`deniedMcpServers` scope (was "Managed only" — actually accepts any scope) | ✅ COMPLETE (scope updated to "Any") — NEW |
+| 4 | HIGH | Missing Settings | Add `timeFormat` and `timeZone` Display Settings keys (v2.1.257) | ✅ COMPLETE (added to Display Settings table) — NEW |
+| 5 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (v2.1.257) | ✅ COMPLETE (added to Permissions table) — NEW |
+| 6 | HIGH | Missing Settings | Add `managedMcpServers` (v2.1.259) | ✅ COMPLETE (added to MCP Settings table) — NEW |
+| 7 | HIGH | Missing Settings | Add `bashOutputMaxChars`, `taskOutputMaxChars` (v2.1.261), `bashEditDiffEnabled` (v2.1.269) | ✅ COMPLETE (added to Core Configuration table) — NEW |
+| 8 | HIGH | Missing Settings | Add `maxEffortLevel` (v2.1.267) | ✅ COMPLETE (added to Model Overrides table) — NEW |
+| 9 | HIGH | Missing Settings | Add `gatewayInternalNetworks` (v2.1.268) | ✅ COMPLETE (added to Authentication Helpers table) — NEW |
+| 10 | HIGH | Missing Settings | Add `managedSourcesBehavior` (v2.1.257) | ✅ COMPLETE (added to Settings Hierarchy table) — NEW |
+| 11 | HIGH | Stale Model Alias | Update `fable` alias description for Fable 5.1 (v2.1.257); add `best` alias (v2.1.257) | ✅ COMPLETE (descriptions updated, `best` added) — NEW |
+| 12 | HIGH | Missing Settings | Add `opusplan[1m]` model alias (v2.1.265) | ✅ COMPLETE (added to Model Aliases table) — NEW |
+| 13 | HIGH | Missing Env Vars | Add 6 missing env vars: `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` (v2.1.257), `CLAUDE_CODE_WEBFETCH_DEADLINE_MS` (v2.1.268), `OTEL_METRICS_INCLUDE_REPOSITORY` (v2.1.269), `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` (v2.1.269), `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` (v2.1.269), `CLAUDE_CODE_BG_TASKS_REPORT_RUNNING` (v2.1.269) | ✅ COMPLETE (all 6 added) — NEW |
+| 14 | MED | Note Addition | Add `bypassPermissions` ignored-from-project-local note to `permissions.defaultMode` (v2.1.257) | ✅ COMPLETE (note added) — NEW |
+| 15 | MED | Stale Annotation | Update Sources annotation from "~180 keys" to "228 keys" and rescope settings-docs description to "settings files and precedence" | ✅ COMPLETE (annotation updated) — NEW |
+| 16 | MED | Badge Update | Update "Last Updated" badge to v2.1.270, `150+ settings`, `320+ env vars` | ✅ COMPLETE (badge updated) — NEW |
