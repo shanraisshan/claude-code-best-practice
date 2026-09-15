@@ -3049,3 +3049,20 @@
 | 32 | LOW | Workflow | Matt Pocock — Agent 1 confirms current 7-step: grill-with-docs → to-spec → to-tickets → implement → tdd(sub) → code-review(sub) → improve-codebase-architecture; no change needed | COMPLETE (RECURRING — workflow confirmed unchanged) |
 | 33 | LOW | Workflow | ECC — Agent 1 proposes: plan(top) → test(sub) → implement(sub) → review(top) → verify(top) → remember(top) → improve(top); completely different from current workflow; 1st consecutive | ON HOLD (NEW — 1st consecutive; keeping current ecc:plan-based workflow) |
 | 34 | LOW | Note | shields.io Bash curl blocked (proxy — empty response); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check) | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+
+---
+
+## [2026-09-15 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 286k to 287k | COMPLETE (WebFetch confirmed 286.8k ≥ 286,500 midpoint) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ from 261k to 262k | COMPLETE (WebFetch confirmed 262.2k ≥ 261,500 midpoint) |
+| 3 | HIGH | Star | Update Spec Kit ★ from 136k to 137k | COMPLETE (WebFetch confirmed 136.8k ≥ 136,500 midpoint) |
+| 4 | HIGH | Star | Update oh-my-claudecode ★ from 39.1k to 39.2k | COMPLETE (WebFetch confirmed 39.2k ≥ 39,150 midpoint) |
+| 5 | MED | Count | humanlayer: commands proposed 27→28 (1st consecutive) | ON HOLD (2-consecutive confirmation rule; apply on next run if confirmed) |
+| 6 | MED | Count | BMAD-METHOD: skills proposed 29→30 (1st consecutive) | ON HOLD (2-consecutive confirmation rule; apply on next run if confirmed) |
+| 7 | MED | Count | Compound Engineering: skills proposed 35→36 (1st consecutive) | ON HOLD (2-consecutive confirmation rule; apply on next run if confirmed) |
+| 8 | MED | Count | gstack skills 58 (volatile baseline, established ON HOLD) | ON HOLD (volatile baseline; revisit if stable across 2+ runs) |
+| 9 | LOW | Count | GSD commands 85 (archived repo, established ON HOLD) | ON HOLD (archived repo; count frozen) |
+| 10 | LOW | Count | ECC commands 94/skills 286 (volatile, established ON HOLD) | ON HOLD (volatile baseline; revisit if stable across 2+ runs) |
