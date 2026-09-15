@@ -1283,3 +1283,28 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-15 10:52 AM PKT] Claude Code v2.1.272
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.272; update header counts from "140+ settings / 315+ env vars" to "145+ settings / 320+ env vars" | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Correctness | Fix `askUserQuestionTimeout` scope: report said "project and local settings only" but official docs say "user or managed settings only" — scope was exactly inverted | ✅ COMPLETE (scope corrected) — NEW |
+| 3 | HIGH | Correctness | Fix `permissions.defaultMode` — add v2.1.257 restriction: `"bypassPermissions"` is now also ignored from project and local settings (same restriction as `"auto"` added in v2.1.142) | ✅ COMPLETE (restriction added) — NEW |
+| 4 | HIGH | Deprecated Setting | Mark `keybindingFlavor` as no-op since v2.1.261: word-editing keys now unconditionally follow readline behavior; key is accepted but ignored | ✅ COMPLETE (marked deprecated/no-op) — NEW |
+| 5 | HIGH | Removed Setting | Mark `permissionExplainerEnabled` as removed in v2.1.257: setting is accepted but ignored, AI-generated permission explanations no longer appear | ✅ COMPLETE (marked removed) — NEW |
+| 6 | HIGH | Correctness | Fix `sandbox.allowUnsandboxedCommands: false` description — user-typed `!` bash commands still run outside sandbox even when set to false (v2.1.260); only applies to Claude-initiated bash commands | ✅ COMPLETE (description fixed) — NEW |
+| 7 | HIGH | Missing Settings | Add `maxEffortLevel` (string, effort ceiling with managed-precedence exception, v2.1.267) to Model Overrides table | ✅ COMPLETE (added) — NEW |
+| 8 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean, blocks reads outside working dirs in all permission modes including bypassPermissions, v2.1.260+) to Permission Keys table | ✅ COMPLETE (added) — NEW |
+| 9 | HIGH | Missing Settings | Add `managedMcpServers` (array, Managed only, org-wide MCP server definitions with fail-closed parse error behavior v2.1.272) to MCP Settings table | ✅ COMPLETE (added) — NEW |
+| 10 | HIGH | Scope Fix | Fix `allowedMcpServers` and `deniedMcpServers` scope: official docs say "Any file" not "Managed only" | ✅ COMPLETE (scope corrected) — NEW |
+| 11 | MED | Missing Settings | Add `enableWorkflows` (boolean, toggles workflows against plan default — distinct from `disableWorkflows`) and `isolatePeerMachines` (boolean, confirm before messaging other-machine sessions, managed-precedence exception) to General Settings | ✅ COMPLETE (both added) — NEW |
+| 12 | MED | Missing Settings | Add `bashOutputMaxChars` and `taskOutputMaxChars` (number, inline output truncation thresholds before spill-to-file, v2.1.261) to Plans & Memory section | ✅ COMPLETE (both added) — NEW |
+| 13 | MED | Missing Settings | Add `skipAutoPermissionPrompt` (boolean, skip first-use auto-mode notice; user or managed only) to Permission Keys table | ✅ COMPLETE (added) — NEW |
+| 14 | MED | Missing Settings | Add `managedSourcesBehavior`, `disableDesktopLocalSessions`, `sshHostAllowlist`, `gatewayInternalNetworks` to managed-only policy keys table | ✅ COMPLETE (all 4 added) — NEW |
+| 15 | MED | Missing Settings | Add `bashEditDiffEnabled` (changelog-only, v2.1.269) and `promptSuggestionEnabled` to Display Settings; add `copyOnSelect` to Global Config table | ✅ COMPLETE (all 3 added) — NEW |
+| 16 | MED | Missing Settings | Add `sandbox.ripgrep` (path to custom ripgrep binary in sandbox) to Sandbox Settings | ✅ COMPLETE (added) — NEW |
+| 17 | MED | Missing Env Vars | Add 7 new env vars: `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`, `CLAUDE_CODE_BG_TASKS_REPORT_RUNNING`, `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS`, `OTEL_METRICS_INCLUDE_REPOSITORY` (all v2.1.269), `CLAUDE_CODE_WEBFETCH_DEADLINE_MS` (v2.1.268), `ANTHROPIC_UNIX_SOCKET` (v2.1.272) | ✅ COMPLETE (all 7 added) — NEW |
+| 18 | LOW | Source Annotation | Update Source #1 annotation from "~180 keys" to "200+ keys"; re-scope Source #2 `/docs/en/settings` as hierarchy/precedence reference only (not a key list) | ✅ COMPLETE (annotations updated) — NEW |
