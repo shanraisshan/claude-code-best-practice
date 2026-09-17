@@ -1110,3 +1110,13 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-09-15 11:11 AM PKT] Claude Code v2.1.272
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-16 11:10 AM PKT] Claude Code v2.1.273
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Type Correction | Update `allowed-tools` field type from `string` to `string/list` to match official docs and sibling field `disallowed-tools` | ✅ COMPLETE (type column updated; no description or field count change) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge bumped v2.1.272 → v2.1.273._

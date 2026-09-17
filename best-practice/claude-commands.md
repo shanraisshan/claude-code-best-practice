@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2015%2C%202026%2011%3A11%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.272-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2016%2C%202026%2011%3A09%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.273-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -26,7 +26,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | `disable-model-invocation` | boolean | No | Set `true` to prevent Claude from automatically invoking this command |
 | `user-invocable` | boolean | No | Set `false` to hide from the `/` menu — command becomes background knowledge only |
 | `paths` | string/list | No | Glob patterns that limit when this skill is activated. Accepts a comma-separated string or a YAML list. When set, Claude loads the skill automatically only when working with files matching the patterns |
-| `allowed-tools` | string | No | Tools allowed without permission prompts when this command is active |
+| `allowed-tools` | string/list | No | Tools allowed without permission prompts when this command is active |
 | `disallowed-tools` | string/list | No | Tools removed from Claude's available pool while this command is active. Clears when you send your next message. The inverse of `allowed-tools` |
 | `model` | string | No | Model to use when this command runs (e.g., `haiku`, `sonnet`, `opus`) |
 | `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `xhigh`, `max`) |
