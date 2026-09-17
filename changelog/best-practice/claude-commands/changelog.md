@@ -1120,3 +1120,13 @@ No priority action items — report is fully in sync with official documentation
 | 1 | LOW | Type Correction | Update `allowed-tools` field type from `string` to `string/list` to match official docs and sibling field `disallowed-tools` | ✅ COMPLETE (type column updated; no description or field count change) |
 
 _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge bumped v2.1.272 → v2.1.273._
+
+---
+
+## [2026-09-17 11:10 AM PKT] Claude Code v2.1.274
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Docs Gap | `/output-style [name]` present in report (row 13, Config tag) but absent from official commands reference table; CHANGELOG v2.1.269 explicitly adds it — docs-vs-changelog conflict | ✋ ON HOLD (keeping row per CHANGELOG sourcing; defer until official docs explicitly include or remove the command) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still tracked). Version badge bumped v2.1.273 → v2.1.274._
