@@ -1256,3 +1256,13 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 | 1 | HIGH | New Field | Add `omitClaudeMd` to Frontmatter Fields table (boolean, optional — Set to `true` to launch without user, project, and local CLAUDE.md files; managed policy files still load. Ignored when agent runs as main session via `--agent` or `agent` setting. Introduced in v2.1.271) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-09-15) |
 | 2 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
 | 3 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
+
+---
+
+## [2026-09-18 11:42 AM PKT] Claude Code v2.1.276
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `omitClaudeMd` to Frontmatter Fields table (boolean, optional — Set to `true` to launch without user, project, and local CLAUDE.md files; managed policy files still load. Ignored when agent runs as main session via `--agent` or `agent` setting. Introduced in v2.1.271) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-09-15) |
+| 2 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
+| 3 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
