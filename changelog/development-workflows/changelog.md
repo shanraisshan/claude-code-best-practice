@@ -3109,3 +3109,31 @@
 | 14 | LOW | Count | BMAD skills 35→19 | ON HOLD (1st consecutive of 19; Sep 16 just applied 29→35; await 2nd run) |
 | 15 | LOW | Count | ECC counts (68a/94c/286s) | ON HOLD (low confidence 0.60 from API failures; keep frozen) |
 | 16 | LOW | Count | GSD commands 85 | ON HOLD (archived repo; stars-don't-fall rule applies) |
+
+---
+
+## [2026-09-18 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★ 137k → 138k | COMPLETE (RECURRING — GitHub MCP API: 137,675 > 137,500 midpoint) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 264k → 265k | COMPLETE (RECURRING — GitHub MCP API: 264,634 > 264,500 midpoint) |
+| 3 | LOW | Star | Superpowers 288k no change (API: 288,195 < 288,500 midpoint) | COMPLETE (verified; no update) |
+| 4 | LOW | Star | GSD 64.6k no change (API: 64,514 < 64,550; archived repo; stars-don't-fall) | COMPLETE (verified; no regression applied) |
+| 5 | LOW | Star | gstack 133k no change (API: 133,488 < 133,500 midpoint) | COMPLETE (verified; no update) |
+| 6 | LOW | Star | OpenSpec 69k, BMAD 53k, omc 39.2k, CE 25.1k, HL 11.6k — no change | COMPLETE (all verified via GitHub MCP) |
+| 7 | MED | Count | OpenSpec skills 7 → 12 (alternating: 12→7→12 across runs) | ON HOLD (oscillating pattern; keep 7; revisit if stable 2+ consecutive) |
+| 8 | MED | Count | BMAD agents 0 → 5 (was confirmed 0 on Sep 17; agent sees 5 again) | ON HOLD (oscillating; keep 0; 2-consecutive rule) |
+| 9 | MED | Count | BMAD skills 35 → 29 (3rd different value: 35 applied Sep 16, 19 proposed Sep 17, 29 today) | ON HOLD (volatile; keep 35; await stability) |
+| 10 | MED | Workflow | BMAD-METHOD: new 9-step workflow proposed (brainstorming→prd→architecture→spec→create-epics-and-stories→sprint-planning→build→code-review→retrospective) | ON HOLD (1st consecutive; volatile repo; keep current 8-step) |
+| 11 | MED | Count | Compound Engineering skills 36 → 35 (oscillating; 35→36 applied Sep 16, back to 35 today) | ON HOLD (oscillating; keep 36; 2-consecutive rule) |
+| 12 | MED | Count | oh-my-claudecode commands 0 → 21 (agent found 21 .md files in commands/; task description assumed 0) | ON HOLD (1st consecutive; 2-consecutive rule before overriding task description assumption) |
+| 13 | MED | Count | oh-my-claudecode skills 39 → 23 (agent found 23 SKILL.md dirs in skills/) | ON HOLD (1st consecutive; 2-consecutive rule) |
+| 14 | LOW | Workflow | gstack: 10-step /office-hours workflow → 8-step spec/autoplan/codex workflow | ON HOLD (1st consecutive; repo very active v1.87.0) |
+| 15 | LOW | Workflow | Matt Pocock Skills: workflow restructured (setup-matt-pocock-skills added; triage added; improve-codebase-architecture removed) | ON HOLD (1st consecutive; keep current 7-step) |
+| 16 | LOW | Workflow | oh-my-claudecode: current team-based 7 steps → omc-setup/deepinit/plan/team/execute/verify/release | ON HOLD (1st consecutive; v5.4.0 confirmed) |
+| 17 | LOW | Workflow | Compound Engineering: ce-brainstorm→ce-plan→ce-work flow → ce-setup/ce-pov/lfg/ce-work/ce-compound flow | ON HOLD (1st consecutive; 178 commits in 30 days) |
+| 18 | LOW | Workflow | HumanLayer: iterate_plan moved before implement_plan; local_review removed | ON HOLD (1st consecutive; repo unchanged since Jun 19 — likely agent interpretation drift) |
+| 19 | LOW | Count | Spec Kit skills 0 → 2 (agent found .github/skills/ with code-review + add-community-extension) | ON HOLD (1st consecutive; non-standard location; 2-consecutive rule) |
+| 20 | LOW | Note | ECC repo (affaan-m/everything-claude-code) confirmed not publicly searchable via GitHub API (MCP returns "resources do not exist") | ON HOLD (keep frozen at 260k; repo URL may have changed) |
+| 21 | LOW | Note | shields.io curl blocked (proxy); WebFetch 503; GitHub MCP search_repositories authoritative for star verification | COMPLETE (RECURRING — MCP method established across all runs) |
