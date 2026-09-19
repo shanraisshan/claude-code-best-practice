@@ -1110,3 +1110,39 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-09-15 11:11 AM PKT] Claude Code v2.1.272
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-16 11:10 AM PKT] Claude Code v2.1.273
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Type Correction | Update `allowed-tools` field type from `string` to `string/list` to match official docs and sibling field `disallowed-tools` | ✅ COMPLETE (type column updated; no description or field count change) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge bumped v2.1.272 → v2.1.273._
+
+---
+
+## [2026-09-17 11:10 AM PKT] Claude Code v2.1.274
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Docs Gap | `/output-style [name]` present in report (row 13, Config tag) but absent from official commands reference table; CHANGELOG v2.1.269 explicitly adds it — docs-vs-changelog conflict | ✋ ON HOLD (keeping row per CHANGELOG sourcing; defer until official docs explicitly include or remove the command) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still tracked). Version badge bumped v2.1.273 → v2.1.274._
+
+---
+
+## [2026-09-18 11:09 AM PKT] Claude Code v2.1.276
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-19 11:10 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/output-style` — docs use `[style]` as the argument placeholder; report uses `[name]` | ✋ ON HOLD (placeholder wording only; below drift threshold — defer to next run) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
+| 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |

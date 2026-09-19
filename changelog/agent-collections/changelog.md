@@ -10,6 +10,30 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-18 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (153k = 153,204 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 = 279 (commit-verified "279 agents x 14 tools"; conf 0.95; exact match) | INVALID (exact match; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,165 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → ~156 (total .md 174 − ~18 non-agent = ~156; conf 0.75 below 0.88 threshold; Sept 14 added memory-curator + auth-integration-engineer + webhook-engineer; within documented oscillation band 153–159; no confirmed net removal) | INVALID (RECURRING oscillation; conf 0.75 below 0.88 threshold; table shows 158; within documented oscillation band; no change) |
+| 5 | LOW | Sort | Verify sort order (153k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
+## [2026-09-16 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 152k to 153k | COMPLETE (GitHub API: 152,628 exact; crosses k-boundary; RECURRING — milestone crossing; conf 0.90) |
+| 2 | MED | Count | Update msitarzewski/agency-agents agents from 273 to 279 | COMPLETE (commit-verified: "outputs eval 26/26 (279 agents x 14 tools)" Sep 8; conf 0.90 > 0.88 threshold; 6 new agents landed Sep 8: China Network Engineer, Platform Engineer, Focus Music Agent, PDF Engine Architect, ATS Validator Architect, Universal Document Compiler; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,102 exact) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 153 (−5; code-search path:categories 163 total .md − 10 README.md = 153; conf 0.88; net additions +3 in last 30 days (auth-integration-engineer, webhook-engineer, memory-curator) but total shows −5 vs table; apparent unaccounted removals; borderline conf at threshold) | INVALID (RECURRING oscillation; net additions +3 documented but net count shows −5 vs table 158; unaccounted removals; borderline conf 0.88 at threshold with no explicit removal evidence; within documented oscillation band; no change) |
+| 5 | LOW | Sort | Verify sort order (153k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-13 08:42 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
