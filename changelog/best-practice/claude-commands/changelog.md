@@ -1136,3 +1136,13 @@ _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands st
 ## [2026-09-18 11:09 AM PKT] Claude Code v2.1.276
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-19 11:10 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/output-style` — docs use `[style]` as the argument placeholder; report uses `[name]` | ✋ ON HOLD (placeholder wording only; below drift threshold — defer to next run) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
+| 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
