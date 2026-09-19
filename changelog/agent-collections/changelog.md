@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-19 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (153k = 153,407 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 = 279 (tree count 265, commit-msg evidence supports 279; gap of 14 due to WebFetch partial summarization of large dirs; commit-msgs authoritative; conf 0.85; exact match) | INVALID (exact match; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,190 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → 156 (code search total_count=174 − 18 non-agent = 156; conf 0.88 exactly at threshold; Sep 14 +3 adds (memory-curator, auth-integration-engineer, webhook-engineer) confirmed but net vs table still −2; within documented oscillation band 153–159; borderline conf at threshold) | INVALID (RECURRING oscillation; conf 0.88 exactly at threshold; net additions +3 confirmed but total −2 vs table 158; unaccounted delta; within oscillation band; no change) |
+| 5 | LOW | Sort | Verify sort order (153k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-18 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
