@@ -1283,3 +1283,25 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-07 10:53 AM PKT] Claude Code v2.1.263
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.263; update header counts from "140+ settings / 315+ env vars" to "145+ settings / 320+ env vars". Confirmed via official settings-reference page | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Settings | Add `bashOutputMaxChars` and `taskOutputMaxChars` (number, unset/30k–32k, v2.1.261+) to General Settings — inline output cap for Bash and background-task tools, clamped 4000–128000. Confirmed in v2.1.261 changelog | ✅ COMPLETE (both added to General Settings table) — NEW |
+| 3 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean, v2.1.257+) to Permission Keys — blocks file reads outside session working dirs in all permission modes. Confirmed in settings-reference | ✅ COMPLETE (added to Permission Keys table) — NEW |
+| 4 | HIGH | Missing Settings | Add `timeFormat` (string, "auto", v2.1.257+) and `timeZone` (string, system TZ, v2.1.257+) to Display Settings. Confirmed in v2.1.257 changelog and settings-reference | ✅ COMPLETE (both added to Display Settings table) — NEW |
+| 5 | HIGH | Wrong Description | Fix `enableArtifact` semantics — `false` disables artifacts entirely; `true` is same as unset (strict-value exception from any scope). Original description was inverted. Confirmed in settings-reference | ✅ COMPLETE (description corrected) — NEW |
+| 6 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope — honored from User or managed settings only; project and local values are silently ignored. Confirmed in settings-reference | ✅ COMPLETE (scope corrected) — NEW |
+| 7 | HIGH | Wrong Scope | Fix `allowedMcpServers` and `deniedMcpServers` scope from "Managed only" → "Any". Entry-level `serverCommand` confirms this is used in project settings. Confirmed in settings-reference | ✅ COMPLETE (scope corrected) — NEW |
+| 8 | HIGH | Wrong Example | Fix `allowedMcpServers.serverCommand` from string to array format: `["npx", "-y", "@modelcontextprotocol/server-filesystem"]`. Confirmed in settings-reference | ✅ COMPLETE (example corrected) — NEW |
+| 9 | HIGH | Model Config | Add `"best"` model alias (resolves to latest Fable where available, else Opus equivalent). Update `"fable"` → Claude Fable 5.1 (since v2.1.255). Confirmed in v2.1.255 and v2.1.263 changelog | ✅ COMPLETE (added alias, updated description) — NEW |
+| 10 | HIGH | Wrong Description | Add `permissions.defaultMode` note: as of v2.1.257, `"bypassPermissions"` value is also ignored when set from project/local settings. Confirmed in v2.1.257 changelog | ✅ COMPLETE (note added) — NEW |
+| 11 | MED | Deprecated Setting | Add `keybindingFlavor` deprecation notice — DEPRECATED since v2.1.261, accepted but has no effect. Confirmed in v2.1.261 changelog | ✅ COMPLETE (deprecation note added) — NEW |
+| 12 | MED | Missing Env Var | Add `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` (v2.1.257) — forces model onto all subagents overriding per-spawn/agent-definition overrides. In v2.1.257 changelog; not yet on official env-vars page | ✅ COMPLETE (added with changelog-only annotation) — NEW |
+| 13 | MED | Missing Command | Add `/skill-doctor` to Useful Commands — shows unused skills and their context token cost (v2.1.263). Confirmed in v2.1.263 changelog | ✅ COMPLETE (added to Useful Commands table) — NEW |
+| 14 | LOW | Persistent Suspect | `OTEL_LOG_TOOL_DETAILS` — 56th consecutive ON HOLD run. Not on official env-vars page. Rule 10B escalation: confirms presence in JSON schema only; annotated "in JSON schema, not on official page" | ✋ ON HOLD (schema-only annotation added in prior run; monitoring) — RECURRING (first seen: 2026-03-05) |
+| 15 | LOW | Persistent Suspect | `CLAUDE_CODE_RETRY_WATCHDOG` — confirmed on official env-vars page in v2.1.199 changelog. Annotation "not yet on official env-vars page" removed in prior run | ✅ COMPLETE (resolved in prior run) — RESOLVED |
