@@ -1146,3 +1146,13 @@ No priority action items — report is fully in sync with official documentation
 | 1 | LOW | Changed Argument | Update `/output-style` — docs use `[style]` as the argument placeholder; report uses `[name]` | ✋ ON HOLD (placeholder wording only; below drift threshold — defer to next run) |
 | 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
 | 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
+
+---
+
+## [2026-09-20 11:04 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/output-style` — confirmed in official docs: argument placeholder is `[style]` not `[name]`; apply fix (recurring from 2026-09-19 ON HOLD) | ✅ COMPLETE (argument updated from `[name]` to `[style]` at #13 in Config tag) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (official docs page truncated before reaching /status entry; unable to verify exact wording — defer to next run) |
+| 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (official docs page truncated before reaching /plugin entry; unable to verify exact wording — defer to next run) |
