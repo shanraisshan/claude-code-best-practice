@@ -3173,3 +3173,31 @@
 | 27 | LOW | Workflow | HumanLayer iterate_plan reorder (Sep 18 1st consecutive) — NOT confirmed (Agent 2: iterate_plan confirmed AFTER implement_plan; ordering unchanged) | ON HOLD (CANCELLED — not confirmed; keeping current workflow) |
 | 28 | LOW | Sort | Star order after updates: Superpowers 289k > Matt Pocock 265k > ECC 262k > Spec Kit 138k > gstack 134k > agent-skills 89k (OOS) > OpenSpec 69k > GSD 64.6k > BMAD 53k > omc 39.2k > CE 25.2k > HumanLayer 11.6k — same relative order | COMPLETE (no re-sort needed) |
 | 29 | LOW | Note | shields.io Bash curl blocked (proxy — empty response; recurring); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check) | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+
+---
+
+## [2026-09-20 09:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 265k → 266k (GitHub MCP API: 265,926 > 265,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update OpenSpec ★ 69k → 70k (GitHub MCP API: 69,591 > 69,500 midpoint) | COMPLETE (NEW — updated README table) |
+| 3 | HIGH | Star | Update oh-my-claudecode ★ 39.2k → 39.3k (GitHub MCP API: 39,261 > 39,250 midpoint) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update Superpowers skills 14 → 15 (2nd consecutive; v6.4.1 added diagnosing-superpowers skill; directory listing confirmed) | COMPLETE (NEW — 2nd consecutive applied; updated README table) |
+| 5 | HIGH | Count | Update Matt Pocock skills 37 → 38 (2nd consecutive; triage in engineering + implement-spec in in-progress confirmed) | COMPLETE (NEW — 2nd consecutive applied; updated README table) |
+| 6 | HIGH | Count | Update BMAD-METHOD skills 35 → 30 (2nd consecutive of value 30; structural change confirmed — src/bmm-skills/ and src/core-skills/ removed, consolidated to skills/ root; bmad-preview-ticketing added Sep 18) | COMPLETE (NEW — 2nd consecutive + structural evidence applied; updated README table) |
+| 7 | HIGH | Workflow | Update Superpowers workflow: executing-plans added as step 5 (between subagent-driven-development and test-driven-development); requesting-code-review promoted to top-level (ddf4ff) per v6.4.1 README (2nd consecutive) | COMPLETE (NEW — 2nd consecutive applied; 8-step workflow in README table) |
+| 8 | HIGH | Workflow | Update gstack workflow: /plan-devex-review added (sub-loop, between plan-design-review and plan-eng-review); /land-and-deploy added (top-level, before /retro); reordered plan-design-review before plan-eng-review per agent (2nd consecutive of these two additions) | COMPLETE (NEW — 2nd consecutive applied; 12-step workflow in README table) |
+| 9 | MED | Count | ECC commands 94 → 147 (Agent 1: 147 .md files in root commands/; confidence 0.73) | ON HOLD (NEW — 1st consecutive; low confidence; keep 94) |
+| 10 | MED | Count | gstack skills 53 → 54 (Agent 2: AGENTS.md lists 54 skills; prior ON HOLD 53→52 superseded) | ON HOLD (NEW — 1st consecutive of 54; volatile baseline; keep 53) |
+| 11 | MED | Workflow | BMAD-METHOD: new 8-step pipeline starting with /bmad-prd → /bmad-architecture → /bmad-spec → /bmad-create-epics-and-stories → /bmad-build → /bmad-code-review → /bmad-review → /bmad-retrospective (drops bmad-forge-idea, bmad-product-brief; adds architecture + create-epics-and-stories) | ON HOLD (NEW — 1st consecutive; volatile repo; keep current 8-step) |
+| 12 | MED | Workflow | oh-my-claudecode: new 7-step pipeline /omc-setup → /deepinit → /ralplan → /execute → /verify → /review → /release (replaces current deep-interview/ralplan/team-based pipeline) | ON HOLD (NEW — 1st consecutive of this variant; keep current 7-step) |
+| 13 | MED | Workflow | Spec Kit: constitution step dropped (agent reports 5-step: speckit-specify → speckit-plan → speckit-tasks → speckit-implement → speckit-converge; no /speckit.constitution) | ON HOLD (NEW — 1st consecutive; keep current 6-step with constitution) |
+| 14 | LOW | Star | ECC 262k no change (API blocked — RECURRING; GitHub MCP returns "resources do not exist"; stars-don't-fall; keep 262k) | ON HOLD (RECURRING — API blocked 12th+ run; frozen at 262k) |
+| 15 | LOW | Count | OpenSpec skills 7 → 12 (Agent 2: 12 skill folders; oscillating 7↔12 across runs) | ON HOLD (RECURRING — oscillating; keep 7) |
+| 16 | LOW | Count | oh-my-claudecode commands 0 → 21 (Agent 2: 21 .md files in commands/; 3rd+ consecutive confirmation) | ON HOLD (RECURRING — task brief defines 0; convention maintained; keep 0) |
+| 17 | LOW | Workflow | gstack: /canary added as sub-loop post land-and-deploy (Agent 2: v1.87.0 confirmed; but land-and-deploy itself just applied today) | ON HOLD (NEW — 1st consecutive; canary is new; 2-consecutive rule) |
+| 18 | LOW | Workflow | HumanLayer: new 7-step variant (validate_plan moved post-implement_plan; describe_pr removed; local_review repositioned) — repo deprecated Jun 2026 | ON HOLD (NEW — 1st consecutive; repo deprecated; keep current 8-step) |
+| 19 | LOW | Star | No change: Superpowers 288,887 (<289,500), Spec Kit 137,993 (<138,500), gstack 133,721 (stars-don't-fall 134k), GSD 64,498 (archived; stars-don't-fall 64.6k), BMAD 53,252 (<53,500), CE 25,162 (<25,250), HumanLayer 11,589 (<11,650) | COMPLETE (verified via GitHub MCP live API) |
+| 20 | LOW | Sort | Sort order preserved after updates: 289k > 266k > 262k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k | COMPLETE (no re-sort needed) |
+| 21 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked | COMPLETE (RECURRING — GitHub MCP method established across all runs) |
