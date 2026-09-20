@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2019%2C%202026%2011%3A10%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.278-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2020%2C%202026%2011%3A04%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.278-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -57,7 +57,7 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | 10 | `/focus` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The selection persists across sessions; set `viewMode` in settings to override it. Only available in fullscreen rendering |
 | 11 | `/import [codex\|gemini\|cursor] [--dry-run] [--yes]` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Bring configuration from other coding agents on your machine (currently OpenAI Codex, Google Gemini CLI, or Cursor) into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In non-interactive mode (`-p`), lists what it found and gives you the command that confirms the import. `--dry-run` previews without writing; `--yes` skips the interactive picker. Importing from Cursor requires v2.1.265 or later |
 | 12 | `/keybindings` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Open or create your keybindings configuration file |
-| 13 | `/output-style [name]` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | List and switch output styles, including over Remote Control and in cloud and other headless sessions |
+| 13 | `/output-style [style]` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | List and switch output styles, including over Remote Control and in cloud and other headless sessions |
 | 14 | `/permissions` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and use the Auto mode tab to view or edit classifier rules and review recent auto mode denials. Alias: `/allowed-tools` |
 | 15 | `/powerup` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | Discover Claude Code features through quick interactive lessons with animated demos |
 | 16 | `/privacy-settings` | ![Config](https://img.shields.io/badge/Config-F39C12?style=flat) | View and update your privacy settings. Only available for Pro and Max plan subscribers |
