@@ -1156,3 +1156,14 @@ No priority action items — report is fully in sync with official documentation
 | 1 | LOW | Changed Argument | Update `/output-style` — confirmed in official docs: argument placeholder is `[style]` not `[name]`; apply fix (recurring from 2026-09-19 ON HOLD) | ✅ COMPLETE (argument updated from `[name]` to `[style]` at #13 in Config tag) |
 | 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (official docs page truncated before reaching /status entry; unable to verify exact wording — defer to next run) |
 | 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (official docs page truncated before reaching /plugin entry; unable to verify exact wording — defer to next run) |
+
+---
+
+## [2026-09-21 11:13 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand (ON HOLD from 2026-09-19/20) | ❌ INVALID (agent spot-checked official docs; current description matches docs substance — no `--marketplace` flag present in reference table) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status (ON HOLD from 2026-09-20) | ✋ ON HOLD (agent confirmed official docs table does not yet reflect Auto mode server row; no drift to apply) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge date bumped Sep 20 → Sep 21, 2026._
