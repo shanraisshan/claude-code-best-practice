@@ -35,6 +35,38 @@
 | 19 | MED | Changed Description | Update `OTEL_LOG_RAW_API_BODIES` from `1` to `file:<dir>` format (v2.1.274 changed behavior) | ✅ COMPLETE (description updated to reflect file:<dir> and legacy 1 format) |
 | 20 | LOW | New Content | Add AGENTS.md fallback note to Settings Hierarchy section (v2.1.277) | ✅ COMPLETE (note added) |
 | 21 | LOW | Useful Commands | Add `claude hooks` interactive menu (v2.1.277) and `claude plugin eval` (v2.1.269) to Useful Commands | ✅ COMPLETE (both commands added to table) |
+| 22 | HIGH | Missing Settings | Add `maxEffortLevel` (any scope, restrictive exception) — caps effort level; lowest value across all scopes wins (v2.1.267) | ✅ COMPLETE (added to Model Overrides table) |
+| 23 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean) — refuse file reads outside working dirs in every permission mode (v2.1.271) | ✅ COMPLETE (added to Permission Keys table) |
+| 24 | HIGH | Missing Settings | Add `isolatePeerMachines` (boolean, restrictive exception) — prompt before messaging sessions on other machines | ✅ COMPLETE (added to General Settings table) |
+| 25 | HIGH | Missing Settings | Add `bashEditDiffEnabled` (boolean, user/managed) — return diff in tool result when Bash handles edits (v2.1.269) | ✅ COMPLETE (added to General Settings table) |
+| 26 | HIGH | Missing Settings | Add `bashOutputMaxChars` (number) — cap inline command output; overrides `BASH_MAX_OUTPUT_LENGTH` env var | ✅ COMPLETE (added to General Settings table) |
+| 27 | HIGH | Missing Settings | Add `enableWorkflows` (boolean, any) — turn dynamic workflows on/off against plan default | ✅ COMPLETE (added after disableWorkflows) |
+| 28 | HIGH | Missing Settings | Add `managedMcpServers` (array, managed only) — deliver remote MCP servers to all users | ✅ COMPLETE (added to MCP Settings table) |
+| 29 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string, managed only) — compose vs. single managed source; also fix hierarchy contradiction | ✅ COMPLETE (added to Managed-only table; hierarchy text fixed) |
+| 30 | MED | Missing Settings | Add `skipAutoPermissionPrompt` (boolean, user/managed) — skip one-time auto-mode entry notice | ✅ COMPLETE (added to Permission Keys table) |
+| 31 | MED | Missing Settings | Add `promptSuggestionEnabled` (boolean, any) — show/hide prompt suggestions in input box | ✅ COMPLETE (added to Display Settings table) |
+| 32 | MED | Missing Settings | Add `sandbox.ripgrep` (string, user/managed) — path to custom ripgrep binary inside sandbox | ✅ COMPLETE (added to Sandbox table after sandbox.socatPath) |
+| 33 | MED | Missing Settings | Add `disableDesktopLocalSessions` (boolean, managed only) — disable device Desktop sessions | ✅ COMPLETE (added to Managed-only table) |
+| 34 | MED | Missing Settings | Add `sshHostAllowlist` (array, managed only) — limit hosts for Desktop SSH sessions | ✅ COMPLETE (added to Managed-only table) |
+| 35 | MED | Missing Settings | Add `copyOnSelect` (boolean) — auto-copy selected text to clipboard (Global Config table) | ✅ COMPLETE (added to Global Config table) |
+| 36 | HIGH | Changed Behavior | `permissions.defaultMode: bypassPermissions` — no longer effective from project/local settings as of v2.1.257; add scope restriction note | ✅ COMPLETE (note added to bypassPermissions mode entry) |
+| 37 | HIGH | Changed Behavior | `modelPicker` — type was `object`, docs and example both show `array`; also project/local settings ignored (v2.1.242+) | ✅ COMPLETE (type fixed to array; scope note added) |
+| 38 | HIGH | Missing Permissions | Add `Artifact` permission rule to Tool Permission Syntax table; `WebFetch` deny/ask rules no longer cover Artifact traffic (v2.1.269) | ✅ COMPLETE (Artifact row added to permission syntax table) |
+| 39 | HIGH | Changed Behavior | `enableArtifact` — add restrictive-value exception: `false` from any scope blocks Artifact tool even against managed `true` (v2.1.242+) | ✅ COMPLETE (restrictive exception language added to description) |
+| 40 | MED | Stale Description | `CCR_FORCE_BUNDLE` — description referenced deprecated `--remote` flag; updated to `--cloud` | ✅ COMPLETE (--remote → --cloud) |
+| 41 | MED | Missing Content | Workspace-trust gating — `allow` rules and `env` values require folder trust; `deny`/`ask` apply immediately | ✅ COMPLETE (callout added to Permissions section) |
+| 42 | HIGH | Missing Section | Add "Settings in cloud sessions" subsection — project settings, user settings, cloud/managed differences | ✅ COMPLETE (subsection added to Settings Hierarchy) |
+| 43 | HIGH | Missing Content | Add `--settings` merge semantics note — JSON merges key-by-key, not full replacement | ✅ COMPLETE (blockquote added in hierarchy section) |
+| 44 | HIGH | Missing Content | Add "env vars are not a hierarchy level" note — resolved per key-pair alongside settings | ✅ COMPLETE (blockquote added in hierarchy section) |
+| 45 | HIGH | Missing Content | Add consolidated restrictive-value exceptions list: 9 keys where strictest-scope value always wins | ✅ COMPLETE (blockquote listing all 9 keys added) |
+| 46 | HIGH | Missing Env Vars | Add `ANTHROPIC_PROFILE` — name of Anthropic auth profile | ✅ COMPLETE (added to env vars table) |
+| 47 | HIGH | Missing Env Vars | Add `ANTHROPIC_FEDERATION_RULE_ID` + `ANTHROPIC_ORGANIZATION_ID` — Workload Identity Federation | ✅ COMPLETE (added to env vars table) |
+| 48 | MED | Missing Env Vars | Add `CLAUDE_AX_PREPARK_MS` (default 50) + `CLAUDE_AX_STARTUP_QUIET_MS` (default 3000) — startup timing vars | ✅ COMPLETE (added after CLAUDE_AX_SCREEN_READER) |
+| 49 | MED | Missing Env Vars | Add `ENABLE_BETA_TRACING_DETAILED` — detailed beta tracing alongside BETA_TRACING_ENDPOINT | ✅ COMPLETE (added near OTel vars) |
+| 50 | MED | Missing Env Vars | Add `CLAUDE_CODE_WEBFETCH_TIMEOUT_SECS` (default 30s) + `CLAUDE_CODE_WEBFETCH_BODY_SIZE_LIMIT_MB` (default 50 MB) (v2.1.264) | ✅ COMPLETE (added after CLAUDE_CODE_WEBFETCH_DEADLINE_MS) |
+| 51 | MED | Missing Env Vars | Add 4 agents manifest vars: `CLAUDE_CODE_AGENTS_SETTINGS_TIMEOUT_MS`, `MANIFEST_TIMEOUT_MS`, `MANIFEST_POLL_INTERVAL_MS`, `MAX_RETRY_DELAY_MS` (v2.1.264) | ✅ COMPLETE (added after CLAUDE_CODE_SUBAGENT_MODEL) |
+| 52 | LOW | Missing Env Vars | Add `ANTHROPIC_UNIX_SOCKET` — local proxy Unix socket for org policy fetch (v2.1.267–v2.1.271) | ✅ COMPLETE (added after ANTHROPIC_CUSTOM_HEADERS) |
+| 53 | MED | Boundary Fix | `CLAUDE_CLIENT_PRESENCE_FILE` — startup-only variable; add note that it cannot be set via settings file `env` key | ✅ COMPLETE (note appended to row description) |
 
 ---
 
