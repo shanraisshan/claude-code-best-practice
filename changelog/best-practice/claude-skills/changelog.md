@@ -1098,3 +1098,14 @@ No new drift detected — frontmatter fields (20) are fully synchronized with of
 | 1 | HIGH | Resolved ON HOLD | `review` (row 15) — recurring ON HOLD from 2026-07-30: today's research agent explicitly lists `review` among 18 [Skill]-marked rows in commands reference and counts it among 16 distinct bundled skills; only `checkup` and `proactive` identified as aliases; `review` is not flagged as alias in this fetch | ❌ INVALID (today's research confirms `review` is [Skill]-marked and distinct; row 15 is correct, no removal needed; recurring ambiguity resolved) |
 | 2 | MED | Potential Removed Skill | `security-review` (row 16) — not marked [Skill] in commands reference; official docs state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a distinct bundled skill; no changelog corroboration of removal in last 10 versions (v2.1.269–v2.1.278) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
 | 3 | MED | Potential Removed Skill | `skill-doctor` (row 18) — not marked [Skill] in commands reference; docs classify it as built-in command; no changelog corroboration of removal in last 10 versions (v2.1.269–v2.1.278); persistent docs-rendering ambiguity across multiple runs | ✋ ON HOLD (recurring from 2026-09-15; awaiting human review before removing or reclassifying) |
+
+---
+
+## [2026-09-21 10:03 AM PKT] Claude Code v2.1.278
+
+No new drift detected — frontmatter fields (20) and bundled skills (18) are fully synchronized with official docs. No new bundled skills or frontmatter fields in v2.1.267–v2.1.278. Two recurring ON HOLD removals continue.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Potential Removed Skill | `security-review` (row 16) — official docs state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a distinct bundled skill; commands reference carries no [Skill] marker; no changelog corroboration of removal in last 10 versions (v2.1.269–v2.1.278) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
+| 2 | MED | Potential Removed Skill | `skill-doctor` (row 18) — commands reference does not consistently mark it [Skill]; docs-rendering ambiguity persists across multiple runs; no changelog corroboration of removal in last 10 versions (v2.1.269–v2.1.278) | ✋ ON HOLD (recurring from 2026-09-15; awaiting human review before removing or reclassifying) |
