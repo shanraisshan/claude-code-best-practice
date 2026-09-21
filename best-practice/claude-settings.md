@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2001%2C%202026%2010%3A39%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.252-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2021%2C%202026%2010%3A40%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.278-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.252, Claude Code exposes **140+ settings** and **315+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.278, Claude Code exposes **145+ settings** and **330+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -55,6 +55,8 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 > **Note:** As of v2.1.75, the deprecated Windows fallback path `C:\ProgramData\ClaudeCode\managed-settings.json` has been removed. Use `C:\Program Files\ClaudeCode\managed-settings.json` instead.
 
 > **Note (v2.1.126):** `/config` now persists changes to `~/.claude/settings.json` instead of holding them in memory only. Edits made through the interactive Config UI survive restarts.
+
+> **Note (v2.1.277):** `AGENTS.md` is supported as a fallback when no `CLAUDE.md` exists in the project. Functionally equivalent to `CLAUDE.md`, but intended specifically for agent documentation. When both files exist, `CLAUDE.md` takes precedence.
 
 **Managed-only policy keys:**
 
@@ -421,6 +423,7 @@ Configure Model Context Protocol servers for extended capabilities.
 | `allowedChannelPlugins` | array | Managed only | Allowlist of channel plugins that may push messages. Replaces the default Anthropic allowlist when set. Undefined = fall back to the default, empty array = block all channel plugins. Requires `channelsEnabled: true`. Each entry is an object with `marketplace` and `plugin` fields (v2.1.84) |
 | `allowAllClaudeAiMcps` | boolean | Managed only | Load claude.ai cloud MCP connectors alongside `managed-mcp.json`. When enabled, claude.ai-hosted MCP connectors are made available in addition to admin-deployed managed MCP servers |
 | `disableClaudeAiConnectors` | boolean | Any | Disable auto-fetching of claude.ai MCP connectors. When `true`, claude.ai cloud connectors are not loaded. **Restrictive-value exception:** `true` applies from any scope, including project settings, even against a managed `false` — lower-priority scopes can opt out but cannot opt in (v2.1.182) |
+| `gatewayInternalNetworks` | string[] | Managed only | Allow `/login` to your Claude Gateway on your organization's public IPv4 block. Entries are IPv4 CIDR ranges treated as internal-network sources for gateway authentication flows (v2.1.273) |
 
 ### MCP Server Matching (Managed Settings)
 
@@ -555,6 +558,8 @@ Configure Claude Code plugins and marketplaces.
 | `pluginTrustMessage` | string | Managed only | Custom message displayed when prompting users to trust plugins |
 | `disableSideloadFlags` | boolean | Managed only | Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` startup flags. When `true`, users cannot bypass `strictKnownMarketplaces` by passing sideload flags at launch. Use in managed environments to enforce marketplace-only plugin distribution (v2.1.193) |
 | `disableCommandPluginSources` | boolean | Managed only | Block marketplace sources of type `command` (dynamic plugin-directory resolution via a local command). When `true`, `command`-typed marketplace source entries are ignored even if present in plugin configs. Use to prevent plugins that use command sources from loading in managed environments (v2.1.229+) |
+| `syncClaudeAiSkills` | boolean | Any | Opt out of skill syncing from claude.ai to terminal sessions. When `false`, skills are not pulled from your claude.ai account. **Restrictive-value exception:** `false` applies from any scope (v2.1.275) |
+| `syncClaudeAiPlugins` | boolean | Any | Opt out of plugin syncing from claude.ai to terminal sessions. When `false`, plugins are not pulled from your claude.ai account. **Restrictive-value exception:** `false` applies from any scope (v2.1.275) |
 
 **Marketplace source types:** `github`, `git`, `directory`, `settings`, `url`, `npm`, `file`, `archive`, `command`. Use `source: 'settings'` to declare a small set of plugins inline without setting up a hosted marketplace repository. Use `source: 'archive'` for zip-based plugin installation with SHA-256 pinning (v2.1.224). Use `source: 'command'` for dynamic plugin-directory resolution — a local command prints the plugin directory path, re-resolved each session; `mode: "link"` uses it in place instead of copying it (v2.1.229). Note: `hostPattern` is a *matcher* field for `blockedMarketplaces`, not a source type.
 
@@ -1154,7 +1159,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_STREAM_IDLE_TIMEOUT_MS` | Timeout in ms for the streaming idle watchdog. Two watchdogs apply: **byte-level** (default and minimum `300000` / 5 minutes, aborts when no bytes arrive on the wire) and **event-level** (default `90000` / 90 seconds, no minimum, aborts when no SSE events arrive). The byte watchdog is enabled by default for Anthropic API connections; control it via `CLAUDE_ENABLE_BYTE_WATCHDOG`. Increase the event timeout if long-running tools or slow networks cause premature timeout errors |
 | `OTEL_LOG_TOOL_DETAILS` | Set to `1` to include `tool_parameters` in OpenTelemetry events. Omitted by default for privacy (v2.1.85) |
 | `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` | Maximum content length in bytes for OpenTelemetry event payloads (default: `61440` / 60 KB). Truncates large tool inputs, outputs, or message bodies before emitting them as OTel events to prevent oversized payloads *(in v2.1.214 changelog, not yet on official env-vars page)* |
-| `OTEL_LOG_RAW_API_BODIES` | Set to `1` to emit full API request and response bodies as OpenTelemetry log events. Omitted by default for privacy and payload size. Useful for debugging at a gateway or proxy *(in v2.1.111 changelog, not yet on official env-vars page)* |
+| `OTEL_LOG_RAW_API_BODIES` | Set to `file:<dir>` to log API request and response bodies as JSON files in `<dir>`, with an `index.jsonl` linking each request to its response. Set to `1` (legacy) to emit as OpenTelemetry log events instead. Omitted by default for privacy and payload size. Useful for debugging at a gateway or proxy (v2.1.274) |
 | `OTEL_RESOURCE_ATTRIBUTES` | Comma-separated `key=value` pairs added as resource attributes on all OpenTelemetry metric data points emitted by Claude Code. Use to attach environment or deployment labels (e.g., `environment=production,team=platform`) that appear on every metric for filtering in your collector (v2.1.162) |
 | `OTEL_LOG_USER_PROMPTS` | Set to `1` to include the `user_system_prompt` field in OpenTelemetry LLM request spans. Omitted by default for privacy — user prompts can contain sensitive data, so opt in only when you control the OTel collector and have policies in place *(in v2.1.121 changelog, not yet on official env-vars page)* |
 | `OTEL_LOG_ASSISTANT_RESPONSES` | Set to `1` to include model response text in OpenTelemetry log events. Omitted by default for privacy and payload size. Use only when you control the OTel collector and have policies for handling model output *(in v2.1.193 changelog, not yet on official env-vars page)* |
@@ -1199,6 +1204,8 @@ Set environment variables for all Claude Code sessions.
 | `HTTPS_PROXY` | HTTPS proxy URL for network requests |
 | `NO_PROXY` | Comma-separated list of hosts that bypass proxy |
 | `MCP_TOOL_TIMEOUT` | MCP tool execution timeout in ms |
+| `MCP_SDK_GENERATION` | Set to `v1` to opt out of the v2 MCP client and use the legacy v1 protocol. Default is v2 on Bedrock/Vertex/Foundry/telemetry-disabled builds (v2.1.274) |
+| `MCP_PROTOCOL_NEGOTIATION` | Set to `legacy` to skip MCP 2026-07-28 protocol negotiation and use the older handshake. Use when connecting to MCP servers that do not support the updated protocol (v2.1.274) |
 | `MCP_CLIENT_SECRET` | MCP OAuth client secret |
 | `MCP_OAUTH_CALLBACK_PORT` | MCP OAuth callback port |
 | `IS_DEMO` | Enable demo mode |
@@ -1248,6 +1255,18 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` | Cache TTL in milliseconds for WebFetch responses. When set, fetched pages are cached for this duration to avoid redundant network requests for the same URL within a session. Set to `0` to disable caching (v2.1.233) |
 | `CLAUDE_CODE_ENABLE_TODO_TOOLS` | Set to `1` to enable the legacy `TodoWrite`/`TodoRead`/`TodoDone` tools as an alternative to the default `TaskCreate`/`TaskUpdate`/`TaskGet` task management tools (v2.1.234) |
 | `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` | Stagger delay in milliseconds between launching same-prefix agents in a dynamic workflow. When multiple agents share the same label prefix, this delay prevents simultaneous starts that could overwhelm downstream services. Default: `0` (no stagger) (v2.1.229) |
+| `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` | Maximum number of concurrent agents allowed in a dynamic workflow (1–256). Raises the workflow-level concurrency cap independent of the global subagent limit (v2.1.271) |
+| `CLAUDE_CODE_BG_TASKS_REPORT_RUNNING` | Set to `0` to suppress the "background task still running" notice. When unset (default), Claude Code reports running background tasks on each turn (v2.1.271) |
+| `CLAUDE_CODE_AUTO_MODE_SERVER` | Set to `0` to opt out of the server-side auto-mode safety classifier on Bedrock, Vertex, Foundry, and gateways. When unset (default), the server-side classifier is active for all supported platforms including the Anthropic API and Enterprise (v2.1.278) |
+| `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` | Maximum time in milliseconds the first non-interactive turn waits for MCP servers to connect. Set to `0` to skip the wait entirely and proceed before all servers are ready (v2.1.274) |
+| `CLAUDE_CODE_GATEWAY_HINT_HEADERS` | Set to `1` to include gateway hint request headers (`x-claude-code-agent-type`, `x-claude-code-request-class`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction`). Useful when your gateway routes or logs by request class (v2.1.273) |
+| `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` | Timeout in milliseconds for LLM gateway `/v1/models` discovery endpoint. Increase when gateway model enumeration is slow at startup. Default: 3000 (3 seconds) (v2.1.274) |
+| `CLAUDE_CODE_WEBFETCH_DEADLINE_MS` | Override the WebFetch tool timeout in milliseconds. Default: 300000 (5 minutes). Increase for slow upstream servers or decrease to fail fast (v2.1.274) |
+| `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY` | Set to `1` when your Claude Gateway sits behind a proxy that is the sole egress boundary. Tells Claude Code to treat the proxy as a trusted network edge for TLS and credential handling (v2.1.277) |
+| `CLAUDE_GATEWAY_DRAIN_TIMEOUT_MS` | Graceful drain timeout in milliseconds when the gateway process receives SIGTERM. Default: 25000 (25 seconds). Increase if in-flight requests need more time to complete (v2.1.277) |
+| `CLAUDE_GATEWAY_ALLOW_LOOPBACK` | Set to `1` to allow loopback connections to the Claude Gateway. Use in local development or CI environments where the gateway and client are on the same host (v2.1.277) |
+| `OTEL_LOG_MANAGED_SETTINGS` | Set to `1` to log resolved managed settings details to the OpenTelemetry collector. Values are redacted; only key names and digests are emitted. Useful for auditing which managed settings are active in a deployment (v2.1.274) |
+| `OTEL_METRICS_INCLUDE_REPOSITORY` | Set to `1` to tag all OpenTelemetry metric data points with `vcs.*` resource attributes (repository name, branch, commit). Useful for breaking down usage metrics by repository in multi-project deployments (v2.1.269) |
 
 ---
 
@@ -1272,6 +1291,8 @@ Set environment variables for all Claude Code sessions.
 | `/permissions` | View and manage permission rules |
 | `/usage-credits` | View remaining usage credits and limits. Renamed from `/extra-usage` in v2.1.144 (the old name still works) |
 | `claude gateway` | Manage Claude Gateway connections for organization-managed deployments. Requires `forceLoginMethod: "gateway"` in managed settings (v2.1.195) |
+| `claude hooks` | Interactive menu to view, edit, and remove hooks across user, project, and local settings scopes. Managed, plugin, and session hooks are shown read-only (v2.1.277) |
+| `claude plugin eval` | Run a plugin eval suite: evaluates each case in an isolated `claude -p` session with only the plugin under test loaded, scores it with configurable graders, and produces a reproducible JSON + HTML report. Pass a target path or installed plugin name. See `claude plugin eval --help` for full options (v2.1.269) |
 | `claude auto-mode reset` | Reset auto-mode classification for the current session. Prompts for confirmation; pass `--yes` to skip the prompt (v2.1.212) |
 | `/fork` | Fork the current session context into a new isolated subagent session (v2.1.212) |
 | `/subtask` | Launch an isolated subtask in a separate context. The subtask runs independently and results are returned when it completes (v2.1.212) |
