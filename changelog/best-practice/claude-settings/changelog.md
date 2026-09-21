@@ -10,6 +10,34 @@
 
 ---
 
+## [2026-09-21 10:40 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version | Update badge and header from v2.1.252 to v2.1.278; update counts to 145+ settings and 330+ env vars | ✅ COMPLETE (badge, version, and counts updated) |
+| 2 | HIGH | Missing Settings | Add `syncClaudeAiSkills` (boolean, Any) — opt out of skill sync from claude.ai (v2.1.275) | ✅ COMPLETE (added to Plugin Settings table) |
+| 3 | HIGH | Missing Settings | Add `syncClaudeAiPlugins` (boolean, Any) — opt out of plugin sync from claude.ai (v2.1.275) | ✅ COMPLETE (added to Plugin Settings table) |
+| 4 | HIGH | Missing Settings | Add `gatewayInternalNetworks` (string[], managed only) — allow /login to gateway on org's public IPv4 block (v2.1.273) | ✅ COMPLETE (added to MCP Settings table) |
+| 5 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_AUTO_MODE_SERVER` — opt out of server-side auto-mode classifier (v2.1.278) | ✅ COMPLETE (added to env vars table) |
+| 6 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` — raise workflow concurrent agent limit 1-256 (v2.1.271) | ✅ COMPLETE (added to env vars table) |
+| 7 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_GATEWAY_HINT_HEADERS` — enable gateway hint request headers (v2.1.273) | ✅ COMPLETE (added to env vars table) |
+| 8 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` — bound first-turn MCP server wait time (v2.1.274) | ✅ COMPLETE (added to env vars table) |
+| 9 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` — gateway model discovery timeout (v2.1.274) | ✅ COMPLETE (added to env vars table) |
+| 10 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_WEBFETCH_DEADLINE_MS` — override WebFetch tool timeout (v2.1.274) | ✅ COMPLETE (added to env vars table) |
+| 11 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_BG_TASKS_REPORT_RUNNING` — suppress background task running notices (v2.1.271) | ✅ COMPLETE (added to env vars table) |
+| 12 | MED | Missing Env Vars | Add `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY` — gateway proxy egress boundary flag (v2.1.277) | ✅ COMPLETE (added to env vars table) |
+| 13 | MED | Missing Env Vars | Add `CLAUDE_GATEWAY_DRAIN_TIMEOUT_MS` — gateway SIGTERM drain timeout (v2.1.277) | ✅ COMPLETE (added to env vars table) |
+| 14 | MED | Missing Env Vars | Add `CLAUDE_GATEWAY_ALLOW_LOOPBACK` — allow loopback gateway connections (v2.1.277) | ✅ COMPLETE (added to env vars table) |
+| 15 | MED | Missing Env Vars | Add `OTEL_LOG_MANAGED_SETTINGS` — log resolved managed settings to OTel (v2.1.274) | ✅ COMPLETE (added to env vars table) |
+| 16 | MED | Missing Env Vars | Add `OTEL_METRICS_INCLUDE_REPOSITORY` — tag OTel metrics with vcs.* attributes (v2.1.269) | ✅ COMPLETE (added to env vars table) |
+| 17 | MED | Missing Env Vars | Add `MCP_SDK_GENERATION` — opt out of v2 MCP client (v2.1.274) | ✅ COMPLETE (added near MCP env vars) |
+| 18 | MED | Missing Env Vars | Add `MCP_PROTOCOL_NEGOTIATION` — skip MCP 2026-07-28 negotiation (v2.1.274) | ✅ COMPLETE (added near MCP env vars) |
+| 19 | MED | Changed Description | Update `OTEL_LOG_RAW_API_BODIES` from `1` to `file:<dir>` format (v2.1.274 changed behavior) | ✅ COMPLETE (description updated to reflect file:<dir> and legacy 1 format) |
+| 20 | LOW | New Content | Add AGENTS.md fallback note to Settings Hierarchy section (v2.1.277) | ✅ COMPLETE (note added) |
+| 21 | LOW | Useful Commands | Add `claude hooks` interactive menu (v2.1.277) and `claude plugin eval` (v2.1.269) to Useful Commands | ✅ COMPLETE (both commands added to table) |
+
+---
+
 ## [2026-03-05 06:18 AM PKT] Claude Code v2.1.69
 
 | # | Priority | Type | Action | Status |
