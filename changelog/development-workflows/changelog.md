@@ -3201,3 +3201,34 @@
 | 19 | LOW | Star | No change: Superpowers 288,887 (<289,500), Spec Kit 137,993 (<138,500), gstack 133,721 (stars-don't-fall 134k), GSD 64,498 (archived; stars-don't-fall 64.6k), BMAD 53,252 (<53,500), CE 25,162 (<25,250), HumanLayer 11,589 (<11,650) | COMPLETE (verified via GitHub MCP live API) |
 | 20 | LOW | Sort | Sort order preserved after updates: 289k > 266k > 262k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k | COMPLETE (no re-sort needed) |
 | 21 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked | COMPLETE (RECURRING — GitHub MCP method established across all runs) |
+
+---
+
+## [2026-09-22 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 289k → 290k (GitHub MCP: 289,784 > 289,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 266k → 267k (GitHub MCP: 267,266 > 266,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update OpenSpec skills 7 → 12 (5+ consecutive runs all finding 12; Agent 2 lists all 12 by name; confidence 0.90; 2-consecutive rule exceeded; prior "oscillating" label no longer valid) | COMPLETE (RESOLVED — updated README table) |
+| 4 | HIGH | Workflow | Update BMAD-METHOD workflow 8-step → 9-step (2nd consecutive: bmad-architecture + bmad-create-epics-and-stories added; bmad-product-brief removed; bmad-walkthrough → bmad-review; bmad-code-review promoted to sub-loop fff3b0; Sep 20 was 1st consecutive) | COMPLETE (RECURRING — 2nd consecutive applied; updated README table) |
+| 5 | LOW | Star | Spec Kit 138k no change (MCP: 138,254 < 138,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | ECC 262k frozen (GitHub MCP API blocked — 14th+ consecutive run; stars-don't-fall; keep 262k) | ON HOLD (RECURRING — API blocked) |
+| 7 | LOW | Star | gstack 134k no change (MCP: 133,875 — above 133,500 midpoint; correctly displays 134k; below 134,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | OpenSpec 70k no change (MCP: 69,786 — above 69,500 midpoint; correctly displays 70k; below 70,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | GSD 64.6k no change (MCP: 64,482; archived repo; stars-don't-fall) | COMPLETE (RECURRING — no change; archived) |
+| 10 | LOW | Star | BMAD 53k no change (MCP: 53,319 < 53,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | oh-my-claudecode 39.3k no change (MCP: 39,292 — above 39,250 midpoint; correctly displays 39.3k; below 39,350 midpoint) | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | Compound Engineering 25.2k no change (MCP: 25,196 — above 25,150 midpoint; correctly displays 25.2k; below 25,250 midpoint) | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | HumanLayer 11.6k no change (MCP: 11,595 — above 11,550 midpoint; correctly displays 11.6k; below 11,650 midpoint) | COMPLETE (RECURRING — no change) |
+| 14 | MED | Workflow | Superpowers: executing-plans moved BEFORE subagent-driven-development (step 4 vs 5); subagent-driven-development becomes sub-loop; verification-before-completion added as step 7 sub (Agent 1: 289,784; 9-step reordering; v6.4.1) | ON HOLD (NEW — 1st consecutive of this specific reordering; keep current 8-step) |
+| 15 | MED | Workflow | Matt Pocock Skills: ask-matt replaces setup-matt-pocock-skills as step 1; improve-codebase-architecture removed; code-review from sub (fff3b0) to top (ddf4ff); 7-step pipeline (Agent 1: 267,266) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 16 | MED | Workflow | gstack: simplified to 11-step via autoplan/design-consultation flow — removes plan-ceo-review/plan-design-review/plan-devex-review/plan-eng-review/design-shotgun sub-loops; adds autoplan + design-consultation (Agent 2: 133,875; last push Sep 21) | ON HOLD (NEW — 1st consecutive of this simplified variant; keep current 12-step) |
+| 17 | MED | Workflow | oh-my-claudecode: team/execute/verify/release pattern (6-step) replaces team-plan/team-prd/team-exec/team-verify/team-fix (7-step); skills 39→43 (1st consecutive of 43) | ON HOLD (NEW — 1st consecutive; keep current 7-step; keep skills 39) |
+| 18 | LOW | Workflow | Compound Engineering: ce-work added as sub-loop; ce-commit-push-pr and ce-compound-refresh added (8-step vs current 6-step) | ON HOLD (NEW — 1st consecutive; keep current 6-step) |
+| 19 | LOW | Workflow | HumanLayer: ralph-research replaces /research_codebase; validate-plan becomes sub-loop; /local_review removed (7-step vs current 8-step; repo deprecated Jun 2026) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 20 | LOW | Count | BMAD agents 0→5 (5 persona skills in skills/ confirmed; oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 21 | LOW | Count | GSD agents 33→0, commands 85→67 (archived repo; counts-don't-fall convention; repo now redirects to open-gsd/gsd-core) | ON HOLD (RECURRING — archived; keep 33a/85c) |
+| 22 | LOW | Count | ECC counts frozen (confidence 0.55; API blocked; Agent finds 86 agents ~133 commands 292+ skills; keep 68a/94c/292s) | ON HOLD (RECURRING — low confidence; API blocked) |
+| 23 | LOW | Sort | Sort order after updates: 290k > 267k > 262k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 24 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 14th+ run | COMPLETE (RECURRING — GitHub MCP method established) |
