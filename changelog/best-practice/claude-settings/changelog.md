@@ -1306,3 +1306,26 @@
 | 14 | MED | Sandbox Note | Add per-command `allowed_domains` mechanism note to Sandbox section (v2.1.271) — domains scoped per invocation, not added to session allowlist. Confirmed in changelog | ✅ COMPLETE (note added to Sandbox table) — NEW |
 | 15 | LOW | New Commands | Add `claude plugin eval` (v2.1.269) and `/output-style` (v2.1.269) to Useful Commands. Confirmed in changelog | ✅ COMPLETE (both added to Useful Commands) — NEW |
 | 16 | LOW | Hyperlink Validation | Rule 9A: local file links `../.claude/settings.json` and `../!/claude-jumping.svg` — both exist ✓. Rule 9B: `json.schemastore.org/claude-code-settings.json` returns 301 → `www.schemastore.org` (valid JSON schema ✓); `code.claude.com/docs/en/settings-reference` returns 200 ✓. Rule 4A: hooks redirect link `github.com/shanraisshan/claude-code-hooks` assumed valid (checked in prior runs). All other sources unchanged from v2.1.252 run | ✅ COMPLETE (all links validated) — NEW |
+
+---
+
+## [2026-09-22 10:54 AM PKT] Claude Code v2.1.278 — Second-pass fixes (research agent report)
+
+Second research agent (a1821a98d1ef0f93c) delivered additional findings after context compaction. All HIGH/MED-confidence items applied.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Wrong Type | Fix `strictKnownMarketplaces` type boolean → array. Official: `undefined`=no restriction, `[]`=total lockdown incl. official marketplace, populated array=allowlist. Self-contradicted at line 569 (mentions wildcard entries). Confidence 0.97. Confirmed by settings-reference and plugin-marketplaces page | ✅ COMPLETE — NEW |
+| 2 | HIGH | Missing Settings | Add `bashOutputMaxChars` and `taskOutputMaxChars` (number, v2.1.261) — control inline output size before spooling to file (up to 128K). Confidence 0.97/0.95. Confirmed in changelog | ✅ COMPLETE (both added to General Settings) — NEW |
+| 3 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean) to Permission Keys — refuses reads outside working dirs in all modes incl. bypassPermissions. Confidence 0.96. Confirmed on permissions page | ✅ COMPLETE — NEW |
+| 4 | HIGH | Wrong Example | Fix `Bash(git * main)` example — official docs warn at startup about allow rules with `*` before the subcommand. Updated to `Bash(git push origin main)` with warning note. Confidence 0.93 | ✅ COMPLETE — NEW |
+| 5 | MED | Removed Key | Mark `permissionExplainerEnabled` removed in v2.1.257 — no-op. Confidence 0.92. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 6 | MED | Deprecated Key | Mark `keybindingFlavor` deprecated — "has no effect; word-editing shortcuts always follow readline." Confidence 0.90. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 7 | MED | Deprecated Key | Mark `disableArtifact` deprecated — "use `enableArtifact` instead." Confidence 0.88. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 8 | MED | Wrong Scope | Fix `allowedMcpServers`/`deniedMcpServers` scope "Managed only" → "Any file". Confidence 0.85. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 9 | MED | Wrong Scope | Fix `extraKnownMarketplaces` scope "Project" → "Any file". Confidence 0.88. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 10 | MED | Wrong Default | Fix `language` default "english" → "en" (locale code). Update Quick Reference example. Confidence 0.88. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 11 | MED | Wrong Example | Remove `mcpServers` block from Quick Reference `settings.json` example — not a settings.json key; MCP servers belong in `.mcp.json`. Confidence 0.85 | ✅ COMPLETE — NEW |
+| 12 | MED | Missing Env Vars | Add `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` (v2.1.274) and `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` (v2.1.269). Confirmed in changelog | ✅ COMPLETE — NEW |
+| 13 | MED | Missing Env Vars | Add `CLAUDE_CODE_HTTP_PROXY`, `CLAUDE_CODE_HTTPS_PROXY`, `CLAUDE_CODE_NO_PROXY` (Claude-specific proxy vars, override generic HTTP_PROXY). Add `CLAUDE_CODE_MCP_SERVER_CONNECT_TIMEOUT_MS`, `CLAUDE_CODE_MCP_SERVER_READ_TIMEOUT_MS`, `CLAUDE_CODE_MCP_SERVER_STARTUP_TIMEOUT_MS`, `MCP_SERVER_TIMEOUT_MS` (MCP timeout granularity). Confirmed on official env-vars page | ✅ COMPLETE (7 env vars added) — NEW |
+| 14 | LOW | Count Update | Update header counts: "145+ settings / 325+ env vars" → "150+ settings / 335+ env vars" to reflect additions across both passes | ✅ COMPLETE — NEW |
