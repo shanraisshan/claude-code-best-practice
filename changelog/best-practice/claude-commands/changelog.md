@@ -1167,3 +1167,14 @@ No priority action items — report is fully in sync with official documentation
 | 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status (ON HOLD from 2026-09-20) | ✋ ON HOLD (agent confirmed official docs table does not yet reflect Auto mode server row; no drift to apply) |
 
 _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge date bumped Sep 20 → Sep 21, 2026._
+
+---
+
+## [2026-09-22 11:10 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Docs Gap Resolved | `/output-style [style]` confirmed present in official commands reference table — closes ON HOLD from 2026-09-17 | ✅ COMPLETE (report row #13 already correct; docs gap is closed) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (recurring from 2026-09-21 — official docs still do not include Auto mode server row detail) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge date bumped Sep 21 → Sep 22, 2026._
