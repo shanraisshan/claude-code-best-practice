@@ -3232,3 +3232,27 @@
 | 22 | LOW | Count | ECC counts frozen (confidence 0.55; API blocked; Agent finds 86 agents ~133 commands 292+ skills; keep 68a/94c/292s) | ON HOLD (RECURRING — low confidence; API blocked) |
 | 23 | LOW | Sort | Sort order after updates: 290k > 267k > 262k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
 | 24 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 14th+ run | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-23 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update ECC ★ 262k → 266k (GitHub MCP API finally accessible; 266k confirmed; previously blocked 14+ consecutive runs) | COMPLETE (RESOLVED — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 267k → 268k (GitHub MCP: 268k range confirmed) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update GSD commands 85 → 97 (Agent 2: 97 .md files in commands/gsd/ confirmed) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update BMAD-METHOD skills 30 → 32 (Agent 2: 32 skill folders; 2 new skills since Sep 20 restructure) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Count | Update oh-my-claudecode skills 39 → 43 (2nd consecutive; Sep 22 was 1st; 4 new skill folders confirmed) | COMPLETE (RECURRING — 2nd consecutive applied; updated README table) |
+| 6 | LOW | Star | Superpowers 290k no change | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | Spec Kit 138k no change | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 134k no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 70k no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD 64.6k no change (archived since Jun 2026; stars-don't-fall; no MCP verification possible) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 11 | LOW | Star | BMAD 53k no change | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | oh-my-claudecode 39.3k no change | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | Compound Engineering 25.2k no change | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Star | HumanLayer 11.6k no change | COMPLETE (RECURRING — no change) |
+| 15 | MED | Workflow | ECC new 7-step proposal, Superpowers 9-step reordering variant, Matt Pocock 7-step, BMAD 11-step expansion, oh-my-claudecode 6-step, GSD 7-step, gstack 8-step condensed, OpenSpec 5-step, HumanLayer 7-step | ON HOLD (RECURRING — all single/first-consecutive; keep current pipelines) |
+| 16 | LOW | Sort | Sort order after updates: 290k > 268k > 266k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 17 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP authoritative for all star verifications; ECC API unblocked this run after 14+ blocked runs | COMPLETE (RECURRING — GitHub MCP method established) |
