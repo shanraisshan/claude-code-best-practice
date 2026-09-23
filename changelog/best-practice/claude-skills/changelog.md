@@ -1120,3 +1120,14 @@ No new drift detected — frontmatter fields (20) and bundled skills (18) are fu
 |---|----------|------|--------|--------|
 | 1 | MED | Potential Removed Skill | `security-review` (row 16) — official docs state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a distinct bundled skill; commands reference carries no [Skill] marker; no changelog corroboration of removal in last 10 versions (v2.1.269–v2.1.278) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
 | 2 | MED | Potential Removed Skill | `skill-doctor` (row 18) — commands reference does not consistently mark it [Skill]; docs-rendering ambiguity persists across multiple runs; no changelog corroboration of removal in last 10 versions (v2.1.269–v2.1.278) | ✋ ON HOLD (recurring from 2026-09-15; awaiting human review before removing or reclassifying) |
+
+---
+
+## [2026-09-23 10:12 AM PKT] Claude Code v2.1.280
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Skill | Add `update-config` to official bundled skills table — configure the Claude Code harness via `settings.json`; describe any settings change (allow a command, set an env var, add a hook) and Claude edits the matching settings file; for simple options like theme or model, use `/config` instead. Count updated 18→19 | ✅ COMPLETE (added as row 19, count updated 18→19) |
+| 2 | HIGH | Removed Skill | Remove `review` (row 15) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; docs state "the bundled alias `/review` never runs your skill"; row 15 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 19→18 after removal | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 3 | MED | Potential Removed Skill | `security-review` (row 16) — official docs state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a distinct bundled skill; commands reference carries no [Skill] marker; no changelog corroboration of removal in last 10 versions (v2.1.271–v2.1.280) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
+| 4 | MED | Potential Removed Skill | `skill-doctor` (row 18) — skills page lists it but commands reference does not consistently mark it [Skill]; docs-rendering inconsistency persists across multiple runs; no changelog corroboration of removal in last 10 versions (v2.1.271–v2.1.280) | ✋ ON HOLD (recurring from 2026-09-15; awaiting human review before removing or reclassifying) |
