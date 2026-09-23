@@ -1178,3 +1178,21 @@ _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands st
 | 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (recurring from 2026-09-21 — official docs still do not include Auto mode server row detail) |
 
 _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge date bumped Sep 21 → Sep 22, 2026._
+
+---
+
+## [2026-09-23 11:15 AM PKT] Claude Code v2.1.280
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/feedback [report]` — without an argument, now opens a drafts queue of feedback Claude drafted, where you can review, edit, send, or discard them | ✅ COMPLETE (drafts queue behavior added to description at #36 in Debug tag) |
+| 2 | MED | Changed Description | Update `/bug [report]` — on a third-party provider or without Anthropic credentials, writes a local archive under `~/.claude/feedback-bundles/`; in VS Code, opens the extension's own dialog (v2.1.229+) | ✅ COMPLETE (third-party and VS Code behavior added to description at #35 in Debug tag) |
+| 3 | MED | Changed Description | Update `/heapdump` — hidden from the command menu (type in full); writes to home directory on Linux when no Desktop folder exists; privacy note about `.heapsnapshot` containing conversation and credentials | ✅ COMPLETE (visibility, Linux path, and privacy detail added to description at #37 in Debug tag) |
+| 4 | MED | Changed Description | Update `/import` — not available on Bedrock, Agent Platform (Vertex), Foundry, Claude Platform on AWS, a Claude apps gateway, or with feature-flag fetching turned off | ✅ COMPLETE (availability restrictions added to description at #11 in Config tag) |
+| 5 | MED | Changed Description | Update `/terminal-setup` — Apple Terminal enables Option+Enter for newlines and turns off the audible bell; iTerm2 turns on clipboard access so `/copy` works | ✅ COMPLETE (Apple Terminal and iTerm2 behavior added to description at #22 in Config tag) |
+| 6 | LOW | Changed Description | Update `/output-style [style]` — add "Requires v2.1.269 or later" | ✅ COMPLETE (version requirement added to description at #13 in Config tag) |
+| 7 | LOW | Changed Description | Update `/model [model]` — also works in `-p` mode with a model argument, applying for the current session only (v2.1.205+) | ✅ COMPLETE (non-interactive mode note added to description at #57 in Model tag) |
+| 8 | LOW | Changed Description | Update `/rename [name]` — also works in `-p` mode (v2.1.205+); strips control and invisible characters and caps names at 200 characters (v2.1.221+) | ✅ COMPLETE (non-interactive mode and char-limit details added to description at #89 in Session tag) |
+| 9 | LOW | Changed Description | Update `/usage-credits` — prints the URL when no browser can open, for example over SSH (v2.1.205+) | ✅ COMPLETE (SSH/no-browser URL note added to description at #34 in Context tag) |
+| 10 | LOW | Changed Description | Update `/clear [name]` — the previous conversation can be restored from the rewind menu (v2.1.191+) | ✅ COMPLETE (rewind restore note added to description at #82 in Session tag) |
+| 11 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (recurring from 2026-09-22 — official docs still do not include Auto mode server row detail) |
