@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2022%2C%202026%2010%3A03%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.278-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2023%2C%202026%2010%3A12%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.280-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(18)**
+## ![Official](../!/tags/official.svg) **(19)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -63,6 +63,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 16 | `security-review` | Review the current diff for security vulnerabilities and suggest fixes. Pass `--fix` to apply findings or `--comment` to post them as inline GitHub PR comments. Became Skill-tool-invocable in v2.1.108 |
 | 17 | `workflow-authoring` | Load the reference for writing dynamic workflow scripts: script API, resume behavior, quality patterns, and worked examples. Claude normally loads it on its own before writing a script. Available only when dynamic workflows are enabled. Requires v2.1.248 |
 | 18 | `skill-doctor` | Reports which loaded skills go unused and what each costs in context, so you can prune them. Introduced v2.1.261 |
+| 19 | `update-config` | Configure the Claude Code harness via `settings.json` — describe any settings change (allow a command, set an env var, add a hook) and Claude edits the matching settings file; for simple options like theme or model, use `/config` instead |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
