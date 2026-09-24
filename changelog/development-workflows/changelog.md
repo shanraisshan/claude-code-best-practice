@@ -3256,3 +3256,31 @@
 | 15 | MED | Workflow | ECC new 7-step proposal, Superpowers 9-step reordering variant, Matt Pocock 7-step, BMAD 11-step expansion, oh-my-claudecode 6-step, GSD 7-step, gstack 8-step condensed, OpenSpec 5-step, HumanLayer 7-step | ON HOLD (RECURRING — all single/first-consecutive; keep current pipelines) |
 | 16 | LOW | Sort | Sort order after updates: 290k > 268k > 266k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
 | 17 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP authoritative for all star verifications; ECC API unblocked this run after 14+ blocked runs | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-24 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 290k → 291k (GitHub MCP: 290,779 > 290,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 268k → 269k (GitHub MCP: 268,574 > 268,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update ECC commands 94 → 147 (Agent 1: 147 .md files confirmed; confidence 0.85; Sep 23 found ~133 at 0.55; 2 consecutive runs both finding significantly above 94; v2.2.2 Sep 15 feature additions explain jump) | COMPLETE (RESOLVED — updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ 138k → 139k (GitHub MCP: 138,612 > 138,500 midpoint; v1.0.11 released Sep 24) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count | Update oh-my-claudecode commands 0 → 21 (Agent 2: 21 .md files in commands/ confirmed; task spec said "count is 0 (skills serve as slash commands)" but v5.x added actual command directory; confidence 0.88) | COMPLETE (NEW — updated README table) |
+| 6 | LOW | Star | ECC ★ 266k frozen (GitHub MCP API blocked — 15th+ consecutive run; stars-don't-fall; keep 266k) | ON HOLD (RECURRING — API blocked) |
+| 7 | LOW | Star | No change: gstack 134,042 (<134,500), OpenSpec 70,087 (<70,500), oh-my-claudecode 39,325 (<39,350), CE 25,239 (<25,250), HumanLayer 11,602 (<11,650), BMAD 53,400 (<53,500) | COMPLETE (verified via GitHub MCP live API) |
+| 8 | LOW | Star | GSD 64.6k no change (archived since Jun 2026; stars-don't-fall; keep 64.6k) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 9 | MED | Workflow | Superpowers: new 8-step reordering (executing-plans promoted to step 4; subagent-driven-development absent; receiving-code-review as new sub-loop) — different from Sep 22's 9-step variant | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 8-step) |
+| 10 | MED | Workflow | Matt Pocock: 6-step grill-with-docs-first with new pr skill (vs Sep 22's ask-matt-first 7-step — different variant; pr skill added Sep 17-18) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 11 | MED | Workflow | gstack: 12-step with spec+plan-eng-review+design-consultation, canary, document-release (related to Sep 22's simplified direction but canary/document-release are new additions) | ON HOLD (RECURRING — 2nd consecutive of simplified direction; 1st of this exact 12-step; keep current 12-step) |
+| 12 | LOW | Workflow | BMAD: 10-step with bmad-sprint-planning inserted between bmad-spec and bmad-create-epics-and-stories (different from Sep 23's 11-step expansion) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 9-step) |
+| 13 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (2nd consecutive; Sep 23 was 1st single/first-consecutive; slightly different variant naming) | ON HOLD (RECURRING — 2nd consecutive family but different exact variant; keep current 9-step) |
+| 14 | LOW | Workflow | OpenSpec: 10-step with -change suffix command names (v1.13.x renamed commands; /opsx:new-change, /opsx:apply-change, etc.) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 15 | LOW | Workflow | oh-my-claudecode: 7-step deepinit→plan→team→execute→verify→review→release (different from Sep 22's team/execute/verify/release 6-step; v5.x restructuring with deepinit) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 7-step) |
+| 16 | LOW | Workflow | CE: 8-step with ce-work sub-loop, ce-commit-push-pr, ce-babysit-pr (ce-compound-refresh from Sep 22 replaced by ce-babysit-pr — different exact variant) | ON HOLD (RECURRING — 2nd consecutive of general direction; 1st of this exact 8-step; keep current 6-step) |
+| 17 | LOW | Workflow | HumanLayer: 11-step with human-gate, create_handoff, resume_handoff added (repo deprecated Jun 2026; very different from current 8-step) | ON HOLD (NEW — 1st consecutive; repo deprecated; keep current 8-step) |
+| 18 | LOW | Count | BMAD agents 0→5 (5 persona skills confirmed in skills/; oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 19 | LOW | Count | GSD commands 97→88 (Agent 2 finds 88; archived repo; counts-don't-fall convention; keep 97) | INVALID (counts-don't-fall; archived repo) |
+| 20 | LOW | Sort | Sort order after updates: 291k > 269k > 266k > 139k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 21 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 15th+ run | COMPLETE (RECURRING — GitHub MCP method established) |
