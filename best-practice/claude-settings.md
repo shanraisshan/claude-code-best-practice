@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2001%2C%202026%2010%3A39%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.252-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2024%2C%202026%2010%3A46%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.281-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.252, Claude Code exposes **140+ settings** and **315+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.281, Claude Code exposes **175+ settings** and **365+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -71,7 +71,25 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 **Important**:
 - `deny` rules have highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
 - Managed settings may lock or override local behavior even if local files specify different values.
-- Array settings (e.g., `permissions.allow`) are **concatenated and deduplicated** across scopes — entries from all levels are combined, not replaced. **Exceptions:** `fallbackModel`, `availableModels`, `modelPicker`, and `modelSettings` do **not** merge — the highest-precedence settings file that defines them supplies the entire value. For `availableModels`, a managed-source value applies as-is and lower scopes cannot extend it.
+- Array settings (e.g., `permissions.allow`) are **concatenated and deduplicated** across scopes — entries from all levels are combined, not replaced. **Exceptions:** `fallbackModel`, `availableModels`, `modelPicker`, and `modelSettings` do **not** merge — the highest-precedence settings file that defines them supplies the entire value. `modelSettings` is resolved per model (each alias/ID is looked up independently), but the object itself does not merge across files. For `availableModels`, a managed-source value applies as-is and lower scopes cannot extend it.
+
+> **Note (`managedSourcesBehavior: "merge"`):** Managed settings sources can opt into composing their values together. Set `managedSourcesBehavior: "merge"` in an admin-controlled source to merge settings across multiple managed sources rather than using the default first-wins behavior where the winning source takes all.
+
+### Exceptions to Managed Settings Precedence
+
+These 9 keys can be overridden by lower-level settings even when managed settings are present:
+
+| Key | Lower-level can... |
+|-----|--------------------|
+| `disableClaudeAiConnectors` | Turn off Claude.ai connectors from user settings |
+| `enableArtifact` | Set to `false` from any scope to kill-switch the Artifact tool; `true` cannot re-enable once disabled |
+| `isolatePeerMachines` | Set to `true` from any scope to require confirmation before cross-machine messages |
+| `remoteControlAtStartup` | Turn off auto Remote Control from user settings |
+| `crossSessionInbound` | Restrict inbound cross-session messages from lower scopes |
+| `useAutoModeDuringPlan` | Turn off auto mode during plan from user settings |
+| `syncClaudeAiSkills` | Disable skill sync from any scope |
+| `syncClaudeAiPlugins` | Disable plugin sync from any scope |
+| `maxEffortLevel` | Cap effort level; the lowest cap across all sources wins |
 
 ---
 
@@ -94,7 +112,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `thinkingBudgetTokens` | number | - | Set a fixed token budget for extended thinking per response. When set, limits the number of thinking tokens to the specified value. If unset, Claude Code uses a dynamic budget based on the model and effort level. Works alongside `alwaysThinkingEnabled` *(not in official settings page — unverified)* |
 | `skipWebFetchPreflight` | boolean | `false` | Skip the WebFetch domain safety check that sends each requested hostname to `api.anthropic.com` before fetching. Set to `true` in environments that block outbound traffic to Anthropic, such as Bedrock, Vertex AI, or Foundry deployments with restrictive egress |
 | `availableModels` | array | - | Restrict which models users can select via `/model`, `--model`, Config tool, or `ANTHROPIC_MODEL`. Does not affect the Default option. As of v2.1.172, also constrains the model picker for subagent dispatching and the `advisorModel` picker. Use `enforceAvailableModels: true` to additionally constrain the Default model option. Example: `["sonnet", "haiku"]` |
-| `enforceAvailableModels` | boolean | `false` | **(Managed only)** When `true`, the `availableModels` allowlist also constrains the Default model option — users cannot select a model outside the allowlist even via the Default slot. Without this flag, `availableModels` leaves the Default option unrestricted. Pair with `availableModels` for full model lockdown (v2.1.175) |
+| `enforceAvailableModels` | boolean | `false` | Enforce the `availableModels` list as a hard restriction. When `true`, the `availableModels` allowlist also constrains the Default model option — users cannot select a model outside the allowlist even via the Default slot. Any file; read from managed source when present. Pair with `availableModels` for full model lockdown (v2.1.175; v2.1.280) |
 | `fastModePerSessionOptIn` | boolean | `false` | Require users to opt in to fast mode each session |
 | `fastMode` | boolean | `false` | Enable fast mode for all sessions. When `true`, Claude Code uses the faster model tier by default. Users can also toggle fast mode per session with `/fast`. Pairs with `fastModePerSessionOptIn` |
 | `defaultShell` | string | `"bash"` | Default shell for input-box `!` commands. Accepts `"bash"` (default) or `"powershell"`. Setting `"powershell"` routes interactive `!` commands through PowerShell on Windows. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` (v2.1.84). **v2.1.120:** When PowerShell is available, it is used as the fallback shell on Windows even without Git for Windows installed. **v2.1.126:** When PowerShell is enabled, it is treated as the *primary* shell instead of defaulting to Bash. PowerShell 7 detection now also covers Microsoft Store installs, MSI installs not on PATH, and `.NET` global tool installs |
@@ -138,10 +156,17 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `processWrapper` | string | - | Corporate launcher command used for background processes (e.g., a credential-injecting wrapper). Only honored from managed settings, user settings (`~/.claude/settings.json`), or `--settings`; ignored from project and local settings to prevent untrusted repos from hijacking background process launches (v2.1.210) |
 | `remote.defaultEnvironmentId` | string | - | Default environment ID to use when launching remote sessions or background agents via `--remote` without an explicit environment ID. When set, Claude Code selects this environment automatically rather than prompting. Only honored from user and managed settings (v2.1.200+) |
 | `crossSessionInbound` | string | - | Controls how this session handles messages from your other Claude sessions via Remote Control. Values: `"accept"` (receive messages from your other sessions), `"hold"` (queue inbound messages without processing), `"refuse"` (reject inbound session-to-session traffic). Scope exception: a stricter value from project or local settings applies even against a managed setting (`accept` < `hold` < `refuse`). Appears in `/config` as **Messages from your other sessions** (v2.1.224) |
-| `dialogExpiry` | string | - | How long inbound dialog requests from your other sessions remain queued before auto-expiring. Accepts duration strings (e.g., `"5m"`, `"1h"`). When a `crossSessionInbound: "hold"` session resumes, queued requests older than this duration are dropped. Appears in `/config` as **Dialog expiry** (v2.1.246) |
-| `autoContinueAtUsageLimit` | boolean | - | When `true`, Claude Code automatically continues the session when a usage limit (API rate limit, daily cap) resets instead of waiting for user input. Appears in `/config` as **Auto-continue at usage limit** (v2.1.234) |
-| `feedbackDrafts` | boolean | `true` | When `true`, Claude Code queues bug-report drafts in the background when it encounters surprising errors. Set to `false` to disable background draft queuing. Gates the `SendFeedback` tool. Appears in `/config` as **Feedback drafts** (v2.1.247) |
+| `dialogExpiry` | string | `"5m"` | Duration before a forwarded dialog auto-dismisses. Accepts `60s`, `5m`, `10m`, `never`. Covers dialogs forwarded to Remote Control or SDK hosts. Paired with `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS`. User or managed (v2.1.246) |
+| `autoContinueAtUsageLimit` | boolean | `true` | When `true`, Claude Code automatically continues the session when a usage limit (API rate limit, daily cap) resets instead of waiting for user input. Appears in `/config` as **Auto-continue at usage limit** (v2.1.234) |
+| `feedbackDrafts` | string | `"notify"` | Feedback draft handling: `notify` (default), `quiet`, or `off`. Paired with `CLAUDE_CODE_SEND_FEEDBACK`. Gates the `SendFeedback` tool. Appears in `/config` as **Feedback drafts**. User or managed (v2.1.247) |
 | `desktopSessionCleanupPeriodDays` | number | - | Age cutoff in days for cleaning up desktop session data (separate from transcript cleanup controlled by `cleanupPeriodDays`). Inactive desktop session artifacts older than this threshold are removed during the startup cleanup sweep (v2.1.248) |
+| `bashOutputMaxChars` | number | `30000` | Max bash command output in characters (range 4000–128000). Larger outputs are truncated. Any file (v2.1.261) |
+| `isolatePeerMachines` | boolean | `false` | Require confirmation before accepting cross-machine messages. Any scope; `true` from any source wins (v2.1.224) |
+| `bashEditDiffEnabled` | boolean | - | Show a diff after Claude edits a bash script. User or managed. Paired with `CLAUDE_CODE_BASH_EDIT_DIFF` env var (v2.1.269) |
+| `timeFormat` | string | - | Time format for display (e.g., `"12h"` or `"24h"`). Any file (v2.1.257) |
+| `timeZone` | string | - | Time zone for display (e.g., `"Asia/Karachi"`). Any file (v2.1.257) |
+| `requiredMinimumVersion` | string | - | **(Managed only)** Minimum version required; Claude Code refuses to start if the installed version is below this. Complements the managed-only policy key of the same name (v2.1.280) |
+| `requiredMaximumVersion` | string | - | **(Managed only)** Maximum version allowed; Claude Code refuses to start above this version. Use alongside `requiredMinimumVersion` to pin a range (v2.1.280) |
 
 **Example:**
 ```json
@@ -291,7 +316,8 @@ Control what tools and operations Claude can perform.
 | `permissions.additionalDirectories` | array | Extra directories Claude can access |
 | `permissions.defaultMode` | string | Default permission mode. Valid values: `"default"`, `"manual"` (alias for `"default"`, v2.1.200), `"acceptEdits"`, `"dontAsk"`, `"bypassPermissions"`, `"auto"`, `"plan"`. In Remote environments, only `acceptEdits` and `plan` are honored (v2.1.70+). **Note (v2.1.142):** `"auto"` is ignored when set in project (`.claude/settings.json`) or local settings — a repository cannot grant itself auto mode; use `~/.claude/settings.json` instead |
 | `permissions.disableBypassPermissionsMode` | string | Prevent bypass mode activation |
-| `permissions.skipDangerousModePermissionPrompt` | boolean | Skip the confirmation prompt shown before entering bypass permissions mode via `--dangerously-skip-permissions` or `defaultMode: "bypassPermissions"`. Ignored when set in project settings (`.claude/settings.json`) to prevent untrusted repositories from auto-bypassing the prompt |
+| `skipDangerousModePermissionPrompt` | boolean | Skip the confirmation prompt shown before entering bypass permissions mode via `--dangerously-skip-permissions` or `defaultMode: "bypassPermissions"`. Top-level key (not under `permissions`). Ignored when set in project settings (`.claude/settings.json`) to prevent untrusted repositories from auto-bypassing the prompt |
+| `permissions.blockReadsOutsideWorkingDirectories` | boolean | Restrict file reads to working directories. Default `false`. `true` from any source wins; memory directories are auto-excluded. Any file (v2.1.257) |
 | `allowManagedPermissionRulesOnly` | boolean | **(Managed only)** Only managed permission rules apply; user/project `allow`, `ask`, `deny` rules are ignored |
 | `autoMode` | object | Customize what the [auto mode](https://code.claude.com/docs/en/permission-modes#eliminate-prompts-with-auto-mode) classifier blocks and allows. Contains `environment` (trusted infrastructure descriptions), `allow` (exceptions to block rules), `soft_deny` (block rules), and `hard_deny` (unconditional block rules — cannot be overridden by `allow` exceptions or the `$defaults` sentinel, v2.1.136) — all arrays of prose strings. Also accepts `classifyAllShell` (boolean, default `false`): when `true`, routes all Bash/PowerShell commands through the auto-mode classifier instead of only arbitrary-code-execution patterns, giving stricter coverage at the cost of more classifier calls (v2.1.193). **Not read from shared project settings** (`.claude/settings.json`) **or local settings** (`.claude/settings.local.json`) to prevent repo injection (v2.1.207 removed local-settings scope). Available in user and managed settings only; configure in `~/.claude/settings.json`. Setting `allow` or `soft_deny` **replaces** the entire default list for that section unless you include the literal string `"$defaults"` in the array — the sentinel inherits the built-in rules at that position so custom entries are added alongside them (v2.1.118). Run `claude auto-mode defaults` to see built-in rules before customizing |
 | `disableAutoMode` | string | Set to `"disable"` to prevent [auto mode](https://code.claude.com/docs/en/permission-modes#eliminate-prompts-with-auto-mode) from being activated. Removes `auto` from the `Shift+Tab` cycle and rejects `--permission-mode auto` at startup. Can be set at any settings level; most useful in managed settings where users cannot override it |
@@ -428,7 +454,7 @@ Configure Model Context Protocol servers for extended capabilities.
 {
   "allowedMcpServers": [
     { "serverName": "github" },
-    { "serverCommand": "npx @modelcontextprotocol/*" },
+    { "serverCommand": ["npx", "@modelcontextprotocol/server-github"] },
     { "serverUrl": "https://mcp.company.com/*" }
   ],
   "deniedMcpServers": [
