@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-25 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 154k to 155k (154,541 exact; crosses k-boundary) | COMPLETE (executed; NEW milestone crossing) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → ~250-270 (conf 0.80 below 0.88 threshold; 16+ dirs: engineering/64 + marketing/~36 + design/10 + sales/9 + testing/9 + security/12 + gis/13 + academic/6 + paid-media/7 + project-management/6 + support/5 + game-development/19+ + spatial-computing/~6 + specialized/~65+ + research/1; broad frontmatter search 303 total; README says "230+") | INVALID (RECURRING oscillation; conf 0.80 below 0.88 threshold; within oscillation band 250-303; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,308 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 158 → ~161-163 (conf 0.85 below 0.88 threshold; 10 dirs: core-dev/13 + lang-specialists/31 + infra/16 + quality-security/17 + data-ai/13 + devex/15 + specialized/16 + biz-product/17 + meta-orchestration/14 + research-analysis/11 = 163; README "161+"; code search 156 confirmed; Sept 14 PRs: memory-curator, auth-engineer, webhook-engineer merged) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; within oscillation band 158-165; no change) |
+| 5 | LOW | Sort | Verify sort order (155k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-24 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
