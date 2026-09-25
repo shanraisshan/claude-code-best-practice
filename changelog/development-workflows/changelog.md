@@ -3284,3 +3284,20 @@
 | 19 | LOW | Count | GSD commands 97→88 (Agent 2 finds 88; archived repo; counts-don't-fall convention; keep 97) | INVALID (counts-don't-fall; archived repo) |
 | 20 | LOW | Sort | Sort order after updates: 291k > 269k > 266k > 139k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
 | 21 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 15th+ run | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-25 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update ECC ★ from 266k to 267k (HTML: 267,000 > 266,500 midpoint; API blocked 16th+ consecutive run; WebFetch github.com/affaan-m/ECC confirmed) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Compound Engineering ★ from 25.2k to 25.3k (MCP: 25,258 > 25,250 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 291k > Matt Pocock 269k > ECC 267k > Spec Kit 139k > gstack 134k > agent-skills 89k (OOS) > OpenSpec 70k > GSD 64.6k > BMAD 53k > omc 39.3k > CE 25.3k > HumanLayer 11.6k | COMPLETE (verified; all changes maintain same relative positions) |
+| 4 | LOW | No Change | Superpowers 291k (291,277 < 291,500 midpoint), Matt Pocock 269k (269,179 < 269,500 midpoint), Spec Kit 139k (138,801 < 139,500 midpoint), gstack 134k (134,131 < 134,500 midpoint), OpenSpec 70k (70,250 < 70,500 midpoint — stays 70k despite agent reporting 70.3k), GSD 64.6k (64,462 — archived; stars-don't-fall), BMAD 53k (53,434 < 53,500 midpoint), omc 39.3k (39,345 < 39,350 midpoint), HumanLayer 11.6k (11,605 < 11,650 midpoint) — all stars unchanged | COMPLETE (verified via MCP/WebFetch) |
+| 5 | LOW | Count Verify | ECC agents 68→~100 (Agent 1: ~100 .md files in agents/; README states 68 — outdated; confidence 0.52 overall; count instability persists) | ON HOLD (RECURRING — confidence below 0.90; keeping 68 per established baseline) |
+| 6 | LOW | Count Verify | ECC commands 147→~150 (Agent 1: ~150 .md files in commands/; confidence 0.52 overall; directory count volatile) | ON HOLD (RECURRING — confidence below 0.90; keeping 147 per established baseline) |
+| 7 | LOW | Count Verify | GSD commands 97→99 (Agent 2: 99 .md files via WebFetch directory listing; archived repo since Jun 26 2026; HTML parsing variance) | ON HOLD (RECURRING — archived repo; HTML variance; keeping 97 per established baseline) |
+| 8 | LOW | Count Verify | Spec Kit 10c, Superpowers 15s, Matt Pocock 38s, gstack 53s, OpenSpec 0a/12c/12s, BMAD 0a/0c/32s, omc 19a/21c/43s, CE 0a/1c/36s, HumanLayer 6a/27c/0s, GSD 33a — all confirmed | COMPLETE (RECURRING — no change; all confirmed) |
+| 9 | LOW | Workflow | Spec Kit (6-step constitution→implement), ECC (7-step plan→improve), Superpowers (8-step with different step names), Matt Pocock (6-step without setup-matt-pocock-skills), gstack (10-step condensed), BMAD (9-step with bmad-brainstorming and bmad-walkthrough), omc (5-step deepinit→release), CE (6-step ce-pov→promote), GSD (5-step gsd-planner→gsd-roadmapper), HumanLayer (confirmed matching current 8-step) — all workflow changes proposed | ON HOLD (RECURRING — all 1st-consecutive; no workflow changes applied; established baselines kept) |
+| 10 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); WebFetch github.com HTML used for ECC star verification; MCP GitHub search_repositories used for all other accessible repos; ECC API blocked 16th+ consecutive run — stars-don't-fall rule applied then updated via HTML | COMPLETE (RECURRING — WebFetch/MCP verification method authoritative) |
