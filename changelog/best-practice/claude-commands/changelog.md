@@ -1196,3 +1196,15 @@ _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands st
 | 9 | LOW | Changed Description | Update `/usage-credits` — prints the URL when no browser can open, for example over SSH (v2.1.205+) | ✅ COMPLETE (SSH/no-browser URL note added to description at #34 in Context tag) |
 | 10 | LOW | Changed Description | Update `/clear [name]` — the previous conversation can be restored from the rewind menu (v2.1.191+) | ✅ COMPLETE (rewind restore note added to description at #82 in Session tag) |
 | 11 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (recurring from 2026-09-22 — official docs still do not include Auto mode server row detail) |
+
+---
+
+## [2026-09-24 11:13 AM PKT] Claude Code v2.1.281
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-25 11:13 AM PKT] Claude Code v2.1.282
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
