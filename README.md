@@ -170,10 +170,10 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 
 | Name | ★ | <img src="!/tags/s.svg" height="14"> |
 |------|---|---|
-| [mattpocock/skills](https://github.com/mattpocock/skills) | 267k | 38 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 270k | 38 |
 | [anthropics/skills](https://github.com/anthropics/skills) | 178k | 19 |
 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | 67k | 8 |
-| [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 46k | 166 |
+| [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 47k | 166 |
 | [wshobson/agents](https://github.com/wshobson/agents) | 40k | 183 |
 | [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 35k | 1,497+ (curated list) |
 | [impeccable](https://github.com/pbakaus/impeccable) | 27k | 1 (with 7 design domain references) |
@@ -191,8 +191,8 @@ Repos primarily known as curated libraries of subagent definitions (`.claude/age
 
 | Name | ★ | <img src="!/tags/a.svg" height="14"> |
 |------|---|---|
-| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 154k | 279 |
-| [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | 25k | 158 |
+| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 155k | 279 |
+| [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | 25k | 165 |
 
 <p align="center">
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
