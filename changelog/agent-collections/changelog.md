@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-27 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (155k = 154,787 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → ~302–319 (conf 0.75 below 0.88 threshold; 18 dirs: academic/6 + design/10 + engineering/96 + finance/5 + game-development/6 + gis/13 + healthcare/3 + marketing/41 + paid-media/7 + product/5 + project-management/7 + research/1 + sales/9 + security/12 + spatial-computing/6 + specialized/59–76 + support/6 + testing/9 + strategy/1 = 302–319; specialized dir uncertain 59–76; Sept 9 added 6 new specialists; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.75 below 0.88 threshold; 302 is confirmed minimum; engineering dir uncertain; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,346 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 → ~161–162 (conf 0.82 below 0.88 threshold; 4 dirs verified: core-dev/13 + lang-specialists/30 + infra/16 + meta-orchestration/12; 6 dirs README-stated: quality-security/16 + data-ai/13 + devex/15 + specialized/17 + biz-product/16 + research-analysis/11; README badge "161+"; prior COMPLETE Sep 26 at conf 0.92 set 165; apparent decrease within oscillation band; RECURRING) | INVALID (RECURRING oscillation; conf 0.82 below 0.88 threshold; decrease from 165 within documented oscillation band; 6 of 10 dirs unverified; no change) |
+| 5 | LOW | Sort | Verify sort order (155k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-26 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
