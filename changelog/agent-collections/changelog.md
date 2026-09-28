@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-28 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (155k = 155,000 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents ~300 (conf 0.65 below 0.88 threshold; 18 dirs: academic/6 + design/10 + engineering/~78 + finance/5 + game-development/6 + gis/13 + healthcare/3 + marketing/~43 + paid-media/7 + product/5 + project-management/7 + research/1 + sales/9 + security/12 + spatial-computing/6 + specialized/~78 + support/6 + testing/8 = 263 verified min, ~300 estimated; 3 large dirs hit GitHub page truncation: engineering header 78 vs 64 listed, marketing 43 vs 36 listed, specialized 78 vs 59 listed; Sep 27 added DeepSeek Harness support in integrations; Sep 9 added 6 new specialists; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.65 below 0.88 threshold; within oscillation band 279–330; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,400 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 → 160/161 (−4/−5; per-category: core-dev/13 + lang-specialists/30 + infra/16 + quality-security/17 + data-ai/13 + devex/16 + specialized/16 + biz-product/17 + meta-orchestration/12 + research-analysis/10 = 160; badge says "161"; Sep 14 added memory-curator + auth-integration-engineer + webhook-engineer but those were already in Sep 26 165 count; conf 0.85 below 0.88 threshold; decrease of 4–5 within oscillation band 158–165) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; within documented oscillation band 158–165; no confirmed net removals; no change) |
+| 5 | LOW | Sort | Verify sort order (155k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-26 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
