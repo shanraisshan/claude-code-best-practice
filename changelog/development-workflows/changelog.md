@@ -3369,3 +3369,41 @@
 | 38 | LOW | Workflow | HumanLayer: 10-step with create_handoff+resume_handoff; different order from current 8-step (repo deprecated Jun 2026) | ON HOLD (NEW — 1st consecutive of this 10-step variant; keep current 8-step) |
 | 39 | LOW | Sort | Sort order after updates: 292k > 270k > 268k > 139k > 134k > 89k(OOS) > 70k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — same relative order (BMAD 53k→54k stays at position 9) | COMPLETE (no re-sort needed) |
 | 40 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 18th+ consecutive run — WebFetch HTML authoritative for ECC stars | COMPLETE (RECURRING — GitHub MCP + WebFetch method established) |
+
+---
+
+## [2026-09-28 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 270k → 271k (GitHub MCP: 270,796 > 270,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update OpenSpec ★ 70k → 71k (GitHub MCP: 70,508 > 70,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 3 | LOW | Star | Superpowers 292,225 (<292,500 midpoint) — no change; keep 292k | COMPLETE (RECURRING — no change) |
+| 4 | LOW | Star | ECC ~268k (API blocked 20th+ consecutive run; WebFetch HTML confirmed 268k) — no change | ON HOLD (RECURRING — API blocked; keep 268k) |
+| 5 | LOW | Star | Spec Kit 139,157 (<139,500 midpoint) — no change; keep 139k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | gstack 134,354 (<134,500 midpoint) — no change; keep 134k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | GSD archived; stars-don't-fall; keep 64.6k — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 8 | LOW | Star | BMAD 53,561 (<54,000; stars-don't-fall; keep 54k) — no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | oh-my-claudecode 39,383 (<39,450 midpoint) — no change; keep 39.4k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | Compound Engineering 25,304 (<25,350 midpoint) — no change; keep 25.3k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,615 (<11,650 midpoint) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Count | ECC agents 97 (vs baseline 68; conf 0.7) | ON HOLD (RECURRING — confidence below 0.90; keep 68a) |
+| 13 | LOW | Count | ECC commands 97 (vs baseline 147; counts-don't-fall) | INVALID (counts-don't-fall; keep 147c) |
+| 14 | LOW | Count | ECC skills 160+ (vs baseline 292; counts-don't-fall) | INVALID (counts-don't-fall; keep 292s) |
+| 15 | LOW | Count | gstack skills 55 (vs baseline 54; conf 0.65; Agent 2 estimate) | ON HOLD (RECURRING — confidence 0.65 below threshold; keep 54) |
+| 16 | LOW | Count | GSD agents 36 (vs baseline 33; conf 0.78; 1st consecutive; archived) | ON HOLD (NEW — 1st consecutive; archived; keep 33a) |
+| 17 | LOW | Count | GSD commands 89 (vs baseline 97; counts-don't-fall; archived) | INVALID (counts-don't-fall; archived; keep 97c) |
+| 18 | LOW | Count | BMAD agents 5 persona skills (oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 19 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, Matt Pocock 0a/0c/38s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, BMAD 0a/0c/32s, CE 0a/1c/36s, omc 19a/21c/43s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers 10-step with implementer/task-reviewer sub-agents explicit (different from Sep 27's 9-step variant) | ON HOLD (RECURRING — different exact variant; keep current 8-step) |
+| 21 | LOW | Workflow | Matt Pocock 7-step grill-with-docs-first without setup-matt-pocock-skills (different from Sep 27's 9-step) | ON HOLD (RECURRING — different exact variant; keep current 8-step) |
+| 22 | LOW | Workflow | ECC 7-step plan→tdd→implement→code-review→test-coverage→security-scan→learn-eval (different from Sep 27's learn-eval+skill-create variant) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 9-step) |
+| 23 | LOW | Workflow | OpenSpec 5-step explore→propose→review→apply→archive (very condensed vs current 8-step; v1.13.2 ongoing) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 24 | LOW | Workflow | HumanLayer 7-step missing iterate-plan and local-review (different from Sep 27's 10-step; repo deprecated) | ON HOLD (RECURRING — different variant; keep current 8-step) |
+| 25 | LOW | Workflow | GSD 6-step new-project→spec-phase→plan-phase→execute-phase→validate-phase→ship (missing gsd-explore and gsd-review vs current 8-step; archived) | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 26 | LOW | Workflow | gstack 10-step office-hours→autoplan→spec→build→review→qa→ship→land-and-deploy→canary→retro (different from Sep 27's 20-step) | ON HOLD (NEW — 1st consecutive of this 10-step variant; keep current 12-step) |
+| 27 | LOW | Workflow | BMAD 9-step brainstorm→prd→spec→architecture→build→code-review→qa→review→retrospective with qa as sub-loop (different step names and order from current 9-step; Sep 27 had different variant) | ON HOLD (RECURRING — 1st consecutive of this exact variant; keep current 9-step) |
+| 28 | LOW | Workflow | CE 6-step brainstorm→plan→work→simplify-code→code-review→compound — confirmed matching current workflow | COMPLETE (RECURRING — pipeline confirmed matching current) |
+| 29 | LOW | Workflow | oh-my-claudecode 5-step team-plan→team-prd→team-exec→team-verify→team-fix (missing deep-interview/ralplan vs current 7-step; different from Sep 27's 10-step) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 7-step) |
+| 30 | LOW | Sort | Sort order after updates: 292k > 271k > 268k > 139k > 134k > 89k(OOS) > 71k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — same relative order (OpenSpec 70k→71k stays position 7) | COMPLETE (no re-sort needed) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 20th+ consecutive run — WebFetch HTML authoritative for ECC stars | COMPLETE (RECURRING — GitHub MCP method established) |
