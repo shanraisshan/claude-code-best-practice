@@ -1226,3 +1226,13 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-09-28 11:15 AM PKT] Claude Code v2.1.283
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-29 11:15 AM PKT] Claude Code v2.1.284
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/effort` — ultracode changed from an effort level to a toggle (`ultracode [on\|off]`); update signature to `[level\|auto\|status\|ultracode [on\|off]]`; remove `ultracode` from levels list; add toggle behavior description (v2.1.284) | ✅ COMPLETE (signature and description updated at #55 in Model tag) |
+| 2 | LOW | Changed Argument | `/mcp` — added `reconnect all` form in v2.1.284 to retry every failed MCP server at once; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 3 | LOW | Changed Description | `/rate-limit-options` — added to `/help` and command menu for claude.ai subscribers (v2.1.284 changelog); official docs table still says "Doesn't appear in the command menu" | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
