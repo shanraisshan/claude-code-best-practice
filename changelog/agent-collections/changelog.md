@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-29 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (155k = 155,134 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 276 unique (README table has 279 rows; 3 agents appear in multiple sub-sections; conf 0.85 below 0.88 threshold; git tree API unavailable; README self-reports "230+" stale stat; unique unique file count 276 across 18 dirs: engineering/62 + specialized/59 + marketing/36 + game-development/21 + gis/12 + security/12 + design/10 + sales/9 + testing/9 + paid-media/7 + project-management/7 + academic/6 + spatial-computing/6 + support/6 + finance/5 + product/5 + healthcare/3 + research/1; Sep 28 changes included DeepSeek Harness integration and Hermes config fix; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; README table rows 279 is the established canonical count; 276 unique vs 279 rows is a methodology difference not a file deletion; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,389 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 = 165 (README badge confirms 161 file-based .md agents + 4 external-link entries in cat 09 = 165 total; exact match with table; conf 0.93; Sep 14 memory-curator + auth-integration-engineer + webhook-engineer already counted in Sep 26 update; Sep 21 README-only change; no new agents since Sep 14; RECURRING) | INVALID (exact match; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (155k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-26 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
