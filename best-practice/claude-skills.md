@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2028%2C%202026%2010%3A21%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.283-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2029%2C%202026%2010%3A14%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.284-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(19)**
+## ![Official](../!/tags/official.svg) **(20)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -64,6 +64,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 17 | `workflow-authoring` | Load the reference for writing dynamic workflow scripts: script API, resume behavior, quality patterns, and worked examples. Claude normally loads it on its own before writing a script. Available only when dynamic workflows are enabled. Requires v2.1.248 |
 | 18 | `skill-doctor` | Reports which loaded skills go unused and what each costs in context, so you can prune them. Introduced v2.1.261 |
 | 19 | `update-config` | Configure the Claude Code harness via `settings.json` — describe any settings change (allow a command, set an env var, add a hook) and Claude edits the matching settings file; for simple options like theme or model, use `/config` instead |
+| 20 | `slides` | Make a new presentation as a Claude Slides artifact filled from your brief (e.g., `/slides a quarterly review for the sales team`) |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
