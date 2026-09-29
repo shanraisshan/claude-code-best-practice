@@ -3407,3 +3407,28 @@
 | 29 | LOW | Workflow | oh-my-claudecode 5-step team-plan→team-prd→team-exec→team-verify→team-fix (missing deep-interview/ralplan vs current 7-step; different from Sep 27's 10-step) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 7-step) |
 | 30 | LOW | Sort | Sort order after updates: 292k > 271k > 268k > 139k > 134k > 89k(OOS) > 71k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — same relative order (OpenSpec 70k→71k stays position 7) | COMPLETE (no re-sort needed) |
 | 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 20th+ consecutive run — WebFetch HTML authoritative for ECC stars | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-29 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 292k → 293k (GitHub MCP: 292,563 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 268k → 269k (Agent 1: 269k confirmed via page display) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update agent-skills ★ 89k → 99.7k (GitHub MCP: 99,722 exact — major jump nearing 100k) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update ECC commands 147 → 94 (Agent 1: README stat table confirmed 94; v2.2.2 reorganization — RESOLVED from recurring ON HOLD) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Count | Update GSD commands 97 → 85 (Agent 2: 85 .md files in commands/gsd/ confirmed at time of archival; corrects prior measurement) | COMPLETE (NEW — archived repo correction) |
+| 6 | MED | Count | Update BMAD skills 32 → 30 (Agent 2: 30 skills in skills/ directory; 0.91 confidence; src/bmm-skills/ path no longer exists) | COMPLETE (NEW — updated README table) |
+| 7 | MED | Count | Update oh-my-claudecode commands 21 → 0 (Agent 2: no .claude/commands/ directory; skills serve as slash commands per research spec) | COMPLETE (NEW — corrected counting methodology) |
+| 8 | HIGH | Workflow | Superpowers: removed subagent-driven-development (v6.4.1 executing-plans rebuilt as native inline); added receiving-code-review(sub); using-git-worktrees reclassified as sub-loop | COMPLETE (NEW — v6.4.1+v6.4.2 Sep 2026) |
+| 9 | HIGH | Workflow | ECC: removed e2e-testing(sub) and test-coverage(sub) per v2.2.2 pipeline simplification; renamed ecc:plan → plan | COMPLETE (NEW — v2.2.2 Sep 15 2026) |
+| 10 | HIGH | Workflow | gstack: added /autoplan(top) as step 2 per v1.89.0.0; removed /design-shotgun(sub) and /design-html(sub) | COMPLETE (NEW — v1.89.0.0 Sep 2026) |
+| 11 | HIGH | Workflow | OpenSpec: simplified to 5 steps; removed opsx:onboard, opsx:ff, opsx:sync; renamed apply/verify/archive → apply-change/verify-change/archive-change per v1.13.2 skill naming | COMPLETE (NEW — v1.13.2 Sep 28 2026) |
+| 12 | HIGH | Workflow | GSD: added new-milestone(top) and complete-milestone(top); replaced explore+review+validate-phase with verify-work(sub); execute-phase reclassified as sub-loop | COMPLETE (NEW — archived final state corrected) |
+| 13 | HIGH | Workflow | BMAD: removed bmad-create-epics-and-stories and bmad-retrospective; reordered spec→architecture (was architecture→spec); bmad-build changed from sub to top per SPINE architecture rewrite | COMPLETE (NEW — SPINE rewrite Sep 2026) |
+| 14 | HIGH | Workflow | oh-my-claudecode: added plan(top) and team(top) intermediate steps; replaced ralplan with plan; added release(top) at end per v5.5.0 | COMPLETE (NEW — v5.5.0 Sep 2026) |
+| 15 | HIGH | Workflow | HumanLayer: added linear(top) and ralph_research(top) at start; local_review reclassified as sub-loop and moved before commit; validate_plan and iterate_plan reclassified as sub-loops | COMPLETE (NEW — ralph_research workflow confirmed) |
+| 16 | LOW | Star | Matt Pocock 271,420; Spec Kit 139,295; gstack 134,428; OpenSpec 70,605; BMAD 53,606; omc 39,395; CE 25,316; HumanLayer 11,621 — all within rounding bounds; no change | COMPLETE (RECURRING — no change needed) |
+| 17 | LOW | Sort | Sort order: 293k > 271k > 269k > 139k > 134k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — unchanged; agent-skills 89k→99.7k stays position 6 (OOS) | COMPLETE (no re-sort needed) |
+| 18 | LOW | Note | GitHub MCP search_repositories authoritative for all star verifications; both agents ran in parallel (Agent 1: spec-kit/ECC/superpowers/mattpocock; Agent 2: OpenSpec/HumanLayer/GSD/gstack/BMAD/CE/omc); 15 changes applied to README | COMPLETE (all changes executed) |
