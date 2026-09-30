@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2029%2C%202026%2010%3A14%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.284-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2030%2C%202026%2010%3A12%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.285-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(20)**
+## ![Official](../!/tags/official.svg) **(23)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -65,6 +65,9 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 18 | `skill-doctor` | Reports which loaded skills go unused and what each costs in context, so you can prune them. Introduced v2.1.261 |
 | 19 | `update-config` | Configure the Claude Code harness via `settings.json` — describe any settings change (allow a command, set an env var, add a hook) and Claude edits the matching settings file; for simple options like theme or model, use `/config` instead |
 | 20 | `slides` | Make a new presentation as a Claude Slides artifact filled from your brief (e.g., `/slides a quarterly review for the sales team`) |
+| 21 | `artifact-capabilities` | Loads the reference for the runtime capabilities a published artifact can use, such as calling connectors or offering a file download, including which ones your account has. Claude normally loads it on its own before building a page that uses one. Available where artifacts are |
+| 22 | `artifact-diagramming` | Loads diagramming guidance for artifacts: when a diagram helps, what to draw, and how to write inline SVG that stays legible in light and dark themes. Claude normally loads it on its own when a diagram would help in an artifact. Requires v2.1.221+ |
+| 23 | `claude-in-chrome` | Has Claude carry out a task in your browser (test a page, fill a form, read console logs) through Claude in Chrome. Available when Chrome integration is enabled (e.g. `claude --chrome`) |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
