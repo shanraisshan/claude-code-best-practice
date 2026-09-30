@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-09-30 08:48 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (155k = 155,363 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | MED | Count | msitarzewski/agency-agents agents 279 → 296 (+17; specialized dir 59→76; research states no new agents in last 30 days; conf 0.90 above threshold but contradicted by CHANGES; WebFetch rendering artifact; RECURRING oscillation) | INVALID (RECURRING oscillation; specialized dir 59→76 historically unstable 57–76 range across runs; research's own CHANGES confirms no new agents in last 30 days; count increase contradicted by activity data; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,409 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 → 162 (−3; 4 categories each −1: data-ai/devex/biz-product/research-analysis; +1 core-dev; conf 0.93; active additions Sep 14 already counted in Sep 26 update) | INVALID (RECURRING oscillation; −3 within oscillation band; 4-category ±1 symmetric pattern suggests rendering artifact not actual deletions; Sep 14 additions already counted; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (155k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-09-29 08:45 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
