@@ -1283,3 +1283,28 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-30 10:43 AM PKT] Claude Code v2.1.285
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.285; update header counts from "140+ settings / 315+ env vars" to "200+ settings / 370+ env vars". Confirmed via official settings-reference page and agent research | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Settings | Add `availableModelsMatch` (Managed only, v2.1.283) and `deniedModels` (Managed only, v2.1.283) to General Settings after `enforceAvailableModels`. Confirmed in official settings-reference and v2.1.283 changelog | COMPLETE (both added) — NEW |
+| 3 | HIGH | Missing Settings | Add `bashOutputMaxChars` (number, 30K default, clamped 4K–128K, v2.1.261) and `bashEditDiffEnabled` (boolean, User/managed, v2.1.269) to General Settings. Confirmed in official settings-reference | COMPLETE (both added) — NEW |
+| 4 | HIGH | Missing Settings | Add `maxEffortLevel` (string, cap effort, v2.1.267) to Model Configuration table. The lowest cap across scopes wins. Confirmed in official settings-reference | COMPLETE (added) — NEW |
+| 5 | HIGH | Missing Settings | Add `syncClaudeAiPlugins` and `syncClaudeAiSkills` (boolean, v2.1.275) to Plugin Settings — restrictive `false` applies from any scope. Confirmed in v2.1.275 changelog | COMPLETE (both added) — NEW |
+| 6 | HIGH | Missing Settings | Add `managedMcpServers` (Managed, v2.1.259) and `allowClaudeInChromeWithManagedMcp` (Managed device-only, v2.1.282) to MCP Settings. Confirmed in official settings-reference | COMPLETE (both added) — NEW |
+| 7 | HIGH | Missing Settings | Add `timeFormat` and `timeZone` (v2.1.257) to Display Settings. Confirmed in official settings-reference | COMPLETE (both added) — NEW |
+| 8 | HIGH | Missing Settings | Add `maxProseWidth` (number, v2.1.282) to Display Settings. Confirmed in official settings-reference and v2.1.282 changelog | COMPLETE (added) — NEW |
+| 9 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (string, v2.1.257) to Permission Keys table. Confirmed in official settings-reference | COMPLETE (added) — NEW |
+| 10 | HIGH | Missing Settings | Add `managedSourcesBehavior` (Managed, v2.1.242), `gatewayInternalNetworks` (Managed, v2.1.268), and `allowedProviders` (Managed, v2.1.285) to Managed Policy Settings. `allowedProviders` confirmed in v2.1.285 changelog only | COMPLETE (all three added) — NEW |
+| 11 | HIGH | Deprecated Key | Mark `permissionExplainerEnabled` as removed in v2.1.257 — key is now a no-op. Confirmed in drift agent research | COMPLETE (marked removed) — NEW |
+| 12 | HIGH | Wrong Description | Fix `feedbackDrafts` type: boolean → string. Values are `"notify"` (default), `"quiet"`, `"off"`. Scope is User or managed. Confirmed via drift agent findings | COMPLETE (type and description corrected) — NEW |
+| 13 | MED | Wrong Description | Fix `ultracode` — not session-only since v2.1.284; now a persistent Boolean readable from any settings file. Also updated semantics: no longer forces xhigh since v2.1.284 | COMPLETE (description updated) — NEW |
+| 14 | MED | Wrong Description | Fix `effortLevel` — correct version from v2.1.243 to v2.1.251 for modelSettings behavior; fix default effort for Opus 5.5/Sonnet 5.5 (medium, not high) | COMPLETE (corrected) — NEW |
+| 15 | MED | Wrong Version | Fix `teammateDefaultModel` removed version: v2.1.251 → v2.1.234. Confirmed in drift agent research | COMPLETE (version corrected) — NEW |
+| 16 | MED | Deprecated Key | Mark `keybindingFlavor` as deprecated and no-op since v2.1.261. Confirmed in drift agent research | COMPLETE (marked deprecated) — NEW |
+| 17 | MED | Model Aliases | Add `best` alias; update `opus` to Opus 5.5 (v2.1.280); update `sonnet` to Sonnet 5.5 (v2.1.284); update `fable` to Fable 5.1 (v2.1.257); fix `sonnet[1m]` note; update effort defaults for Opus 5.5/Sonnet 5.5 | COMPLETE (table updated) — NEW |
+| 18 | MED | Fix modelSettings version | Correct `modelSettings` version note from v2.1.243 to v2.1.251. Confirmed via drift agent | COMPLETE (corrected) — NEW |
