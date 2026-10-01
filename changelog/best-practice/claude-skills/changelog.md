@@ -1209,6 +1209,19 @@ No new drift detected — frontmatter fields (20) and bundled skills (19 in repo
 
 ---
 
+## [2026-10-01 10:15 AM PKT] Claude Code v2.1.286
+
+No new drift detected — frontmatter fields (20) and bundled skills (20 official) are fully synchronized with official docs. Local report lists 23 bundled skills; 3-row difference accounted for by recurring ON HOLD items. No new bundled skills or frontmatter fields in v2.1.276–v2.1.286.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Potential New Skill | Add `artifact-design` to bundled skills table — v2.1.281 changelog explicitly states "the bundled artifact-design skill now asks Claude for plain, direct prose"; absent from commands reference and appears model-invoked only (not user-typeable via `/`); requires confirmation before adding | ✋ ON HOLD (recurring from 2026-09-24; artifact-design referenced as bundled in v2.1.281 changelog but absent from commands reference; awaiting human review before adding) |
+| 2 | HIGH | Removed Skill | Remove `review` (row 15) — confirmed alias of `/code-review` since v2.1.223; commands reference carries no separate [Skill] marker for `/review`; docs state "the bundled alias `/review` never runs your skill"; row 15 description still describes pre-v2.1.223 standalone fast-single-pass PR review behavior. Count should update 23→22 after removal | ✋ ON HOLD (recurring from 2026-07-30; autonomous run cannot remove without human review) |
+| 3 | MED | Potential Removed Skill | `security-review` (row 16) — official docs state "A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`", classifying it as a built-in command reachable via Skill tool, not a distinct bundled skill; commands reference carries no [Skill] marker; no changelog corroboration of removal in last 10 versions (v2.1.276–v2.1.286) | ✋ ON HOLD (recurring from 2026-07-30; awaiting human review before removing or reclassifying) |
+| 4 | MED | Potential Removed Skill | `skill-doctor` (row 18) — commands reference does not consistently mark it [Skill]; docs-rendering inconsistency persists across multiple runs; no changelog corroboration of removal in last 10 versions (v2.1.276–v2.1.286) | ✋ ON HOLD (recurring from 2026-09-15; awaiting human review before removing or reclassifying) |
+
+---
+
 ## [2026-09-30 10:12 AM PKT] Claude Code v2.1.285
 
 | # | Priority | Type | Action | Status |
