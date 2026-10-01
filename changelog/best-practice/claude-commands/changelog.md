@@ -1244,3 +1244,11 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/rate-limit-options` — remove "Doesn't appear in the command menu; type it in full." clause; official docs confirmed command now appears in command menu for claude.ai subscribers (resolves ON HOLD from 2026-09-29) | ✅ COMPLETE (clause removed; description matches official docs) |
+
+---
+
+## [2026-10-01 11:14 AM PKT] Claude Code v2.1.286
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/resume` — remove "A still-running background session cannot be resumed from the picker — attach via `claude agents` or stop it first." clause; v2.1.285 reversed this behavior: resuming a running background session now attaches this terminal to it and moves your current conversation to the background | ✅ COMPLETE (clause replaced with new attach behavior description; description matches official docs) |
