@@ -1094,3 +1094,15 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 | 4 | MED      | Count | Update VoltAgent/awesome-claude-code-subagents agents from 148 to 144  | COMPLETE (recursive tree count under categories/, excluding tools/) |
 | 5 | LOW      | Sort  | Verify sort order (stars descending)                                   | COMPLETE (msitarzewski 93k > VoltAgent 19k — order preserved) |
 | 6 | MED      | Rule  | Confirm 10k+ stars threshold for table inclusion                       | COMPLETE (user confirmed; both listed repos pass — msitarzewski 93k, VoltAgent 19k; saved as feedback memory for future runs) |
+
+---
+
+## [2026-10-01 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type  | Action                                                                          | Status                                                                                                                                            |
+|---|----------|-------|---------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | MED      | Star  | Update msitarzewski/agency-agents ★ from 155k to 156k                           | COMPLETE (GitHub API: 155,542 — crossed k-boundary from 155k; NEW)                                                                               |
+| 2 | HIGH     | Count | Update msitarzewski/agency-agents agents from 279 to 325                        | COMPLETE (per-directory web scrape: 325 across 19 dirs — engineering/96, specialized/75, marketing/47 +others; active dev batch merge Sep 29; conf 0.83; NEW) |
+| 3 | LOW      | Star  | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,430)              | INVALID (no k-boundary crossed; RECURRING)                                                                                                        |
+| 4 | LOW      | Count | Update VoltAgent/awesome-claude-code-subagents agents from 165 to 171           | COMPLETE (per-directory scrape: 171 .md files across 10 category dirs; last commit Sep 21 added memory-curator, auth-integration-engineer, webhook-engineer; conf 0.78; NEW) |
+| 5 | LOW      | Sort  | Verify sort order (stars descending)                                            | COMPLETE (msitarzewski 156k > VoltAgent 25k — order preserved)                                                                                    |
