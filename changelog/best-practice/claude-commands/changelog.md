@@ -1252,3 +1252,13 @@ No priority action items — report is fully in sync with official documentation
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | HIGH | Changed Description | Update `/resume` — remove "A still-running background session cannot be resumed from the picker — attach via `claude agents` or stop it first." clause; v2.1.285 reversed this behavior: resuming a running background session now attaches this terminal to it and moves your current conversation to the background | ✅ COMPLETE (clause replaced with new attach behavior description; description matches official docs) |
+
+---
+
+## [2026-10-02 11:13 AM PKT] Claude Code v2.1.287
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/mcp` — docs add non-interactive (`-p`) mode detail: running with no argument prints a text summary of server status (requires v2.1.205+) | ✅ COMPLETE (appended `-p` mode note to description at #47 in Extensions tag) |
+| 2 | LOW | Changed Description | Update `/rename` — docs add two details: (a) if another live session uses the name, Claude Code applies a variant; (b) a name left empty after invisible characters are removed is rejected | ✅ COMPLETE (appended both details to description at #89 in Session tag) |
+| 3 | LOW | Changed Description | `/mcp reconnect all` — v2.1.284 changelog adds `reconnect all` form; official docs argument hint still shows `reconnect <server>` | ✋ ON HOLD (recurring from 2026-09-29 — official docs still show `reconnect <server>` only) |
