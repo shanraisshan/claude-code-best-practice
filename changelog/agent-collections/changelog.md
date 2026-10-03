@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-03 08:49 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (~156k; no k-boundary crossed; research web-scraped at conf 0.55) | INVALID (no k-boundary crossed; GitHub API 403; web-scrape only; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 260–350 range (conf 0.55; GitHub API 403; three largest dirs truncated: engineering/86 + marketing/42 + specialized/80) | INVALID (RECURRING oscillation; conf 0.55 below 0.88 threshold; wide range 260–350 with ±20% uncertainty; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (web-scraped ~25,500; growth trend ~25,468 from 25,448 on Oct 2 + ~20/day; below 25,500 k-boundary) | INVALID (no confirmed k-boundary crossing; growth trend ~25,468 < 25,500 threshold; conf 0.80; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 → 161 (official badge; conf 0.80; category enumeration corroborates 153–170 range) | INVALID (RECURRING oscillation; conf 0.80 below 0.88 threshold; badge 161 vs table 165; same ruling as Oct 2; no change) |
+| 5 | LOW | Sort | Verify sort order (156k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-02 08:44 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
