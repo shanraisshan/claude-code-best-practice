@@ -1,11 +1,12 @@
 ---
 name: presentation-styling
-description: Knowledge about CSS classes, component patterns, and syntax highlighting in the presentation
+description: Knowledge about the vibe-coding presentation's CSS classes, component patterns (cards, boxes, lists, tags), code-block syntax highlighting spans, and journey bar styling. Preloaded into the presentation-vibe-coding agent — use whenever writing or editing slide HTML/CSS in presentation/vibe-coding-to-agentic-engineering/index.html so new slides match existing styling.
+user-invocable: false
 ---
 
 # Presentation Styling Skill
 
-CSS classes and HTML patterns used in `presentation/index.html`.
+CSS classes and HTML patterns used in `presentation/vibe-coding-to-agentic-engineering/index.html`.
 
 ## CSS Component Classes
 
