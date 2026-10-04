@@ -1271,3 +1271,12 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Argument | Update `/mcp` — official docs now show `reconnect (<server>\|all)` syntax; add `reconnect all` form to signature and description (resolves ON HOLD from 2026-09-29) | ✅ COMPLETE (signature updated from `reconnect <server>` to `reconnect (<server>\|all)`; description extended with `reconnect all` behavior at #47 in Extensions tag) |
 | 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (changelog-only — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-04 11:14 AM PKT] Claude Code v2.1.289
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Argument | Update `/review` — add `[--max-findings n\|all\|default]` flag to signature (v2.1.288); `--max-findings` sets a per-run cap on findings reported; choice reused until `default` is passed | ✅ COMPLETE (signature updated at row #63 in Project tag) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-03 — official docs table not yet updated; defer until docs catch up) |
