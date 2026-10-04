@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-04 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (156k = 156,043 exact; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 285-320+ range (conf 0.60; below 0.88 threshold; 6 of 18 dirs verified; Oct 1 batch-merged 35 PRs #919–#953; engineering/65-80 + specialized/59-73 + marketing/37-45 + 15 other dirs; game-development subdirs not individually counted) | INVALID (RECURRING oscillation; conf 0.60 below 0.88 threshold; wide range 285-320+ with high uncertainty; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25k = 25,485 exact; no k-boundary crossed; 25.485k rounds to 25k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 → ~171 (conf 0.72; below 0.88 threshold; 4 of 10 dirs directly verified; 02-language-specialists 39 actual vs 31 claimed in README; Sep 14 additions memory-curator + auth-integration-engineer + webhook-engineer already counted in prior runs) | INVALID (RECURRING oscillation; conf 0.72 below 0.88 threshold; 6 of 10 categories unverified; no change) |
+| 5 | LOW | Sort | Verify sort order (156k > 25k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-03 08:49 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
