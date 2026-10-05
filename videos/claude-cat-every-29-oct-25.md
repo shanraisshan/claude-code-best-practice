@@ -166,7 +166,7 @@ Transcript of the interview with Cat & Boris (Claude Code engineers) on the Ever
 
 [`24:13`](https://youtu.be/IDSAMqip6ms?t=1453) testing dev like there was like a PM sub agent and this is like you know it's cute like it feels like a little maybe too anthropomorphic um maybe maybe there's something to this but I I think like the value is actually like the uncorrelated context windows where you have like these two context windows that don't know about each other and this is kind of interesting um and you tend to get better results this way. What about you? Do you have any interesting sub agents you use?
 
-[`24:35`](https://youtu.be/IDSAMqip6ms?t=1475) So, I've been tinkering with one um that is really good at front-end testing. So, it uses Playright to like see all right, what are like all the errors that are client side and pull them in and try to test more steps of the app. Um, it's not totally there yet, but I'm seeing signs of life and I think it's the kind of thing that we could potentially um, bundle in one of our plugins marketplaces.
+[`24:35`](https://youtu.be/IDSAMqip6ms?t=1475) So, I've been tinkering with one um that is really good at front-end testing. So, it uses Playwright to like see all right, what are like all the errors that are client side and pull them in and try to test more steps of the app. Um, it's not totally there yet, but I'm seeing signs of life and I think it's the kind of thing that we could potentially um, bundle in one of our plugins marketplaces.
 
 [`25:02`](https://youtu.be/IDSAMqip6ms?t=1502) Yeah. Um, definitely. I I' I've used something like that just with Puppeteer and just like watching it build something and then open up the browser and then be like, "Oh, I need to change this." It's like this is like, "Oh my god."
 
@@ -244,7 +244,7 @@ Transcript of the interview with Cat & Boris (Claude Code engineers) on the Ever
 
 [`41:53`](https://youtu.be/IDSAMqip6ms?t=2513) Um if you do want to bring semantic search to quad code, you can do so via an MCP tool. So if you want to manage your own index and expose an MCP tool that lets Quad Code call that, that that would work. What do you think are the top MCPS to use with cloud code?
 
-[`42:09`](https://youtu.be/IDSAMqip6ms?t=2529) Puppeteer and Playright are pretty high up there.
+[`42:09`](https://youtu.be/IDSAMqip6ms?t=2529) Puppeteer and Playwright are pretty high up there.
 
 [`42:11`](https://youtu.be/IDSAMqip6ms?t=2531) Definitely. Yeah.
 
