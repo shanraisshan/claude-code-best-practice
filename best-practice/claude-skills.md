@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2005%2C%202026%2010%3A16%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.289-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2006%2C%202026%2010%3A15%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.291-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(24)**
+## ![Official](../!/tags/official.svg) **(25)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -69,6 +69,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 22 | `artifact-diagramming` | Loads diagramming guidance for artifacts: when a diagram helps, what to draw, and how to write inline SVG that stays legible in light and dark themes. Claude normally loads it on its own when a diagram would help in an artifact. Requires v2.1.221+ |
 | 23 | `claude-in-chrome` | Has Claude carry out a task in your browser (test a page, fill a form, read console logs) through Claude in Chrome. Available when Chrome integration is enabled (e.g. `claude --chrome`) |
 | 24 | `artifact-design` | Loads design guidance and fundamentals for published artifact pages — layout, theming, sizing, and prose style. Claude normally loads it on its own before building any artifact. Introduced v2.1.281 |
+| 25 | `plugin-authoring` | Make a mod — a live pane, band, status line, toast or hook inside Claude Code (terminal or desktop Code tab) — written as a plugin of function hooks that hot-reloads in the session. Claude gives the one command another person runs to install a mod you made, and writes it in a README's install section. Improved in v2.1.290 |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
