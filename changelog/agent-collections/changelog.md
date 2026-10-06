@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-06 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 156k to 157k | COMPLETE (GitHub API: 157,334 exact; crosses k-boundary; conf 0.92; RECURRING — milestone crossing) |
+| 2 | HIGH | Star | Update VoltAgent/awesome-claude-code-subagents ★ from 25k to 26k | COMPLETE (GitHub API: 25,517 exact; 25.517k > 25.5k boundary → rounds to 26k; conf 0.97; RECURRING — milestone crossing) |
+| 3 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents from 165 to 161 | COMPLETE (full git tree enumeration: 13+30+16+17+13+16+16+17+12+11 = 161; README badge confirms "161+ Claude Code subagents"; conf 0.97 > 0.88 threshold; RECURRING — previously INVALID at lower conf; net −4 since Sep 26 COMPLETE) |
+| 4 | LOW | Count | msitarzewski/agency-agents agents 279 unchanged (README states "230+"; conf 0.72 < 0.88 threshold; per-dir breakdown sums ~273 at midpoints; oscillation persists) | INVALID (RECURRING oscillation; conf 0.72 below 0.88 threshold; README lower-bound only; no change) |
+| 5 | LOW | Sort | Verify sort order (157k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-03 08:49 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
