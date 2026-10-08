@@ -1283,3 +1283,63 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-10-08 10:47 AM PKT] Claude Code v2.1.294
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.294; update header from "140+ settings / 315+ env vars" to "243+ settings / 393+ env vars". Confirmed via official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 2 | HIGH | Missing Settings | Add `maxEffortLevel` (string, Any file, v2.1.267) — caps effort globally; lowest cap wins | ON HOLD (applying in this run) — NEW |
+| 3 | HIGH | Missing Settings | Add `deniedModels` (array, Managed only, v2.1.283) — blocks specific model IDs | ON HOLD (applying in this run) — NEW |
+| 4 | HIGH | Missing Settings | Add `availableModelsMatch` (string "prefix"/"exact", Managed only, v2.1.283) — controls model-ID matching mode | ON HOLD (applying in this run) — NEW |
+| 5 | HIGH | Missing Settings | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean, v2.1.257) — blocks reads outside workspace | ON HOLD (applying in this run) — NEW |
+| 6 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` (boolean, User or managed) — suppresses automatic permission prompts | ON HOLD (applying in this run) — NEW |
+| 7 | HIGH | Missing Settings | Add `sandbox.ripgrep` ({command, args}, User or managed) — override ripgrep binary for sandbox searches | ON HOLD (applying in this run) — NEW |
+| 8 | HIGH | Missing Settings | Add `bashOutputMaxChars` (number 4000–128000, default 30000, v2.1.261) to Core Configuration | ON HOLD (applying in this run) — NEW |
+| 9 | HIGH | Missing Settings | Add `bashEditDiffEnabled` (boolean, v2.1.269) to Display Settings — show git-style diff after bash edits | ON HOLD (applying in this run) — NEW |
+| 10 | HIGH | Missing Settings | Add `maxProseWidth` (number, v2.1.282) to Display Settings — max column width for prose output | ON HOLD (applying in this run) — NEW |
+| 11 | HIGH | Missing Settings | Add `subagentStatusLine` ({type, command}, v2.1.293) to Display Settings — status line for subagent sessions | ON HOLD (applying in this run) — NEW |
+| 12 | HIGH | Missing Settings | Add `timeFormat` and `timeZone` (v2.1.257) to Display Settings — clock format and timezone | ON HOLD (applying in this run) — NEW |
+| 13 | HIGH | Missing Settings | Add `terminalTitleFromRename` (boolean, default true) to Display Settings — sync terminal title from /rename | ON HOLD (applying in this run) — NEW |
+| 14 | HIGH | Missing Settings | Add `enableWorkflows` (boolean) to General Settings — enable workflow orchestration feature | ON HOLD (applying in this run) — NEW |
+| 15 | HIGH | Missing Settings | Add `syncClaudeAiSkills` and `syncClaudeAiPlugins` (v2.1.273) to Plugin Settings — sync marketplace content | ON HOLD (applying in this run) — NEW |
+| 16 | HIGH | Missing Settings | Add `managedMcpServers` (Managed only, v2.1.259) to MCP Settings — admin-deployed MCP server list | ON HOLD (applying in this run) — NEW |
+| 17 | HIGH | Missing Settings | Add `allowedProviders` (Managed only, v2.1.285) to Auth section — restrict allowed API providers | ON HOLD (applying in this run) — NEW |
+| 18 | HIGH | Missing Settings | Add `allowClaudeInChromeWithManagedMcp` (Managed only, v2.1.282) to MCP Settings | ON HOLD (applying in this run) — NEW |
+| 19 | HIGH | Missing Settings | Add `isolatePeerMachines` (boolean, v2.1.224) to General Settings — isolate fleet machines from each other | ON HOLD (applying in this run) — NEW |
+| 20 | HIGH | Missing Settings | Add `gatewayInternalNetworks` (Managed only, v2.1.268) to Auth section — CIDR list for internal network detection | ON HOLD (applying in this run) — NEW |
+| 21 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string "first-wins"/"merge", v2.1.242) to managed settings section | ON HOLD (applying in this run) — NEW |
+| 22 | HIGH | Wrong Description | Fix `alwaysThinkingEnabled` — current semantics inverted; setting to true now DISABLES thinking (silent undo). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 23 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: was "project and local"; is "User or managed" (restricted). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 24 | HIGH | Wrong Type | Fix `feedbackDrafts` — type is string "notify"/"quiet"/"off" not boolean. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 25 | HIGH | Wrong Description | Fix `dialogExpiry` — version v2.1.224 (not v2.1.246); valid values "60s"/"5m"/"10m"/"never"; default "5m"; scope User or managed. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 26 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` — default true (not false); scope User or managed. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 27 | HIGH | Wrong Type | Fix `strictKnownMarketplaces` — type is array (allowlist of org/name strings), not boolean. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 28 | HIGH | Wrong Shape | Fix `modelPicker` — wrong shape; correct shape is `{options: [{model, label, description, behavesAs}], replaceBuiltInOptions}`. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 29 | HIGH | Wrong Description | Fix `advisorModel` — add "unset means OFF"; fable is now a valid value. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 30 | HIGH | Wrong Description | Fix `ultracode` — persistent boolean, not session-only flag. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 31 | HIGH | Missing Feature | Fix `attribution` — can now be set to `false` to hide attribution (v2.1.281). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 32 | HIGH | Wrong Default | Fix `policyHelper.timeoutMs` — default is 10000, min 1000 (not "0 for no timeout"). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 33 | HIGH | Removed Setting | Fix `permissionExplainerEnabled` — REMOVED in v2.1.257; mark as removed in report | ON HOLD (applying in this run) — NEW |
+| 34 | HIGH | Deprecated Setting | Fix `keybindingFlavor` — deprecated since v2.1.261; has no effect. Mark as deprecated | ON HOLD (applying in this run) — NEW |
+| 35 | HIGH | Deprecated Setting | Fix `disableArtifact` — deprecated; canonical replacement is `enableArtifact: false`. Update description | ON HOLD (applying in this run) — NEW |
+| 36 | HIGH | Wrong Fields | Fix `spellcheck` — correct fields are `enabled`, `checker`, `language`, `color` (no `binary` field). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 37 | HIGH | Wrong Values | Fix `diffTool` — valid values are "auto" or "terminal" only (not external command path). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 38 | HIGH | Wrong Version | Fix `teammateDefaultModel` — removed in v2.1.234 not v2.1.251 as currently stated. Confirmed in changelog | ON HOLD (applying in this run) — RECURRING (first seen: 2026-09-01) |
+| 39 | HIGH | Wrong Values | Fix model aliases table — update to Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1; add `best` alias. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 40 | HIGH | Wrong Scope | Fix `allowedMcpServers`/`deniedMcpServers` scope — should be Any file not Managed only. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 41 | HIGH | Wrong Type | Fix `serverCommand` in MCP matching — must be array of strings, not glob string. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 42 | HIGH | Wrong Type | Fix `sandbox.credentials.awsPairs` — is array (of `{access, secret}` objects), not object. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 43 | HIGH | Wrong Fields | Fix `sandbox.credentials.sigv4` — correct fields are `streaming`, `presigned`, `sigv4a` (not current fields). Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 44 | HIGH | Wrong Nesting | Fix `permissions.skipDangerousModePermissionPrompt` — is top-level key not nested under `permissions`. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 45 | HIGH | Wrong Scope | Fix `defaultMode: bypassPermissions` — restricted to user/managed/--settings only since v2.1.257. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 46 | HIGH | Wrong Description | Fix cloud sessions permission modes — also honor `default` and `auto` modes. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 47 | HIGH | Example Accuracy | Fix Quick Reference example — remove stale `mcpServers` block; fix `excludedCommands` to use wildcards; fix `alwaysThinkingEnabled` value | ON HOLD (applying in this run) — NEW |
+| 48 | MED | Wrong Default | Update Effort levels table — Opus 5.5/Sonnet 5.5/Haiku 5.5 default to `medium` effort. Confirmed on official settings-reference page | ON HOLD (applying in this run) — NEW |
+| 49 | MED | Removed Env Vars | Remove 3 removed env vars: `CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE`, `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`, `TASK_MAX_OUTPUT_LENGTH`. Confirmed no longer on official env-vars page | ON HOLD (applying in this run) — NEW |
+| 50 | MED | Missing Env Vars | Add ~76 missing env vars including `CLAUDE_CODE_DISABLE_WEB_FETCH`, `CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR`, `CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS`, `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS`, `CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES`, `CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK`, new Vertex region vars for 5.5 models, and many others. Confirmed on official env-vars page | ON HOLD (applying in this run) — NEW |
+| 51 | MED | Stale Annotations | Remove "not yet on official page" annotations from ~20 env vars now confirmed on official env-vars page | ON HOLD (applying in this run) — NEW |
+| 52 | LOW | Broken Link | Fix broken anchor link in `claude-cli-startup-flags.md` line 211: `./claude-settings.md#environment-variables` → `./claude-settings.md#environment-variables-via-env` | ON HOLD (applying in this run) — NEW |
+| 53 | LOW | Missing Source | Update Sources section — change "~180 keys" to "243 entries"; add managed-settings and settings-example sources | ON HOLD (applying in this run) — NEW |
