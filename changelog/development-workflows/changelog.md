@@ -3812,3 +3812,26 @@
 | 16 | LOW | Workflow | All workflow variants from both agents: first consecutive observations across BMAD, omc, CE, gstack, OpenSpec, Matt Pocock, HumanLayer, GSD — all ON HOLD per 2nd-consecutive rule | ON HOLD (RECURRING — all 1st consecutive; keep current workflows) |
 | 17 | LOW | Sort | Sort order after updates: 297k > 281k > 275k > 141k > 136k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.7k > 25.4k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
 | 18 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP authoritative for 10 accessible repos; ECC API blocked 31st consecutive run — HTML scrape 275k conf 0.82; 3 changes applied to README (Superpowers 296k→297k; Matt Pocock 280k→281k; ECC 274k→275k) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-10 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 281k → 283k (GitHub MCP: 282,978 ≥ 282,500 midpoint; skip 282k since already past midpoint) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ 275k → 276k (Agent 1 API: 276,051; ECC MCP blocked 32nd+ consecutive run) | COMPLETE (RECURRING — MCP blocked; updated README table) |
+| 3 | LOW | Star | Superpowers 297k (already applied by prior routine; confirmed) | COMPLETE (RECURRING — already applied) |
+| 4 | LOW | Star | Spec Kit 141k (already applied by prior routine; confirmed) | COMPLETE (RECURRING — already applied) |
+| 5 | LOW | Star | gstack 136k (already applied by prior routine; confirmed) | COMPLETE (RECURRING — already applied) |
+| 6 | LOW | Star | OpenSpec 71k (GitHub MCP: in range; no change) | COMPLETE (no change) |
+| 7 | LOW | Star | GSD 64.6k (archived; frozen) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 8 | LOW | Star | BMAD 54k (GitHub MCP: in range; no change) | COMPLETE (no change) |
+| 9 | LOW | Star | omc 39.6k (GitHub MCP: in range; no change) | COMPLETE (no change) |
+| 10 | LOW | Star | Compound Engineering 25.4k (GitHub MCP: in range; no change) | COMPLETE (no change) |
+| 11 | LOW | Star | HumanLayer 11.7k (GitHub MCP: in range; no change) | COMPLETE (no change) |
+| 12 | HIGH | Workflow | Superpowers: confirmed 2nd consecutive of 7-step brainstorming→using-git-worktrees(top)→writing-plans→subagent-driven-development→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch | COMPLETE (RECURRING — 2nd consecutive confirmed; applied) |
+| 13 | LOW | Workflow | All other workflow variants: 1st consecutive observations — all ON HOLD per 2nd-consecutive rule | ON HOLD (RECURRING — keep current workflows) |
+| 14 | LOW | Sort | Sort order after updates: 297k > 283k > 276k > 141k > 136k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.6k > 25.4k > 11.7k — no re-sort needed | COMPLETE (no re-sort needed) |
+| 15 | LOW | Badge | Updated Last Updated badge: Oct 10, 2026 9:17 AM PKT | COMPLETE |
+| 16 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 32nd+ consecutive run — Agent 1 API 276,051 authoritative; merge conflict resolved (stash side taken; daily routine chain intact) | COMPLETE (RECURRING — GitHub MCP method established) |
