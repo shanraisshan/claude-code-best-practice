@@ -1283,3 +1283,28 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-04 10:43 AM PKT] Claude Code v2.1.260
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.260; update Last Updated date to Sep 04, 2026 10:43 AM PKT. Confirmed via changelog (latest is v2.1.260) | ✅ COMPLETE (badge and date updated) — NEW |
+| 2 | HIGH | New Setting | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean) to Permission Keys table — refuses file reads outside working directories in all permission modes (v2.1.257). Confirmed in official settings-reference | ✅ COMPLETE (added to Permission Keys) — NEW |
+| 3 | HIGH | New Settings | Add `timeFormat` (string, values: `12h`/`24h`/strftime pattern, v2.1.257) and `timeZone` (string, IANA/UTC, v2.1.257) to Display Settings table. Confirmed in official settings-reference | ✅ COMPLETE (both added to Display Settings) — NEW |
+| 4 | HIGH | New Setting | Add `managedMcpServers` (object, managed-only, v2.1.259) to MCP Settings table — organizations provision HTTP/SSE MCP servers to all users automatically. Confirmed in official settings-reference | ✅ COMPLETE (added to MCP Settings) — NEW |
+| 5 | HIGH | New Settings | Add `userPluginMarketplacesEnabled` and `userPluginUploadsEnabled` (boolean, managed-only, v2.1.260) to Plugin Settings table. Confirmed in official settings-reference | ✅ COMPLETE (both added to Plugin Settings) — NEW |
+| 6 | HIGH | New Env Var | Add `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` (v2.1.257) — forces model on every subagent ignoring agent frontmatter or explicit model params. Confirmed in official settings-reference | ✅ COMPLETE (added to Environment Variables) — NEW |
+| 7 | MED | Changed Behavior | Update `allowedMcpServers` description: as of v2.1.260, only governs user-added servers (`.mcp.json`, `~/.claude.json`); managed servers via `managedMcpServers` load regardless. Confirmed in official settings-reference | ✅ COMPLETE (description updated) — NEW |
+| 8 | MED | Removed Setting | Mark `permissionExplainerEnabled` (Global Config) as removed in v2.1.257 — the AI-generated permission explanation and `Ctrl+E` shortcut were removed. Confirmed in official settings-reference | ✅ COMPLETE (marked removed in description) — NEW |
+| 9 | MED | Changed Setting | Update `fable` model alias: now resolves to Fable 5.1 on the Anthropic API (released Sep 1, 2026 / v2.1.252); third-party gateways still resolve to Fable 5 pending gateway updates. Confirmed in claude-code-guide agent research | ✅ COMPLETE (alias updated in Model Aliases table) — NEW |
+| 10 | HIGH | Wrong Description | Fix `enableArtifact`: semantics are now "off switch" — `false` in any file disables Artifact permanently for that scope; `disableArtifact` is deprecated. Was incorrectly documented as "opt-in" | ✅ COMPLETE (description corrected, disableArtifact marked deprecated) — NEW |
+| 11 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: official says "User or managed" (not "project and local"). Contradicted report; updated to match official | ✅ COMPLETE (scope corrected) — NEW |
+| 12 | HIGH | Wrong Scope | Fix `allowedMcpServers` and `deniedMcpServers` scope: both are "Any file" not "Managed only". Confirmed in official settings-reference | ✅ COMPLETE (scopes corrected) — NEW |
+| 13 | HIGH | Changed Behavior | Add note to `permissions.defaultMode`: `"bypassPermissions"` is now ignored from project/local settings since v2.1.257 (same restriction as `"auto"` since v2.1.142). Security-relevant change | ✅ COMPLETE (note added) — NEW |
+| 14 | MED | Wrong Version | Fix hook redirect blurb: `PreModelSwitch`/`PostModelSwitch` added in v2.1.251, not v2.1.252. Confirmed by agent cross-checking changelog | ✅ COMPLETE (version corrected) — NEW |
+| 15 | MED | Missing Settings | Add `subagentStatusLine` (object, v2.1.245+) and `promptSuggestionEnabled` (boolean) to Display Settings | ✅ COMPLETE (both added) — NEW |
+| 16 | MED | Missing Status Fields | Add `rate_limits.spend_limit` (v2.1.251) and `prompt_cache` (v2.1.260) to Status Line Input Fields table | ✅ COMPLETE (both added) — NEW |
+| 17 | MED | Incomplete Description | Update `spinnerTipsOverride`: `tips` array now accepts per-tip objects `{id, text, cooldownSessions, priority}` (v2.1.247+) | ✅ COMPLETE (updated) — NEW |
+| 18 | MED | Wrong Type/Scope | Fix `modelPicker`: type is array (not object); scope is "User or managed" only (ignored in project/local settings) | ✅ COMPLETE (type and scope corrected) — NEW |
