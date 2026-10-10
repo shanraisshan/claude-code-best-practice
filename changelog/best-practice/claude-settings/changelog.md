@@ -1283,3 +1283,38 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-27 10:45 AM PKT] Claude Code v2.1.283
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.283; update header count from "140+ settings" to "145+ settings". Confirmed via official settings-reference page (234 index rows) | ✅ COMPLETE — NEW |
+| 2 | HIGH | Missing Settings | Add 2 new managed-only model restriction keys: `availableModelsMatch` (string, "prefix"\|"exact", default "prefix" — controls how `availableModels` entries are matched, v2.1.283) and `deniedModels` (array — blocks specific models even if in allowlist, v2.1.283). Confirmed in v2.1.283 changelog | ✅ COMPLETE — NEW |
+| 3 | HIGH | Missing Settings | Add `syncClaudeAiSkills` and `syncClaudeAiPlugins` (boolean, opt-out only — only `false` has effect) to Plugins section. Sync skills/plugins from claude.ai account, introduced v2.1.275. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 4 | HIGH | Wrong Type | Fix `strictKnownMarketplaces` type: was boolean ("only official marketplace"), is actually **array** of allowed marketplace source objects. An empty array blocks all marketplaces. Confirmed in official settings-reference | ✅ COMPLETE — NEW |
+| 5 | HIGH | Wrong Scope | Fix `allowedMcpServers` and `deniedMcpServers` scope: was "Managed only", is **Any file** (entries merge). Since v2.1.259, `allowedMcpServers` governs only user-added servers. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 6 | HIGH | Missing Setting | Add `managedMcpServers` (object, Managed only) — admin-deployed HTTP/SSE MCP servers added to every session without user consent. Introduced v2.1.259. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 7 | HIGH | Model Alias | Update `opus` alias: now resolves to **Opus 5.5** (`claude-opus-5-5`) on Anthropic API, Claude Platform on AWS, and Bedrock (v2.1.280). Pro and Team Standard default model changed from Sonnet to Opus. Update `sonnet` to Sonnet 4.5 on Bedrock/Agent Platform/Foundry. Add `best` alias. Confirmed in v2.1.280 changelog | ✅ COMPLETE — NEW |
+| 8 | HIGH | Wrong Description | Fix `alwaysThinkingEnabled`: report said default `false`, "enable extended thinking". Actually only `false` has an effect — thinking is on by default on always-thinking models (Opus 5.5, Fable). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 9 | HIGH | Wrong Description | Fix `feedbackDrafts` type: was boolean (true/false), is **string** ("notify"\|"quiet"\|"off", default "notify"). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 10 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: was "only honored from project and local settings", is **User or managed** (project/local values are ignored). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 11 | HIGH | Wrong Semantics | Fix `enableArtifact`: only `false` disables the tool; `true` is same as unset. Mark `disableArtifact` as deprecated. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 12 | HIGH | Missing Env Var | Add `CLAUDE_CODE_AUTO_MODE_SERVER` (0=opt out, 1=opt in) — controls whether the server-side auto-mode classifier is used. v2.1.273, extended to direct API in v2.1.281. Confirmed in changelog | ✅ COMPLETE — NEW |
+| 13 | HIGH | Deprecated Key | Mark `TASK_MAX_OUTPUT_LENGTH` as no-op since v2.1.277 (TaskOutput tool removed). Confirmed in v2.1.277 changelog | ✅ COMPLETE — NEW |
+| 14 | HIGH | Removed Key | Mark `permissionExplainerEnabled` as **Removed in v2.1.257** (Ctrl+E explainer removed). Confirmed in v2.1.257 changelog | ✅ COMPLETE — NEW |
+| 15 | HIGH | Deprecated Key | Mark `keybindingFlavor` as **Deprecated since v2.1.261 — no longer has any effect**. Confirmed in v2.1.261 changelog | ✅ COMPLETE — NEW |
+| 16 | HIGH | Wrong Version | Fix `teammateDefaultModel` removal version: was v2.1.251, is **v2.1.234**. Confirmed in v2.1.234 changelog | ✅ COMPLETE — NEW |
+| 17 | HIGH | Wrong Description | Fix `USE_BUILTIN_RIPGREP`: report said "set to 1 to use bundled", actually bundled is the default; set `0` to use system `rg`. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 18 | MED | Missing Setting | Add `maxProseWidth` (number, min 40) to Display & UX — cap prose width in wide terminals (v2.1.282). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 19 | MED | Missing Setting | Add `timeFormat` (string, "auto"\|"12-hour"\|"24-hour"\|"24-hour-utc"\|strftime) and `timeZone` (IANA name) to Display & UX (v2.1.257). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 20 | MED | Missing Setting | Add `permissions.blockReadsOutsideWorkingDirectories` (boolean, any source) to Permissions (v2.1.257). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 21 | MED | Missing Setting | Add `maxEffortLevel` (string cap, lowest cap wins; also per-model in modelSettings, v2.1.267). Fix `effortLevel` description for v2.1.280 behavior change (user-file `effortLevel` ignored by newly released models). Fix `/effort` per-model save version to v2.1.251. Confirmed in settings-reference and changelog | ✅ COMPLETE — NEW |
+| 22 | MED | Missing Setting | Add `bashOutputMaxChars` (number, 4000–128000, default 30000, v2.1.261) to General Settings. Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 23 | MED | Missing Managed Key | Add `allowClaudeInChromeWithManagedMcp` (boolean, Managed only, v2.1.282) to Managed-only policy keys. Confirmed in v2.1.282 changelog | ✅ COMPLETE — NEW |
+| 24 | MED | Wrong Semantics | Fix `permissions.disableBypassPermissionsMode`: improved description from "Prevent bypass mode activation" to full semantics — Managed only, blocks `--dangerously-skip-permissions`, `defaultMode: "bypassPermissions"`, and Shift+Tab cycle (v2.1.281). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 25 | MED | Missing Behavior | Add v2.1.257 note to `permissions.defaultMode`: `bypassPermissions` is also ignored from project and local settings (matches existing `auto` restriction). Confirmed in v2.1.257 changelog | ✅ COMPLETE — NEW |
+| 26 | MED | Missing Env Var | Add `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` to env vars (v2.1.280). Confirmed in changelog | ✅ COMPLETE — NEW |
+| 27 | MED | Wrong Description | Fix `diffTool` (Global Config): was "external diff tool command", is "auto"\|"terminal" toggle (v2.1.???). Confirmed in settings-reference | ✅ COMPLETE — NEW |
+| 28 | MED | Wrong Scope | Fix `extraKnownMarketplaces` scope: was "Project", is **Any file** (entries from project settings apply only after workspace trust). Confirmed in settings-reference | ✅ COMPLETE — NEW |
