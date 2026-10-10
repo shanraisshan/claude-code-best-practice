@@ -1283,3 +1283,33 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-10-01 10:55 AM PKT] Claude Code v2.1.286
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.286; update header counts from "140+ settings / 315+ env vars" to "241+ settings / 374+ env vars". Confirmed via official settings-reference page | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Settings | Add 11 new settings keys confirmed on official settings-reference: `availableModelsMatch`, `deniedModels`, `allowedProviders`, `maxEffortLevel`, `managedMcpServers`, `timeFormat`, `timeZone`, `maxProseWidth`, `bashEditDiffEnabled`, `bashOutputMaxChars`, `syncClaudeAiSkills`, `syncClaudeAiPlugins`. All confirmed in settings-reference v2.1.258–2.1.274 | COMPLETE (all 11 added to appropriate sections) — NEW |
+| 3 | HIGH | Wrong Scope | Fix `allowedMcpServers` and `deniedMcpServers` scope: "Managed only" → "Any" — these are now user-configurable. Confirmed in settings-reference | COMPLETE (scope updated to "Any") — NEW |
+| 4 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: "Only honored from project and local settings" → "Only honored from user and managed settings". Confirmed in settings-reference | COMPLETE (scope corrected) — NEW |
+| 5 | HIGH | Wrong Description | Fix `advisorModel`: "When unset, uses session model" → "When unset, the advisor is OFF (not attached)". Confirmed in settings-reference | COMPLETE (description fixed) — NEW |
+| 6 | HIGH | Wrong Description | Fix `feedbackDrafts`: type boolean → string; values "notify"/"quiet"/"off"; default "notify". Confirmed in settings-reference | COMPLETE (type and values updated) — NEW |
+| 7 | HIGH | Wrong Description | Fix `ultracode`: remove incorrect "(Session-only — not persisted)" claim — key is persistent and can be written to settings.json. Confirmed in settings-reference | COMPLETE (claim removed) — NEW |
+| 8 | HIGH | Wrong Description | Fix `/model` note: inverted — `/model` saves as persistent default by default; press `s` for session-only. Confirmed in CLI reference | COMPLETE (note corrected) — NEW |
+| 9 | HIGH | Wrong Description | Fix `effortLevel` default: Opus 5.5 and Sonnet 5.5 default to `medium` (not `high`). Confirmed in settings-reference v2.1.268+ | COMPLETE (default corrected) — NEW |
+| 10 | HIGH | Wrong Description | Fix `modelSettings` version: v2.1.243 → v2.1.251 (when `/effort` started writing to this key). Confirmed in changelog | COMPLETE (version corrected) — NEW |
+| 11 | HIGH | Wrong Version | Fix `teammateDefaultModel` removal version: v2.1.251 → v2.1.234. Confirmed in v2.1.234 changelog | COMPLETE (version corrected) — RECURRING (first seen: 2026-09-01) |
+| 12 | HIGH | Wrong Description | Fix `diffTool`: description said "external command path" but values are now "auto"/"terminal". Confirmed in settings-reference | COMPLETE (description updated with values) — NEW |
+| 13 | HIGH | Deprecated Key | Mark `permissionExplainerEnabled` as removed in v2.1.257. Confirmed in v2.1.257 changelog | COMPLETE (marked removed) — NEW |
+| 14 | HIGH | Deprecated Key | Mark `disableArtifact` as deprecated since v2.1.268 (replaced by `enableArtifact`). Fix `enableArtifact` description (inverted — default is true, false disables). Confirmed in settings-reference | COMPLETE (both entries updated) — NEW |
+| 15 | HIGH | Deprecated Key | Mark `keybindingFlavor` as deprecated since v2.1.261. Confirmed in v2.1.261 changelog | COMPLETE (deprecation note added) — NEW |
+| 16 | HIGH | Missing Settings | Add `best` model alias (v2.1.272) and update `opus`/`sonnet` aliases to reference 5.5 versions. Confirmed in changelog and settings-reference | COMPLETE (aliases updated) — NEW |
+| 17 | HIGH | Permission Mode | Add note that auto mode is the default since v2.1.284 when no permission mode is configured. Confirmed in v2.1.284 changelog | COMPLETE (note added to auto mode entry) — NEW |
+| 18 | HIGH | Stale Annotation | Remove "in JSON schema, not on official settings page" annotation from `sandbox.ignoreViolations` — now confirmed on official settings page. Confirmed in settings-reference | COMPLETE (annotation removed) — RESOLVED |
+| 19 | HIGH | Wrong Count | Update sources ~180 → ~241 keys in settings-reference. Confirmed by counting settings-reference page | COMPLETE (count updated) — NEW |
+| 20 | HIGH | Hook Count | Update hooks redirect blurb from "28 hook events" to "33 hook events". Confirmed in official hooks docs | COMPLETE (count updated) — NEW |
+| 21 | MED | Quick Reference | Remove `mcpServers` from Quick Reference example — it is NOT a settings.json key (it belongs in `.mcp.json`). Confirmed in settings-reference | COMPLETE (removed from example) — NEW |
+| 22 | MED | MCP Reserved Names | Add `widgets`, `anthropic-skills`, `claude-ai` to reserved MCP server names list. Confirmed in settings-reference | COMPLETE (reserved names updated) — NEW |
+| 23 | MED | Wrong Scope | Fix `enforceAvailableModels`: remove "(Managed only)" scope restriction — available at any scope. Add edge-case note about no-op when `availableModels` is empty. Confirmed in settings-reference | COMPLETE (scope and edge case added) — RESOLVED |
