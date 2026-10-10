@@ -1283,3 +1283,70 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-09-16 10:48 AM PKT] Claude Code v2.1.273
+
+**Versions covered:** v2.1.253 → v2.1.273 (21 versions)
+**Research sources:** `workflow-claude-settings-agent` + `claude-code-guide` parallel agents; direct fetch of settings-reference, CLI reference, and raw GitHub changelog
+
+### Verification Log
+
+| Rule | Check | Result |
+|------|-------|--------|
+| 1A | Key completeness (docs → report) | 18 missing keys identified |
+| 1B | Key types | `crossSessionInbound` values drift noted (accept/hold/refuse vs deliver/notice/refuse — needs re-verification); `feedbackDrafts` type drift noted |
+| 1C | Key defaults | `cleanupPeriodDays` default: 30 → 90 per settings-reference (low confidence — needs verification before changing) |
+| 1D | Key descriptions | Multiple descriptions updated this run |
+| 1E | Scope column | All scope columns verified; `askUserQuestionTimeout` scope discrepancy noted (project/local vs user/managed) |
+| 1F | Inverse completeness | `dynamicWorkflowSize` and `skippedMarketplaces`/`skippedPlugins` remain unverified in official docs — correctly annotated |
+| 1G | Edge-case semantics | `bashOutputMaxChars`/`taskOutputMaxChars` 128K ceiling documented |
+| 1H | File scope | Display Settings scope verified; `timeFormat`/`timeZone` added correctly to settings.json scope |
+| 1I | Skills keys | `skillListingMaxDescChars` and `skillListingBudgetFraction` confirmed present — no drift |
+| 2A | Priority levels | 5-level hierarchy + managed confirmed correct |
+| 2B | File locations | All file paths confirmed correct |
+| 2C | Merge semantics | Updated cross-scope exceptions list with 8 restrictive-value-wins keys |
+| 2D | Managed internals | `managedSourcesBehavior` key added; `disableDesktopLocalSessions`, `gatewayInternalNetworks`, `sshHostAllowlist` added |
+| 3A | Permission modes | 7 modes confirmed correct (default/manual/acceptEdits/dontAsk/bypassPermissions/auto/plan) |
+| 3B | Tool syntax | `!` negation prefix and invalid trailing text note added |
+| 3C | Bidirectional mode check | No unverified modes in report |
+| 3D | Evaluation semantics | `permissions.blockReadsOutsideWorkingDirectories` added; `!` negation scoping documented |
+| 4A | Hooks redirect | Link to `github.com/shanraisshan/claude-code-hooks` confirmed valid |
+| 5A | Env var completeness | 9 new env vars added |
+| 5B | Ownership boundary | No boundary violations; `USE_BUILTIN_RIPGREP` cross-link confirmed |
+| 5C | Env var descriptions | New vars documented with version attribution |
+| 5D | Inverse env var check | No undocumented vars without annotation |
+| 6A | Quick Reference | Example uses valid keys; no deprecated keys |
+| 6B | Example URL | `$schema` URL confirmed valid (`json.schemastore.org`) |
+| 7A | CLAUDE.md sync | CLAUDE.md hierarchy consistent with report |
+| 8A | Source credibility | All findings confirmed by official docs only |
+| 9A | Local file links | `../.claude/settings.json` and `./claude-cli-startup-flags.md` confirmed exist |
+| 9B | External URLs | All `code.claude.com/docs/en/` links valid |
+| 9C | Anchor links | No broken internal anchors |
+| 10A | Version metadata | Badge updated to v2.1.273; counts updated to 160+ settings / 325+ env vars |
+| 10B | Suspect key escalation | `dynamicWorkflowSize` (unverified), `skippedMarketplaces`/`skippedPlugins` (unverified) — each has correct annotation, under threshold |
+| 10C | Bidirectional completeness | All new keys traceable to official sources or annotated |
+
+### Action Items
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Security Fix | Fix `permissions.defaultMode` — `bypassPermissions` is also ignored in project/local settings since v2.1.257. Previously only `auto` was restricted. Confirmed in settings-reference | ✅ COMPLETE (v2.1.257 restriction documented) — NEW |
+| 2 | HIGH | Missing Settings | Add 18 missing settings keys: `maxEffortLevel`, `permissions.blockReadsOutsideWorkingDirectories`, `isolatePeerMachines`, `syncClaudeAiSkills`, `bashOutputMaxChars`, `taskOutputMaxChars`, `bashEditDiffEnabled`, `enableWorkflows`, `promptSuggestionEnabled`, `skipAutoPermissionPrompt`, `sandbox.ripgrep`, `managedMcpServers`, `managedSourcesBehavior`, `gatewayInternalNetworks`, `sshHostAllowlist`, `disableDesktopLocalSessions`, `copyOnSelect`, `timeFormat`/`timeZone`. All confirmed in official settings-reference or changelog | ✅ COMPLETE (all 18 added to respective tables) — NEW |
+| 3 | HIGH | Wrong Description | Fix `allowedMcpServers` — breaking change in v2.1.268: now governs only user-added servers, not managed servers from `managedMcpServers`. Confirmed in v2.1.268 changelog | ✅ COMPLETE (scope narrowing documented) — NEW |
+| 4 | HIGH | Wrong Description | Fix `permissions.defaultMode` note — `bypassPermissions` restricted from project/local since v2.1.257. Confirmed in settings-reference | ✅ COMPLETE (note updated) — NEW |
+| 5 | HIGH | Wrong Alias | Fix `fable` model alias — default is now **Claude Fable 5.1** (not Fable 5). `opusplan[1m]` is now valid (v2.1.265). Confirmed in changelog | ✅ COMPLETE (alias updated) — NEW |
+| 6 | HIGH | Wrong Description | Fix `enableArtifact` version: v2.1.196+ → v2.1.242+; add `false` scope-exception note (`false` from any scope overrides managed `true`). Confirmed in settings-reference exceptions table | ✅ COMPLETE (version and exception updated) — NEW |
+| 7 | HIGH | Missing Permission Syntax | Add `!` negation prefix to permission syntax notes; add invalid-trailing-text warning. Confirmed in v2.1.267 and v2.1.269 changelogs | ✅ COMPLETE (negation prefix and trailing text warning added) — NEW |
+| 8 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.273; counts updated to 160+ settings / 325+ env vars | ✅ COMPLETE (badge and header updated) — NEW |
+| 9 | MED | Missing MCP Key | Add `managedMcpServers` (managed only, v2.1.258+) to MCP Settings table | ✅ COMPLETE (added) — NEW |
+| 10 | MED | Stale Annotation | Remove stale "*(in JSON schema, not on official settings page)*" caveat from `sandbox.ignoreViolations` — now listed in official settings-reference index. Confirmed by agent research | ✅ COMPLETE (caveat removed) — RESOLVED |
+| 11 | MED | Wrong Description | Fix `modelPicker` — also ignored in project and local settings (not just "does not merge"). Confirmed in settings-reference | ✅ COMPLETE (scope restriction added) — NEW |
+| 12 | MED | Missing Model Feature | Add `modelPricing` `multiplier` field (range 1–10). Confirmed in settings-reference | ✅ COMPLETE (multiplier field documented) — NEW |
+| 13 | MED | Missing Model Key | Add `maxEffortLevel` to Model Overrides table — caps effort level, managed-precedence exception (lower cap from any scope wins). Confirmed in settings-reference (v2.1.267) | ✅ COMPLETE (added to Model Overrides table) — NEW |
+| 14 | MED | Missing Env Vars | Add 9 missing env vars: `CLAUDE_CODE_BG_TASKS_REPORT_RUNNING` (v2.1.261), `CLAUDE_CODE_AUTO_MODE_SERVER` (v2.1.271), `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` (v2.1.269+), `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` (v2.1.269), `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.273), `CLAUDE_CODE_WEBFETCH_DEADLINE_MS` (v2.1.268), `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` (~v2.1.258+), `CLAUDE_CODE_USE_GATEWAY` (v2.1.265; no-op v2.1.266+), `OTEL_METRICS_INCLUDE_REPOSITORY` (v2.1.269). Confirmed via changelog | ✅ COMPLETE (all 9 added) — NEW |
+| 15 | MED | Hierarchy Update | Add `managedSourcesBehavior` key explanation; expand cross-scope exception list to 8 keys; add consolidated managed-precedence exceptions note. Confirmed in settings-reference | ✅ COMPLETE (hierarchy updated) — NEW |
+| 16 | MED | Sources Update | Fix Sources annotation: settings-reference "~180 keys" → "~207 keys"; add description note that `docs/en/settings` is now a narrative page. Confirmed by fetching both pages | ✅ COMPLETE (sources updated) — NEW |
+| 17 | LOW | Unverified Key | `crossSessionInbound` values — settings-reference shows "deliver/notice/refuse" while report says "accept/hold/refuse". Low-confidence discrepancy, may be documentation lag. **ON HOLD** pending re-verification against live docs next run | ✋ ON HOLD (value names unverified; report kept as-is) |
+| 18 | LOW | Unverified Default | `cleanupPeriodDays` — settings-reference may show default 90 (not 30 in report). **ON HOLD** pending confirmation next run | ✋ ON HOLD (default kept as 30 pending verification) |
