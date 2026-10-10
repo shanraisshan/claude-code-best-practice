@@ -1283,3 +1283,35 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-10-05 10:59 AM PKT] Claude Code v2.1.289
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.289; update header counts from "140+ settings / 315+ env vars" to "243+ settings / 387+ env vars". Confirmed via official settings-reference page (243 keys) | COMPLETE (badge and header updated) |
+| 2 | HIGH | Wrong Default | Fix `alwaysThinkingEnabled` default: was `false`, official docs say `unset, so thinking is on for models that support it`. Confirmed in settings-reference | COMPLETE (default corrected to `unset`) |
+| 3 | HIGH | Wrong Description | Fix `ultracode` — remove "(Session-only — not persisted)" note since v2.1.284 this key is persisted to settings.json. Updated description to reflect persistence. Confirmed in official docs | COMPLETE (description updated) |
+| 4 | HIGH | Wrong Description | Fix `dialogExpiry` — was "Accepts duration strings (e.g., "5m", "1h")"; correct valid values are only "60s"/"5m"/"10m"/"never", default is "5m", scope is User or managed only. Confirmed in settings-reference | COMPLETE (type and description corrected) |
+| 5 | HIGH | Wrong Type | Fix `strictKnownMarketplaces` type: was boolean, is actually array of marketplace source objects. Empty array = complete lockdown. Confirmed in settings-reference | COMPLETE (type corrected) |
+| 6 | HIGH | Wrong Description | Fix `spellcheck` fields: was `binary` (path), correct fields are `checker` ("aspell"/"hunspell"/"ispell"/"auto"), `language`, and `color`. Scope is User or managed only. Confirmed in settings-reference | COMPLETE (description corrected) |
+| 7 | HIGH | Permission Scope | Fix `permissions.defaultMode` — add v2.1.257 note: `bypassPermissions` no longer takes effect from project or local settings (previously any file). Confirmed in settings-reference | COMPLETE (scope restriction note added) |
+| 8 | HIGH | Wrong Example | Fix `allowedMcpServers` example — `serverCommand` must be an array `["npx", "..."]` not a string. Confirmed in settings-reference | COMPLETE (example corrected) |
+| 9 | HIGH | Wrong Shape | Fix `modelPicker` — description showed array `[{...}]` but official type is object with `options` array + optional `replaceBuiltInOptions` boolean. Scope is User or managed only. Confirmed in settings-reference | COMPLETE (shape corrected) |
+| 10 | HIGH | Model Aliases | Update model aliases: `sonnet` → Claude Sonnet 5.5, `opus` → Claude Opus 5.5. Confirmed current defaults | COMPLETE (aliases updated) |
+| 11 | HIGH | Hook Count | Update hooks redirect blurb from "28 hook events" to "33 hook events". Confirmed in official hooks documentation | COMPLETE (count updated) |
+| 12 | HIGH | Missing Setting | Add `permissions.blockReadsOutsideWorkingDirectories` [v2.1.257] to Permission Keys table (Any file, boolean, v2.1.257). Confirmed in settings-reference | COMPLETE (key added) |
+| 13 | HIGH | Missing Settings | Add `managedMcpServers` [v2.1.259] and `allowClaudeInChromeWithManagedMcp` [v2.1.282] to MCP Settings table. Confirmed in settings-reference | COMPLETE (both added) |
+| 14 | HIGH | Missing Settings | Add `maxEffortLevel` [v2.1.267], `deniedModels` [v2.1.283] (Managed only), and `availableModelsMatch` [v2.1.283] (Managed only) to Model Overrides table. Confirmed in settings-reference | COMPLETE (all 3 added) |
+| 15 | HIGH | Missing Setting | Add `enableWorkflows` (Any file, boolean) to General Settings — the positive counterpart of `disableWorkflows`. Confirmed in settings-reference | COMPLETE (key added) |
+| 16 | HIGH | Missing Settings | Add `bashOutputMaxChars` [v2.1.261], `isolatePeerMachines` to General Settings; add `bashEditDiffEnabled` [v2.1.269], `maxProseWidth` [v2.1.282], `terminalTitleFromRename`, `timeFormat` [v2.1.257], `timeZone` [v2.1.257], `subagentStatusLine`, `promptSuggestionEnabled` to Display Settings. All confirmed in settings-reference | COMPLETE (all 9 added) |
+| 17 | HIGH | Missing Settings | Add `appendPlugins` and `prependPlugins` (User or managed) to Plugin Settings table. Confirmed in settings-reference | COMPLETE (both added) |
+| 18 | HIGH | Missing Settings | Add `syncClaudeAiSkills` and `syncClaudeAiPlugins` [v2.1.273] to General Settings. Confirmed in settings-reference | COMPLETE (both added) |
+| 19 | HIGH | Missing Settings | Add `allowedProviders` [v2.1.285] (Managed only) and `gatewayInternalNetworks` [v2.1.268] (Managed only, device-local) to Authentication section. Confirmed in settings-reference | COMPLETE (both added) |
+| 20 | HIGH | Missing Settings | Add `sandbox.ripgrep` (User or managed) to Sandbox Settings; add `sshHostAllowlist` (Managed only) to Workspace section; add `disableDesktopLocalSessions` (Managed only) to General Settings. Confirmed in settings-reference | COMPLETE (all 3 added) |
+| 21 | HIGH | Missing Settings | Add `copyOnSelect`, `copyFullResponse`, `defaultToAgentsView`, `leftArrowOpensAgents` to Global Config Settings table. Confirmed in settings-reference | COMPLETE (all 4 added) |
+| 22 | HIGH | Missing Setting | Add `skipAutoPermissionPrompt` (User or managed) to Permission Keys table. Confirmed in settings-reference | COMPLETE (key added) |
+| 23 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default: official says `true` (not unset); scope is User or managed only — a project/local value turns feature off. Confirmed in settings-reference | COMPLETE (default and scope corrected) |
+| 24 | HIGH | Wrong Example | Remove invalid `mcpServers` block from Quick Reference complete example — `mcpServers` is not a valid `settings.json` key (belongs in `.mcp.json` instead). Confirmed in settings-reference | COMPLETE (example corrected) |
+| 25 | MED | Sources Count | Update sources section: change "~180 keys" to "243 keys" for the settings-reference link. Confirmed by counting keys on official page | COMPLETE (count updated) |
