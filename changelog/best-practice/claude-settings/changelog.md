@@ -1283,3 +1283,16 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-10-11 10:52 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.296; update header counts to "155+ settings / 330+ environment variables"; update Sources section count from ~180 to ~244 keys | ✅ COMPLETE (badge, header, and sources updated) — NEW |
+| 2 | HIGH | Wrong Type | Fix `feedbackDrafts` type: boolean → string; update description with new values "notify"/"quiet"/"off", default changed from `true` to `"notify"`. Confirmed via official settings-reference page | ✅ COMPLETE (type and description updated) — NEW |
+| 3 | HIGH | Wrong Type | Fix `strictKnownMarketplaces` type: boolean → array of source objects. Confirmed by v2.1.223 changelog and in-file note on line 561 referencing array wildcard entries | ✅ COMPLETE (type and description updated) — NEW |
+| 4 | HIGH | Removed Setting | Annotate `permissionExplainerEnabled` as **Removed in v2.1.257**. Confirmed via changelog. Previously showed AI-generated permission explanation | ✅ COMPLETE (removal annotation added) — NEW |
+| 5 | HIGH | Stale Command | Fix `--doctor` → `claude doctor` in Useful Commands table (deprecated flag replaced by subcommand). Confirmed via CLI reference | ✅ COMPLETE (command updated) — NEW |
+| 6 | MED | Stale Annotations | Remove "not yet on official env-vars page" annotations from 11 env vars now confirmed on official page: `CLAUDE_CODE_PROCESS_WRAPPER`, `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`, `MCP_CONNECTION_NONBLOCKING`, `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS`, `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH`, `OTEL_LOG_RAW_API_BODIES`, `OTEL_LOG_USER_PROMPTS`, `OTEL_LOG_ASSISTANT_RESPONSES`, `CLAUDE_CODE_FORK_SUBAGENT`, `CLAUDE_CODE_MCP_SERVER_NAME`, `CLAUDE_CODE_MCP_SERVER_URL`, `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` | ✅ COMPLETE (annotations removed) — RECURRING (first seen: 2026-09-01) |
