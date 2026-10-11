@@ -3835,3 +3835,39 @@
 | 14 | LOW | Sort | Sort order after updates: 297k > 283k > 276k > 141k > 136k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.6k > 25.4k > 11.7k — no re-sort needed | COMPLETE (no re-sort needed) |
 | 15 | LOW | Badge | Updated Last Updated badge: Oct 10, 2026 9:17 AM PKT | COMPLETE |
 | 16 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 32nd+ consecutive run — Agent 1 API 276,051 authoritative; merge conflict resolved (stash side taken; daily routine chain intact) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-11 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 283k → 285k (GitHub MCP: 284,722 ≥ 283,500 midpoint; nearest 1k = 285k; conf 0.95) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update OpenSpec ★ 71k → 72k (GitHub MCP: 71,580 ≥ 71,500 midpoint; nearest 1k = 72k; conf 0.95) | COMPLETE (NEW — updated README table) |
+| 3 | HIGH | Star | Update oh-my-claudecode ★ 39.7k → 39.8k (GitHub MCP: 39,777 ≥ 39,750 midpoint; nearest 100 = 39,800; conf 0.95) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Star | Update Compound Engineering ★ 25.4k → 25.5k (GitHub MCP: 25,457 ≥ 25,450 midpoint; nearest 100 = 25,500; conf 0.95) | COMPLETE (NEW — updated README table) |
+| 5 | LOW | Star | Superpowers 297,289 (< 297,500 midpoint; keep 297k) | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | Spec Kit 140,747 (< 141,000; stars-don't-fall; keep 141k) | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | gstack 135,860 (< 136,000; stars-don't-fall; keep 136k) | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | HumanLayer 11,686 (< 11,750 midpoint; keep 11.7k) | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | BMAD 54,020 (< 54,500 midpoint; keep 54k) | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | ECC ~276,600 (MCP API blocked 33rd+ consecutive; HTML conf ~0.88; 1st consecutive of ≥276,500 midpoint; keep 276k) | ON HOLD (NEW — 1st consecutive; MCP blocked) |
+| 11 | LOW | Star | GSD 64.6k (archived June 2026; frozen) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Count | ECC agents 71 (conf 0.88 < 0.90 threshold; keep 68) | ON HOLD (NEW — 1st consecutive; low confidence) |
+| 13 | LOW | Count | ECC commands 97 (conf 0.88 < 0.90 threshold; keep 94) | ON HOLD (NEW — 1st consecutive; low confidence) |
+| 14 | LOW | Count | ECC skills 306 (conf 0.88 < 0.90 threshold; keep 293) | ON HOLD (NEW — 1st consecutive; low confidence) |
+| 15 | LOW | Count | gstack skills 57 (up from 55; conf 0.90; 1st consecutive) | ON HOLD (NEW — 1st consecutive; keep 55) |
+| 16 | LOW | Workflow | Superpowers: executing-plans step observed; differs from current 7-step; 1st consecutive of 8-step variant | ON HOLD (NEW — 1st consecutive; keep current 7-step) |
+| 17 | LOW | Workflow | Matt Pocock: different 6-step variant observed vs current 8-step; 1st consecutive of this variant | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 18 | LOW | Workflow | Spec Kit: 7-step (specify-init added) vs current 6-step; 1st consecutive | ON HOLD (NEW — 1st consecutive; keep current 6-step) |
+| 19 | LOW | Workflow | ECC: 10-step variant vs current 7-step; 1st consecutive | ON HOLD (NEW — 1st consecutive; keep current 7-step) |
+| 20 | LOW | Workflow | OpenSpec: steps renamed/reordered vs current 5-step; 1st consecutive of new variant | ON HOLD (NEW — 1st consecutive; keep current 5-step) |
+| 21 | LOW | Workflow | gstack: 6-step variant vs current 11-step; 1st consecutive | ON HOLD (NEW — 1st consecutive; keep current 11-step) |
+| 22 | LOW | Workflow | BMAD: different 7-step variant vs current 7-step; 1st consecutive | ON HOLD (NEW — 1st consecutive; keep current 7-step) |
+| 23 | LOW | Workflow | oh-my-claudecode: 5-step vs current 9-step; 1st consecutive | ON HOLD (NEW — 1st consecutive; keep current 9-step) |
+| 24 | LOW | Workflow | Compound Engineering: same 6 steps but color change (ce-code-review top→sub or vice versa); 1st consecutive | ON HOLD (NEW — 1st consecutive; keep current 6-step) |
+| 25 | LOW | Workflow | HumanLayer: 7-step vs current 9-step (deprecated repo); 1st consecutive | ON HOLD (NEW — 1st consecutive; deprecated; keep current 9-step) |
+| 26 | LOW | Workflow | GSD: frozen (archived June 2026) | ON HOLD (RECURRING — archived; no change) |
+| 27 | LOW | Sort | Sort order after star updates: 297k > 285k > 276k > 141k > 136k > 99.7k(OOS) > 72k > 64.6k > 54k > 39.8k > 25.5k > 11.7k — no re-sort needed | COMPLETE (no reordering) |
+| 28 | LOW | Badge | Updated Last Updated badge: Oct 11, 2026 9:19 AM PKT | COMPLETE |
+| 29 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 33rd+ consecutive run — Agent 1 HTML scrape ~276.6k; 4 star updates applied (Matt Pocock 283k→285k; OpenSpec 71k→72k; omc 39.7k→39.8k; CE 25.4k→25.5k) | COMPLETE (RECURRING — GitHub MCP method established) |
