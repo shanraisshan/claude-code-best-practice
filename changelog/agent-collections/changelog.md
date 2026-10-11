@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-11 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (158,821 exact; rounds to 159k; no k-boundary crossed; RECURRING) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 308 (GitHub code search total_count; conf 0.87 below 0.88 threshold; game-development nested subdirs may cause undercounting; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.87 below 0.88 threshold; within documented variance band; commits Oct 5–7 were bug fixes only, not new agent additions; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25,634 exact; rounds to 26k; no k-boundary crossed; RECURRING) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 161 → 155 (−6; code search path:categories NOT filename:README; conf 0.88 at threshold; README badge still "161+"; no new agents added in October; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.88 at threshold but README badge unchanged at 161+; last COMPLETE was Oct 6 at conf 0.97 via full git tree enumeration; insufficient evidence to override; no change) |
+| 5 | LOW | Sort | Sort order 159k > 26k — stars descending correct | INVALID (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-10 08:46 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
