@@ -3671,3 +3671,40 @@
 | 30 | LOW | Workflow | omc: 7-step deep-interview→ralplan→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) (no team(top) step; no release; ralplan vs plan; different from Oct 1–4 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 9-step) |
 | 31 | LOW | Sort | Sort order verified: 295k > 276k > 273k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.6k > 25.4k > 11.7k | COMPLETE (no re-sort needed) |
 | 32 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 26th+ consecutive run — Agent 1 web page authoritative for ECC; 5 changes applied to README (3 star + 2 count) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-12 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 295k → 298k (Agent 1 HTML: 297.8k ≥ 297,500 midpoint; shields.io + GitHub API proxy-blocked) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 276k → 287k (Agent 1 HTML: 286.5k ≥ 286,500 midpoint; large jump spanning Oct 6–12 gap) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 273k → 277k (Agent 1 HTML: 277.3k; MCP blocked 27th+ consecutive run; upward trend confirmed) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ 140k → 141k (Agent 1 HTML: 140.9k ≥ 140,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update gstack ★ 135k → 136k (Agent 2 API: 136,041 ≥ 135,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Star | Update OpenSpec ★ 71k → 71.7k (Agent 2 API: 71,666 ≥ 71,650 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 7 | HIGH | Star | Update oh-my-claudecode ★ 39.6k → 39.8k (Agent 2 API: 39,798 ≥ 39,750 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 8 | HIGH | Star | Update Compound Engineering ★ 25.4k → 25.5k (Agent 2 API: 25,481 ≥ 25,450 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 9 | LOW | Star | BMAD 54,040 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | HumanLayer 11,687 (in 11.7k range 11,650–11,749) — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD 64,315 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 298k > 287k > 277k > 141k > 136k > 99.7k(OOS) > 71.7k > 64.6k > 54k > 39.8k > 25.5k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC agents 71 / commands 97 / skills 311 (Agent 1: conf 0.93; 1st consecutive after Oct 5 baseline 68a/94c/293s; counts-don't-fall violated for decreases; these are increases) | ON HOLD (NEW — 1st consecutive at conf 0.93; keep 68a/94c/293s) |
+| 14 | LOW | Count | Matt Pocock skills: official README count 27; folder total 38+ — counts-don't-fall; keep 38 | COMPLETE (RECURRING — no change; keep 38) |
+| 15 | LOW | Count | gstack skills 56 (Agent 2: conf 0.88 < 0.90 threshold; chain reset after Oct 5 applied 55) | ON HOLD (NEW — 1st consecutive at conf 0.88 below threshold; keep 55) |
+| 16 | LOW | Count | BMAD skills 33 (Agent 2: conf 0.87 < 0.90; 1st consecutive after Oct 5 baseline 30) | ON HOLD (NEW — 1st consecutive at conf 0.87 below threshold; keep 30) |
+| 17 | LOW | Count | BMAD agents 5 (agent-persona pattern; oscillating) | INVALID (RECURRING — oscillating; keep 0) |
+| 18 | LOW | Count | omc skills 48 (Agent 2: conf 0.92 ≥ 0.90; 1st consecutive after Oct 5 applied 47) | ON HOLD (NEW — 1st consecutive at conf 0.92; keep 47) |
+| 19 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, omc 19a/0c — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: v7.0.0 (Oct 9) — 7-step brainstorming→using-git-worktrees(top)→writing-plans→subagent-driven-development(top)→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch (receiving-code-review removed; subagent-driven-development replaces executing-plans as top-level hub) | ON HOLD (NEW — 1st consecutive of this v7 7-step variant; keep current 8-step) |
+| 21 | LOW | Workflow | Spec Kit: v1.1.3 (Oct 9) — 7-step specify-init(top)→constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) (specify-init new first step; composable workflows feature) | ON HOLD (NEW — 1st consecutive of this 7-step variant; keep current 6-step) |
+| 22 | LOW | Workflow | Matt Pocock: 9-step setup-matt-pocock-skills→grill-me(top)→to-spec→to-tickets→implement→tdd(sub)→code-review(top)→pr(top)→retro (grill-me vs current grill-with-docs; code-review reclassified top; pr+retro added) | ON HOLD (NEW — 1st consecutive of this 9-step variant; keep current 8-step) |
+| 23 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (all top; very different naming from current 7-step) | ON HOLD (NEW — 1st consecutive of this all-top variant; keep current 7-step) |
+| 24 | LOW | Workflow | OpenSpec: 8-step openspec-init(top)→opsx:explore(sub)→opsx:propose→plan-review→opsx:apply→opsx:verify(sub)→opsx:update(sub)→opsx:archive (init+plan-review+update new; different from current 5-step) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 5-step) |
+| 25 | LOW | Workflow | HumanLayer: 10-step research-codebase→ralph-research→ralph-plan→validate-plan(sub)→iterate-plan(sub)→ralph-impl→local-review(sub)→create-worktree(sub)→commit→describe-pr (deprecated; ralph-plan+ralph-impl vs create_plan+implement_plan; create-worktree added; missing /linear) | ON HOLD (NEW — 1st consecutive of this deprecated variant; keep current 9-step) |
+| 26 | LOW | Workflow | gstack: v1.91.93 (Oct 11-12) — 14-step spec(top)→office-hours→autoplan→plan-ceo-review(sub)→plan-eng-review(sub)→plan-devex-review(sub)→design-consultation(sub)→design-review(sub)→review→qa→ship→land-and-deploy→canary(sub)→retro (/spec added; design-consultation+design-review replace plan-design-review) | ON HOLD (NEW — 1st consecutive of this 14-step variant; keep current 11-step) |
+| 27 | LOW | Workflow | BMAD: V7 preview — 11-step bmad-forge-idea→bmad-brainstorming(sub)→bmad-prd→bmad-spec→bmad-architecture→bmad-ticket→bmad-build→bmad-code-review(sub)→bmad-qa-generate-e2e-tests(sub)→bmad-review(sub)→bmad-retrospective (brainstorming+ticket+qa-e2e+retrospective new) | ON HOLD (NEW — 1st consecutive of this V7 11-step variant; keep current 7-step) |
+| 28 | LOW | Workflow | CE: 7-step ce-setup(top)→ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound (ce-setup new first step; root-native layout migration completed) | ON HOLD (NEW — 1st consecutive of this 7-step with ce-setup; keep current 6-step) |
+| 29 | LOW | Workflow | omc: v5.7.0 (Oct 12) — 7-step omc-setup(top)→deep-interview(sub)→autopilot(top)→executor(sub)→critic(sub)→verifier(sub)→release (team-* sub-steps replaced by executor/critic/verifier under autopilot; /team→autopilot) | ON HOLD (NEW — 1st consecutive of this v5.7 7-step variant; keep current 9-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API proxy-blocked for non-scoped repos (RECURRING); Agent 2 GitHub API integers authoritative for 7 repos; Agent 1 HTML values for 4 repos (ECC MCP blocked 27th+ consecutive run); 8 star changes applied to README | COMPLETE (RECURRING — agent research method established) |
