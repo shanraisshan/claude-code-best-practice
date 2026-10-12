@@ -1283,3 +1283,59 @@
 | 12 | HIGH | Wrong Description | Fix `teammateDefaultModel` (Global Config) — removed in v2.1.251; teammates now inherit the lead's model by default. Marked as removed. Confirmed in v2.1.251 changelog | ✅ COMPLETE (marked removed) — NEW |
 | 13 | HIGH | Hook Count | Update hooks redirect blurb from "26 hook events" to "28 hook events" — `PreModelSwitch` and `PostModelSwitch` added in v2.1.252. Confirmed in v2.1.252 changelog | ✅ COMPLETE (count updated) — NEW |
 | 14 | MED | Missing Env Vars | Add 6 missing env vars: `ANTHROPIC_DEFAULT_MODEL` (v2.1.236+, last-resort model fallback), `CLAUDE_CODE_PROJECT_DIR_NAME` (v2.1.234+, transcript dir name), `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (v2.1.233, Linux cgroup memory cap), `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` (v2.1.233, WebFetch cache TTL), `CLAUDE_CODE_ENABLE_TODO_TOOLS` (v2.1.234, legacy todo tools), `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS` (v2.1.229, agent launch stagger). Confirmed in changelog | ✅ COMPLETE (all 6 added) — NEW |
+
+---
+
+## [2026-10-12 10:48 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.252 → v2.1.296; update header counts from "140+ settings / 315+ env vars" to "150+ settings / 340+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Wrong Default | Fix `model` default: `"default"` → unset (no default value). Confirmed on settings-reference page | COMPLETE (default removed) — NEW |
+| 3 | HIGH | Wrong Default | Fix `language` default: `"english"` → unset. Confirmed on settings-reference page | COMPLETE (default removed) — NEW |
+| 4 | HIGH | Wrong Default | Fix `tui` default: `"default"` → unset. Confirmed on settings-reference page | COMPLETE (default removed) — NEW |
+| 5 | HIGH | Wrong Default | Fix `alwaysThinkingEnabled` default: `false` → unset; clarify description (off by default, set `true` to enable). Confirmed on settings-reference page | COMPLETE (default and description corrected) — NEW |
+| 6 | HIGH | Wrong Type | Fix `feedbackDrafts`: type `boolean`/default `true` → type `string`/default `"notify"` with values `"notify"`, `"quiet"`, `"off"`. Confirmed on settings-reference page | COMPLETE (type and values updated) — NEW |
+| 7 | HIGH | Wrong Type | Fix `strictKnownMarketplaces`: type `boolean` → type `array` (allowlist of marketplace source strings). Confirmed on settings-reference page | COMPLETE (type corrected) — NEW |
+| 8 | HIGH | Wrong Scope | Fix `askUserQuestionTimeout` scope: "project and local settings" → "user settings and managed settings". Confirmed on settings-reference page | COMPLETE (scope corrected) — NEW |
+| 9 | HIGH | Wrong Scope | Fix `allowedMcpServers` and `deniedMcpServers` scope: "Managed only" → "Any" (lists merge across all files). Confirmed on settings-reference page | COMPLETE (scope corrected in MCP table) — NEW |
+| 10 | HIGH | Wrong Scope | Fix `forceLoginMethod` scope: remove "(Managed only)" — accepted at any scope. Confirmed on settings-reference page | COMPLETE (scope restriction removed) — NEW |
+| 11 | HIGH | Wrong Description | Fix `ultracode`: description said "Session-only — not persisted" → can be set in any settings.json for persistent ultracode mode. Confirmed on settings-reference page | COMPLETE (description corrected) — NEW |
+| 12 | HIGH | Wrong Description | Fix `switchModelsOnFlag`: "flagged requests are blocked" → shows pause-and-choose prompt in interactive mode. Confirmed on settings-reference page | COMPLETE (description corrected) — NEW |
+| 13 | HIGH | Wrong Description | Fix `dialogExpiry`: "Accepts duration strings (e.g., '5m', '1h')" → only specific values: `"60s"`, `"5m"`, `"10m"`, `"never"`. Confirmed on settings-reference page | COMPLETE (valid values documented) — NEW |
+| 14 | HIGH | Wrong Description | Fix `attribution.commit` default: "Co-authored-by" → correct format `Co-Authored-By: <model name> <noreply@anthropic.com>`. Added `attribution: false` option (v2.1.281). Confirmed on settings-reference page | COMPLETE (default and new option added) — NEW |
+| 15 | HIGH | Wrong Description | Fix `crossSessionInbound` hold behavior: "queue inbound messages" → "shows notice without delivering message (not queued)". Confirmed on settings-reference page | COMPLETE (description corrected) — NEW |
+| 16 | HIGH | Wrong Scope | Fix `remote.defaultEnvironmentId` scope: "User only" → "Any file" (self-hosted ccpool_ IDs limited to user/managed/--settings). Confirmed on settings-reference page | COMPLETE (scope corrected) — NEW |
+| 17 | HIGH | Wrong Scope | Fix `forceLoginGatewayUrl` scope: "(Managed only)" → User or managed (since v2.1.295 readable from user settings on machines without managed settings). Confirmed in v2.1.295 changelog | COMPLETE (scope updated) — NEW |
+| 18 | HIGH | Wrong Default | Fix `desktopSessionCleanupPeriodDays` default: blank → `0` (no limit). Confirmed on settings-reference page | COMPLETE (default added) — NEW |
+| 19 | HIGH | Wrong Key Path | Fix `skipDangerousModePermissionPrompt`: was listed as `permissions.skipDangerousModePermissionPrompt` → top-level key. Confirmed on settings-reference page | COMPLETE (key path corrected) — NEW |
+| 20 | HIGH | Removed Setting | Mark `permissionExplainerEnabled` as REMOVED in v2.1.257 — no-op in current versions. Confirmed in v2.1.257 changelog | COMPLETE (marked removed) — NEW |
+| 21 | HIGH | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED in v2.1.261 — no-op since then. Confirmed in v2.1.261 changelog | COMPLETE (marked deprecated/no-op) — NEW |
+| 22 | HIGH | Wrong Description | Fix `diffTool` description: was "External diff tool command" → only values are `"auto"` or `"terminal"`. Confirmed on settings-reference page | COMPLETE (description corrected) — NEW |
+| 23 | HIGH | Hook Count | Update hook event count: "28 hook events" → "33 hook events". Confirmed in changelog | COMPLETE (count updated) — NEW |
+| 24 | HIGH | Stale Annotation | Remove "not on official settings page" annotation from `sandbox.ignoreViolations` — now confirmed on settings-reference page | COMPLETE (annotation removed) — RESOLVED |
+| 25 | HIGH | Model Aliases | Update model aliases: `sonnet` → Sonnet 5.5 (v2.1.284), `opus` → Opus 5.5 (v2.1.280), `haiku` → Haiku 5.5 (v2.1.293), `fable` → Fable 5.1 (v2.1.257); add `best` alias. Confirmed in changelog | COMPLETE (all aliases updated) — NEW |
+| 26 | HIGH | Effort Levels | Update effort level table: `max` available on 5.5 models; medium is default for 5.5 generation; high for others. Confirmed in changelog | COMPLETE (effort table updated) — NEW |
+| 27 | HIGH | Missing Settings | Add 7 missing settings: `bashOutputMaxChars` (v2.1.261), `bashEditDiffEnabled` (v2.1.269), `maxProseWidth` (v2.1.282), `enableWorkflows`, `managedSourcesBehavior` (v2.1.242), `gatewayInternalNetworks` (v2.1.268), `worktree.location`. Confirmed in changelog and settings-reference | COMPLETE (all 7 added) — NEW |
+| 28 | HIGH | Missing Settings | Add missing MCP settings: `managedMcpServers` (v2.1.259, managed-only), `allowClaudeInChromeWithManagedMcp` (v2.1.282). Confirmed in changelog | COMPLETE (both added) — NEW |
+| 29 | HIGH | Missing Settings | Add missing plugin settings: `prependPlugins`, `appendPlugins` (v2.1.287), `syncClaudeAiSkills`, `syncClaudeAiPlugins` (v2.1.273), `allowedProviders` (v2.1.285). Confirmed in changelog | COMPLETE (all 5 added) — NEW |
+| 30 | HIGH | Missing Settings | Add missing model settings: `maxEffortLevel` (v2.1.267, scope exception for project/local), `deniedModels` (v2.1.283, managed-only), `availableModelsMatch` (v2.1.283, managed-only). Confirmed in changelog | COMPLETE (all 3 added) — NEW |
+| 31 | HIGH | Missing Settings | Add missing permission settings: `permissions.blockReadsOutsideWorkingDirectories` (v2.1.257), `skipAutoPermissionPrompt`. Confirmed in settings-reference | COMPLETE (both added) — NEW |
+| 32 | HIGH | Missing Settings | Add missing display settings: `timeFormat`, `timeZone` (v2.1.257), `subagentStatusLine`. Confirmed in changelog and settings-reference | COMPLETE (all 3 added) — NEW |
+| 33 | HIGH | Wrong Description | Fix `defaultMode`: add note that `bypassPermissions` is ignored from project/local settings since v2.1.257. Confirmed in v2.1.257 changelog | COMPLETE (note added) — NEW |
+| 34 | HIGH | Missing Env Vars | Add missing env vars: `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`, `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`, `CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL` (v2.1.296), `CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS` (v2.1.296), `CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE` (v2.1.283). Confirmed in changelog | COMPLETE (all 5 added) — NEW |
+| 35 | HIGH | Missing Env Vars | Add missing env vars: `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS`, `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS`, `CLAUDE_CODE_PROMPT_CACHE_TTL`, `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL`, `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.283). Confirmed in changelog and settings-reference | COMPLETE (all 5 added) — NEW |
+| 36 | HIGH | Missing Env Vars | Add Vertex region vars for 5.5 models: `VERTEX_REGION_CLAUDE_5_5_OPUS`, `VERTEX_REGION_CLAUDE_5_5_SONNET`, `VERTEX_REGION_CLAUDE_HAIKU_5_5`, `VERTEX_REGION_CLAUDE_FABLE_5_1`. Confirmed in changelog | COMPLETE (all 4 added) — NEW |
+| 37 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_AUTO_BACKGROUND_WORKER_CHECKIN_SECONDS` as REMOVED in v2.1.283; use `CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE`. Confirmed in v2.1.283 changelog | COMPLETE (marked removed) — NEW |
+| 38 | HIGH | No-op Env Var | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` as no-op since v2.1.224. Confirmed in v2.1.224 changelog | COMPLETE (marked no-op) — NEW |
+| 39 | MED | Stale Annotations | Remove "not yet on official env-vars page" from `OTEL_LOG_RAW_API_BODIES`, `OTEL_LOG_USER_PROMPTS`, `OTEL_LOG_ASSISTANT_RESPONSES` — now confirmed on official page | COMPLETE (annotations removed) — RESOLVED |
+| 40 | MED | Deprecated Env Var | Update `ENABLE_PROMPT_CACHING_1H_BEDROCK`: mark as DEPRECATED (replaced by `ENABLE_PROMPT_CACHING_1H`) | COMPLETE (marked deprecated) — NEW |
+| 41 | MED | Missing Env Vars | Add auth/profile env vars: `ANTHROPIC_PROFILE` (v2.1.265), `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_FEDERATION_RULE_ID`. Confirmed in changelog | COMPLETE (all 3 added) — NEW |
+| 42 | MED | Missing Env Vars | Add misc missing env vars: `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS`, `CLAUDE_CODE_DISABLE_WEB_FETCH`, `CLAUDE_CODE_GZIP_REQUEST_BODIES` (v2.1.265), `CLAUDE_CODE_TRANSCRIPT_LOCAL_GC`, `CLAUDE_CODE_SEND_FEEDBACK`, `CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR`, `CLAUDE_CODE_RESTRICTED`, `CLAUDE_CODE_PLUGIN_DIRS`. Confirmed in changelog | COMPLETE (all 8 added) — NEW |
+| 43 | MED | Wrong Description | Fix `autoCompactWindow`: add note that `/autocompact` saves per-model via `modelSettings` since v2.1.288; top-level key is now fallback | COMPLETE (description updated) — NEW |
+| 44 | MED | Hierarchy Update | Update managed tier note: add `managedSourcesBehavior: "merge"` option as exception to "sources do not merge" statement (v2.1.242) | COMPLETE (hierarchy note updated) — NEW |
+| 45 | MED | Wrong Description | Fix `claude auto-mode reset` useful command description: removes `autoMode` from user settings, not resets current session | COMPLETE (description corrected) — NEW |
+| 46 | MED | Wrong Command | Fix `--doctor` → `claude doctor` in Useful Commands; fix `claude gateway` description | COMPLETE (commands corrected) — NEW |
+| 47 | MED | Stale Annotation | Remove "not in official docs — unverified" from `DISABLE_AUTO_COMPACT`, `CLAUDE_CODE_MAX_TURNS` — now confirmed | COMPLETE (annotations removed) — RESOLVED |
+| 48 | LOW | Sources Update | Update settings-reference key count from "~180" to "~244" | COMPLETE (count updated) — NEW |
+| 49 | LOW | Missing Effort Options | Add `/effort auto` and `/effort status` options to Useful Commands table | COMPLETE (options added) — NEW |
