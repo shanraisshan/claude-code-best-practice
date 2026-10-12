@@ -1339,3 +1339,12 @@ No priority action items — report is fully in sync with official documentation
 | 2 | LOW | Changed Description | Update `/copy [N]` — picker now also appears when blockquotes are present (v2.1.295: "Added quoted text to the `/copy` picker, so a drafted message copies without its `>` markers"); update "When code blocks are present" to "When code blocks or blockquotes are present" | ✅ COMPLETE (description updated at #41 in Export tag) |
 | 3 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin"; pending `/plugin` dependency | ❌ INVALID (bundled plugin skill — excluded per report's existing scope disclaimer, same as other bundled skills) |
 | 4 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-10 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-12 11:14 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring from 2026-10-11 — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-11 — official docs table not yet updated; defer until docs catch up) |
