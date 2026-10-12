@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-12 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 156k to 159k | COMPLETE (GitHub API: 159,178 exact; crosses multiple k-boundaries (157k, 158k, 159k); RECURRING — milestone crossing; conf 0.97 on stars, overall conf 0.87) |
+| 2 | HIGH | Star | Update VoltAgent/awesome-claude-code-subagents ★ from 25k to 26k | COMPLETE (GitHub API: 25,654 exact; 25.654k crosses 25.5k boundary → rounds to 26k; RECURRING — k-boundary crossing; conf 0.97 on stars, overall conf 0.92) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents 279 → 283 (+4; per-dir: engineering/65 + specialized/59 + marketing/37 + game-development/21 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + project-management/7 + paid-media/7 + academic/6 + spatial-computing/6 + support/6 + product/6 + finance/5 + healthcare/3 + research/1 + integrations/mcp-memory/1 = 283; conf 0.85) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; within oscillation band; no change) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 165 → 163 (−2; per-category: 01:13 + 02:30 + 03:16 + 04:18 + 05:13 + 06:16 + 07:16 + 08:18 + 09:12 + 10:11 = 163; conf 0.92; but +2 confirmed new agents (telegram-ads-analyst, surgeon-reviewer) contradict net −2 vs 165 baseline) | INVALID (RECURRING oscillation; +2 confirmed additions but net −2 implies unaccounted removals; within oscillation band; no change) |
+| 5 | LOW | Sort | Verify sort order (159k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-03 08:49 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
