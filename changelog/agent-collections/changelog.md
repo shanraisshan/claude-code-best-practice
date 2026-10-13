@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-13 08:47 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 156k to 160k | COMPLETE (web-scraped About section 159.6k from two independent reads; conf 0.70; crosses four k-boundaries (157k, 158k, 159k, 160k); consistent with 360 stars/day growth rate from Oct 3 baseline 156k; API returned 403; NEW/RECURRING — milestone crossing) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 282 (per-dir: engineering/65 + specialized/59 + marketing/37 + game-development/21 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + paid-media/7 + project-management/7 + academic/6 + spatial-computing/6 + support/6 + product/6 + finance/5 + healthcare/3 + research/1 = 282; recent commits Oct 7 are quality fixes from external contributor batch #1033–#1052; conf 0.82) | INVALID (RECURRING oscillation; conf 0.82 below 0.88 threshold; +3 within oscillation band; no new agents confirmed — recent activity is quality/content fixes not additions; no change) |
+| 3 | HIGH | Star | Update VoltAgent/awesome-claude-code-subagents ★ from 25k to 26k | COMPLETE (web-scraped About section 25,700 from GitHub page; conf 0.85; crosses 25.5k boundary → rounds to 26k; consistent with ~20 stars/day growth from Oct 3 baseline ~25,468; API returned 403; NEW — milestone crossing) |
+| 4 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents from 165 to 167 | COMPLETE (README table count 167 at conf 0.92; exactly 165 + 2 confirmed additions: surgeon-reviewer to Quality & Security (PR #328, merged Oct 11) + telegram-ads-analyst to Business & Product (PR #330, merged Oct 11); conf 0.92 > 0.88 threshold; category 01 core-dev directly verified 13/13 files match README; NEW) |
+| 5 | LOW | Sort | Verify sort order (160k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-03 08:49 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
