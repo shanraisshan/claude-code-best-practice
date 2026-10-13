@@ -1348,3 +1348,11 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring from 2026-10-11 — bundled plugin skill, excluded per report's existing scope disclaimer) |
 | 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-11 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-13 11:13 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-12 — official docs table not yet updated; defer until docs catch up) |
