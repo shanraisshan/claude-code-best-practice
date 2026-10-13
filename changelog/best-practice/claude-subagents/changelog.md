@@ -1553,3 +1553,14 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 | 2 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
 | 3 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
 | 4 | LOW | New Field | Watch: `autoCompactWindow` added in v2.1.296 changelog (lets a subagent auto-compact earlier than the main conversation's window) — not yet in official docs frontmatter table; will become a HIGH drift item when docs catch up | ✋ ON HOLD (not yet in official docs — NEW) |
+
+---
+
+## [2026-10-13 11:45 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `omitClaudeMd` to Frontmatter Fields table (boolean, optional — Set to `true` to launch without user, project, and local CLAUDE.md files; managed policy files still load. Ignored when agent runs as main session via `--agent` or `agent` setting. Introduced in v2.1.271) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-09-15) |
+| 2 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
+| 3 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
+| 4 | LOW | New Field | Watch: `autoCompactWindow` added in v2.1.296 changelog (lets a subagent auto-compact earlier than the main conversation's window) — not yet in official docs frontmatter table; will become a HIGH drift item when docs catch up | ✋ ON HOLD (not yet in official docs — RECURRING since 2026-10-12) |
