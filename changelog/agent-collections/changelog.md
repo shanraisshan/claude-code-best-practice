@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-15 08:45 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (160k; research HTML-confirmed 160,100; no k-boundary crossed) | INVALID (no k-boundary crossed; 160,100 rounds to 160k; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279→267 (per-dir: engineering/65 + specialized/59 + marketing/37 + game-development/21 + gis/13 + security/12 + design/10 + testing/0 + sales/9 + paid-media/7 + project-management/7 + academic/6 + spatial-computing/6 + product/6 + finance/5 + healthcare/3 + research/1 = 267; strategy/ and integrations/ excluded as docs; conf 0.70; "View all files" on engineering/specialized possible truncation) | INVALID (RECURRING oscillation; conf 0.70 below 0.88 threshold; within oscillation band; engineering/specialized dirs show truncation risk; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26k; research HTML 25,700; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; 25,700 rounds to 26k; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 167 = README 167 (file count in categories/ = 163; README catalog count = 167; 4-entry gap = external-link entries; table uses README count; exact match; conf 0.85) | INVALID (exact match on README catalog count; file vs README discrepancy ongoing but stable; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (160k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-13 08:47 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
