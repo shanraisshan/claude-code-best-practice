@@ -1323,3 +1323,14 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-17 10:43 AM PKT] Claude Code v2.1.302
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.302; update header counts from "244+ settings / 396+ env vars" to "245+ settings / 402+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Setting | Add `idleCompaction` (boolean, default `true`) to General Settings — disables idle compaction when `false`; pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299) | COMPLETE (added after autoCompactWindow) — NEW |
+| 3 | HIGH | Wrong Behavior | Fix `advisorModel`: before v2.1.300, unset used session model; since v2.1.300, no advisor runs until explicitly configured via `/advisor`, `advisorModel`, or `--advisor` | COMPLETE (description updated with v2.1.300 note) — NEW |
+| 4 | HIGH | Missing Env Vars | Add 6 missing env vars from v2.1.299–302: `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT`, `CLAUDE_CODE_GZIP_REQUEST_BODIES`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_AUTO_MODE_MODEL` | COMPLETE (all 6 added) — NEW |
