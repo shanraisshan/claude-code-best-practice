@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2013%2C%202026%2010%3A53%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.296-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2017%2C%202026%2010%3A43%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.302-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.296, Claude Code exposes **244+ settings** and **396+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.302, Claude Code exposes **246+ settings** and **402+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -114,6 +114,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `awaySummaryEnabled` | boolean | `true` | Generate an "away summary" (idle-session recap) when the user returns after being away. Set to `false` to opt out. Pairs with the `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` env var (v2.1.110) |
 | `autoCompactEnabled` | boolean | `true` | Auto-compact the conversation when context approaches the model's limit. Set to `false` to disable automatic compaction and manage context manually. Also disableable via the `DISABLE_AUTO_COMPACT` env var |
 | `autoCompactWindow` | number | model-tuned | How full the context window gets before automatic compaction triggers, in tokens (100,000–1,000,000). When unset, Claude Code uses a window tuned for your model. Set it with the `/autocompact` command (writes to user settings) or the `--autocompact` CLI flag. Pairs with the `CLAUDE_CODE_AUTO_COMPACT_WINDOW` env var (v2.1.221+) |
+| `idleCompaction` | boolean | `true` | When set to `false`, disables idle compaction — the automatic compaction that runs for conversations over 200K tokens left idle for ~54 minutes (before the one-hour prompt-cache expires). Pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` to adjust the token threshold. Appears in `/config` as **Idle compaction** (v2.1.299) |
 | `skillOverrides` | object | - | Per-skill visibility overrides keyed by skill name. Value is `"on"` (full), `"name-only"` (visible but not auto-described), `"user-invocable-only"` (hidden from model discovery but still slash-invocable), or `"off"` (fully hidden). Example: `{"legacy-context": "name-only", "deploy": "off"}` (v2.1.129) |
 | `disableRemoteControl` | boolean | `false` | Disable [Remote Control](https://code.claude.com/docs/en/remote-control): blocks `claude remote-control`, the `--remote-control` flag, auto-start, and the in-session toggle. Typically placed in managed settings for per-device MDM enforcement, but works from any scope (v2.1.128) |
 | `agentPushNotifEnabled` | boolean | `false` | Send proactive push notifications to [Remote Control](https://code.claude.com/docs/en/remote-control) when Claude decides to push (e.g., task complete). Appears in `/config` as **Push when Claude decides** |
@@ -129,7 +130,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `disableArtifact` | boolean | `false` | Disable the Artifact web publishing tool. When `true`, Claude cannot create or publish web artifacts. Can be set at any scope |
 | `enableArtifact` | boolean | - | **(v2.1.196+)** Can only **disable** the Artifact web publishing tool. When set to `false`, disables it from any scope — nothing turns it back on once disabled. Setting to `true` is equivalent to unset and does nothing on its own. `disableArtifact: true` has the same disabling effect |
 | `feedbackSurveyRate` | number | - | Probability (0–1) that the session quality survey appears when eligible. Enterprise admins can control how often the survey is shown. Example: `0.05` = 5% of eligible sessions |
-| `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`) or a full model ID. When unset, the advisor uses the session model. Requires v2.1.98+. **v2.1.210+:** Setting `"fable"` no longer attaches an advisor — Fable 5 is temporarily unavailable in the advisor picker; use `"opus"` or `"sonnet"` instead |
+| `advisorModel` | string | - | Model for the server-side advisor tool. Accepts a model alias (`opus`, `sonnet`) or a full model ID. **v2.1.300+:** No advisor runs until one is explicitly configured via `/advisor`, this setting, or `--advisor` (previously, the advisor used the session model when unset). Requires v2.1.98+. **v2.1.210+:** Setting `"fable"` no longer attaches an advisor — Fable 5 is temporarily unavailable in the advisor picker; use `"opus"` or `"sonnet"` instead |
 | `respondToBashCommands` | boolean | `true` | Whether Claude automatically responds after a `!` shell command completes. Set to `false` to disable the automatic follow-up response when a `!` bash command finishes (v2.1.186) |
 | `askUserQuestionTimeout` | string | `"never"` | How long to wait before an unanswered AskUserQuestion dialog auto-continues without the user. Values: `"60s"`, `"5m"`, `"10m"`, `"never"` (no auto-continue — the default). Set via `/config` as **Question auto-continue timeout**. Pairs with the `CLAUDE_AFK_TIMEOUT_MS` env var; the env var applies only when this setting is set to a duration. Only honored from user and managed settings — project and local settings values are ignored. (v2.1.200) |
 | `theme` | string | `"dark"` | UI color theme. Values: `"auto"` (follow OS), `"dark"`, `"light"`, `"dark-daltonized"`, `"light-daltonized"`, `"dark-ansi"`, `"light-ansi"`, `"custom:<slug>"`, `"custom:<plugin>:<slug>"`. Plugin-provided themes use the `custom:` prefix |
@@ -189,6 +190,7 @@ Configure how `--worktree` creates and manages git worktrees. Useful for reducin
 | `worktree.sparsePaths` | array | `[]` | Directories to check out in each worktree via git sparse-checkout (cone mode). Only the listed paths are written to disk |
 | `worktree.baseRef` | string | `"fresh"` | Which ref new worktrees branch from. `"fresh"` branches from `origin/<default-branch>` for a clean tree matching the remote. `"head"` branches from your current local `HEAD`, including uncommitted-but-tracked changes (v2.1.133) |
 | `worktree.bgIsolation` | string | `"worktree"` | Isolation mode for [background sessions](https://code.claude.com/docs/en/agent-view). `"worktree"` (default) blocks `Edit`/`Write` in the main checkout until `EnterWorktree` is called; `"none"` lets background jobs edit the working copy directly (v2.1.143) |
+| `worktree.location` | string | - | **(User settings only; Desktop app only)** Directory path on a remote machine where Desktop SSH sessions create their worktrees. Useful when you want worktrees isolated to a specific path on the remote host rather than adjacent to the main repository |
 
 **Example:**
 ```json
@@ -1273,6 +1275,12 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS` | Maximum delay cap in milliseconds for overloaded-error retries. Prevents exponential backoff from growing unboundedly (v2.1.296) |
 | `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` | Maximum total wait time in milliseconds for the retry watchdog before giving up on a stalled request. Protects against indefinitely hung retries (v2.1.295) |
 | `CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL` | Override model for workflow subagents specifically. Takes precedence over `CLAUDE_CODE_SUBAGENT_MODEL` for agents launched within a dynamic workflow. Accepts model aliases or full IDs (v2.1.296) |
+| `CLAUDE_CODE_DISABLE_FILE_MENTIONS` | When set, gives Claude the file paths of `@`-mention expansions rather than their contents. The files are not read into context — only their paths are provided (v2.1.299) |
+| `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` | Minimum tokens remaining for idle compaction to trigger (default: 200,000). Raise to compact less aggressively, lower to compact sooner during idle periods. Pairs with the `idleCompaction` setting (v2.1.299) |
+| `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` | Set to `1` to restore stricter `rm` confirmation prompts for inline shell scripts. Before v2.1.299, the default behavior was stricter (v2.1.299) |
+| `CLAUDE_CODE_GZIP_REQUEST_BODIES` | Set to `0` to disable gzip compression for large API request bodies sent to api.anthropic.com. Gzip is enabled by default even when telemetry is disabled (v2.1.300) |
+| `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` | Maximum time in milliseconds to wait in unattended retry mode for a usage limit to reset. When the expected reset time exceeds this value, Claude Code exits retry mode instead of waiting (v2.1.301) |
+| `CLAUDE_CODE_AUTO_MODE_MODEL` | Model used for the client-side auto mode classifier. Overrides the default auto mode model for tool-call permission classification. Does not affect server-side auto mode (v2.1.302) |
 | `MCP_PROTOCOL_NEGOTIATION` | Control MCP protocol version negotiation. Set to `"legacy"` to opt stdio MCP servers and connectors out of the 2026-07-28 protocol version (negotiated by default since v2.1.292). (v2.1.292) |
 
 ---
