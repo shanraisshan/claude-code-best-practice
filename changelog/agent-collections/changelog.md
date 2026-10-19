@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-19 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (~161,200 rounds to 161k; no k-boundary crossed; GitHub API inaccessible; WebFetch-only conf 0.55) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 282+ min (partial traversal; many dirs truncated at GitHub display limit; game-dev subdirs, strategy/, integrations/ not fully explored; conf 0.55 below 0.88 threshold) | INVALID (RECURRING oscillation; conf 0.55 below threshold; within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (~25,800 rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 167 → 163 per-dir count (01:13+02:30+03:16+04:18+05:13+06:16+07:16+08:18+09:12+10:11=163; conf 0.90; methodology mismatch — Oct 13 COMPLETE used README table count 167; per-dir count gives -4 vs table; no confirmed net removals in 30-day window; CHANGES report lists same Oct 11 PRs already counted; RECURRING oscillation) | INVALID (RECURRING oscillation; methodology mismatch with Oct 13 README-table count; no confirmed net removals since Oct 13; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (161k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-18 08:42 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
