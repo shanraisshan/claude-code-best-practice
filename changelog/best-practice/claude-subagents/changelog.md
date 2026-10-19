@@ -1608,3 +1608,14 @@ No drift detected on the two tracked dimensions — all 16 frontmatter fields an
 | 2 | HIGH | New Field | Add `omitClaudeMd` to Frontmatter Fields table (boolean, optional — Set to `true` to launch without user, project, and local CLAUDE.md files; managed policy files still load. Ignored when agent runs as main session via `--agent` or `agent` setting. Introduced in v2.1.271) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-09-15) |
 | 3 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
 | 4 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
+
+---
+
+## [2026-10-19 11:33 AM PKT] Claude Code v2.1.303
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Field | Add `autoCompactWindow` to Frontmatter Fields table (integer, optional — lowers this subagent's auto-compact window to a token count from 100000 to 1000000; requires v2.1.296+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-10-12) |
+| 2 | HIGH | New Field | Add `omitClaudeMd` to Frontmatter Fields table (boolean, optional — Set to `true` to launch without user, project, and local CLAUDE.md files; managed policy files still load. Ignored when agent runs as main session via `--agent` or `agent` setting. Introduced in v2.1.271) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-09-15) |
+| 3 | HIGH | New Field | Add `experimental` to Frontmatter Fields table (object, optional — experimental options; `cacheTtl` key set to `5m` or `1h` for prompt cache lifetime; reads from subagent files only; requires v2.1.248+) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-29) |
+| 4 | HIGH | New Agent | Add `claude` to Official Claude Agents table — catch-all agent used when no specialized agent fits; also the default for dispatched background sessions (model: inherits, tools: all) | ✋ ON HOLD (awaiting user approval — RECURRING since 2026-08-07) |
