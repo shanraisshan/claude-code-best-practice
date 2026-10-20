@@ -1323,3 +1323,16 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-20 10:48 AM PKT] Claude Code v2.1.304
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `idleCompaction` boolean (default `true`) to General Settings — disables 54-min idle auto-compact at 200K+ tokens (v2.1.299) | COMPLETE (row added after `autoCompactWindow`) — NEW |
+| 2 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_FORK_SUBAGENT` — since v2.1.302 forked subagents are on by default in -p/SDK/Desktop/VS Code; `0` to disable | COMPLETE (description updated) — NEW |
+| 3 | HIGH | Missing Env Vars | Add 6 env vars from v2.1.299–304: `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_GZIP_REQUEST_BODIES` | COMPLETE (all 6 added after MCP_PROTOCOL_NEGOTIATION) — NEW |
+| 4 | HIGH | Env Var Description | Update `CLAUDE_CODE_AUTO_COMPACT_WINDOW` — now accepts `k`/`M` suffixes (e.g., `500k`, `1M`) since v2.1.304 | COMPLETE (description updated) — NEW |
+| 5 | HIGH | Version Metadata | Update badge v2.1.296→v2.1.304, settings count 244+→245+, env var count 396+→403+, sources "~180 keys"→~245, header version | COMPLETE (all metadata updated) — NEW |
+| 6 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (examples in descriptions are illustrative, not exhaustive — acceptable gap) — RECURRING (first seen: 2026-10-13) |
