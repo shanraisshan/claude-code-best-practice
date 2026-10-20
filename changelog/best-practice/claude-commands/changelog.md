@@ -1394,3 +1394,16 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-10-19 11:07 AM PKT] Claude Code v2.1.303
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-10-20 11:07 AM PKT] Claude Code v2.1.304
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/schedule [description]` — docs now say "cloud scheduled tasks, formerly routines" and add that you can ask about a scheduled task's recent runs; our description still said "routines" | ✅ COMPLETE (terminology updated and recent-runs detail added) |
+| 2 | LOW | Changed Description | Update `/web-setup` — official docs dropped the sentence "`/schedule` prompts for this automatically if GitHub is not connected" | ✅ COMPLETE (sentence removed from description) |
+| 3 | LOW | Changed Description | Update `/stop` — docs add that it can also stop "the one you send it to as a peek reply" | ✅ COMPLETE (peek-reply context added to description) |
+| 4 | LOW | Changed Description | Update `/upgrade` — docs add "When the browser fails to open, the command shows a sign-in prompt without printing the URL" | ✅ COMPLETE (browser-failure detail added to description) |
+| 5 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 6 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-18 — official docs table not yet updated; defer until docs catch up) |
