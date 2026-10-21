@@ -1407,3 +1407,15 @@ No priority action items — report is fully in sync with official documentation
 | 4 | LOW | Changed Description | Update `/upgrade` — docs add "When the browser fails to open, the command shows a sign-in prompt without printing the URL" | ✅ COMPLETE (browser-failure detail added to description) |
 | 5 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
 | 6 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-18 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-21 11:07 AM PKT] Claude Code v2.1.306
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/design-login` — docs now note sign-in is for the standalone Claude Design site at claude.ai/design, which closes on December 14, 2026 | ✅ COMPLETE (closure date and site URL added to description) |
+| 2 | HIGH | Changed Description | Update `/auto-mode-setup` — add Enterprise plan and Claude Console API key support on Bedrock, Vertex, Foundry, Claude apps gateway, and telemetry-disabled sessions (v2.1.283+) | ✅ COMPLETE (description updated from "Pro, Max, or Team" to include Enterprise and cloud provider availability) |
+| 3 | MED | Changed Description | Update `/team-onboarding` — share link is for Team and Enterprise plans only; docs no longer list Pro or Max | ✅ COMPLETE (plan scope narrowed from "Pro, Max, Team, and Enterprise" to "Team and Enterprise") |
+| 4 | LOW | Changed Description | Update `/resume` — add `(requires v2.1.285+)` version note for attaching to a running background session | ✅ COMPLETE (version qualifier added after agent-view note) |
+| 5 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-20 — official docs table not yet updated; defer until docs catch up) |
