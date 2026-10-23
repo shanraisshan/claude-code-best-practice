@@ -1429,3 +1429,12 @@ No priority action items — report is fully in sync with official documentation
 | 1 | MED | Changed Description | Update `/color` — docs add "When Remote Control is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (`-p`)" | ✅ COMPLETE (Remote Control sync and `-p` mode detail appended to description at #8 in Config tag) |
 | 2 | LOW | Scope Decision | `/design consent` and `/design revoke` — appear in official docs without a Skill marker but are subcommands of `/design` (a bundled Skill); standalone Claude Design closes December 14, 2026 | ❌ INVALID (subcommands of a bundled Skill — excluded per report's existing scope disclaimer, same as other bundled skill subcommands; `/design-login` already covers the Auth tag for this product) |
 | 3 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-21 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-23 11:08 AM PKT] Claude Code v2.1.309
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/config` — fix `/config help` to `/config --help` per official docs | ✅ COMPLETE (updated at row #9 in Config tag) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-22 — official docs table not yet updated; defer until docs catch up) |
