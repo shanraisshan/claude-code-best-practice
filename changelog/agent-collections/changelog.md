@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-23 08:40 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (163,317 exact; rounds to 163k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279→271 (per-dir: engineering/65 + specialized/59 + marketing/37 + gis/13 + security/12 + testing/9 + sales/9 + design/10 + paid-media/7 + project-management/7 + support/6 + spatial-computing/6 + academic/6 + game-development/6 + product/6 + finance/5 + strategy/3 + healthcare/3 + research/1 + integrations/1 = 271; game-development/6 is root-only; Aug 14 COMPLETE confirmed 21 with subdirs; corrected ~286; conf 0.88) | INVALID (RECURRING oscillation; game-dev subdir undercounting documented since Aug 14; corrected est ~286 > 279; within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (25,954 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 167→163 (per-dir: 01-core-development/13 + 02-language-specialists/30 + 03-infrastructure/16 + 04-quality-security/18 + 05-data-ai/13 + 06-developer-experience/16 + 07-specialized-domains/16 + 08-business-product/18 + 09-meta-orchestration/12 + 10-research-analysis/11 = 163; conf 0.93; Oct 13 COMPLETE established 167; no confirmed removals since Oct 13) | INVALID (RECURRING oscillation; per-dir 163 vs table 167; no confirmed net removals since Oct 13 COMPLETE at conf 0.92; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (163k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-22 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
