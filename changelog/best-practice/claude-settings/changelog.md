@@ -1323,3 +1323,30 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-19 10:45 AM PKT] Claude Code v2.1.303
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `idleCompaction` (boolean, default `true`, v2.1.299) to Core Settings table | COMPLETE (added after `autoCompactWindow`) — NEW |
+| 2 | HIGH | New Env Var | Add `CLAUDE_CODE_AUTO_MODE_MODEL` (v2.1.302) to Environment Variables | COMPLETE (added) — NEW |
+| 3 | HIGH | New Env Var | Add `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` (v2.1.301) | COMPLETE (added) — NEW |
+| 4 | HIGH | New Env Var | Add `CLAUDE_CODE_GZIP_REQUEST_BODIES` (v2.1.300) | COMPLETE (added) — NEW |
+| 5 | HIGH | New Env Var | Add `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299) | COMPLETE (added) — NEW |
+| 6 | HIGH | New Env Var | Add `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299) | COMPLETE (added) — NEW |
+| 7 | HIGH | New Env Var | Add `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` (v2.1.299) | COMPLETE (added) — NEW |
+| 8 | HIGH | Stale Annotation | Remove `*(in JSON schema, not on official settings page)*` from `sandbox.ignoreViolations` — now confirmed on official settings page | COMPLETE (annotation removed) — NEW |
+| 9 | HIGH | Wrong Scope | Update `forceLoginMethod`: remove "(Managed only)" — honored from any scope since v2.1.295 | COMPLETE (scope updated) — NEW |
+| 10 | HIGH | Wrong Scope | Update `forceLoginGatewayUrl`: change "(Managed only)" to "(User or managed)" per v2.1.295 | COMPLETE (scope updated) — NEW |
+| 11 | MED | Deprecation | Add "Deprecated since v2.1.261 — has no effect" note to `keybindingFlavor` | COMPLETE (deprecation note added) — NEW |
+| 12 | MED | Changed Behavior | Update `CLAUDE_CODE_FORK_SUBAGENT`: on by default in `-p`, SDK, Desktop, VS Code since v2.1.302; set `0` to disable | COMPLETE (description updated) — NEW |
+| 13 | LOW | Stale Count | Update Sources section "~180 keys" → "~245 keys" to match official settings-reference index | COMPLETE (updated) — NEW |
+| 14 | HIGH | Wrong Description | `modelPicker` shape wrong — official shape is `{"options":[...],"replaceBuiltInOptions?":bool}`, not an array | ON HOLD (complex shape change requiring deep verification; deferred to next run) — NEW |
+| 15 | HIGH | Wrong Type | `diffTool` should be enum `"auto"\|"terminal"`, not external command path | ON HOLD (conflicting agent reports; needs fresh settings-reference verification) — NEW |
+| 16 | HIGH | Wrong Description | `maxEffortLevel` description copy-paste error ("A `false` in user…" for a string key) | ON HOLD (needs precise wording from official docs) — NEW |
+| 17 | HIGH | Wrong Path | `permissions.skipDangerousModePermissionPrompt` should be a top-level key per official docs | ON HOLD (needs file location confirmed before changing key path) — NEW |
+| 18 | MED | Wrong Description | `CLAUDE_CODE_RETRY_WATCHDOG`: retries 429/529 capacity errors indefinitely — description says "raises retries to 300 for non-capacity errors" | ON HOLD (RECURRING ~50+ runs; still not on official env-vars page — Rule 10B escalation pending) |
+| 19 | LOW | Unverified Env Var | `OTEL_LOG_TOOL_DETAILS` — not on official env-vars page | ON HOLD (RECURRING ~50+ runs — Rule 10B escalation: confirm via JSON schema or remove next run) |
+| 20 | LOW | Unverified Env Var | `CLAUDE_CODE_RETRY_WATCHDOG` — not on official env-vars page | ON HOLD (RECURRING ~50+ runs — Rule 10B escalation: confirm via JSON schema or remove next run) |
