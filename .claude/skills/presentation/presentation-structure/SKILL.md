@@ -1,15 +1,16 @@
 ---
 name: presentation-structure
-description: Knowledge about the presentation slide format, weight system, navigation, and section structure
+description: Knowledge about the vibe-coding presentation's slide format, data-slide/data-level attributes, journey bar level system, navigation, renumbering rules, and section divider structure. Preloaded into the presentation-vibe-coding agent — use whenever adding, removing, reordering, or renumbering slides in presentation/vibe-coding-to-agentic-engineering/index.html.
+user-invocable: false
 ---
 
 # Presentation Structure Skill
 
-Knowledge about how the presentation at `presentation/index.html` is structured.
+Knowledge about how the presentation at `presentation/vibe-coding-to-agentic-engineering/index.html` is structured.
 
 ## File Location
 
-`presentation/index.html` — a single-file HTML presentation with inline CSS and JS.
+`presentation/vibe-coding-to-agentic-engineering/index.html` — a single-file HTML presentation with inline CSS and JS.
 
 ## Slide Format
 
