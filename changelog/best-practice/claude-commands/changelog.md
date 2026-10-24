@@ -1438,3 +1438,12 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | LOW | Changed Description | Update `/config` — fix `/config help` to `/config --help` per official docs | ✅ COMPLETE (updated at row #9 in Config tag) |
 | 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-22 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-24 11:05 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/auto-mode-setup` — restructure version requirements per updated official docs: Pro/Max/Team need v2.1.228+ (v2.1.233+ on native Windows), Enterprise and Console API keys need v2.1.283+ (no longer grouped with v2.1.228 tier); remove "Also available on Bedrock/Vertex/Foundry…" clause no longer present in docs; add missing-command troubleshooting note | ✅ COMPLETE (description restructured to match official docs) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-23 — official docs table not yet updated; defer until docs catch up) |
