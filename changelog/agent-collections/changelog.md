@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-25 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (163,740 exact; rounds to 164k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → 284 (git tree API: engineering/66 + specialized/59 + marketing/37 + game-development/21 + gis/13 + security/12 + design/10 + sales/9 + testing/9 + paid-media/7 + project-management/7 + product/6 + support/6 + spatial-computing/6 + academic/6 + finance/5 + healthcare/3 + integrations/1 + research/1 = 284; conf 0.85 < 0.88 threshold; one specialized/ file may be missing at tree pagination boundary) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,004 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents from 167 to 163 | COMPLETE (git tree API complete; no truncation; conf 0.97 > 0.88 threshold; 163 .md agent files confirmed across 10 category dirs: 01:13 + 02:30 + 03:16 + 04:18 + 05:13 + 06:16 + 07:16 + 08:18 + 09:12 + 10:11 = 163; Oct 13 COMPLETE used README enumeration → 167 was an overcount; RESOLVED after multiple RECURRING INVALID runs) |
+| 5 | LOW | Sort | Verify sort order (164k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-24 08:40 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
