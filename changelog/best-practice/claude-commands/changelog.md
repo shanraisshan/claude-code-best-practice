@@ -1447,3 +1447,14 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/auto-mode-setup` — restructure version requirements per updated official docs: Pro/Max/Team need v2.1.228+ (v2.1.233+ on native Windows), Enterprise and Console API keys need v2.1.283+ (no longer grouped with v2.1.228 tier); remove "Also available on Bedrock/Vertex/Foundry…" clause no longer present in docs; add missing-command troubleshooting note | ✅ COMPLETE (description restructured to match official docs) |
 | 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-23 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-25 11:07 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Description Sync | Sync frontmatter field descriptions (16 fields updated: name, description, argument-hint, disable-model-invocation, user-invocable, paths, allowed-tools, disallowed-tools, model, effort, context, agent, background, shell, metadata, hooks) | ✅ COMPLETE (synced all updated field descriptions to match official skills.md frontmatter reference) |
+| 2 | HIGH | Description Sync | Sync command descriptions (43+ commands updated across all tag groups) | ✅ COMPLETE (synced all updated command descriptions to match official commands docs) |
+| 3 | LOW | Scope Decision | `/design consent` and `/design revoke` as separate commands | ❌ INVALID (bundled subcommands of the /design skill, not standalone built-in commands — recurring from 2026-10-22) |
+| 4 | LOW | Changed Description | `/autocompact` per-model saving feature | ✋ ON HOLD (recurring from 2026-10-24 — official docs table not yet updated; defer until docs catch up) |
