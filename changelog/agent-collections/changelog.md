@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-26 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | msitarzewski/agency-agents agents 279 → 285 (research: 87+73+124+1=285; engineering/66 + specialized/50+ + security/11 + game-development/18+ + gis/13 + sales/9 + marketing/37 + paid-media/7 + product/6 + research/1 + support/6 + testing/8+ + healthcare/3 + spatial-computing/4+ + project-management/2+ + academic/6 + design/10 + finance/5 + integrations/1 = 285 lower-bound; conf 0.88 at threshold; PR activity Oct 25 +electrical-engineer PR #1177 and Oct 19 batch PRs #1170-#1175 confirmed; RECURRING) | INVALID (RECURRING oscillation; conf 0.88 borderline at threshold; lower-bound estimate with acknowledged undercounting risk in spatial-computing, project-management, and healthcare dirs; within oscillation band; no change) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (164,036 exact; rounds to 164k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,059 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 163 → 152 (research: 170 total .md − 18 non-agent = 152 stored; 5 external README links not included; conf 0.93; methodology mismatch with Oct 25 COMPLETE per-category git tree 163 at conf 0.97; no confirmed net removals since Oct 25; RECURRING oscillation) | INVALID (RECURRING oscillation; methodology mismatch — total-minus-excluded gives 152 vs per-category gives 163; Oct 25 COMPLETE established 163 at conf 0.97; no confirmed net removals; no change) |
+| 5 | LOW | Sort | Verify sort order (164k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-25 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
