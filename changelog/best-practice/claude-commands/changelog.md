@@ -1470,3 +1470,19 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-10-27 11:05 AM PKT] Claude Code v2.1.311
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-10-28 11:06 AM PKT] Claude Code v2.1.312
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/plugin [subcommand]` — docs add that Claude Code can activate a plugin during install; install summary says whether it did or whether to run `/reload-plugins` | ✅ COMPLETE (auto-activation note appended to description at #48 in Extensions tag) |
+| 2 | LOW | Changed Description | Update `/setup-bedrock` — docs say "Hidden from the command menu until `CLAUDE_CODE_USE_BEDROCK=1` is set; type it in full" instead of "Only visible when... is set" | ✅ COMPLETE (wording updated and "type it in full" added at #4 in Auth tag) |
+| 3 | LOW | Changed Description | Update `/setup-vertex` — docs say "Hidden from the command menu until `CLAUDE_CODE_USE_VERTEX=1` is set; type it in full" instead of "Only visible when... is set" | ✅ COMPLETE (wording updated and "type it in full" added at #5 in Auth tag) |
+| 4 | LOW | Changed Description | Update `/config` — drop "From v2.1.181," version qualifier (no longer in docs); add `/config thinking=false` as a third example | ✅ COMPLETE (qualifier removed and thinking=false example added at #9 in Config tag) |
+| 5 | LOW | Changed Description | Update `/keybindings` — docs say "Open your keyboard shortcuts file"; report said "Open or create your keybindings configuration file" | ✅ COMPLETE (description updated at #12 in Config tag) |
+| 6 | LOW | Changed Description | Update `/usage-credits` — docs now say "opens billing settings in your browser"; Team/Enterprise non-billing users "confirm in a dialog that the request notifies their admins" (not "from the CLI instead of opening the browser") | ✅ COMPLETE (description reframed at #34 in Context tag) |
+| 7 | LOW | Changed Description | Update `/effort` — add "on v2.1.205 or later" to "Works in `-p`" version qualifier | ✅ COMPLETE (version qualifier added at #55 in Model tag) |
+| 8 | LOW | Changed Description | Update `/fast` — docs add "Availability in non-interactive mode with `-p` is limited." | ✅ COMPLETE (note appended to description at #56 in Model tag) |
+| 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring from 2026-10-27 — official docs table not yet updated; defer until docs catch up) |
