@@ -170,12 +170,12 @@ Repos primarily known as curated libraries of `SKILL.md` files (distinct from fu
 
 | Name | ★ | <img src="!/tags/s.svg" height="14"> |
 |------|---|---|
-| [mattpocock/skills](https://github.com/mattpocock/skills) | 304k | 38 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 305k | 38 |
 | [anthropics/skills](https://github.com/anthropics/skills) | 184k | 19 |
 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | 67k | 8 |
 | [scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 55k | 177 |
 | [wshobson/agents](https://github.com/wshobson/agents) | 42k | 185 |
-| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 36k | 1,497+ (curated list) |
+| [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 37k | 1,497+ (curated list) |
 | [impeccable](https://github.com/pbakaus/impeccable) | 27k | 1 (with 7 design domain references) |
 | [agent-skills](https://github.com/addyosmani/agent-skills) | 27k | 21 |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) | 15k | 246 (across 9 domains) |
@@ -191,7 +191,7 @@ Repos primarily known as curated libraries of subagent definitions (`.claude/age
 
 | Name | ★ | <img src="!/tags/a.svg" height="14"> |
 |------|---|---|
-| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 164k | 279 |
+| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 165k | 279 |
 | [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | 26k | 163 |
 
 <p align="center">
