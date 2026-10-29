@@ -1486,3 +1486,10 @@ No priority action items — report is fully in sync with official documentation
 | 7 | LOW | Changed Description | Update `/effort` — add "on v2.1.205 or later" to "Works in `-p`" version qualifier | ✅ COMPLETE (version qualifier added at #55 in Model tag) |
 | 8 | LOW | Changed Description | Update `/fast` — docs add "Availability in non-interactive mode with `-p` is limited." | ✅ COMPLETE (note appended to description at #56 in Model tag) |
 | 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring from 2026-10-27 — official docs table not yet updated; defer until docs catch up) |
+
+## [2026-10-29 11:08 AM PKT] Claude Code v2.1.312
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/design consent`, `/design revoke` to Auth tag — Grant Claude access to Claude Design (claude.ai/design), or withdraw it; reverses INVALID determinations from 2026-10-22 and 2026-10-25 based on current agent finding that these are standalone built-in commands, not subcommands of the bundled `/design` skill; count updated 94 → 95 | ✅ COMPLETE (added as row #1 in Auth tag; all rows renumbered 1–94 → 2–95) |
+| 2 | MED | Changed Argument | Update `/focus` — revert signature from `/focus [on\|off]` back to plain `/focus`; the `[on\|off]` argument is documented in the description for Remote Control clients only (v2.1.281+), not as a general top-level signature; reverses the signature change applied in the 2026-10-11 run | ✅ COMPLETE (command column updated at row #11 in Config tag; description unchanged) |
