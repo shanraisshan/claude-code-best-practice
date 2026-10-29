@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-29 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (164,900 exact from web; rounds to 165k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → ~268 top-level (per-dir: engineering/66 + specialized/59 + marketing/37 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + paid-media/7 + project-management/7 + academic/6 + product/6 + support/6 + spatial-computing/6 + finance/5 + healthcare/3 + research/1 + strategy/3 = 268 top-level; game-development/6 root only, unity/ and godot/ subdirs uncounted; conf 0.65 below 0.88 threshold; within oscillation band) | INVALID (RECURRING oscillation; conf 0.65 below 0.88 threshold; game-development and strategy subdirectories uncounted again; same band 280-310 estimated with subdirs; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.2k rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 163 = 163 (all 10 category dirs: 01:13 + 02:30 + 03:16 + 04:18 + 05:13 + 06:16 + 07:16 + 08:18 + 09:12 + 10:11 = 163; conf 0.92; exact match; Oct 11 surgeon-reviewer + telegram-ads-analyst already counted in Oct 25 COMPLETE) | INVALID (exact match; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (165k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-28 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
