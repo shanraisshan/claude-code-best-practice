@@ -1323,3 +1323,42 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-29 10:43 AM PKT] Claude Code v2.1.312
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Bump | Update report version badge from v2.1.296 → v2.1.312; header counts "244+" → "247+", "396+" → "403+" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Missing Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, default `false`, v2.1.305) to Sandbox Settings table — user/managed scope only; Linux/WSL2 only; allows user namespaces but weakens sandbox isolation | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 3 | HIGH | Missing Setting | Add `idleCompaction` (boolean, default `true`, v2.1.290) to Plans & Memory table — compacts long idle conversations; pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` | ✅ COMPLETE (added to Plans & Memory table) — NEW |
+| 4 | HIGH | Missing Setting | Add `isolatePeerMachines` (boolean, any file, v2.1.224) to Permissions section — restrictive exception: `true` from any scope wins even against managed `false` | ✅ COMPLETE (added to Permission Keys table) — NEW |
+| 5 | HIGH | Missing Setting | Add `skipAutoPermissionPrompt` (boolean, user or managed) to Permissions section — skips the one-time confirmation shown on entering auto mode | ✅ COMPLETE (added to Permission Keys table) — NEW |
+| 6 | HIGH | Missing Setting | Add `enableWorkflows` (boolean, any file) to General Settings table — default unset means workflows on except on Pro plan | ✅ COMPLETE (added to General Settings table) — NEW |
+| 7 | HIGH | Missing Setting | Add `sandbox.ripgrep` (object `{command, args?}`, user or managed) to Sandbox Settings table — custom ripgrep binary for the sandbox | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 8 | HIGH | Wrong Description | Fix `advisorModel`: when unset, advisor is OFF (not "uses session model"); `"fable"` is a valid alias again | ✅ COMPLETE (description corrected) — NEW |
+| 9 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default from `-` to `true`; scope is "user or managed" | ✅ COMPLETE (default and scope updated) — NEW |
+| 10 | HIGH | Wrong Description | Fix `maxEffortLevel` description: "A `false` in user settings" is nonsensical for a string key; correct behavior is lowest cap across scopes applies; `"max"` sets no cap | ✅ COMPLETE (description corrected) — NEW |
+| 11 | HIGH | Wrong Type | Fix `modelPicker` type: was array; officially `{options: [{model, label, description?}], replaceBuiltInOptions?}` object; scope user or managed only | ✅ COMPLETE (type corrected) — NEW |
+| 12 | HIGH | Wrong Description/Scope | Fix `allowClaudeInChromeWithManagedMcp`: scope column was `false` instead of "Managed"; description was wrong — allows Chrome-based Claude to run alongside `managed-mcp.json` | ✅ COMPLETE (scope and description corrected) — NEW |
+| 13 | HIGH | Wrong Type | Fix `sandbox.credentials.awsPairs`: was "object"; officially array of `{accessKeyIdVar, secretAccessKeyVar, sessionTokenVar?}` naming `envVars` entries; scope user or managed | ✅ COMPLETE (type corrected) — NEW |
+| 14 | HIGH | Wrong Description | Fix `sandbox.credentials.sigv4`: was generic description; officially `{streaming, presigned, sigv4a}` each `"deny"` (default) or `"passthrough"`; scope user or managed | ✅ COMPLETE (description corrected) — NEW |
+| 15 | HIGH | Wrong Key Path | Fix `permissions.skipDangerousModePermissionPrompt`: wrong key path; official key is top-level `skipDangerousModePermissionPrompt` (scope: user, local or managed) | ✅ COMPLETE (key path corrected) — NEW |
+| 16 | HIGH | Wrong Description | Fix `diffTool` (in Global Config): was "external diff tool command"; officially an enum `"auto"` or `"terminal"` — open diffs in IDE viewer or keep in terminal | ✅ COMPLETE (description corrected) — NEW |
+| 17 | HIGH | Stale Annotation | Remove "not on official settings page" caveat from `sandbox.ignoreViolations` — now officially documented on the settings-reference page | ✅ COMPLETE (annotation removed) — RECURRING (first seen 2026-03-05 v2.1.69 #9) |
+| 18 | HIGH | Wrong Description | Fix `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT`: was "use short system prompt"; officially chooses between full and shorter prompt; `1` forces short, `0`/`false`/`no`/`off` forces full | ✅ COMPLETE (description corrected) — NEW |
+| 19 | HIGH | Wrong Description | Fix `CLAUDE_CODE_SAFE_MODE`: was incomplete; officially skips CLAUDE.md, skills, plugins, hooks, MCP, commands, agents, output styles, workflows, themes, keybindings, status line, and auto memory for troubleshooting | ✅ COMPLETE (description corrected) — NEW |
+| 20 | HIGH | Outdated Description | Fix `CLAUDE_CODE_FORK_SUBAGENT`: fork mode is ON by default since v2.1.302; `=0` turns it off (was phrased as opt-in) | ✅ COMPLETE (description updated) — RECURRING (first seen 2026-10-13 v2.1.296 #23) |
+| 21 | HIGH | Outdated Description | Fix `CLAUDE_CODE_EFFORT_LEVEL`: valid values include `max` (not "max (Opus 4.6 only)"); takes precedence over `--effort`, `/effort`, `modelSettings`, `effortLevel`; `maxEffortLevel` cap still applies | ✅ COMPLETE (description updated) — NEW |
+| 22 | HIGH | Wrong Scope | Fix `axScreenReader`: scope is now user or managed only since v2.1.307 (was "any file") | ✅ COMPLETE (scope corrected) — RECURRING (first seen 2026-10-13 v2.1.296 #26) |
+| 23 | HIGH | Missing Env Vars | Add 9 new env vars from v2.1.297–312: `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`, `CLAUDE_CODE_GZIP_REQUEST_BODIES`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK` | ✅ COMPLETE (all 9 added to env vars table) — NEW |
+| 24 | MED | Missing Settings | Add 6 missing Global Config keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | ✅ COMPLETE (added to Global Config Settings table) — NEW |
+| 25 | MED | Wrong Description | Fix `workflowSizeGuideline` default note: default is `"small"` on the Pro plan since v2.1.271 (not always "medium") | ✅ COMPLETE (description updated) — NEW |
+| 26 | MED | Attribution Update | Add note that `attribution: false` hides all attribution (v2.1.281) | ✅ COMPLETE (note added) — NEW |
+| 27 | MED | Wrong Scope | Fix `forceLoginMethod`: scope is "any file", not Managed only per settings-reference | ✅ COMPLETE (scope updated) — NEW |
+| 28 | MED | Deprecated Key | Mark `keybindingFlavor` as deprecated since v2.1.261 with no effect | ✅ COMPLETE (deprecation note added) — RECURRING (first seen 2026-10-13 v2.1.296 #25) |
+| 29 | MED | Stale Count | Update Sources section "~180 keys" → "~247 keys" | ✅ COMPLETE (count updated) — NEW |
+| 30 | LOW | Example Fix | Remove `mcpServers` from Quick Reference top-level JSON example — it is not a settings.json key (belongs in `.mcp.json`); replace with `idleCompaction` and `maxEffortLevel` demos | ✅ COMPLETE (example updated) — NEW |
+| 31 | LOW | Suspect Key | `OTEL_LOG_TOOL_DETAILS` — still NOT on official env-vars page after 50+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 32 | LOW | Suspect Key | `CLAUDE_CODE_RETRY_WATCHDOG` — annotated as "in changelog, not on official env-vars page" since v2.1.154; v2.1.301 added `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` and v2.1.305 added `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` (both now added in item 23 above) | ✋ ON HOLD (kept — recurring from 2026-07-03 v2.1.154) |
