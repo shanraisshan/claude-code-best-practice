@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-30 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (165,202 exact; rounds to 165k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → ~268 (code search total_count ~308 − ~40 non-agent files = ~268; conf 0.78 below 0.88 threshold; October active: 25 Electrical Engineer PR #1177 + mass-merge ~30 PRs Oct 19 "content batch 5-6"; within oscillation band 254-310; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.78 below 0.88 threshold; within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,192 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 163 = 163 (search total_count 173 − 10 category README.md = 163; all 10 category dirs: 01:8 + 02:30 + 03:16 + 04:18 + 05:13 + 06:16 + 07:16 + 08:18 + 09:16 + 10:11 = 162–163; conf 0.88; exact match; last push Oct 11) | INVALID (exact match; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (165k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-29 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
