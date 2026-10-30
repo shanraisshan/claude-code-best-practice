@@ -1493,3 +1493,23 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | HIGH | New Command | Add `/design consent`, `/design revoke` to Auth tag — Grant Claude access to Claude Design (claude.ai/design), or withdraw it; reverses INVALID determinations from 2026-10-22 and 2026-10-25 based on current agent finding that these are standalone built-in commands, not subcommands of the bundled `/design` skill; count updated 94 → 95 | ✅ COMPLETE (added as row #1 in Auth tag; all rows renumbered 1–94 → 2–95) |
 | 2 | MED | Changed Argument | Update `/focus` — revert signature from `/focus [on\|off]` back to plain `/focus`; the `[on\|off]` argument is documented in the description for Remote Control clients only (v2.1.281+), not as a general top-level signature; reverses the signature change applied in the 2026-10-11 run | ✅ COMPLETE (command column updated at row #11 in Config tag; description unchanged) |
+
+---
+
+## [2026-10-30 11:09 AM PKT] Claude Code v2.1.314
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/restart` to Session tag — restart Claude Code and resume session to apply update; Alias: `/update`; missing since v2.1.288; count updated 95 → 96 | ✅ COMPLETE (added as #91 in Session tag between `/rename` and `/resume`; downstream rows 91–95 renumbered 92–96; count heading updated to 96) |
+| 2 | MED | Changed Description | Update `/usage-credits` — reworded to "Configure usage credits, or request them from your admin, when you hit a limit"; Team/Enterprise members send a request from the CLI; URL print note now includes v2.1.205 requirement explicitly | ✅ COMPLETE (description updated at #35 in Context tag) |
+| 3 | MED | Changed Description | Update `/terminal-setup` — remove "Only visible in terminals that need it, like" clause; adopt official imperative wording "Install a Shift+Enter keybinding for newlines in VS Code, Cursor…" | ✅ COMPLETE (description updated at #23 in Config tag) |
+| 4 | MED | Changed Description | Update `/effort` — remove "at the current level", historical v2.1.284 notes ("The `on` and `off` arguments… `Invalid argument`"), and the "Before v2.1.242, Claude Code decided from a feature flag…" sentence | ✅ COMPLETE (description trimmed at #56 in Model tag) |
+| 5 | MED | Changed Description | Update `/model` — simplify "Before v2.1.242, Claude Code decided from a feature flag…" to "Before v2.1.242, it could wait." | ✅ COMPLETE (description updated at #58 in Model tag) |
+| 6 | LOW | Changed Description | Update `/advisor` — "Fable 5 access" → "Fable access"; non-interactive scope reworded to "In a session without an interactive terminal, or over Remote Control" | ✅ COMPLETE (description updated at #55 in Model tag) |
+| 7 | LOW | Changed Description | Update `/artifacts` — drop v2.1.208/v2.1.216 version requirements no longer in official docs | ✅ COMPLETE (version qualifiers removed at #78 in Session tag) |
+| 8 | LOW | Changed Description | Update `/design-login` — add "Sign in with `/design-login` whenever `/design-sync` or `/design consent` tells you to"; "closes on" → "closes by December 14, 2026" | ✅ COMPLETE (description updated at #2 in Auth tag) |
+| 9 | LOW | Changed Description | Update `/insights` — reword to "including which projects you work in, how you use Claude Code, where things go wrong, and features to try" per official docs | ✅ COMPLETE (description updated at #30 in Context tag) |
+| 10 | LOW | Changed Description | Update `/bug` — add "When you are signed in on a first-party connection, the report goes to Anthropic" and "a local archive you forward yourself" | ✅ COMPLETE (description updated at #36 in Debug tag) |
+| 11 | LOW | Changed Description | Update `/fork` — add "except when the copy edits in place" to worktree instruction | ✅ COMPLETE (description updated at #86 in Session tag) |
+| 12 | LOW | Changed Description | Update `/skills` — add "to Claude and the `/` menu" to cycling text; add `--settings` flag to exclusion list | ✅ COMPLETE (description updated at #53 in Extensions tag) |
+| 13 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
