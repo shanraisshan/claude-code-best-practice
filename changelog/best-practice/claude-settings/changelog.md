@@ -1323,3 +1323,24 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-15 10:45 AM PKT] Claude Code v2.1.300
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `idleCompaction` (boolean, default `true`, v2.1.299) to General Settings — idle-triggered auto-compact | COMPLETE (added to General Settings table) — NEW |
+| 2 | HIGH | New Setting | Add `worktree.location` (string) to Worktree Settings — custom base directory for worktrees | COMPLETE (added to Worktree Settings table) — NEW |
+| 3 | HIGH | New Sandbox Setting | Add `sandbox.ripgrep` (object with `command`/`args` fields) to Sandbox Settings | COMPLETE (added to Sandbox Settings table) — NEW |
+| 4 | HIGH | Missing Global Config Keys | Add 6 missing `~/.claude.json` keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | COMPLETE (all 6 added to Global Config table) — NEW |
+| 5 | HIGH | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED — no effect since v2.1.261 | COMPLETE (deprecated note added) — NEW |
+| 6 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS` (v2.1.300), `CLAUDE_CODE_ARTIFACT_COMMENTS` (v2.1.221), `CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT` (v2.1.228) to Artifact env vars | COMPLETE (all 3 added) — NEW |
+| 7 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` as REMOVED in v2.1.224 | COMPLETE (removed annotation added) — NEW |
+| 8 | HIGH | Missing Env Var | Add `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299, default 200000) after `DISABLE_AUTO_COMPACT` | COMPLETE (added) — NEW |
+| 9 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299), `CLAUDE_CODE_GZIP_REQUEST_BODIES` (v2.1.300), `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` (v2.1.299), `CLAUDE_CODE_TRANSCRIPT_LOCAL_GC` (v2.1.296) | COMPLETE (all 4 added) — NEW |
+| 10 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` (v2.1.280), `CLAUDE_CODE_DISABLE_WEB_FETCH` (v2.1.285), `CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES` (v2.1.285), `CLAUDE_CODE_PROMPT_CACHE_TTL` (v2.1.242) | COMPLETE (all 4 added) — NEW |
+| 11 | HIGH | Breaking Change | Document v2.1.299 MCP allow rule scoping change: `mcp__a__*` no longer matches server `a__b` | COMPLETE (breaking change note added to Permission Syntax section) — NEW |
+| 12 | MED | Description Update | Update `CLAUDE_CODE_DISABLE_ADVISOR_TOOL` description — exact v2.1.300 behavior details not confirmed in official sources | ON HOLD (Rule 8A: unverified behavior change; deferred pending official confirmation) — NEW |
+| 13 | MED | Version Metadata | Update version badge v2.1.296 → v2.1.300; update header counts to "253+ settings / 408+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 14 | LOW | Sources Update | Update sources section "~180 keys" → "~245 keys" to match settings-reference page current count | COMPLETE (count updated) — NEW |
