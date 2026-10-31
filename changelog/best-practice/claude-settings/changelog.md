@@ -1323,3 +1323,32 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-31 10:43 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.316; update header "244+ settings / 396+ env vars" to "247+ settings / 403+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Setting | Add `permissions.blockWritesOutsideWorkingDirectories` (boolean, any file, v2.1.314) — blocks Write/Edit/NotebookEdit outside working directories | COMPLETE (added to Permission Settings table) — NEW |
+| 3 | HIGH | Missing Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, default false, user/managed, v2.1.305) — lets sandboxed commands create user namespaces; weakens security boundary on Linux/WSL2 | COMPLETE (added to Sandbox Settings table) — NEW |
+| 4 | HIGH | Missing Setting | Add `idleCompaction` (boolean, default true, any file, v2.1.299) — enables auto-compaction when Claude is idle | COMPLETE (added to General Settings table) — NEW |
+| 5 | HIGH | Missing Setting | Add `isolatePeerMachines` (boolean, any file, v2.1.224+) — requires approval before SendMessage to cross-machine sessions | COMPLETE (added to Workspace & Teams table) — NEW |
+| 6 | HIGH | Missing Setting | Add `skipAutoPermissionPrompt` (boolean, user/managed) — suppresses the one-time auto mode consent notice | COMPLETE (added to Permission Settings table) — NEW |
+| 7 | HIGH | Changed Scope | Fix `axScreenReader`: restrict to user/managed/--settings only since v2.1.307; ignored in project/local settings | COMPLETE (scope note updated) — NEW |
+| 8 | HIGH | Wrong Description | Fix `CLAUDE_CODE_FORK_SUBAGENT`: ON by default since v2.1.302 in -p/SDK/Desktop/VS Code; set `0` to disable (report said "Set to 1 to enable") | COMPLETE (description corrected) — NEW |
+| 9 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP` (v2.1.316) | COMPLETE (all 3 added) — NEW |
+| 10 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK` (v2.1.314), `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT` (v2.1.312), `CLAUDE_CODE_MODEL_CATALOG` (v2.1.311), `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK` (v2.1.309) | COMPLETE (all 4 added) — NEW |
+| 11 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_AUTO_MODE_MODEL` (v2.1.302), `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299), `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299), `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` (v2.1.301), `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` (v2.1.305) | COMPLETE (all 5 added) — NEW |
+| 12 | HIGH | Model Deprecation | Add Opus 4.8 fast mode deprecation note: requests fail after 2026-11-30, migrate to Opus 5.5 (v2.1.316) | COMPLETE (note added near fastMode in Useful Commands) — NEW |
+| 13 | HIGH | Deprecated Setting | Mark `disableArtifact` as deprecated since v2.1.242; use `enableArtifact: false` | COMPLETE (deprecated note added) — NEW |
+| 14 | HIGH | Permission Syntax | Add note that `bypassPermissions` is also ignored from project/local since v2.1.257 (not just `auto`) | COMPLETE (note added to defaultMode description) — NEW |
+| 15 | HIGH | Suspect Key Resolved | `sandbox.ignoreViolations`: now on official settings page — remove "(in JSON schema, not on official settings page)" annotation | COMPLETE (annotation removed; 10B clock reset) — NEW |
+| 16 | MED | Deprecated Setting | Mark `keybindingFlavor` as deprecated since v2.1.261 (has no effect; shortcuts always follow readline) | COMPLETE (deprecated note added) — NEW |
+| 17 | MED | Missing Setting | Add `enableWorkflows` (boolean, any file, default on) complementing `disableWorkflows` | COMPLETE (added to General Settings table) — NEW |
+| 18 | MED | Wrong Description | Fix `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT`: chooses prompt type (`1`=short/simplified, `0`=full); was incorrectly described as "Custom system prompt to inject" | COMPLETE (description corrected) — NEW |
+| 19 | MED | Missing Global Config | Add 6 missing `~/.claude.json` keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | COMPLETE (all 6 added to Global Config table) — NEW |
+| 20 | MED | Useful Commands | Fix `claude auto-mode reset` description (removes autoMode from user settings; does not reset session classification); fix `--doctor` → `claude doctor` | COMPLETE (commands corrected) — NEW |
+| 21 | LOW | Missing Env Var | Add `CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE` (v2.1.283, replaces removed `CLAUDE_CODE_AUTO_BACKGROUND_WORKER_CHECKIN_SECONDS`) | COMPLETE (added; old one marked removed) — NEW |
+| 22 | LOW | Missing Env Vars | Add `CLAUDE_CODE_WARN_DISK_FREE_GIB` and `CLAUDE_CODE_WARN_MEMORY_FREE_GIB` (v2.1.304) | COMPLETE (both added) — NEW |
