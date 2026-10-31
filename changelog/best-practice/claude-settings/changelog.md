@@ -1323,3 +1323,21 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-21 10:48 AM PKT] Claude Code v2.1.306
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `idleCompaction` (bool, default `true`) to General Settings — controls idle-triggered auto-compaction (v2.1.299) | COMPLETE (added after `autoCompactWindow`) — NEW |
+| 2 | HIGH | Wrong Description | Fix `CLAUDE_CODE_SAFE_MODE`: was "limits potentially destructive operations"; correct is "disables all customizations for troubleshooting, same as --safe-mode" | COMPLETE (description corrected) — NEW |
+| 3 | HIGH | Wrong Description | Fix `CLAUDE_CODE_RETRY_WATCHDOG`: was "Raise retry count for non-capacity errors to 300"; correct is "retries 429/529 capacity errors indefinitely" | COMPLETE (description corrected) — NEW |
+| 4 | HIGH | Wrong Description | Fix `CLAUDE_CODE_FORK_SUBAGENT`: was "Set to 1 to enable on external builds"; correct is enabled by default since v2.1.302, set 0 to disable | COMPLETE (description corrected) — NEW |
+| 5 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_COMPACT_WINDOW`: add `k`/`M` suffix shorthand support added in v2.1.304 | COMPLETE (description updated) — NEW |
+| 6 | HIGH | Missing Env Vars | Add 6 new env vars from v2.1.299–304: `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_GZIP_REQUEST_BODIES`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` | COMPLETE (all 6 added) — NEW |
+| 7 | HIGH | Wrong Scope | Fix `forceLoginMethod`: was "(Managed only)"; now any scope (v2.1.295) | COMPLETE (restriction removed) — NEW |
+| 8 | HIGH | Wrong Scope | Fix `forceLoginGatewayUrl`: was "(Managed only)"; now "User or managed settings only" (v2.1.295) | COMPLETE (scope corrected) — NEW |
+| 9 | MED | Deprecated Key | Mark `keybindingFlavor` as **DEPRECATED since v2.1.261**; use `/keybindings` instead | COMPLETE (deprecation annotation added) — NEW |
+| 10 | MED | New Setting | Add `sandbox.allowNestedUserNamespaces` (bool, default `false`, Linux/WSL2 only) from v2.1.305 changelog with annotation | COMPLETE (added with changelog annotation) — NEW |
+| 11 | MED | CLAUDE.md | Add missing hook events `PostToolUseFailure`, `PreModelSwitch`, `PostModelSwitch` to CLAUDE.md hooks list (count was correct at 33, but list showed only 30) | COMPLETE (3 events added to list) — NEW |
