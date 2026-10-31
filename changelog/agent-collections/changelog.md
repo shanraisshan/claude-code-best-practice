@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-10-31 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 165k to 166k | COMPLETE (GitHub search_code: 165,529 exact; 165,529 > 165,500 threshold → rounds to 166k; k-boundary crossed; RECURRING — milestone crossing; conf 0.82) |
+| 2 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents from 163 to 164 | COMPLETE (two-page search_code exhaustive: exactly 164 non-README .md files under categories/; ponder-auditor Oct 28 + ux-microcopy-reviewer Oct 21; conf 0.93 > 0.88 threshold; NEW) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents 279 → ~272 (search_code total 294 − 22 non-agent = ~272; conf 0.82 < 0.88 threshold; within oscillation band; Oct 19 batch 30+ PRs merged) | INVALID (RECURRING oscillation; conf 0.82 below 0.88 threshold; within oscillation band; no change) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,217 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (166k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-30 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
