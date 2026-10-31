@@ -1513,3 +1513,19 @@ No priority action items — report is fully in sync with official documentation
 | 11 | LOW | Changed Description | Update `/fork` — add "except when the copy edits in place" to worktree instruction | ✅ COMPLETE (description updated at #86 in Session tag) |
 | 12 | LOW | Changed Description | Update `/skills` — add "to Claude and the `/` menu" to cycling text; add `--settings` flag to exclusion list | ✅ COMPLETE (description updated at #53 in Extensions tag) |
 | 13 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-10-31 11:05 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Add "Ultra" plan tier to `/privacy-settings` — docs now say "Pro, Max, and Ultra plan subscribers" | ✅ COMPLETE (updated at #17 in Config tag) |
+| 2 | MED | Changed Description | Add "Ultra" plan tier to `/usage` — docs now say "Pro, Max, Ultra, Team, or Enterprise plan" | ✅ COMPLETE (updated at #34 in Context tag) |
+| 3 | MED | Changed Description | Add "Ultra" plan tier to `/restart` — docs now say "Pro, Max, or Ultra plan" | ✅ COMPLETE (updated at #91 in Session tag) |
+| 4 | MED | Changed Description | Add "Ultra" plan tier to `/auto-mode-setup` — docs now say "Pro, Max, Ultra, and Team plans" | ✅ COMPLETE (updated at #8 in Config tag) |
+| 5 | MED | Changed Description | Update `/effort` — docs add `(requires v2.1.284 or later)` qualifier to the `ultracode on`/`ultracode off` arguments | ✅ COMPLETE (qualifier added at #56 in Model tag) |
+| 6 | MED | Changed Description | Update `/install-github-app` — docs add "Walks you through selecting a repo and configuring the integration" | ✅ COMPLETE (added walkthrough sentence at #70 in Remote tag) |
+| 7 | MED | Changed Description | Update `/team-onboarding` — docs add "a teammate can paste as a first message to get set up quickly" | ✅ COMPLETE (added paste-detail at #66 in Project tag) |
+| 8 | LOW | Changed Description | Update `/clear` — docs clarify that restoring from the rewind menu works "in the same Claude Code process, via the previous-session entry" | ✅ COMPLETE (clarification added at #83 in Session tag) |
+| 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
