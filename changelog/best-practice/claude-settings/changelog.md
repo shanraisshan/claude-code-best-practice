@@ -1323,3 +1323,22 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-28 10:51 AM PKT] Claude Code v2.1.312
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Settings | Add `idleCompaction` (boolean, default `true`) to General Settings — auto-compact after ~54 min idle when conversation exceeds 200K tokens (v2.1.290+) | ✅ COMPLETE (added to report) — NEW |
+| 2 | HIGH | Missing Settings | Add `worktree.location` (string) to Worktree Settings — custom base directory for worktree creation (v2.1.295+) | ✅ COMPLETE (added to report) — NEW |
+| 3 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` (boolean) to Permission Keys — skip auto-mode confirmation prompt in unattended environments (v2.1.299+) | ✅ COMPLETE (added to report) — NEW |
+| 4 | HIGH | Missing Settings | Add `gatewayInternalNetworks` (array, Managed only) to MCP Settings — CIDR ranges accessible from gateway sessions (v2.1.300+) | ✅ COMPLETE (added to report) — NEW |
+| 5 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (boolean, Linux/WSL2) and `sandbox.ripgrep` (string, Managed only) to Sandbox Settings (v2.1.302+, v2.1.303+) | ✅ COMPLETE (both added) — NEW |
+| 6 | HIGH | Missing Settings | Add `terminalTitleFromRename` (boolean, default `true`) to Display Settings — sync terminal title on rename (v2.1.298+) | ✅ COMPLETE (added to report) — NEW |
+| 7 | HIGH | Missing Settings | Add `sshHostAllowlist` and `sshHostCommands` (both Managed only) to Workspace & Teams — SSH host allowlisting and per-host command overrides (v2.1.305+) | ✅ COMPLETE (both added) — NEW |
+| 8 | HIGH | Wrong Value | Fix `autoContinueAtUsageLimit` default: was blank/unset; officially `true` (auto-continues by default) | ✅ COMPLETE (default corrected to `true`) — NEW |
+| 9 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_FORK_SUBAGENT` description: was "set to 1 to enable on external builds"; officially ON by default since v2.1.302 — set `0` to disable | ✅ COMPLETE (description corrected) — NEW |
+| 10 | HIGH | Missing Env Vars | Add 11 env vars from v2.1.297–312: `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_GZIP_REQUEST_BODIES`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_DISABLE_WEB_FETCH`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK` | ✅ COMPLETE (all 11 added) — NEW |
+| 11 | MED | Deprecated Setting | Mark `keybindingFlavor` as **DEPRECATED since v2.1.261** in description | ✅ COMPLETE (deprecated note added) — NEW |
+| 12 | MED | Badge / Counts | Update Last Updated badge to Oct 28, 2026 10:45 AM PKT and version to v2.1.312; update header counts to 257+ settings and 409+ env vars | ✅ COMPLETE (badge and counts updated) — NEW |
