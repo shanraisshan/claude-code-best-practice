@@ -1323,3 +1323,19 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-01 10:45 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.316; update header counts from "244+ settings / 396+ env vars" to "247+ settings / 398+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | New Setting | Add `idleCompaction` (bool, default `true`, v2.1.299) to General Settings table — Claude Code compacts idle conversations automatically | COMPLETE (added) — NEW |
+| 3 | HIGH | New Setting | Add `sandbox.allowNestedUserNamespaces` (bool, default `false`, Linux/WSL2, v2.1.305) to Sandbox Settings table — allows nested user namespaces for sandboxed commands requiring elevated container capabilities | COMPLETE (added) — NEW |
+| 4 | HIGH | New Setting | Add `permissions.blockWritesOutsideWorkingDirectories` (bool, v2.1.314, changelog-only) to Permission Keys table — blocks all Write operations outside working directories | COMPLETE (added, annotated as changelog-only) — NEW |
+| 5 | HIGH | Wrong Path | Fix `permissions.skipDangerousModePermissionPrompt` → top-level `skipDangerousModePermissionPrompt` (was incorrectly nested under `permissions`) | COMPLETE (path corrected) — NEW |
+| 6 | MED | Wrong Default | Fix `autoContinueAtUsageLimit` default: was unset/blank, officially `true` (auto-continues when rate limit resets) | COMPLETE (default updated) — NEW |
+| 7 | MED | Deprecated | Mark `disableArtifact` as DEPRECATED; prefer `enableArtifact: false` which is the canonical form since v2.1.196+ | COMPLETE (deprecated annotation added) — NEW |
+| 8 | LOW | Wrong Type | Fix `sandbox.credentials.awsPairs` type description: should be array of credential pair objects, not a generic object | ON HOLD (need official docs confirmation for exact array entry shape) |
+| 9 | LOW | Wrong Type | Fix `sandbox.credentials.sigv4` type description: should specify SigV4 re-signing config object fields | ON HOLD (need official docs confirmation for exact field names) |
