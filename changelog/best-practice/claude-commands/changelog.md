@@ -1529,3 +1529,12 @@ No priority action items — report is fully in sync with official documentation
 | 7 | MED | Changed Description | Update `/team-onboarding` — docs add "a teammate can paste as a first message to get set up quickly" | ✅ COMPLETE (added paste-detail at #66 in Project tag) |
 | 8 | LOW | Changed Description | Update `/clear` — docs clarify that restoring from the rewind menu works "in the same Claude Code process, via the previous-session entry" | ✅ COMPLETE (clarification added at #83 in Session tag) |
 | 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-01 11:05 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/ultrareview` — docs now say "Includes 3 free runs on Pro, Max, and Ultra"; report still said "Pro and Max" | ✅ COMPLETE (added "Ultra" to free-runs list at #67 in Project tag) |
+| 2 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
