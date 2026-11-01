@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-01 08:36 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (165,700+ exact; rounds to 166k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → ~283 (per-dir: engineering/66 + specialized/59 + marketing/37 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + paid-media/7 + project-management/7 + product/6 + support/6 + academic/6 + spatial-computing/6 + game-development/21 + finance/5 + healthcare/3 + research/1 = 283; conf 0.78 < 0.88 threshold; within oscillation band; Oct 19 batch 30+ PRs merged + Oct 25 Electrical Engineer PR #1177) | INVALID (RECURRING oscillation; conf 0.78 below 0.88 threshold; within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,200 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 164 → 165 (in-repo .md files via WebFetch category dirs: 01:13+02:30+03:16+04:19+05:13+06:16+07:16+08:19+09:16+10:11=169 README bullets − 4 external-link entries cat09 = 165 stored; conf 0.85 < 0.88 threshold; Oct 31 COMPLETE established 164 at conf 0.93; ponder-auditor Oct 28 + ux-microcopy-reviewer Oct 21 already counted; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.85 below 0.88 threshold; Oct 31 COMPLETE established 164 at conf 0.93; within oscillation band; no change) |
+| 5 | LOW | Sort | Verify sort order (166k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-10-31 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
