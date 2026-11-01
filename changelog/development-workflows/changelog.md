@@ -4347,3 +4347,41 @@
 | 22 | LOW | Sort | Sort order after updates: 310k > 308k > 294k > 144k > 138k > 99.7k(OOS) > 73.5k > 64.2k > 55k > 40.4k > 25.8k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
 | 23 | INFO | Verify | shields.io JSON endpoint returned 403 (proxy blocked); WebFetch on github.com HTML used as authoritative fallback | COMPLETE (fallback verification used) |
 | 24 | INFO | OOS | agent-skills verified at 112k (up from 99.7k in table) — OOS row not modified per scope rules | ON HOLD (OOS — agent-skills star drift noted; update deferred to separate OOS refresh) |
+
+---
+
+## [2026-11-01 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock ★ 308k → 308.5k (WebFetch verified ~308,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Spec Kit ★ 144k → 144.5k (WebFetch verified ~144,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update gstack ★ 138k → 138.5k (WebFetch verified ~138,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 4 | MED | Star | Update omc ★ 40.4k → 40.5k (WebFetch verified ~40,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count | Update Matt Pocock skills 38 → 39 (Agent 1: conf 0.90; software-factory added Oct 31; directly enumerated all 5 category folders = 39) | COMPLETE (NEW — software-factory confirmed; UP direction; updated README table) |
+| 6 | MED | Count | Update gstack skills 61 → 63 (Agent 2: enumerated 63 from AGENTS.md — plan-mode 9 + impl+review 17 + release+deploy 9 + ops+memory 13 + browser+agent 4 + iOS QA 5 + safety+scoping 6 = 63; UP direction) | COMPLETE (NEW — directly enumerated; UP direction; updated README table) |
+| 7 | LOW | Star | Superpowers ~310,100 (310.1k) — rounds to 310k; no meaningful change; keep 310k | COMPLETE (RECURRING — within rounding tolerance) |
+| 8 | LOW | Star | ECC ~294,100 (294k) — Agent 1 stale 293k overridden; WebFetch confirms 294k; no change | COMPLETE (RECURRING — stale agent read overridden; no change) |
+| 9 | LOW | Star | OpenSpec 73.5k — no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD 64.2k — no change; archived | COMPLETE (RECURRING — archived; no change) |
+| 11 | LOW | Star | BMAD ~54,800 (rounds to 55k) — no change | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | CE 25.8k — no change | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | HumanLayer 12.7k — no change | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Sort | Sort order after updates: 310k > 308.5k > 294k > 144.5k > 138.5k > 99.7k(OOS) > 73.5k > 64.2k > 55k > 40.5k > 25.8k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 15 | LOW | Count | ECC commands 98 (Agent 1: direct count; counts-don't-fall vs baseline 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 16 | LOW | Count | ECC skills 311 (Agent 1: stale external guide; counts-don't-fall vs baseline 314s) | INVALID (RECURRING — counts-don't-fall; keep 314s) |
+| 17 | LOW | Count | BMAD skills 31 (Agent 2: "View all files" truncation; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 18 | LOW | Count | GSD commands 67 (Agent 2: archived; counts-don't-fall vs baseline 85c) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 19 | LOW | Count | ECC agents 71, Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, Matt Pocock 0a/0c, OpenSpec 0a/12c/12s, GSD 33a/0s, omc 19a/0c/48s, CE 0a/1c/36s, HumanLayer 0a/0c/28s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: Agent adds using-superpowers(top) at start, drops receiving-code-review(sub) (conf 0.90; receiving-code-review confirmed in 15-skill list Oct 31; chain reset) | ON HOLD (RECURRING — chain reset vs current 8-step; keep current) |
+| 21 | LOW | Workflow | Matt Pocock: 10-step with grill-with-docs (regression from grill-me applied Oct 30), triage added, retro added (conf 0.90; chain reset 8→10) | ON HOLD (RECURRING — chain reset; grill-me applied Oct 30 confirmed; keep current 8-step) |
+| 22 | LOW | Workflow | Spec Kit: 6-step constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed (Agent 1: conf 0.85) | COMPLETE (RECURRING — no change) |
+| 23 | LOW | Workflow | OpenSpec: explore→propose→apply→verify(sub)→archive confirmed same (Agent 2: same 5-step structure) | COMPLETE (RECURRING — no change) |
+| 24 | LOW | Workflow | GSD: archived; keep current 8-step | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 25 | LOW | Workflow | gstack: 11-step variant with build(top) replacing plan-devex-review(sub); review/qa reclassified as sub (Agent 2; chain reset vs current 11-step) | ON HOLD (RECURRING — 2nd consecutive; chain reset with conflicting details; keep current 11-step) |
+| 26 | LOW | Workflow | BMAD: 8-step adds bmad-walkthrough/bmad-retrospective, drops bmad-forge-idea/bmad-spec (Agent 2: conf 0.87 < 0.90; 2nd consecutive for retrospective; keep current 7-step) | ON HOLD (RECURRING — conf < 0.90; chain reset; keep current 7-step) |
+| 27 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed same (Agent 2: conf 0.91) | COMPLETE (RECURRING — no change) |
+| 28 | LOW | Workflow | omc: 10-step adds omc-setup, replaces release with ralph (Agent 2: conf 0.90; 2nd consecutive for workflow change; conflicting details with Oct 31 ralplan report; keep current 9-step) | ON HOLD (RECURRING — 2nd consecutive; conflicting step names; keep current 9-step) |
+| 29 | LOW | Workflow | HumanLayer: RPI plugin workflow reported (task-create→session-start→rpi-*→human-review; chain reset vs current 6-step skill-based workflow applied Oct 31) | ON HOLD (RECURRING — chain reset; Oct 31 skill-based workflow current; keep current 6-step) |
+| 30 | LOW | OOS | agent-skills: ~112,300 (112.3k) verified by WebFetch — significant drift from 99.7k in table; OOS row not modified per scope rules | ON HOLD (OOS — agent-skills star drift 99.7k → 112.3k; update deferred to separate OOS refresh) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); WebFetch on github.com HTML used for all star verification (RECURRING); 4 star changes + 2 skill count changes applied; Matt Pocock software-factory skill added Oct 31 (confirmed in in-progress/ folder); gstack +2 skills (63 vs 61; test-audit + new addition); agent-skills significant OOS drift noted (99.7k → 112.3k) | COMPLETE (RECURRING — WebFetch/HTML method established) |
