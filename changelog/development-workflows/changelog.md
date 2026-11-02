@@ -4385,3 +4385,20 @@
 | 29 | LOW | Workflow | HumanLayer: RPI plugin workflow reported (task-create→session-start→rpi-*→human-review; chain reset vs current 6-step skill-based workflow applied Oct 31) | ON HOLD (RECURRING — chain reset; Oct 31 skill-based workflow current; keep current 6-step) |
 | 30 | LOW | OOS | agent-skills: ~112,300 (112.3k) verified by WebFetch — significant drift from 99.7k in table; OOS row not modified per scope rules | ON HOLD (OOS — agent-skills star drift 99.7k → 112.3k; update deferred to separate OOS refresh) |
 | 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); WebFetch on github.com HTML used for all star verification (RECURRING); 4 star changes + 2 skill count changes applied; Matt Pocock software-factory skill added Oct 31 (confirmed in in-progress/ folder); gstack +2 skills (63 vs 61; test-audit + new addition); agent-skills significant OOS drift noted (99.7k → 112.3k) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-02 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update obra/superpowers ★ from 310k to 311k | COMPLETE (verified via GitHub HTML WebFetch: 311k confirmed) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 308.5k to 309k | COMPLETE (verified via GitHub HTML WebFetch: 308.9k → 309k at 0.5k precision) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 294k to 295k | COMPLETE (verified via GitHub HTML WebFetch: 294.9k → 295k at 0.5k precision) |
+| 4 | HIGH | Star | Update github/spec-kit ★ from 144.5k to 145k | COMPLETE (verified via GitHub HTML WebFetch: 145k confirmed) |
+| 5 | HIGH | Star | Update garrytan/gstack ★ from 138.5k to 139k | COMPLETE (verified via GitHub HTML WebFetch: 138.6k → 139k at 0.5k precision) |
+| 6 | LOW | Star | Fission-AI/OpenSpec ★ stays at 73.5k | INVALID (73.6k rounds to 73.5k at 0.5k precision — no change) |
+| 7 | LOW | Count | affaan-m/everything-claude-code agent count 71→84 | ON HOLD (counts-don't-fall rule — agent count would fall if reverted; awaiting 3 consecutive confirms) |
+| 8 | LOW | Count | affaan-m/everything-claude-code command count 112→127 | ON HOLD (counts-don't-fall rule — first confirmation; awaiting 3 consecutive confirms) |
+| 9 | LOW | Workflow | mattpocock/skills workflow pipeline restructure | ON HOLD (chain reset — agent reports different step structure; 1st consecutive confirmation) |
+| 10 | LOW | Workflow | Fission-AI/OpenSpec workflow pipeline change | ON HOLD (confidence < 0.90; 1st consecutive confirmation) |
