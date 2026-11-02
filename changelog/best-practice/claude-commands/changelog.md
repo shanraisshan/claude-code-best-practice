@@ -1538,3 +1538,13 @@ No priority action items — report is fully in sync with official documentation
 |---|----------|------|--------|--------|
 | 1 | MED | Changed Description | Update `/ultrareview` — docs now say "Includes 3 free runs on Pro, Max, and Ultra"; report still said "Pro and Max" | ✅ COMPLETE (added "Ultra" to free-runs list at #67 in Project tag) |
 | 2 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-02 11:07 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 1 → Nov 2, 2026._
