@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-02 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (165,900 exact; rounds to 166k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 279 → ~278 (per-dir: engineering/66 + specialized/59 + marketing/37 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + paid-media/7 + project-management/7 + product/6 + support/6 + academic/6 + spatial-computing/6 + game-development/18 + finance/5 + healthcare/3 + research/1 = ~278; conf 0.78 < 0.88 threshold; RECURRING oscillation; game-development includes root+unity+unreal-engine+godot+blender=18, roblox-studio unchecked; within oscillation band; no change) | INVALID (RECURRING oscillation; conf 0.78 below 0.88 threshold; within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,300 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 164 → 165 (per-dir: 01:13+02:30+03:16+04:19+05:13+06:16+07:16+08:19+09:12+10:11=165; conf 0.87 < 0.88 threshold; RECURRING oscillation; Oct 30 ponder-auditor PR#336 + Oct 21 ux-microcopy-reviewer already counted; +1 boundary is counting artifact; within oscillation band; no change) | INVALID (RECURRING oscillation; conf 0.87 below 0.88 threshold; Oct 31 COMPLETE established 164 at conf 0.93; within oscillation band; no change) |
+| 5 | LOW | Sort | Verify sort order (166k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-01 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
