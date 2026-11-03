@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-03 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | Update msitarzewski/agency-agents agents from 279 to 283 (README enumeration: engineering/66 + specialized/58 + marketing/37 + gis/13 + security/12 + design/10 + testing/9 + sales/10 + paid-media/7 + project-management/7 + product/6 + support/6 + academic/6 + spatial-computing/6 + game-development/21 + finance/5 + healthcare/3 + research/1 = 283; conf 0.90 > 0.88 threshold; game-development subdirs correctly counted at 21; sales +1 from previous; specialized -1 from previous; RECURRING oscillation) | COMPLETE (conf 0.90 above threshold; README enumeration; +4 from table; game-dev subdirs consistently 21) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (166,200 exact; rounds to 166k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,300 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 164 → 170 total (166 in-repo + 4 external; per-dir: 01:13 + 02:30 + 03:16 + 04:19 + 05:13 + 06:16 + 07:17 + 08:19 + 09:16 + 10:11 = 170 total; conf 0.82 < 0.88 threshold; motion-director merged Nov 2; RECURRING oscillation; methodology mismatch README-enumeration vs git-tree) | INVALID (RECURRING oscillation; conf 0.82 below 0.88 threshold; motion-director Nov 2 adds +1 real but overall count per methodology mismatch unresolved; no change) |
+| 5 | LOW | Sort | Verify sort order (166k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-02 08:43 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
