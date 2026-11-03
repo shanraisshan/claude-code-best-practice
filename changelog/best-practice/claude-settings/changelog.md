@@ -1323,3 +1323,21 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-03 10:50 AM PKT] Claude Code v2.1.317
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.317; update header counts from "244+ settings / 396+ env vars" to "260+ settings / 400+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Wrong Description | Fix `policyHelper.timeoutMs`: was "omit or 0 for no timeout"; officially default 10000ms, minimum 1000ms; values below 1000 are rejected. Confirmed from agent research of official docs | COMPLETE (description corrected) — NEW |
+| 3 | HIGH | Wrong Description | Fix `bypassPermissions` project/local restriction: add v2.1.257 note that `bypassPermissions` is ignored when set in project or local settings — must be in user or managed settings only. Mirrors existing v2.1.142 note for `auto` | COMPLETE (note added to permissions.defaultMode) — NEW |
+| 4 | HIGH | Wrong Type | Fix `modelPicker` type: was `object`; officially an array of `{id, label}` objects — example in description confirms array shape. Confirmed from file inspection | COMPLETE (type changed to array) — NEW |
+| 5 | MED | Wrong Scope | Fix `forceLoginMethod`: was "(Managed only)"; officially accepted from any settings file, most useful in managed settings. Confirmed from agent research | COMPLETE (restriction removed) — NEW |
+| 6 | MED | Wrong Scope | Fix `forceLoginGatewayUrl`: was "(Managed only)"; officially accepted from user settings or managed settings. Confirmed from agent research | COMPLETE (restriction removed) — NEW |
+| 7 | MED | Missing Behavior | Fix `allowClaudeInChromeWithManagedMcp` Scope column: was `false` (the default value was placed in the Scope column); corrected to "Managed (device sources only)" with default `false` moved to description | COMPLETE (scope column corrected) — NEW |
+| 8 | MED | Missing Syntax | Fix Process wrappers list: add `command`, `builtin`, and `noglob` shell built-ins that are stripped before Bash permission matching alongside existing `timeout`, `time`, `nice`, `nohup`, `stdbuf` | COMPLETE (three wrappers added) — NEW |
+| 9 | MED | Missing Note | Add v2.1.299 note to MCP permission syntax: `mcp__a__b` now strictly matches server `a`, tool `b` and no longer matches a server literally named `a__b`. Servers with `__` in their name must be renamed | COMPLETE (note added to MCP permission row) — NEW |
+| 10 | MED | Wrong Description | Fix `CLAUDE_CODE_EFFORT_LEVEL`: was "`max` (Opus 4.6 only)"; as of current versions, max is session-only and available on all effort-supporting models (Opus 5.x, Sonnet 5.x, Haiku 5.x, Fable, Opus 4.x); also fixed `xhigh` availability to include all 5.x models | COMPLETE (description corrected) — NEW |
+| 11 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) — RECURRING (first seen: 2026-10-13) |
