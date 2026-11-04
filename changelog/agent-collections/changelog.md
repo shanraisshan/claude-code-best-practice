@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-04 08:43 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Count | Update VoltAgent/awesome-claude-code-subagents agents from 164 to 170 (README listing: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:16+10:11=170; 166 in-repo .md + 4 external links; conf 0.93 > 0.88 threshold; motion-director Nov 2 PR #335 + ponder-auditor Oct 30 PR #336 + ux-microcopy-reviewer Oct 30 PR #332 added since Oct 31 COMPLETE; correct methodology for awesome-list is README listing per rules; RECURRING from Nov 3 at conf 0.82) | COMPLETE (conf 0.93 above threshold; README listing methodology correct for curated list; double-verified; +6 from table) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (166,400 exact; rounds to 166k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,300 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | msitarzewski/agency-agents agents 283 → 282 (per-dir: engineering/66 + specialized/59 + marketing/37 + gis/13 + security/12 + design/10 + testing/9 + sales/9 + paid-media/7 + project-management/7 + product/6 + support/6 + academic/6 + spatial-computing/6 + game-development/21 + finance/5 + healthcare/3 + research/1 = 282; strategy/ subfolders unchecked; conf 0.88 at threshold; RECURRING ±1 oscillation) | INVALID (RECURRING oscillation; ±1 within documented band; strategy/coordination and strategy/playbooks subfolders unchecked; conf 0.88 at threshold; no change) |
+| 5 | LOW | Sort | Verify sort order (166k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-03 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
