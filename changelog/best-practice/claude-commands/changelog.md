@@ -1576,3 +1576,13 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 9 | LOW | Changed Description | Update `/fork` — "Claude Code instructs the copy to create its own worktree..., except when the copy edits in place (requires...)" → "Except when the copy edits in place, Claude Code instructs it to create a worktree of its own...; the isolation instruction requires..." | ✅ COMPLETE (description updated at #86 in Session tag) |
 | 10 | LOW | Changed Description | Update `/resume` — "Resuming a running background session attaches this terminal to it and moves your current conversation to the background —" → "Resuming one that is still running, from the picker or by ID or name, opens that session: your current conversation moves to the background and this terminal attaches to the running one." | ✅ COMPLETE (description updated at #92 in Session tag) |
 | 11 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-06 11:05 AM PKT] Claude Code v2.1.318
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 04 → Nov 06, 2026._
