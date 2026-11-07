@@ -1323,3 +1323,16 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-26 10:37 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.310; update header counts from "244+ settings / 396+ env vars" to "247+ settings / 420+ env vars" | ✅ COMPLETE (badge, date, and header updated) — NEW |
+| 2 | HIGH | New Setting | Add `isolatePeerMachines` (boolean, any scope) to General Settings — controls cross-machine messaging via Remote Control; when `true`, only same-machine sessions are permitted. Confirmed in v2.1.310 changelog | ✅ COMPLETE (added) — NEW |
+| 3 | HIGH | New Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, Linux/WSL2 only, user/managed/`--settings` only — ignored in project/local) to Sandbox Settings — allows sandboxed processes to create user namespaces for rootless container engines. Confirmed in v2.1.305 changelog | ✅ COMPLETE (added) — NEW |
+| 4 | HIGH | Missing Env Vars | Add 7 new env vars from v2.1.297–310: `CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS` (v2.1.300), `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` (v2.1.301), `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` (v2.1.305), `NODE_EXTRA_CA_CERTS` (v2.1.307), `CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS` (v2.1.307), `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299), `CLAUDE_CODE_ENABLE_SHARE_BUNDLE` (v2.1.299), `CLAUDE_CODE_AUTO_MODE_MODEL` (v2.1.302), `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND` (v2.1.304), `CLAUDE_CODE_DISABLE_MOUNTED_DRIVE_RM_PROMPT` (v2.1.304), `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK` (v2.1.309). Confirmed in changelog | ✅ COMPLETE (all 11 added) — NEW |
+| 5 | HIGH | Missing Env Vars | Add 13 missing env vars from v2.1.271–296 that were not caught in prior runs: `CLAUDE_CODE_AUTO_MODE_SERVER` (v2.1.271), `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.273), `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` (v2.1.274), `CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT` (v2.1.281), `CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT` (v2.1.281), `CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY` (v2.1.283), `CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE` (v2.1.283), `CLAUDE_CODE_DISABLE_WEB_FETCH` (v2.1.285), `CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK` (v2.1.285), `CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES` (v2.1.285), `CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT` (v2.1.288), `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.290). Confirmed in changelog | ✅ COMPLETE (all 12 added) — NEW |
+| 6 | MED | Scope Change | Fix `axScreenReader`: v2.1.307 changed scope — now only honored from user settings, managed settings, or `--settings`; ignored in project/local settings to prevent untrusted repos from forcing screen-reader mode. Confirmed in v2.1.307 changelog | ✅ COMPLETE (scope restriction noted) — NEW |
