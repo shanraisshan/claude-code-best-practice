@@ -1323,3 +1323,37 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-06 10:48 AM PKT] Claude Code v2.1.318
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Correctness Bug | Fix Write/Glob/Grep deny-rule guidance: `Write(path)`, `Glob(path)`, `Grep(path)` path patterns are NEVER evaluated in any rule (allow, deny, or ask). Users relying on `Write(.env)` deny get no protection — must use `Edit(.env)` instead. Updated table entries, note at v2.1.210 block, and path-pattern section header | COMPLETE (all three locations corrected) — NEW |
+| 2 | HIGH | Wrong Key Path | Fix `permissions.skipDangerousModePermissionPrompt` → top-level `skipDangerousModePermissionPrompt`. The nested path under `permissions` does not work | COMPLETE (key path corrected) — NEW |
+| 3 | HIGH | Wrong Example | Remove `mcpServers` block from Quick Reference example — `mcpServers` is NOT a `settings.json` key; belongs in `.mcp.json` or `~/.claude.json` | COMPLETE (removed from example) — NEW |
+| 4 | HIGH | Missing Settings | Add `permissions.blockWritesOutsideWorkingDirectories` (bool, any scope, v2.1.314): Write/Edit/NotebookEdit/MultiEdit refuse paths outside working dirs in every mode including bypassPermissions | COMPLETE (added to Permission Keys table) — NEW |
+| 5 | HIGH | Missing Settings | Add `idleCompaction` (bool, `true`, any scope, v2.1.290): toggle idle compaction; threshold via `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (default 200000, min 100000) | COMPLETE (added to Core Configuration) — NEW |
+| 6 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string, managed, v2.1.242): `"first-wins"` or `"merge"` for combining admin managed sources | COMPLETE (added to Core Configuration) — NEW |
+| 7 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (bool, `false`, user/managed, v2.1.305): allow sandboxed commands to create user namespaces on Linux/WSL2 | COMPLETE (added to Sandbox Settings) — NEW |
+| 8 | HIGH | Missing Settings | Add `sandbox.ripgrep` ({command, args?} object, user/managed): custom ripgrep for Grep tool; also an admin-source union key | COMPLETE (added to Sandbox Settings) — NEW |
+| 9 | HIGH | Wrong Description | Fix `policyHelper.timeoutMs`: was "omit or 0 for no timeout"; official default is 10,000 ms, minimum 1,000 ms, timeout failure blocks startup | COMPLETE (description corrected) — NEW |
+| 10 | HIGH | Wrong Description | Fix `advisorModel`: was "When unset, the advisor uses the session model"; official is "When unset, the advisor is off" | COMPLETE (description corrected) — NEW |
+| 11 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default: was `-`; official default is `true`. Added scope: user or managed | COMPLETE (default corrected) — NEW |
+| 12 | HIGH | Wrong Default | Fix `desktopSessionCleanupPeriodDays` default: was `-`; official default is `0` (no age limit). Added scope | COMPLETE (default corrected) — NEW |
+| 13 | HIGH | Missing Env Vars | Add 8 env vars from v2.1.299–318 (official page confirmed): `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_DISABLE_WEB_FETCH`, `CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK`, `CLAUDE_CODE_AUTO_MODE_SERVER`, `CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK` (v2.1.309), `CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS` (v2.1.311), `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND` (v2.1.304), `CLAUDE_CODE_AUTO_MODE_MODEL` (v2.1.302), `CLAUDE_CODE_ENABLE_SHARE_BUNDLE`, `CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS` | COMPLETE (added to env vars table) — NEW |
+| 14 | HIGH | Missing Env Vars | Add 5 changelog-only env vars (annotated as unverified): `CLAUDE_CODE_DISABLE_ULTRATHINK` (v2.1.316), `CLAUDE_CODE_SUBAGENT_EFFORT` (v2.1.316), `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP` (v2.1.316), `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID` (v2.1.317), `CLAUDE_CODE_MODEL_CATALOG` (v2.1.311) | COMPLETE (added with changelog-annotation per Rule 8A) — NEW |
+| 15 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.318; update header counts "244+ settings / 396+ env vars" → "248+ settings / 400+ env vars"; update Sources description "~180 keys" → "248 key entries" | COMPLETE (badge, header, sources all updated) — NEW |
+| 16 | HIGH | Stale No-op | Annotate `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` as no-op since v2.1.224 (confirmed by changelog) | COMPLETE (marked as no-op) — NEW |
+| 17 | MED | Wrong Note | Update `permissions.defaultMode` restriction note: `bypassPermissions` is also ignored from project/local settings since v2.1.257 (previously only `auto` was noted) | COMPLETE (note updated) — NEW |
+| 18 | MED | Wrong Type | Fix `sandbox.credentials.awsPairs`: was described as "object"; officially an array of `{accessKeyIdVar, secretAccessKeyVar, sessionTokenVar?}` objects | COMPLETE (type and description corrected) — NEW |
+| 19 | MED | Wrong Description | Fix `modelPicker` shape: was array of `{id, label}`; officially `{options: [{model, label, description?}], replaceBuiltInOptions}` with scope user/managed/--settings | COMPLETE (shape corrected) — NEW |
+| 20 | MED | Wrong Description | Fix `sandbox.excludedCommands`: add note that each entry must cover every command in a compound call | COMPLETE (note added) — NEW |
+| 21 | MED | Deprecated Key | Mark `keybindingFlavor` as deprecated since v2.1.261 (no longer has any effect) | COMPLETE (deprecated annotation added) — NEW |
+| 22 | MED | Deprecated Key | Mark `disableArtifact` as deprecated; prefer `enableArtifact: false` | COMPLETE (deprecated annotation added) — NEW |
+| 23 | MED | Wrong Description | Fix `diffTool`: was described as arbitrary command string; officially an enum `"auto"|"terminal"` | COMPLETE (description corrected to enum) — NEW |
+| 24 | MED | Missing Settings | Add 6 missing `~/.claude.json` global config keys: `claudeInChromeDefaultEnabled`, `copyFullResponse` (false), `copyOnSelect` (true), `defaultToAgentsView` (false), `leftArrowOpensAgents` (true), `prStatusFooterEnabled` (true) | COMPLETE (added to Global Config Settings table) — NEW |
+| 25 | MED | Missing Settings | Add `skipAutoPermissionPrompt` (bool, user/managed): skips one-time auto-mode notice | COMPLETE (added to Core Configuration) — NEW |
+| 26 | MED | Managed Tier | Update managed-tier note: add `managedSourcesBehavior: "merge"` exception to "sources do not merge across tiers" statement | COMPLETE (note updated) — NEW |
+| 27 | MED | Admin Union Keys | Expand admin-source union keys list: add `allowManagedMcpServersOnly`, `deniedMcpServers`, `disableClaudeAiConnectors`, `sandbox.ripgrep`, `sandbox.filesystem.disabled`, `sandbox.network.strictAllowlist`, `useAutoModeDuringPlan`, `syncClaudeAiSkills`, `syncClaudeAiPlugins`, `enableArtifact`, `maxEffortLevel` | COMPLETE (list expanded) — NEW |
