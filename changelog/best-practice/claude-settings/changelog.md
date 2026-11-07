@@ -1323,3 +1323,35 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-02 10:50 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.316; update header counts from "244+ settings / 396+ env vars" to "255+ settings / 407+ env vars" | ✅ COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | New Setting | Add `managedSourcesBehavior` (string, default `"first-wins"`, managed only) to Managed-only policy keys table — controls whether managed sources merge or use first-wins for non-union keys (v2.1.242) | ✅ COMPLETE (added to managed-only policy keys table) — NEW |
+| 3 | HIGH | New Setting | Add `permissions.blockWritesOutsideWorkingDirectories` (boolean, any scope) to Permission Keys table — blocks Write/Edit outside working directories; pairs with `blockReadsOutsideWorkingDirectories` (v2.1.314) | ✅ COMPLETE (added to Permission Keys table) — NEW |
+| 4 | HIGH | New Setting | Add `idleCompaction` (boolean, default `true`, any scope) to General Settings — compact context during idle periods; pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299) | ✅ COMPLETE (added to General Settings) — NEW |
+| 5 | HIGH | New Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, default `false`, user/managed only) to Sandbox Settings — allow nested user namespaces in sandboxed commands on Linux/WSL2 (v2.1.305) | ✅ COMPLETE (added to Sandbox Settings) — NEW |
+| 6 | HIGH | Wrong Hierarchy | Fix line 51 hierarchy statement: "sources do not merge across tiers" is outdated — `managedSourcesBehavior: "merge"` allows combining sources. Updated with exception note (v2.1.242) | ✅ COMPLETE (hierarchy text corrected) — NEW |
+| 7 | HIGH | Wrong Description | Fix `policyHelper.timeoutMs`: was "omit or 0 for no timeout"; officially minimum 1000, default 10000 ms | ✅ COMPLETE (description corrected) — NEW |
+| 8 | HIGH | Wrong Type | Fix `modelPicker`: was described as `[{id, label}]` array; officially an object with `{options: [{model, label?, description?, behavesAs?}], replaceBuiltInOptions?}`. Scope is user/managed only | ✅ COMPLETE (type and description corrected) — NEW |
+| 9 | HIGH | Wrong Description | Fix `permissions.defaultMode`: add note that `"bypassPermissions"` is also ignored from project/local settings (v2.1.257), not just `"auto"` | ✅ COMPLETE (note added) — NEW |
+| 10 | HIGH | Quick Reference Fix | Remove `mcpServers` from Quick Reference — `mcpServers` is NOT a `settings.json` key; belongs in `.mcp.json` or `~/.claude.json` | ✅ COMPLETE (removed from Quick Reference) — NEW |
+| 11 | HIGH | Wrong Description | Fix `advisorModel`: "when unset, uses session model" → "when unset, advisor is off" | ✅ COMPLETE (description corrected) — NEW |
+| 12 | HIGH | Permission Syntax | Fix `Skill()` syntax: documented form is `Skill(skill:<name>)` for deny; remove `MCP(server:tool)` — parenthesized shorthand is not accepted in settings files | ✅ COMPLETE (syntax corrected) — NEW |
+| 13 | HIGH | Missing Env Vars | Add 11 missing env vars from v2.1.297–v2.1.316: `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP` | ✅ COMPLETE (all 11 added) — NEW |
+| 14 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_EFFORT_LEVEL`: remove stale "Opus 4.6 only" max and "auto" values; update to reflect valid values for all effort-supporting models | ✅ COMPLETE (description corrected) — NEW |
+| 15 | HIGH | Wrong Env Var | Fix `FORCE_HYPERLINK`: add `false`/`no`/`off` disables hyperlinks entirely behavior (v2.1.314) | ✅ COMPLETE (added OFF values) — NEW |
+| 16 | MED | Wrong Description | Fix `diffTool` (Global Config): values are `"auto"` (default) or `"terminal"`; not an arbitrary command string | ✅ COMPLETE (description corrected) — NEW |
+| 17 | MED | Deprecated Setting | Add deprecation note to `keybindingFlavor`: deprecated since v2.1.261, no effect; replaced by `/keybindings` | ✅ COMPLETE (deprecated marker added) — NEW |
+| 18 | MED | Deprecated Setting | Add deprecation note to `disableArtifact`: deprecated in favor of `enableArtifact: false` (v2.1.196) | ✅ COMPLETE (deprecated marker added) — NEW |
+| 19 | MED | Wrong Env Var | Fix `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT`: does not inject custom prompt; `0` keeps full prompt; use `INIT_PROMPT` for custom injection | ✅ COMPLETE (description corrected) — NEW |
+| 20 | MED | Wrong Description | Fix `maxEffortLevel`: remove misleading `false`/`true` boolean language; clarify lowest cap wins when set at multiple scopes | ✅ COMPLETE (description corrected) — NEW |
+| 21 | MED | Status Line Fix | Replace stale `github` status line field with new sub-fields: `pr.number`, `pr.url`, `pr.review_state`, `pr.kind` | ✅ COMPLETE (fields updated) — NEW |
+| 22 | MED | Model Note | Add deprecation note for Opus 4.8 fast mode (deprecated Oct 30, removed Nov 30, 2026) | ✅ COMPLETE (note added) — NEW |
+| 23 | LOW | Sources Fix | Update settings-reference key count from "~180" to "~247" | ✅ COMPLETE (count updated) — NEW |
+| 24 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 55+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
+| 25 | LOW | Suspect Key Recurrence | `CLAUDE_CODE_RETRY_WATCHDOG` — still annotated "in v2.1.199 changelog, not yet on official env-vars page" | ✋ ON HOLD (kept — recurring) |
