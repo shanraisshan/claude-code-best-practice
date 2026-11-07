@@ -4522,3 +4522,42 @@
 | 32 | LOW | Workflow | spec-kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed; v1.3.1 Nov 5 didn't change pipeline | COMPLETE (RECURRING — no change) |
 | 33 | LOW | Sort | mattpocock moved to row 1 (316k) above superpowers (313k); order: 316k>313k>298k>148k>140k>99.7k(OOS)>74.1k>64.2k>55k>40.6k>25.9k>12.8k | COMPLETE (NEW — first time mattpocock leads table) |
 | 34 | INFO | Verify | shields.io JSON blocked (proxy 403, RECURRING); WebFetch on github.com HTML used for all 11 repos — all verified authoritative | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-07 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 316k to 317k (WebFetch 316.8k) | COMPLETE (applied) |
+| 2 | HIGH | Star | Update obra/superpowers ★ from 313k to 314k (WebFetch 313.7k) | COMPLETE (applied) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 298k to 299k (WebFetch 298.6k) | COMPLETE (applied) |
+| 4 | HIGH | Star | Update garrytan/gstack ★ from 140k to 141k (WebFetch 140.5k) | COMPLETE (applied) |
+| 5 | MED | Star | Update Fission-AI/OpenSpec ★ from 74.1k to 74.2k (WebFetch 74.2k) | COMPLETE (applied) |
+| 6 | MED | Star | Update Yeachan-Heo/oh-my-claudecode ★ from 40.6k to 40.7k (WebFetch 40.7k) | COMPLETE (applied) |
+| 7 | MED | Star | Update bmad-code-org/BMAD-METHOD ★ from 55k to 55.1k (WebFetch 55.1k) | COMPLETE (applied) |
+| 8 | MED | Star | Update EveryInc/compound-engineering-plugin ★ from 25.9k to 26k (WebFetch 26.0k) | COMPLETE (applied) |
+| 9 | MED | Count | Update garrytan/gstack skills from 63 to 64 (3rd consecutive confirmation Nov 4→6→7) | COMPLETE (applied) |
+| 10 | LOW | Star | github/spec-kit 148k — no change | COMPLETE (no action) |
+| 11 | LOW | Star | humanlayer/humanlayer 12.8k — no change | COMPLETE (no action) |
+| 12 | LOW | Star | gsd-build/get-shit-done 64.2k — no change (archived) | COMPLETE (no action) |
+| 13 | LOW | Count | affaan-m/ECC commands 98 (counts-don't-fall from 112c) | INVALID (counts-don't-fall rule) |
+| 14 | LOW | Count | github/spec-kit commands 9 (counts-don't-fall from 10c) | INVALID (counts-don't-fall rule) |
+| 15 | LOW | Count | gsd-build/GSD commands 67 (counts-don't-fall from 85c; archived) | INVALID (counts-don't-fall rule) |
+| 16 | LOW | Count | mattpocock/skills skills 31 active (counts-don't-fall from 39s) | INVALID (counts-don't-fall rule) |
+| 17 | LOW | Count | bmad-code-org/BMAD skills 35 (1st consecutive UP from 33s) | ON HOLD (need 3 consecutive; run 1 of 3) |
+| 18 | LOW | Count | Yeachan-Heo/omc commands 21 (2nd consecutive after Nov 04 chain reset) | ON HOLD (need 3 consecutive; run 2 of 3) |
+| 19 | LOW | Count | humanlayer/humanlayer commands 1 (1st consecutive UP from 0c) | ON HOLD (need 3 consecutive; run 1 of 3) |
+| 20 | LOW | Workflow | obra/superpowers drops receiving-code-review (5th consecutive; skill present in directory) | ON HOLD (chain not yet 3-confirmed with identical step) |
+| 21 | LOW | Workflow | mattpocock/skills implement-spec vs implement step variant | ON HOLD (chain reset) |
+| 22 | LOW | Workflow | affaan-m/ECC workflow chain reset | ON HOLD (keep current 7-step) |
+| 23 | LOW | Workflow | Fission-AI/OpenSpec workflow chain reset | ON HOLD (keep current 5-step) |
+| 24 | LOW | Workflow | gsd-build/GSD workflow chain reset (archived) | ON HOLD (keep current 8-step) |
+| 25 | LOW | Workflow | garrytan/gstack workflow chain reset 7-step | ON HOLD (keep current 11-step) |
+| 26 | LOW | Workflow | bmad-code-org/BMAD workflow chain reset 7-step | ON HOLD (keep current 7-step) |
+| 27 | LOW | Workflow | Yeachan-Heo/omc workflow chain reset 7-step | ON HOLD (keep current 9-step) |
+| 28 | LOW | Workflow | humanlayer/humanlayer workflow chain reset | ON HOLD (keep current 6-step) |
+| 29 | LOW | Workflow | github/spec-kit workflow confirmed same 6-step | COMPLETE (no action) |
+| 30 | LOW | Workflow | EveryInc/compound-engineering-plugin workflow confirmed same 6-step | COMPLETE (no action) |
+| 31 | LOW | Sort | Sort order 317k>314k>299k>148k>141k>74.2k>64.2k>55.1k>40.7k>26k>12.8k — unchanged | COMPLETE (no action) |
+| 32 | INFO | Infra | shields.io JSON endpoint blocked by proxy (exit 56/connect_rejected) — RECURRING | ON HOLD (WebFetch HTML used for all 11 repos as authoritative fallback) |
