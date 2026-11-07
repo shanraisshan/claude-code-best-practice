@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2013%2C%202026%2010%3A53%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.296-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2018%2C%202026%2010%3A42%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.302-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.296, Claude Code exposes **244+ settings** and **396+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.302, Claude Code exposes **245+ settings** and **403+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -114,6 +114,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `awaySummaryEnabled` | boolean | `true` | Generate an "away summary" (idle-session recap) when the user returns after being away. Set to `false` to opt out. Pairs with the `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` env var (v2.1.110) |
 | `autoCompactEnabled` | boolean | `true` | Auto-compact the conversation when context approaches the model's limit. Set to `false` to disable automatic compaction and manage context manually. Also disableable via the `DISABLE_AUTO_COMPACT` env var |
 | `autoCompactWindow` | number | model-tuned | How full the context window gets before automatic compaction triggers, in tokens (100,000–1,000,000). When unset, Claude Code uses a window tuned for your model. Set it with the `/autocompact` command (writes to user settings) or the `--autocompact` CLI flag. Pairs with the `CLAUDE_CODE_AUTO_COMPACT_WINDOW` env var (v2.1.221+) |
+| `idleCompaction` | boolean | `true` | Enable idle compaction. When set to `false`, a conversation that has been idle for ~54 minutes will NOT be auto-compacted even when it exceeds 200K tokens. Set `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` to adjust the token threshold. Appears in `/config` as **Idle compaction** (v2.1.299, requires v2.1.290+) |
 | `skillOverrides` | object | - | Per-skill visibility overrides keyed by skill name. Value is `"on"` (full), `"name-only"` (visible but not auto-described), `"user-invocable-only"` (hidden from model discovery but still slash-invocable), or `"off"` (fully hidden). Example: `{"legacy-context": "name-only", "deploy": "off"}` (v2.1.129) |
 | `disableRemoteControl` | boolean | `false` | Disable [Remote Control](https://code.claude.com/docs/en/remote-control): blocks `claude remote-control`, the `--remote-control` flag, auto-start, and the in-session toggle. Typically placed in managed settings for per-device MDM enforcement, but works from any scope (v2.1.128) |
 | `agentPushNotifEnabled` | boolean | `false` | Send proactive push notifications to [Remote Control](https://code.claude.com/docs/en/remote-control) when Claude decides to push (e.g., task complete). Appears in `/config` as **Push when Claude decides** |
@@ -1008,6 +1009,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` | Enable the experimental agent teams feature (`1` to enable). Allows spawning coordinated teams of subagents within a session. Also configurable as a startup-only var — see [CLI Startup Flags](./claude-cli-startup-flags.md#environment-variables) |
 | `CLAUDE_CODE_DISABLE_WORKFLOWS` | Set to `1` to disable [dynamic workflows](https://code.claude.com/docs/en/workflows) (`/workflows`) and the bundled workflow slash commands. Env-var equivalent of the `disableWorkflows` setting |
 | `CLAUDE_CODE_ENABLE_AUTO_MODE` | **As of v2.1.207, auto mode is available on Bedrock, Vertex AI, and Foundry by default — this opt-in is no longer required.** Previously (v2.1.158–v2.1.206): set to `1` to make [auto mode](https://code.claude.com/docs/en/permission-modes#eliminate-prompts-with-auto-mode) available on those providers. Use `disableAutoMode: "disable"` in settings to turn auto mode off |
+| `CLAUDE_CODE_AUTO_MODE_SERVER` | Set to `0` to opt out of the server-side auto mode classifier on direct API connections when telemetry is off. Since v2.1.282, auto mode uses the server-side classifier by default when connecting directly to `api.anthropic.com` even without telemetry (v2.1.282) |
 | `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` | Set to `1` to conceal Claude Code's built-in capabilities (bundled skills) from the model. Env-var equivalent of the `disableBundledSkills` setting (v2.1.169) |
 | `CLAUDE_CODE_DISABLE_ARTIFACT` | Set to `1` to disable the [Artifact](https://code.claude.com/docs/en/artifacts) tool, which publishes session output as a private web page on claude.ai. Equivalent to the `disableArtifact` setting |
 | `CLAUDE_CODE_ARTIFACT_AUTO_OPEN` | Set to `0` to stop Claude Code from opening the browser automatically when a new artifact is published. Republishing an existing artifact does not open the browser regardless of this setting |
@@ -1035,7 +1037,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_1M_CONTEXT` | Hold all 1M context window models to the 200K context size via auto-compaction. As of v2.1.223, this applies to all 1M models (not just one). Set to `1` to disable 1M context across your deployment |
 | `CLAUDE_CODE_ACCOUNT_UUID` | Override account UUID for authentication |
 | `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Disable git-related system prompt instructions |
-| `CLAUDE_CODE_ATTRIBUTION_HEADER` | Set to `0` to omit the Claude Code attribution block from the system prompt |
+| `CLAUDE_CODE_ATTRIBUTION_HEADER` | Set to `0` to omit the Claude Code attribution block from the system prompt, including in Desktop Code tab sessions (v2.1.299) |
 | `CLAUDE_CODE_NEW_INIT` | Set to `true` to make `/init` run an interactive setup flow. Asks which files to generate (CLAUDE.md, skills, hooks) before exploring the codebase. Without this, `/init` generates a CLAUDE.md automatically |
 | `CLAUDE_CODE_PLUGIN_SEED_DIR` | Path to one or more read-only plugin seed directories, separated by `:` on Unix or `;` on Windows. Bundle pre-populated plugins into a container image. Claude Code registers marketplaces from these directories at startup and uses pre-cached plugins without re-cloning |
 | `ENABLE_CLAUDEAI_MCP_SERVERS` | Enable Claude.ai MCP servers |
@@ -1050,6 +1052,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_MCP` | Disable all MCP servers (`1` to disable) *(not in official docs — unverified)* |
 | `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens per response. Default: 32,000 (64,000 for Opus 4.6 as of v2.1.77). Upper bound: 64,000 (128,000 for Opus 4.6 and Sonnet 4.6 as of v2.1.77) |
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
+| `CLAUDE_CODE_DISABLE_WEB_FETCH` | Set to `1` to disable the WebFetch tool. WebSearch remains available when WebFetch is disabled. Useful in environments that should block arbitrary outbound HTTP while allowing structured search (v2.1.285) |
 | `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | **REMOVED in v2.1.160** — the environment variable is now a no-op. Fast mode runs on the default model regardless of this variable. Previously pinned [fast mode](https://code.claude.com/docs/en/fast-mode) to Claude Opus 4.6 instead of the default (v2.1.142–v2.1.159) |
 | `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` | Set to `1` to disable the non-streaming fallback when a streaming request fails mid-stream. Streaming errors propagate to the retry layer instead. Useful when a proxy or gateway causes the fallback to produce duplicate tool execution (v2.1.83) |
 | `CLAUDE_ENABLE_STREAM_WATCHDOG` | Stream idle watchdog that aborts stalled streams. Enabled by default as of v2.1.163; set to `0` to disable |
@@ -1142,6 +1145,7 @@ Set environment variables for all Claude Code sessions.
 | `MCP_CONNECTION_NONBLOCKING` | Set to `true` in `-p` mode to skip the MCP connection wait entirely. Bounds `--mcp-config` server connections at 5s instead of blocking on the slowest server |
 | `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` | Duration in milliseconds after which a slow MCP tool call is automatically backgrounded (default: `120000` / 2 minutes). MCP calls that exceed this threshold continue running in the background without blocking the agent turn |
 | `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` | Idle timeout in ms for MCP tool calls. The tool call is cancelled if it produces no streaming response within this window. Use when a gateway or MCP server hangs silently — distinct from `MCP_TOOL_TIMEOUT`, which is a total wall-clock limit (v2.1.187) |
+| `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` | Maximum character length for a single MCP tool description (default: `4096`; `16384` for deferred tools that require discovery). Descriptions longer than this cap are truncated before being sent to the model (v2.1.280) |
 | `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS` | SessionEnd hook timeout in ms (replaces hard 1.5s limit) |
 | `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` | Maximum number of times a Stop hook can block a session from ending (default: `8`). After this many blocks the session ends regardless of hook exit codes |
 | `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY` | Disable feedback survey prompts (`1` to disable) |
@@ -1189,7 +1193,7 @@ Set environment variables for all Claude Code sessions.
 | `OTEL_METRICS_INCLUDE_VERSION` | Set to `1` to include the Claude Code version as a label on all OpenTelemetry metric data points |
 | `OTEL_METRICS_INCLUDE_RESOURCE_ATTRIBUTES` | Set to `1` to promote `OTEL_RESOURCE_ATTRIBUTES` key/value pairs onto every metric data point as dimensions |
 | `CLAUDE_CODE_OTEL_DIAG_STDERR` | Set to `1` to emit OpenTelemetry SDK diagnostic output to stderr. Use to troubleshoot collector connectivity or exporter configuration issues |
-| `CLAUDE_CODE_FORK_SUBAGENT` | Set to `1` to enable forked subagents on external builds (non-Anthropic-signed distributions). Forked subagents run in an isolated child process instead of sharing the main agent's context |
+| `CLAUDE_CODE_FORK_SUBAGENT` | Set to `0` to disable fork subagents in `claude -p`, the Agent SDK, the desktop app, and VS Code — fork is **on by default** in these clients since v2.1.302. A fork subagent runs in an isolated child process instead of sharing the main agent's context. Previously set to `1` to enable on non-Anthropic-signed distributions (v2.1.302) |
 | `CLAUDE_CODE_MCP_SERVER_NAME` | Name of the MCP server, passed as an environment variable to `headersHelper` scripts so they can generate server-specific authentication headers *(in v2.1.85 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_MCP_SERVER_URL` | URL of the MCP server, passed as an environment variable to `headersHelper` scripts alongside `CLAUDE_CODE_MCP_SERVER_NAME` *(in v2.1.85 changelog, not yet on official env-vars page)* |
 | `ANTHROPIC_DEFAULT_OPUS_MODEL` | Override Opus model alias (e.g., `claude-opus-4-6[1m]`) |
@@ -1274,6 +1278,12 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` | Maximum total wait time in milliseconds for the retry watchdog before giving up on a stalled request. Protects against indefinitely hung retries (v2.1.295) |
 | `CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL` | Override model for workflow subagents specifically. Takes precedence over `CLAUDE_CODE_SUBAGENT_MODEL` for agents launched within a dynamic workflow. Accepts model aliases or full IDs (v2.1.296) |
 | `MCP_PROTOCOL_NEGOTIATION` | Control MCP protocol version negotiation. Set to `"legacy"` to opt stdio MCP servers and connectors out of the 2026-07-28 protocol version (negotiated by default since v2.1.292). (v2.1.292) |
+| `CLAUDE_CODE_DISABLE_FILE_MENTIONS` | Set to `1` to disable automatic expansion of `@`-file mentions. Claude receives the file path as typed but does not read the file's contents via file tools. Useful when you want to suppress automatic content inclusion from `@`-references (v2.1.299) |
+| `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` | Minimum context token count required before idle compaction triggers (default: `200000`; minimum: `100000`). A conversation must exceed this threshold AND have been idle for ~54 minutes before idle compaction runs. Pairs with the `idleCompaction` setting key; requires v2.1.290+ (v2.1.299) |
+| `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` | Set to `1` to restore the removal-confirmation prompt for `rm` commands that are dynamically built at run time inside shell scripts Claude Code cannot statically read. Overrides the v2.1.288 default that skips prompts for such dynamically-generated removals (v2.1.299) |
+| `CLAUDE_CODE_GZIP_REQUEST_BODIES` | Set to `0` to disable gzip compression for large request bodies sent to `api.anthropic.com`. Gzip is **on by default** since v2.1.300 (even when telemetry is disabled). Disable if your gateway or proxy does not support compressed request bodies (v2.1.300) |
+| `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` | With `CLAUDE_CODE_RETRY_WATCHDOG` active, ends a request when a usage-limit reset is scheduled too far in the future instead of waiting indefinitely. Set to the maximum milliseconds to wait for a usage-limit reset; requests whose reset time exceeds this value are aborted rather than held (v2.1.301) |
+| `CLAUDE_CODE_AUTO_MODE_MODEL` | Model ID or alias for the **client-side** auto mode classifier. Does not change the server-side classifier's model. Accepts full model IDs or aliases (`sonnet`, `haiku`). Useful when you want the local classifier to use a lighter or faster model (v2.1.302) |
 
 ---
 

@@ -1323,3 +1323,22 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-18 10:42 AM PKT] Claude Code v2.1.302
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `idleCompaction` key to Memory and Context section (boolean, default `true`, disables idle compaction when `false`; v2.1.299, requires v2.1.290+) | COMPLETE (added) — NEW |
+| 2 | HIGH | New Env Var | Add `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (disables @ file mention expansion; v2.1.299) | COMPLETE (added) — NEW |
+| 3 | HIGH | New Env Var | Add `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (min tokens for idle compaction, default 200000; v2.1.299) | COMPLETE (added) — NEW |
+| 4 | HIGH | New Env Var | Add `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` (restores rm prompts for dynamically-built shell scripts; v2.1.299) | COMPLETE (added) — NEW |
+| 5 | HIGH | New Env Var | Add `CLAUDE_CODE_GZIP_REQUEST_BODIES` (set to 0 to disable gzip compression; v2.1.300) | COMPLETE (added) — NEW |
+| 6 | HIGH | New Env Var | Add `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` (limits wait for usage-limit reset; v2.1.301) | COMPLETE (added) — NEW |
+| 7 | HIGH | New Env Var | Add `CLAUDE_CODE_AUTO_MODE_MODEL` (client-side auto mode classifier model; v2.1.302) | COMPLETE (added) — NEW |
+| 8 | HIGH | Changed Behavior | Update `CLAUDE_CODE_FORK_SUBAGENT`: fork subagents now on by default in `claude -p`, SDK, desktop, VS Code; set to `0` to disable (v2.1.302) | COMPLETE (updated) — NEW |
+| 9 | MED | New Env Var | Add `CLAUDE_CODE_DISABLE_WEB_FETCH` (disables WebFetch, WebSearch still works; v2.1.285, previously missed) | COMPLETE (added) — RECURRING (first seen: v2.1.285, missed across multiple runs) |
+| 10 | MED | New Env Var | Add `CLAUDE_CODE_AUTO_MODE_SERVER` (set to 0 to opt out of server-side auto mode classifier; v2.1.281/2.1.282) | COMPLETE (added) — RECURRING (first seen: v2.1.282, missed across multiple runs) |
+| 11 | MED | New Env Var | Add `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` (max MCP tool description length; default 4096, 16384 for deferred tools; v2.1.280) | COMPLETE (added) — RECURRING (first seen: v2.1.280, missed across multiple runs) |
+| 12 | LOW | Changed Behavior | Update `CLAUDE_CODE_ATTRIBUTION_HEADER` description to note Desktop Code tab coverage added in v2.1.299 | COMPLETE (updated) — NEW |
