@@ -1323,3 +1323,23 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-30 10:47 AM PKT] Claude Code v2.1.314
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.314; update header counts from "244+ settings / 396+ env vars" to "247+ settings / 398+ env vars"; update Sources description from "~180 keys" to "247 keys" | COMPLETE — NEW |
+| 2 | HIGH | Missing Settings | Add `idleCompaction` (boolean, default `true`, Any file, v2.1.290+) to Core Configuration: controls idle-session compaction when stepped away. Confirmed in settings-reference | COMPLETE — NEW |
+| 3 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (boolean, default `false`, User or managed, v2.1.305+) to Sandbox: lets sandboxed Linux commands create user namespaces; warning — removes security boundary. Confirmed in settings-reference | COMPLETE — NEW |
+| 4 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string, default `"first-wins"`, Managed, v2.1.242+) to Managed-only keys: controls whether highest-priority source wins or all admin sources merge. Confirmed in settings-reference | COMPLETE — NEW |
+| 5 | HIGH | Missing Settings | Add `isolatePeerMachines` (boolean, default unset, Any file, v2.1.224+) to Core Configuration: require approval before SendMessage reaches sessions on other machines. Confirmed in settings-reference | COMPLETE — NEW |
+| 6 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` (boolean, default unset, User or managed) to Permissions: skip the one-time auto-mode notice. Confirmed in settings-reference | COMPLETE — NEW |
+| 7 | HIGH | Missing Settings | Add `permissions.blockWritesOutsideWorkingDirectories` (boolean, Any, v2.1.314) to Permissions: Write/Edit/NotebookEdit refuse paths outside working dirs. From v2.1.314 changelog (not yet on settings-reference). Confidence 0.9 | COMPLETE — NEW |
+| 8 | HIGH | Missing Settings | Add 6 missing Global Config keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled`. All confirmed in settings-reference | COMPLETE — NEW |
+| 9 | HIGH | Wrong Description | Fix `diffTool` (Global Config) — description was completely wrong (said "external diff command spawned with two paths"); officially a string `"auto"/"terminal"` that chooses IDE vs terminal diff viewer, default `"auto"`. Confirmed in settings-reference | COMPLETE — NEW |
+| 10 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default: was "-"; officially `true`. Scope note added: user or managed only — project/local value turns it off. Confirmed in settings-reference | COMPLETE — NEW |
+| 11 | MED | Wrong Default | Fix `desktopSessionCleanupPeriodDays` default: was "-"; officially `0` (no age limit). Confirmed in settings-reference | COMPLETE — NEW |
+| 12 | MED | Stale Annotation | Remove "(in JSON schema, not on official settings page)" from `sandbox.ignoreViolations` — key is now on the official settings-reference. Confidence 0.95 | COMPLETE — RESOLVED |
+| 13 | MED | Stale Annotation | Update `keybindingFlavor` description: mark DEPRECATED since v2.1.261 (no effect; readline is always the behavior). Confirmed in settings-reference | COMPLETE — NEW |
