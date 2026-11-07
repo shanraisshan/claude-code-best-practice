@@ -1323,3 +1323,19 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-14 10:45 AM PKT] Claude Code v2.1.299
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.299; update header counts to "245+ settings / 404+ env vars" | COMPLETE (badge, version, and header updated) — NEW |
+| 2 | HIGH | New Setting | Add `idleCompaction` (boolean, default `true`, v2.1.299): disables idle-triggered compaction (54 min idle + 200K+ tokens). Distinct from `autoCompactEnabled` which handles active-context pressure | COMPLETE (added after `autoCompactWindow`) — NEW |
+| 3 | HIGH | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED — no effect per settings-reference; previously controlled word-deletion shortcut style | COMPLETE (description updated with deprecated notice) — NEW |
+| 4 | HIGH | Missing Env Vars | Add 5 permission-guard env vars missing from report: `CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT`, `CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT`, `CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT`, `CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY` (v2.1.283+), `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK` | COMPLETE (all 5 added) — NEW |
+| 5 | HIGH | New Env Var | Add `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299): sends file path instead of contents for @-mentioned files | COMPLETE (added) — NEW |
+| 6 | HIGH | New Env Var | Add `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.290+, default 200000): minimum token threshold for idle compaction; pairs with `idleCompaction` setting | COMPLETE (added) — NEW |
+| 7 | MED | New Env Var | Add `CLAUDE_RUNNER_FETCH_SERVER_PROGRESS_CAP_MS` (v2.1.295): max wait time for self-hosted runner fetch-server progress | COMPLETE (added) — NEW |
+| 8 | LOW | Already Present | `CLAUDE_CODE_ATTRIBUTION_HEADER`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` confirmed already in report | INVALID (no action needed — already documented) — NEW |
+| 9 | LOW | Already Correct | `haiku` alias already points to `claude-haiku-5-5` (v2.1.293); `taskOutputMaxChars` already removed | INVALID (no action needed — already correct) — NEW |
