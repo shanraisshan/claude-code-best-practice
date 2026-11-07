@@ -1323,3 +1323,21 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+---
+
+## [2026-10-22 10:42 AM PKT] Claude Code v2.1.308
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `idleCompaction` (boolean, default true, v2.1.299+) to General Settings — compact context on idle when usage is high | COMPLETE (added to General Settings) — NEW |
+| 2 | HIGH | Missing Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, false, v2.1.305+, Linux/WSL2 only) to Sandbox Settings — allow nested user namespaces for Docker-in-Docker | COMPLETE (added to Sandbox Settings) — NEW |
+| 3 | HIGH | Missing Setting | Add `isolatePeerMachines` (boolean, restrictive-wins scope exception, v2.1.224+) to General Settings | COMPLETE (added to General Settings) — NEW |
+| 4 | HIGH | Missing Setting | Add `terminalTitleFromRename` (boolean, default true) to Display Settings | COMPLETE (added to Display Settings) — NEW |
+| 5 | HIGH | Missing Global Config | Add 6 missing `~/.claude.json` keys: `copyOnSelect`, `copyFullResponse`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled`, `claudeInChromeDefaultEnabled` | COMPLETE (all 6 added to Global Config) — NEW |
+| 6 | HIGH | Wrong Description | Fix `CLAUDE_CODE_FORK_SUBAGENT`: now on by default in v2.1.302/304 (`0` to disable). Was "set to 1 to enable on external builds" | COMPLETE (description updated) — NEW |
+| 7 | HIGH | Wrong Description | Fix `CLAUDE_CODE_RETRY_WATCHDOG`: retries 429/529 capacity errors indefinitely. Was "non-capacity to 300, capacity cap still applies" (backwards) | COMPLETE (description corrected) — NEW |
+| 8 | HIGH | Wrong Description | Fix `diffTool` (~/.claude.json): was "external diff tool command with file args". Officially `"auto"` or `"terminal"` to control where diffs open | COMPLETE (description corrected) — NEW |
+| 9 | HIGH | Missing Env Vars | Add 8 new env vars from v2.1.299–305: `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_GZIP_REQUEST_BODIES`, `CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_DISABLE_MOUNTED_DRIVE_RM_PROMPT`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` | COMPLETE (all 8 added) — NEW |
+| 10 | HIGH | Stale Annotation | Remove "not on official settings page" caveat from `sandbox.ignoreViolations` — now officially documented | COMPLETE (caveat removed) — NEW |
+| 11 | MED | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED in v2.1.261 — no effect, was not marked | COMPLETE (deprecation note added) — NEW |
+| 12 | MED | Version Bump | Update badge and header: v2.1.296 → v2.1.308, Oct 13 → Oct 22 2026, settings count 244+ → 253+, env var count 396+ → 404+ | COMPLETE (badge and header updated) — NEW |
