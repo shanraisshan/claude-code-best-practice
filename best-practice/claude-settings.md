@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2013%2C%202026%2010%3A53%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.296-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Oct%2015%2C%202026%2010%3A45%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.300-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.296, Claude Code exposes **244+ settings** and **396+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.300, Claude Code exposes **253+ settings** and **408+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -113,6 +113,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `tui` | string | `"default"` | Rendering mode: `"fullscreen"` or `"default"`. Set via `/tui fullscreen` for flicker-free alt-screen rendering (v2.1.110) |
 | `awaySummaryEnabled` | boolean | `true` | Generate an "away summary" (idle-session recap) when the user returns after being away. Set to `false` to opt out. Pairs with the `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` env var (v2.1.110) |
 | `autoCompactEnabled` | boolean | `true` | Auto-compact the conversation when context approaches the model's limit. Set to `false` to disable automatic compaction and manage context manually. Also disableable via the `DISABLE_AUTO_COMPACT` env var |
+| `idleCompaction` | boolean | `true` | Auto-compact when the session is idle (between turns, when no user message is pending). Set to `false` to disable idle-triggered compaction while keeping `autoCompactEnabled: true` active. Pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` — the session must have at least that many tokens before idle compaction fires (v2.1.299) |
 | `autoCompactWindow` | number | model-tuned | How full the context window gets before automatic compaction triggers, in tokens (100,000–1,000,000). When unset, Claude Code uses a window tuned for your model. Set it with the `/autocompact` command (writes to user settings) or the `--autocompact` CLI flag. Pairs with the `CLAUDE_CODE_AUTO_COMPACT_WINDOW` env var (v2.1.221+) |
 | `skillOverrides` | object | - | Per-skill visibility overrides keyed by skill name. Value is `"on"` (full), `"name-only"` (visible but not auto-described), `"user-invocable-only"` (hidden from model discovery but still slash-invocable), or `"off"` (fully hidden). Example: `{"legacy-context": "name-only", "deploy": "off"}` (v2.1.129) |
 | `disableRemoteControl` | boolean | `false` | Disable [Remote Control](https://code.claude.com/docs/en/remote-control): blocks `claude remote-control`, the `--remote-control` flag, auto-start, and the in-session toggle. Typically placed in managed settings for per-device MDM enforcement, but works from any scope (v2.1.128) |
@@ -189,6 +190,7 @@ Configure how `--worktree` creates and manages git worktrees. Useful for reducin
 | `worktree.sparsePaths` | array | `[]` | Directories to check out in each worktree via git sparse-checkout (cone mode). Only the listed paths are written to disk |
 | `worktree.baseRef` | string | `"fresh"` | Which ref new worktrees branch from. `"fresh"` branches from `origin/<default-branch>` for a clean tree matching the remote. `"head"` branches from your current local `HEAD`, including uncommitted-but-tracked changes (v2.1.133) |
 | `worktree.bgIsolation` | string | `"worktree"` | Isolation mode for [background sessions](https://code.claude.com/docs/en/agent-view). `"worktree"` (default) blocks `Edit`/`Write` in the main checkout until `EnterWorktree` is called; `"none"` lets background jobs edit the working copy directly (v2.1.143) |
+| `worktree.location` | string | - | Custom base directory where Claude Code creates worktrees (e.g., `/tmp/worktrees`, `~/worktrees`). When unset, worktrees are placed alongside the main checkout. Only honored from user settings, managed settings, or `--settings` |
 
 **Example:**
 ```json
@@ -340,6 +342,8 @@ Control what tools and operations Claude can perform.
 **Deny rule glob patterns (v2.1.166):** In a `deny` rule, using `"*"` in the tool-name position matches ALL tools — equivalent to a global deny. For example, `"*"` in the deny array blocks every tool call. This makes it possible to lock down access completely and carve out specific allow/ask exceptions.
 
 **Allow rule glob restrictions:** In an `allow` rule, tool-name globs are only accepted **after a literal `mcp__<server>__` prefix** — the server segment must be glob-free. An unanchored allow glob such as `"*"`, `"B*"`, or `"mcp__*"` is **skipped with a startup warning** and does not auto-approve anything. For example, `"allow": ["mcp__github__*"]` works, but `"allow": ["mcp__*"]` does not. Use `"deny": ["*"]` plus specific allow rules to allowlist instead.
+
+> **v2.1.299 breaking change — MCP allow rule scoping:** MCP allow rules are now **strictly server-scoped**. A rule such as `"mcp__server__*"` matches only tools belonging to the server literally named `server`. Previously, `"mcp__a__*"` would also match a server named `a__b` (treating double-underscores as a separator). As of v2.1.299 it does not — you must write `"mcp__a__b__*"` to match server `a__b`. Review any `mcp__` allow rules that target servers with double-underscores in their names.
 
 **Read/Edit path patterns:** Permission rules for `Read`, `Edit`, and `Write` support gitignore-style patterns with four prefix types:
 
@@ -510,6 +514,7 @@ Configure bash command sandboxing for security.
 | `sandbox.enableWeakerNetworkIsolation` | boolean | `false` | (macOS only) Allow access to system TLS trust (`com.apple.trustd.agent`); reduces security |
 | `sandbox.bwrapPath` | string | - | **(Managed only, Linux/WSL2)** Absolute path to the bubblewrap (`bwrap`) binary. Overrides automatic `PATH` detection. Only honored from managed settings, not user or project settings. Example: `/opt/admin/bwrap` (v2.1.133) |
 | `sandbox.socatPath` | string | - | **(Managed only, Linux/WSL2)** Absolute path to the `socat` binary used for the sandbox network proxy. Overrides automatic `PATH` detection. Only honored from managed settings. Example: `/opt/admin/socat` (v2.1.133) |
+| `sandbox.ripgrep` | object | — | Override the `ripgrep` binary and arguments used inside the bash sandbox. Object with `command` (string — absolute path to the `rg` binary) and `args` (array of extra arguments prepended to every `rg` invocation). Use when the system `rg` is in a non-standard location or needs default flags inside the sandbox. Only honored from managed settings (v2.1.291) |
 | `sandbox.allowAppleEvents` | boolean | `false` | **(macOS only)** Opt-in for sandboxed commands to send Apple Events. Required for tools that use `open`, `osascript`, or browser authentication flows that depend on Apple Events IPC. **Warning:** Enabling this removes code-execution isolation — Apple Events can be used to execute code in other applications (v2.1.181) |
 | `sandbox.credentials` | object | — | Fine-grained control over which credential files and environment variables are blocked from sandboxed subprocess environments. Object with two arrays: `files` (array of credential file entries — see sub-keys below) and `envVars` (array of `{name: string, mode: string, injectHosts?: string[]}` entries — `mode` is `"deny"` (default, strips the var) or `"mask"` (substitutes a placeholder, only honored from user settings/managed/`--settings`; `deny` takes precedence when same var appears with both modes) with `injectHosts` selectively exposing the value to listed hosts only). An individual invalid entry is stripped with a warning; the valid subset is enforced. (v2.1.187; per-entry object shape since v2.1.191; per-entry `mode` and `injectHosts` since v2.1.199) |
 | `sandbox.credentials.files[].path` | string | — | Absolute or `~/`-prefixed path to the credential file to protect |
@@ -721,7 +726,7 @@ Configure via `env` key:
 | `wheelScrollAccelerationEnabled` | boolean | `true` | Disable mouse-wheel scroll acceleration in fullscreen mode. Set to `false` to use fixed per-tick scroll steps instead of the OS-level acceleration curve (v2.1.174) |
 | `footerLinksRegexes` | array | - | Array of objects matched against **turn output** (tool results, file contents, fetched pages, Claude's responses) to display as link badges in the footer row. Each entry is `{type, pattern, url, label}` where `pattern` is a regex with named capture groups and `url`/`label` may reference those groups. Matched patterns produce a clickable badge at the bottom of the chat UI. Capped at 5 badges per turn; URL max 2048 chars; allowed schemes: `http`, `https`, `vscode`, `cursor`, `windsurf`, `zed`, `jetbrains`, `idea`, `slack`, `linear`, `notion`, `figma`, `vscode-insiders`. User/`--settings`/managed only (v2.1.176) |
 | `emojiCompletionEnabled` | boolean | `true` | Enable emoji shortcode autocomplete in the prompt input (e.g., `:tada:` → 🎉). Set to `false` to disable. Requires v2.1.217+ |
-| `keybindingFlavor` | string | - | Keyboard shortcut style for word deletion. Values: `"readline"` (Bash/GNU readline-style Ctrl+W — delete word backward to whitespace boundary), `"classic"` (default word-deletion behavior). When unset, uses the classic behavior (v2.1.236) |
+| `keybindingFlavor` | string | - | **DEPRECATED — no effect since v2.1.261.** Keyboard shortcut style for word deletion. Values: `"readline"` (Bash/GNU readline-style Ctrl+W — delete word backward to whitespace boundary), `"classic"` (default word-deletion behavior). When unset, uses the classic behavior (v2.1.236) |
 | `spellcheck` | object | - | Spell-check underlines in the prompt input. Scope: user or managed. Object with `enabled` (boolean), `checker` (string — `"aspell"`, `"hunspell"`, `"ispell"`, or `"auto"`), `language` (string — e.g., `"en_US"`), and `color` (string — underline color). Set via `/config`. Requires v2.1.235+ |
 | `promptCacheTtl` | string | - | Override prompt cache TTL for the main conversation. Accepts `"5m"` or `"1h"`. Precedence order: `FORCE_PROMPT_CACHING_5M` > `CLAUDE_CODE_PROMPT_CACHE_TTL` > this key > `ENABLE_PROMPT_CACHING_1H`. Pairs with `subagentPromptCacheTtl` (v2.1.243+) |
 | `subagentPromptCacheTtl` | string | - | Override prompt cache TTL for subagents, workflows, and background/helper requests. Accepts `"5m"` or `"1h"`. Precedence order: `FORCE_PROMPT_CACHING_5M` > `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` > this key > `ENABLE_PROMPT_CACHING_1H`. Use with `promptCacheTtl` for independent control (v2.1.243+) |
@@ -745,6 +750,12 @@ These IDE-related preferences are stored in `~/.claude.json`, **not** `settings.
 | `teammateDefaultModel` | string | `null` | **Removed in v2.1.234.** Previously set the default model for [agent-team](https://code.claude.com/docs/en/agent-teams) teammates when the lead dispatched them. Teammates now inherit the lead's model by default |
 | `diffTool` | string | - | External diff tool command invoked when viewing file diffs. When set, Claude Code spawns this command with the two file paths as arguments instead of rendering the built-in diff view |
 | `permissionExplainerEnabled` | boolean | `true` | **REMOVED in v2.1.257.** Previously showed an AI-generated natural-language explanation of why a permission was being requested alongside the permission prompt. This setting is now a no-op; the permission explainer has been removed from the UI |
+| `claudeInChromeDefaultEnabled` | boolean | `false` | **(~/.claude.json)** Whether Claude in Chrome is enabled by default for new sessions. When `true`, Claude in Chrome activates on session start without requiring the user to opt in each time |
+| `copyFullResponse` | boolean | `false` | **(~/.claude.json)** Copy Claude's full response to the clipboard at the end of each turn. Set to `true` to enable |
+| `copyOnSelect` | boolean | `true` | **(~/.claude.json)** Automatically copy text to clipboard when selected in the chat UI. Set to `false` to disable |
+| `defaultToAgentsView` | boolean | `false` | **(~/.claude.json)** Open the agents panel by default when starting Claude Code Desktop. Set to `true` to always show the agents view on launch |
+| `leftArrowOpensAgents` | boolean | `true` | **(~/.claude.json)** Press the left-arrow key at the beginning of an empty prompt to open the agents panel. Set to `false` to disable this keyboard shortcut |
+| `prStatusFooterEnabled` | boolean | `true` | **(~/.claude.json)** Show the PR status footer in the chat UI when Claude Code detects an open pull request for the current branch. Set to `false` to hide it |
 
 ### Workspace & Teams
 
@@ -999,6 +1010,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | Auto-compact threshold percentage (1-100). Default is ~95%. Set lower (e.g., `50`) to trigger compaction earlier. Values above 95% have no effect. Use `/context` to monitor current usage. Example: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=50 claude` |
 | `CLAUDE_CODE_MAX_CONTEXT_TOKENS` | Override the context window size Claude Code assumes for the active model. Only takes effect when `DISABLE_COMPACT` is also set. Use when routing to a model through `ANTHROPIC_BASE_URL` whose context window does not match the built-in size for its name |
 | `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR` | Set to `1` to **return to the original working directory** after each Bash or PowerShell command. By default, directory changes made inside a command persist to the next command — this variable restores the original cwd after each call |
+| `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` | Set to `1` to always show a confirmation prompt before executing inline shell commands (the `!` prefix) that contain `rm` or deletion patterns, even in auto/bypassPermissions mode. Provides a safety net for destructive shell one-liners in automated sessions (v2.1.299) |
 | `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` | Disable background tasks (`1` to disable) |
 | `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP` | Set to `1` to disable automatic memory-pressure reaping of idle background shell commands. When unset, Claude Code automatically reaps idle background shells under memory pressure to free resources |
 | `CLAUDE_CODE_DISABLE_BG_EXIT_HANDOFF` | Set to `1` to stop a background session's running background shell commands, dynamic workflows, and background subagents when the supervisor stops, restarts, or updates that session's process. By default they are handed off to the session's next process (v2.1.198) |
@@ -1009,11 +1021,17 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_WORKFLOWS` | Set to `1` to disable [dynamic workflows](https://code.claude.com/docs/en/workflows) (`/workflows`) and the bundled workflow slash commands. Env-var equivalent of the `disableWorkflows` setting |
 | `CLAUDE_CODE_ENABLE_AUTO_MODE` | **As of v2.1.207, auto mode is available on Bedrock, Vertex AI, and Foundry by default — this opt-in is no longer required.** Previously (v2.1.158–v2.1.206): set to `1` to make [auto mode](https://code.claude.com/docs/en/permission-modes#eliminate-prompts-with-auto-mode) available on those providers. Use `disableAutoMode: "disable"` in settings to turn auto mode off |
 | `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` | Set to `1` to conceal Claude Code's built-in capabilities (bundled skills) from the model. Env-var equivalent of the `disableBundledSkills` setting (v2.1.169) |
+| `CLAUDE_CODE_DISABLE_FILE_MENTIONS` | Set to `1` to disable `@filename` file-mention autocomplete and reference expansion in the prompt input. When set, typing `@` does not trigger file path suggestions (v2.1.299) |
+| `CLAUDE_CODE_DISABLE_WEB_FETCH` | Set to `1` to disable the WebFetch tool entirely, preventing Claude from fetching external URLs. Equivalent to adding `WebFetch` to the deny permission list (v2.1.285) |
 | `CLAUDE_CODE_DISABLE_ARTIFACT` | Set to `1` to disable the [Artifact](https://code.claude.com/docs/en/artifacts) tool, which publishes session output as a private web page on claude.ai. Equivalent to the `disableArtifact` setting |
 | `CLAUDE_CODE_ARTIFACT_AUTO_OPEN` | Set to `0` to stop Claude Code from opening the browser automatically when a new artifact is published. Republishing an existing artifact does not open the browser regardless of this setting |
+| `CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS` | Set to `0` to prevent Claude Code from automatically publishing in-place edits to an existing artifact. When unset, edits made via the `edits` parameter on an artifact publish call are applied and the updated page is deployed immediately (v2.1.300) |
+| `CLAUDE_CODE_ARTIFACT_COMMENTS` | Set to `0` to disable artifact comment processing. When unset, artifact comment events are delivered into active sessions via the ArtifactComments tool (v2.1.221) |
+| `CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT` | Set to `0` to disable automatic emoji reactions when Claude replies to an artifact comment. When unset, Claude adds a reaction to acknowledge new comments it has processed (v2.1.228) |
 | `ENABLE_TOOL_SEARCH` | MCP tool search threshold (e.g., `auto:5`) |
 | `ENABLE_PROMPT_CACHING_1H` | Opt into 1-hour prompt cache TTL. Replaces the deprecated `ENABLE_PROMPT_CACHING_1H_BEDROCK` |
 | `FORCE_PROMPT_CACHING_5M` | Force 5-minute prompt cache TTL |
+| `CLAUDE_CODE_PROMPT_CACHE_TTL` | Override the prompt cache TTL for the main conversation. Accepts `"5m"` or `"1h"`. Env-var equivalent of the `promptCacheTtl` setting. Precedence: `FORCE_PROMPT_CACHING_5M` > this var > `promptCacheTtl` setting > `ENABLE_PROMPT_CACHING_1H` (v2.1.242) |
 | `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` | Opt out of away summary / idle-session recap. Set to `0` to disable. Pairs with the `awaySummaryEnabled` setting (v2.1.110) |
 | `DISABLE_PROMPT_CACHING` | Disable all prompt caching (`1` to disable) |
 | `DISABLE_PROMPT_CACHING_HAIKU` | Disable Haiku prompt caching |
@@ -1065,12 +1083,14 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_RESUME_PROMPT` | Custom prompt injected at the start of an auto-resumed interrupted turn. Defaults to a built-in continuation message |
 | `CLAUDE_CODE_SAFE_MODE` | Set to `1` to enable safe mode, which limits potentially destructive operations and enforces stricter tool guardrails |
 | `CLAUDE_CODE_SKIP_PROMPT_HISTORY` | Set to `1` to skip writing prompt history and session transcripts to disk. Sessions started with this variable set do not appear in `--resume`, `--continue`, or up-arrow history. Useful for ephemeral scripted sessions |
+| `CLAUDE_CODE_TRANSCRIPT_LOCAL_GC` | Maximum age in days for local session transcripts. Transcripts older than this value are automatically deleted on startup. Set to `0` to disable garbage collection and retain all transcripts indefinitely (v2.1.296) |
 | `CLAUDE_CODE_USER_EMAIL` | Provide user email synchronously for authentication |
 | `CLAUDE_CODE_ORGANIZATION_UUID` | Provide organization UUID synchronously for authentication |
 | `CLAUDE_CONFIG_DIR` | Custom config directory (overrides default `~/.claude`) |
 | `CLAUDE_CODE_TMPDIR` | Override the temp directory used for internal temp files. Claude Code appends `/claude/` to this path. Default: `/tmp` on Unix/macOS, `os.tmpdir()` on Windows |
 | `ANTHROPIC_CUSTOM_HEADERS` | Custom headers for API requests (`Name: Value` format, newline-separated for multiple headers) |
 | `CLAUDE_CODE_EXTRA_BODY` | JSON object to merge into the top level of every API request body. Use to inject vendor-specific fields (e.g., routing hints for a custom gateway) |
+| `CLAUDE_CODE_GZIP_REQUEST_BODIES` | Set to `1` to gzip-compress API request bodies before sending. Reduces bandwidth on high-latency connections or when `CLAUDE_CODE_EXTRA_BODY` adds significant payload. The receiving server must support `Content-Encoding: gzip` (v2.1.300) |
 | `CLAUDE_CODE_PROPAGATE_TRACEPARENT` | Set to `1` to propagate the W3C `traceparent` header through requests when routing through a custom proxy, linking Claude Code traces to your upstream telemetry |
 | `ANTHROPIC_FOUNDRY_API_KEY` | API key for Microsoft Foundry authentication |
 | `ANTHROPIC_FOUNDRY_BASE_URL` | Base URL for Foundry resource |
@@ -1130,10 +1150,11 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_PERFORCE_MODE` | Set to `1` to enable Perforce-aware write protection. When set, Edit, Write, and NotebookEdit fail with a `p4 edit <file>` hint if the target file lacks the owner-write bit, which Perforce clears on synced files until `p4 edit` opens them. Prevents Claude Code from bypassing Perforce change tracking (v2.1.98) |
 | `CLAUDE_CODE_PROCESS_WRAPPER` | Wrap the Claude Code process at startup. Specify the wrapper executable and arguments; Claude Code is appended as the final argument. Useful for profiling tools, sandboxes, or tracing (e.g., `CLAUDE_CODE_PROCESS_WRAPPER="strace -e trace=file"`) |
 | `CLAUDE_CODE_MAX_RETRIES` | Override API request retry count (default: 10) |
+| `CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES` | Override the retry count specifically for non-streaming API calls that time out (e.g., certain background tool calls). Default: `3`. Non-streaming timeouts use a separate counter from the main `CLAUDE_CODE_MAX_RETRIES` limit (v2.1.285) |
 | `CLAUDE_CODE_RETRY_WATCHDOG` | Raise the retry count for non-capacity API errors to 300. The standard retry cap (`CLAUDE_CODE_MAX_RETRIES`, default: 10) still applies for capacity errors (v2.1.199) |
 | `CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY` | Max parallel read-only tools (default: 10) |
 | `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` | Maximum web searches allowed per session (default: `200`). Prevents runaway tool use in long agentic sessions. As of v2.1.290 the budget also refills hourly at `CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR` rate |
-| `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` | Maximum subagents that can be spawned per session (default: `200`). Prevents resource exhaustion in deeply nested agentic workflows |
+| `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` | **REMOVED in v2.1.224.** Previously set the maximum subagents that could be spawned per session (default: `200`). Use `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` and `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` to control subagent resource usage |
 | `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` | Maximum number of subagents that run concurrently (default: `20`). Limits parallel agent fan-out; excess agents queue and run as slots free up (v2.1.217) |
 | `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` | Maximum nesting depth for subagents (default: `3` as of v2.1.219). Subagents at the depth limit cannot spawn further subagents (v2.1.217) |
 | `CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS` | Disable built-in subagent types in SDK mode (`1` to disable) |
@@ -1141,6 +1162,7 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS` | Stall timeout in ms for background subagents (default: 600000 / 10 minutes). The subagent is killed if it produces no output for this duration |
 | `MCP_CONNECTION_NONBLOCKING` | Set to `true` in `-p` mode to skip the MCP connection wait entirely. Bounds `--mcp-config` server connections at 5s instead of blocking on the slowest server |
 | `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` | Duration in milliseconds after which a slow MCP tool call is automatically backgrounded (default: `120000` / 2 minutes). MCP calls that exceed this threshold continue running in the background without blocking the agent turn |
+| `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` | Maximum character length for MCP tool descriptions shown to the model. Descriptions exceeding this limit are truncated to prevent context exhaustion when connecting to MCP servers with verbose tool docs. Default: `2048` (v2.1.280) |
 | `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` | Idle timeout in ms for MCP tool calls. The tool call is cancelled if it produces no streaming response within this window. Use when a gateway or MCP server hangs silently — distinct from `MCP_TOOL_TIMEOUT`, which is a total wall-clock limit (v2.1.187) |
 | `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS` | SessionEnd hook timeout in ms (replaces hard 1.5s limit) |
 | `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` | Maximum number of times a Stop hook can block a session from ending (default: `8`). After this many blocks the session ends regardless of hook exit codes |
@@ -1207,6 +1229,7 @@ Set environment variables for all Claude Code sessions.
 | `MAX_THINKING_TOKENS` | Maximum extended thinking tokens per response. Set to `0` to disable extended thinking entirely on the Anthropic API (equivalent to `--thinking disabled`). Applies only when using a fixed thinking budget — on adaptive thinking models (Opus 4.7+), the effort level controls thinking depth instead |
 | `CLAUDE_CODE_AUTO_COMPACT_WINDOW` | Set the context capacity in tokens used for auto-compaction calculations. Defaults to the model's context window (200K standard, 1M for extended context models). Use a lower value (e.g., `500000`) on a 1M model to treat it as 500K for compaction. Capped at actual context window. `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` is applied as a percentage of this value. Setting this decouples the compaction threshold from the status line's `used_percentage` |
 | `DISABLE_AUTO_COMPACT` | Disable automatic context compaction (`1` to disable). Manual `/compact` still works |
+| `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` | Minimum token count the session must have before idle compaction triggers. Idle compaction (controlled by the `idleCompaction` setting) only fires when the session exceeds this token threshold. Default: `200000`. Set higher to avoid premature compaction of short sessions (v2.1.299) |
 | `DISABLE_COMPACT` | Disable all compaction — both automatic and manual (`1` to disable) |
 | `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION` | Enable prompt suggestions |
 | `CLAUDE_CODE_PLAN_MODE_REQUIRED` | Require plan mode for sessions |
@@ -1438,7 +1461,7 @@ Set environment variables for all Claude Code sessions.
 
 ## Sources
 
-- [Claude Code Settings Reference](https://code.claude.com/docs/en/settings-reference) — canonical key index (~180 keys with Scope/Type/Default columns)
+- [Claude Code Settings Reference](https://code.claude.com/docs/en/settings-reference) — canonical key index (~245 keys with Scope/Type/Default columns)
 - [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
 - [Claude Code CLI Reference](https://code.claude.com/docs/en/cli-reference)
 - [Claude Code Model Configuration](https://code.claude.com/docs/en/model-config)
