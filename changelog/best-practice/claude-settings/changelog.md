@@ -1323,3 +1323,23 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-27 10:50 AM PKT] Claude Code v2.1.311
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.311; update header counts from "244+ settings / 396+ env vars" to "247+ settings / 400+ env vars" | ✅ COMPLETE (badge and header updated in Phase 2.6) — NEW |
+| 2 | HIGH | Wrong Key Path | Fix `permissions.skipDangerousModePermissionPrompt` → top-level `skipDangerousModePermissionPrompt` — the key is NOT nested under `permissions` in official docs | ✅ COMPLETE (key path corrected) — NEW |
+| 3 | HIGH | New Setting | Add `idleCompaction` (boolean, default `true`) to General Settings — compact conversation when user is idle, alongside context-pressure compaction (v2.1.302) | ✅ COMPLETE (added after `autoCompactEnabled`) — NEW |
+| 4 | HIGH | New Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, default `false`, Linux only) to Sandbox Settings — enable nested user namespaces for Docker-in-Docker workloads (v2.1.305) | ✅ COMPLETE (added after `sandbox.enableWeakerNestedSandbox`) — NEW |
+| 5 | HIGH | Wrong Description | Fix `CLAUDE_CODE_FORK_SUBAGENT` — fork subagents are ON by default since v2.1.302; description changed from "Set to `1` to enable" to "Set to `0` to disable" | ✅ COMPLETE (description corrected) — NEW |
+| 6 | HIGH | Quick Reference | Remove `mcpServers` block from Quick Reference example — not a valid `settings.json` key; MCP server config belongs in `.mcp.json` or `~/.claude.json` | ✅ COMPLETE (block removed from example) — NEW |
+| 7 | MED | Deprecated Setting | Mark `disableArtifact` as deprecated — official docs recommend `enableArtifact: false` instead | ✅ COMPLETE (deprecation note added) — NEW |
+| 8 | MED | Deprecated Setting | Mark `keybindingFlavor` as deprecated (deprecated v2.1.261, no effect) | ✅ COMPLETE (deprecation note added) — NEW |
+| 9 | MED | Changed Description | Update `CLAUDE_CODE_AUTO_COMPACT_WINDOW` — accepts k/M suffixes (e.g., `500k` or `1M`) since v2.1.304 | ✅ COMPLETE (note added) — NEW |
+| 10 | MED | Changed Behavior | Update `DISABLE_COMPACT` — as of v2.1.311, only settable via settings `env` field; regular shell env var has no effect | ✅ COMPLETE (description updated) — NEW |
+| 11 | MED | CLAUDE.md Sync | Add PostToolUseFailure, PreModelSwitch, PostModelSwitch to CLAUDE.md hook events list (hook list had 30 events but claimed 33; Rule 7A) | ✅ COMPLETE (CLAUDE.md updated) — NEW |
+| 12 | LOW | Sources | Update "~180 keys" → "~247 keys" in Sources section to match current count | ✅ COMPLETE (count updated) — NEW |
+| 13 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 45+ consecutive runs | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
