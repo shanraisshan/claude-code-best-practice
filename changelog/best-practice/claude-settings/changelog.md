@@ -1323,3 +1323,20 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-24 10:45 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Settings | Add `idleCompaction` to General Settings — enables automatic compaction after ~54 min idle when context exceeds 200K tokens; `/config` row added in v2.1.302 (v2.1.299+) | COMPLETE (added to General Settings after autoCompactWindow) — NEW |
+| 2 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` to Sandbox Settings — Linux/WSL2 only, user/managed only; allows nested user namespaces for tools like Chromium and rootless Podman (v2.1.305) | COMPLETE (added to Sandbox Settings after enableWeakerNestedSandbox) — NEW |
+| 3 | HIGH | Missing Settings | Add `isolatePeerMachines` to General Settings — scope exception key (any scope, stricter value wins); requires approval before SendMessage reaches sessions on other machines (v2.1.224+) | COMPLETE (added after dialogExpiry) — NEW |
+| 4 | HIGH | Missing Env Vars | Add 8 missing env vars from v2.1.299–2.1.309: `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_AUTO_MODE_SERVER`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK`, `CLAUDE_CODE_GZIP_REQUEST_BODIES` | COMPLETE (all 8 added to env var section) — NEW |
+| 5 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_FORK_SUBAGENT`: was "Set to 1 to enable on external builds"; fork mode is on by default since v2.1.302, set to 0 to disable | COMPLETE (description corrected) — NEW |
+| 6 | MED | Wrong Note | `keybindingFlavor` deprecated since v2.1.261 — no longer has any effect, word editing always uses readline. Report currently has no deprecation note | ON HOLD (deprecation note not yet added — deferred to focused run) |
+| 7 | MED | Wrong Type | `disableArtifact` is deprecated — use `enableArtifact: false` instead. `disableArtifact: true` still works but is the deprecated form. Report's description does not note the deprecation | ON HOLD (deferred to focused run) |
+| 8 | MED | Wrong Semantics | `permissions.defaultMode` description should note `bypassPermissions` is also blocked from project/local settings since v2.1.257 (same restriction as `auto`). Confidence 0.95 | ON HOLD (minor description enhancement deferred) |
+| 9 | MED | Missing Settings | Multiple settings found in official docs but not yet in report: `enableWorkflows`, `terminalTitleFromRename`, `skipAutoPermissionPrompt`, `managedSourcesBehavior`, `gatewayInternalNetworks`, `disableDesktopLocalSessions`, `sshHostAllowlist`, `sshHostCommands`, `sandbox.ripgrep` | ON HOLD (requires verification of Desktop-specific vs CLI-CLI settings scope) |
+| 10 | LOW | Wrong Count | Badge and header counts updated: v2.1.296 → v2.1.310; 244+ settings → 247+; 396+ env vars → 401+ | COMPLETE (counts updated) — NEW |
