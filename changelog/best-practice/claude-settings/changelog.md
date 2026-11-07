@@ -1323,3 +1323,20 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-07 10:47 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Setting | Add `permissions.blockWritesOutsideWorkingDirectories` to Permission Keys table (v2.1.314) | COMPLETE (added after `permissions.blockReadsOutsideWorkingDirectories`) — NEW |
+| 2 | HIGH | New Setting | Add `permissions.denyInsteadOfPrompting` to Permission Keys table with changelog-only annotation (v2.1.319) | COMPLETE (added with unverified annotation) — NEW |
+| 3 | HIGH | New Setting | Add `sandbox.allowNestedUserNamespaces` to Sandbox Settings table (v2.1.305) | COMPLETE (added after `sandbox.enableWeakerNestedSandbox`) — NEW |
+| 4 | HIGH | New Setting | Add `idleCompaction` to General Settings table (v2.1.290+) | COMPLETE (added after `syncClaudeAiPlugins`) — NEW |
+| 5 | HIGH | Missing Env Vars | Add 16 new env vars from v2.1.290–v2.1.319: `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP`, `OTEL_EXPORTER_OTLP_TIMEOUT`, `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`, `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`, `CLAUDE_CODE_DISABLE_MCP_TASKS`, `CLAUDE_CODE_DISABLE_FEATURE_FLAGS`, `CLAUDE_CODE_LOOP_KEEPALIVE` | COMPLETE (all 15 added after `MCP_PROTOCOL_NEGOTIATION`) — NEW |
+| 6 | HIGH | Wrong Description | Fix `keybindingFlavor`: mark deprecated since v2.1.261 — this setting has no effect | COMPLETE (deprecated annotation added) — NEW |
+| 7 | HIGH | Wrong Description | Fix `diffTool`: description was wrong (external command); officially a `"auto"`/`"terminal"` enum | COMPLETE (corrected to enum description) — NEW |
+| 8 | HIGH | Wrong Description | Fix useful commands table: `--doctor` → `claude doctor`; `claude gateway` description wrong; `claude auto-mode reset` description wrong | COMPLETE (all 3 corrected) — NEW |
+| 9 | HIGH | Version Badge | Update badge from v2.1.296 to v2.1.319; date Oct 13 → Nov 07, 2026 10:47 AM PKT; counts 244+/396+ → 248+/401+ | COMPLETE (badge and header updated) — NEW |
+| 10 | MED | Wrong Description | Fix `MCP_PROTOCOL_NEGOTIATION` description: also accepts `"auto"` mode (not just `"legacy"`) | COMPLETE (corrected) — NEW |
