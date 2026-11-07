@@ -1323,3 +1323,26 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-23 10:42 AM PKT] Claude Code v2.1.309
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.296 → v2.1.309; update header from "244+ settings / 396+ env vars" to "252+ settings / 405+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Setting | Add `idleCompaction` (bool, default `true`, any scope, v2.1.299) to General Settings — disables idle compaction of 200K+ token conversations left idle ~54 minutes | COMPLETE (added after `promptSuggestionEnabled`) — NEW |
+| 3 | HIGH | Missing Setting | Add `sandbox.allowNestedUserNamespaces` (bool, default `false`, v2.1.305) to Sandbox Settings — allow nested user namespace calls inside the Linux sandbox | COMPLETE (added after `sandbox.credentials.allowPlaintextInject`) — NEW |
+| 4 | HIGH | Wrong Description | Fix `advisorModel`: "When unset, the advisor uses the session model" → "When unset, the advisor is OFF — no server-side advisor is attached" | COMPLETE (description corrected per official settings-reference) — NEW |
+| 5 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default: `-` → `true`; add scope "user or managed" | COMPLETE (default and scope corrected) — NEW |
+| 6 | HIGH | Wrong Default | Fix `desktopSessionCleanupPeriodDays` default: `-` → `0` (disabled by default) | COMPLETE (default corrected) — NEW |
+| 7 | HIGH | Wrong Semantics | Fix `permissions.defaultMode`: add note that `"bypassPermissions"` is also ignored from project settings since v2.1.257 (only `"auto"` was noted previously) | COMPLETE (added bypassPermissions note) — NEW |
+| 8 | HIGH | Wrong Semantics | Fix Write/NotebookEdit/Glob path rules: official docs state these NEVER match in ANY rule type (not just allow rules). Update table rows and note at v2.1.210 blockquote | COMPLETE (corrected for all rule types) — NEW |
+| 9 | HIGH | Wrong Description | Fix `maxEffortLevel`: remove incorrect "A `false` in user...holds even if a project sets `true`" language; clarify the lowest cap across scopes applies, `"max"` means no cap | COMPLETE (description corrected) — NEW |
+| 10 | HIGH | Wrong Scope | Fix `axScreenReader` (v2.1.305): default is unset (not `false`); scope restricted to user/managed/--settings only | COMPLETE (scope restriction and default corrected) — NEW |
+| 11 | HIGH | Wrong Description | Fix `CLAUDE_CODE_FORK_SUBAGENT` (v2.1.302): on by default everywhere; set to `0` to disable; remove "external builds only" language | COMPLETE (description corrected) — NEW |
+| 12 | HIGH | Missing Env Vars | Add 8 new env vars: `CLAUDE_CODE_AUTO_MODE_MODEL` (v2.1.302), `CLAUDE_CODE_GZIP_REQUEST_BODIES` (v2.1.300), `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299), `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299), `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` (v2.1.305), `CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS` (v2.1.307), `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK` (v2.1.309), `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` (v2.1.301) | COMPLETE (all 8 added) — NEW |
+| 13 | HIGH | Missing Env Var | Add `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` (v2.1.299) — mark as not yet on official env-vars page | COMPLETE (added with unverified annotation) — NEW |
+| 14 | MED | Changed Description | Update `CLAUDE_CODE_AUTO_COMPACT_WINDOW`: add k/M human-readable suffix support (v2.1.304) | COMPLETE (description updated) — NEW |
+| 15 | MED | Changed Description | Update `MCP_PROTOCOL_NEGOTIATION`: cloud/Remote Control sessions also use protocol v2026-07-28 by default since v2.1.299 | COMPLETE (description updated) — NEW |
+| 16 | LOW | Missing Settings | Add `enableWorkflows`, `isolatePeerMachines`, `skipAutoPermissionPrompt`, `terminalTitleFromRename`, `sandbox.ripgrep`, `managedSourcesBehavior` — identified by research agents but exact descriptions need verification from official settings-reference page | COMPLETE (all 6 settings verified against official settings-reference index and added to report) — NEW |
