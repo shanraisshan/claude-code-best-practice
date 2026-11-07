@@ -1323,3 +1323,30 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-10-25 10:43 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Setting | Add `idleCompaction` (boolean, default `false`) — trigger auto-compact when idle. New in v2.1.299 | ✅ COMPLETE (added to General Settings table) — NEW |
+| 2 | HIGH | Wrong Default | Fix `advisorModel` default: was "When unset, uses session model"; officially "When unset, the advisor is disabled" | ✅ COMPLETE (corrected to "When unset, the advisor is disabled") — NEW |
+| 3 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default from `-` to `true`; added scope note | ✅ COMPLETE (default updated to `true`) — NEW |
+| 4 | HIGH | Wrong Default | Fix `desktopSessionCleanupPeriodDays` default from `-` to `0`; added "Scope: user or managed" | ✅ COMPLETE (default updated to `0`) — NEW |
+| 5 | HIGH | Wrong Key Path | Fix `permissions.skipDangerousModePermissionPrompt` → top-level `skipDangerousModePermissionPrompt`; add note that it is not nested under `permissions` | ✅ COMPLETE (key path corrected; top-level note added) — NEW |
+| 6 | HIGH | Missing Setting | Add `sandbox.allowNestedUserNamespaces` (boolean, default `false`, Linux only) — allow nested user namespaces. New in v2.1.305 | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 7 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_AUTO_MODE_SERVER` (v2.1.281) and `CLAUDE_CODE_AUTO_MODE_MODEL` (v2.1.302) after `CLAUDE_CODE_ENABLE_AUTO_MODE` | ✅ COMPLETE (both added to env var table) — NEW |
+| 8 | HIGH | Missing Env Var | Add `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` (v2.1.299, default 200000, min 100000) before `CLAUDE_CODE_AUTO_COMPACT_WINDOW` | ✅ COMPLETE (added to env var table) — NEW |
+| 9 | HIGH | Removed Env Var | Mark `TASK_MAX_OUTPUT_LENGTH` as REMOVED in v2.1.277 (with the TaskOutput tool) | ✅ COMPLETE (removal note added) — NEW |
+| 10 | HIGH | Missing Env Var | Add `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` (v2.1.305) after `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` | ✅ COMPLETE (added to env var table) — NEW |
+| 11 | HIGH | Missing Env Vars | Add 11 new env vars: `CLAUDE_CODE_DISABLE_FILE_MENTIONS` (v2.1.299), `CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT` (v2.1.299), `CLAUDE_CODE_GZIP_REQUEST_BODIES` (v2.1.300), `CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES` (v2.1.285), `CLAUDE_CODE_DISABLE_WEB_FETCH` (v2.1.285), `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.273), `OTEL_LOG_MANAGED_SETTINGS` (v2.1.274), `CLAUDE_CODE_WARN_DISK_FREE_GIB` (v2.1.304), `CLAUDE_CODE_WARN_MEMORY_FREE_GIB` (v2.1.304), `CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK` (v2.1.309) | ✅ COMPLETE (all 11 added to env var table) — NEW |
+| 12 | MED | Stale Version | Update report version badge and header from v2.1.296 to v2.1.310 | ✅ COMPLETE (badge and header updated) — NEW |
+| 13 | MED | Wrong Count | Update header counts from "244+ settings and 396+ env vars" to "246+ settings and 407+ env vars"; update Sources section from "~180 keys" to "~235 settings.json keys + 12 global-config keys" | ✅ COMPLETE (counts and Sources updated) — NEW |
+| 14 | MED | Wrong Description | Fix `modelPicker` type: was bare array example `[{id, label}]`; officially object `{options:[{model, label, description, behavesAs}], replaceBuiltInOptions}` | ✅ COMPLETE (type structure corrected) — NEW |
+| 15 | MED | Wrong Scope Note | Fix `permissions.defaultMode`: both `"auto"` AND `"bypassPermissions"` are ignored in project/local settings; was only noting `"auto"` | ✅ COMPLETE (note updated to include bypassPermissions) — NEW |
+| 16 | MED | Missing Settings | Add `skipAutoPermissionPrompt`, `managedSourcesBehavior`, `terminalTitleFromRename`, `enableWorkflows`, `isolatePeerMachines` | ✅ COMPLETE (all 5 added to respective tables) — NEW |
+| 17 | MED | Missing Sandbox Setting | Add `sandbox.ripgrep` (Managed only, Linux/WSL2) — path to `rg` binary inside sandbox | ✅ COMPLETE (added to Sandbox Settings table) — NEW |
+| 18 | MED | Missing Global Config Keys | Add 6 missing `~/.claude.json` keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | ✅ COMPLETE (all 6 added to Global Config Settings table) — NEW |
+| 19 | LOW | Deprecated Setting | Mark `keybindingFlavor` as deprecated since v2.1.261 — has no effect | ✅ COMPLETE (DEPRECATED notice added) — NEW |
+| 20 | ON HOLD | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` (carried from 2026-10-13 run, item 31) | ✋ ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap; run count: 2) |
