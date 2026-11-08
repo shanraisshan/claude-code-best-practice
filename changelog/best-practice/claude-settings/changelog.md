@@ -1323,3 +1323,20 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-08 10:37 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.319; update header counts from "244+ settings / 396+ env vars" to "248+ settings / 415+ env vars" | COMPLETE (badge and header updated) — NEW |
+| 2 | HIGH | Missing Settings | Add `permissions.blockWritesOutsideWorkingDirectories` (v2.1.314): blocks Write/Edit/NotebookEdit outside working directories with any-scope exception | COMPLETE (added to Permission Keys table) — NEW |
+| 3 | HIGH | Missing Settings | Add `permissions.denyInsteadOfPrompting` (v2.1.319): denies instead of prompting in automated/non-interactive environments | COMPLETE (added to Permission Keys table) — NEW |
+| 4 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (v2.1.305): Linux/WSL2 opt-in for nested user namespaces inside sandbox | COMPLETE (added to Sandbox Settings table) — NEW |
+| 5 | HIGH | Missing Settings | Add `idleCompaction` (v2.1.299): boolean to disable idle-time compaction while keeping at-limit auto-compact | COMPLETE (added to General Settings table) — NEW |
+| 6 | HIGH | Missing Env Vars | Add 19 new env vars from v2.1.297–v2.1.319: `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_GZIP_REQUEST_BODIES`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP`, `CLAUDE_RUNNER_SPAWN_REASON`, `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`, `CLAUDE_CODE_DISABLE_MCP_TASKS`, `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`, `CLAUDE_CODE_DISABLE_FEATURE_FLAGS`, `CLAUDE_CODE_LOOP_KEEPALIVE`, `CLAUDE_GATEWAY_LOG_FORMAT`, `CLAUDE_AX_PREPARK_MS` | COMPLETE (all 19 added) — NEW |
+| 7 | MED | Scope Update | Update `axScreenReader` scope: now user or managed settings only — project/local values ignored (v2.1.305+) | COMPLETE (scope note added to description) — NEW |
+| 8 | MED | Behavior Update | Update `CLAUDE_CODE_FORK_SUBAGENT`: now on by default in -p/SDK/desktop/VS Code as of v2.1.302; `0` to force-disable, `1` to enable on external/unsigned builds | COMPLETE (description updated) — NEW |
+| 9 | MED | Behavior Update | Update `CLAUDE_CODE_AUTO_COMPACT_WINDOW`: accepts `k`/`M` suffixes (e.g., `800k`, `1M`) since v2.1.304 | COMPLETE (description updated) — NEW |
+| 10 | MED | Behavior Update | Update `DISABLE_COMPACT`: v2.1.311 made it disable-only — there is no env var to re-enable compaction once DISABLE_COMPACT is set | COMPLETE (description updated) — NEW |
