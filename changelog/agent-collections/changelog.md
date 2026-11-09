@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-09 08:44 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (167,300 exact; rounds to 167k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283→268 (dir-traversal: academic/6+design/10+engineering/66+finance/5+game-development/6+gis/13+healthcare/3+marketing/37+paid-media/7+product/6+project-management/7+research/1+sales/9+security/12+spatial-computing/6+specialized/59+support/6+testing/9=268; game-dev at 6 is root-only; Aug 14 COMPLETE confirmed 21 with subdirs unity/unreal-engine/godot/blender/roblox-studio; 15-file gap = 268+15=283 reconciles exactly; conf 0.80 below 0.88 threshold; RECURRING game-dev subdir undercounting) | INVALID (RECURRING oscillation; game-dev subdir undercounting documented since Aug 14; corrected est=283 matches table; conf 0.80 below 0.88 threshold; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,400 exact; rounds to 26k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170→166 (dir-traversal: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; file-enumeration vs README-listing methodology mismatch; mandated methodology for curated-list is README listing per workflow spec; cat09 at 12 (file count) vs Nov 4 COMPLETE 09:16 (README listing); 4 external-link entries in cat09 not stored as local agent files; conf 0.92 for file count but methodology mismatch; Nov 4 COMPLETE at conf 0.93 stands) | INVALID (RECURRING oscillation; methodology mismatch; mandated methodology is README listing for this curated-list repo; Nov 4 COMPLETE 170 at conf 0.93 stands; no confirmed net removals; no change) |
+| 5 | LOW | Sort | Verify sort order (167k > 26k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-08 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
