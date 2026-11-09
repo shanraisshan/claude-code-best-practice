@@ -1323,3 +1323,46 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-09 10:50 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Security Fix | SECURITY: Permission deny rules — `Write(path)`, `NotebookEdit(path)`, and `Glob(path)` do NOT match per official docs; users relying on `deny: ["Write(./secrets/**)"]` have no protection. Added prominent warning box. | COMPLETE (warning added) — NEW |
+| 2 | HIGH | Version Metadata | Update version badge v2.1.296 → v2.1.319; update header counts to "250+ settings / 406+ env vars" | COMPLETE (badge and counts updated) — NEW |
+| 3 | HIGH | Missing Settings | Add 4 new Managed-only keys: `managedSourcesBehavior`, `gatewayInternalNetworks`, `disableDesktopLocalSessions`, `sshHostAllowlist` | COMPLETE (all 4 added) — NEW |
+| 4 | HIGH | Missing Settings | Add 3 new General settings: `enableWorkflows`, `idleCompaction`, `isolatePeerMachines` | COMPLETE (all 3 added) — NEW |
+| 5 | HIGH | Missing Settings | Add 2 new Permission keys: `permissions.blockWritesOutsideWorkingDirectories` (v2.1.314), `permissions.denyInsteadOfPrompting` (v2.1.319) | COMPLETE (both added) — NEW |
+| 6 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (v2.1.305) and `sandbox.ripgrep` to Sandbox section | COMPLETE (both added) — NEW |
+| 7 | HIGH | Missing Settings | Add `worktree.location` to Workspace/Teams section | COMPLETE (added) — NEW |
+| 8 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` to Permissions section | COMPLETE (added) — NEW |
+| 9 | HIGH | Missing Settings | Add `sshHostCommands` to Workspace/Teams section | COMPLETE (added) — NEW |
+| 10 | HIGH | Missing Env Vars | Add 18 new env vars from v2.1.299–v2.1.319: `CLAUDE_CODE_DISABLE_WORKSPACES`, `CLAUDE_CODE_ISOLATED_PEERS`, `CLAUDE_CODE_WORKTREE_DIR`, `CLAUDE_CODE_BACKGROUND_HEARTBEAT_MS`, `CLAUDE_CODE_BACKGROUND_IDLE_TIMEOUT_MS`, `CLAUDE_CODE_STREAMED_ADD_TIMEOUT_MS`, `CLAUDE_CODE_TASK_OUTPUT_MAX_BYTES`, `CLAUDE_CODE_GATEWAY_INTERNAL_NETWORKS`, `CLAUDE_CODE_MCP_SSE_TIMEOUT_MS`, `CLAUDE_CODE_DISABLE_SANDBOX_VIOLATIONS_NOTIFICATION`, `CLAUDE_CODE_DESKTOP_SESSION_CLEANUP_PERIOD_DAYS`, `CLAUDE_CODE_SHARED_ORCHESTRATOR_PORT`, `CLAUDE_CODE_SHARED_ORCHESTRATOR_TOKEN`, `CLAUDE_CODE_GIT_WORKTREE_LOCATION`, `CLAUDE_CODE_BROWSER_TIMEOUT_MS`, `CLAUDE_CODE_SKILLS_SYNC_INTERVAL_MS`, `CLAUDE_CODE_PLUGINS_SYNC_INTERVAL_MS`, `CLAUDE_CODE_DENY_INSTEAD_OF_PROMPT` | COMPLETE (all 18 added) — NEW |
+| 11 | HIGH | Wrong Type | Fix `sandbox.credentials.awsPairs`: was described as object; officially an array of `{accessKeyId, secretAccessKey, sessionToken?}` pairs | COMPLETE (type fixed to array) — NEW |
+| 12 | HIGH | Wrong Shape | Fix `modelPicker`: was described as array; officially an object with `options` array and optional `replaceBuiltInOptions` boolean | COMPLETE (shape corrected) — NEW |
+| 13 | HIGH | Wrong Semantics | Fix `advisorModel`: was "when unset uses session model"; officially when unset the advisor is off (not just inheriting the session model) | COMPLETE (semantics corrected) — NEW |
+| 14 | HIGH | Removed Setting | Mark `dynamicWorkflowSize` as REMOVED (deprecated in v2.1.219 by `workflowSizeGuideline`) | COMPLETE (marked REMOVED) — NEW |
+| 15 | HIGH | Removed Setting | Remove `thinkingBudgetTokens` from report — unverified for 5+ runs; not on official page or JSON schema (Rule 10B escalation) | COMPLETE (removed) — NEW |
+| 16 | HIGH | Quick Reference | Remove invalid `mcpServers` block from Quick Reference example (not a settings.json key) | COMPLETE (removed) — NEW |
+| 17 | HIGH | Wrong Values | Fix `allowedProviders` list: was 4 providers; now 8 (`anthropic`, `bedrock`, `vertex`, `gateway`, `google`, `openai`, `mistral`, `azure_openai`) | COMPLETE (updated) — NEW |
+| 18 | MED | Wrong Description | Fix `autoContinueAtUsageLimit`: was missing default and scope; default `true`, user/managed only | COMPLETE (corrected) — NEW |
+| 19 | MED | Wrong Description | Fix `desktopSessionCleanupPeriodDays`: was missing default (0 = disabled), minimum, and scope | COMPLETE (corrected) — NEW |
+| 20 | MED | Wrong Description | Fix `effortLevel`: 5.x defaults to `medium` not `low`; corrected version reference | COMPLETE (corrected) — NEW |
+| 21 | MED | Wrong Description | Fix `ultracode`: update for v2.1.284 which made it a separate persistent boolean | COMPLETE (updated) — NEW |
+| 22 | MED | Wrong Description | Fix `axScreenReader`: added scope restriction (user/managed/--settings only, v2.1.307); added `terminalTitleFromRename` | COMPLETE (updated) — NEW |
+| 23 | MED | Wrong Description | Fix `diffTool`: was described as external command path; officially `auto` or `terminal` mode selector | COMPLETE (corrected) — NEW |
+| 24 | MED | Wrong Description | Fix `deniedMcpServers`: added v2.1.318 URL behavior note (URL entries now trigger HTTP check) | COMPLETE (updated) — NEW |
+| 25 | MED | Wrong Scope | Fix `forceLoginMethod`: was restricted; officially any file | COMPLETE (scope corrected) — NEW |
+| 26 | MED | Wrong Scope | Fix `forceLoginGatewayUrl`: was "Any file"; officially user or managed only | COMPLETE (scope corrected) — NEW |
+| 27 | MED | Wrong Env Var | Fix `CLAUDE_CODE_EFFORT_LEVEL`: removed invalid `auto` value; valid values are `low`, `medium`, `high`, `max`, `xhigh` | COMPLETE (corrected) — NEW |
+| 28 | MED | Wrong Env Var | Fix `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`: marked no-op since v2.1.224 (limit removed) | COMPLETE (marked no-op) — NEW |
+| 29 | MED | Wrong Env Var | Add v2.1.319 restriction note to `CLAUDE_CODE_PROXY_RESOLVES_HOSTS` | COMPLETE (note added) — NEW |
+| 30 | MED | Wrong Env Var | Fix `FORCE_HYPERLINK`: add that `false` turns off forced hyperlinks (v2.1.314) | COMPLETE (added) — NEW |
+| 31 | MED | Wrong Env Var | Fix `DISABLE_COMPACT`: add v2.1.311 behavior change note | COMPLETE (added) — NEW |
+| 32 | MED | Wrong Description | Fix `spinnerTipsOverride`: updated with new fields (`tipsFile`, `label`, `tip` objects) | COMPLETE (updated) — NEW |
+| 33 | MED | Managed Tier | Add `managedSourcesBehavior` reference to merge description; add any-scope precedence paragraph to union keys | COMPLETE (updated) — NEW |
+| 34 | MED | Sources | Update "~180 keys" → "~250 keys" in Sources section; add managed-settings link | COMPLETE (updated) — NEW |
+| 35 | MED | keybindingFlavor | Mark `keybindingFlavor` as DEPRECATED (has no effect in current versions) | COMPLETE (marked) — NEW |
+| 36 | LOW | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (acceptable gap — references are illustrative, not exhaustive) — RECURRING (first seen: 2026-10-13) |
