@@ -1606,3 +1606,14 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
 
 _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 07 → Nov 08, 2026._
+
+---
+
+## [2026-11-09 11:10 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/advisor` — clarify that in non-interactive and Remote Control sessions you can pass a model name or `off` as an argument (not only print current state); requires v2.1.260 or later | ✅ COMPLETE (added "pass a model name or `off` to change it" to the non-interactive/RC sentence) |
+| 2 | LOW | Changed Description | Update `/rename` — docs note that the control-character replacement and 200-character cap apply from every rename surface, including claude.ai and the Claude Code desktop app | ✅ COMPLETE (appended multi-surface note to description) |
+| 3 | LOW | Changed Description | Update `/heapdump` — docs say outright not to share the `.heapsnapshot` file; strengthen phrasing from "Share only…" to "Do not share…" | ✅ COMPLETE (rephrased to lead with "Do not share the .heapsnapshot file") |
+| 4 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
