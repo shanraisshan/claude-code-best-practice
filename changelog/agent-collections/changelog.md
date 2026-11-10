@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-10 08:40 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | msitarzewski/agency-agents ★ 167k → 168k (exact ~167,500; conf 0.85; k-boundary crossed; PR #1253 merged Nov 9 — most recent change; RECURRING star growth) | COMPLETE (updated in table) |
+| 2 | MED | Star | VoltAgent/awesome-claude-code-subagents ★ 26k → 27k (exact ~26,500; conf 0.92; k-boundary crossed; 5 agents added Oct–Nov including motion-director, ponder-auditor, ux-microcopy-reviewer) | COMPLETE (updated in table) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents 283 = 283 (conf 0.85; README hyperlink enumeration across 18 dirs; exact match with table) | INVALID (exact match with table) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 = 170 (conf 0.92; README bullet enumeration; 166 files in repo + 4 external links; exact match with table) | INVALID (exact match with table) |
+| 5 | LOW | Sort | Verify sort order (168k > 27k — stars descending; msitarzewski stays rank 1) | COMPLETE (order preserved) |
+
+---
+
 ## [2026-11-08 08:41 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
