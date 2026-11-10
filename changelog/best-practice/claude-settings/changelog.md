@@ -1323,3 +1323,32 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-10 10:43 AM PKT] Claude Code v2.1.322
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Header Counts | Update header from v2.1.296/244+/396+ to v2.1.322/249+/407+ | ✅ COMPLETE (header updated) — NEW |
+| 2 | HIGH | Model Alias | Fix `fable` alias: "Claude Fable 5.1" → "Claude Fable 5.2 (`claude-fable-5-2`)" per v2.1.321 | ✅ COMPLETE (alias updated) — NEW |
+| 3 | HIGH | Model Alias | Fix `best` alias: "Fable if available, Opus otherwise" → "Uses the same model as `opus`" | ✅ COMPLETE (corrected) — NEW |
+| 4 | HIGH | Wrong Key Name | Fix `permissions.skipDangerousModePermissionPrompt` → top-level `skipDangerousModePermissionPrompt` (not nested under permissions) | ✅ COMPLETE (renamed to top-level) — NEW |
+| 5 | HIGH | Missing Settings | Add `permissions.blockWritesOutsideWorkingDirectories` (v2.1.314) companion to blockReads | ✅ COMPLETE (added) — NEW |
+| 6 | HIGH | Missing Settings | Add `permissions.denyInsteadOfPrompting` (v2.1.319, U/M only) | ✅ COMPLETE (added) — NEW |
+| 7 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (v2.1.305, Linux/WSL2) | ✅ COMPLETE (added) — NEW |
+| 8 | HIGH | Wrong Semantics | Fix `sandbox.excludedCommands`: simple names without wildcards are not matched; require `"git *"` pattern | ✅ COMPLETE (description + examples fixed) — NEW |
+| 9 | HIGH | Missing Env Vars | Add 14 new env vars from v2.1.302–322: `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`, `CLAUDE_CODE_DISABLE_FEATURE_FLAGS`, `CLAUDE_CODE_DISABLE_MCP_TASKS`, `CLAUDE_CODE_LOOP_KEEPALIVE`, `CLAUDE_CODE_PLUGIN_DIR_WATCH`, `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP`, `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_AUTO_MODE_SERVER` | ✅ COMPLETE (all 14 added) — NEW |
+| 10 | HIGH | Quick Reference | Remove `mcpServers` block from Quick Reference example (not a settings.json key; belongs in `.mcp.json` or `~/.claude.json`) | ✅ COMPLETE (removed) — NEW |
+| 11 | HIGH | Quick Reference | Fix `excludedCommands` in Quick Reference example: `["git", "docker"]` → `["git *", "docker *"]` | ✅ COMPLETE (fixed) — NEW |
+| 12 | MED | Missing Settings | Add `managedSourcesBehavior`, `gatewayInternalNetworks`, `disableDesktopLocalSessions` to managed-only keys table | ✅ COMPLETE (added) — NEW |
+| 13 | MED | Missing Settings | Add `idleCompaction` (v2.1.299), `isolatePeerMachines`, `enableWorkflows` to General Settings | ✅ COMPLETE (added) — NEW |
+| 14 | MED | Missing Settings | Add `worktree.location` (User, Desktop SSH) to Worktree Settings | ✅ COMPLETE (added) — NEW |
+| 15 | MED | Missing Settings | Add `skipAutoPermissionPrompt` to Permission Keys | ✅ COMPLETE (added) — NEW |
+| 16 | MED | Settings Hierarchy | Note `managedSourcesBehavior: "merge"` option in hierarchy description | ✅ COMPLETE (added) — NEW |
+| 17 | MED | Permission Mode Note | Add `bypassPermissions` ignored in project/local settings note to `permissions.defaultMode` (v2.1.257) | ✅ COMPLETE (added) — NEW |
+| 18 | MED | Missing Settings | Add `terminalTitleFromRename` to Display Settings | ✅ COMPLETE (added) — NEW |
+| 19 | MED | Missing Settings | Add `copyFullResponse`, `copyOnSelect`, `claudeInChromeDefaultEnabled`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` to Global Config Settings | ✅ COMPLETE (added) — NEW |
+| 20 | MED | Missing Settings | Add `sshHostAllowlist` (Managed/Desktop) and `sshHostCommands` (U/M Desktop) to Workspace & Teams | ✅ COMPLETE (added) — NEW |
+| 21 | MED | Missing Settings | Add `sandbox.ripgrep` (U/M object) to Sandbox Settings | ✅ COMPLETE (added) — NEW |
+| 22 | LOW | Badge Update | Update Last Updated badge to Nov 10, 2026 and version to v2.1.322 | ✅ COMPLETE (badge updated) — NEW |
