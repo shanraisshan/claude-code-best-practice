@@ -1104,6 +1104,29 @@ Tracks drift between the README CONCEPTS table and official Claude Code document
 
 ---
 
+## [2026-11-10 09:41 AM PKT] Claude Code v2.1.322
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Concept (new) | Projects (`/en/claude-projects`) — public beta feature for coordinating parallel cloud sessions; dedicated docs page; Location: `claude.ai/code`, Desktop app; confidence 0.95 | ✅ COMPLETE (auto-applied: Projects row added to Hot table after Claude Code Web; `![beta]` badge included) |
+| 2 | HIGH | Missing Supplementary Link (new) | Mods (`/en/plugins/mods/overview`) — plugin-based UI extensions (panes, bands, toasts) with 9 dedicated docs pages; v2.1.319+; confidence 0.80 | ✅ COMPLETE (auto-applied: `[Mods]` supplementary link added to Plugins row Description column) |
+| 3 | MED | Missing Supplementary Link (new) | Claude Tag (`/en/claude-tag`) — Claude in team Slack channels; distinct from existing Slack integration; confidence 0.75 | ✅ COMPLETE (auto-applied: `[Claude Tag]` supplementary link added to Slack row Description column) |
+| 4 | MED | Changed Concept (new) | Routines renamed to "Cloud Scheduled Tasks" in official docs overview; URL still `routines.md`; existing row name not incorrect but slightly outdated; confidence 0.85 | ⏸️ ON HOLD (renaming would create confusion with existing "Scheduled Tasks" row; URL unchanged; naming decision requires user judgement) |
+| 5 | MED | Stale URL (recurring) | Commands URL `/slash-commands` not in official sitemap (228 pages) — redirects to `/skills`; canonical commands reference is `/en/commands` | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves via redirect; user has chosen to keep as-is across 55+ runs) |
+| 6 | MED | Missing Concept (recurring) | Dedicated + claude-code-guide agents re-flagged Sessions, IDE Integration (VS Code, JetBrains), Desktop App, Output Styles, Permissions, Sandboxing, Headless Mode, Context Window, .claude Directory, Prompt Library, Platforms as missing standalone rows | ❌ INVALID (RECURRING from 2026-03-10 through 2026-06-29; user considers all platform/runtime surfaces covered as Settings/Memory sub-links — not standalone concepts) |
+| 7 | MED | Stale Beta Badge (recurring) | Voice Dictation (`/en/voice-dictation`) — docs page contains NO beta/preview/experimental language; Note box only mentions version requirements (v2.1.69+); may have graduated to GA; confidence 0.65 | ⏸️ ON HOLD (RECURRING from 2026-06-25; below 0.7 auto-apply threshold; requires user review) |
+| 8 | MED | Location Update (recurring) | Bundled Skills Location column lists `/code-review`, `/batch` but official docs (`/en/skills#bundled-skills`) enumerate 8+ bundled skills; confidence 0.70 | ⏸️ ON HOLD (RECURRING from 2026-06-27; which subset to display requires user judgement) |
+| 9 | LOW | Verification | Latest version confirmed v2.1.322 via raw CHANGELOG.md — massive jump from v2.1.195 (~127 versions); major new features: Mods (v2.1.319), Claude Fable 5.2 model (v2.1.321), Fast mode Opus 4.8 deprecated (v2.1.316); Projects confirmed as public beta | ✅ COMPLETE (version verified; badge timestamp bumped in Phase 2.6) |
+| 10 | LOW | Verification | All 48 external CONCEPTS URLs validated against llms.txt sitemap (228 pages, up from 241 in prior run — index reorganized) — only recurring `/slash-commands` redirect flagged; all other URLs resolve correctly; new Projects URL verified live | ✅ COMPLETE (no NEW broken URLs) |
+| 11 | LOW | Verification | All 22+ local badge/link target files validated — `best-practice/` (8 files), `implementation/` (6 files), `reports/`, `.claude/`, `.mcp.json`, `CLAUDE.md`, `orchestration-workflow/` targets all exist | ✅ COMPLETE (no missing local files) |
+| 12 | LOW | Verification | Beta Badge Currency (rule #7) — Ultrareview (research preview), Channels (research preview), No Flicker Mode (research preview), Auto Mode (research preview), Fast Mode (research preview), Advisor (experimental), Computer Use (beta), Agent Teams (beta), Agent View (research preview), Claude Code Web (beta), Routines (beta), Projects (beta, newly added) all confirmed on docs pages; Voice Dictation flagged as potentially stale (see #7) | ✅ COMPLETE (all verified; newly added Projects beta badge confirmed) |
+| 13 | LOW | Verification | Command rename scan (rule #9) — v2.1.311-322 CHANGELOG scanned; no command/skill renames found; partial scan (v2.1.196-310 exceeds fetch limit); `/code-review`, `/code-review ultra`, `/batch`, `/advisor`, `/loop`, `/goal` all current | ✅ COMPLETE (no rename drift in scanned range) |
+| 14 | LOW | Verification | Anchors stable: `#organize-rules-with-clauderules` on /memory, `#eliminate-prompts-with-auto-mode` on /permission-modes, `#bundled-skills` on /skills, `#track-a-running-review` on /ultrareview, `#run-a-bundled-workflow` on /workflows | ✅ COMPLETE (all stable) |
+| 15 | LOW | Verification | Location Column Factual Accuracy (rule #8) — Checkpointing `automatic (file-edit tracking)`, Dynamic Workflows Location, Advisor Location, Artifacts Location, Bundled Skills Location, new Projects Location all verified against official docs | ✅ COMPLETE (Locations accurate) |
+| 16 | LOW | Verification | Both agents cross-check — workflow-concepts-agent (47-row analysis, 80+ feature pages) and claude-code-guide agent (100+ concept sweep) independently flagged Projects (0.95) and Mods (0.80) as missing; both corroborated existing coverage; no contradictions | ✅ COMPLETE (agents aligned; 3 findings auto-applied) |
+
+---
+
 ## [2026-06-30 09:39 AM PKT] Claude Code v2.1.196
 
 | # | Priority | Type | Action | Status |
