@@ -1617,3 +1617,15 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 2 | LOW | Changed Description | Update `/rename` — docs note that the control-character replacement and 200-character cap apply from every rename surface, including claude.ai and the Claude Code desktop app | ✅ COMPLETE (appended multi-surface note to description) |
 | 3 | LOW | Changed Description | Update `/heapdump` — docs say outright not to share the `.heapsnapshot` file; strengthen phrasing from "Share only…" to "Do not share…" | ✅ COMPLETE (rephrased to lead with "Do not share the .heapsnapshot file") |
 | 4 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-10 11:08 AM PKT] Claude Code v2.1.322
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/usage` — add "Behind a Claude apps gateway that tracks spend, shows your spend through the gateway." (matches v2.1.319 changelog entry) | ✅ COMPLETE (gateway spend sentence appended to description at #34 in Context tag) |
+| 2 | LOW | Changed Description | Update `/review` — docs dropped version-history sentence ("Before v2.1.223, /review was a separate command…; from v2.1.186 through v2.1.201…"); trimmed to match current docs | ✅ COMPLETE (history sentence removed from description at #64 in Project tag) |
+| 3 | LOW | Changed Description | Update `/list-agents` — docs dropped version requirement ("Requires Claude Code v2.1.224 or later; earlier versions report Unknown command: /list-agents"); removed to match current docs | ✅ COMPLETE (version requirement removed from description at #88 in Session tag) |
+| 4 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 5 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
