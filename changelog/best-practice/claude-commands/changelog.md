@@ -1120,3 +1120,518 @@ No priority action items — report is fully in sync with official documentation
 | 1 | LOW | Type Correction | Update `allowed-tools` field type from `string` to `string/list` to match official docs and sibling field `disallowed-tools` | ✅ COMPLETE (type column updated; no description or field count change) |
 
 _No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge bumped v2.1.272 → v2.1.273._
+
+---
+
+## [2026-09-17 11:10 AM PKT] Claude Code v2.1.274
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Docs Gap | `/output-style [name]` present in report (row 13, Config tag) but absent from official commands reference table; CHANGELOG v2.1.269 explicitly adds it — docs-vs-changelog conflict | ✋ ON HOLD (keeping row per CHANGELOG sourcing; defer until official docs explicitly include or remove the command) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still tracked). Version badge bumped v2.1.273 → v2.1.274._
+
+---
+
+## [2026-09-18 11:09 AM PKT] Claude Code v2.1.276
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-19 11:10 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/output-style` — docs use `[style]` as the argument placeholder; report uses `[name]` | ✋ ON HOLD (placeholder wording only; below drift threshold — defer to next run) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
+| 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (exact official docs wording not available from raw source; defer to next run for verification) |
+
+---
+
+## [2026-09-20 11:04 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/output-style` — confirmed in official docs: argument placeholder is `[style]` not `[name]`; apply fix (recurring from 2026-09-19 ON HOLD) | ✅ COMPLETE (argument updated from `[name]` to `[style]` at #13 in Config tag) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (official docs page truncated before reaching /status entry; unable to verify exact wording — defer to next run) |
+| 3 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand | ✋ ON HOLD (official docs page truncated before reaching /plugin entry; unable to verify exact wording — defer to next run) |
+
+---
+
+## [2026-09-21 11:13 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/plugin` — v2.1.275 added `--marketplace <source>` flag to `/plugin install` subcommand (ON HOLD from 2026-09-19/20) | ❌ INVALID (agent spot-checked official docs; current description matches docs substance — no `--marketplace` flag present in reference table) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status (ON HOLD from 2026-09-20) | ✋ ON HOLD (agent confirmed official docs table does not yet reflect Auto mode server row; no drift to apply) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge date bumped Sep 20 → Sep 21, 2026._
+
+---
+
+## [2026-09-22 11:10 AM PKT] Claude Code v2.1.278
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Docs Gap Resolved | `/output-style [style]` confirmed present in official commands reference table — closes ON HOLD from 2026-09-17 | ✅ COMPLETE (report row #13 already correct; docs gap is closed) |
+| 2 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (recurring from 2026-09-21 — official docs still do not include Auto mode server row detail) |
+
+_No frontmatter or command drift (20 frontmatter fields, 94 built-in commands still in sync). Version badge date bumped Sep 21 → Sep 22, 2026._
+
+---
+
+## [2026-09-23 11:15 AM PKT] Claude Code v2.1.280
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/feedback [report]` — without an argument, now opens a drafts queue of feedback Claude drafted, where you can review, edit, send, or discard them | ✅ COMPLETE (drafts queue behavior added to description at #36 in Debug tag) |
+| 2 | MED | Changed Description | Update `/bug [report]` — on a third-party provider or without Anthropic credentials, writes a local archive under `~/.claude/feedback-bundles/`; in VS Code, opens the extension's own dialog (v2.1.229+) | ✅ COMPLETE (third-party and VS Code behavior added to description at #35 in Debug tag) |
+| 3 | MED | Changed Description | Update `/heapdump` — hidden from the command menu (type in full); writes to home directory on Linux when no Desktop folder exists; privacy note about `.heapsnapshot` containing conversation and credentials | ✅ COMPLETE (visibility, Linux path, and privacy detail added to description at #37 in Debug tag) |
+| 4 | MED | Changed Description | Update `/import` — not available on Bedrock, Agent Platform (Vertex), Foundry, Claude Platform on AWS, a Claude apps gateway, or with feature-flag fetching turned off | ✅ COMPLETE (availability restrictions added to description at #11 in Config tag) |
+| 5 | MED | Changed Description | Update `/terminal-setup` — Apple Terminal enables Option+Enter for newlines and turns off the audible bell; iTerm2 turns on clipboard access so `/copy` works | ✅ COMPLETE (Apple Terminal and iTerm2 behavior added to description at #22 in Config tag) |
+| 6 | LOW | Changed Description | Update `/output-style [style]` — add "Requires v2.1.269 or later" | ✅ COMPLETE (version requirement added to description at #13 in Config tag) |
+| 7 | LOW | Changed Description | Update `/model [model]` — also works in `-p` mode with a model argument, applying for the current session only (v2.1.205+) | ✅ COMPLETE (non-interactive mode note added to description at #57 in Model tag) |
+| 8 | LOW | Changed Description | Update `/rename [name]` — also works in `-p` mode (v2.1.205+); strips control and invisible characters and caps names at 200 characters (v2.1.221+) | ✅ COMPLETE (non-interactive mode and char-limit details added to description at #89 in Session tag) |
+| 9 | LOW | Changed Description | Update `/usage-credits` — prints the URL when no browser can open, for example over SSH (v2.1.205+) | ✅ COMPLETE (SSH/no-browser URL note added to description at #34 in Context tag) |
+| 10 | LOW | Changed Description | Update `/clear [name]` — the previous conversation can be restored from the rewind menu (v2.1.191+) | ✅ COMPLETE (rewind restore note added to description at #82 in Session tag) |
+| 11 | LOW | Changed Description | Update `/status` — v2.1.278 added "Auto mode server" row showing server-side classifier status | ✋ ON HOLD (recurring from 2026-09-22 — official docs still do not include Auto mode server row detail) |
+
+---
+
+## [2026-09-24 11:13 AM PKT] Claude Code v2.1.281
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-25 11:13 AM PKT] Claude Code v2.1.282
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-26 11:14 AM PKT] Claude Code v2.1.283
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-27 11:14 AM PKT] Claude Code v2.1.283
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-28 11:15 AM PKT] Claude Code v2.1.283
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-09-29 11:15 AM PKT] Claude Code v2.1.284
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/effort` — ultracode changed from an effort level to a toggle (`ultracode [on\|off]`); update signature to `[level\|auto\|status\|ultracode [on\|off]]`; remove `ultracode` from levels list; add toggle behavior description (v2.1.284) | ✅ COMPLETE (signature and description updated at #55 in Model tag) |
+| 2 | LOW | Changed Argument | `/mcp` — added `reconnect all` form in v2.1.284 to retry every failed MCP server at once; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 3 | LOW | Changed Description | `/rate-limit-options` — added to `/help` and command menu for claude.ai subscribers (v2.1.284 changelog); official docs table still says "Doesn't appear in the command menu" | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+
+---
+
+## [2026-09-30 11:15 AM PKT] Claude Code v2.1.285
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/rate-limit-options` — remove "Doesn't appear in the command menu; type it in full." clause; official docs confirmed command now appears in command menu for claude.ai subscribers (resolves ON HOLD from 2026-09-29) | ✅ COMPLETE (clause removed; description matches official docs) |
+
+---
+
+## [2026-10-01 11:14 AM PKT] Claude Code v2.1.286
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/resume` — remove "A still-running background session cannot be resumed from the picker — attach via `claude agents` or stop it first." clause; v2.1.285 reversed this behavior: resuming a running background session now attaches this terminal to it and moves your current conversation to the background | ✅ COMPLETE (clause replaced with new attach behavior description; description matches official docs) |
+
+---
+
+## [2026-10-02 11:13 AM PKT] Claude Code v2.1.287
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/mcp` — docs add non-interactive (`-p`) mode detail: running with no argument prints a text summary of server status (requires v2.1.205+) | ✅ COMPLETE (appended `-p` mode note to description at #47 in Extensions tag) |
+| 2 | LOW | Changed Description | Update `/rename` — docs add two details: (a) if another live session uses the name, Claude Code applies a variant; (b) a name left empty after invisible characters are removed is rejected | ✅ COMPLETE (appended both details to description at #89 in Session tag) |
+| 3 | LOW | Changed Description | `/mcp reconnect all` — v2.1.284 changelog adds `reconnect all` form; official docs argument hint still shows `reconnect <server>` | ✋ ON HOLD (recurring from 2026-09-29 — official docs still show `reconnect <server>` only) |
+
+---
+
+## [2026-10-03 11:13 AM PKT] Claude Code v2.1.288
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Argument | Update `/mcp` — official docs now show `reconnect (<server>\|all)` syntax; add `reconnect all` form to signature and description (resolves ON HOLD from 2026-09-29) | ✅ COMPLETE (signature updated from `reconnect <server>` to `reconnect (<server>\|all)`; description extended with `reconnect all` behavior at #47 in Extensions tag) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (changelog-only — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-04 11:14 AM PKT] Claude Code v2.1.289
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Argument | Update `/review` — add `[--max-findings n\|all\|default]` flag to signature (v2.1.288); `--max-findings` sets a per-run cap on findings reported; choice reused until `default` is passed | ✅ COMPLETE (signature updated at row #63 in Project tag) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-03 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-05 11:14 AM PKT] Claude Code v2.1.289
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-04 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-06 11:14 AM PKT] Claude Code v2.1.291
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-05 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-07 11:14 AM PKT] Claude Code v2.1.292
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-06 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-08 11:14 AM PKT] Claude Code v2.1.294
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-07 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-09 11:13 AM PKT] Claude Code v2.1.295
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-08 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-10 11:14 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-09 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-11 11:14 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/focus` — add Remote Control `[on\|off]` argument hint; add detail that from a Remote Control client, `on`/`off` changes focus view for the current session only without changing the saved selection (requires v2.1.281+); add subagent-count and notification-collapse detail for the tool-call summary; add VS Code extension note | ✅ COMPLETE (signature updated to `/focus [on\|off]`; description expanded at #10 in Config tag) |
+| 2 | LOW | Changed Description | Update `/copy [N]` — picker now also appears when blockquotes are present (v2.1.295: "Added quoted text to the `/copy` picker, so a drafted message copies without its `>` markers"); update "When code blocks are present" to "When code blocks or blockquotes are present" | ✅ COMPLETE (description updated at #41 in Export tag) |
+| 3 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin"; pending `/plugin` dependency | ❌ INVALID (bundled plugin skill — excluded per report's existing scope disclaimer, same as other bundled skills) |
+| 4 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-10 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-12 11:14 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring from 2026-10-11 — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-11 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-13 11:13 AM PKT] Claude Code v2.1.296
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-12 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-14 11:14 AM PKT] Claude Code v2.1.299
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-13 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-15 11:13 AM PKT] Claude Code v2.1.300
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-14 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-17 11:13 AM PKT] Claude Code v2.1.302
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-15 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-18 11:05 AM PKT] Claude Code v2.1.302
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-17 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-19 11:07 AM PKT] Claude Code v2.1.303
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-10-20 11:07 AM PKT] Claude Code v2.1.304
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/schedule [description]` — docs now say "cloud scheduled tasks, formerly routines" and add that you can ask about a scheduled task's recent runs; our description still said "routines" | ✅ COMPLETE (terminology updated and recent-runs detail added) |
+| 2 | LOW | Changed Description | Update `/web-setup` — official docs dropped the sentence "`/schedule` prompts for this automatically if GitHub is not connected" | ✅ COMPLETE (sentence removed from description) |
+| 3 | LOW | Changed Description | Update `/stop` — docs add that it can also stop "the one you send it to as a peek reply" | ✅ COMPLETE (peek-reply context added to description) |
+| 4 | LOW | Changed Description | Update `/upgrade` — docs add "When the browser fails to open, the command shows a sign-in prompt without printing the URL" | ✅ COMPLETE (browser-failure detail added to description) |
+| 5 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 6 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-18 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-21 11:07 AM PKT] Claude Code v2.1.306
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/design-login` — docs now note sign-in is for the standalone Claude Design site at claude.ai/design, which closes on December 14, 2026 | ✅ COMPLETE (closure date and site URL added to description) |
+| 2 | HIGH | Changed Description | Update `/auto-mode-setup` — add Enterprise plan and Claude Console API key support on Bedrock, Vertex, Foundry, Claude apps gateway, and telemetry-disabled sessions (v2.1.283+) | ✅ COMPLETE (description updated from "Pro, Max, or Team" to include Enterprise and cloud provider availability) |
+| 3 | MED | Changed Description | Update `/team-onboarding` — share link is for Team and Enterprise plans only; docs no longer list Pro or Max | ✅ COMPLETE (plan scope narrowed from "Pro, Max, Team, and Enterprise" to "Team and Enterprise") |
+| 4 | LOW | Changed Description | Update `/resume` — add `(requires v2.1.285+)` version note for attaching to a running background session | ✅ COMPLETE (version qualifier added after agent-view note) |
+| 5 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-20 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-22 11:08 AM PKT] Claude Code v2.1.308
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/color` — docs add "When Remote Control is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (`-p`)" | ✅ COMPLETE (Remote Control sync and `-p` mode detail appended to description at #8 in Config tag) |
+| 2 | LOW | Scope Decision | `/design consent` and `/design revoke` — appear in official docs without a Skill marker but are subcommands of `/design` (a bundled Skill); standalone Claude Design closes December 14, 2026 | ❌ INVALID (subcommands of a bundled Skill — excluded per report's existing scope disclaimer, same as other bundled skill subcommands; `/design-login` already covers the Auth tag for this product) |
+| 3 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-21 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-23 11:08 AM PKT] Claude Code v2.1.309
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/config` — fix `/config help` to `/config --help` per official docs | ✅ COMPLETE (updated at row #9 in Config tag) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-22 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-24 11:05 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/auto-mode-setup` — restructure version requirements per updated official docs: Pro/Max/Team need v2.1.228+ (v2.1.233+ on native Windows), Enterprise and Console API keys need v2.1.283+ (no longer grouped with v2.1.228 tier); remove "Also available on Bedrock/Vertex/Foundry…" clause no longer present in docs; add missing-command troubleshooting note | ✅ COMPLETE (description restructured to match official docs) |
+| 2 | LOW | Changed Description | `/autocompact` — v2.1.288 changelog notes setting now saves per model, so each model keeps its own compact window when switching | ✋ ON HOLD (recurring from 2026-10-23 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-25 11:07 AM PKT] Claude Code v2.1.310
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Description Sync | Sync frontmatter field descriptions (16 fields updated: name, description, argument-hint, disable-model-invocation, user-invocable, paths, allowed-tools, disallowed-tools, model, effort, context, agent, background, shell, metadata, hooks) | ✅ COMPLETE (synced all updated field descriptions to match official skills.md frontmatter reference) |
+| 2 | HIGH | Description Sync | Sync command descriptions (43+ commands updated across all tag groups) | ✅ COMPLETE (synced all updated command descriptions to match official commands docs) |
+| 3 | LOW | Scope Decision | `/design consent` and `/design revoke` as separate commands | ❌ INVALID (bundled subcommands of the /design skill, not standalone built-in commands — recurring from 2026-10-22) |
+| 4 | LOW | Changed Description | `/autocompact` per-model saving feature | ✋ ON HOLD (recurring from 2026-10-24 — official docs table not yet updated; defer until docs catch up) |
+
+---
+
+## [2026-10-26 11:07 AM PKT] Claude Code v2.1.310
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-10-27 11:05 AM PKT] Claude Code v2.1.311
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 94 built-in commands).
+
+---
+
+## [2026-10-28 11:06 AM PKT] Claude Code v2.1.312
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/plugin [subcommand]` — docs add that Claude Code can activate a plugin during install; install summary says whether it did or whether to run `/reload-plugins` | ✅ COMPLETE (auto-activation note appended to description at #48 in Extensions tag) |
+| 2 | LOW | Changed Description | Update `/setup-bedrock` — docs say "Hidden from the command menu until `CLAUDE_CODE_USE_BEDROCK=1` is set; type it in full" instead of "Only visible when... is set" | ✅ COMPLETE (wording updated and "type it in full" added at #4 in Auth tag) |
+| 3 | LOW | Changed Description | Update `/setup-vertex` — docs say "Hidden from the command menu until `CLAUDE_CODE_USE_VERTEX=1` is set; type it in full" instead of "Only visible when... is set" | ✅ COMPLETE (wording updated and "type it in full" added at #5 in Auth tag) |
+| 4 | LOW | Changed Description | Update `/config` — drop "From v2.1.181," version qualifier (no longer in docs); add `/config thinking=false` as a third example | ✅ COMPLETE (qualifier removed and thinking=false example added at #9 in Config tag) |
+| 5 | LOW | Changed Description | Update `/keybindings` — docs say "Open your keyboard shortcuts file"; report said "Open or create your keybindings configuration file" | ✅ COMPLETE (description updated at #12 in Config tag) |
+| 6 | LOW | Changed Description | Update `/usage-credits` — docs now say "opens billing settings in your browser"; Team/Enterprise non-billing users "confirm in a dialog that the request notifies their admins" (not "from the CLI instead of opening the browser") | ✅ COMPLETE (description reframed at #34 in Context tag) |
+| 7 | LOW | Changed Description | Update `/effort` — add "on v2.1.205 or later" to "Works in `-p`" version qualifier | ✅ COMPLETE (version qualifier added at #55 in Model tag) |
+| 8 | LOW | Changed Description | Update `/fast` — docs add "Availability in non-interactive mode with `-p` is limited." | ✅ COMPLETE (note appended to description at #56 in Model tag) |
+| 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring from 2026-10-27 — official docs table not yet updated; defer until docs catch up) |
+
+## [2026-10-29 11:08 AM PKT] Claude Code v2.1.312
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/design consent`, `/design revoke` to Auth tag — Grant Claude access to Claude Design (claude.ai/design), or withdraw it; reverses INVALID determinations from 2026-10-22 and 2026-10-25 based on current agent finding that these are standalone built-in commands, not subcommands of the bundled `/design` skill; count updated 94 → 95 | ✅ COMPLETE (added as row #1 in Auth tag; all rows renumbered 1–94 → 2–95) |
+| 2 | MED | Changed Argument | Update `/focus` — revert signature from `/focus [on\|off]` back to plain `/focus`; the `[on\|off]` argument is documented in the description for Remote Control clients only (v2.1.281+), not as a general top-level signature; reverses the signature change applied in the 2026-10-11 run | ✅ COMPLETE (command column updated at row #11 in Config tag; description unchanged) |
+
+---
+
+## [2026-10-30 11:09 AM PKT] Claude Code v2.1.314
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/restart` to Session tag — restart Claude Code and resume session to apply update; Alias: `/update`; missing since v2.1.288; count updated 95 → 96 | ✅ COMPLETE (added as #91 in Session tag between `/rename` and `/resume`; downstream rows 91–95 renumbered 92–96; count heading updated to 96) |
+| 2 | MED | Changed Description | Update `/usage-credits` — reworded to "Configure usage credits, or request them from your admin, when you hit a limit"; Team/Enterprise members send a request from the CLI; URL print note now includes v2.1.205 requirement explicitly | ✅ COMPLETE (description updated at #35 in Context tag) |
+| 3 | MED | Changed Description | Update `/terminal-setup` — remove "Only visible in terminals that need it, like" clause; adopt official imperative wording "Install a Shift+Enter keybinding for newlines in VS Code, Cursor…" | ✅ COMPLETE (description updated at #23 in Config tag) |
+| 4 | MED | Changed Description | Update `/effort` — remove "at the current level", historical v2.1.284 notes ("The `on` and `off` arguments… `Invalid argument`"), and the "Before v2.1.242, Claude Code decided from a feature flag…" sentence | ✅ COMPLETE (description trimmed at #56 in Model tag) |
+| 5 | MED | Changed Description | Update `/model` — simplify "Before v2.1.242, Claude Code decided from a feature flag…" to "Before v2.1.242, it could wait." | ✅ COMPLETE (description updated at #58 in Model tag) |
+| 6 | LOW | Changed Description | Update `/advisor` — "Fable 5 access" → "Fable access"; non-interactive scope reworded to "In a session without an interactive terminal, or over Remote Control" | ✅ COMPLETE (description updated at #55 in Model tag) |
+| 7 | LOW | Changed Description | Update `/artifacts` — drop v2.1.208/v2.1.216 version requirements no longer in official docs | ✅ COMPLETE (version qualifiers removed at #78 in Session tag) |
+| 8 | LOW | Changed Description | Update `/design-login` — add "Sign in with `/design-login` whenever `/design-sync` or `/design consent` tells you to"; "closes on" → "closes by December 14, 2026" | ✅ COMPLETE (description updated at #2 in Auth tag) |
+| 9 | LOW | Changed Description | Update `/insights` — reword to "including which projects you work in, how you use Claude Code, where things go wrong, and features to try" per official docs | ✅ COMPLETE (description updated at #30 in Context tag) |
+| 10 | LOW | Changed Description | Update `/bug` — add "When you are signed in on a first-party connection, the report goes to Anthropic" and "a local archive you forward yourself" | ✅ COMPLETE (description updated at #36 in Debug tag) |
+| 11 | LOW | Changed Description | Update `/fork` — add "except when the copy edits in place" to worktree instruction | ✅ COMPLETE (description updated at #86 in Session tag) |
+| 12 | LOW | Changed Description | Update `/skills` — add "to Claude and the `/` menu" to cycling text; add `--settings` flag to exclusion list | ✅ COMPLETE (description updated at #53 in Extensions tag) |
+| 13 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-10-31 11:05 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Add "Ultra" plan tier to `/privacy-settings` — docs now say "Pro, Max, and Ultra plan subscribers" | ✅ COMPLETE (updated at #17 in Config tag) |
+| 2 | MED | Changed Description | Add "Ultra" plan tier to `/usage` — docs now say "Pro, Max, Ultra, Team, or Enterprise plan" | ✅ COMPLETE (updated at #34 in Context tag) |
+| 3 | MED | Changed Description | Add "Ultra" plan tier to `/restart` — docs now say "Pro, Max, or Ultra plan" | ✅ COMPLETE (updated at #91 in Session tag) |
+| 4 | MED | Changed Description | Add "Ultra" plan tier to `/auto-mode-setup` — docs now say "Pro, Max, Ultra, and Team plans" | ✅ COMPLETE (updated at #8 in Config tag) |
+| 5 | MED | Changed Description | Update `/effort` — docs add `(requires v2.1.284 or later)` qualifier to the `ultracode on`/`ultracode off` arguments | ✅ COMPLETE (qualifier added at #56 in Model tag) |
+| 6 | MED | Changed Description | Update `/install-github-app` — docs add "Walks you through selecting a repo and configuring the integration" | ✅ COMPLETE (added walkthrough sentence at #70 in Remote tag) |
+| 7 | MED | Changed Description | Update `/team-onboarding` — docs add "a teammate can paste as a first message to get set up quickly" | ✅ COMPLETE (added paste-detail at #66 in Project tag) |
+| 8 | LOW | Changed Description | Update `/clear` — docs clarify that restoring from the rewind menu works "in the same Claude Code process, via the previous-session entry" | ✅ COMPLETE (clarification added at #83 in Session tag) |
+| 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-01 11:05 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/ultrareview` — docs now say "Includes 3 free runs on Pro, Max, and Ultra"; report still said "Pro and Max" | ✅ COMPLETE (added "Ultra" to free-runs list at #67 in Project tag) |
+| 2 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-02 11:07 AM PKT] Claude Code v2.1.316
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 1 → Nov 2, 2026._
+
+---
+
+## [2026-11-03 11:05 AM PKT] Claude Code v2.1.317
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge bumped v2.1.316 → v2.1.317._
+
+---
+
+## [2026-11-04 11:06 AM PKT] Claude Code v2.1.318
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/auto-mode-setup` — "Pro, Max, Ultra, and Team plans require v2.1.228..." → "On a Pro, Max, Ultra, or Team plan, requires Claude Code v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API key, requires v2.1.283 or later." | ✅ COMPLETE (description updated at #8 in Config tag) |
+| 2 | LOW | Changed Description | Update `/design-login` — "Signs in to the standalone Claude Design site" → "This sign-in is for the standalone Claude Design site"; add migration guide link | ✅ COMPLETE (description updated at #2 in Auth tag) |
+| 3 | LOW | Changed Description | Update `/permissions` — remove mid-turn sentences ("When you run it while Claude is responding..." and "Before v2.1.234, Claude Code queued..."); only "Alias: `/allowed-tools`" remains | ✅ COMPLETE (description updated at #15 in Config tag) |
+| 4 | LOW | Changed Description | Update `/effort` — inline "(requires v2.1.284 or later)" in `ultracode off` sentence → split to separate sentence "The `on` and `off` arguments require Claude Code v2.1.284 or later. If you run `/effort` while Claude is working, see when the new level starts." | ✅ COMPLETE (description updated at #56 in Model tag) |
+| 5 | LOW | Changed Description | Update `/review` — add "such as `/review 1234`"; "Accepts" → "and takes"; "reuses" → "the review reuses"; add "see Review locally with `/code-review` for the exact rules"; add "listing open PRs to pick from when run with no argument"; "same engine" → "same multi-agent engine" | ✅ COMPLETE (description updated at #64 in Project tag) |
+| 6 | LOW | Changed Description | Update `/team-onboarding` — "and produces a markdown guide" → ". It produces a markdown guide a teammate can paste as a first message to get set up quickly." (split into two sentences) | ✅ COMPLETE (description updated at #66 in Project tag) |
+| 7 | LOW | Changed Description | Update `/install-github-app` — add "To run Claude Code from GitLab pipelines, see GitLab CI/CD." at end | ✅ COMPLETE (description updated at #70 in Remote tag) |
+| 8 | LOW | Changed Description | Update `/clear` — "restore it from the rewind menu (in the same Claude Code process, via the previous-session entry)" → "restore it from the rewind menu's previous-session entry, in the same Claude Code process" | ✅ COMPLETE (description updated at #83 in Session tag) |
+| 9 | LOW | Changed Description | Update `/fork` — "Claude Code instructs the copy to create its own worktree..., except when the copy edits in place (requires...)" → "Except when the copy edits in place, Claude Code instructs it to create a worktree of its own...; the isolation instruction requires..." | ✅ COMPLETE (description updated at #86 in Session tag) |
+| 10 | LOW | Changed Description | Update `/resume` — "Resuming a running background session attaches this terminal to it and moves your current conversation to the background —" → "Resuming one that is still running, from the picker or by ID or name, opens that session: your current conversation moves to the background and this terminal attaches to the running one." | ✅ COMPLETE (description updated at #92 in Session tag) |
+| 11 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-06 11:05 AM PKT] Claude Code v2.1.318
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 04 → Nov 06, 2026._
+
+---
+
+## [2026-11-07 11:04 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge bumped v2.1.318 → v2.1.319._
+
+---
+
+## [2026-11-08 11:04 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 07 → Nov 08, 2026._
+
+---
+
+## [2026-11-09 11:10 AM PKT] Claude Code v2.1.319
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/advisor` — clarify that in non-interactive and Remote Control sessions you can pass a model name or `off` as an argument (not only print current state); requires v2.1.260 or later | ✅ COMPLETE (added "pass a model name or `off` to change it" to the non-interactive/RC sentence) |
+| 2 | LOW | Changed Description | Update `/rename` — docs note that the control-character replacement and 200-character cap apply from every rename surface, including claude.ai and the Claude Code desktop app | ✅ COMPLETE (appended multi-surface note to description) |
+| 3 | LOW | Changed Description | Update `/heapdump` — docs say outright not to share the `.heapsnapshot` file; strengthen phrasing from "Share only…" to "Do not share…" | ✅ COMPLETE (rephrased to lead with "Do not share the .heapsnapshot file") |
+| 4 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-10 11:08 AM PKT] Claude Code v2.1.322
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/usage` — add "Behind a Claude apps gateway that tracks spend, shows your spend through the gateway." (matches v2.1.319 changelog entry) | ✅ COMPLETE (gateway spend sentence appended to description at #34 in Context tag) |
+| 2 | LOW | Changed Description | Update `/review` — docs dropped version-history sentence ("Before v2.1.223, /review was a separate command…; from v2.1.186 through v2.1.201…"); trimmed to match current docs | ✅ COMPLETE (history sentence removed from description at #64 in Project tag) |
+| 3 | LOW | Changed Description | Update `/list-agents` — docs dropped version requirement ("Requires Claude Code v2.1.224 or later; earlier versions report Unknown command: /list-agents"); removed to match current docs | ✅ COMPLETE (version requirement removed from description at #88 in Session tag) |
+| 4 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 5 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-11 11:05 AM PKT] Claude Code v2.1.322
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 96 built-in commands).

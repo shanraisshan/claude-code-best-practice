@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Sep%2016%2C%202026%2010%3A05%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.273-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2011%2C%202026%2010%3A04%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.322-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -25,7 +25,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | `arguments` | string/list | No | Named positional arguments for `$name` substitution in the skill content. Accepts a space-separated string or a YAML list — names map to argument positions in order |
 | `disable-model-invocation` | boolean | No | Set `true` to prevent Claude from automatically invoking this skill |
 | `user-invocable` | boolean | No | Set `false` to hide from the `/` menu — skill becomes background knowledge only, intended for agent preloading |
-| `allowed-tools` | string | No | Tools allowed without permission prompts when this skill is active |
+| `allowed-tools` | string/list | No | Tools allowed without permission prompts when this skill is active |
 | `disallowed-tools` | string/list | No | Tools removed from Claude's available pool while the skill is active (e.g. block `AskUserQuestion` for a background loop). Accepts a space/comma-separated string or YAML list — the restriction clears on the next message |
 | `model` | string | No | Model to use when this skill runs (e.g., `haiku`, `sonnet`, `opus`) |
 | `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `xhigh`, `max`) |
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(18)**
+## ![Official](../!/tags/official.svg) **(25)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -56,13 +56,20 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 9 | `run-skill-generator` | Teaches `/run` and `/verify` how to build and launch the project — records a per-project launch recipe at `.claude/skills/run-<name>/`. Requires v2.1.145 |
 | 10 | `simplify` | Review changed code for cleanup opportunities (reuse, simplification, efficiency, abstraction level), four review agents in parallel. From v2.1.154 it does **not** hunt for correctness bugs — use `/code-review` for that |
 | 11 | `design` | Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as an artifact running a research preview of Claude Design's editor. Where saving is enabled for the account, artboards are edited on the canvas and saved to publish a new version; otherwise view-and-export as PNG or PDF. Requires a session where artifacts are available. Available on the Anthropic API; unavailable on Amazon Bedrock, Google Cloud Agent Platform, and Microsoft Foundry. Introduced v2.1.234 |
-| 12 | `design-sync` | Convert your repo's React design system and upload it to Claude Design — optionally name the design system (e.g., `/design-sync Acme DS`). First-time sync verifies every component and can take hours on large repos. Available on the Anthropic API only (unavailable on Bedrock, Google Cloud Agent Platform, and Microsoft Foundry) |
+| 12 | `design-sync` | Convert your repo's React design system and upload it to Claude Design — optionally name the design system (e.g., `/design-sync Acme DS`). First-time sync verifies every component and can take hours on large repos. Available on the Anthropic API only (unavailable on Bedrock, Google Cloud Agent Platform, and Microsoft Foundry). Standalone Claude Design closes December 14, 2026 |
 | 13 | `dataviz` | Design charts, graphs, and dashboards with a color-palette validator for accessible, consistent visualizations — triggers on requests for any chart, graph, plot, or data visualization in any output medium. Introduced v2.1.198 |
 | 14 | `doctor` | Setup/health checkup for your Claude Code configuration. The one bundled skill exempt from `disableBundledSkills` — stays typable even when that setting is on. Reclassified from a built-in command to a bundled skill in v2.1.205 |
 | 15 | `review` | Fast single-pass, read-only review of a GitHub pull request. For a multi-agent deep dive, use `/code-review <level> <pr#>` instead. From v2.1.186–v2.1.201 used the `/code-review medium` engine; v2.1.202 reverted to a fast single-pass review. Became Skill-tool-invocable in v2.1.108 |
 | 16 | `security-review` | Review the current diff for security vulnerabilities and suggest fixes. Pass `--fix` to apply findings or `--comment` to post them as inline GitHub PR comments. Became Skill-tool-invocable in v2.1.108 |
 | 17 | `workflow-authoring` | Load the reference for writing dynamic workflow scripts: script API, resume behavior, quality patterns, and worked examples. Claude normally loads it on its own before writing a script. Available only when dynamic workflows are enabled. Requires v2.1.248 |
 | 18 | `skill-doctor` | Reports which loaded skills go unused and what each costs in context, so you can prune them. Introduced v2.1.261 |
+| 19 | `update-config` | Configure the Claude Code harness via `settings.json` — describe any settings change (allow a command, set an env var, add a hook) and Claude edits the matching settings file; for simple options like theme or model, use `/config` instead |
+| 20 | `slides` | Make a new presentation as a Claude Slides artifact filled from your brief (e.g., `/slides a quarterly review for the sales team`) |
+| 21 | `artifact-capabilities` | Loads the reference for the runtime capabilities a published artifact can use, such as calling connectors or offering a file download, including which ones your account has. Claude normally loads it on its own before building a page that uses one. Available where artifacts are |
+| 22 | `artifact-diagramming` | Loads diagramming guidance for artifacts: when a diagram helps, what to draw, and how to write inline SVG that stays legible in light and dark themes. Claude normally loads it on its own when a diagram would help in an artifact. Requires v2.1.221+ |
+| 23 | `claude-in-chrome` | Has Claude carry out a task in your browser (test a page, fill a form, read console logs) through Claude in Chrome. Available when Chrome integration is enabled (e.g. `claude --chrome`) |
+| 24 | `artifact-design` | Loads design guidance and fundamentals for published artifact pages — layout, theming, sizing, and prose style. Claude normally loads it on its own before building any artifact. Introduced v2.1.281 |
+| 25 | `plugin-authoring` | Make a mod — a change to Claude's own interface or behaviour, such as a live pane or panel, a band above the prompt, a status line, a toast, a slash command, or a hook on tool calls or prompts. Used to make, change or debug a mod or its hooks module. Requires v2.1.287+ |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 

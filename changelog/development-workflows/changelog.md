@@ -3086,3 +3086,1627 @@
 | 11 | MED | Count | gstack skills 58→53 (agent reports 53 excluding browser-skills/ and openclaw/skills/ subdirectories; volatile baseline established ON HOLD) | ON HOLD (volatile baseline; counting methodology uncertain; revisit if stable across 2+ runs) |
 | 12 | LOW | Count | GSD commands 85→99 (archived repo; agent found 99 via HTML directory listing; consistent with archived state) | ON HOLD (archived repo; count frozen at 85) |
 | 13 | MED | Count | ECC skills 286→292 (agent partial verification: first 100 of 292 confirmed; confidence 0.82) | ON HOLD (volatile baseline; revisit if stable across 2+ runs) |
+
+---
+
+## [2026-09-17 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 287k to 288k | COMPLETE (WebFetch: 287,686 > 287,500 midpoint) |
+| 2 | HIGH | Star | Update Matt Pocock ★ from 263k to 264k | COMPLETE (WebFetch: 263,724 > 263,500 midpoint) |
+| 3 | HIGH | Star | Update Everything Claude Code ★ from 259k to 260k | COMPLETE (WebFetch: ~260,000 > 259,500 midpoint) |
+| 4 | HIGH | Star | Update OpenSpec ★ from 68k to 69k | COMPLETE (WebFetch: 68,619 > 68,500 midpoint) |
+| 5 | HIGH | Star | Update HumanLayer ★ from 11.5k to 11.6k | COMPLETE (WebFetch: 11,554 > 11,550 midpoint) |
+| 6 | MED | Count | Update gstack skills from 58 to 53 | COMPLETE (2nd consecutive: Sep 16 + Sep 17 both show 53) |
+| 7 | MED | Count | Update BMAD-METHOD agents from 5 to 0 | COMPLETE (2nd consecutive: Sep 14 + Sep 17; src/bmm-skills/ removed in restructure) |
+| 8 | LOW | Star | Spec Kit ★ 137k — no change | ON HOLD (WebFetch: 137,418 < 137,500 midpoint) |
+| 9 | LOW | Star | gstack ★ 133k — no change | ON HOLD (WebFetch: 133,375 < 133,500 midpoint) |
+| 10 | LOW | Star | BMAD-METHOD ★ 53k — no change | ON HOLD (WebFetch: 53,111 < 53,500 midpoint) |
+| 11 | LOW | Star | oh-my-claudecode ★ 39.2k — no change | ON HOLD (WebFetch: 39,209 < 39,250 midpoint) |
+| 12 | LOW | Star | Compound Engineering ★ 25.1k — no change | ON HOLD (WebFetch: 25,118 < 25,150 midpoint) |
+| 13 | LOW | Count | OpenSpec skills — 12 vs 7 in table | ON HOLD (alternating pattern across runs; keeping at 7, revisit if stable) |
+| 14 | LOW | Count | BMAD skills 35→19 | ON HOLD (1st consecutive of 19; Sep 16 just applied 29→35; await 2nd run) |
+| 15 | LOW | Count | ECC counts (68a/94c/286s) | ON HOLD (low confidence 0.60 from API failures; keep frozen) |
+| 16 | LOW | Count | GSD commands 85 | ON HOLD (archived repo; stars-don't-fall rule applies) |
+
+---
+
+## [2026-09-18 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★ 137k → 138k | COMPLETE (RECURRING — GitHub MCP API: 137,675 > 137,500 midpoint) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 264k → 265k | COMPLETE (RECURRING — GitHub MCP API: 264,634 > 264,500 midpoint) |
+| 3 | LOW | Star | Superpowers 288k no change (API: 288,195 < 288,500 midpoint) | COMPLETE (verified; no update) |
+| 4 | LOW | Star | GSD 64.6k no change (API: 64,514 < 64,550; archived repo; stars-don't-fall) | COMPLETE (verified; no regression applied) |
+| 5 | LOW | Star | gstack 133k no change (API: 133,488 < 133,500 midpoint) | COMPLETE (verified; no update) |
+| 6 | LOW | Star | OpenSpec 69k, BMAD 53k, omc 39.2k, CE 25.1k, HL 11.6k — no change | COMPLETE (all verified via GitHub MCP) |
+| 7 | MED | Count | OpenSpec skills 7 → 12 (alternating: 12→7→12 across runs) | ON HOLD (oscillating pattern; keep 7; revisit if stable 2+ consecutive) |
+| 8 | MED | Count | BMAD agents 0 → 5 (was confirmed 0 on Sep 17; agent sees 5 again) | ON HOLD (oscillating; keep 0; 2-consecutive rule) |
+| 9 | MED | Count | BMAD skills 35 → 29 (3rd different value: 35 applied Sep 16, 19 proposed Sep 17, 29 today) | ON HOLD (volatile; keep 35; await stability) |
+| 10 | MED | Workflow | BMAD-METHOD: new 9-step workflow proposed (brainstorming→prd→architecture→spec→create-epics-and-stories→sprint-planning→build→code-review→retrospective) | ON HOLD (1st consecutive; volatile repo; keep current 8-step) |
+| 11 | MED | Count | Compound Engineering skills 36 → 35 (oscillating; 35→36 applied Sep 16, back to 35 today) | ON HOLD (oscillating; keep 36; 2-consecutive rule) |
+| 12 | MED | Count | oh-my-claudecode commands 0 → 21 (agent found 21 .md files in commands/; task description assumed 0) | ON HOLD (1st consecutive; 2-consecutive rule before overriding task description assumption) |
+| 13 | MED | Count | oh-my-claudecode skills 39 → 23 (agent found 23 SKILL.md dirs in skills/) | ON HOLD (1st consecutive; 2-consecutive rule) |
+| 14 | LOW | Workflow | gstack: 10-step /office-hours workflow → 8-step spec/autoplan/codex workflow | ON HOLD (1st consecutive; repo very active v1.87.0) |
+| 15 | LOW | Workflow | Matt Pocock Skills: workflow restructured (setup-matt-pocock-skills added; triage added; improve-codebase-architecture removed) | ON HOLD (1st consecutive; keep current 7-step) |
+| 16 | LOW | Workflow | oh-my-claudecode: current team-based 7 steps → omc-setup/deepinit/plan/team/execute/verify/release | ON HOLD (1st consecutive; v5.4.0 confirmed) |
+| 17 | LOW | Workflow | Compound Engineering: ce-brainstorm→ce-plan→ce-work flow → ce-setup/ce-pov/lfg/ce-work/ce-compound flow | ON HOLD (1st consecutive; 178 commits in 30 days) |
+| 18 | LOW | Workflow | HumanLayer: iterate_plan moved before implement_plan; local_review removed | ON HOLD (1st consecutive; repo unchanged since Jun 19 — likely agent interpretation drift) |
+| 19 | LOW | Count | Spec Kit skills 0 → 2 (agent found .github/skills/ with code-review + add-community-extension) | ON HOLD (1st consecutive; non-standard location; 2-consecutive rule) |
+| 20 | LOW | Note | ECC repo (affaan-m/everything-claude-code) confirmed not publicly searchable via GitHub API (MCP returns "resources do not exist") | ON HOLD (keep frozen at 260k; repo URL may have changed) |
+| 21 | LOW | Note | shields.io curl blocked (proxy); WebFetch 503; GitHub MCP search_repositories authoritative for star verification | COMPLETE (RECURRING — MCP method established across all runs) |
+
+---
+
+## [2026-09-19 09:47 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ from 288k to 289k (Agent 1: 288,573; WebFetch: 288.6k > 288,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Everything Claude Code ★ from 260k to 262k (Agent 1: ~262k from web page; WebFetch: 262k — crosses both 260,500 and 261,500 midpoints; +2k jump in 2 days) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update gstack ★ from 133k to 134k (Agent 2: 133,605; WebFetch: 133.6k > 133,500 midpoint) | COMPLETE (NEW — first crossing of 133,500; updated README table) |
+| 4 | HIGH | Star | Update Compound Engineering ★ from 25.1k to 25.2k (Agent 2: 25,154; WebFetch: 25.2k > 25,150 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Count | Update Everything Claude Code skills from 286 to 292 (Agent 1: README explicit "292 reusable skills"; confidence 0.92; Sep 18 was 2nd consecutive README-only but verified; today confirms again) | COMPLETE (RECURRING — 2nd consecutive confirmation applied; updated README table) |
+| 6 | HIGH | Workflow | Update Matt Pocock Skills workflow: add setup-matt-pocock-skills as step 1 (Agent 1: README now leads with /setup-matt-pocock-skills; Sep 18 was 1st consecutive, Sep 19 is 2nd consecutive → APPLY; 8-step workflow: setup-matt-pocock-skills → grill-with-docs → to-spec → to-tickets → implement → tdd(sub) → code-review(sub) → improve-codebase-architecture) | COMPLETE (NEW — 2nd consecutive; updated README table) |
+| 7 | LOW | Star | Matt Pocock Skills 265k no change (Agent 1: 265,335; WebFetch: 265.3k — below 265,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | Spec Kit 138k no change (Agent 1: 137,848; WebFetch: 137.8k — below 138,500 midpoint; consistent with Sep 18 update) | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 69k no change (Agent 2: 69,417; WebFetch: 69.4k — below 69,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD 64.6k no change (Agent 2: 64,502; WebFetch: 64.5k — archived repo; stars-don't-fall; keeping 64.6k) | COMPLETE (RECURRING — no change; archived) |
+| 11 | LOW | Star | BMAD-METHOD 53k no change (Agent 2: 53,198; WebFetch: 53.2k — below 53,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | oh-my-claudecode 39.2k no change (Agent 2: 39,246; WebFetch: 39.2k — below 39,250 midpoint) | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | HumanLayer 11.6k no change (Agent 2: 11,581; WebFetch: 11.6k — no midpoint crossing) | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Count | Superpowers skills 14→15 (Agent 1: v6.4.1 release added diagnosing-superpowers; code search confirmed 15 SKILL.md files) | ON HOLD (NEW — 1st consecutive; despite strong release note evidence, applying 2-consecutive rule; await Sep 20 confirmation) |
+| 15 | LOW | Count | Matt Pocock skills 37→38 (Agent 1: 38 SKILL.md files confirmed; triage + implement-spec added) | ON HOLD (NEW — 1st consecutive; 2-consecutive rule; keeping 37) |
+| 16 | LOW | Count | gstack skills 53→52 (Agent 2: AGENTS.md enumerates 52; was 53 in table) | ON HOLD (NEW — 1st consecutive; count could drop; keeping 53 baseline; await 2nd confirmation) |
+| 17 | LOW | Count | oh-my-claudecode commands 0→21 (Agent 2: 21 .md files in commands/; 2nd consecutive) | ON HOLD (RECURRING — task brief methodology says 0; commands/ dir exists but convention maintained per command file) |
+| 18 | LOW | Count | BMAD agents 0→5 (Agent 2: 5 agent-persona skills in skills/; oscillating across runs) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 19 | LOW | Count | BMAD skills 35→30 (Agent 2: 30 names listed today; likely truncated; prior 35 applied Sep 16) | ON HOLD (RECURRING — volatile; keep 35) |
+| 20 | LOW | Count | OpenSpec skills 7→12 (Agent 2: 12 folders in skills/; oscillating 7→12→7→12 across runs) | ON HOLD (RECURRING — oscillating; keep 7) |
+| 21 | LOW | Count | OpenSpec commands 12→12 (Agent 2: 12 /opsx:* commands; confirmed 12 today; no change) | COMPLETE (RECURRING — confirmed 12; no change) |
+| 22 | LOW | Workflow | gstack workflow change: plan-devex-review replaces design-shotgun/design-html; land-and-deploy added post-ship (Agent 2: spec/codex explicitly "optional power tools, not core steps"; Sep 18 ON HOLD "8-step spec/autoplan/codex" NOT confirmed) | ON HOLD (NEW — 1st consecutive of this plan-devex-review/land-and-deploy variant; keeping current workflow) |
+| 23 | LOW | Workflow | Superpowers: executing-plans added as sibling of subagent-driven-development (Agent 1: v6.4.1 README explicitly shows both paths) | ON HOLD (NEW — 1st consecutive; 2-consecutive rule; keeping current 7-step workflow) |
+| 24 | LOW | Workflow | BMAD-METHOD 9-step workflow (Sep 18 1st consecutive) — NOT confirmed (Agent 2: flexible "start anywhere" approach; not fixed 9-step) | ON HOLD (CANCELLED — 1st consecutive Sep 18 not confirmed today; reverting to RECURRING keep-current) |
+| 25 | LOW | Workflow | oh-my-claudecode omc-setup/deepinit variant (Sep 18 1st consecutive) — NOT confirmed (Agent 2: deep-interview/ralplan/team pipeline confirmed unchanged) | ON HOLD (CANCELLED — not confirmed; keeping current 7-step) |
+| 26 | LOW | Workflow | Compound Engineering ce-setup/ce-pov/lfg variant (Sep 18 1st consecutive) — NOT confirmed (Agent 2: original ce-brainstorm→ce-compound 6-step confirmed) | ON HOLD (CANCELLED — not confirmed; keeping current 6-step) |
+| 27 | LOW | Workflow | HumanLayer iterate_plan reorder (Sep 18 1st consecutive) — NOT confirmed (Agent 2: iterate_plan confirmed AFTER implement_plan; ordering unchanged) | ON HOLD (CANCELLED — not confirmed; keeping current workflow) |
+| 28 | LOW | Sort | Star order after updates: Superpowers 289k > Matt Pocock 265k > ECC 262k > Spec Kit 138k > gstack 134k > agent-skills 89k (OOS) > OpenSpec 69k > GSD 64.6k > BMAD 53k > omc 39.2k > CE 25.2k > HumanLayer 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 29 | LOW | Note | shields.io Bash curl blocked (proxy — empty response; recurring); WebFetch github.com HTML used for all 11 star verifications (authoritative independent check) | COMPLETE (RECURRING — WebFetch verification method authoritative) |
+
+---
+
+## [2026-09-20 09:23 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 265k → 266k (GitHub MCP API: 265,926 > 265,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update OpenSpec ★ 69k → 70k (GitHub MCP API: 69,591 > 69,500 midpoint) | COMPLETE (NEW — updated README table) |
+| 3 | HIGH | Star | Update oh-my-claudecode ★ 39.2k → 39.3k (GitHub MCP API: 39,261 > 39,250 midpoint) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update Superpowers skills 14 → 15 (2nd consecutive; v6.4.1 added diagnosing-superpowers skill; directory listing confirmed) | COMPLETE (NEW — 2nd consecutive applied; updated README table) |
+| 5 | HIGH | Count | Update Matt Pocock skills 37 → 38 (2nd consecutive; triage in engineering + implement-spec in in-progress confirmed) | COMPLETE (NEW — 2nd consecutive applied; updated README table) |
+| 6 | HIGH | Count | Update BMAD-METHOD skills 35 → 30 (2nd consecutive of value 30; structural change confirmed — src/bmm-skills/ and src/core-skills/ removed, consolidated to skills/ root; bmad-preview-ticketing added Sep 18) | COMPLETE (NEW — 2nd consecutive + structural evidence applied; updated README table) |
+| 7 | HIGH | Workflow | Update Superpowers workflow: executing-plans added as step 5 (between subagent-driven-development and test-driven-development); requesting-code-review promoted to top-level (ddf4ff) per v6.4.1 README (2nd consecutive) | COMPLETE (NEW — 2nd consecutive applied; 8-step workflow in README table) |
+| 8 | HIGH | Workflow | Update gstack workflow: /plan-devex-review added (sub-loop, between plan-design-review and plan-eng-review); /land-and-deploy added (top-level, before /retro); reordered plan-design-review before plan-eng-review per agent (2nd consecutive of these two additions) | COMPLETE (NEW — 2nd consecutive applied; 12-step workflow in README table) |
+| 9 | MED | Count | ECC commands 94 → 147 (Agent 1: 147 .md files in root commands/; confidence 0.73) | ON HOLD (NEW — 1st consecutive; low confidence; keep 94) |
+| 10 | MED | Count | gstack skills 53 → 54 (Agent 2: AGENTS.md lists 54 skills; prior ON HOLD 53→52 superseded) | ON HOLD (NEW — 1st consecutive of 54; volatile baseline; keep 53) |
+| 11 | MED | Workflow | BMAD-METHOD: new 8-step pipeline starting with /bmad-prd → /bmad-architecture → /bmad-spec → /bmad-create-epics-and-stories → /bmad-build → /bmad-code-review → /bmad-review → /bmad-retrospective (drops bmad-forge-idea, bmad-product-brief; adds architecture + create-epics-and-stories) | ON HOLD (NEW — 1st consecutive; volatile repo; keep current 8-step) |
+| 12 | MED | Workflow | oh-my-claudecode: new 7-step pipeline /omc-setup → /deepinit → /ralplan → /execute → /verify → /review → /release (replaces current deep-interview/ralplan/team-based pipeline) | ON HOLD (NEW — 1st consecutive of this variant; keep current 7-step) |
+| 13 | MED | Workflow | Spec Kit: constitution step dropped (agent reports 5-step: speckit-specify → speckit-plan → speckit-tasks → speckit-implement → speckit-converge; no /speckit.constitution) | ON HOLD (NEW — 1st consecutive; keep current 6-step with constitution) |
+| 14 | LOW | Star | ECC 262k no change (API blocked — RECURRING; GitHub MCP returns "resources do not exist"; stars-don't-fall; keep 262k) | ON HOLD (RECURRING — API blocked 12th+ run; frozen at 262k) |
+| 15 | LOW | Count | OpenSpec skills 7 → 12 (Agent 2: 12 skill folders; oscillating 7↔12 across runs) | ON HOLD (RECURRING — oscillating; keep 7) |
+| 16 | LOW | Count | oh-my-claudecode commands 0 → 21 (Agent 2: 21 .md files in commands/; 3rd+ consecutive confirmation) | ON HOLD (RECURRING — task brief defines 0; convention maintained; keep 0) |
+| 17 | LOW | Workflow | gstack: /canary added as sub-loop post land-and-deploy (Agent 2: v1.87.0 confirmed; but land-and-deploy itself just applied today) | ON HOLD (NEW — 1st consecutive; canary is new; 2-consecutive rule) |
+| 18 | LOW | Workflow | HumanLayer: new 7-step variant (validate_plan moved post-implement_plan; describe_pr removed; local_review repositioned) — repo deprecated Jun 2026 | ON HOLD (NEW — 1st consecutive; repo deprecated; keep current 8-step) |
+| 19 | LOW | Star | No change: Superpowers 288,887 (<289,500), Spec Kit 137,993 (<138,500), gstack 133,721 (stars-don't-fall 134k), GSD 64,498 (archived; stars-don't-fall 64.6k), BMAD 53,252 (<53,500), CE 25,162 (<25,250), HumanLayer 11,589 (<11,650) | COMPLETE (verified via GitHub MCP live API) |
+| 20 | LOW | Sort | Sort order preserved after updates: 289k > 266k > 262k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k | COMPLETE (no re-sort needed) |
+| 21 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked | COMPLETE (RECURRING — GitHub MCP method established across all runs) |
+
+---
+
+## [2026-09-22 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 289k → 290k (GitHub MCP: 289,784 > 289,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 266k → 267k (GitHub MCP: 267,266 > 266,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update OpenSpec skills 7 → 12 (5+ consecutive runs all finding 12; Agent 2 lists all 12 by name; confidence 0.90; 2-consecutive rule exceeded; prior "oscillating" label no longer valid) | COMPLETE (RESOLVED — updated README table) |
+| 4 | HIGH | Workflow | Update BMAD-METHOD workflow 8-step → 9-step (2nd consecutive: bmad-architecture + bmad-create-epics-and-stories added; bmad-product-brief removed; bmad-walkthrough → bmad-review; bmad-code-review promoted to sub-loop fff3b0; Sep 20 was 1st consecutive) | COMPLETE (RECURRING — 2nd consecutive applied; updated README table) |
+| 5 | LOW | Star | Spec Kit 138k no change (MCP: 138,254 < 138,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | ECC 262k frozen (GitHub MCP API blocked — 14th+ consecutive run; stars-don't-fall; keep 262k) | ON HOLD (RECURRING — API blocked) |
+| 7 | LOW | Star | gstack 134k no change (MCP: 133,875 — above 133,500 midpoint; correctly displays 134k; below 134,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | OpenSpec 70k no change (MCP: 69,786 — above 69,500 midpoint; correctly displays 70k; below 70,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | GSD 64.6k no change (MCP: 64,482; archived repo; stars-don't-fall) | COMPLETE (RECURRING — no change; archived) |
+| 10 | LOW | Star | BMAD 53k no change (MCP: 53,319 < 53,500 midpoint) | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | oh-my-claudecode 39.3k no change (MCP: 39,292 — above 39,250 midpoint; correctly displays 39.3k; below 39,350 midpoint) | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | Compound Engineering 25.2k no change (MCP: 25,196 — above 25,150 midpoint; correctly displays 25.2k; below 25,250 midpoint) | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | HumanLayer 11.6k no change (MCP: 11,595 — above 11,550 midpoint; correctly displays 11.6k; below 11,650 midpoint) | COMPLETE (RECURRING — no change) |
+| 14 | MED | Workflow | Superpowers: executing-plans moved BEFORE subagent-driven-development (step 4 vs 5); subagent-driven-development becomes sub-loop; verification-before-completion added as step 7 sub (Agent 1: 289,784; 9-step reordering; v6.4.1) | ON HOLD (NEW — 1st consecutive of this specific reordering; keep current 8-step) |
+| 15 | MED | Workflow | Matt Pocock Skills: ask-matt replaces setup-matt-pocock-skills as step 1; improve-codebase-architecture removed; code-review from sub (fff3b0) to top (ddf4ff); 7-step pipeline (Agent 1: 267,266) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 16 | MED | Workflow | gstack: simplified to 11-step via autoplan/design-consultation flow — removes plan-ceo-review/plan-design-review/plan-devex-review/plan-eng-review/design-shotgun sub-loops; adds autoplan + design-consultation (Agent 2: 133,875; last push Sep 21) | ON HOLD (NEW — 1st consecutive of this simplified variant; keep current 12-step) |
+| 17 | MED | Workflow | oh-my-claudecode: team/execute/verify/release pattern (6-step) replaces team-plan/team-prd/team-exec/team-verify/team-fix (7-step); skills 39→43 (1st consecutive of 43) | ON HOLD (NEW — 1st consecutive; keep current 7-step; keep skills 39) |
+| 18 | LOW | Workflow | Compound Engineering: ce-work added as sub-loop; ce-commit-push-pr and ce-compound-refresh added (8-step vs current 6-step) | ON HOLD (NEW — 1st consecutive; keep current 6-step) |
+| 19 | LOW | Workflow | HumanLayer: ralph-research replaces /research_codebase; validate-plan becomes sub-loop; /local_review removed (7-step vs current 8-step; repo deprecated Jun 2026) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 20 | LOW | Count | BMAD agents 0→5 (5 persona skills in skills/ confirmed; oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 21 | LOW | Count | GSD agents 33→0, commands 85→67 (archived repo; counts-don't-fall convention; repo now redirects to open-gsd/gsd-core) | ON HOLD (RECURRING — archived; keep 33a/85c) |
+| 22 | LOW | Count | ECC counts frozen (confidence 0.55; API blocked; Agent finds 86 agents ~133 commands 292+ skills; keep 68a/94c/292s) | ON HOLD (RECURRING — low confidence; API blocked) |
+| 23 | LOW | Sort | Sort order after updates: 290k > 267k > 262k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 24 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 14th+ run | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-23 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update ECC ★ 262k → 266k (GitHub MCP API finally accessible; 266k confirmed; previously blocked 14+ consecutive runs) | COMPLETE (RESOLVED — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 267k → 268k (GitHub MCP: 268k range confirmed) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update GSD commands 85 → 97 (Agent 2: 97 .md files in commands/gsd/ confirmed) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update BMAD-METHOD skills 30 → 32 (Agent 2: 32 skill folders; 2 new skills since Sep 20 restructure) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Count | Update oh-my-claudecode skills 39 → 43 (2nd consecutive; Sep 22 was 1st; 4 new skill folders confirmed) | COMPLETE (RECURRING — 2nd consecutive applied; updated README table) |
+| 6 | LOW | Star | Superpowers 290k no change | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | Spec Kit 138k no change | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 134k no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 70k no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD 64.6k no change (archived since Jun 2026; stars-don't-fall; no MCP verification possible) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 11 | LOW | Star | BMAD 53k no change | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | oh-my-claudecode 39.3k no change | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | Compound Engineering 25.2k no change | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Star | HumanLayer 11.6k no change | COMPLETE (RECURRING — no change) |
+| 15 | MED | Workflow | ECC new 7-step proposal, Superpowers 9-step reordering variant, Matt Pocock 7-step, BMAD 11-step expansion, oh-my-claudecode 6-step, GSD 7-step, gstack 8-step condensed, OpenSpec 5-step, HumanLayer 7-step | ON HOLD (RECURRING — all single/first-consecutive; keep current pipelines) |
+| 16 | LOW | Sort | Sort order after updates: 290k > 268k > 266k > 138k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 17 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP authoritative for all star verifications; ECC API unblocked this run after 14+ blocked runs | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-24 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 290k → 291k (GitHub MCP: 290,779 > 290,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 268k → 269k (GitHub MCP: 268,574 > 268,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Count | Update ECC commands 94 → 147 (Agent 1: 147 .md files confirmed; confidence 0.85; Sep 23 found ~133 at 0.55; 2 consecutive runs both finding significantly above 94; v2.2.2 Sep 15 feature additions explain jump) | COMPLETE (RESOLVED — updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ 138k → 139k (GitHub MCP: 138,612 > 138,500 midpoint; v1.0.11 released Sep 24) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count | Update oh-my-claudecode commands 0 → 21 (Agent 2: 21 .md files in commands/ confirmed; task spec said "count is 0 (skills serve as slash commands)" but v5.x added actual command directory; confidence 0.88) | COMPLETE (NEW — updated README table) |
+| 6 | LOW | Star | ECC ★ 266k frozen (GitHub MCP API blocked — 15th+ consecutive run; stars-don't-fall; keep 266k) | ON HOLD (RECURRING — API blocked) |
+| 7 | LOW | Star | No change: gstack 134,042 (<134,500), OpenSpec 70,087 (<70,500), oh-my-claudecode 39,325 (<39,350), CE 25,239 (<25,250), HumanLayer 11,602 (<11,650), BMAD 53,400 (<53,500) | COMPLETE (verified via GitHub MCP live API) |
+| 8 | LOW | Star | GSD 64.6k no change (archived since Jun 2026; stars-don't-fall; keep 64.6k) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 9 | MED | Workflow | Superpowers: new 8-step reordering (executing-plans promoted to step 4; subagent-driven-development absent; receiving-code-review as new sub-loop) — different from Sep 22's 9-step variant | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 8-step) |
+| 10 | MED | Workflow | Matt Pocock: 6-step grill-with-docs-first with new pr skill (vs Sep 22's ask-matt-first 7-step — different variant; pr skill added Sep 17-18) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 11 | MED | Workflow | gstack: 12-step with spec+plan-eng-review+design-consultation, canary, document-release (related to Sep 22's simplified direction but canary/document-release are new additions) | ON HOLD (RECURRING — 2nd consecutive of simplified direction; 1st of this exact 12-step; keep current 12-step) |
+| 12 | LOW | Workflow | BMAD: 10-step with bmad-sprint-planning inserted between bmad-spec and bmad-create-epics-and-stories (different from Sep 23's 11-step expansion) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 9-step) |
+| 13 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (2nd consecutive; Sep 23 was 1st single/first-consecutive; slightly different variant naming) | ON HOLD (RECURRING — 2nd consecutive family but different exact variant; keep current 9-step) |
+| 14 | LOW | Workflow | OpenSpec: 10-step with -change suffix command names (v1.13.x renamed commands; /opsx:new-change, /opsx:apply-change, etc.) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 15 | LOW | Workflow | oh-my-claudecode: 7-step deepinit→plan→team→execute→verify→review→release (different from Sep 22's team/execute/verify/release 6-step; v5.x restructuring with deepinit) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 7-step) |
+| 16 | LOW | Workflow | CE: 8-step with ce-work sub-loop, ce-commit-push-pr, ce-babysit-pr (ce-compound-refresh from Sep 22 replaced by ce-babysit-pr — different exact variant) | ON HOLD (RECURRING — 2nd consecutive of general direction; 1st of this exact 8-step; keep current 6-step) |
+| 17 | LOW | Workflow | HumanLayer: 11-step with human-gate, create_handoff, resume_handoff added (repo deprecated Jun 2026; very different from current 8-step) | ON HOLD (NEW — 1st consecutive; repo deprecated; keep current 8-step) |
+| 18 | LOW | Count | BMAD agents 0→5 (5 persona skills confirmed in skills/; oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 19 | LOW | Count | GSD commands 97→88 (Agent 2 finds 88; archived repo; counts-don't-fall convention; keep 97) | INVALID (counts-don't-fall; archived repo) |
+| 20 | LOW | Sort | Sort order after updates: 291k > 269k > 266k > 139k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.3k > 25.2k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 21 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 15th+ run | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-25 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update ECC ★ from 266k to 267k (HTML: 267,000 > 266,500 midpoint; API blocked 16th+ consecutive run; WebFetch github.com/affaan-m/ECC confirmed) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Compound Engineering ★ from 25.2k to 25.3k (MCP: 25,258 > 25,250 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | LOW | Sort Order | No re-sort needed — stars-descending order preserved: Superpowers 291k > Matt Pocock 269k > ECC 267k > Spec Kit 139k > gstack 134k > agent-skills 89k (OOS) > OpenSpec 70k > GSD 64.6k > BMAD 53k > omc 39.3k > CE 25.3k > HumanLayer 11.6k | COMPLETE (verified; all changes maintain same relative positions) |
+| 4 | LOW | No Change | Superpowers 291k (291,277 < 291,500 midpoint), Matt Pocock 269k (269,179 < 269,500 midpoint), Spec Kit 139k (138,801 < 139,500 midpoint), gstack 134k (134,131 < 134,500 midpoint), OpenSpec 70k (70,250 < 70,500 midpoint — stays 70k despite agent reporting 70.3k), GSD 64.6k (64,462 — archived; stars-don't-fall), BMAD 53k (53,434 < 53,500 midpoint), omc 39.3k (39,345 < 39,350 midpoint), HumanLayer 11.6k (11,605 < 11,650 midpoint) — all stars unchanged | COMPLETE (verified via MCP/WebFetch) |
+| 5 | LOW | Count Verify | ECC agents 68→~100 (Agent 1: ~100 .md files in agents/; README states 68 — outdated; confidence 0.52 overall; count instability persists) | ON HOLD (RECURRING — confidence below 0.90; keeping 68 per established baseline) |
+| 6 | LOW | Count Verify | ECC commands 147→~150 (Agent 1: ~150 .md files in commands/; confidence 0.52 overall; directory count volatile) | ON HOLD (RECURRING — confidence below 0.90; keeping 147 per established baseline) |
+| 7 | LOW | Count Verify | GSD commands 97→99 (Agent 2: 99 .md files via WebFetch directory listing; archived repo since Jun 26 2026; HTML parsing variance) | ON HOLD (RECURRING — archived repo; HTML variance; keeping 97 per established baseline) |
+| 8 | LOW | Count Verify | Spec Kit 10c, Superpowers 15s, Matt Pocock 38s, gstack 53s, OpenSpec 0a/12c/12s, BMAD 0a/0c/32s, omc 19a/21c/43s, CE 0a/1c/36s, HumanLayer 6a/27c/0s, GSD 33a — all confirmed | COMPLETE (RECURRING — no change; all confirmed) |
+| 9 | LOW | Workflow | Spec Kit (6-step constitution→implement), ECC (7-step plan→improve), Superpowers (8-step with different step names), Matt Pocock (6-step without setup-matt-pocock-skills), gstack (10-step condensed), BMAD (9-step with bmad-brainstorming and bmad-walkthrough), omc (5-step deepinit→release), CE (6-step ce-pov→promote), GSD (5-step gsd-planner→gsd-roadmapper), HumanLayer (confirmed matching current 8-step) — all workflow changes proposed | ON HOLD (RECURRING — all 1st-consecutive; no workflow changes applied; established baselines kept) |
+| 10 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); WebFetch github.com HTML used for ECC star verification; MCP GitHub search_repositories used for all other accessible repos; ECC API blocked 16th+ consecutive run — stars-don't-fall rule applied then updated via HTML | COMPLETE (RECURRING — WebFetch/MCP verification method authoritative) |
+
+---
+
+## [2026-09-26 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 291k → 292k (GitHub MCP: 291,714 > 291,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 269k → 270k (GitHub MCP: 269,790 > 269,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 267k → 268k (WebFetch HTML: GitHub shows "Star 268k"; API blocked 17th+ consecutive run) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update oh-my-claudecode ★ 39.3k → 39.4k (GitHub MCP: 39,357 > 39,350 midpoint) | COMPLETE (NEW — updated README table) |
+| 5 | LOW | Star | Spec Kit 138,928 (<139,500 midpoint), gstack 134,223 (<134,500 midpoint), OpenSpec 70,382 (<70,500 midpoint), GSD 64,459 (archived; stars-don't-fall; keep 64.6k), BMAD 53,463 (<53,500 midpoint), CE 25,270 (<25,350 midpoint), HumanLayer 11,608 (<11,650 midpoint) — all no change | COMPLETE (RECURRING — no change; all verified via GitHub MCP) |
+| 6 | LOW | Sort | Sort order after updates: 292k > 270k > 268k > 139k > 134k > 89k(OOS) > 70k > 64.6k > 53k > 39.4k > 25.3k > 11.6k — same relative order | COMPLETE (no re-sort needed) |
+| 7 | LOW | Count | gstack skills 53→54 (Agent 2: 54 root-level directories with SKILL.md; new /deslop-shared-libs skill v1.89.0.0 confirmed in release notes; confidence 0.85) | ON HOLD (NEW — 1st consecutive; keep 53) |
+| 8 | LOW | Count | BMAD skills 32→36 (Agent 2: 30 in skills/ + 6 in web-bundles/; src/bmm-skills/ no longer exists; confidence 0.80) | ON HOLD (NEW — 1st consecutive; repo restructured; keep 32) |
+| 9 | LOW | Count | BMAD agents 0→5 (5 persona skills in skills/ — oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 10 | LOW | Count | oh-my-claudecode commands keep 21 (Agent 2: found 15 .md files in commands/ but reported 0 per task spec; counts-don't-fall; Sep 24 baseline was 21) | INVALID (counts-don't-fall; keep 21) |
+| 11 | LOW | Count | ECC counts frozen (agents 96 vs baseline 68, commands 94 vs baseline 147, skills 292 confirmed; confidence 0.68; API blocked 17th+ run) | ON HOLD (RECURRING — confidence below 0.90; keeping 68a/147c/292s) |
+| 12 | LOW | Count | Spec Kit 10c, Superpowers 0a/0c/15s, Matt Pocock 0a/0c/38s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, GSD 33a/97c/0s, CE 0a/1c/36s, omc 19a/0c/43s (per task spec) — all confirmed | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Workflow | Superpowers 9-step with verification-before-completion+receiving-code-review (v6.4.2 Sep 25; different from Sep 24's 8-step variant), Matt Pocock 8-step with domain-modeling (different from Sep 25's 6-step), Spec Kit 6-step (same as Sep 25), ECC 7-step generic plan→improve, gstack 10-step condensed (different from Sep 25 variant), BMAD 9-step with bmad-correct-course (different from Sep 25), OpenSpec 10-step no -change suffix (different from Sep 24), GSD 8-step without gsd- prefix, HumanLayer 9-step with create-handoff, CE 10-step with ce-ideate+ce-commit+ce-promote+ce-babysit-pr, omc 6-step with autopilot+ralph — all new or different variants | ON HOLD (RECURRING — all 1st-consecutive of exact variants; no workflow changes applied; established baselines kept) |
+| 14 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible repos; ECC API blocked 17th+ consecutive run — WebFetch HTML authoritative for ECC stars | COMPLETE (RECURRING — GitHub MCP + WebFetch method established) |
+
+---
+
+## [2026-09-27 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update BMAD-METHOD ★ 53k → 54k (GitHub MCP: 53,515 > 53,500 midpoint; first crossing since baseline set) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Count | Update gstack skills 53 → 54 (2nd consecutive; Sep 26 was 1st; /deslop-shared-libs confirmed via release notes v1.89.0.0; Agent 2: 54 root-level SKILL.md dirs) | COMPLETE (RECURRING — 2nd consecutive applied; updated README table) |
+| 3 | LOW | Star | Superpowers 291,979 (<292,500 midpoint) — no change; keep 292k | COMPLETE (RECURRING — no change) |
+| 4 | LOW | Star | Matt Pocock Skills 270,319 (<270,500 midpoint) — no change; keep 270k | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | ECC ~268k (API blocked 18th+ consecutive run; WebFetch HTML confirmed 268k) — no change | ON HOLD (RECURRING — API blocked; keep 268k) |
+| 6 | LOW | Star | Spec Kit 139,019 (<139,500 midpoint) — no change; keep 139k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | gstack 134,284 (<134,500 midpoint) — no change; keep 134k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | OpenSpec 70,452 (<70,500 midpoint) — no change; keep 70k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | GSD 64,451 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 10 | LOW | Star | oh-my-claudecode 39,366 (<39,450 midpoint) — no change; keep 39.4k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | Compound Engineering 25,282 (<25,350 midpoint) — no change; keep 25.3k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | HumanLayer 11,615 (<11,650 midpoint) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Count | Spec Kit 0a/10c/0s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Count | Superpowers 0a/0c/15s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 15 | LOW | Count | ECC agents 86 (vs baseline 68; confidence 0.78; README outdated) — hold per low confidence | ON HOLD (RECURRING — low confidence; keep 68a) |
+| 16 | LOW | Count | ECC commands 127 (vs baseline 147; counts-don't-fall applies) | INVALID (counts-don't-fall; keep 147c) |
+| 17 | LOW | Count | ECC skills 292 confirmed — no change | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Count | Matt Pocock skills 29 found (vs baseline 38; 18 engineering + 7 productivity + 4 misc; README self-reports 28) — keep 38 | ON HOLD (NEW — 1st consecutive; count dropped; keep 38) |
+| 19 | LOW | Count | gstack agents 0, commands 0 confirmed — no change | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Count | OpenSpec 0a/12c/12s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Count | GSD 33a confirmed; commands 67 found (vs baseline 97; archived repo; counts-don't-fall) | INVALID (counts-don't-fall; archived; keep 33a/97c) |
+| 22 | LOW | Count | BMAD agents 5 (persona skills in skills/ — oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 23 | LOW | Count | BMAD commands 0 confirmed — no change | COMPLETE (RECURRING — no change) |
+| 24 | LOW | Count | BMAD skills 30 found (vs baseline 32; excluding web-bundles; counts-don't-fall) | ON HOLD (RECURRING — keep 32) |
+| 25 | LOW | Count | CE 0a/1c/36s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 26 | LOW | Count | HumanLayer 6a/27c/0s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 27 | LOW | Count | oh-my-claudecode 19a/21c/43s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 28 | MED | Workflow | Spec Kit: new 8-step adding clarify(sub)+taskstoissues(sub) (v1.0.11-1.0.12; 10 commands confirmed) | ON HOLD (NEW — 1st consecutive; keep current 6-step) |
+| 29 | MED | Workflow | Superpowers: 9-step with receiving-code-review(sub) added between requesting-code-review and finishing-a-development-branch (v6.4.2; no verification-before-completion in today's trace vs Sep 26's variant) | ON HOLD (RECURRING — 2nd consecutive of general 9-step direction but different exact variant; keep current 8-step) |
+| 30 | LOW | Workflow | ECC: 7-step plan→tdd→implement→review→test-coverage→learn-eval→skill-create (different from current 9-step; learn-eval and skill-create new) | ON HOLD (RECURRING — 1st consecutive of this exact variant; keep current 9-step) |
+| 31 | LOW | Workflow | Matt Pocock: 9-step with grill-me(top)→grill-with-docs(sub)→to-spec→to-tickets(sub)→implement→tdd(sub)→code-review→diagnosing-bugs(sub)→improve-codebase-architecture(sub); /pr skill confirmed Sep 17 | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 32 | LOW | Workflow | gstack: 20-step with autoplan+design-consultation+deslop-shared-libs+canary+benchmark+document-release (very different from current 12-step) | ON HOLD (NEW — 1st consecutive of this exact 20-step; keep current 12-step) |
+| 33 | LOW | Workflow | OpenSpec: 12-step with new/update/bulk-archive (very different ordering from current 8-step; v1.13.2 Sep 23) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 34 | LOW | Workflow | GSD: 8-step without gsd-explore (missing /gsd-explore vs current; archived) | ON HOLD (RECURRING — archived; 1st consecutive of this variant; keep current) |
+| 35 | LOW | Workflow | BMAD: 11-step with bmad-prfaq+bmad-walkthrough+bmad-correct-course; removes bmad-create-epics-and-stories+bmad-review | ON HOLD (NEW — 1st consecutive; keep current 9-step) |
+| 36 | LOW | Workflow | CE: 9-step with ce-strategy+ce-sweep+ce-compound-refresh after ce-compound (different from Sep 24's 8-step variant) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 6-step) |
+| 37 | LOW | Workflow | oh-my-claudecode: 10-step deepinit→ultragoal→plan→ralplan(sub)→execute(sub)→verify(sub)→trace(sub)→debug(sub)→review(sub)→release (ultragoal new; trace/debug as explicit sub-loops) | ON HOLD (NEW — 1st consecutive; keep current 7-step) |
+| 38 | LOW | Workflow | HumanLayer: 10-step with create_handoff+resume_handoff; different order from current 8-step (repo deprecated Jun 2026) | ON HOLD (NEW — 1st consecutive of this 10-step variant; keep current 8-step) |
+| 39 | LOW | Sort | Sort order after updates: 292k > 270k > 268k > 139k > 134k > 89k(OOS) > 70k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — same relative order (BMAD 53k→54k stays at position 9) | COMPLETE (no re-sort needed) |
+| 40 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 18th+ consecutive run — WebFetch HTML authoritative for ECC stars | COMPLETE (RECURRING — GitHub MCP + WebFetch method established) |
+
+---
+
+## [2026-09-28 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 270k → 271k (GitHub MCP: 270,796 > 270,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update OpenSpec ★ 70k → 71k (GitHub MCP: 70,508 > 70,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 3 | LOW | Star | Superpowers 292,225 (<292,500 midpoint) — no change; keep 292k | COMPLETE (RECURRING — no change) |
+| 4 | LOW | Star | ECC ~268k (API blocked 20th+ consecutive run; WebFetch HTML confirmed 268k) — no change | ON HOLD (RECURRING — API blocked; keep 268k) |
+| 5 | LOW | Star | Spec Kit 139,157 (<139,500 midpoint) — no change; keep 139k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | gstack 134,354 (<134,500 midpoint) — no change; keep 134k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | GSD archived; stars-don't-fall; keep 64.6k — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 8 | LOW | Star | BMAD 53,561 (<54,000; stars-don't-fall; keep 54k) — no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | oh-my-claudecode 39,383 (<39,450 midpoint) — no change; keep 39.4k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | Compound Engineering 25,304 (<25,350 midpoint) — no change; keep 25.3k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,615 (<11,650 midpoint) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Count | ECC agents 97 (vs baseline 68; conf 0.7) | ON HOLD (RECURRING — confidence below 0.90; keep 68a) |
+| 13 | LOW | Count | ECC commands 97 (vs baseline 147; counts-don't-fall) | INVALID (counts-don't-fall; keep 147c) |
+| 14 | LOW | Count | ECC skills 160+ (vs baseline 292; counts-don't-fall) | INVALID (counts-don't-fall; keep 292s) |
+| 15 | LOW | Count | gstack skills 55 (vs baseline 54; conf 0.65; Agent 2 estimate) | ON HOLD (RECURRING — confidence 0.65 below threshold; keep 54) |
+| 16 | LOW | Count | GSD agents 36 (vs baseline 33; conf 0.78; 1st consecutive; archived) | ON HOLD (NEW — 1st consecutive; archived; keep 33a) |
+| 17 | LOW | Count | GSD commands 89 (vs baseline 97; counts-don't-fall; archived) | INVALID (counts-don't-fall; archived; keep 97c) |
+| 18 | LOW | Count | BMAD agents 5 persona skills (oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 19 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, Matt Pocock 0a/0c/38s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, BMAD 0a/0c/32s, CE 0a/1c/36s, omc 19a/21c/43s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers 10-step with implementer/task-reviewer sub-agents explicit (different from Sep 27's 9-step variant) | ON HOLD (RECURRING — different exact variant; keep current 8-step) |
+| 21 | LOW | Workflow | Matt Pocock 7-step grill-with-docs-first without setup-matt-pocock-skills (different from Sep 27's 9-step) | ON HOLD (RECURRING — different exact variant; keep current 8-step) |
+| 22 | LOW | Workflow | ECC 7-step plan→tdd→implement→code-review→test-coverage→security-scan→learn-eval (different from Sep 27's learn-eval+skill-create variant) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 9-step) |
+| 23 | LOW | Workflow | OpenSpec 5-step explore→propose→review→apply→archive (very condensed vs current 8-step; v1.13.2 ongoing) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 24 | LOW | Workflow | HumanLayer 7-step missing iterate-plan and local-review (different from Sep 27's 10-step; repo deprecated) | ON HOLD (RECURRING — different variant; keep current 8-step) |
+| 25 | LOW | Workflow | GSD 6-step new-project→spec-phase→plan-phase→execute-phase→validate-phase→ship (missing gsd-explore and gsd-review vs current 8-step; archived) | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 26 | LOW | Workflow | gstack 10-step office-hours→autoplan→spec→build→review→qa→ship→land-and-deploy→canary→retro (different from Sep 27's 20-step) | ON HOLD (NEW — 1st consecutive of this 10-step variant; keep current 12-step) |
+| 27 | LOW | Workflow | BMAD 9-step brainstorm→prd→spec→architecture→build→code-review→qa→review→retrospective with qa as sub-loop (different step names and order from current 9-step; Sep 27 had different variant) | ON HOLD (RECURRING — 1st consecutive of this exact variant; keep current 9-step) |
+| 28 | LOW | Workflow | CE 6-step brainstorm→plan→work→simplify-code→code-review→compound — confirmed matching current workflow | COMPLETE (RECURRING — pipeline confirmed matching current) |
+| 29 | LOW | Workflow | oh-my-claudecode 5-step team-plan→team-prd→team-exec→team-verify→team-fix (missing deep-interview/ralplan vs current 7-step; different from Sep 27's 10-step) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 7-step) |
+| 30 | LOW | Sort | Sort order after updates: 292k > 271k > 268k > 139k > 134k > 89k(OOS) > 71k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — same relative order (OpenSpec 70k→71k stays position 7) | COMPLETE (no re-sort needed) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for all 10 accessible star verifications; ECC API blocked 20th+ consecutive run — WebFetch HTML authoritative for ECC stars | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-09-29 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 292k → 293k (GitHub MCP: 292,563 exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 268k → 269k (Agent 1: 269k confirmed via page display) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update agent-skills ★ 89k → 99.7k (GitHub MCP: 99,722 exact — major jump nearing 100k) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update ECC commands 147 → 94 (Agent 1: README stat table confirmed 94; v2.2.2 reorganization — RESOLVED from recurring ON HOLD) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Count | Update GSD commands 97 → 85 (Agent 2: 85 .md files in commands/gsd/ confirmed at time of archival; corrects prior measurement) | COMPLETE (NEW — archived repo correction) |
+| 6 | MED | Count | Update BMAD skills 32 → 30 (Agent 2: 30 skills in skills/ directory; 0.91 confidence; src/bmm-skills/ path no longer exists) | COMPLETE (NEW — updated README table) |
+| 7 | MED | Count | Update oh-my-claudecode commands 21 → 0 (Agent 2: no .claude/commands/ directory; skills serve as slash commands per research spec) | COMPLETE (NEW — corrected counting methodology) |
+| 8 | HIGH | Workflow | Superpowers: removed subagent-driven-development (v6.4.1 executing-plans rebuilt as native inline); added receiving-code-review(sub); using-git-worktrees reclassified as sub-loop | COMPLETE (NEW — v6.4.1+v6.4.2 Sep 2026) |
+| 9 | HIGH | Workflow | ECC: removed e2e-testing(sub) and test-coverage(sub) per v2.2.2 pipeline simplification; renamed ecc:plan → plan | COMPLETE (NEW — v2.2.2 Sep 15 2026) |
+| 10 | HIGH | Workflow | gstack: added /autoplan(top) as step 2 per v1.89.0.0; removed /design-shotgun(sub) and /design-html(sub) | COMPLETE (NEW — v1.89.0.0 Sep 2026) |
+| 11 | HIGH | Workflow | OpenSpec: simplified to 5 steps; removed opsx:onboard, opsx:ff, opsx:sync; renamed apply/verify/archive → apply-change/verify-change/archive-change per v1.13.2 skill naming | COMPLETE (NEW — v1.13.2 Sep 28 2026) |
+| 12 | HIGH | Workflow | GSD: added new-milestone(top) and complete-milestone(top); replaced explore+review+validate-phase with verify-work(sub); execute-phase reclassified as sub-loop | COMPLETE (NEW — archived final state corrected) |
+| 13 | HIGH | Workflow | BMAD: removed bmad-create-epics-and-stories and bmad-retrospective; reordered spec→architecture (was architecture→spec); bmad-build changed from sub to top per SPINE architecture rewrite | COMPLETE (NEW — SPINE rewrite Sep 2026) |
+| 14 | HIGH | Workflow | oh-my-claudecode: added plan(top) and team(top) intermediate steps; replaced ralplan with plan; added release(top) at end per v5.5.0 | COMPLETE (NEW — v5.5.0 Sep 2026) |
+| 15 | HIGH | Workflow | HumanLayer: added linear(top) and ralph_research(top) at start; local_review reclassified as sub-loop and moved before commit; validate_plan and iterate_plan reclassified as sub-loops | COMPLETE (NEW — ralph_research workflow confirmed) |
+| 16 | LOW | Star | Matt Pocock 271,420; Spec Kit 139,295; gstack 134,428; OpenSpec 70,605; BMAD 53,606; omc 39,395; CE 25,316; HumanLayer 11,621 — all within rounding bounds; no change | COMPLETE (RECURRING — no change needed) |
+| 17 | LOW | Sort | Sort order: 293k > 271k > 269k > 139k > 134k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — unchanged; agent-skills 89k→99.7k stays position 6 (OOS) | COMPLETE (no re-sort needed) |
+| 18 | LOW | Note | GitHub MCP search_repositories authoritative for all star verifications; both agents ran in parallel (Agent 1: spec-kit/ECC/superpowers/mattpocock; Agent 2: OpenSpec/HumanLayer/GSD/gstack/BMAD/CE/omc); 15 changes applied to README | COMPLETE (all changes executed) |
+
+---
+
+## [2026-09-30 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 271k → 272k (GitHub MCP: 272,220 > 271,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 269k → 270k (Agent 1 API: 269,709 > 269,500 midpoint; MCP blocked 21st+ consecutive run) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update gstack ★ 134k → 135k (GitHub MCP: 134,526 > 134,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 4 | LOW | Star | Superpowers 293,065 (<293,500 midpoint) — no change; keep 293k | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | Spec Kit 139,462 (<139,500 midpoint) — no change; keep 139k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | OpenSpec 70,712 (<71,000; stars-don't-fall; keep 71k) — no change | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | GSD 64,433 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 8 | LOW | Star | BMAD 53,649 (<54,000; stars-don't-fall; keep 54k) — no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | oh-my-claudecode 39,431 (<39,450 midpoint) — no change; keep 39.4k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | Compound Engineering 25,335 (<25,350 midpoint) — no change; keep 25.3k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,628 (<11,650 midpoint) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Sort | Sort order after updates: 293k > 272k > 270k > 139k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.4k > 25.3k > 11.6k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | Spec Kit 0a/10c/0s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Count | Superpowers 0a/0c/15s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 15 | LOW | Count | Matt Pocock skills 31 found (vs baseline 38; counts-don't-fall; in-progress skills not counted) | ON HOLD (RECURRING — counts-don't-fall; keep 38s) |
+| 16 | LOW | Count | ECC agents 104 (dir) vs 68 (README maintained; conf 0.78) — keep 68a | ON HOLD (RECURRING — confidence below 0.90; keep 68a) |
+| 17 | LOW | Count | ECC commands 127 (dir) vs 94 (README maintained; conf 0.78) — keep 94c | ON HOLD (RECURRING — README maintained count authoritative; keep 94c) |
+| 18 | LOW | Count | ECC skills 293 (README) vs baseline 292 — keep 292s (confidence 0.78; minor diff) | ON HOLD (RECURRING — confidence below 0.90; keep 292s) |
+| 19 | LOW | Count | OpenSpec 0a/12c/12s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Count | HumanLayer 6a/27c/0s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Count | GSD 33a/85c/0s confirmed (67c dir vs baseline 85c; counts-don't-fall; archived) — no change | INVALID (counts-don't-fall; archived; keep 85c) |
+| 22 | LOW | Count | gstack 0a/0c/54s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 23 | LOW | Count | BMAD agents 5 persona skills (oscillating pattern continues) — keep 0a | ON HOLD (RECURRING — oscillating; keep 0) |
+| 24 | LOW | Count | BMAD 0c/30s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 25 | LOW | Count | CE 0a/1c/36s confirmed — no change | COMPLETE (RECURRING — no change) |
+| 26 | LOW | Count | omc 19a confirmed; 21c found in commands/ (methodology says 0 — skills serve as slash commands per research spec); 43s confirmed | INVALID (counting methodology: omc commands=0; keep 0c) |
+| 27 | LOW | Workflow | Superpowers 9-step with subagent-driven-development added back; using-git-worktrees reclassified top (was sub) — different from current 8-step | ON HOLD (RECURRING — 1st consecutive of this exact variant; keep current 8-step) |
+| 28 | LOW | Workflow | Matt Pocock 8-step ending with retro vs improve-codebase-architecture (last step differs) | ON HOLD (RECURRING — 1st consecutive; keep current 8-step) |
+| 29 | LOW | Workflow | ECC 6-step plan→tdd-workflow→code-review→build-fix→quality-gate→santa-loop (different steps from current 7-step) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 7-step) |
+| 30 | LOW | Workflow | Spec Kit 6-step with implement+converge reclassified top (currently yellow sub) | ON HOLD (NEW — 1st consecutive reclassification; keep current 6-step) |
+| 31 | LOW | Workflow | OpenSpec 6-step with new review(sub) step; step names lost -change suffix (opsx:apply vs opsx:apply-change) | ON HOLD (RECURRING — 1st consecutive; keep current 5-step) |
+| 32 | LOW | Workflow | HumanLayer 7-step missing linear+ralph_research at start (vs current 9-step) | ON HOLD (RECURRING — different variant; keep current 9-step) |
+| 33 | LOW | Workflow | GSD 6-step without gsd- prefix, missing new-milestone/complete-milestone/verify-work (archived) | ON HOLD (RECURRING — archived; 1st consecutive of this variant; keep current 8-step) |
+| 34 | LOW | Workflow | gstack 8-step office-hours→plan-eng-review→plan-ceo-review→plan-design-review→review→qa→ship→retro (missing autoplan+land-and-deploy; different sub classifications) | ON HOLD (RECURRING — 1st consecutive; keep current 11-step) |
+| 35 | LOW | Workflow | BMAD 8-step bmad→bmad-prd→bmad-spec→bmad-architecture→bmad-build→bmad-code-review→bmad-qa-generate-e2e-tests→bmad-retrospective (different from current 7-step) | ON HOLD (NEW — 1st consecutive; keep current 7-step) |
+| 36 | LOW | Workflow | CE 6-step confirmed same steps; ce-code-review reclassified sub→top (minor color change) | ON HOLD (NEW — 1st consecutive of ce-code-review reclassification; keep current 6-step) |
+| 37 | LOW | Workflow | oh-my-claudecode 5-step deep-interview→ralplan→autopilot→verify→fix (very different from current 9-step; missing team/team-* steps) | ON HOLD (RECURRING — 1st consecutive of this variant; keep current 9-step) |
+| 38 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 21st+ consecutive run — Agent 1 direct API value used for ECC; 3 star changes applied to README | COMPLETE (RECURRING — GitHub MCP + Agent API method established) |
+
+---
+
+## [2026-10-01 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 293k → 294k (GitHub MCP: 293,521 > 293,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 272k → 273k (GitHub MCP: 273,106 > 272,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update Spec Kit ★ 139k → 140k (GitHub MCP: 139,619 > 139,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Star | Update oh-my-claudecode ★ 39.4k → 39.5k (GitHub MCP: 39,495 > 39,450 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 5 | HIGH | Star | Update Compound Engineering ★ 25.3k → 25.4k (GitHub MCP: 25,351 > 25,350 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 6 | HIGH | Count | Update ECC skills 292 → 293 (Agent 1: 293 from README explicit count, conf 0.92 ≥ 0.90; 2nd consecutive observation; Sep 30 was 1st consecutive ON HOLD at conf 0.78; RESOLVED) | COMPLETE (RECURRING — 2nd consecutive; confidence now ≥ 0.90; updated README table) |
+| 7 | LOW | Star | ECC ~270k (API blocked 22nd+ consecutive run; Agent 1: 270,000 < 270,500 midpoint) — no change | ON HOLD (RECURRING — API blocked; keep 270k) |
+| 8 | LOW | Star | gstack 134,620 (in 135k range 134,500-135,499) — no change; keep 135k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 70,814 (in 71k range 70,500-71,499) — no change; keep 71k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD archived; stars-don't-fall; keep 64.6k — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 11 | LOW | Star | BMAD 53,681 (in 54k range 53,500-54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | HumanLayer 11,639 (<11,650 midpoint) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Sort | Sort order after updates: 294k > 273k > 270k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.5k > 25.4k > 11.6k — same relative positions | COMPLETE (no re-sort needed) |
+| 14 | LOW | Count | gstack skills 55 (Agent 2: 55 root-level SKILL.md dirs; new test-audit skill in v1.91.9.0 Sep 29; conf 0.90) | ON HOLD (NEW — 1st consecutive of 55; Sep 30 confirmed 54; keep 54) |
+| 15 | LOW | Count | BMAD agents 0→5 (5 agent-persona skills in skills/; oscillating pattern continues) | ON HOLD (RECURRING — oscillating; keep 0) |
+| 16 | LOW | Count | BMAD skills 29 (vs baseline 30; counts-don't-fall) | INVALID (counts-don't-fall; keep 30) |
+| 17 | LOW | Count | GSD commands 67 (vs baseline 85; counts-don't-fall; archived) | INVALID (counts-don't-fall; archived; keep 85) |
+| 18 | LOW | Count | Matt Pocock skills 37 (vs baseline 38; v1.3 restructured in-progress folder; counts-don't-fall) | ON HOLD (RECURRING — counts-don't-fall; keep 38) |
+| 19 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, GSD 33a, CE 0a/1c/36s, omc 19a/0c/43s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: 7-step brainstorming→using-git-worktrees(top)→writing-plans→subagent-driven-development(sub)→test-driven-development(sub)→requesting-code-review→finishing-a-development-branch (vs current 8-step; using-git-worktrees top vs sub; no receiving-code-review) | ON HOLD (RECURRING — 1st consecutive of this 7-step variant; Sep 30 had different 9-step variant; keep current 8-step) |
+| 21 | LOW | Workflow | Matt Pocock: 7-step ending with retro (vs current 8-step ending improve-codebase-architecture; tdd missing; v1.3 Sep 29 added retro to workflow) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 22 | LOW | Workflow | ECC: 7-step plan→tdd-workflow(sub)→implement(sub)→code-review→security-scan(sub)→test-coverage(sub)→save-session (implement classified sub vs current top; test-coverage vs current build-fix at step 6) | ON HOLD (NEW — 1st consecutive of this variant; keep current 7-step) |
+| 23 | LOW | Workflow | Spec Kit: 6-step same steps same classifications — CONFIRMED MATCH to current workflow | COMPLETE (RECURRING — no workflow change needed) |
+| 24 | LOW | Workflow | OpenSpec: 6-step explore→propose→apply(top)→verify-change(sub)→continue-change(sub)→archive (v1.14.0; step names lost -change suffix on apply/archive; new continue-change sub-step added) | ON HOLD (RECURRING — 1st consecutive of v1.14.0 naming with continue-change; keep current 5-step) |
+| 25 | LOW | Workflow | GSD: 7-step new-project→discuss-phase→spec-phase→plan-phase→execute-phase→verify-work(sub)→ship (discuss-phase new step 2; execute-phase top vs current sub; missing complete-milestone; archived) | ON HOLD (RECURRING — archived; 1st consecutive of this variant; keep current 8-step) |
+| 26 | LOW | Workflow | gstack: 9-step office-hours→plan-ceo-review(sub)→plan-eng-review(sub)→plan-design-review(sub)→plan-devex-review(sub)→review→qa→ship→retro (missing autoplan and land-and-deploy vs current 11-step) | ON HOLD (NEW — 1st consecutive of this 9-step variant; different from Sep 30's 8-step variant; keep current 11-step) |
+| 27 | LOW | Workflow | BMAD: 9-step forge-idea→prd→architecture→spec→ticket→build→code-review(sub)→correct-course(sub)→retrospective (architecture before spec vs current; bmad-ticket new; correct-course sub; retrospective replaces review) | ON HOLD (NEW — 1st consecutive of this 9-step variant; keep current 7-step) |
+| 28 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound — CONFIRMED MATCH to current workflow | COMPLETE (RECURRING — no workflow change needed) |
+| 29 | LOW | Workflow | HumanLayer: 7-step research_codebase→create_plan→validate_plan(sub)→iterate_plan(sub)→implement_plan→commit→describe_pr (missing linear+ralph_research at start; local_review absent; repo deprecated) | ON HOLD (RECURRING — deprecated; 1st consecutive of this 7-step variant; keep current 9-step) |
+| 30 | LOW | Workflow | oh-my-claudecode: 6-step deep-interview→ralplan→team→execute(sub)→verify(sub)→fix(sub) (ralplan instead of plan; missing team-plan/team-prd/team-exec/team-verify/team-fix/release vs current 9-step) | ON HOLD (RECURRING — 1st consecutive of this 6-step variant; keep current 9-step) |
+| 31 | LOW | Sort | Sort order verified: 294k > 273k > 270k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.5k > 25.4k > 11.6k | COMPLETE (no re-sort needed) |
+| 32 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC API blocked 22nd+ consecutive run — Agent 1 value authoritative for ECC; 6 changes applied to README (5 star + 1 count) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-02 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 273k → 274k (GitHub MCP: 274,039 > 273,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 270k → 271k (Agent 1 web: 271,000 > 270,500 midpoint; MCP blocked 23rd+ consecutive run) | COMPLETE (RECURRING — updated README table) |
+| 3 | LOW | Star | Superpowers 294,042 (in 294k range 293,500–294,499) — no change; keep 294k | COMPLETE (RECURRING — no change) |
+| 4 | LOW | Star | Spec Kit 139,737 (in 140k range 139,500–140,499) — no change; keep 140k | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | gstack 134,722 (in 135k range 134,500–135,499) — no change; keep 135k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | OpenSpec 70,881 (in 71k range 70,500–71,499) — no change; keep 71k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | GSD 64,410 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 8 | LOW | Star | BMAD 53,711 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | omc 39,522 (in 39.5k range 39,450–39,549) — no change; keep 39.5k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | CE 25,361 (in 25.4k range 25,350–25,449) — no change; keep 25.4k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,644 (in 11.6k range 11,550–11,649) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Sort | Sort order after updates: 294k > 274k > 271k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.5k > 25.4k > 11.6k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | gstack skills 55 (2nd consecutive; conf 0.87 < 0.90 threshold) — keep 54s | ON HOLD (RECURRING — confidence below 0.90; keep 54) |
+| 14 | LOW | Count | omc skills 47 (Agent 2: conf 0.95; 1st consecutive of 47 vs baseline 43) — keep 43s | ON HOLD (NEW — 1st consecutive of 47; keep 43) |
+| 15 | LOW | Count | omc commands 21 found in commands/; methodology says 0 (skills serve as slash commands) | INVALID (RECURRING — counting methodology; keep 0c) |
+| 16 | LOW | Count | HumanLayer commands 26 (conf 0.90; counts-don't-fall vs baseline 27) | INVALID (counts-don't-fall; keep 27) |
+| 17 | LOW | Count | ECC agents 68 confirmed; skills 200+ (conf 0.82; counts-don't-fall 293); commands 127+ (conf 0.82; keep 94c) | ON HOLD (RECURRING — confidence below 0.90; keep 68a/94c/293s) |
+| 18 | LOW | Count | GSD agents 38 (conf 0.78; archived; keep 33a); commands 101 (conf 0.78; archived; keep 85c) | ON HOLD (RECURRING — confidence below 0.90; archived; keep 33a/85c) |
+| 19 | LOW | Count | BMAD skills 30 confirmed, agents 0 (5 persona skills — oscillating pattern) — no change | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, OpenSpec 0a/12c/12s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Workflow | Spec Kit: speckit.implement reclassified top (was sub; Oct 1 confirmed MATCH; 1st consecutive of this reclassification) | ON HOLD (NEW — 1st consecutive reclassification; keep current 6-step) |
+| 22 | LOW | Workflow | Superpowers 7-step brainstorming→using-git-worktrees(top)→writing-plans→subagent-driven-development(top)→tdd(sub)→requesting-code-review→finishing-a-development-branch (subagent-driven-development top vs Oct 1 sub; different variant) | ON HOLD (NEW — 1st consecutive of this exact 7-step variant; keep current 8-step) |
+| 23 | LOW | Workflow | Matt Pocock 8-step grill-with-docs→to-spec→to-tickets→triage(sub)→implement→tdd(sub)→code-review(sub)→pr (starts grill-with-docs not setup-matt-pocock-skills; different from current) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 24 | LOW | Workflow | ECC 8-step ecc:plan→tdd-workflow→implement(sub)→code-review→test-coverage(sub)→quality-gate(sub)→security-scan(sub)→save-session (implement sub vs current top; test-coverage vs build-fix at step 6) | ON HOLD (NEW — 1st consecutive of this variant; keep current 7-step) |
+| 25 | LOW | Workflow | OpenSpec 8-step opsx:explore→opsx:propose→opsx:new→opsx:apply(sub)→opsx:continue(sub)→opsx:ff(sub)→opsx:verify(sub)→opsx:archive (new opsx:new+ff steps; different from Oct 1's 6-step variant) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 5-step) |
+| 26 | LOW | Workflow | HumanLayer 9-step ralph_research→create_plan→validate_plan(sub)→iterate_plan(sub)→implement_plan→local_review(sub)→commit→describe_pr→create_handoff (missing /linear; create_handoff added; different from current 9-step) | ON HOLD (NEW — 1st consecutive of this variant; keep current 9-step) |
+| 27 | LOW | Workflow | GSD 7-step new-project→discuss-phase→plan-phase→spec-phase(sub)→execute-phase(sub)→code-review(sub)→ship (archived; missing verify-work+complete-milestone; discuss-phase new) | ON HOLD (RECURRING — archived; 1st consecutive of this 7-step variant; keep current 8-step) |
+| 28 | LOW | Workflow | gstack 8-step office-hours→autoplan→design-shotgun(sub)→design-review(sub)→review(sub)→qa(sub)→ship→retro (design-shotgun+design-review replace 4 plan-*-review steps; missing land-and-deploy; different from Oct 1's 9-step variant) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 11-step) |
+| 29 | LOW | Workflow | BMAD 9-step bmad-brainstorming→bmad-forge-idea→bmad-prd→bmad-architecture→bmad-ticket→bmad-build(sub)→bmad-review(sub)→bmad-correct-course(sub)→bmad-retrospective (bmad-brainstorming added; bmad-ticket renamed from bmad-preview-ticketing; different from Oct 1's variant) | ON HOLD (NEW — 1st consecutive of this variant; keep current 7-step) |
+| 30 | LOW | Workflow | CE 6-step: ce-work reclassified sub (was top in current table; Oct 1 confirmed MATCH) | ON HOLD (NEW — 1st consecutive of ce-work sub reclassification; keep current 6-step) |
+| 31 | LOW | Workflow | omc 8-step omc-setup→deep-interview→team→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) (omc-setup added; plan→deep-interview; release missing) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 9-step) |
+| 32 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 23rd+ consecutive run — Agent 1 web page authoritative for ECC; 2 star changes applied to README (Matt Pocock 273k→274k; ECC 270k→271k) | COMPLETE (RECURRING — GitHub MCP + web page method established) |
+
+---
+
+## [2026-10-03 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 294k → 295k (GitHub MCP: 294,521 ≥ 294,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 274k → 275k (GitHub MCP: 274,797 ≥ 274,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 3 | LOW | Star | ECC ~271k (API blocked 24th+ consecutive run; keep 271k) — no change | ON HOLD (RECURRING — API blocked; keep 271k) |
+| 4 | LOW | Star | Spec Kit 139,872 (in 140k range 139,500–140,499) — no change; keep 140k | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | gstack 134,813 (in 135k range 134,500–135,499) — no change; keep 135k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | OpenSpec 70,942 (in 71k range 70,500–71,499) — no change; keep 71k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | GSD 64,392 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 8 | LOW | Star | BMAD 53,743 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | omc 39,542 (in 39.5k range 39,450–39,549) — no change; keep 39.5k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | CE 25,374 (in 25.4k range 25,350–25,449) — no change; keep 25.4k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,646 (in 11.6k range 11,550–11,649) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Sort | Sort order after updates: 295k > 275k > 271k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.5k > 25.4k > 11.6k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | gstack skills ~70 (Agent 2: conf 0.70 < 0.90; Oct 1+2 had 55 at 2nd consecutive but conf <0.90; today different number 70 — chain reset) | ON HOLD (NEW — different value resets chain; conf 0.70; keep 54) |
+| 14 | LOW | Count | omc skills 47 (2nd consecutive; conf 0.80 < 0.90 threshold) — keep 43s | ON HOLD (RECURRING — confidence below 0.90; keep 43) |
+| 15 | LOW | Count | omc commands 21 found in commands/; methodology says 0 (skills serve as slash commands) | INVALID (RECURRING — counting methodology; keep 0c) |
+| 16 | LOW | Count | BMAD agents 5 (agent-persona pattern; oscillating; keep 0a) | INVALID (RECURRING — oscillating; keep 0) |
+| 17 | LOW | Count | ECC commands 141 (Agent 1: conf 0.55 < 0.90; counts-don't-fall vs baseline 94c) | ON HOLD (RECURRING — confidence 0.55 below 0.90; keep 94c) |
+| 18 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, GSD 33a, CE 0a/1c/36s, BMAD 0a/0c/30s — all confirmed | COMPLETE (RECURRING — no change) |
+| 19 | LOW | Workflow | Spec Kit: speckit.implement reclassified top (was sub; 2nd consecutive; conf 0.88 < 0.90 threshold) | ON HOLD (RECURRING — 2nd consecutive but conf below 0.90; keep current 6-step) |
+| 20 | LOW | Workflow | Superpowers 7-step brainstorming→using-git-worktrees(top)→writing-plans(top)→subagent-driven-development(sub)→test-driven-development(sub)→requesting-code-review(top)→finishing-a-development-branch(top) (subagent-driven-development sub vs Oct 2 top; different variant) | ON HOLD (NEW — 1st consecutive of this exact 7-step variant; keep current 8-step) |
+| 21 | LOW | Workflow | Matt Pocock 6-step setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→implement-spec→code-review(sub) (6-step vs current 8-step; different from Oct 2's 8-step variant) | ON HOLD (NEW — 1st consecutive of this 6-step variant; keep current 8-step) |
+| 22 | LOW | Workflow | ECC 7-step ecc-plan→tdd-workflow→implement→code-review→verify→save-session→learn-eval(sub) (conf 0.55; different from current 7-step and Oct 2 variant) | ON HOLD (NEW — 1st consecutive; conf 0.55; keep current 7-step) |
+| 23 | LOW | Workflow | OpenSpec 5-step opsx:explore(top)→opsx:propose(top)→opsx:apply(top)→opsx:verify(sub)→opsx:archive(top) (no -change suffix; apply top vs current sub; different from Oct 2's 8-step variant) | ON HOLD (NEW — 1st consecutive of this 5-step variant; keep current 5-step) |
+| 24 | LOW | Workflow | HumanLayer 7-step research_codebase→create_plan→validate_plan(sub)→implement_plan→iterate_plan(sub)→commit→describe_pr (deprecated; missing linear+ralph_research+local_review; different from Oct 2's 9-step variant) | ON HOLD (NEW — 1st consecutive of this 7-step variant; deprecated; keep current 9-step) |
+| 25 | LOW | Workflow | GSD 8-step new-project→spec-phase→plan-phase→mvp-phase→execute-phase(sub)→code-review(sub)→verify-work(sub)→ship (archived; mvp-phase new; code-review added; different from Oct 2's 7-step variant) | ON HOLD (NEW — 1st consecutive of this 8-step variant; archived; keep current 8-step) |
+| 26 | LOW | Workflow | gstack 10-step office-hours→plan-ceo-review(top)→plan-eng-review(sub)→plan-design-review(sub)→spec(top)→review(sub)→qa(sub)→ship(top)→land-and-deploy(top)→retro(top) (missing autoplan; spec added; different from Oct 2's 8-step variant) | ON HOLD (NEW — 1st consecutive of this 10-step variant; keep current 11-step) |
+| 27 | LOW | Workflow | BMAD 8-step bmad-forge-idea→bmad-prd→bmad-architecture→bmad-spec→bmad-build(sub)→bmad-code-review(sub)→bmad-review→bmad-retrospective (architecture before spec; retrospective added; different from Oct 2's 9-step variant) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 7-step) |
+| 28 | LOW | Workflow | CE 7-step ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound(top)→ce-commit-push-pr(top) (ce-commit-push-pr added; ce-work top vs Oct 2 sub; different from current 6-step) | ON HOLD (NEW — 1st consecutive of this 7-step variant; keep current 6-step) |
+| 29 | LOW | Workflow | omc 8-step omc-setup→deep-interview→plan→team→execute(sub)→verify(sub)→release→skillify (skillify added; simplified team-* sub-steps; different from Oct 2's 8-step variant) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 9-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 11 accessible star verifications; ECC MCP blocked 24th+ consecutive run — Agent 1 web page authoritative for ECC; 2 star changes applied to README (Superpowers 294k→295k; Matt Pocock 274k→275k) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-04 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update ECC ★ 271k → 272k (Agent 1 badge: "272k"; GitHub MCP blocked 25th+ consecutive run; upward trend confirmed) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update oh-my-claudecode ★ 39.5k → 39.6k (GitHub MCP: 39,565 ≥ 39,550 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 3 | LOW | Star | Superpowers 294,965 (in 295k range 294,500–295,499) — no change; keep 295k | COMPLETE (RECURRING — no change) |
+| 4 | LOW | Star | Matt Pocock Skills 275,433 (in 275k range 275,000–275,499) — no change; keep 275k | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | Spec Kit 140,027 (in 140k range 139,500–140,499) — no change; keep 140k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | gstack 134,954 (in 135k range 134,500–135,499) — no change; keep 135k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | OpenSpec 70,992 (in 71k range 70,500–71,499) — no change; keep 71k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | GSD 64,384 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 9 | LOW | Star | BMAD 53,761 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | CE 25,383 (in 25.4k range 25,350–25,449) — no change; keep 25.4k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,645 (in 11.6k range 11,550–11,649) — no change; keep 11.6k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Sort | Sort order after updates: 295k > 275k > 272k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.6k > 25.4k > 11.6k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | Matt Pocock skills 37 (vs baseline 38; counts-don't-fall; Agent 1 conf 0.87) | ON HOLD (RECURRING — counts-don't-fall; keep 38) |
+| 14 | LOW | Count | gstack skills 55 (Agent 2: conf 0.95; 1st consecutive after Oct 03 chain reset with value 70) | ON HOLD (NEW — 1st consecutive after chain reset; keep 54) |
+| 15 | LOW | Count | omc skills 47 (Agent 2: conf 0.96; chain Oct 01 conf 0.80 / Oct 02 conf 0.80 / Oct 03 not tracked / Oct 04 conf 0.96) | ON HOLD (RECURRING — confidence below 0.90 in prior chain; keep 43) |
+| 16 | LOW | Count | omc commands 21 found in commands/; methodology says 0 (skills serve as slash commands) | INVALID (RECURRING — counting methodology; keep 0c) |
+| 17 | LOW | Count | ECC commands 146 (Agent 1 conf 0.80; counts-don't-fall vs baseline 94c) | ON HOLD (RECURRING — confidence below 0.90; keep 94c) |
+| 18 | LOW | Count | BMAD agents 5 (agent-persona pattern; oscillating; keep 0a) | INVALID (RECURRING — oscillating; keep 0) |
+| 19 | LOW | Count | OpenSpec commands 10 (vs baseline 12; counts-don't-fall; Agent 2 conf 0.88) | INVALID (RECURRING — counts-don't-fall; keep 12c) |
+| 20 | LOW | Count | GSD commands 93 (Agent 2: conf 0.78; archived; counts-don't-fall vs baseline 85c) | ON HOLD (RECURRING — confidence below 0.90; archived; keep 85c) |
+| 21 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, omc 19a/0c, ECC 68a, BMAD 0a/0c/30s — all confirmed | COMPLETE (RECURRING — no change) |
+| 22 | LOW | Workflow | Superpowers: 7-step brainstorming→using-git-worktrees(top)→writing-plans→executing-plans(top)→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch (executing-plans vs prior subagent-driven-development; 1st consecutive of this exact variant) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 23 | LOW | Workflow | Matt Pocock: 8-step triage(top)→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr→retro (starts with triage not setup/grill-with-docs; different from all Oct 1–3 variants) | ON HOLD (NEW — 1st consecutive of this variant; keep current 8-step) |
+| 24 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (conf 0.80; all top; very different from current 7-step) | ON HOLD (NEW — 1st consecutive; conf 0.80; keep current 7-step) |
+| 25 | LOW | Workflow | Spec Kit: 6-step CONFIRMED MATCH — speckit.constitution/specify/plan/tasks all top; implement/converge sub | COMPLETE (RECURRING — no workflow change needed) |
+| 26 | LOW | Workflow | OpenSpec: 6-step opsx:explore→opsx:propose→opsx:apply(sub)→opsx:verify(sub)→opsx:continue(sub)→opsx:archive (apply sub; no -change suffix; different from Oct 1–3 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 5-step) |
+| 27 | LOW | Workflow | GSD: 8-step new-project→plan-phase→spec-phase(sub)→execute-phase(sub)→validate-phase(sub)→secure-phase(sub)→code-review(sub)→ship (archived; secure-phase+code-review new; different from Oct 1–3 variants) | ON HOLD (NEW — 1st consecutive; archived; keep current 8-step) |
+| 28 | LOW | Workflow | gstack: 8-step office-hours→plan-ceo-review(top)→spec(sub)→autoplan(sub)→review(sub)→qa(sub)→ship→retro (spec new; only 1 plan-*-review; missing land-and-deploy; different from Oct 1–3 variants) | ON HOLD (NEW — 1st consecutive of this variant; keep current 11-step) |
+| 29 | LOW | Workflow | BMAD: 8-step bmad-build(top)→bmad-prd(sub)→bmad-architecture(sub)→bmad-spec(sub)→bmad-build(sub)→bmad-code-review(sub)→bmad-ticket(sub)→bmad-retrospective (starts with bmad-build; ticket added; different from Oct 1–3 variants) | ON HOLD (NEW — 1st consecutive of this variant; keep current 7-step) |
+| 30 | LOW | Workflow | CE: 7-step ce-brainstorm→ce-plan→ce-work(sub)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound→lfg (lfg added at end; ce-work sub; different from current 6-step) | ON HOLD (NEW — 1st consecutive of this lfg variant; keep current 6-step) |
+| 31 | LOW | Workflow | HumanLayer: 7-step research-codebase→create-plan→implement-plan(sub)→iterate-plan(sub)→validate-plan→commit→describe-pr (deprecated; missing linear+ralph_research; different from Oct 1–3 variants) | ON HOLD (RECURRING — deprecated; 1st consecutive of this exact variant; keep current 9-step) |
+| 32 | LOW | Workflow | omc: 6-step deep-interview→ralplan→team(sub)→execute(sub)→verify(sub)→self-improve (ralplan vs plan; team-* sub-steps collapsed; self-improve replaces release; different from Oct 1–3 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 9-step) |
+| 33 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 25th+ consecutive run — Agent 1 badge authoritative for ECC; 2 changes applied to README (ECC 271k→272k; omc 39.5k→39.6k) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-05 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 275k → 276k (GitHub MCP: 276,305 > 275,500 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 272k → 273k (Agent 1 web page: ~273k; MCP blocked 26th+ consecutive run; upward trend confirmed) | COMPLETE (RECURRING — MCP blocked; updated README table) |
+| 3 | HIGH | Star | Update HumanLayer ★ 11.6k → 11.7k (GitHub MCP: 11,654 > 11,650 midpoint; first crossing) | COMPLETE (NEW — updated README table) |
+| 4 | HIGH | Count | Update gstack skills 54 → 55 (2nd consecutive at ≥0.90 conf: Oct 4 conf 0.95, Oct 5 conf 0.92; GitHub MCP 135,201 confirmed no star change) | COMPLETE (RECURRING — 2nd consecutive ≥0.90; updated README table) |
+| 5 | HIGH | Count | Update omc skills 43 → 47 (2nd consecutive at ≥0.90 after low-conf chain reset: Oct 4 conf 0.96, Oct 5 explicit listing of 47 skills confirmed) | COMPLETE (NEW — 2nd consecutive ≥0.90 after low-confidence chain; updated README table) |
+| 6 | LOW | Star | Superpowers 295,330 (in 295k range 294,500–295,499) — no change; keep 295k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | Spec Kit 140,137 (in 140k range 139,500–140,499) — no change; keep 140k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 135,201 (in 135k range 134,500–135,499) — no change; keep 135k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 71,054 (in 71k range 70,500–71,499) — no change; keep 71k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD 64,385 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 11 | LOW | Star | BMAD 53,792 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | omc 39,584 (in 39.6k range 39,550–39,649) — no change; keep 39.6k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | CE 25,391 (in 25.4k range 25,350–25,449) — no change; keep 25.4k | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Sort | Sort order after updates: 295k > 276k > 273k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.6k > 25.4k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 15 | LOW | Count | Matt Pocock skills 31 active + 6 in-progress = 37 (vs baseline 38; counts-don't-fall) | ON HOLD (RECURRING — counts-don't-fall; keep 38) |
+| 16 | LOW | Count | OpenSpec skills 0 (Agent 2: no SKILL.md files; TypeScript CLI tool; vs baseline 12; counts-don't-fall; investigate source of original 12) | ON HOLD (NEW — counts-don't-fall; keep 12) |
+| 17 | LOW | Count | BMAD agents 5 (agent-persona skills in skills/; oscillating pattern) | INVALID (RECURRING — oscillating; keep 0) |
+| 18 | LOW | Count | GSD commands 67 (vs baseline 85; counts-don't-fall; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85) |
+| 19 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, ECC 68a/94c/293s, BMAD 0a/0c/30s, GSD 33a — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Spec Kit: speckit.implement reclassified top (was sub; 1st consecutive after Oct 4 CONFIRMED MATCH to sub; chain reset) | ON HOLD (NEW — 1st consecutive after Oct 4 confirmed match; keep current 6-step) |
+| 21 | LOW | Workflow | Superpowers: 8-step brainstorming→using-git-worktrees(top)→writing-plans→subagent-driven-development(top)→executing-plans(sub)→test-driven-development(sub)→requesting-code-review→finishing-a-development-branch (subagent-driven-development added; receiving-code-review removed; using-git-worktrees top vs current sub) | ON HOLD (NEW — 1st consecutive of this exact 8-step variant; keep current 8-step) |
+| 22 | LOW | Workflow | Matt Pocock: 9-step setup-matt-pocock-skills→grill-me→to-spec→to-tickets→tdd(sub)→implement→code-review(sub)→pr→retro (grill-me vs current grill-with-docs; tdd before implement; pr+retro added; consistent with v1.3) | ON HOLD (NEW — 1st consecutive of this exact 9-step variant; keep current 8-step) |
+| 23 | LOW | Workflow | ECC: 7-step ecc:plan→tdd-workflow(sub)→implement→code-review→security-scan→e2e-testing(sub)→test-coverage (e2e-testing vs current build-fix; test-coverage vs save-session; security-scan top vs current sub) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 7-step) |
+| 24 | LOW | Workflow | OpenSpec: 6-step opsx:explore→opsx:propose→opsx:apply(top)→opsx:update(sub)→opsx:verify(sub)→opsx:archive (apply top vs current sub; opsx:update new sub-loop; no -change suffix; different from Oct 1–4 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 5-step) |
+| 25 | LOW | Workflow | GSD: 8-step new-project→plan-phase→spec-phase→mvp-phase→execute-phase(sub)→review→ship→complete-milestone (archived; mvp-phase added; review vs verify-work; different from Oct 1–4 variants) | ON HOLD (NEW — 1st consecutive; archived; keep current 8-step) |
+| 26 | LOW | Workflow | gstack: 8-step office-hours→autoplan→design-html→review→qa→ship→land-and-deploy→canary (design-html replaces plan-*-review steps; canary replaces retro; all top; different from Oct 1–4 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 11-step) |
+| 27 | LOW | Workflow | BMAD: 8-step bmad-forge-idea→bmad-prd→bmad-spec→bmad-architecture→bmad-build→bmad-review→bmad-correct-course(sub)→bmad-ticket (bmad-ticket new at end; bmad-code-review→bmad-review; bmad-correct-course new sub; different from Oct 1–4 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 7-step) |
+| 28 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(top)→ce-compound (ce-code-review reclassified top vs current sub; same 6 steps; 1st consecutive of this reclassification) | ON HOLD (NEW — 1st consecutive of ce-code-review top reclassification; keep current 6-step) |
+| 29 | LOW | Workflow | HumanLayer: 9-step research_codebase→create_plan→validate_plan(top)→iterate_plan(sub)→implement_plan→local_review→commit→describe_pr→create_handoff (deprecated; research_codebase vs /linear+/ralph_research; create_handoff added; validate_plan top vs current sub) | ON HOLD (NEW — 1st consecutive of this exact variant; deprecated; keep current 9-step) |
+| 30 | LOW | Workflow | omc: 7-step deep-interview→ralplan→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) (no team(top) step; no release; ralplan vs plan; different from Oct 1–4 variants) | ON HOLD (NEW — 1st consecutive of this exact variant; keep current 9-step) |
+| 31 | LOW | Sort | Sort order verified: 295k > 276k > 273k > 140k > 135k > 99.7k(OOS) > 71k > 64.6k > 54k > 39.6k > 25.4k > 11.7k | COMPLETE (no re-sort needed) |
+| 32 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories authoritative for 10 accessible star verifications; ECC MCP blocked 26th+ consecutive run — Agent 1 web page authoritative for ECC; 5 changes applied to README (3 star + 2 count) | COMPLETE (RECURRING — GitHub MCP method established) |
+
+---
+
+## [2026-10-12 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 295k → 298k (Agent 1 HTML: 297.8k ≥ 297,500 midpoint; shields.io + GitHub API proxy-blocked) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 276k → 287k (Agent 1 HTML: 286.5k ≥ 286,500 midpoint; large jump spanning Oct 6–12 gap) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 273k → 277k (Agent 1 HTML: 277.3k; MCP blocked 27th+ consecutive run; upward trend confirmed) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ 140k → 141k (Agent 1 HTML: 140.9k ≥ 140,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update gstack ★ 135k → 136k (Agent 2 API: 136,041 ≥ 135,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Star | Update OpenSpec ★ 71k → 71.7k (Agent 2 API: 71,666 ≥ 71,650 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 7 | HIGH | Star | Update oh-my-claudecode ★ 39.6k → 39.8k (Agent 2 API: 39,798 ≥ 39,750 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 8 | HIGH | Star | Update Compound Engineering ★ 25.4k → 25.5k (Agent 2 API: 25,481 ≥ 25,450 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 9 | LOW | Star | BMAD 54,040 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | HumanLayer 11,687 (in 11.7k range 11,650–11,749) — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD 64,315 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 298k > 287k > 277k > 141k > 136k > 99.7k(OOS) > 71.7k > 64.6k > 54k > 39.8k > 25.5k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC agents 71 / commands 97 / skills 311 (Agent 1: conf 0.93; 1st consecutive after Oct 5 baseline 68a/94c/293s; counts-don't-fall violated for decreases; these are increases) | ON HOLD (NEW — 1st consecutive at conf 0.93; keep 68a/94c/293s) |
+| 14 | LOW | Count | Matt Pocock skills: official README count 27; folder total 38+ — counts-don't-fall; keep 38 | COMPLETE (RECURRING — no change; keep 38) |
+| 15 | LOW | Count | gstack skills 56 (Agent 2: conf 0.88 < 0.90 threshold; chain reset after Oct 5 applied 55) | ON HOLD (NEW — 1st consecutive at conf 0.88 below threshold; keep 55) |
+| 16 | LOW | Count | BMAD skills 33 (Agent 2: conf 0.87 < 0.90; 1st consecutive after Oct 5 baseline 30) | ON HOLD (NEW — 1st consecutive at conf 0.87 below threshold; keep 30) |
+| 17 | LOW | Count | BMAD agents 5 (agent-persona pattern; oscillating) | INVALID (RECURRING — oscillating; keep 0) |
+| 18 | LOW | Count | omc skills 48 (Agent 2: conf 0.92 ≥ 0.90; 1st consecutive after Oct 5 applied 47) | ON HOLD (NEW — 1st consecutive at conf 0.92; keep 47) |
+| 19 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, omc 19a/0c — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: v7.0.0 (Oct 9) — 7-step brainstorming→using-git-worktrees(top)→writing-plans→subagent-driven-development(top)→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch (receiving-code-review removed; subagent-driven-development replaces executing-plans as top-level hub) | ON HOLD (NEW — 1st consecutive of this v7 7-step variant; keep current 8-step) |
+| 21 | LOW | Workflow | Spec Kit: v1.1.3 (Oct 9) — 7-step specify-init(top)→constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) (specify-init new first step; composable workflows feature) | ON HOLD (NEW — 1st consecutive of this 7-step variant; keep current 6-step) |
+| 22 | LOW | Workflow | Matt Pocock: 9-step setup-matt-pocock-skills→grill-me(top)→to-spec→to-tickets→implement→tdd(sub)→code-review(top)→pr(top)→retro (grill-me vs current grill-with-docs; code-review reclassified top; pr+retro added) | ON HOLD (NEW — 1st consecutive of this 9-step variant; keep current 8-step) |
+| 23 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (all top; very different naming from current 7-step) | ON HOLD (NEW — 1st consecutive of this all-top variant; keep current 7-step) |
+| 24 | LOW | Workflow | OpenSpec: 8-step openspec-init(top)→opsx:explore(sub)→opsx:propose→plan-review→opsx:apply→opsx:verify(sub)→opsx:update(sub)→opsx:archive (init+plan-review+update new; different from current 5-step) | ON HOLD (NEW — 1st consecutive of this 8-step variant; keep current 5-step) |
+| 25 | LOW | Workflow | HumanLayer: 10-step research-codebase→ralph-research→ralph-plan→validate-plan(sub)→iterate-plan(sub)→ralph-impl→local-review(sub)→create-worktree(sub)→commit→describe-pr (deprecated; ralph-plan+ralph-impl vs create_plan+implement_plan; create-worktree added; missing /linear) | ON HOLD (NEW — 1st consecutive of this deprecated variant; keep current 9-step) |
+| 26 | LOW | Workflow | gstack: v1.91.93 (Oct 11-12) — 14-step spec(top)→office-hours→autoplan→plan-ceo-review(sub)→plan-eng-review(sub)→plan-devex-review(sub)→design-consultation(sub)→design-review(sub)→review→qa→ship→land-and-deploy→canary(sub)→retro (/spec added; design-consultation+design-review replace plan-design-review) | ON HOLD (NEW — 1st consecutive of this 14-step variant; keep current 11-step) |
+| 27 | LOW | Workflow | BMAD: V7 preview — 11-step bmad-forge-idea→bmad-brainstorming(sub)→bmad-prd→bmad-spec→bmad-architecture→bmad-ticket→bmad-build→bmad-code-review(sub)→bmad-qa-generate-e2e-tests(sub)→bmad-review(sub)→bmad-retrospective (brainstorming+ticket+qa-e2e+retrospective new) | ON HOLD (NEW — 1st consecutive of this V7 11-step variant; keep current 7-step) |
+| 28 | LOW | Workflow | CE: 7-step ce-setup(top)→ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound (ce-setup new first step; root-native layout migration completed) | ON HOLD (NEW — 1st consecutive of this 7-step with ce-setup; keep current 6-step) |
+| 29 | LOW | Workflow | omc: v5.7.0 (Oct 12) — 7-step omc-setup(top)→deep-interview(sub)→autopilot(top)→executor(sub)→critic(sub)→verifier(sub)→release (team-* sub-steps replaced by executor/critic/verifier under autopilot; /team→autopilot) | ON HOLD (NEW — 1st consecutive of this v5.7 7-step variant; keep current 9-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API proxy-blocked for non-scoped repos (RECURRING); Agent 2 GitHub API integers authoritative for 7 repos; Agent 1 HTML values for 4 repos (ECC MCP blocked 27th+ consecutive run); 8 star changes applied to README | COMPLETE (RECURRING — agent research method established) |
+
+---
+
+## [2026-10-13 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 287k → 288k (GitHub MCP: 288,210 > 287,500 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 277k → 278k (Agent 1 HTML: ~278.0k > 277,500 midpoint; MCP blocked 28th+ consecutive run; upward trend confirmed) | COMPLETE (RECURRING — MCP blocked; updated README table) |
+| 3 | HIGH | Star | Update OpenSpec ★ 71.7k → 71.8k (GitHub MCP: 71,759 > 71,750 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Workflow | Update Superpowers workflow: 8-step → 7-step v7.0 (2nd consecutive exact match: brainstorming(top)→using-git-worktrees(top)→writing-plans(top)→subagent-driven-development(top)→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch(top); executing-plans removed; receiving-code-review removed; using-git-worktrees reclassified top; requesting-code-review reclassified sub) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Count | Update oh-my-claudecode skills 47 → 48 (2nd consecutive at ≥0.90: Oct 12 conf 0.92; Oct 13 conf 0.95; value 48 confirmed both runs) | COMPLETE (RECURRING — updated README table) |
+| 6 | LOW | Star | Superpowers 298,275 (in 298k range 297,500–298,499) — no change; keep 298k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | Spec Kit 141,008 (in 141k range 140,500–141,499) — no change; keep 141k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 136,176 (in 136k range 135,500–136,499) — no change; keep 136k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | BMAD 54,067 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | omc 39,844 (in 39.8k range 39,750–39,849) — no change; keep 39.8k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | CE 25,499 (in 25.5k range 25,450–25,549) — no change; keep 25.5k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | HumanLayer 11,691 (in 11.7k range 11,650–11,749) — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | GSD 64,305 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 14 | LOW | Sort | Sort order after updates: 298k > 288k > 278k > 141k > 136k > 99.7k(OOS) > 71.8k > 64.6k > 54k > 39.8k > 25.5k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 15 | LOW | Count | ECC agents 71 / commands 97 / skills 311 (Agent 1: conf 0.72 < 0.90; 2nd consecutive value but conf below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf 0.72 below 0.90 threshold; keep 68a/94c/293s) |
+| 16 | LOW | Count | gstack skills 54 (Agent 2: conf 0.95; decrease vs baseline 55; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; keep 55) |
+| 17 | LOW | Count | BMAD skills 33 (Agent 2: conf 0.96 ≥ 0.90; but Oct 12 conf 0.87 < 0.90 didn't qualify; this is 1st qualifying consecutive; keep 30) | ON HOLD (NEW — 1st qualifying consecutive at ≥0.90; Oct 12 below threshold; keep 30) |
+| 18 | LOW | Count | omc commands 21 found in commands/ (task spec says 0; methodology says skills serve as slash commands) | INVALID (RECURRING — counting methodology; keep 0c) |
+| 19 | LOW | Count | Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, omc 19a/0c, ECC 68a, BMAD 0a/0c, GSD 33a/85c/0s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Spec Kit: 6-step confirmed (Oct 12 7-step chain resets; current 6-step validated again) | COMPLETE (RECURRING — no change; current 6-step validated) |
+| 21 | LOW | Workflow | Matt Pocock: 8-step with grill-with-docs (different from Oct 12 9-step grill-me variant; chain resets; keep current 8-step) | ON HOLD (NEW — 1st consecutive of this 8-step grill-with-docs variant; chain reset; keep current 8-step) |
+| 22 | LOW | Workflow | ECC: different variant observed (chain resets; keep current 7-step) | ON HOLD (NEW — 1st consecutive of new variant; chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | gstack: 10-step office-hours→autoplan→spec→design-consultation→review→qa→ship→land-and-deploy→canary→retro (different from Oct 12 14-step; chain resets; keep current 11-step) | ON HOLD (NEW — 1st consecutive of this 10-step variant; chain reset; keep current 11-step) |
+| 24 | LOW | Workflow | BMAD: 9-step bmad-forge-idea→bmad-prd→bmad-architecture→bmad-spec→bmad-ticket→bmad-build→bmad-code-review(sub)→bmad-review→bmad-retrospective (different from Oct 12 V7 11-step; chain resets; keep current 7-step) | ON HOLD (NEW — 1st consecutive of this 9-step variant; chain reset; keep current 7-step) |
+| 25 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(top)→ce-compound (ce-code-review reclassified top vs current sub; different from Oct 12 7-step ce-setup variant; chain resets; keep current 6-step) | ON HOLD (NEW — 1st consecutive of ce-code-review top reclassification; chain reset; keep current 6-step) |
+| 26 | LOW | Workflow | omc: 7-step omc-setup(top)→deep-interview(top)→ralplan(top)→execute(top)→team-verify(top)→team-fix(sub)→release(top) (different from Oct 12 v5.7 7-step; chain resets; keep current 9-step) | ON HOLD (NEW — 1st consecutive of this 7-step variant; chain reset; keep current 9-step) |
+| 27 | LOW | Workflow | OpenSpec: 4-step plain variant explore→propose→apply→archive (different from Oct 12 8-step with openspec-init; chain resets; keep current 5-step) | ON HOLD (NEW — 1st consecutive of this 4-step plain variant; chain reset; keep current 5-step) |
+| 28 | LOW | Workflow | HumanLayer: 7-step research_codebase→create_plan→iterate_plan(sub)→implement_plan→validate_plan→describe_pr→create_handoff (deprecated; different from Oct 12 10-step; chain resets; keep current 9-step) | ON HOLD (NEW — 1st consecutive of this deprecated 7-step variant; chain reset; keep current 9-step) |
+| 29 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP search_repositories accessible for mattpocock/skills (288,210) and Fission-AI/OpenSpec (71,759); ECC MCP blocked 28th+ consecutive run — Agent 1 HTML authoritative for ECC; 5 changes applied to README (3 star + 1 workflow + 1 count) | COMPLETE (RECURRING — GitHub MCP + agent research method established) |
+
+---
+
+## [2026-10-14 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 298k → 299k (GitHub API: 298,743 > 298,500 midpoint; conf 0.92) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 288k → 290k (GitHub API: 289,925 > 289,500 midpoint; conf 0.88) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 278k → 279k (HTML scrape: ~278,700 > 278,500 midpoint; MCP blocked 29th+ consecutive run; upward trend confirmed) | COMPLETE (RECURRING — MCP blocked; HTML method established; updated README table) |
+| 4 | HIGH | Star | Update OpenSpec ★ 71.8k → 71.9k (GitHub MCP: 71,863 > 71,850 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update oh-my-claudecode ★ 39.8k → 39.9k (GitHub MCP: 39,881 > 39,850 midpoint) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Workflow | Update Matt Pocock workflow: last step improve-codebase-architecture → pr (2nd consecutive: Oct 13 was 1st consecutive of 8-step grill-with-docs variant ending in pr; confirmed today) | COMPLETE (RECURRING — 2nd consecutive; updated README table) |
+| 7 | HIGH | Count | Update BMAD skills 30 → 33 (2nd consecutive ≥0.90: Oct 13 was 1st qualifying at conf 0.96; today confirmed 33 again) | COMPLETE (RECURRING — 2nd consecutive ≥0.90; updated README table) |
+| 8 | MED | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP accessible for OpenSpec (71,863), omc (39,881), gstack (136,327), BMAD (54,103); ECC MCP blocked 29th+ run — Agent 1 HTML authoritative for ECC stars | COMPLETE (RECURRING — established method) |
+| 9 | LOW | Star | Spec Kit 141,161 (in 141k range); gstack 136,327 (in 136k range); BMAD 54,103 (in 54k range); GSD 64.6k (archived, frozen); CE 25.5k; HumanLayer 11.7k — all no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, Matt Pocock 0a/0c/38s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, omc 19a/0c/48s, GSD 33a/85c/0s — all confirmed | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Count | ECC counts 71a/97c/311s (conf 0.80 < 0.90; 3rd+ consecutive below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 12 | LOW | Count | BMAD agents: 5 found in skills/ (bmad-agent-analyst/architect/dev/pm/ux-designer; Oct 13 confirmed 0a; 1st consecutive today) | ON HOLD (NEW — 1st consecutive; keep 0a) |
+| 13 | LOW | Count | gstack skills: 57 (1st consecutive at 57; Oct 13 found 54 rejected counts-don't-fall; today 57 > baseline 55; upward) | ON HOLD (NEW — 1st consecutive at 57; keep 55) |
+| 14 | LOW | Count | omc commands 21 found in commands/ (task spec says 0; methodology says skills serve as slash commands) | INVALID (RECURRING — counting methodology; keep 0c) |
+| 15 | LOW | Sort | Sort order after updates: 299k > 290k > 279k > 141k > 136k > 99.7k(OOS) > 71.9k > 64.6k > 54k > 39.9k > 25.5k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 16 | LOW | Workflow | Superpowers: 7-step confirmed (same as yesterday's applied update) | COMPLETE (RECURRING — no change) |
+| 17 | LOW | Workflow | Spec Kit: 6-step confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Workflow | CE: 6-step confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 19 | LOW | Workflow | ECC: 8-step variant ecc:plan→tdd-workflow→implement→code-review(sub)→quality-gate(sub)→security-scan→e2e-testing→save-session (chain reset vs Oct 13 variant; keep current 7-step) | ON HOLD (NEW — 1st consecutive of this 8-step variant; chain reset; keep current 7-step) |
+| 20 | LOW | Workflow | gstack: 8-step office-hours→spec(sub)→plan-ceo-review(sub)→plan-eng-review(sub)→review→qa→ship→retro (chain reset vs Oct 13 10-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive of this 8-step variant; chain reset; keep current 11-step) |
+| 21 | LOW | Workflow | BMAD: 8-step bmad-forge-idea→bmad-prd(sub)→bmad-spec(sub)→bmad-architecture(sub)→bmad-build→bmad-code-review(sub)→bmad-review(sub)→bmad-retrospective (missing bmad-ticket vs Oct 13 9-step; chain resets; keep current 7-step) | ON HOLD (NEW — 1st consecutive of this 8-step variant; chain reset; keep current 7-step) |
+| 22 | LOW | Workflow | omc: 9-step omc-setup→deep-interview→ralplan→autopilot→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→release (chain reset vs Oct 13 7-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive of this 9-step variant; chain reset; keep current 9-step) |
+| 23 | LOW | Workflow | OpenSpec: 5-step explore→propose→apply→verify→archive (chain reset vs Oct 13 4-step plain; keep current 5-step) | ON HOLD (NEW — 1st consecutive of this 5-step variant; chain reset; keep current 5-step) |
+| 24 | LOW | Workflow | HumanLayer: 8-step research_codebase→create_plan→implement_plan→iterate_plan(sub)→validate_plan→local_review→commit→describe_pr (chain reset vs Oct 13 7-step deprecated; keep current 9-step) | ON HOLD (NEW — 1st consecutive of this 8-step variant; chain reset; keep current 9-step) |
+| 25 | LOW | Note | 7 changes applied to README (5 stars + 1 workflow + 1 count); BMAD skill count 30→33 applied on 2nd consecutive ≥0.90; Matt Pocock workflow improve-codebase-architecture→pr applied on 2nd consecutive | COMPLETE (RECURRING — GitHub MCP + agent research method established) |
+
+---
+
+## [2026-10-15 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 290k → 292k (Agent 1 HTML: 291,500 ≥ 291,500 midpoint; conf 0.87; RECURRING upward trend) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 279k → 280k (Agent 1 HTML: ~279,600 ≥ 279,500 midpoint; MCP blocked 30th+ consecutive run; RECURRING upward trend) | COMPLETE (RECURRING — MCP blocked; HTML method established; updated README table) |
+| 3 | HIGH | Star | Update OpenSpec ★ 71.9k → 72.0k (Agent 2 HTML: ~72,000 ≥ 71,950 midpoint; RECURRING upward trend) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Count | Update gstack skills 55 → 57 (2nd consecutive: Oct 14 was 1st consecutive ON HOLD at 57; today confirmed 57 again per AGENTS.md master list; authoritative source) | COMPLETE (RECURRING — 2nd consecutive confirmed; updated README table) |
+| 5 | HIGH | Count | Update BMAD agents 0 → 5 (2nd consecutive: Oct 14 was 1st consecutive ON HOLD at 5 bmad-agent-* persona folders; today confirmed 5 again: bmad-agent-analyst/architect/dev/pm/ux-designer) | COMPLETE (RECURRING — 2nd consecutive confirmed; updated README table) |
+| 6 | LOW | Star | Superpowers 299,200 (in 299k range 298,500–299,499) — no change; keep 299k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | Spec Kit 141,300 (in 141k range 140,500–141,499) — no change; keep 141k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 136,400 (in 136k range 135,500–136,499) — no change; keep 136k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | BMAD ~54,200 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | oh-my-claudecode ~39,900 (in 39.9k range 39,850–39,949) — no change; keep 39.9k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | CE ~25,500 (in 25.5k range 25,450–25,549) — no change; keep 25.5k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | HumanLayer ~11,700 (in 11.7k range 11,650–11,749) — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | GSD ~64,300 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 14 | LOW | Count | ECC counts 71a/97c/100+s (conf 0.75 < 0.90; 4th+ consecutive below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 15 | LOW | Sort | Sort order after updates: 299k > 292k > 280k > 141k > 136k > 99.7k(OOS) > 72.0k > 64.6k > 54k > 39.9k > 25.5k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 16 | LOW | Workflow | Superpowers: 7-step confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 17 | LOW | Workflow | Compound Engineering: 6-step ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Workflow | Matt Pocock: 9-step (+retro at end) vs current 8-step ending in pr (chain reset — new variant; 1st consecutive of setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr→retro; keep current 8-step) | ON HOLD (NEW — 1st consecutive; keep current 8-step) |
+| 19 | LOW | Workflow | ECC: 10-step ecc-plan→tdd(sub)→implement→code-review(sub)→build-fix(sub)→refactor-clean(sub)→security-scan→e2e-testing→test-coverage→save-session (chain reset vs Oct 14 8-step variant; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 20 | LOW | Workflow | gstack: 10-step office-hours(top)→plan-ceo-review(top)→plan-eng-review(top)→autoplan(top)→review(sub)→qa(sub)→ship(top)→land-and-deploy(top)→canary(sub)→retro(top) (chain reset vs Oct 14 8-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 11-step) |
+| 21 | LOW | Workflow | BMAD: 7-step bmad(top)→bmad-prd(sub)→bmad-spec(sub)→bmad-architecture(sub)→bmad-build(top)→bmad-code-review(sub)→bmad-eval(top) (chain reset vs Oct 14 8-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 22 | LOW | Workflow | oh-my-claudecode: 5-step omc-setup(top)→deep-interview(top)→ralplan(top)→execute(top)→verify(sub) (chain reset vs Oct 14 9-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 23 | LOW | Workflow | OpenSpec: 7-step openspec-init(top)→opsx:explore(top)→opsx:propose(top)→review-specs(top)→opsx:apply(top)→opsx:verify(sub)→opsx:archive(top) (chain reset vs Oct 14 5-step; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 5-step) |
+| 24 | LOW | Workflow | GSD: 7-step gsd-new-project(top)→gsd-spec-phase(top)→gsd-plan-phase(top)→gsd-execute-phase(top)→gsd-verify-work(sub)→gsd-review(top)→gsd-ship(top) (chain reset vs Oct 14 8-step; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 25 | LOW | Workflow | Spec Kit: speckit-implement reclassified top vs current sub (chain reset; 1st consecutive of new classification; keep current 6-step with speckit-implement as sub) | ON HOLD (NEW — 1st consecutive; keep current sub classification) |
+| 26 | LOW | Workflow | HumanLayer: 7-step create_plan→research_codebase→implement_plan→iterate_plan(sub)→validate_plan→commit→create_handoff (chain reset vs Oct 14 8-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 27 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP restricted to shanraisshan repo — both agents used WebFetch/HTML for all star counts; ECC MCP blocked 30th+ consecutive run — Agent 1 HTML authoritative; 5 changes applied to README (3 star + 2 count) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-17 09:16 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 299k → 301k (WebFetch: 300.7k; Agent 1: 300,700; independently confirmed via WebFetch) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 292k → 294k (WebFetch: 294.2k; Agent 1: 294,200; independently confirmed) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 280k → 282k (WebFetch: 281.6k; Agent 1: 281,600; independently confirmed; MCP blocked 31st+ consecutive run) | COMPLETE (RECURRING — MCP blocked; HTML method established; updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ 141k → 142k (WebFetch: 142k; Agent 1: 141,600 ≥ 141,500 midpoint; independently confirmed) | COMPLETE (NEW — 1st time in 142k range; updated README table) |
+| 5 | HIGH | Star | Update gstack ★ 136k → 137k (WebFetch: 136.7k; Agent 2: 137k; independently confirmed) | COMPLETE (NEW — 1st time in 137k range; updated README table) |
+| 6 | HIGH | Star | Update OpenSpec ★ 72.0k → 72.2k (WebFetch: 72.2k; Agent 2: 72.2k; independently confirmed) | COMPLETE (NEW — 1st time at 72.2k; updated README table) |
+| 7 | HIGH | Star | Update oh-my-claudecode ★ 39.9k → 40.0k (WebFetch: 40.0k; Agent 2: 40k; independently confirmed) | COMPLETE (NEW — 1st time at 40.0k; updated README table) |
+| 8 | HIGH | Star | Update Compound Engineering ★ 25.5k → 25.6k (WebFetch: 25.6k; Agent 2: 25.6k; independently confirmed) | COMPLETE (NEW — 1st time at 25.6k; updated README table) |
+| 9 | LOW | Star | BMAD 54,200 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | HumanLayer ~11,700 (in 11.7k range 11,650–11,749) — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD ~64,300 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 301k > 294k > 282k > 142k > 137k > 99.7k(OOS) > 72.2k > 64.6k > 54k > 40.0k > 25.6k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC counts 71a/97c/311s (Agent 1: conf 0.93 ≥ 0.90; 1st consecutive ≥0.90 for all three values) | ON HOLD (NEW — 1st consecutive ≥0.90; keep 68a/94c/293s) |
+| 14 | LOW | Count | Matt Pocock skills 27 (Agent 1: counts-don't-fall vs baseline 38; agent excluded deprecated/ subfolder) | INVALID (RECURRING — counts-don't-fall; keep 38) |
+| 15 | LOW | Count | GSD commands 67 (Agent 2: conf 0.93; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 16 | LOW | Count | CE agents 1 (Agent 2: conf 0.78 < 0.90; repo restructured; task-spec paths no longer exist) | ON HOLD (NEW — conf below 0.90 threshold; keep 0a) |
+| 17 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 5a/0c/33s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, ECC 68a/94c/293s — all confirmed | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Workflow | Superpowers: 7-step confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 19 | LOW | Workflow | Matt Pocock: 7-step setup-matt-pocock-skills→grill-me→tdd(sub)→diagnosing-bugs(sub)→improve-codebase-architecture→to-spec→to-tickets (chain reset vs Oct 15 9-step +retro; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 20 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (chain reset vs Oct 15 10-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 21 | LOW | Workflow | gstack: 8-step office-hours(top)→spec(top)→plan-ceo-review(top)→plan-eng-review(top)→review(top)→qa(top)→ship(top)→retro(top) (chain reset vs Oct 15 10-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 11-step) |
+| 22 | LOW | Workflow | BMAD: 6-step bmad-build(top)→clarify-and-route(sub)→plan(sub)→implement(sub)→review(sub)→present(sub) (non-canonical generic names; chain reset vs Oct 15 7-step variant; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | oh-my-claudecode: 7-step omc-setup(top)→deep-interview(top)→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) (missing release; chain reset vs Oct 15 5-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 24 | LOW | Workflow | OpenSpec: 4-step opsx:explore(top)→opsx:propose(top)→opsx:apply(top)→opsx:archive(top) (chain reset vs Oct 15 7-step openspec-init variant; 2nd appearance of this 4-step variant but chain broken by Oct 14/15 variants; keep current 5-step) | ON HOLD (NEW — 1st consecutive after chain reset; keep current 5-step) |
+| 25 | LOW | Workflow | GSD: 7-step new-project(top)→plan-phase(top)→spec-phase(sub)→mvp-phase(sub)→execute-phase(top)→verify-work(top)→ship(top) (different order/steps vs Oct 15 7-step; chain reset; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 26 | LOW | Workflow | Spec Kit: 6-step implement(sub)→converge(sub) confirmed (Oct 15 ON HOLD of reclassified-top variant not confirmed today; current sub classification validated) | COMPLETE (RECURRING — no change; current 6-step with implement(sub) validated) |
+| 27 | LOW | Workflow | HumanLayer: 6-step research-codebase(top)→create-plan(top)→implement-plan(top)→iterate-plan(sub)→validate-plan(top)→commit(top) (chain reset vs Oct 15 7-step; repo flagged as "deprecated"; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; deprecated status noted; keep current 9-step) |
+| 28 | LOW | Workflow | CE: 7-step ce-setup(top)→ce-brainstorm(top)→ce-plan(top)→ce-work(top)→ce-simplify-code(top)→ce-code-review(top)→ce-compound(top) (ce-setup added, both ce-simplify-code and ce-code-review reclassified top; chain reset from Oct 15 confirmed 6-step) | ON HOLD (NEW — 1st consecutive of ce-setup variant after chain reset; keep current 6-step) |
+| 29 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API (api.github.com) blocked for non-shanraisshan repos (proxy restriction — RECURRING); GitHub MCP restricted to shanraisshan repo; both agents + orchestrator used WebFetch/HTML for all star counts; ECC MCP blocked 31st+ consecutive run; 8 star changes applied to README (all independently confirmed via WebFetch); no count or workflow changes applied | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-18 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 294k → 295k (Agent 1 WebFetch: 295,230; shields.io blocked RECURRING; independently confirmed) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 282k → 283k (Agent 1 WebFetch: 282,600; shields.io blocked RECURRING; independently confirmed) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update OpenSpec ★ 72.2k → 72.3k (Agent 2 WebFetch: 72,300; shields.io blocked RECURRING; independently confirmed) | COMPLETE (NEW — 1st time at 72.3k; updated README table) |
+| 4 | LOW | Star | Superpowers 301k confirmed (Agent 1: 301,271 — in 301k range) | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | Spec Kit 142k confirmed (Agent 1: 141,695 — in 142k range) | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | gstack 137k confirmed (Agent 2: 136,800 — in 137k range) | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | BMAD 54k confirmed (Agent 2: 54,300 — in 54k range) | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | oh-my-claudecode 40.0k confirmed (Agent 2: 40,000) | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | CE 25.6k confirmed (Agent 2: 25,600) | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | HumanLayer 11.7k confirmed (Agent 2: 11,700) | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD frozen at 64.6k (Agent 2: 64,300 < baseline; archived; stars-don't-fall) | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 301k > 295k > 283k > 142k > 137k > 99.7k(OOS) > 72.3k > 64.6k > 54k > 40.0k > 25.6k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC counts 71a/97c/311s (Agent 1: conf 0.80 < 0.90 threshold; 2nd consecutive observation but confidence dropped below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — confidence below 0.90; keep 68a/94c/293s) |
+| 14 | LOW | Count | omc commands 21 (Agent 2: conf 0.88; commands/ directory confirmed with 21 .md files; task-prompt convention says 0; 1st consecutive of 21; keep 0c) | ON HOLD (NEW — 1st consecutive; conflicting with task-prompt convention; keep 0c) |
+| 15 | LOW | Count | BMAD agents 6 (Agent 2: conf 0.88; bmad-agent-* skills: analyst/architect/dev/pm/po/ux-designer = 6; 1st consecutive of 6a vs baseline 5a; keep 5a) | ON HOLD (NEW — 1st consecutive; keep 5a) |
+| 16 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.88; root skills/ has 31 entries; counts-don't-fall check; 1st consecutive of 31s vs baseline 33s; keep 33s) | ON HOLD (NEW — 1st consecutive; counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | OpenSpec commands 10 (Agent 2: conf 0.85 < 0.90 threshold; 1st consecutive of 10c vs baseline 12c; keep 12c) | ON HOLD (NEW — confidence below 0.90; counts-don't-fall; keep 12c) |
+| 18 | LOW | Count | GSD commands 67 (Agent 2: conf 0.92; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 19 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: 7-step confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Workflow | Compound Engineering: 6-step ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 22 | LOW | Workflow | Spec Kit: 6-step speckit-constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 23 | LOW | Workflow | Matt Pocock: grill-me(top)→to-spec(top)→to-tickets(top)→implement(top)→tdd(sub)→diagnosing-bugs(sub)→code-review(sub)→pr(top) (chain reset vs Oct 17 7-step; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 24 | LOW | Workflow | ECC: prp-prd(top)→prp-plan(sub)→prp-implement(sub)→code-review(sub)→security-scan(sub)→learn(sub)→evolve(top) (chain reset vs Oct 17 7-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 25 | LOW | Workflow | gstack: office-hours(top)→autoplan(top)→build(top)→review(top)→cso(sub)→qa(top)→ship(top)→land-and-deploy(top)→canary(sub)→document-release(sub)→retro(top) (chain reset vs Oct 17 8-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 11-step) |
+| 26 | LOW | Workflow | BMAD: bmad-forge-idea(top)→bmad-prd(top)→bmad-architecture(top)→bmad-ux(sub)→bmad-build(top)→bmad-code-review(sub)→bmad-qa-generate-e2e-tests(sub)→bmad-review(top)→bmad-retrospective(top) (chain reset vs Oct 17 6-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive of 9-step variant; chain reset; keep current 7-step) |
+| 27 | LOW | Workflow | oh-my-claudecode: deep-interview(top)→ralplan(top)→execute(top)→autopilot(sub)→ralph(sub)→team(sub)→verify(top)→ask(sub)→skillify(top)→hud(top) (chain reset vs Oct 17 7-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 28 | LOW | Workflow | OpenSpec: explore(top)→propose(top)→review(top)→apply(top)→archive(top) (chain reset vs Oct 17 4-step; missing /opsx: prefix; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 5-step) |
+| 29 | LOW | Workflow | GSD: new-project(top)→spec-phase(top)→plan-phase(top)→discuss-phase(sub)→execute-phase(top)→new-milestone(sub)→complete-milestone(sub)→validate-phase(top)→ship(top) (chain reset vs Oct 17 7-step; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 30 | LOW | Workflow | HumanLayer: generic human-in-loop workflow returned (task-request→agent-action→require-approval→human-review→approve-deny→execute→complete; non-canonical Claude Code commands; chain reset vs Oct 17 6-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; non-canonical; keep current 9-step) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP restricted to shanraisshan repo; both agents used WebFetch/HTML for all star counts; 3 changes applied to README (3 star updates) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-19 09:13 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 301k → 302k (Agent 1 WebFetch: 301,711; shields.io blocked RECURRING; 302k range 301,500–302,499 confirmed) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 295k → 296k (Agent 1 WebFetch: 296,396; shields.io blocked RECURRING; 296k range 295,500–296,499 confirmed) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update oh-my-claudecode ★ 40.0k → 40.1k (Agent 2 WebFetch: 40,100; shields.io blocked RECURRING; 40.1k range 40,050–40,149 confirmed) | COMPLETE (NEW — 1st time at 40.1k; updated README table) |
+| 4 | HIGH | Count | Update BMAD agents 5 → 6 (Agent 2: 6 bmad-agent-* persona skills confirmed: analyst/architect/dev/pm/po/ux-designer; 2nd consecutive — Oct 18 was 1st consecutive ON HOLD at 6; authoritative) | COMPLETE (RECURRING — 2nd consecutive confirmed; updated README table) |
+| 5 | LOW | Star | ECC 283,391 (in 283k range 282,500–283,499) — no change; keep 283k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | Spec Kit 141,832 (in 142k range 141,500–142,499) — no change; keep 142k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | gstack 136,900 (in 137k range 136,500–137,499) — no change; keep 137k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | BMAD 54,300 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 72,300 (at 72.3k range 72,250–72,349) — no change; keep 72.3k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | CE 25,600 (at 25.6k range 25,550–25,649) — no change; keep 25.6k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,700 (at 11.7k range 11,650–11,749) — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | GSD ~64,300 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 13 | LOW | Sort | Sort order after updates: 302k > 296k > 283k > 142k > 137k > 99.7k(OOS) > 72.3k > 64.6k > 54k > 40.1k > 25.6k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 14 | LOW | Count | ECC counts 71a/97c/311s (Agent 1: conf 0.88 < 0.90 threshold; RECURRING below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 15 | LOW | Count | GSD commands 67 (Agent 2: conf 0.88; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 16 | LOW | Count | BMAD skills 31 (Agent 2: 31 in skills/; counts-don't-fall vs baseline 33s; 2nd consecutive of 31 but counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | omc commands 21 (Agent 2: commands/ directory with 21 .md files; task-prompt convention says 0; 2nd consecutive of 21; keep 0c per convention) | ON HOLD (RECURRING — 2nd consecutive; conflicting with task-prompt convention; keep 0c) |
+| 18 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s — all confirmed | COMPLETE (RECURRING — no change) |
+| 19 | LOW | Workflow | Superpowers: 7-step brainstorming→using-git-worktrees→writing-plans→subagent-driven-development→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Matt Pocock: 8-step setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Workflow | Spec Kit: 6-step speckit-constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 22 | LOW | Workflow | ECC: /ecc:plan(top)→tdd-workflow(top)→/implement(sub)→/code-review(top)→/build-fix(sub)→/save-session(top) (chain reset vs Oct 18 prp-prd variant; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | gstack: 10-step office-hours→plan-ceo-review→plan-eng-review→autoplan→review→qa→ship→land-and-deploy→canary→retro (chain reset vs Oct 18 11-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 11-step) |
+| 24 | LOW | Workflow | BMAD: 8-step bmad-forge-idea→bmad-prd→bmad-architecture→bmad-build→bmad-code-review(sub)→bmad-qa-generate-e2e-tests(sub)→bmad-eval→bmad-retrospective (chain reset vs Oct 18 9-step variant; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 25 | LOW | Workflow | oh-my-claudecode: 5-step deep-interview→ralplan→execute→verify(sub)→fix(sub) (chain reset vs Oct 18 10-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 26 | LOW | Workflow | OpenSpec: 4-step explore→propose→apply→archive (no /opsx: prefix; chain reset vs Oct 18 5-step variant; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 5-step) |
+| 27 | LOW | Workflow | GSD: 7-step new-project→plan-phase→spec-phase(sub)→execute-phase→validate-phase(sub)→ship→audit-milestone (chain reset vs Oct 18 9-step variant; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 28 | LOW | Workflow | HumanLayer: 7-step research_codebase→create_plan→implement_plan→iterate_plan(sub)→validate_plan→commit→describe_pr (chain reset vs Oct 18 generic non-canonical variant; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 29 | LOW | Workflow | CE: 7-step ce-setup(top)→ce-brainstorm(top)→ce-plan(top)→ce-work(top)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound(top) (Oct 18 was all-top variant; today sub classification on simplify/review matches current but ce-setup added; chain reset; keep current 6-step) | ON HOLD (NEW — 1st consecutive; chain reset from Oct 18 all-top variant; keep current 6-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub MCP restricted to shanraisshan repo; both agents used WebFetch/HTML for all star counts; 4 changes applied to README (3 star + 1 count); Superpowers v7.0.0 released Oct 9 (brainstorming skill rebuilt); BMAD added Sofia PO agent + bmad-deep-recon skill; CE added Antigravity peer; omc v5.7.5 released Oct 18 | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-20 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 296k → 298k (Agent 1 WebFetch: 297.7k; shields.io blocked RECURRING; independently confirmed via orchestrator WebFetch) | COMPLETE (NEW — 1st time at 298k; updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 283k → 284k (Agent 1 WebFetch: 284.2k; shields.io blocked RECURRING; independently confirmed via orchestrator WebFetch) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update OpenSpec ★ 72.3k → 72.5k (Agent 2 WebFetch: 72.5k; shields.io blocked RECURRING; independently confirmed via orchestrator WebFetch) | COMPLETE (NEW — 1st time at 72.5k; updated README table) |
+| 4 | LOW | Star | Superpowers 302.2k (in 302k range 301,500–302,499) — no change; keep 302k | COMPLETE (RECURRING — no change) |
+| 5 | LOW | Star | Spec Kit 142k confirmed (Agent 1: 142k range) — no change | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | gstack 137.0k confirmed (Agent 2: 137,000 — in 137k range) — no change; keep 137k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | BMAD 54.3k (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | oh-my-claudecode 40.1k confirmed (Agent 2: 40,100) — no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | CE 25.6k confirmed (Agent 2: 25,600) — no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | HumanLayer 11.7k confirmed (Agent 2: 11,700) — no change | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD ~64,300 (archived; stars-don't-fall; keep 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 302k > 298k > 284k > 142k > 137k > 99.7k(OOS) > 72.5k > 64.6k > 54k > 40.1k > 25.6k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC counts 71a/97c/100s (Agent 1: conf 0.80 < 0.90 threshold; skills 100 vs baseline 293 is dramatic decrease — counts-don't-fall; RECURRING below threshold for agents/commands) | ON HOLD (RECURRING — conf below 0.90 for agents/commands; skills counts-don't-fall; keep 68a/94c/293s) |
+| 14 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.87; root skills/ has 31 entries; counts-don't-fall vs baseline 33s; RECURRING) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 15 | LOW | Count | omc commands 21 (Agent 2: conf 0.90; commands/ directory with 21 .md files; task-prompt convention says 0; RECURRING) | ON HOLD (RECURRING — convention keeps 0c; keep 0c) |
+| 16 | LOW | Count | GSD commands 67 (Agent 2: conf 0.85; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 17 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s — all confirmed | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Workflow | Superpowers: 9-step brainstorming→using-git-worktrees→writing-plans→subagent-driven-development→executing-plans(sub)→test-driven-development(sub)→requesting-code-review(sub)→receiving-code-review(sub)→finishing-a-development-branch (chain reset vs Oct 19 confirmed 7-step; executing-plans+receiving-code-review are real skills per v6.4.1/v7.0.0) | ON HOLD (NEW — 1st consecutive of 9-step; keep current 7-step) |
+| 19 | LOW | Workflow | Spec Kit: speckit-implement reclassified top vs current sub; 6-step confirmed otherwise (chain reset vs Oct 19 confirmed sub classification) | ON HOLD (NEW — 1st consecutive of top-reclassification; keep current sub classification) |
+| 20 | LOW | Workflow | Matt Pocock: 9-step setup-matt-pocock-skills→grill-me(top)→grill-with-docs(sub)→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr (grill-me added before grill-with-docs; chain reset vs Oct 19 confirmed 8-step) | ON HOLD (NEW — 1st consecutive of grill-me variant; keep current 8-step) |
+| 21 | LOW | Workflow | ECC: 9-step ecc-plan→tdd-workflow→implement(sub)→code-review→quality-gate→build-fix(sub)→save-session→learn-eval(sub)→evolve (adds quality-gate, learn-eval, evolve; chain reset vs Oct 19 6-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 22 | LOW | Workflow | OpenSpec: 5-step openspec-init→/opsx:explore→/opsx:propose→/opsx:apply→/opsx:archive (openspec-init prepended; different step names from current /opsx:apply-change, /opsx:verify-change, /opsx:archive-change; chain reset vs Oct 19 4-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 5-step) |
+| 23 | LOW | Workflow | GSD: 10-step /gsd:new-project→/gsd:plan-phase→/gsd:spec-phase→/gsd:execute-phase→/gsd:code-review(sub)→/gsd:audit-milestone(sub)→/gsd:validate-phase(sub)→/gsd:verify-work(sub)→/gsd:complete-milestone→/gsd:ship (chain reset vs Oct 19; /gsd: prefix vs /gsd-; archived) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 24 | LOW | Workflow | gstack: 7-step /office-hours→/plan-ceo-review→/plan-eng-review→/review→/qa→/ship→/land-and-deploy (chain reset vs Oct 19; missing autoplan, plan-design-review, plan-devex-review, retro; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 11-step) |
+| 25 | LOW | Workflow | BMAD: 10-step bmad-setup→bmad-prd→bmad-architecture→bmad-agent-dev→bmad-build(sub)→bmad-build-auto(sub)→bmad-code-review(sub)→bmad-review→bmad-eval(sub)→bmad-retrospective (chain reset vs Oct 19; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 26 | LOW | Workflow | oh-my-claudecode: 6-step /deep-interview→team-plan→team-prd→team-exec→team-verify(sub)→team-fix(sub) (chain reset vs Oct 19 5-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 27 | LOW | Workflow | CE: 7-step /ce-setup(top)→/ce-brainstorm→/ce-plan→/ce-work→/ce-simplify-code(sub)→/ce-code-review(sub)→/ce-compound (adds /ce-setup; chain reset vs Oct 19; keep current 6-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 6-step) |
+| 28 | LOW | Workflow | HumanLayer: 10-step ralph_research→ralph_plan→create_plan→implement_plan→validate_plan(sub)→iterate_plan(sub)→debug(sub)→local_review→describe_pr→create_handoff (chain reset vs Oct 19 7-step; deprecated repo; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 29 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API blocked for non-shanraisshan repos (proxy restriction — RECURRING); GitHub MCP restricted to shanraisshan repo; both agents + orchestrator used WebFetch/HTML for all star counts; 3 star changes applied to README (Matt Pocock 296k→298k, ECC 283k→284k, OpenSpec 72.3k→72.5k); no count or workflow changes applied; spec-kit v1.2.2 released Oct 19; BMAD sofia PO agent + bmad-deep-recon confirmed active; CE added Antigravity Gemini peer; omc v5.7.5 Oct 18; Superpowers executing-plans+receiving-code-review workflow variant plausible (real skills in repo) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-21 09:13 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 302k → 303k (Agent 1 WebFetch: 302.7k; orchestrator fork verified 302.7k rounds to 303k) | COMPLETE (NEW — 1st time at 303k; updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock ★ 298k → 299k (Agent 1 WebFetch: 298.8k; orchestrator fork verified 298.8k rounds to 299k) | COMPLETE (NEW — 1st time at 299k; updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 284k → 285k (Agent 1 WebFetch: ~285k; orchestrator fork verified 285.0k rounds to 285k) | COMPLETE (NEW — 1st time at 285k; updated README table) |
+| 4 | HIGH | Star | Update OpenSpec ★ 72.5k → 72.6k (Agent 2 WebFetch: 72.6k; orchestrator fork verified 72.6k) | COMPLETE (NEW — 1st time at 72.6k; updated README table) |
+| 5 | HIGH | Workflow | Update CE workflow: 6-step → 7-step with /ce-setup prepended; /ce-work reclassified top→sub (2nd consecutive of ce-setup variant matching Oct 20's 1st consecutive) | COMPLETE (RECURRING — 2nd consecutive confirmed; updated README table) |
+| 6 | LOW | Star | GSD ~64.3k (Agent 2 WebFetch; archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 7 | LOW | Star | Spec Kit 142k, gstack 137.1k (in 137k range), BMAD 54.4k (in 54k range), omc 40.1k, CE 25.6k, HumanLayer 11.7k — all no change | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Sort | Sort order after updates: 303k > 299k > 285k > 142k > 137k > 99.7k(OOS) > 72.6k > 64.6k > 54k > 40.1k > 25.6k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 9 | LOW | Count | ECC counts 71a/97c/311s (Agent 1: conf 0.75 < 0.90 threshold; RECURRING below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 10 | LOW | Count | GSD commands 67 (Agent 2: conf 0.80; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 11 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.78; skills/ has 31 entries; counts-don't-fall vs baseline 33s; RECURRING) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 12 | LOW | Count | omc commands 0 per convention (Agent 2: skills serve as slash commands; no separate commands dir; RECURRING) | ON HOLD (RECURRING — convention keeps 0c) |
+| 13 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s — all confirmed | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Workflow | Matt Pocock: 8-step grill-me(top)→grill-with-docs(top)→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr (no setup-matt-pocock-skills; chain reset vs Oct 20 9-step grill-me-inserted variant; 1st consecutive of grill-me-as-first variant) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 20; keep current 8-step) |
+| 15 | LOW | Workflow | gstack: 6-step /office-hours→/plan-ceo-review→/plan-eng-review→/review→/qa→/ship (missing /autoplan, /plan-design-review, /plan-devex-review, /land-and-deploy, /retro vs current 11-step; chain reset vs Oct 20 7-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 20; keep current 11-step) |
+| 16 | LOW | Workflow | BMAD: 6-step bmad(top)→bmad-prd→bmad-architecture→bmad-build(sub)→bmad-code-review(sub)→bmad-review (chain reset vs Oct 20 10-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 17 | LOW | Workflow | omc: 6-step /omc-setup→/deep-interview→/autopilot→agents-routed(sub)→/verify(sub)→/pr (chain reset vs Oct 20 6-step deep-interview-first variant; 1st consecutive of omc-setup-first variant) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 18 | LOW | Workflow | OpenSpec: 4-step /opsx:explore→/opsx:propose→/opsx:apply(sub)→/opsx:archive (different step names from current /opsx:apply-change etc; chain reset vs Oct 20 openspec-init-prepended variant) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 5-step) |
+| 19 | LOW | Workflow | GSD: 7-step /new-project→/mvp-phase→/plan-phase→/execute-phase(sub)→/verify-work(sub)→/milestone-summary→/ship (chain reset vs Oct 20 10-step /gsd: prefix variant; archived; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 20 | LOW | Workflow | HumanLayer: 6-step research_codebase→create_plan→implement_plan(sub)→validate_plan(sub)→describe_pr→ci_commit (chain reset vs Oct 20 10-step ralph_research-first variant; deprecated; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 9-step) |
+| 21 | LOW | Note | shields.io bash curl blocked (proxy — RECURRING); GitHub API blocked for non-shanraisshan repos (proxy restriction — RECURRING); both agents + orchestrator forks used WebFetch/HTML for all star counts; 5 star changes + 1 workflow change applied to README; spec-kit v1.2.2-v1.2.3.dev0, superpowers v7.0.0 stable, BMAD sofia PO agent + bmad-deep-recon active, CE Antigravity peer active, omc v5.7.5 | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-22 09:11 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock Skills ★ 299k → 300k (Agent 1 WebFetch: 300,000; orchestrator fork verified 300k — milestone round number!) | COMPLETE (RECURRING — 300k milestone; updated README table) |
+| 2 | HIGH | Star | Update ECC ★ 285k → 286k (Agent 1 WebFetch: 285,800; orchestrator fork verified 286k) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update OpenSpec ★ 72.6k → 72.7k (Agent 2 WebFetch: 72,700; orchestrator fork verified 72.7k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update oh-my-claudecode ★ 40.1k → 40.2k (Agent 2 WebFetch: 40,200; orchestrator fork verified 40.2k) | COMPLETE (RECURRING — updated README table) |
+| 5 | LOW | Star | Superpowers 303,200 (in 303k range 302,500–303,499) — no change; keep 303k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | Spec Kit 142,300 (in 142k range 141,500–142,499) — no change; keep 142k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | gstack 137,200 (in 137k range 136,500–137,499) — no change; keep 137k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | BMAD 54,400 (in 54k range 53,500–54,499) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | HumanLayer 11,700 confirmed — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | CE 25,600 confirmed — no change; keep 25.6k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD ~64,300 (archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 303k > 300k > 286k > 142k > 137k > 99.7k(OOS) > 72.7k > 64.6k > 54k > 40.2k > 25.6k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC counts 71a/100+c/311s (Agent 1: conf 0.75 < 0.90 threshold; RECURRING below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 14 | LOW | Count | GSD commands 67 (Agent 2: counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 15 | LOW | Count | BMAD skills 31 (Agent 2: skills/ has 31 entries; counts-don't-fall vs baseline 33s; RECURRING) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 16 | LOW | Count | omc commands 0 per convention (Agent 2: skills serve as slash commands; RECURRING) | ON HOLD (RECURRING — convention keeps 0c) |
+| 17 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, HumanLayer 6a/27c/0s, CE 0a/1c/36s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s — all confirmed | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Workflow | Superpowers: 7-step brainstorming→using-git-worktrees→writing-plans→subagent-driven-development→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 19 | LOW | Workflow | Matt Pocock: 8-step setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Spec Kit: 6-step speckit-constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Workflow | CE: brainstorm→plan→work→simplify(sub)→review(sub)→compound 6-step (chain reset vs current 7-step with /ce-setup first; keep current 7-step) | ON HOLD (NEW — 1st consecutive of no-ce-setup variant; chain reset; keep current 7-step) |
+| 22 | LOW | Workflow | ECC: ecc:plan→tdd-workflow(sub)→implement→code-review→security-scan→test-coverage(sub)→save-session (chain reset vs current 7-step build-fix variant; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | OpenSpec: init→explore→propose→review-plan→apply→archive 6-step (chain reset vs current 5-step /opsx: prefix variant; keep current 5-step) | ON HOLD (NEW — 1st consecutive of init-prepended non-/opsx: variant; chain reset; keep current 5-step) |
+| 24 | LOW | Workflow | gstack: office-hours→autoplan→implement→review(sub)→qa(sub)→ship→retro 7-step (chain reset vs current 11-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 11-step) |
+| 25 | LOW | Workflow | BMAD: clarify→plan→build→verify(sub)→adjust(sub) 5-step (chain reset vs current 7-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive of 5-step variant; chain reset; keep current 7-step) |
+| 26 | LOW | Workflow | omc: omc-setup→deep-interview(sub)→autopilot→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) 8-step (chain reset vs current 9-step deep-interview-first variant; keep current 9-step) | ON HOLD (NEW — 1st consecutive of omc-setup-first; chain reset; keep current 9-step) |
+| 27 | LOW | Workflow | GSD: new-project→plan-phase→execute-phase→verify-work(sub)→ship 5-step (chain reset vs current 8-step; archived; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; archived; keep current 8-step) |
+| 28 | LOW | Workflow | HumanLayer: research_codebase→create_plan→implement_plan→iterate_plan(sub)→validate_plan→commit→describe_pr 7-step (chain reset vs current 9-step; deprecated; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset; deprecated repo; keep current 9-step) |
+| 29 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API blocked for non-shanraisshan repos (RECURRING); both agents + orchestrator fork used WebFetch/HTML for all star counts; 4 star changes applied to README; gstack extremely active Oct 20-21 (v1.91.167-176: merge trains, Opus 5.5 eval model, Dart/Flutter support, Django/asset lanes); omc v5.7.7 Oct 20-21 (Codex PreToolUse format fix, HUD improvements); Superpowers v7.0.1 Oct 21 (brainstorming retuned, skills trimmed for compaction); spec-kit v1.2.3.dev0 active | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-23 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 303k → 304k (Agent 1 WebFetch: 303,808; orchestrator fork verified 303.8k rounds to 304k) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 300k → 301k (Agent 1 WebFetch: 301,020; orchestrator fork verified 301.0k rounds to 301k) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 286k → 287k (Agent 1 WebFetch: ~286,600; orchestrator fork verified 286.6k rounds to 287k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update OpenSpec ★ 72.7k → 72.8k (Agent 2 WebFetch: 72,778; orchestrator fork verified 72.8k) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update CE ★ 25.6k → 25.7k (Agent 2 WebFetch: 25,663; orchestrator fork verified 25.7k) | COMPLETE (NEW — 1st time at 25.7k; updated README table) |
+| 6 | HIGH | Workflow | Update CE workflow: 7-step → 6-step; /ce-setup removed from front (2nd consecutive of no-ce-setup variant: Oct 22 = 1st consecutive, Oct 23 = 2nd consecutive confirmed) | COMPLETE (RECURRING — 2nd consecutive confirmed; updated README table) |
+| 7 | LOW | Star | Spec Kit 142,489 (in 142k range) — no change; keep 142k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 137,326 (in 137k range) — no change; keep 137k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | BMAD 54,458 (in 54k range) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | omc 40,188 (in 40.2k range) — no change; keep 40.2k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 11,717 — no change; keep 11.7k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | GSD ~64,241 (archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 13 | LOW | Sort | Sort order after updates: 304k > 301k > 287k > 142k > 137k > 99.7k(OOS) > 72.8k > 64.6k > 54k > 40.2k > 25.7k > 11.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 14 | LOW | Count | ECC counts 71a/97c/311s (Agent 1: conf 0.80 < 0.90 threshold; RECURRING below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 15 | LOW | Count | gstack skills 56 (Agent 2: conf 0.90; counts-don't-fall vs baseline 57s; RECURRING) | INVALID (RECURRING — counts-don't-fall; keep 57s) |
+| 16 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.90; skills/ has 31 entries; counts-don't-fall vs baseline 33s; RECURRING) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | omc commands 21 (Agent 2: commands/ directory with 21 .md files found; task convention says 0c for omc; RECURRING) | ON HOLD (RECURRING — convention keeps 0c; keep 0c) |
+| 18 | LOW | Count | GSD commands 67 (Agent 2: counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 19 | LOW | Count | HumanLayer counts 0a/0c/28s (Agent 2: conf 0.85 < 0.90 threshold; very different from current 6a/27c/0s; major restructure via PR #1130 oss-split Oct 23) | ON HOLD (NEW — conf < 0.90 threshold; oss-split restructure unclear; keep 6a/27c/0s) |
+| 20 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Workflow | ECC: ecc:plan→tdd-workflow→code-review(sub)→build-fix(sub)→test-coverage→security-scan→save-session→resume-session 8-step (conf 0.80; chain reset vs Oct 22 7-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 22; conf 0.80; keep current 7-step) |
+| 22 | LOW | Workflow | OpenSpec: opsx:explore→opsx:propose→review→opsx:apply(sub)→opsx:verify(sub)→opsx:archive 6-step (chain reset vs Oct 22; different step names from current /opsx:apply-change, /opsx:verify-change, /opsx:archive-change; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 22; keep current 5-step) |
+| 23 | LOW | Workflow | gstack: office-hours→spec→autoplan→plan-ceo-review(sub)→plan-eng-review(sub)→design-consultation→design-html(sub)→design-review(sub)→review(sub)→qa(sub)→test-audit(sub)→ship→land-and-deploy→retro 14-step (chain reset vs Oct 22 7-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 22; keep current 11-step) |
+| 24 | LOW | Workflow | BMAD: bmad-forge-idea→bmad-prd→bmad-architecture→bmad-build(sub)→bmad-code-review(sub)→bmad-review(sub)→bmad-retrospective 7-step (drops bmad-spec, adds bmad-retrospective; chain reset vs Oct 22 5-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 22; keep current 7-step) |
+| 25 | LOW | Workflow | omc: deepinit→plan→ralplan(sub)→execute(sub)→verify(sub)→debug(sub)→release 7-step (chain reset vs Oct 22 8-step omc-setup-first; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 22; keep current 9-step) |
+| 26 | LOW | Workflow | GSD: new-project→spec-phase→plan-phase→execute-phase(sub)→review(sub)→ship 6-step (chain reset vs Oct 22 5-step; archived; keep current 8-step) | ON HOLD (RECURRING — chain reset; archived; keep current 8-step) |
+| 27 | LOW | Workflow | HumanLayer: grind-research→grind-design-discussion→codebase-design→improve-codebase-architecture(sub)→implement(sub)→test-it-locally(sub)→calldiff(sub)→bump-version 8-step (uses .claude/skills, not product commands; conf 0.85; major oss-split restructure; keep current 9-step) | ON HOLD (RECURRING — conf 0.85; uses team skills not product commands; oss-split restructure; deprecated; keep current 9-step) |
+| 28 | LOW | Workflow | Superpowers: 7-step brainstorming→using-git-worktrees→writing-plans→subagent-driven-development→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 29 | LOW | Workflow | Matt Pocock: 8-step setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→implement→tdd(sub)→code-review(sub)→pr confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 30 | LOW | Workflow | Spec Kit: 6-step speckit-constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) confirmed (same as current) | COMPLETE (RECURRING — no change) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API blocked for non-shanraisshan repos (proxy restriction — RECURRING); both research agents + orchestrator fork used WebFetch/HTML for all star counts; 5 star changes + 1 workflow change applied to README; spec-kit v1.2.3 Oct 22 (CSDD extension, workflow MCP inventory); superpowers v7.0.1 Oct 21 (brainstorming retuned, skills trimmed); mattpocock v1.3.1 Oct 22 (ask-matt routing fix); BMAD v6.12.4 Oct 14 (V7 preview alpha); omc v5.7.9 Oct 22 (Windows startup trust guard); humanlayer oss-split PR #1130 merged Oct 23 (major restructure); CE v3.31.1 Oct 22 (Antigravity sign-in fix) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-24 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Spec Kit ★ 142k → 143k (Agent 1 WebFetch: 142,616; orchestrator WebFetch verified 142.6k rounds to 143k) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 301k → 302k (Agent 1 WebFetch: 301,893; orchestrator WebFetch verified 301.9k rounds to 302k) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update OpenSpec ★ 72.8k → 72.9k (Agent 2 WebFetch: 72,867; orchestrator WebFetch verified 72.9k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update HumanLayer ★ 11.7k → 12k (Agent 2 WebFetch: 11,990; orchestrator WebFetch verified 12.0k; OSS-split PR #1130 merged Oct 23 driving new interest) | COMPLETE (RECURRING — first time at 12k milestone; updated README table) |
+| 5 | LOW | Star | Superpowers 304,291 (304.3k WebFetch; in 304k range) — no change; keep 304k | COMPLETE (RECURRING — no change) |
+| 6 | LOW | Star | ECC 287,422 (287.4k WebFetch; in 287k range) — no change; keep 287k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | gstack 137,405 (137.4k WebFetch; in 137k range) — no change; keep 137k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | BMAD ~54,489 (54.5k WebFetch display; agent: 54,489; rounds to 54k) — no change; keep 54k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | CE 25,700 (25.7k WebFetch; same as current) — no change; keep 25.7k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | omc 40,200 (40.2k WebFetch; same as current) — no change; keep 40.2k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | GSD ~64,236 (archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 12 | LOW | Sort | Sort order after updates: 304k > 302k > 287k > 143k > 137k > 99.7k(OOS) > 72.9k > 64.6k > 54k > 40.2k > 25.7k > 12k — same relative positions | COMPLETE (no re-sort needed) |
+| 13 | LOW | Count | ECC counts 71a/97+ c/100+s (Agent 1: conf 0.72 < 0.90 threshold; RECURRING below threshold; keep 68a/94c/293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 68a/94c/293s) |
+| 14 | LOW | Count | gstack skills 52 (Agent 2: conf 0.75 < 0.90 threshold; counts-don't-fall vs baseline 57s) | INVALID (RECURRING — counts-don't-fall; keep 57s) |
+| 15 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.82 < 0.90 threshold; skills/ has 31 entries; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 16 | LOW | Count | omc commands 0 per convention (Agent 2: skills serve as slash commands; RECURRING) | ON HOLD (RECURRING — convention keeps 0c) |
+| 17 | LOW | Count | GSD commands 67 (Agent 2: counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | HumanLayer counts 0a/28s/0c (Agent 2: conf 0.82 < 0.90 threshold; oss-split PR #1130 Oct 23 restructured repo; very different from current 6a/27c/0s) | ON HOLD (RECURRING — conf < 0.90 threshold; oss-split restructure uncertain; keep 6a/27c/0s) |
+| 19 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: 9-step variant adds implementer(sub)→task-reviewer(sub) inside subagent-driven-development (Agent 1: conf 0.95; chain reset vs Oct 23 7-step confirmed; 1st consecutive; keep current 7-step) | ON HOLD (NEW — 1st consecutive of 9-step variant; chain reset vs Oct 23; keep current 7-step) |
+| 21 | LOW | Workflow | Matt Pocock: 11-step variant adds wayfinder(sub), triage(sub), retro(top) to current 8-step (Agent 1: conf 0.95; chain reset vs Oct 23 8-step confirmed; 1st consecutive; keep current 8-step) | ON HOLD (NEW — 1st consecutive of 11-step variant; chain reset vs Oct 23; keep current 8-step) |
+| 22 | LOW | Workflow | Superpowers, Matt Pocock, Spec Kit confirmed their current workflows in general shape; only classification of top/sub differed — no workflow update applied | ON HOLD (RECURRING — sub-loop classifications unchanged) |
+| 23 | LOW | Workflow | OpenSpec: 5-step opsx:explore→opsx:propose→review→opsx:apply→opsx:archive (chain reset vs Oct 23; different step names from current /opsx:apply-change etc; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 23; keep current 5-step) |
+| 24 | LOW | Workflow | gstack: 7-step office-hours→spec→plan-eng-review→review→qa→ship→retro (Agent 2: conf 0.75; chain reset vs Oct 23 14-step; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 23; keep current 11-step) |
+| 25 | LOW | Workflow | BMAD: 6-step bmad→bmad-prd→bmad-architecture→bmad-build→bmad-code-review(sub)→bmad-review (Agent 2: conf 0.82; chain reset vs Oct 23 7-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 23; keep current 7-step) |
+| 26 | LOW | Workflow | omc: 6-step deep-interview→team-plan→team-prd→team-exec→team-verify(sub)→team-fix(sub) (Agent 2: conf 0.85; chain reset vs Oct 23 7-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 23; keep current 9-step) |
+| 27 | LOW | Workflow | HumanLayer: 5-step research→plan→implement→review→ship (Agent 2: conf 0.82; generic pipeline, not actual commands; oss-split restructure; keep current 9-step) | ON HOLD (RECURRING — conf 0.82; generic not actual commands; oss-split restructure; deprecated; keep current 9-step) |
+| 28 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work(sub)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed same structure as current (agent classified ce-work/ce-code-review as top vs current sub; classification-only diff; no workflow change) | COMPLETE (RECURRING — same 6-step structure confirmed; keep current sub classifications) |
+| 29 | LOW | Workflow | GSD: 7-step new-project→spec-phase→plan-phase→mvp-phase→execute-phase(sub)→complete-milestone→ship (chain reset vs current 8-step; archived; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; archived; keep current 8-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API returned 403 for CE/omc (proxy restriction — RECURRING); all agents + orchestrator used WebFetch/HTML for star counts; 4 star changes applied to README; badge previously updated to 8:40 AM PKT by earlier incomplete run (no changelog entry); badge re-updated to 9:18 AM PKT; spec-kit v1.2.3 Oct 22 (CSDD extension, GitHub CLI credential auth); humanlayer oss-split PR #1130 merged Oct 23; omc v5.7.9-v5.7.11 (team pane safety, ralph strict PRD validation); CE ce-optimize Oct 23 (long-running optimization with tick loop) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-25 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 304k → 305k (Agent 1 WebFetch: 304,700; fork verified 304.7k rounds to 305k) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock Skills ★ 302k → 303k (Agent 1 WebFetch: 302,600; fork verified 302.6k rounds to 303k) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 287k → 288k (Agent 1 WebFetch: 288,200; fork verified 288.2k rounds to 288k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update gstack ★ 137k → 138k (Agent 2 WebFetch: 137,600; fork verified 137.6k rounds to 138k) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Star | Update BMAD ★ 54k → 55k (Agent 2 WebFetch: 54,500; fork verified 54.5k rounds to 55k) | COMPLETE (RECURRING — updated README table) |
+| 6 | HIGH | Workflow | Update Superpowers workflow: 7-step → 9-step; implementer(sub) and task-reviewer(sub) added inside subagent-driven-development; test-driven-development and requesting-code-review promoted from sub(fff3b0) to top(ddf4ff) (2nd consecutive of 9-step variant: Oct 24 = 1st consecutive, Oct 25 = 2nd consecutive confirmed; conf 0.90) | COMPLETE (RECURRING — 2nd consecutive confirmed; updated README table) |
+| 7 | HIGH | Count | Update ECC agents 68 → 71; commands 94 → 97 (Agent 1: conf 0.95 for both, above 0.90 threshold; RECURRING count reported Oct 22–25 but below threshold until today) | COMPLETE (RECURRING — conf 0.95 crossed threshold; updated README table) |
+| 8 | LOW | Star | Spec Kit 142,800 (in 143k range) — no change; keep 143k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 72,900 (in 72.9k range) — no change; keep 72.9k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | omc 40,200 (in 40.2k range) — no change; keep 40.2k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | CE 25,700 (in 25.7k range) — no change; keep 25.7k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | HumanLayer 12,400 (rounds to 12k; same) — no change; keep 12k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | GSD ~64,200 (archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 14 | LOW | Sort | Sort order after updates: 305k > 303k > 288k > 143k > 138k > 99.7k(OOS) > 72.9k > 64.6k > 55k > 40.2k > 25.7k > 12k — same relative positions | COMPLETE (no re-sort needed) |
+| 15 | LOW | Count | ECC skills 311 (Agent 1: conf 0.60 < 0.90 threshold; RECURRING below threshold; keep 293s) | ON HOLD (RECURRING — conf below 0.90 threshold; keep 293s) |
+| 16 | LOW | Count | gstack skills 57 confirmed (Agent 2: conf 0.87; same as current 57s; no change) | COMPLETE (RECURRING — no change) |
+| 17 | LOW | Count | BMAD skills 31 (Agent 2: counts-don't-fall vs baseline 33s; RECURRING) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 18 | LOW | Count | omc commands 21 (Agent 2: commands/ dir with 21 .md files confirmed; convention keeps 0c) | ON HOLD (RECURRING — convention keeps 0c) |
+| 19 | LOW | Count | GSD commands 67 (Agent 2: counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 20 | LOW | Count | HumanLayer counts 0a/28s/0c (Agent 2: conf 0.80; oss-split restructure; keep 6a/27c/0s) | ON HOLD (RECURRING — conf < 0.90; oss-split restructure; keep 6a/27c/0s) |
+| 21 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 22 | LOW | Workflow | Matt Pocock: 7-step setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→tdd(top)→implement(sub)→code-review (drops pr from current 8-step; chain reset vs Oct 24 11-step; 1st consecutive of 7-step variant; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 24; keep current 8-step) |
+| 23 | LOW | Workflow | ECC: 10-step ecc:plan→tdd-workflow→implement(sub)→refactor(sub)→code-review→quality-gate→security-scan→save-session→learn-eval→evolve (chain reset vs current 7-step; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 7-step) |
+| 24 | LOW | Workflow | gstack: 9-step office-hours→autoplan→plan-ceo-review(sub)→plan-eng-review(sub)→plan-design-review(sub)→review→qa→ship→land-and-deploy (chain reset vs Oct 24 7-step; drops plan-devex-review and retro; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 24; keep current 11-step) |
+| 25 | LOW | Workflow | BMAD: 6-step bmad-forge-idea→bmad-prd→bmad-architecture→bmad-build→bmad-code-review(sub)→bmad-review (drops bmad-spec; same 6-step structure as Oct 24; 2nd consecutive but conf 0.82 < 0.90 threshold; keep current 7-step) | ON HOLD (RECURRING — 2nd consecutive but conf 0.82 < 0.90 threshold; keep current 7-step) |
+| 26 | LOW | Workflow | CE: 7-step ce-setup→ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound (ce-setup restored; ce-work top vs current sub; chain reset vs current 6-step updated Oct 23; 1st consecutive of restored ce-setup variant; keep current 6-step) | ON HOLD (NEW — 1st consecutive; chain reset vs current 6-step; keep current 6-step) |
+| 27 | LOW | Workflow | HumanLayer: 6-step grind-research→codebase-design→html-mockups(sub)→test-it-locally(sub)→merge-resolve-conflicts(sub)→bump-version (uses .claude/skills not product commands; oss-split restructure; keep current 9-step) | ON HOLD (RECURRING — uses team skills not product commands; oss-split; deprecated; keep current 9-step) |
+| 28 | LOW | Workflow | omc: 8-step omc-setup→deep-interview→team→team-plan(sub)→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) (chain reset vs Oct 24 6-step; omc-setup at front; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 24; keep current 9-step) |
+| 29 | LOW | Workflow | Spec Kit: 6-step constitution→specify→plan→tasks→implement(top)→converge(top) (Agent 1: conf 0.85; same structure as current but implement and converge classified as top vs current sub; classification-only diff; keep current sub classifications) | ON HOLD (NEW — classification-only diff; keep current sub classifications) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API blocked for non-shanraisshan repos (RECURRING); both research agents + orchestrator fork used WebFetch/HTML for all star counts; 5 star changes + 1 workflow change + 2 count changes applied to README; Superpowers v7.0.1 Oct 21 (brainstorming gathers project context, writes design doc before building); BMAD Sofia (new PO agent) added Oct 12-18 replacing bmad-spec/bmad-ticket; gstack v1.91.192.0 Oct 25 (merge-train hardening, pregate extensionless imports); omc v5.7.14 Oct 24 (unwired dispatch hook removed); OpenSpec v1.15.0 Oct 24 (standalone binaries, --dry-run flag) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-26 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update ECC ★ 288k → 289k (Agent 1 WebFetch: 288,944; fork verified 288.9k rounds to 289k) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update OpenSpec ★ 72.9k → 73k (Agent 2 WebFetch: ~73,000; fork verified 73.0k) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update omc ★ 40.2k → 40.3k (Agent 2 WebFetch: ~40,300; fork verified 40.3k) | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update HumanLayer ★ 12k → 12.5k (Agent 2 WebFetch: ~12,500; fork verified 12.5k) | COMPLETE (RECURRING — updated README table) |
+| 5 | HIGH | Count | Update ECC skills 293 → 1,004 (Agent 1: conf 0.98; confirmed by search_code total_count=1004, incomplete_results=false; GitHub UI truncates at 100 visible entries; count goes UP above 0.90 threshold) | COMPLETE (NEW — conf 0.98 crossed threshold; updated README table) |
+| 6 | LOW | Star | Superpowers 305,133 (305.1k WebFetch; in 305k range) — no change; keep 305k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | Matt Pocock 303,355 (303.4k WebFetch; in 303k range) — no change; keep 303k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | Spec Kit 142,891 (142.9k WebFetch; in 143k range) — no change; keep 143k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | gstack 137,700 (137.7k WebFetch; in 138k range) — no change; keep 138k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | BMAD ~54,600 (54.6k WebFetch; rounds to 55k; in 55k range) — no change; keep 55k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | CE 25,700 (25.7k WebFetch; same as current) — no change; keep 25.7k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | GSD ~64,200 (archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 13 | LOW | Sort | Sort order after updates: 305k > 303k > 289k > 143k > 138k > 99.7k(OOS) > 73k > 64.6k > 55k > 40.3k > 25.7k > 12.5k — same relative positions | COMPLETE (no re-sort needed) |
+| 14 | LOW | Count | ECC agents/commands 71a/97c confirmed (Agent 1: conf 0.98; search_code verified) | COMPLETE (RECURRING — no change) |
+| 15 | LOW | Count | omc commands 21 (Agent 2: commands/ dir with 21 .md files confirmed; convention keeps 0c) | ON HOLD (RECURRING — convention keeps 0c) |
+| 16 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.87 < 0.90; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | GSD commands 67 (Agent 2: conf 0.88; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | HumanLayer counts 0a/0c/28s (Agent 2: conf 0.82 < 0.90; oss-split restructure; keep 6a/27c/0s) | ON HOLD (RECURRING — conf < 0.90; oss-split restructure; keep 6a/27c/0s) |
+| 19 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, gstack 0a/0c/57s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: 7-step brainstorming→using-git-worktrees→writing-plans→executing-plans→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch (Agent 1: conf 0.97; chain reset vs Oct 25 9-step; note: skills list confirms implementer/task-reviewer not in skills dir — may have been phantom steps; keep current 9-step) | ON HOLD (NEW — 1st consecutive of 7-step variant; chain reset vs Oct 25; keep current 9-step) |
+| 21 | LOW | Workflow | Matt Pocock: 6-step setup-matt-pocock-skills→grill-me→to-spec→tdd(sub)→code-review(sub)→improve-codebase-architecture (Agent 1: conf 0.97; grill-me vs current grill-with-docs; chain reset vs Oct 25 7-step variant; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 25; keep current 8-step) |
+| 22 | LOW | Workflow | OpenSpec: 7-step explore→propose→apply→continue(sub)→ff(sub)→verify→archive (Agent 2: conf 0.88; new step names continue/ff; chain reset vs current 5-step; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset vs current 5-step; keep current 5-step) |
+| 23 | LOW | Workflow | gstack: 12-step office-hours→spec→autoplan→plan-ceo-review(sub)→plan-eng-review(sub)→build→review→qa→ship→land-and-deploy→canary(sub)→retro (Agent 2: conf 0.90; adds spec/build/canary(sub) vs current 11-step; chain reset; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset vs current 11-step; keep current 11-step) |
+| 24 | LOW | Workflow | BMAD: 9-step clarify→bmad-prd→bmad-architecture→bmad-agent-pm(sub)→bmad-agent-architect(sub)→bmad-agent-dev(sub)→bmad-build→bmad-code-review(sub)→bmad-eval (Agent 2: conf 0.87 < 0.90; uses agent personas as workflow steps; chain reset vs current 7-step; keep current 7-step) | ON HOLD (NEW — conf 0.87 < 0.90; chain reset vs current 7-step; keep current 7-step) |
+| 25 | LOW | Workflow | omc: 9-step deep-interview→ralplan→team-plan(sub)→team-prd(sub)→team-exec→execute(sub)→ralph(sub)→team-verify→team-fix(sub) (Agent 2: conf 0.90; replaces plan/team/release with ralplan/execute/ralph; chain reset vs current 9-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset vs current 9-step; keep current 9-step) |
+| 26 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound (Agent 2: conf 0.85; same 6-step structure as current; ce-work classified top vs current sub; classification-only diff; keep current sub classification) | COMPLETE (RECURRING — same 6-step structure; classification-only diff; no workflow change) |
+| 27 | LOW | Workflow | HumanLayer: 9-step setup→start-daemon→create-task→run-agent(sub)→review-plan→approve→implement(sub)→verify→merge (Agent 2: conf 0.82 < 0.90; generic pipeline not actual commands; oss-split restructure; keep current 9-step) | ON HOLD (RECURRING — conf 0.82; generic not actual commands; oss-split restructure; deprecated; keep current 9-step) |
+| 28 | LOW | Workflow | Spec Kit: 6-step speckit-constitution→speckit-specify→speckit-plan→speckit-tasks→speckit-implement(sub)→speckit-converge(sub) confirmed (Agent 1: conf 0.95; same as current) | COMPLETE (RECURRING — no change) |
+| 29 | LOW | Workflow | GSD: 9-step new-project→spec-phase→plan-phase→discuss-phase(sub)→execute-phase→verify-work(sub)→code-review(sub)→validate-phase→ship (Agent 2: conf 0.88; adds discuss-phase/validate-phase vs current 8-step; chain reset; archived; keep current 8-step) | ON HOLD (RECURRING — chain reset; archived; keep current 8-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API blocked for non-shanraisshan repos (RECURRING); all agents + orchestrator fork used WebFetch/HTML for star counts; 4 star changes + 1 skill count change applied to README; ECC PR #3736 Oct 26 (L4XB four-hooks), skills count confirmed 1,004 via search_code; gstack Oct 26 (review re-review logic, design-html craft section); OpenSpec v1.15.0 Oct 24 (standalone install, --dry-run); CE Oct 25 (Windows path fix); omc v5.7.15 Oct 25 (teleport PR/diff URL fix, HUD token display fix) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-27 09:21 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 305k→306k (Agent 1: 305,704; shields.io curl blocked RECURRING; GitHub API authoritative) | COMPLETE (NEW) |
+| 2 | HIGH | Star | Update Matt Pocock ★ 303k→304k (Agent 1: 304,183; GitHub API authoritative) | COMPLETE (NEW) |
+| 3 | HIGH | Star | Update ECC ★ 289k→290k (Agent 1: ~290,000; GitHub API authoritative) | COMPLETE (NEW) |
+| 4 | MED | Star | Update HumanLayer ★ 12.5k→12.6k (Agent 2: 12,636; GitHub API authoritative) | COMPLETE (NEW) |
+| 5 | MED | Count | Update gstack skills 57→59 (Agent 2: 59 confirmed; conf 0.85; count UP — trustworthy direction) | COMPLETE (NEW) |
+| 6 | MED | Workflow | Update Superpowers 9-step→7-step: brainstorming→using-git-worktrees→writing-plans→subagent-driven-development(sub)→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch (Agent 1: conf 0.93 ≥ 0.90; 2nd consecutive; implementer/task-reviewer confirmed phantom steps; applied) | COMPLETE (NEW — 2nd consecutive; applied) |
+| 7 | LOW | Sort | Sort order after updates: 306k > 304k > 290k > 143k > 138k > 99.7k(OOS) > 73k > 64.6k > 55k > 40.3k > 25.7k > 12.6k — same relative positions | COMPLETE (no re-sort needed) |
+| 8 | LOW | Count | ECC agents/commands 71a/97c confirmed (Agent 1: conf 0.98); skills agent reported 311 (v2.2.3 README) but counts-don't-fall vs 1,004 (Oct 26 conf 0.98 via search_code) | INVALID (RECURRING — counts-don't-fall; keep 1,004s) |
+| 9 | LOW | Count | OpenSpec skills agent reported 7 (Agent 2: conf 0.90; 7 SKILL.md paths confirmed); counts-don't-fall vs 12 | ON HOLD (NEW — 1st consecutive lower count; counts-don't-fall; keep 12s) |
+| 10 | LOW | Count | Matt Pocock skills agent reported 31 (Agent 1; counts-don't-fall vs 38) | ON HOLD (RECURRING — counts-don't-fall; keep 38s) |
+| 11 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.87 < 0.90; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 12 | LOW | Count | GSD commands 67 (Agent 2: conf 0.88; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 13 | LOW | Count | HumanLayer counts 0a/0c/28s (Agent 2: conf 0.82 < 0.90; oss-split restructure; keep 6a/27c/0s) | ON HOLD (RECURRING — conf < 0.90; oss-split restructure; keep 6a/27c/0s) |
+| 14 | LOW | Count | omc commands 21 (Agent 2: commands/ dir confirmed 21 .md files; convention keeps 0c) | ON HOLD (RECURRING — convention keeps 0c) |
+| 15 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, gstack 0a/0c/59s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 16 | LOW | Workflow | Matt Pocock: 6-step setup-matt-pocock-skills→grill-me→to-spec→tdd(sub)→code-review(sub)→improve-codebase-architecture (Agent 1; grill-me vs current grill-with-docs; chain reset; keep current 8-step) | ON HOLD (RECURRING — chain reset vs current 8-step; keep current 8-step) |
+| 17 | LOW | Workflow | OpenSpec: 6-step explore→propose→review→apply→verify(sub)→archive (Agent 2: conf 0.90; step names differ from Oct 26 7-step; chain reset; keep current 5-step) | ON HOLD (RECURRING — different from Oct 26; chain reset; keep current 5-step) |
+| 18 | LOW | Workflow | gstack: 10-step office-hours→spec→autoplan→plan-eng-review(sub)→plan-ceo-review(sub)→guard(sub)→build→qa→ship→retro (Agent 2: conf 0.90; missing land-and-deploy/canary vs Oct 26 12-step; chain reset; keep current 11-step) | ON HOLD (RECURRING — different from Oct 26; chain reset; keep current 11-step) |
+| 19 | LOW | Workflow | BMAD: 7-step forge-idea→prd→architecture→build→code-review(sub)→review→retrospective (Agent 2: conf 0.87 < 0.90; different from Oct 26 9-step with agent-personas; chain reset; keep current 7-step) | ON HOLD (RECURRING — conf 0.87 < 0.90; chain reset; keep current 7-step) |
+| 20 | LOW | Workflow | omc: 7-step omc-setup→deep-interview(sub)→autopilot→execute(sub)→review(sub)→verify(sub)→team (Agent 2: conf 0.90; different from Oct 26 9-step; chain reset; keep current 9-step) | ON HOLD (RECURRING — different from Oct 26; chain reset; keep current 9-step) |
+| 21 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed (Agent 2: conf 0.85; same structure; classification-only diff; keep current sub classification) | COMPLETE (RECURRING — same 6-step structure; no workflow change) |
+| 22 | LOW | Workflow | HumanLayer: 7-step assign-task→create-research(sub)→create-plan(sub)→implement-plan(sub)→iterate-implementation(sub)→review→merge (Agent 2: conf 0.82 < 0.90; generic pipeline not actual commands; oss-split restructure; keep current 9-step) | ON HOLD (RECURRING — conf 0.82; generic not actual commands; oss-split; keep current 9-step) |
+| 23 | LOW | Workflow | Spec Kit: 6-step confirmed (Agent 1: conf 0.95; same as current) | COMPLETE (RECURRING — no change) |
+| 24 | LOW | Workflow | GSD: keep current 8-step (archived June 2026; agent 2 reported 9-step with discuss-phase/validate-phase; chain reset; archived; keep current 8-step) | ON HOLD (RECURRING — archived; chain reset; keep current 8-step) |
+| 25 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API used for all star counts; 4 star changes + 1 skill count change + 1 workflow change applied; gstack Oct 26-27 new /captain /design-motion /ubicloud skills (v1.91.251-265); HumanLayer v0.183 new hl:orchestrate/hl:teleport skills; BMAD v6.12.0 build skill auto-determines scope; omc v5.7.17 tmux pane recovery fix | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-28 09:13 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 306k → 307k (Agent 1: 306,586; GitHub API exact) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock ★ 304k → 305k (Agent 1: 304,999; GitHub API exact) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 290k → 291k (Agent 1 WebFetch: 291.0k) | COMPLETE (RECURRING — updated README table) |
+| 4 | MED | Star | Update HumanLayer ★ 12.6k → 12.7k (Agent 2: 12,666; GitHub API exact) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count | Update gstack skills 59 → 60 (Agent 2: 60 confirmed via GitHub code search; conf 0.90 at threshold; count UP — trustworthy direction) | COMPLETE (NEW — conf 0.90; count UP; updated README table) |
+| 6 | LOW | Star | Spec Kit 143,378 (in 143k range) — no change; keep 143k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | OpenSpec 73,194 (in 73k range) — no change; keep 73k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | gstack 137,961 (in 138k range) — no change; keep 138k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | BMAD 54,646 (rounds to 55k; same) — no change; keep 55k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | omc 40,334 (in 40.3k range) — no change; keep 40.3k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | CE 25,742 (in 25.7k range) — no change; keep 25.7k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | GSD 64,204 (archived; stars-don't-fall vs baseline 64.6k) — no change | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 13 | LOW | Sort | Sort order after updates: 307k > 305k > 291k > 143k > 138k > 99.7k(OOS) > 73k > 64.6k > 55k > 40.3k > 25.7k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 14 | LOW | Count | ECC: README says 311 skills (Agent 1: conf 0.82); counts-don't-fall vs 1,004 confirmed Oct 26 | INVALID (RECURRING — counts-don't-fall; keep 1,004s) |
+| 15 | LOW | Count | HumanLayer counts 0a/0c/28s (Agent 2: conf 0.88 < 0.90; oss-split restructure; keep 6a/27c/0s) | ON HOLD (RECURRING — conf < 0.90; oss-split restructure; keep 6a/27c/0s) |
+| 16 | LOW | Count | omc commands 21 found in commands/ dir (Agent 2; convention keeps 0c) | ON HOLD (RECURRING — convention keeps 0c) |
+| 17 | LOW | Count | GSD commands 67 (Agent 2: conf 0.88; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.90; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 19 | LOW | Count | OpenSpec: 0a/12c/12s confirmed (Agent 2: conf 0.93) | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, gstack 0a/0c/60s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s — all confirmed | COMPLETE (RECURRING — no change) |
+| 21 | LOW | Workflow | Superpowers: 7-step confirmed (Agent 1: conf 0.93; same as current) | COMPLETE (RECURRING — no change) |
+| 22 | LOW | Workflow | Matt Pocock: 9-step adds diagnosing-bugs(sub) between tdd and code-review (Agent 1: conf 0.97; chain reset vs current 8-step; keep current 8-step) | ON HOLD (NEW — 1st consecutive; chain reset; keep current 8-step) |
+| 23 | LOW | Workflow | ECC: 7-step plan→test→implement→review→verify→remember→improve (Agent 1: conf 0.82 < 0.90; different step names; chain reset; keep current 7-step) | ON HOLD (NEW — conf 0.82 < 0.90; chain reset; keep current 7-step) |
+| 24 | LOW | Workflow | Spec Kit: 6-step confirmed (Agent 1: conf 0.95; same as current) | COMPLETE (RECURRING — no change) |
+| 25 | LOW | Workflow | OpenSpec: 5-step explore→propose→review→apply→archive (Agent 2: conf 0.93; step names differ from current opsx-prefixed 5-step; chain reset vs Oct 27; keep current 5-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 27; keep current 5-step) |
+| 26 | LOW | Workflow | gstack: 8-step office-hours→spec→autoplan→review→qa→ship→land-and-deploy→canary (Agent 2: conf 0.90; drops all plan-*-review steps vs current 11-step; chain reset; keep current 11-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 27; keep current 11-step) |
+| 27 | LOW | Workflow | BMAD: 8-step adds bmad-qa-generate-e2e-tests(sub) vs current 7-step (Agent 2: conf 0.90; chain reset vs Oct 27; keep current 7-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 27; keep current 7-step) |
+| 28 | LOW | Workflow | CE: 6-step confirmed (Agent 2: conf 0.93; same 6-step structure; ce-work classification-only diff; keep current sub classification) | COMPLETE (RECURRING — same 6-step structure; no workflow change) |
+| 29 | LOW | Workflow | omc: 6-step omc-setup→deep-interview→ralplan→autopilot→verify(sub)→skillify (Agent 2: conf 0.90; chain reset vs Oct 27 7-step; keep current 9-step) | ON HOLD (NEW — 1st consecutive; chain reset vs Oct 27; keep current 9-step) |
+| 30 | LOW | Workflow | HumanLayer: 5-step research→plan→implement→test-it-locally(sub)→review (Agent 2: conf 0.88 < 0.90; generic not actual commands; oss-split; keep current 9-step) | ON HOLD (RECURRING — conf 0.88 < 0.90; generic not actual commands; oss-split; keep current 9-step) |
+| 31 | LOW | Workflow | GSD: archived; keep current 8-step | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 32 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API used for all star counts; 4 star changes + 1 skill count change applied; Spec Kit v1.2.4 Oct 27 (bundle nesting); BMAD V7 preview via Skills CLI/Codex plugin; gstack Oct 28 highly active (60 skills); OpenSpec "Stores" feature in beta (shared specs cross-repo); HumanLayer v0.183+ turborepo restructure ongoing | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-29 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 307k → 308k (Both agents: 307,568; WebFetch confirmed "307.6k / 308k") | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock ★ 305k → 306k (Both agents: 305,875; WebFetch confirmed "305.9k / 306k") | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 291k → 292k (Both agents: 291,900; WebFetch confirmed "291.9k / 292k") | COMPLETE (RECURRING — updated README table) |
+| 4 | HIGH | Star | Update Spec Kit ★ 143k → 144k (Both agents: 143,713; WebFetch confirmed "143.7k / 144k") | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Star | Update omc ★ 40.3k → 40.4k (Agent 2: 40,373; WebFetch confirmed "40.4k"; rounding 40.373 → 40.4k) | COMPLETE (NEW — updated README table) |
+| 6 | MED | Star | Update CE ★ 25.7k → 25.8k (Agent 2: 25,758; WebFetch confirmed "25.8k"; rounding 25.758 → 25.8k) | COMPLETE (NEW — updated README table) |
+| 7 | MED | Count | Update gstack skills 60 → 61 (Agent 2: 61 confirmed via directory listing, conf 0.93; count UP — trustworthy direction; new test-audit skill) | COMPLETE (NEW — conf 0.93; count UP; updated README table) |
+| 8 | LOW | Star | gstack 138,087 (138k range) — no change; keep 138k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | OpenSpec 73,280 (73k range) — no change; keep 73k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | BMAD 54,703 (rounds to 55k) — no change; keep 55k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | HumanLayer 12,692 (12.7k range) — no change; keep 12.7k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | GSD archived; frozen at 64.6k | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 13 | LOW | Sort | Sort order after updates: 308k > 306k > 292k > 144k > 138k > 99.7k(OOS) > 73k > 64.6k > 55k > 40.4k > 25.8k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 14 | LOW | Count | ECC skills: Agent 1 reports 311 (README self-report; counts-don't-fall vs 1,004 confirmed Oct 26) | INVALID (RECURRING — counts-don't-fall; keep 1,004s) |
+| 15 | LOW | Count | BMAD skills 31 (Agent 2: conf 0.87 < 0.90; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 16 | LOW | Count | HumanLayer restructure: 0a/0c/28s (Agent 2: conf 0.88 < 0.90; oss-split restructure — major Oct 22-23 codebase replacement) | ON HOLD (RECURRING — conf < 0.90; major restructure ongoing; keep 6a/27c/0s) |
+| 17 | LOW | Count | omc commands 21 found in commands/ dir (Agent 2; convention keeps 0c for omc) | ON HOLD (RECURRING — convention keeps 0c) |
+| 18 | LOW | Count | Superpowers 0a/0c/15s, Spec Kit 0a/10c/0s, OpenSpec 0a/12c/12s, gstack 0a/0c/61s, Matt Pocock 0a/0c/38s, omc 19a/0c/48s, GSD 33a/85c/0s, BMAD 6a/0c/33s, CE 0a/1c/36s, ECC 71a/97c — all confirmed | COMPLETE (RECURRING — no change) |
+| 19 | LOW | Workflow | Superpowers: Agent 1 reports subagent-driven-development(top) vs current (sub); Agent 2 has 11-step chain reset; keep current 7-step | ON HOLD (NEW — 1st consecutive reclassification; Agent 2 chain reset; keep current 7-step) |
+| 20 | LOW | Workflow | Matt Pocock: Agent 1 8-step with grill-me (not grill-with-docs); Agent 2 9-step with grill-me; both agents agree grill-me; but 2 different step counts — chain inconsistency; keep current 8-step | ON HOLD (RECURRING — grill-me confirmed by both agents; workflow step count inconsistent; keep current 8-step) |
+| 21 | LOW | Workflow | Spec Kit: Agent 1 confirms 6-step same as current; Agent 2 reports 8-step with different order — chain reset | COMPLETE (RECURRING — Agent 1 confirms 6-step; Agent 2 chain reset; keep current 6-step) |
+| 22 | LOW | Workflow | OpenSpec: 10-step chain reset vs current 5-step (Agent 2: conf 0.92; very different structure) | ON HOLD (RECURRING — chain reset vs current 5-step; keep current 5-step) |
+| 23 | LOW | Workflow | gstack: 10-step chain reset vs current 11-step (Agent 2: conf 0.93; drops office-hours; keep current) | ON HOLD (RECURRING — chain reset vs current 11-step; keep current 11-step) |
+| 24 | LOW | Workflow | BMAD: 12-step with agent-personas vs current 7-step (Agent 2: conf 0.87 < 0.90; chain reset) | ON HOLD (RECURRING — conf < 0.90; chain reset; keep current 7-step) |
+| 25 | LOW | Workflow | CE: 12-step lfg→ce-ideate→ce-pov→ce-plan→ce-setup→ce-work→ce-proof→ce-debug(sub)→ce-noslop(sub)→ce-commit→ce-commit-push-pr→ce-babysit-pr (Agent 2: conf 0.91; chain reset vs current 6-step) | ON HOLD (NEW — 1st consecutive; chain reset vs current 6-step; keep current 6-step) |
+| 26 | LOW | Workflow | omc: 10-step omc-setup→deepinit→deep-interview(sub)→ralplan→execute→autopilot(sub)→verify→ralph(sub)→skillify→release (Agent 2: conf 0.90; chain reset vs current 9-step) | ON HOLD (RECURRING — chain reset vs current 9-step; keep current 9-step) |
+| 27 | LOW | Workflow | HumanLayer: workflow report generic/install-based (Agent 2: conf 0.88 < 0.90; oss-split major restructure; keep current 9-step) | ON HOLD (RECURRING — conf < 0.90; oss-split ongoing; keep current 9-step) |
+| 28 | LOW | Workflow | ECC: Agent 1 7-step /ecc:plan→tdd-guide→implement→/code-review→/build-fix→/security-scan→/save-session (conf 0.90; step names differ from current; chain reset) | ON HOLD (RECURRING — chain reset; step name discrepancies; keep current 7-step) |
+| 29 | LOW | Workflow | GSD: archived; keep current 8-step | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 30 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API blocked (proxy); WebFetch/HTML method used for all star verification; 6 star changes + 1 skill count change applied; gstack adds test-audit skill (v1.91.207+); HumanLayer complete codebase replacement Oct 22-23 (desktop app/daemon/CLI); Spec Kit v1.2.5 released Oct 28; omc v5.7.5 Oct 18; CE Oct 22-25 (ce-optimize long-running stack, Codex peer fixes) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-30 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Superpowers ★ 308k → 309k (Agent 1: 308,712; GitHub API WebFetch authoritative; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Matt Pocock ★ 306k → 307k (Agent 1: 306,729; GitHub API WebFetch authoritative; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update ECC ★ 292k → 293k (Agent 1: 292,795; GitHub API WebFetch authoritative; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 4 | MED | Workflow | Update Matt Pocock grill-with-docs → grill-me (Agent 1: conf 0.90; 3+ consecutive days confirmed by both agents; applied minimal change to 8-step) | COMPLETE (RECURRING — 3+ consecutive days; applied) |
+| 5 | MED | Count | Update ECC commands 97 → 112 (Agent 1: ~109 in commands/ + at least 3 in .claude/commands/ = 112+; UP direction; applied conservative lower bound 112) | COMPLETE (NEW — UP direction; applied) |
+| 6 | LOW | Star | Spec Kit 143,955 (144k range) — no change; keep 144k | COMPLETE (RECURRING — no change) |
+| 7 | LOW | Star | gstack 138,210 (138k range) — no change; keep 138k | COMPLETE (RECURRING — no change) |
+| 8 | LOW | Star | OpenSpec 73,383 (73k range) — no change; keep 73k | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | BMAD 54,754 (rounds to 55k) — no change; keep 55k | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | omc 40,412 (40.4k range) — no change; keep 40.4k | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | CE 25,778 (25.8k range) — no change; keep 25.8k | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | HumanLayer 12,709 (12.7k range) — no change; keep 12.7k | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | GSD archived; frozen at 64.6k | ON HOLD (RECURRING — archived; frozen at 64.6k) |
+| 14 | LOW | Sort | Sort order after updates: 309k > 307k > 293k > 144k > 138k > 99.7k(OOS) > 73k > 64.6k > 55k > 40.4k > 25.8k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 15 | LOW | Count | gstack skills 61 (Agent 2: 55; counts-don't-fall vs baseline 61) | INVALID (RECURRING — counts-don't-fall; keep 61s) |
+| 16 | LOW | Count | BMAD skills 33 (Agent 2: 31; counts-don't-fall vs baseline 33) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | OpenSpec skills 12 user-facing (Agent 2: 16 including 4 internal in .agents/skills/; keep 12 user-facing in skills/) | COMPLETE (RECURRING — user-facing count confirmed 12; internal skills not tracked) |
+| 18 | LOW | Count | HumanLayer 0a/0c/28s (Agent 2: conf 0.87 < 0.90; oss-split restructure ongoing; keep 6a/27c/0s) | ON HOLD (RECURRING — conf < 0.90; oss-split restructure; keep 6a/27c/0s) |
+| 19 | LOW | Count | GSD commands 67 (Agent 2: conf 0.85; counts-don't-fall vs baseline 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 20 | LOW | Workflow | Superpowers: Agent 1 adds implementer(sub)/task-reviewer(sub) + reclassifies subagent-driven-development as top (conf 0.88 < 0.90; 2nd consecutive for subagent-driven-development reclassification; implementer/task-reviewer are implicit sub-roles dispatched by subagent-driven-development, not standalone skills; keep current 7-step) | ON HOLD (RECURRING — conf 0.88 < 0.90; 2nd consecutive reclassification; implicit sub-roles confirmed; keep current 7-step) |
+| 21 | LOW | Workflow | Matt Pocock: 9-step adds triage between to-tickets and implement; conf 0.90; chain reset 8→9-step | ON HOLD (RECURRING — chain reset; keep current 8-step; grill-me applied separately) |
+| 22 | LOW | Workflow | ECC: 7-step ecc-plan/resume-session naming changes; conf 0.78 < 0.90; chain reset | ON HOLD (RECURRING — conf < 0.90; chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | Spec Kit: 6-step confirmed (Agent 1: conf 0.88; same as current) | COMPLETE (RECURRING — no change) |
+| 24 | LOW | Workflow | OpenSpec: 6-step explore/propose/review/apply/verify/archive without /opsx: prefix (Agent 2: conf 0.91; chain reset vs current 5-step opsx-prefixed) | ON HOLD (RECURRING — chain reset; keep current 5-step) |
+| 25 | LOW | Workflow | gstack: 9-step drops plan-*-review steps (Agent 2: conf 0.84; chain reset vs current 11-step) | ON HOLD (RECURRING — conf 0.84 < 0.90; chain reset; keep current 11-step) |
+| 26 | LOW | Workflow | BMAD: 7-step drops bmad-spec adds bmad-eval/bmad-retrospective (Agent 2: conf 0.88 < 0.90; bmad-spec removed Oct 13 per Sofia commit; chain reset) | ON HOLD (RECURRING — conf 0.88; chain reset; keep current 7-step) |
+| 27 | LOW | Workflow | CE: 6-step confirmed (Agent 2: conf 0.90; same as current; Oct 29 12-step report was outlier) | COMPLETE (RESOLVED — confirmed same 6-step; Oct 29 ON HOLD resolved) |
+| 28 | LOW | Workflow | omc: 8-step omc-setup/deep-interview/team-plan/team-prd/team-exec/team-verify/team-fix/skillify (Agent 2: conf 0.88 < 0.90; drops plan/team steps; chain reset vs current 9-step) | ON HOLD (RECURRING — conf 0.88 < 0.90; chain reset; keep current 9-step) |
+| 29 | LOW | Workflow | HumanLayer: generic pipeline steps not actual commands (Agent 2: conf 0.87 < 0.90; oss-split major restructure ongoing; keep current 9-step) | ON HOLD (RECURRING — conf < 0.90; oss-split ongoing; keep current 9-step) |
+| 30 | LOW | Workflow | GSD: archived; keep current 8-step | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); GitHub API WebFetch used for all star verification; 3 star changes + 1 command count change + 1 workflow badge change applied; Spec Kit v1.2.5 active (Oct 28-29 security hardening); ECC active PR #3809 Oct 30 (context budget validation, hook fixes); Superpowers v7.0.1 brainstorming rebuild (Oct 21); Matt Pocock implement-spec reworked Oct 29 (subagent per ticket); OpenSpec v1.15.0 standalone binaries (Oct 24); gstack v1.91.318.0 Oct 29 (ship depth proportional to diff size); BMAD Sofia (bmad-agent-po) added replacing bmad-spec/ticket/correct-course (Oct 13); CE v3.33.2 Oct 29; omc v5.7.21 Oct 30 (bounded state_clear, team mission discovery); HumanLayer oss-split ongoing | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-10-31 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Stars | Superpowers ★ 309k → 310k (verified 309.5k via GitHub HTML) | COMPLETE (RECURRING — stars rose) |
+| 2 | HIGH | Stars | Matt Pocock ★ 307k → 308k (verified 307.6k via GitHub HTML) | COMPLETE (RECURRING — stars rose) |
+| 3 | HIGH | Stars | ECC ★ 293k → 294k (verified 293.5k via GitHub HTML) | COMPLETE (RECURRING — stars rose) |
+| 4 | MED | Stars | OpenSpec ★ 73k → 73.5k (verified 73.5k via GitHub HTML) | COMPLETE (NEW — decimal precision added) |
+| 5 | MED | Stars | GSD ★ 64.6k → 64.2k (verified 64.2k via GitHub HTML; archived repo May 2026, stars can fall) | COMPLETE (NEW — archived repo star decline) |
+| 6 | HIGH | Count | ECC skills 1,004 → 314 (Agent 1: conf 0.90; README claims 314; trajectory v2.2.0 286→v2.2.3 314 consistent; prior ON HOLD cleared) | COMPLETE (NEW — solid evidence: README-confirmed at 0.90; prior ON HOLD cleared) |
+| 7 | HIGH | Link | ECC URL affaan-m/ECC → affaan-m/everything-claude-code (repo renamed; agents count 71 confirms same repo) | COMPLETE (NEW — repo rename corrected) |
+| 8 | HIGH | Count | HumanLayer restructured: 6a/27c/0s → 0a/0c/28s (commands/ and agents/ dirs gone; 28 skills in .claude/skills/ confirmed; oss-split restructure complete) | COMPLETE (NEW — solid directory evidence; oss-split restructure complete) |
+| 9 | HIGH | Workflow | HumanLayer workflow: 9-step command-based (/linear→/describe_pr) → 6-step skill-based (grind-research→bump-version) | COMPLETE (NEW — command dirs removed; old workflow definitively invalid) |
+| 10 | MED | Workflow | Superpowers: adds receiving-code-review(sub) between requesting-code-review and finishing-a-development-branch (skill confirmed in 15-skill list) | COMPLETE (NEW — skill confirmed present; logical addition) |
+| 11 | LOW | Count | ECC commands 112 (agent says 98 legacy + 3 newer = 101; counts-don't-fall) | ON HOLD (RECURRING — counts-don't-fall; keep 112) |
+| 12 | LOW | Count | gstack skills 60 (agent: 60 vs current 61; counts-don't-fall) | ON HOLD (RECURRING — counts-don't-fall; keep 61) |
+| 13 | LOW | Count | BMAD skills 31 (agent: 31 vs current 33; counts-don't-fall) | ON HOLD (RECURRING — counts-don't-fall; keep 33) |
+| 14 | LOW | Count | GSD commands 67 (agent: 67 vs current 85; counts-don't-fall; repo archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85) |
+| 15 | LOW | Workflow | Matt Pocock: drops setup-matt-pocock-skills from 8-step (chain reset — different 7-step variant than prior entry; 1st consecutive of this variant) | ON HOLD (NEW — chain reset; 1st consecutive; keep current 8-step) |
+| 16 | LOW | Workflow | gstack: 11-step plan-review chain → 7-step office-hours→autoplan→review→qa→canary→ship→retro (ship pipeline refactored; plan-review skills still exist) | ON HOLD (NEW — 1st consecutive; 1st sighting of simplified pipeline; keep current 11-step) |
+| 17 | LOW | Workflow | Spec Kit: /speckit.implement sub → top (1st consecutive; keep current sub) | ON HOLD (NEW — 1st consecutive; keep current) |
+| 18 | LOW | Workflow | BMAD: drops bmad-spec, adds bmad-retrospective (bmad-spec still in skills list; 1st consecutive) | ON HOLD (NEW — 1st consecutive; keep current) |
+| 19 | LOW | Workflow | ECC: chain reset — different 10-step variant vs prior ON HOLD 7-step; 1st consecutive of new variant | ON HOLD (NEW — chain reset; keep current 7-step) |
+| 20 | LOW | Workflow | oh-my-claudecode: plan → ralplan, team sub-steps simplified to execute/verify/ralph (v5.7.22 changes; 1st consecutive) | ON HOLD (NEW — 1st consecutive; keep current 9-step) |
+| 21 | LOW | Workflow | Compound Engineering: adds ce-commit-push-pr before ce-compound (v3.34.0; 1st consecutive) | ON HOLD (NEW — 1st consecutive; keep current 6-step) |
+| 22 | LOW | Sort | Sort order after updates: 310k > 308k > 294k > 144k > 138k > 99.7k(OOS) > 73.5k > 64.2k > 55k > 40.4k > 25.8k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 23 | INFO | Verify | shields.io JSON endpoint returned 403 (proxy blocked); WebFetch on github.com HTML used as authoritative fallback | COMPLETE (fallback verification used) |
+| 24 | INFO | OOS | agent-skills verified at 112k (up from 99.7k in table) — OOS row not modified per scope rules | ON HOLD (OOS — agent-skills star drift noted; update deferred to separate OOS refresh) |
+
+---
+
+## [2026-11-01 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update Matt Pocock ★ 308k → 308.5k (WebFetch verified ~308,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 2 | HIGH | Star | Update Spec Kit ★ 144k → 144.5k (WebFetch verified ~144,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 3 | HIGH | Star | Update gstack ★ 138k → 138.5k (WebFetch verified ~138,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 4 | MED | Star | Update omc ★ 40.4k → 40.5k (WebFetch verified ~40,500; UP direction) | COMPLETE (RECURRING — updated README table) |
+| 5 | MED | Count | Update Matt Pocock skills 38 → 39 (Agent 1: conf 0.90; software-factory added Oct 31; directly enumerated all 5 category folders = 39) | COMPLETE (NEW — software-factory confirmed; UP direction; updated README table) |
+| 6 | MED | Count | Update gstack skills 61 → 63 (Agent 2: enumerated 63 from AGENTS.md — plan-mode 9 + impl+review 17 + release+deploy 9 + ops+memory 13 + browser+agent 4 + iOS QA 5 + safety+scoping 6 = 63; UP direction) | COMPLETE (NEW — directly enumerated; UP direction; updated README table) |
+| 7 | LOW | Star | Superpowers ~310,100 (310.1k) — rounds to 310k; no meaningful change; keep 310k | COMPLETE (RECURRING — within rounding tolerance) |
+| 8 | LOW | Star | ECC ~294,100 (294k) — Agent 1 stale 293k overridden; WebFetch confirms 294k; no change | COMPLETE (RECURRING — stale agent read overridden; no change) |
+| 9 | LOW | Star | OpenSpec 73.5k — no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | GSD 64.2k — no change; archived | COMPLETE (RECURRING — archived; no change) |
+| 11 | LOW | Star | BMAD ~54,800 (rounds to 55k) — no change | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Star | CE 25.8k — no change | COMPLETE (RECURRING — no change) |
+| 13 | LOW | Star | HumanLayer 12.7k — no change | COMPLETE (RECURRING — no change) |
+| 14 | LOW | Sort | Sort order after updates: 310k > 308.5k > 294k > 144.5k > 138.5k > 99.7k(OOS) > 73.5k > 64.2k > 55k > 40.5k > 25.8k > 12.7k — same relative positions | COMPLETE (no re-sort needed) |
+| 15 | LOW | Count | ECC commands 98 (Agent 1: direct count; counts-don't-fall vs baseline 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 16 | LOW | Count | ECC skills 311 (Agent 1: stale external guide; counts-don't-fall vs baseline 314s) | INVALID (RECURRING — counts-don't-fall; keep 314s) |
+| 17 | LOW | Count | BMAD skills 31 (Agent 2: "View all files" truncation; counts-don't-fall vs baseline 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 18 | LOW | Count | GSD commands 67 (Agent 2: archived; counts-don't-fall vs baseline 85c) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 19 | LOW | Count | ECC agents 71, Spec Kit 0a/10c/0s, Superpowers 0a/0c/15s, Matt Pocock 0a/0c, OpenSpec 0a/12c/12s, GSD 33a/0s, omc 19a/0c/48s, CE 0a/1c/36s, HumanLayer 0a/0c/28s — all confirmed | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | Superpowers: Agent adds using-superpowers(top) at start, drops receiving-code-review(sub) (conf 0.90; receiving-code-review confirmed in 15-skill list Oct 31; chain reset) | ON HOLD (RECURRING — chain reset vs current 8-step; keep current) |
+| 21 | LOW | Workflow | Matt Pocock: 10-step with grill-with-docs (regression from grill-me applied Oct 30), triage added, retro added (conf 0.90; chain reset 8→10) | ON HOLD (RECURRING — chain reset; grill-me applied Oct 30 confirmed; keep current 8-step) |
+| 22 | LOW | Workflow | Spec Kit: 6-step constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed (Agent 1: conf 0.85) | COMPLETE (RECURRING — no change) |
+| 23 | LOW | Workflow | OpenSpec: explore→propose→apply→verify(sub)→archive confirmed same (Agent 2: same 5-step structure) | COMPLETE (RECURRING — no change) |
+| 24 | LOW | Workflow | GSD: archived; keep current 8-step | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 25 | LOW | Workflow | gstack: 11-step variant with build(top) replacing plan-devex-review(sub); review/qa reclassified as sub (Agent 2; chain reset vs current 11-step) | ON HOLD (RECURRING — 2nd consecutive; chain reset with conflicting details; keep current 11-step) |
+| 26 | LOW | Workflow | BMAD: 8-step adds bmad-walkthrough/bmad-retrospective, drops bmad-forge-idea/bmad-spec (Agent 2: conf 0.87 < 0.90; 2nd consecutive for retrospective; keep current 7-step) | ON HOLD (RECURRING — conf < 0.90; chain reset; keep current 7-step) |
+| 27 | LOW | Workflow | CE: 6-step ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed same (Agent 2: conf 0.91) | COMPLETE (RECURRING — no change) |
+| 28 | LOW | Workflow | omc: 10-step adds omc-setup, replaces release with ralph (Agent 2: conf 0.90; 2nd consecutive for workflow change; conflicting details with Oct 31 ralplan report; keep current 9-step) | ON HOLD (RECURRING — 2nd consecutive; conflicting step names; keep current 9-step) |
+| 29 | LOW | Workflow | HumanLayer: RPI plugin workflow reported (task-create→session-start→rpi-*→human-review; chain reset vs current 6-step skill-based workflow applied Oct 31) | ON HOLD (RECURRING — chain reset; Oct 31 skill-based workflow current; keep current 6-step) |
+| 30 | LOW | OOS | agent-skills: ~112,300 (112.3k) verified by WebFetch — significant drift from 99.7k in table; OOS row not modified per scope rules | ON HOLD (OOS — agent-skills star drift 99.7k → 112.3k; update deferred to separate OOS refresh) |
+| 31 | LOW | Note | shields.io Bash curl blocked (proxy — RECURRING); WebFetch on github.com HTML used for all star verification (RECURRING); 4 star changes + 2 skill count changes applied; Matt Pocock software-factory skill added Oct 31 (confirmed in in-progress/ folder); gstack +2 skills (63 vs 61; test-audit + new addition); agent-skills significant OOS drift noted (99.7k → 112.3k) | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-02 09:18 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update obra/superpowers ★ from 310k to 311k | COMPLETE (verified via GitHub HTML WebFetch: 311k confirmed) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 308.5k to 309k | COMPLETE (verified via GitHub HTML WebFetch: 308.9k → 309k at 0.5k precision) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 294k to 295k | COMPLETE (verified via GitHub HTML WebFetch: 294.9k → 295k at 0.5k precision) |
+| 4 | HIGH | Star | Update github/spec-kit ★ from 144.5k to 145k | COMPLETE (verified via GitHub HTML WebFetch: 145k confirmed) |
+| 5 | HIGH | Star | Update garrytan/gstack ★ from 138.5k to 139k | COMPLETE (verified via GitHub HTML WebFetch: 138.6k → 139k at 0.5k precision) |
+| 6 | LOW | Star | Fission-AI/OpenSpec ★ stays at 73.5k | INVALID (73.6k rounds to 73.5k at 0.5k precision — no change) |
+| 7 | LOW | Count | affaan-m/everything-claude-code agent count 71→84 | ON HOLD (counts-don't-fall rule — agent count would fall if reverted; awaiting 3 consecutive confirms) |
+| 8 | LOW | Count | affaan-m/everything-claude-code command count 112→127 | ON HOLD (counts-don't-fall rule — first confirmation; awaiting 3 consecutive confirms) |
+| 9 | LOW | Workflow | mattpocock/skills workflow pipeline restructure | ON HOLD (chain reset — agent reports different step structure; 1st consecutive confirmation) |
+| 10 | LOW | Workflow | Fission-AI/OpenSpec workflow pipeline change | ON HOLD (confidence < 0.90; 1st consecutive confirmation) |
+
+---
+
+## [2026-11-03 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update spec-kit ★ from 145k to 146k (WebFetch verified 145.7k) | COMPLETE (RECURRING — stars rose) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ from 309k to 310k (WebFetch verified 310k) | COMPLETE (RECURRING — stars rose) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 295k to 296k (WebFetch verified 295.8k) | COMPLETE (RECURRING — stars rose) |
+| 4 | MED | Star | Update Fission-AI/OpenSpec ★ from 73.5k to 73.7k (WebFetch verified 73.7k) | COMPLETE (RECURRING — stars rose) |
+| 5 | MED | Star | Update EveryInc/compound-engineering-plugin ★ from 25.8k to 25.9k (WebFetch verified 25.9k) | COMPLETE (RECURRING — stars rose) |
+| 6 | MED | Star | Update humanlayer/humanlayer ★ from 12.7k to 12.8k (WebFetch verified 12.8k) | COMPLETE (RECURRING — stars rose) |
+| 7 | LOW | Star | obra/superpowers 311.3k → rounds to 311k; no change | COMPLETE (RECURRING — within rounding tolerance) |
+| 8 | LOW | Star | garrytan/gstack 138.7k → rounds to 139k; no change | COMPLETE (RECURRING — within rounding tolerance) |
+| 9 | LOW | Star | bmad-code-org/BMAD-METHOD 54.9k → rounds to 55k; no change | COMPLETE (RECURRING — within rounding tolerance) |
+| 10 | LOW | Star | Yeachan-Heo/oh-my-claudecode 40.5k; no change | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | gsd-build/get-shit-done 64.2k; no change; archived | COMPLETE (RECURRING — archived; no change) |
+| 12 | LOW | Count | spec-kit commands 9 (Agent 1: 9 files in templates/commands/; current 10; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 13 | LOW | Count | ECC commands 98 (Agent 1: README "legacy command shims"; current 112; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 14 | LOW | Count | OpenSpec commands 10 (Agent 2: README lists 10; current 12; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; keep 12c) |
+| 15 | LOW | Count | GSD commands 67 (Agent 2: archived; current 85; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 16 | LOW | Count | ECC agents 71 confirmed (Agent 1: README self-reports 71; same as current) | COMPLETE (RECURRING — no change) |
+| 17 | LOW | Count | ECC skills 314 confirmed (Agent 1: README self-reports 314; same as current) | COMPLETE (RECURRING — no change) |
+| 18 | LOW | Count | Nov 02 ON HOLD ECC agents 84 invalidated — today Agent 1 confirms 71 (chain reset to current) | INVALID (RECURRING — chain reset; prior 84a ON HOLD cleared; keep 71a) |
+| 19 | LOW | Count | Nov 02 ON HOLD ECC commands 127 invalidated — today Agent 1 says 98 (below current 112; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; prior 127c ON HOLD cleared; keep 112c) |
+| 20 | LOW | Count | OpenSpec agents 4 (NEW: .agents/skills/ contains draft-openspec-docs, release-openspec, verify-openspec-docs, write-openspec-docs; conf 0.7; 1st consecutive) | ON HOLD (NEW — conf 0.7; 1st consecutive; need 3 to apply) |
+| 21 | LOW | Count | CE skills 37 vs current 36 (Agent 2: direct enumeration of root skills/; conf 0.85; UP direction; 1st consecutive) | ON HOLD (NEW — 1st consecutive; UP direction; keep 36s pending confirmation) |
+| 22 | LOW | Count | omc commands 21 (NEW: Agent 2 found 21 .md files in commands/ despite task spec saying 0; conf 0.9; 1st consecutive) | ON HOLD (NEW — 1st consecutive; verifying whether pre-existing or new addition; keep 0c) |
+| 23 | LOW | Workflow | ECC: chain reset to 7-step plan→test→implement→review→verify→remember→improve (different from prior ON HOLD variants; 1st consecutive of this variant) | ON HOLD (NEW — chain reset; keep current 7-step plan→tdd-workflow→implement→code-review→security-scan→build-fix→save-session) |
+| 24 | LOW | Workflow | superpowers: drops receiving-code-review(sub) — 2nd consecutive report; receiving-code-review confirmed in 15-skill list | ON HOLD (RECURRING — 2nd consecutive; receiving-code-review in skill list; keep current 8-step) |
+| 25 | LOW | Workflow | mattpocock: grill-with-docs + implement-spec restructure, drops tdd (2nd consecutive of restructure variants; different exact variant each time) | ON HOLD (RECURRING — 2nd consecutive; chain reset variants; keep current 8-step) |
+| 26 | LOW | Workflow | OpenSpec: adds init step, uses apply/verify/archive (shorter names without -change suffix; 2nd consecutive) | ON HOLD (RECURRING — 2nd consecutive; keep current 5-step /opsx:explore→/opsx:propose→apply-change→verify-change→archive-change) |
+| 27 | LOW | Workflow | gstack: 12-step with verify/canary/document-release, drops autoplan/plan-devex-review (3rd consecutive different variant; conf varies) | ON HOLD (RECURRING — 3rd consecutive; conflicting specifics each run; keep current 11-step) |
+| 28 | LOW | Workflow | BMAD: bmad-setup→clarify→plan→bmad-build→verify→bmad-review→learn-adjust (3rd consecutive chain reset; generic step names, not actual skill names) | ON HOLD (RECURRING — 3rd consecutive; generic names not matching actual skills; keep current 7-step) |
+| 29 | LOW | Workflow | CE: 10-step ce-setup→ce-ideate→ce-brainstorm→ce-plan→ce-work→ce-simplify-code→ce-code-review→ce-compound→ce-commit-push-pr→ce-babysit-pr (chain reset from Nov 02 confirmed; 1st consecutive of 10-step) | ON HOLD (NEW — chain reset from Nov 02 confirmation; 1st consecutive of 10-step; keep current 6-step) |
+| 30 | LOW | Workflow | HumanLayer: install→connect-agents→research→plan→implement→review→ship (generic names; 3rd consecutive chain reset from current skill-based workflow) | ON HOLD (RECURRING — 3rd consecutive reset; generic names vs actual skills; keep current 6-step) |
+| 31 | LOW | Workflow | omc: omc-setup→deep-interview→ralplan→autopilot→verify→skillify (3rd consecutive different variant; conflicting specifics) | ON HOLD (RECURRING — 3rd consecutive; conflicting details each run; keep current 9-step) |
+| 32 | LOW | Sort | Sort order after updates: 311k > 310k > 296k > 146k > 139k > 99.7k(OOS) > 73.7k > 64.2k > 55k > 40.5k > 25.9k > 12.8k — same relative positions | COMPLETE (no re-sort needed) |
+| 33 | INFO | Verify | shields.io JSON endpoint blocked (proxy 403, RECURRING); WebFetch on github.com HTML used for all 11 repos — all verified authoritative | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-04 09:20 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update obra/superpowers ★ 311k → 312k (WebFetch verified 312.0k) | COMPLETE (RECURRING — stars rose) |
+| 2 | HIGH | Star | Update mattpocock/skills ★ 310k → 312k (WebFetch verified 311.6k) | COMPLETE (RECURRING — stars rose) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ 296k → 297k (WebFetch verified 296.6k) | COMPLETE (RECURRING — stars rose) |
+| 4 | HIGH | Star | Update github/spec-kit ★ 146k → 147k (WebFetch verified 146.8k) | COMPLETE (RECURRING — stars rose) |
+| 5 | MED | Star | Update Fission-AI/OpenSpec ★ 73.7k → 73.8k (WebFetch verified 73.8k) | COMPLETE (RECURRING — stars rose) |
+| 6 | LOW | Star | garrytan/gstack 138.9k → rounds to 139k; no change | COMPLETE (RECURRING — within rounding tolerance) |
+| 7 | LOW | Star | gsd-build/get-shit-done 64.2k; no change; archived | COMPLETE (RECURRING — archived; no change) |
+| 8 | LOW | Star | bmad-code-org/BMAD-METHOD 55.0k → rounds to 55k; no change | COMPLETE (RECURRING — no change) |
+| 9 | LOW | Star | Yeachan-Heo/oh-my-claudecode 40.5k; no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | EveryInc/compound-engineering-plugin 25.9k; no change | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | humanlayer/humanlayer 12.8k; no change | COMPLETE (RECURRING — no change) |
+| 12 | LOW | Count | spec-kit commands 9 (Agent 1: 9 in templates/commands/; v1.3.0 added extension commands outside dir; counts-don't-fall vs baseline 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 13 | LOW | Count | ECC commands 98 (Agent 1: README "legacy command shims"; counts-don't-fall vs baseline 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 14 | LOW | Count | Matt Pocock skills 27 (Agent 1: 27 active excluding deprecated/in-progress/misc; counts-don't-fall vs baseline 39s) | INVALID (RECURRING — counts-don't-fall; excluded dirs not counted; keep 39s) |
+| 15 | LOW | Count | gstack skills ~64 (Agent 2: estimated from AGENTS.md; 1st consecutive UP) | ON HOLD (NEW — 1st consecutive; keep 63s) |
+| 16 | LOW | Count | CE skills 37 (Agent 2: direct enumeration of 37 names; 2nd consecutive UP direction) | ON HOLD (RECURRING — 2nd consecutive; keep 36s) |
+| 17 | LOW | Count | GSD commands 67 (Agent 2: archived; counts-don't-fall vs baseline 85c) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | OpenSpec agents 4 (Nov 03 ON HOLD) chain reset — Agent 2 confirms 0 today (no .md agent files in .agents/) | INVALID (RESOLVED — chain reset; Nov 03 ON HOLD cleared; keep 0a) |
+| 19 | LOW | Count | omc commands 21 (Nov 03 ON HOLD) chain reset — Agent 2 confirms 0 today (no commands/ dir; skills serve as slash commands) | INVALID (RESOLVED — chain reset; Nov 03 ON HOLD cleared; keep 0c) |
+| 20 | LOW | Workflow | Superpowers: drops receiving-code-review(sub) — 3rd consecutive (skill still confirmed in 15-skill directory; keep current 8-step) | ON HOLD (RECURRING — 3rd consecutive; skill exists; keep current 8-step) |
+| 21 | LOW | Workflow | Matt Pocock: grill-with-docs replaces grill-me in 8-step (chain reset from Nov 03 10-step back to 8-step; grill-with-docs is real skill in engineering/) | ON HOLD (RECURRING — chain reset; keep current 8-step with grill-me) |
+| 22 | LOW | Workflow | ECC: plan→test→implement→review→verify→remember→improve (2nd consecutive of this 7-step variant vs current plan→tdd-workflow→implement→code-review→security-scan→build-fix→save-session) | ON HOLD (RECURRING — 2nd consecutive; keep current 7-step) |
+| 23 | LOW | Workflow | Spec Kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed (steps match current /speckit.xxx; v1.3.0 core pipeline intact) | COMPLETE (RECURRING — no change) |
+| 24 | LOW | Workflow | OpenSpec: explore→propose→apply→archive (4-step; drops verify; chain reset from Nov 03 5-step) | ON HOLD (RECURRING — chain reset; keep current 5-step /opsx:explore→propose→apply-change→verify-change→archive-change) |
+| 25 | LOW | Workflow | gstack: office-hours→spec→plan-ceo-review→plan-eng-review→plan-design-review→autoplan→review→qa→ship→land-and-deploy (10-step; drops retro, reorders; chain reset from Nov 03) | ON HOLD (RECURRING — chain reset; keep current 11-step) |
+| 26 | LOW | Workflow | BMAD: clarify→plan→bmad-build→bmad-code-review(sub)→verify→bmad-retrospective (6-step; chain reset from current 7-step bmad-forge-idea→...→bmad-review) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 27 | LOW | Workflow | CE: ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(top)→ce-compound (sub→top reclassification; chain reset from Nov 03 10-step back to 6-step variant) | ON HOLD (RECURRING — chain reset; keep current 6-step) |
+| 28 | LOW | Workflow | omc: deep-interview→ralplan→team-plan→team-prd(sub)→team-exec(sub)→team-verify(sub)→team-fix(sub) (7-step; drops plan/team/release; chain reset from Nov 03) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
+| 29 | LOW | Workflow | HumanLayer: worktree-create→research→plan→implement→typecheck(sub)→quality(sub)→test(sub)→code-review→merge (generic names, not actual skill names; chain reset from Nov 03) | ON HOLD (RECURRING — chain reset; keep current 6-step skill-based) |
+| 30 | LOW | Workflow | GSD: new-project→plan-phase→execute-phase→verify-work→progress→ship (6-step; archived repo; chain reset from current 8-step) | ON HOLD (RECURRING — archived; keep current 8-step) |
+| 31 | LOW | Sort | Sort order after updates: 312k (spr 312.0k) > 312k (mps 311.6k) > 297k > 147k > 139k > 99.7k(OOS) > 73.8k > 64.2k > 55k > 40.5k > 25.9k > 12.8k — same relative positions | COMPLETE (no re-sort needed) |
+| 32 | INFO | Verify | shields.io Bash curl blocked (proxy — RECURRING); WebFetch on github.com HTML used for all 11 repos — all verified authoritative; 5 star changes applied; spec-kit v1.3.0 (Nov 3: core pipeline intact); superpowers v7.0.2 (Nov 3: brainstorming tweaks); BMAD skills 33 confirmed by two independent directory fetches; CE skills 37 (2nd consecutive UP); omc/OpenSpec ON HOLD agents invalidated by chain reset | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-06 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ 312k → 316k (WebFetch verified 315.5k) | COMPLETE (RECURRING — stars rose; largest single-run jump observed; now leads table) |
+| 2 | HIGH | Star | Update obra/superpowers ★ 312k → 313k (WebFetch verified 313.1k) | COMPLETE (RECURRING — stars rose) |
+| 3 | HIGH | Star | Update affaan-m/ECC ★ 297k → 298k (WebFetch verified 298k; repo renamed from everything-claude-code to ECC) | COMPLETE (RECURRING — stars rose) |
+| 4 | HIGH | Star | Update github/spec-kit ★ 147k → 148k (WebFetch verified 147.9k) | COMPLETE (RECURRING — stars rose) |
+| 5 | MED | Star | Update garrytan/gstack ★ 139k → 140k (WebFetch verified 140.0k) | COMPLETE (RECURRING — stars rose) |
+| 6 | MED | Star | Update Fission-AI/OpenSpec ★ 73.8k → 74.1k (WebFetch verified 74.1k) | COMPLETE (RECURRING — stars rose) |
+| 7 | LOW | Star | Update Yeachan-Heo/oh-my-claudecode ★ 40.5k → 40.6k (WebFetch verified 40.6k) | COMPLETE (RECURRING — stars rose) |
+| 8 | LOW | Star | gsd-build/get-shit-done 64.2k; no change; archived | COMPLETE (RECURRING — archived; no change) |
+| 9 | LOW | Star | bmad-code-org/BMAD-METHOD 55k; no change | COMPLETE (RECURRING — no change) |
+| 10 | LOW | Star | EveryInc/compound-engineering-plugin 25.9k; no change | COMPLETE (RECURRING — no change) |
+| 11 | LOW | Star | humanlayer/humanlayer 12.8k; no change | COMPLETE (RECURRING — no change) |
+| 12 | MED | Count | CE skills 36 → 37 applied (3rd consecutive direct enumeration; 37 skill names confirmed by Agent 2) | COMPLETE (RECURRING — 3rd consecutive met; applied) |
+| 13 | LOW | Count | spec-kit commands 9 (Agent 1: 9 in templates/commands/; v1.3.1 released; counts-don't-fall vs current 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 14 | LOW | Count | ECC skills 286 (Agent 1: from v2.2.0 release notes; counts-don't-fall vs current 314s) | INVALID (RECURRING — counts-don't-fall; keep 314s) |
+| 15 | LOW | Count | ECC commands 98 (Agent 1: directory listing; counts-don't-fall vs current 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 16 | LOW | Count | mattpocock skills 31 published (Agent 1: active dirs only; excludes in-progress/deprecated; counts-don't-fall vs 39s) | INVALID (RECURRING — counts-don't-fall; keep 39s) |
+| 17 | LOW | Count | GSD commands 67 (Agent 2: archived; counts-don't-fall vs current 85c) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | HumanLayer skills 3 (Agent 2: CLAUDE.md only; .claude/skills/ dir inaccessible; conf 0.70; counts-don't-fall vs 28s) | INVALID (NEW — inaccessible directory; low confidence; counts-don't-fall; keep 28s) |
+| 19 | LOW | Count | gstack skills 64 (Agent 2: AGENTS.md enumeration; 2nd consecutive UP from current 63s) | ON HOLD (RECURRING — 2nd consecutive; keep 63s) |
+| 20 | LOW | Count | omc commands 21 (Agent 2: 21 .md files found in commands/; 1st consecutive after Nov 04 chain reset) | ON HOLD (NEW — 1st consecutive after Nov 04 chain reset confirmed 0; keep 0c) |
+| 21 | LOW | Count | BMAD bmad-spec not in confirmed 33-skill enumeration (Agent 2 list; CHANGES mention sofia replaces bmad-spec/ticket/correct-course; v7 dev) | ON HOLD (NEW — bmad-spec absent; v7 ETA mid-Nov; monitor; keep current 7-step workflow with bmad-spec) |
+| 22 | LOW | Workflow | Superpowers: drops receiving-code-review (4th consecutive; skill still in 15-skill directory; v7.0.2 Nov 3) | ON HOLD (RECURRING — 4th consecutive; skill exists; keep current 8-step) |
+| 23 | LOW | Workflow | mattpocock: grill-with-docs+implement-spec 7-step (3rd consecutive chain-reset variant; different exact form each run; v1.3.2 Oct 29) | ON HOLD (RECURRING — 3rd consecutive reset; keep current 8-step with grill-me) |
+| 24 | LOW | Workflow | ECC: plan→tdd→e2e→code-review→build-fix→learn 6-step (chain reset from Nov 04 2nd-consecutive 7-step variant; v2.2.3) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 25 | LOW | Workflow | gstack: office-hours→plan-ceo-review→review→verify→ship→retro 6-step (chain reset; v1.96.0.0 Nov 5 landed land-and-deploy user-explicit) | ON HOLD (RECURRING — chain reset; v1.96.0.0 land-and-deploy change noted; keep current 11-step) |
+| 26 | LOW | Workflow | OpenSpec: explore→propose→review→apply→archive (no /opsx: prefix, drops verify, adds review; chain reset; CLI binaries added Oct 24) | ON HOLD (RECURRING — chain reset; keep current 5-step /opsx:xxx format) |
+| 27 | LOW | Workflow | GSD: new-project→new-milestone→plan-phase→execute-phase→verify-work→ship 6-step (archived Jun 26; chain reset from current 8-step) | ON HOLD (RECURRING — archived; chain reset; keep current 8-step) |
+| 28 | LOW | Workflow | BMAD: bmad-forge-idea→bmad-prd→bmad-architecture→bmad-build→bmad-review→bmad-eval 6-step (chain reset; bmad-spec absent from skill list; sofia replacing 3 skills per CHANGES) | ON HOLD (RECURRING — chain reset; bmad-spec observation pending; keep current 7-step) |
+| 29 | LOW | Workflow | CE: ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(top)→ce-code-review(top)→ce-compound all-top reclassification (chain reset from Nov 04; Nov 5 release) | ON HOLD (RECURRING — chain reset; keep current 6-step with sub classifications) |
+| 30 | LOW | Workflow | omc: omc-setup→deep-interview→autopilot→team-plan→team-prd→team-exec→team-verify→team-fix 8-step (chain reset from current 9-step; v5.7.31 Nov 3) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
+| 31 | LOW | Workflow | HumanLayer: fetch-ticket→create-worktree→implement→test→verify→commit generic 6-step (chain reset; v0.201.0 Nov 2) | ON HOLD (RECURRING — chain reset; keep current 6-step skill-based) |
+| 32 | LOW | Workflow | spec-kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed; v1.3.1 Nov 5 didn't change pipeline | COMPLETE (RECURRING — no change) |
+| 33 | LOW | Sort | mattpocock moved to row 1 (316k) above superpowers (313k); order: 316k>313k>298k>148k>140k>99.7k(OOS)>74.1k>64.2k>55k>40.6k>25.9k>12.8k | COMPLETE (NEW — first time mattpocock leads table) |
+| 34 | INFO | Verify | shields.io JSON blocked (proxy 403, RECURRING); WebFetch on github.com HTML used for all 11 repos — all verified authoritative | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-07 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 316k to 317k (WebFetch 316.8k) | COMPLETE (applied) |
+| 2 | HIGH | Star | Update obra/superpowers ★ from 313k to 314k (WebFetch 313.7k) | COMPLETE (applied) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 298k to 299k (WebFetch 298.6k) | COMPLETE (applied) |
+| 4 | HIGH | Star | Update garrytan/gstack ★ from 140k to 141k (WebFetch 140.5k) | COMPLETE (applied) |
+| 5 | MED | Star | Update Fission-AI/OpenSpec ★ from 74.1k to 74.2k (WebFetch 74.2k) | COMPLETE (applied) |
+| 6 | MED | Star | Update Yeachan-Heo/oh-my-claudecode ★ from 40.6k to 40.7k (WebFetch 40.7k) | COMPLETE (applied) |
+| 7 | MED | Star | Update bmad-code-org/BMAD-METHOD ★ from 55k to 55.1k (WebFetch 55.1k) | COMPLETE (applied) |
+| 8 | MED | Star | Update EveryInc/compound-engineering-plugin ★ from 25.9k to 26k (WebFetch 26.0k) | COMPLETE (applied) |
+| 9 | MED | Count | Update garrytan/gstack skills from 63 to 64 (3rd consecutive confirmation Nov 4→6→7) | COMPLETE (applied) |
+| 10 | LOW | Star | github/spec-kit 148k — no change | COMPLETE (no action) |
+| 11 | LOW | Star | humanlayer/humanlayer 12.8k — no change | COMPLETE (no action) |
+| 12 | LOW | Star | gsd-build/get-shit-done 64.2k — no change (archived) | COMPLETE (no action) |
+| 13 | LOW | Count | affaan-m/ECC commands 98 (counts-don't-fall from 112c) | INVALID (counts-don't-fall rule) |
+| 14 | LOW | Count | github/spec-kit commands 9 (counts-don't-fall from 10c) | INVALID (counts-don't-fall rule) |
+| 15 | LOW | Count | gsd-build/GSD commands 67 (counts-don't-fall from 85c; archived) | INVALID (counts-don't-fall rule) |
+| 16 | LOW | Count | mattpocock/skills skills 31 active (counts-don't-fall from 39s) | INVALID (counts-don't-fall rule) |
+| 17 | LOW | Count | bmad-code-org/BMAD skills 35 (1st consecutive UP from 33s) | ON HOLD (need 3 consecutive; run 1 of 3) |
+| 18 | LOW | Count | Yeachan-Heo/omc commands 21 (2nd consecutive after Nov 04 chain reset) | ON HOLD (need 3 consecutive; run 2 of 3) |
+| 19 | LOW | Count | humanlayer/humanlayer commands 1 (1st consecutive UP from 0c) | ON HOLD (need 3 consecutive; run 1 of 3) |
+| 20 | LOW | Workflow | obra/superpowers drops receiving-code-review (5th consecutive; skill present in directory) | ON HOLD (chain not yet 3-confirmed with identical step) |
+| 21 | LOW | Workflow | mattpocock/skills implement-spec vs implement step variant | ON HOLD (chain reset) |
+| 22 | LOW | Workflow | affaan-m/ECC workflow chain reset | ON HOLD (keep current 7-step) |
+| 23 | LOW | Workflow | Fission-AI/OpenSpec workflow chain reset | ON HOLD (keep current 5-step) |
+| 24 | LOW | Workflow | gsd-build/GSD workflow chain reset (archived) | ON HOLD (keep current 8-step) |
+| 25 | LOW | Workflow | garrytan/gstack workflow chain reset 7-step | ON HOLD (keep current 11-step) |
+| 26 | LOW | Workflow | bmad-code-org/BMAD workflow chain reset 7-step | ON HOLD (keep current 7-step) |
+| 27 | LOW | Workflow | Yeachan-Heo/omc workflow chain reset 7-step | ON HOLD (keep current 9-step) |
+| 28 | LOW | Workflow | humanlayer/humanlayer workflow chain reset | ON HOLD (keep current 6-step) |
+| 29 | LOW | Workflow | github/spec-kit workflow confirmed same 6-step | COMPLETE (no action) |
+| 30 | LOW | Workflow | EveryInc/compound-engineering-plugin workflow confirmed same 6-step | COMPLETE (no action) |
+| 31 | LOW | Sort | Sort order 317k>314k>299k>148k>141k>74.2k>64.2k>55.1k>40.7k>26k>12.8k — unchanged | COMPLETE (no action) |
+| 32 | INFO | Infra | shields.io JSON endpoint blocked by proxy (exit 56/connect_rejected) — RECURRING | ON HOLD (WebFetch HTML used for all 11 repos as authoritative fallback) |
+
+---
+
+## [2026-11-08 09:17 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 317k to 318k (WebFetch 317.8k) | COMPLETE (RECURRING — applied) |
+| 2 | HIGH | Count | Update Yeachan-Heo/oh-my-claudecode commands 0 → 21 (Agent 2: 21 .md files in commands/: ask, autoresearch, compact, configure-notifications, debug, deepinit, external-context, hud, omc-doctor, omc-setup, project-session-manager, psm, release, remember, self-improve, skill, skillify, trace, verify, visual-verdict, wiki; "View all files" caveat; 3rd consecutive confirmation: Nov 6=run 1, Nov 7=run 2, Nov 8=run 3) | COMPLETE (RECURRING — 3rd consecutive threshold met; applied) |
+| 3 | LOW | Star | obra/superpowers 314k — no change | COMPLETE (RECURRING — no action) |
+| 4 | LOW | Star | affaan-m/ECC 299k — no change | COMPLETE (RECURRING — no action) |
+| 5 | LOW | Star | github/spec-kit 148k — no change | COMPLETE (RECURRING — no action) |
+| 6 | LOW | Star | garrytan/gstack 141k (agent 140.7k; stars-don't-fall rule applied) — no change | COMPLETE (RECURRING — no action) |
+| 7 | LOW | Star | Fission-AI/OpenSpec 74.2k — no change | COMPLETE (RECURRING — no action) |
+| 8 | LOW | Star | gsd-build/get-shit-done 64.2k — no change (archived) | COMPLETE (RECURRING — no action) |
+| 9 | LOW | Star | bmad-code-org/BMAD-METHOD 55.1k — no change | COMPLETE (RECURRING — no action) |
+| 10 | LOW | Star | Yeachan-Heo/oh-my-claudecode 40.7k — no change | COMPLETE (RECURRING — no action) |
+| 11 | LOW | Star | EveryInc/compound-engineering-plugin 26.0k — no change | COMPLETE (RECURRING — no action) |
+| 12 | LOW | Star | humanlayer/humanlayer 12.8k — no change | COMPLETE (RECURRING — no action) |
+| 13 | LOW | Count | github/spec-kit commands 9 (Agent 1: 9 in templates/commands/; v1.3.2 Nov 6; counts-don't-fall from 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 14 | LOW | Count | affaan-m/ECC commands 98 (Agent 1: 98 .md in commands/; counts-don't-fall from 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 15 | LOW | Count | mattpocock/skills skills 31 (Agent 1: 20 engineering + 7 productivity + 4 misc; excludes in-progress/deprecated; counts-don't-fall from 39s) | INVALID (RECURRING — counts-don't-fall; keep 39s) |
+| 16 | LOW | Count | garrytan/gstack skills 62 (Agent 2: 62 documented in AGENTS.md; 88 root dirs exist; counts-don't-fall from 64s) | INVALID (RECURRING — counts-don't-fall; keep 64s) |
+| 17 | LOW | Count | gsd-build/GSD commands 67 (Agent 2: 67 confirmed; archived; counts-don't-fall from 85c) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | bmad-code-org/BMAD skills 32 (Agent 2: 32 visible dirs; "View all files"; counts-don't-fall from 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 19 | LOW | Count | bmad-code-org/BMAD skills chain reset — Nov 7 had 35 (run 1 of 3 UP); today 32 → chain reset | ON HOLD (chain reset from Nov 7 run 1) |
+| 20 | LOW | Count | humanlayer/humanlayer commands chain reset — Nov 7 had 1 (run 1 of 3 UP); today 0 → chain reset | ON HOLD (chain reset from Nov 7 run 1) |
+| 21 | LOW | Workflow | obra/superpowers: drops receiving-code-review (6th consecutive; skill still confirmed in 15-skill directory) | ON HOLD (RECURRING — skill exists; keep current 8-step) |
+| 22 | LOW | Workflow | mattpocock/skills: grill-me→to-spec→to-tickets→implement→tdd(sub)→code-review(top)→pr 7-step (removes setup-matt-pocock-skills first step, code-review sub→top; chain reset from Nov 7) | ON HOLD (chain reset) |
+| 23 | LOW | Workflow | affaan-m/ECC: plan→test→implement→review→verify→remember→improve 7-step all-top (chain reset from Nov 6) | ON HOLD (chain reset; keep current 7-step) |
+| 24 | LOW | Workflow | garrytan/gstack: office-hours→plan-ceo-review→autoplan→review(sub)→qa(sub)→ship 6-step (chain reset from Nov 7; v1.96+ changes) | ON HOLD (chain reset; keep current 11-step) |
+| 25 | LOW | Workflow | bmad-code-org/BMAD: bmad-forge-idea→bmad-architecture→bmad-build→bmad-review(sub)→bmad-eval(sub)→bmad-retrospective 6-step (chain reset from Nov 7; bmad-facilitate/bmad-ingest added Nov 1-8) | ON HOLD (chain reset; keep current 7-step) |
+| 26 | LOW | Workflow | Yeachan-Heo/omc: omc-setup→deep-interview→team-plan→team-prd→team-exec→team-verify(sub)→team-fix(sub) 7-step (chain reset from Nov 7; v5.7.31 Nov 3) | ON HOLD (chain reset; keep current 9-step) |
+| 27 | LOW | Workflow | humanlayer/humanlayer: research→plan→implement→test-it-locally(sub)→ship generic 5-step (not actual skill names; chain reset from Nov 7) | ON HOLD (chain reset; keep current 6-step skill-based) |
+| 28 | LOW | Workflow | github/spec-kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed; v1.3.2 Nov 6 added 6 extensions but core pipeline intact | COMPLETE (RECURRING — no action) |
+| 29 | LOW | Workflow | EveryInc/CE: ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed | COMPLETE (RECURRING — no action) |
+| 30 | LOW | Sort | Sort order 318k>314k>299k>148k>141k>99.7k(OOS)>74.2k>64.2k>55.1k>40.7k>26k>12.8k — unchanged | COMPLETE (no action) |
+| 31 | INFO | Infra | shields.io JSON endpoint blocked by proxy (RECURRING) — WebFetch HTML used by both research agents for star verification | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-09 09:14 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 318k to 319k (WebFetch 318.7k) | COMPLETE (RECURRING — applied) |
+| 2 | HIGH | Star | Update obra/superpowers ★ from 314k to 315k (WebFetch 314.7k) | COMPLETE (RECURRING — applied) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 299k to 300k (WebFetch ~300k) | COMPLETE (RECURRING — applied) |
+| 4 | HIGH | Star | Update github/spec-kit ★ from 148k to 149k (WebFetch 148.8k) | COMPLETE (RECURRING — applied) |
+| 5 | MED | Star | Update Fission-AI/OpenSpec ★ from 74.2k to 74.3k (WebFetch 74.3k) | COMPLETE (RECURRING — applied) |
+| 6 | LOW | Star | garrytan/gstack 140.8k → rounds to 141k; no change | COMPLETE (RECURRING — no action) |
+| 7 | LOW | Star | gsd-build/get-shit-done 64.2k — no change (archived) | COMPLETE (RECURRING — no action) |
+| 8 | LOW | Star | humanlayer/humanlayer 12.8k — no change | COMPLETE (RECURRING — no action) |
+| 9 | LOW | Star | bmad-code-org/BMAD-METHOD 55.1k — no change | COMPLETE (RECURRING — no action) |
+| 10 | LOW | Star | Yeachan-Heo/oh-my-claudecode 40.7k — no change | COMPLETE (RECURRING — no action) |
+| 11 | LOW | Star | EveryInc/compound-engineering-plugin 26.0k — no change | COMPLETE (RECURRING — no action) |
+| 12 | LOW | Count | github/spec-kit commands 9 (Agent 1: 9 in templates/commands/; counts-don't-fall from 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 13 | LOW | Count | affaan-m/ECC commands 98 (Agent 1: ~98 .md in commands/; counts-don't-fall from 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 14 | LOW | Count | affaan-m/ECC skills 156+ (Agent 1: v1.10.0 baseline 156; counts-don't-fall from 314s) | INVALID (RECURRING — counts-don't-fall; keep 314s) |
+| 15 | LOW | Count | mattpocock/skills skills 39 confirmed (Agent 1: enumerated 39 active; same as current) | COMPLETE (RECURRING — no change) |
+| 16 | LOW | Count | garrytan/gstack skills 57 (Agent 2: README-listed 57; counts-don't-fall from 64s) | INVALID (RECURRING — counts-don't-fall; keep 64s) |
+| 17 | LOW | Count | gsd-build/GSD commands 72 (Agent 2: gsd-core successor; counts-don't-fall from 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 18 | LOW | Count | bmad-code-org/BMAD skills 32 visible (Agent 2: "View all files"; counts-don't-fall from 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 19 | LOW | Count | EveryInc/CE skills 37 confirmed (Agent 2: exact enumeration 37; same as current 37s) | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Count | Yeachan-Heo/omc skills 84+ (Agent 2: 84 dirs visible, "View all files"; UP from current 48s; 1st consecutive) | ON HOLD (NEW — 1st consecutive; UP direction; keep 48s) |
+| 21 | LOW | Workflow | obra/superpowers: 9-step includes verification-before-completion; chain reset from Nov 7-8 "drops receiving-code-review" trend (6th consecutive chain now broken — receiving-code-review present again today) | ON HOLD (NEW — chain reset; verification-before-completion is real skill; 1st consecutive of 9-step variant; keep current 8-step) |
+| 22 | LOW | Workflow | mattpocock/skills: 12-step domain-modeling+implement-spec+improve-codebase-architecture+retro variant (chain reset from Nov 8 7-step; v1.3.2 Oct 29) | ON HOLD (RECURRING — chain reset; keep current 8-step) |
+| 23 | LOW | Workflow | affaan-m/ECC: plan→tdd-activate→red(sub)→green(sub)→improve(sub)→code-review→verify→security-scan 8-step (chain reset from Nov 8) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 24 | LOW | Workflow | garrytan/gstack: 10-step office-hours→plan-ceo-review→autoplan→spec(sub)→verify(sub)→review→qa(sub)→ship→land-and-deploy(sub)→retro (chain reset from Nov 8 6-step) | ON HOLD (RECURRING — chain reset; keep current 11-step) |
+| 25 | LOW | Workflow | bmad-code-org/BMAD: 8-step bmad→bmad-forge-idea→bmad-architecture→bmad-build→bmad-review(sub)→bmad-eval(sub)→bmad-walkthrough(sub)→bmad-retrospective (chain reset; bmad-walkthrough confirmed from v6.12.0 rename) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 26 | LOW | Workflow | github/spec-kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed; v1.3.2 Nov 6 pipeline intact | COMPLETE (RECURRING — no change) |
+| 27 | LOW | Workflow | EveryInc/CE: ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed names; Agent 2 reclassified sub steps as top; chain reset on classification | ON HOLD (RECURRING — chain reset sub→top; keep current 6-step with sub classifications) |
+| 28 | LOW | Sort | Sort order 319k>315k>300k>149k>141k>99.7k(OOS)>74.3k>64.2k>55.1k>40.7k>26k>12.8k — same relative positions | COMPLETE (no re-sort needed) |
+| 29 | INFO | Infra | shields.io JSON endpoint blocked by proxy (exit 56/connect_rejected RECURRING) — WebFetch HTML used for all 11 repos as authoritative fallback | COMPLETE (RECURRING — WebFetch/HTML method established) |
+
+---
+
+## [2026-11-10 09:12 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 319k to 320k (Agent 1: 319.9k WebFetch HTML; shields.io blocked) | COMPLETE (RECURRING — applied) |
+| 2 | HIGH | Star | Update Fission-AI/OpenSpec ★ from 74.3k to 74.4k (Agent 2: 74.4k WebFetch HTML) | COMPLETE (NEW — applied) |
+| 3 | HIGH | Star | Update bmad-code-org/BMAD-METHOD ★ from 55.1k to 55.2k (Agent 2: 55.2k WebFetch HTML) | COMPLETE (RECURRING — applied) |
+| 4 | LOW | Star | obra/superpowers 315k — no change | COMPLETE (RECURRING — no action) |
+| 5 | LOW | Star | affaan-m/everything-claude-code 300k — no change | COMPLETE (RECURRING — no action) |
+| 6 | LOW | Star | github/spec-kit 149k — no change | COMPLETE (RECURRING — no action) |
+| 7 | LOW | Star | garrytan/gstack 141k (141.0k) — no change | COMPLETE (RECURRING — no action) |
+| 8 | LOW | Star | gsd-build/get-shit-done 64.2k — no change (archived) | COMPLETE (RECURRING — no action) |
+| 9 | LOW | Star | Yeachan-Heo/oh-my-claudecode 40.7k — no change | COMPLETE (RECURRING — no action) |
+| 10 | LOW | Star | EveryInc/compound-engineering-plugin 26k — no change | COMPLETE (RECURRING — no action) |
+| 11 | LOW | Star | humanlayer/humanlayer 12.8k — no change | COMPLETE (RECURRING — no action) |
+| 12 | LOW | Count | github/spec-kit commands 9 (Agent 1: 9 in templates/commands/; counts-don't-fall from 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 13 | LOW | Count | affaan-m/ECC commands 98+ (Agent 1: truncated at 98 visible; counts-don't-fall from 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 14 | LOW | Count | garrytan/gstack skills 62 (Agent 2: 62 from AGENTS.md; counts-don't-fall from 64s) | INVALID (RECURRING — counts-don't-fall; keep 64s) |
+| 15 | LOW | Count | gsd-build/GSD commands 67 (Agent 2: 67 visible; counts-don't-fall from 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 16 | LOW | Count | bmad-code-org/BMAD skills 32 (Agent 2: 32 visible dirs; counts-don't-fall from 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | Fission-AI/OpenSpec skills 16 (Agent 2: 12 root + 4 .agents/skills/; UP from current 12s; 1st consecutive) | ON HOLD (NEW — 1st consecutive UP; keep 12s) |
+| 18 | LOW | Count | Yeachan-Heo/oh-my-claudecode skills 84 (Agent 2: 84 dirs confirmed; 2nd consecutive UP from current 48s; Nov 9=run 1, Nov 10=run 2) | ON HOLD (RECURRING — 2nd consecutive; need 3rd; keep 48s) |
+| 19 | LOW | Workflow | obra/superpowers: 9-step brainstorming→using-git-worktrees→writing-plans→subagent-driven-development→implementer(sub)→test-driven-development(sub)→task-reviewer(sub)→requesting-code-review→finishing-a-development-branch (2nd consecutive; Nov 9=run 1, Nov 10=run 2) | ON HOLD (RECURRING — 2nd consecutive; need 3rd; keep current 8-step) |
+| 20 | LOW | Workflow | mattpocock/skills: 9-step setup-matt-pocock-skills→grill-with-docs→to-spec→to-tickets→implement→tdd(sub)→code-review→pr→retro (grill-me replaced by grill-with-docs, retro added; chain reset from Nov 9) | ON HOLD (RECURRING — chain reset; keep current 8-step) |
+| 21 | LOW | Workflow | affaan-m/ECC: plan→tdd-guide→implement(sub)→code-review→quality-gate→save-session→learn-eval (chain reset) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 22 | LOW | Workflow | garrytan/gstack: 7-step office-hours→autoplan→plan-ceo-review(sub)→plan-design-review(sub)→review→qa→ship (chain reset; v1.99.0 Nov 10 land-and-deploy dropped from pipeline) | ON HOLD (RECURRING — chain reset; keep current 11-step) |
+| 23 | LOW | Workflow | bmad-code-org/BMAD: 8-step forge-idea→agent-pm(sub)→agent-po(sub)→agent-architect(sub)→bmad-build→bmad-review(sub)→bmad-walkthrough→bmad-retrospective (chain reset) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 24 | LOW | Workflow | gsd-build/GSD: 6-step new-project→spec-phase→plan-phase→execute-phase→verify-work(sub)→ship (chain reset; archived) | ON HOLD (RECURRING — chain reset archived; keep current 8-step) |
+| 25 | LOW | Workflow | Yeachan-Heo/omc: 6-step omc-setup→team-plan→team-prd(sub)→team-exec→team-verify(sub)→team-fix(sub) (chain reset) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
+| 26 | LOW | Workflow | humanlayer/humanlayer: 9-step ticket-assign→worktree-create→rpi-research(sub)→rpi-plan(sub)→implement→test-it-locally(sub)→pr-create→review(sub)→merge (not actual skill names; chain reset) | ON HOLD (RECURRING — chain reset; keep current 6-step skill-based) |
+| 27 | LOW | Workflow | github/spec-kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed (v1.3.3 Nov 9; core pipeline intact) | COMPLETE (RECURRING — no action) |
+| 28 | LOW | Workflow | EveryInc/CE: ce-brainstorm→ce-plan→ce-work→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed (v3.37.1 Nov 9) | COMPLETE (RECURRING — no action) |
+| 29 | LOW | Sort | Sort order 320k>315k>300k>149k>141k>99.7k(OOS)>74.4k>64.2k>55.2k>40.7k>26k>12.8k — unchanged | COMPLETE (no re-sort needed) |
+| 30 | INFO | Infra | shields.io JSON endpoint blocked by proxy (empty response) — RECURRING | ON HOLD (RECURRING — WebFetch/HTML method confirmed; agents used HTML for all 11 repos) |
+
+---
+
+## [2026-11-11 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 320k to 321k (Agent 1: 321.1k WebFetch HTML; shields.io blocked) | COMPLETE (RECURRING — applied) |
+| 2 | HIGH | Star | Update obra/superpowers ★ from 315k to 316k (Agent 1: 315.8k WebFetch HTML) | COMPLETE (RECURRING — applied) |
+| 3 | HIGH | Star | Update affaan-m/everything-claude-code ★ from 300k to 301k (Agent 1: 300.9k WebFetch HTML) | COMPLETE (RECURRING — applied) |
+| 4 | HIGH | Star | Update Fission-AI/OpenSpec ★ from 74.4k to 74.6k (Agent 2: 74.6k WebFetch HTML) | COMPLETE (NEW — applied) |
+| 5 | HIGH | Star | Update Yeachan-Heo/oh-my-claudecode ★ from 40.7k to 40.8k (Agent 2: 40.8k WebFetch HTML) | COMPLETE (RECURRING — applied) |
+| 6 | HIGH | Star | Update humanlayer/humanlayer ★ from 12.8k to 12.9k (Agent 2: 12.9k WebFetch HTML) | COMPLETE (RECURRING — applied) |
+| 7 | LOW | Star | github/spec-kit 149.2k → rounds to 149k — no change | COMPLETE (RECURRING — no action) |
+| 8 | LOW | Star | garrytan/gstack 141.1k → rounds to 141k — no change | COMPLETE (RECURRING — no action) |
+| 9 | LOW | Star | gsd-build/get-shit-done 64.2k — no change (archived) | COMPLETE (RECURRING — no action) |
+| 10 | LOW | Star | bmad-code-org/BMAD-METHOD 55.2k — no change | COMPLETE (RECURRING — no action) |
+| 11 | LOW | Star | EveryInc/compound-engineering-plugin 26.0k — no change | COMPLETE (RECURRING — no action) |
+| 12 | HIGH | Count | Update Yeachan-Heo/oh-my-claudecode skills from 48 to 84 (Agent 2: 84 dirs confirmed; 3rd consecutive Nov 9/10/11; threshold met) | COMPLETE (RESOLVED — 3rd consecutive applied) |
+| 13 | LOW | Count | github/spec-kit commands 9 (Agent 1: 9 in templates/commands/; counts-don't-fall from 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 14 | LOW | Count | affaan-m/ECC commands 98 (Agent 1: 98 .md in commands/; counts-don't-fall from 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 15 | LOW | Count | garrytan/gstack skills 62 (Agent 2: 62 from AGENTS.md; counts-don't-fall from 64s) | INVALID (RECURRING — counts-don't-fall; keep 64s) |
+| 16 | LOW | Count | gsd-build/GSD commands 67 (Agent 2: 67 visible; counts-don't-fall from 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 17 | LOW | Count | bmad-code-org/BMAD skills 32 (Agent 2: 32 dirs; counts-don't-fall from 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 18 | LOW | Count | Fission-AI/OpenSpec skills 12 (Agent 2: 12 root skills; Nov 10 "16" UP trend broken — reset) | COMPLETE (chain reset; keep 12s — same as current) |
+| 19 | LOW | Count | Yeachan-Heo/omc commands 21 confirmed (Agent 2: 21 .md files in commands/; same as current) | COMPLETE (RECURRING — no change) |
+| 20 | LOW | Workflow | obra/superpowers: 7-step brainstorming→using-git-worktrees→writing-plans→subagent-driven-development→test-driven-development(sub)→requesting-code-review(sub)→finishing-a-development-branch (Nov 9=9-step, Nov 10=9-step, Nov 11=7-step — chain reset) | ON HOLD (chain reset; keep current 8-step) |
+| 21 | LOW | Workflow | mattpocock/skills: 10-step setup-matt-pocock-skills→grill-me→to-spec→to-tickets→triage→implement→tdd(sub)→diagnosing-bugs(sub)→code-review→pr (adds triage, diagnosing-bugs; chain reset) | ON HOLD (RECURRING — chain reset; keep current 8-step) |
+| 22 | LOW | Workflow | affaan-m/ECC: ecc:plan→tdd-workflow(sub)→implement→code-review→verify→remember→improve 7-step (chain reset) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | garrytan/gstack: 8-step office-hours→autoplan→build→review(sub)→qa(sub)→ship→land-and-deploy→retro (drops all plan-review sub-steps; chain reset) | ON HOLD (RECURRING — chain reset; keep current 11-step) |
+| 24 | LOW | Workflow | bmad-code-org/BMAD: bmad-build→clarify-and-route(sub)→plan(sub)→implement(sub)→review(sub)→present 6-step (chain reset; not actual skill names) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 25 | LOW | Workflow | gsd-build/GSD: 6-step new-project→spec-phase→plan-phase→execute-phase→verify-work(sub)→complete-milestone (drops new-milestone and ship; chain reset; archived) | ON HOLD (RECURRING — chain reset archived; keep current 8-step) |
+| 26 | LOW | Workflow | Yeachan-Heo/omc: team-plan→team-prd→team-exec→team-verify→team-fix(sub) 5-step (chain reset; drops deep-interview/plan/team/release) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
+| 27 | LOW | Workflow | humanlayer/humanlayer: research→plan→implement→test-it-locally(sub)→storybook(sub)→review 6-step (adds storybook; not all actual skill names; chain reset) | ON HOLD (RECURRING — chain reset; keep current 6-step skill-based) |
+| 28 | LOW | Workflow | github/spec-kit: constitution→specify→plan→tasks→implement(sub)→converge(sub) confirmed; v1.4.0 Nov 10 adds per-step reasoning effort — core pipeline intact | COMPLETE (RECURRING — no action) |
+| 29 | LOW | Workflow | EveryInc/CE: ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(sub)→ce-code-review(sub)→ce-compound confirmed names; ce-work reclassified top vs current sub (chain reset on classification) | ON HOLD (RECURRING — chain reset sub→top; keep current 6-step with ce-work as sub) |
+| 30 | LOW | Sort | Sort order 321k>316k>301k>149k>141k>99.7k(OOS)>74.6k>64.2k>55.2k>40.8k>26k>12.9k — unchanged relative positions | COMPLETE (no re-sort needed) |
+| 31 | INFO | Infra | shields.io JSON endpoint blocked by proxy (empty response) — RECURRING | ON HOLD (RECURRING — WebFetch/HTML method confirmed authoritative; both agents used HTML) |

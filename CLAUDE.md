@@ -40,7 +40,7 @@ Cross-platform sound notification system in `.claude/hooks/`:
 - `config/hooks-config.local.json`: Personal overrides (git-ignored)
 - `sounds/`: Audio files organized by hook event (generated via ElevenLabs TTS)
 
-Hook events configured in `.claude/settings.json`: PreToolUse, PostToolUse, UserPromptSubmit, Notification, Stop, SubagentStart, SubagentStop, PreCompact, SessionStart, SessionEnd, Setup, PermissionRequest, TeammateIdle, TaskCompleted, ConfigChange.
+Hook events configured in `.claude/settings.json`: PreToolUse, PostToolUse, PostToolBatch, UserPromptSubmit, UserPromptExpansion, Notification, Stop, StopFailure, SubagentStart, SubagentStop, PreCompact, PostCompact, SessionStart, SessionEnd, Setup, PermissionRequest, PermissionDenied, TeammateIdle, TaskCompleted, TaskCreated, ConfigChange, CwdChanged, DirectoryAdded, FileChanged, WorktreeCreate, WorktreeRemove, Elicitation, ElicitationResult, InstructionsLoaded, MessageDisplay. (33 events total; full reference at claude-code-hooks.)
 
 Special handling: git commits trigger `pretooluse-git-committing` sound.
 
