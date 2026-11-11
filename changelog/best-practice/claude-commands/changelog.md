@@ -1629,3 +1629,9 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 3 | LOW | Changed Description | Update `/list-agents` — docs dropped version requirement ("Requires Claude Code v2.1.224 or later; earlier versions report Unknown command: /list-agents"); removed to match current docs | ✅ COMPLETE (version requirement removed from description at #88 in Session tag) |
 | 4 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
 | 5 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-11 11:05 AM PKT] Claude Code v2.1.322
+
+No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 96 built-in commands).
