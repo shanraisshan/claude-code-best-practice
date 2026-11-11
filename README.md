@@ -199,11 +199,11 @@ Repos primarily known as curated libraries of subagent definitions (`.claude/age
   <img src="!/claude-jumping.svg" alt="section divider" width="60" height="50">
 </p>
 
-## 💡 TIPS AND TRICKS (83)
+## 💡 TIPS AND TRICKS (84)
 
 🚫👶 = do not babysit
 
-[Prompting](#tips-prompting) · [Planning](#tips-planning) · [Context](#tips-context) · [Session](#tips-session) · [CLAUDE.md + .claude/rules](#tips-claudemd) · [Agents](#tips-agents) · [Commands](#tips-commands) · [Skills](#tips-skills) · [Hooks](#tips-hooks) · [Workflows](#tips-workflows) · [Advanced](#tips-workflows-advanced) · [Git / PR](#tips-git-pr) · [Debugging](#tips-debugging) · [Utilities](#tips-utilities) · [Daily](#tips-daily)
+[Prompting](#tips-prompting) · [Planning](#tips-planning) · [Context](#tips-context) · [Session](#tips-session) · [CLAUDE.md + .claude/rules](#tips-claudemd) · [Agents](#tips-agents) · [Commands](#tips-commands) · [Skills](#tips-skills) · [Hooks](#tips-hooks) · [Workflows](#tips-workflows) · [Advanced](#tips-workflows-advanced) · [Git / PR](#tips-git-pr) · [Debugging](#tips-debugging) · [Utilities](#tips-utilities) · [Daily](#tips-daily) · [Usage / Limits](#tips-usage)
 
 ![Community](!/tags/community.svg)
 
@@ -363,6 +363,13 @@ Repos primarily known as curated libraries of subagent definitions (`.claude/age
 |-----|--------|
 | [update](https://code.claude.com/docs/en/setup) Claude Code daily | ![Shayan](!/tags/community-shayan.svg) |
 | start your day by reading the [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) | ![Shayan](!/tags/community-shayan.svg) |
+
+<a id="tips-usage"></a>■ **Usage / Limits (2)**
+
+| Tip | Source |
+|-----|--------|
+| hit your limit? check Settings → Usage → "Reset for free" before paying — Anthropic occasionally grants free [limit resets](reports/claude-usage-and-rate-limits.md#limit-resets--free-refills) (launches, make-goods), and a reset done on the web also unblocks Claude Code | ![Shayan](!/tags/community-shayan.svg) [![Video](!/tags/video.svg)](video-studio/2026-11-11-weekly-limit-reset-tip/weekly-limit-reset-tip.mp4) |
+| on Max or Ultra, link a Console org in Settings → Billing to claim [monthly API credits](reports/claude-usage-and-rate-limits.md#monthly-api-credits-max-ultra-team) ($100 / $200) — they cover the API and Agent SDK, not Claude Code usage, and don't roll over | ![Shayan](!/tags/community-shayan.svg) [![Video](!/tags/video.svg)](video-studio/2026-11-11-weekly-limit-reset-tip/weekly-limit-reset-tip.mp4) |
 
 ![Boris Cherny + Team](!/tags/claude.svg)
 

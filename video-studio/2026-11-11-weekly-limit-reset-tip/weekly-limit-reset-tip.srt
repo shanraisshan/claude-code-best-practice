@@ -1,0 +1,40 @@
+1
+00:00:00,350 --> 00:00:01,267
+Hi Claudians!
+
+2
+00:00:01,467 --> 00:00:02,595
+Hit your weekly limit?
+
+3
+00:00:02,795 --> 00:00:03,821
+Here are two tips.
+
+4
+00:00:04,183 --> 00:00:05,890
+One: open Settings, Usage.
+
+5
+00:00:06,090 --> 00:00:07,555
+You may have a free limit reset.
+
+6
+00:00:07,755 --> 00:00:09,375
+One click, and your week is back.
+
+7
+00:00:10,083 --> 00:00:13,132
+Two: on Max or Ultra, keep
+building with the API.
+
+8
+00:00:13,332 --> 00:00:16,062
+Monthly API credits, up to $200.
+
+9
+00:00:16,783 --> 00:00:17,672
+They don't roll over.
+
+10
+00:00:17,872 --> 00:00:18,515
+Use them!

@@ -1,0 +1,11 @@
+{
+  "name": "weekly-limit-reset-tip",
+  "voice": "af_heart",
+  "speed": 1.08,
+  "gap": 0.2,
+  "lead": { "1": 0.35 },
+  "tail": { "1": 0.2, "2": 0.55, "3": 0.55, "4": 0.95 },
+  "leadDefault": 0.15,
+  "tailDefault": 0.3,
+  "sayAs": [["\\$200", "two hundred dollars"], ["\\bAPI\\b", "A P I"]]
+}

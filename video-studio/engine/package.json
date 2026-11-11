@@ -1,0 +1,10 @@
+{
+  "name": "video-studio-engine",
+  "private": true,
+  "description": "Narrated mascot videos: Kokoro voice, frame-exact HTML scenes, Playwright + ffmpeg render.",
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "kokoro-js": "1.2.1",
+    "playwright": "1.63.0"
+  }
+}
