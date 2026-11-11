@@ -1323,3 +1323,40 @@
 | 31 | MED | CLAUDE.md | CLAUDE.md subagent effort note omits `xhigh`; model aliases omit `fable` and `best` | ON HOLD (CLAUDE.md references are examples in descriptions, not exhaustive — acceptable gap) |
 | 32 | LOW | effortLevel | Note that Opus 5.5 and later 5.x models ignore top-level `effortLevel` in user settings. Confidence 0.85 | COMPLETE (note added to effortLevel description) — NEW |
 | 33 | LOW | Useful Commands | Update `/model` command description to reflect correct persistence behavior | COMPLETE (updated) — NEW |
+
+---
+
+## [2026-11-11 10:47 AM PKT] Claude Code v2.1.322
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.296 → v2.1.322; header "244+ settings / 396+ env vars" → "249+ settings / 403+ env vars"; Sources count "~180 keys" → "249+" | COMPLETE (all updated) — NEW |
+| 2 | HIGH | Missing Settings | Add `idleCompaction` (object with `type`/`model`/`minTokens`, v2.1.299) to General Settings | COMPLETE (added) — NEW |
+| 3 | HIGH | Missing Settings | Add `permissions.blockWritesOutsideWorkingDirectories` (boolean, v2.1.314) and `permissions.denyInsteadOfPrompting` (boolean, v2.1.319) to Permissions table | COMPLETE (both added) — NEW |
+| 4 | HIGH | Missing Settings | Add `sandbox.allowNestedUserNamespaces` (boolean, v2.1.305) to Sandbox Settings table | COMPLETE (added) — NEW |
+| 5 | HIGH | Wrong Description | Fix `advisorModel`: when unset, advisor is off (disabled) — was incorrectly described as "uses session model" | COMPLETE (corrected) — NEW |
+| 6 | HIGH | Wrong Description | Fix `permissions.defaultMode` remote note: Remote environment honors `default` and `auto` (not just `acceptEdits` and `plan`) | COMPLETE (corrected) — NEW |
+| 7 | HIGH | Wrong Nesting | Fix `skipDangerousModePermissionPrompt`: was nested under `permissions.`; is a top-level key | COMPLETE (moved to top-level) — NEW |
+| 8 | HIGH | Wrong Type | Fix `diffTool`: was "external command string"; is an enum `"auto"`/`"terminal"` | COMPLETE (corrected) — NEW |
+| 9 | HIGH | Wrong Fields | Fix status line `github` field: `github` does not exist; correct subfields are `pr.number`, `pr.url`, `pr.review_state`, `pr.kind`, `workspace.repo.*` | COMPLETE (replaced) — NEW |
+| 10 | HIGH | Wrong Defaults | Fix model aliases: `fable` now resolves to Fable 5.2 (v2.1.321); `best` means "same as opus" (not Fable-first) | COMPLETE (corrected) — NEW |
+| 11 | HIGH | Wrong Semantics | Fix `maxEffortLevel`: is a string key limiting max settable effort level, not an enum of effort names | COMPLETE (corrected) — NEW |
+| 12 | HIGH | Wrong Shape | Fix `modelPicker` object: documented with correct fields (`models`, `sortOrder`, `showAllModels`) | COMPLETE (corrected) — NEW |
+| 13 | HIGH | Wrong Defaults | Fix effort level defaults: Fable 5.2 added to medium-effort list; Opus 5/Sonnet 5 default to `high` | COMPLETE (updated) — NEW |
+| 14 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_SAFE_MODE` description to match official docs | COMPLETE (corrected) — NEW |
+| 15 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_FORK_SUBAGENT`: now enabled by default; `0` turns off | COMPLETE (corrected) — NEW |
+| 16 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT`: `1` forces minimal, `0` forces full, unset = auto (v2.1.312) | COMPLETE (corrected) — NEW |
+| 17 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_ENABLE_TODO_TOOLS`: enables legacy TodoWrite/TodoRead/TodoDone on all models (v2.1.234) | COMPLETE (corrected) — NEW |
+| 18 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_EFFORT_LEVEL`: `max` is session-only, not persistent | COMPLETE (corrected) — NEW |
+| 19 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_MAX_OUTPUT_TOKENS`: updated stale defaults for 5.x models | COMPLETE (corrected) — NEW |
+| 20 | HIGH | Env Var | Add `FORCE_HYPERLINK` disable behavior: `0`/`false`/`no`/`off` disables hyperlinks even in supported terminals (v2.1.314) | COMPLETE (added) — NEW |
+| 21 | HIGH | Missing Fields | Add status line fields: `fast_mode`, `prompt_cache`, `prompt_id`, `rate_limits.spend_limit.*` | COMPLETE (added) — NEW |
+| 22 | HIGH | Missing Env Vars | Add 18 new env vars from v2.1.297–v2.1.322: `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`, `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`, `CLAUDE_CODE_MODEL_CATALOG`, `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP`, `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`, `CLAUDE_CODE_AUTO_MODE_SERVER`, `CLAUDE_CODE_DISABLE_FEATURE_FLAGS`, `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`, `CLAUDE_CODE_DISABLE_MCP_TASKS`, `CLAUDE_CODE_LOOP_KEEPALIVE`, `CLAUDE_CODE_PLUGIN_DIR_WATCH`, `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` | COMPLETE (all 18 added) — NEW |
+| 23 | HIGH | Missing Env Vars | Add Vertex region vars for 5.5/Fable 5.2: `VERTEX_REGION_CLAUDE_FABLE_5_1`, `VERTEX_REGION_CLAUDE_FABLE_5_2`, `VERTEX_REGION_CLAUDE_5_5_OPUS`, `VERTEX_REGION_CLAUDE_5_5_SONNET`, `VERTEX_REGION_CLAUDE_HAIKU_5_5` | COMPLETE (all 5 added) — NEW |
+| 24 | MED | Missing Settings | Add `deniedMcpServers` v2.1.318 note: server name auto-added when user dismisses from MCP menu | COMPLETE (added) — NEW |
+| 25 | MED | Quick Reference | Remove `mcpServers` block from Quick Reference example (`mcpServers` belongs in `.mcp.json`, not `settings.json`) | COMPLETE (removed) — NEW |
+| 26 | MED | Quick Reference | Fix `alwaysThinkingEnabled: true` → `false`; `true` is a no-op since thinking is on by default | COMPLETE (changed) — NEW |
+| 27 | MED | Quick Reference | Fix `prUrlTemplate` example: replaced GitLab MR URL with GitHub Enterprise PR URL | COMPLETE (corrected) — NEW |
+| 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
+| 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
+| 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
