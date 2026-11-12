@@ -1382,3 +1382,14 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 | 4 | MED      | Count | Update VoltAgent/awesome-claude-code-subagents agents from 148 to 144  | COMPLETE (recursive tree count under categories/, excluding tools/) |
 | 5 | LOW      | Sort  | Verify sort order (stars descending)                                   | COMPLETE (msitarzewski 93k > VoltAgent 19k — order preserved) |
 | 6 | MED      | Rule  | Confirm 10k+ stars threshold for table inclusion                       | COMPLETE (user confirmed; both listed repos pass — msitarzewski 93k, VoltAgent 19k; saved as feedback memory for future runs) |
+
+---
+
+## [2026-11-12 08:46 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Star | Update VoltAgent/awesome-claude-code-subagents ★ from 27k to 26.5k | COMPLETE (verified via web UI: displayed as 26.5k) |
+| 2 | LOW | Sort | Verify sort order (stars descending) | COMPLETE (msitarzewski 168k > VoltAgent 26.5k — order preserved) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents confirmed at 283 minimum (HTTP 403 blocked git tree API; web UI scan of 18+ directories verified 283; likely higher) | INVALID (no change required) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents confirmed at 170 total (166 in-repo .md files + 4 external links) | INVALID (no change required, total matches table) |
