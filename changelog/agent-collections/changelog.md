@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-13 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170→166 (dir-traversal: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; README-listing methodology from Nov 11 gives 09:16 including 4 external links → 170; research agent used dir-traversal missing those 4 external links in meta-orchestration; conf 0.92 above threshold but methodology mismatch with established count; RECURRING oscillation) | INVALID (RECURRING oscillation; dir-traversal 166 vs README-listing 170; cat 09 discrepancy (12 vs 16) is documented methodology variance — 4 external links in meta-orchestration not counted by dir-traversal; Nov 11 COMPLETE established 170 at conf 0.93 via README listing per workflow rules; no confirmed file deletions; RECURRING) |
+| 2 | LOW | Star | msitarzewski/agency-agents ★ unchanged (168k; research confirms 168,000; no k-boundary crossed; HTML-only conf 0.70) | INVALID (no k-boundary crossed; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.5k rounds to 27k; no k-boundary crossed; HTML-only conf 0.75) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | msitarzewski/agency-agents agents 283 = 283 (dir-by-dir: engineering/66+specialized/59+marketing/37+gis/13+security/12+design/10+game-development/21+testing/9+sales/9+paid-media/7+project-management/7+support/6+spatial-computing/6+product/6+academic/6+finance/5+healthcare/3+research/1=283; strategy/ and integrations/ correctly excluded; conf 0.82; exact match) | INVALID (exact match; conf 0.82 below 0.88 threshold; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (168k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
