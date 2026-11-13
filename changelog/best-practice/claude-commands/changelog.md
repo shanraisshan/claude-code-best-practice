@@ -1641,3 +1641,15 @@ No priority action items — report is fully in sync with official documentation
 ## [2026-11-12 11:09 AM PKT] Claude Code v2.1.322
 
 No priority action items — report is fully in sync with official documentation (20 frontmatter fields, 96 built-in commands).
+
+---
+
+## [2026-11-13 11:05 AM PKT] Claude Code v2.1.323
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/stickers` — v2.1.323 changelog: changed to say the sticker pack is all claimed for now, instead of opening a page in the browser; official docs still say "Order Claude Code stickers" | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 2 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 3 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 4 | LOW | Changed Description | `/usage-credits` — v2.1.323 changelog: no longer gives a web address in cloud sessions or under Remote Control; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 5 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
