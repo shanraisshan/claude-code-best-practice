@@ -1653,3 +1653,18 @@ No priority action items — report is fully in sync with official documentation
 | 3 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
 | 4 | LOW | Changed Description | `/usage-credits` — v2.1.323 changelog: no longer gives a web address in cloud sessions or under Remote Control; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
 | 5 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-14 11:05 AM PKT] Claude Code v2.1.325
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `/stickers` — "Order Claude Code stickers" → "Check Claude Code sticker availability" per official docs (v2.1.323; resolves ON HOLD from 2026-11-13) | ✅ COMPLETE (description updated at #22 in Config tag) |
+| 2 | HIGH | Changed Description | Update `/upgrade` — add "in your browser"; reverse prior "without printing the URL" text to URL-print behavior: "the command prints the page's URL above its sign-in prompt. Printing the URL requires Claude Code v2.1.323 or later" per official docs (v2.1.323) | ✅ COMPLETE (description updated at #7 in Auth tag) |
+| 3 | LOW | Changed Description | Update `/usage-credits` — remove "after confirming in a dialog that the request notifies their admins" (dialog detail no longer present in official docs; resolves ON HOLD from 2026-11-13) | ✅ COMPLETE (description updated at #35 in Context tag) |
+| 4 | LOW | Changed Description | Update `/goal` — add "or the goal clears for another reason" at end of active-goal removal sentence per official docs | ✅ COMPLETE (description updated at #87 in Session tag) |
+| 5 | LOW | Changed Description | Update `/theme` — change `"Auto (match terminal)"` to `` `auto` (match terminal) `` per official docs | ✅ COMPLETE (description updated at #24 in Config tag) |
+| 6 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 7 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 8 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
