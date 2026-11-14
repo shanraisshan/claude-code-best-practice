@@ -151,6 +151,7 @@ Use Claude Code together with other models — Codex, Gemini, GPT, Kimi, DeepSee
 - **Plugin** — another model's CLI runs inside Claude Code (slash commands like `/codex:review`)
 - **MCP** — Claude Code calls another model as a tool through Model Context Protocol
 - **Router** — Claude Code's API endpoint is swapped to a different provider
+- [Claude to PDF](https://chromewebstore.google.com/detail/ndnjjjppaaiclfjlnopmnimhhiikkppk) - Export Claude.ai chats and artifacts to PDF, Markdown, and JSON with math and syntax formatting.
 
 Methodology: [Cross-Model (Claude Code + Codex) Workflow](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md) — manual two-terminal flow with Plan in Claude, QA-Review in Codex.
 
