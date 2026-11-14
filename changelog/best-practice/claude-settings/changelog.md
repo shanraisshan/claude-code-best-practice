@@ -1360,3 +1360,30 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-12 10:45 AM PKT] Claude Code v2.1.322
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Missing Settings | Add `managedSourcesBehavior` key to Managed-only policy keys table (v2.1.242+; "first-wins" or "merge") | COMPLETE (added) — NEW |
+| 2 | HIGH | Settings Hierarchy | Fix line 50 managed-tier description: "Only one managed source wins" is now qualified as default `managedSourcesBehavior: "first-wins"` behavior; `"merge"` mode composes all admin sources (v2.1.242+) | COMPLETE (updated) — NEW |
+| 3 | HIGH | Settings Hierarchy | Fix admin-source union keys list: add `allowManagedMcpServersOnly`, `deniedMcpServers`, `disableClaudeAiConnectors` (v2.1.273+), `sandbox.ripgrep`, `sandbox.filesystem.disabled`, `sandbox.network.strictAllowlist` | COMPLETE (added 6 keys) — NEW |
+| 4 | HIGH | Wrong Description | Fix `advisorModel`: "fable" alias is now valid (v2.1.300+); advisor must be ≥ capable than main model; not available on Bedrock | COMPLETE (updated) — NEW |
+| 5 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default: `-` → `true`; added scope annotation "user or managed" | COMPLETE (corrected) — NEW |
+| 6 | HIGH | Wrong Default | Fix `desktopSessionCleanupPeriodDays` default: `-` → `0` (no age limit); minimum 0; added scope "user or managed" | COMPLETE (corrected) — NEW |
+| 7 | HIGH | Wrong Description | Fix `allowClaudeInChromeWithManagedMcp` description: was incorrectly described as granting Chrome access to managedMcpServers; official meaning is to allow built-in Chrome server alongside managed-mcp.json (which blocks Chrome by default) | COMPLETE (corrected) — NEW |
+| 8 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` as removed in v2.1.224 (no-op); redirect to `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` | COMPLETE (marked) — NEW |
+| 9 | HIGH | Removed Env Var | Mark `TASK_MAX_OUTPUT_LENGTH` as removed in v2.1.277 (along with TaskOutput tool) | COMPLETE (marked) — NEW |
+| 10 | HIGH | Wrong Env Var | Fix `CLAUDE_CODE_PLUGIN_DIR_WATCH`: was "Set to 1 to enable"; actually enabled by default, "Set to 0 to disable"; fixed version v2.1.321 → v2.1.322 | COMPLETE (corrected) — NEW |
+| 11 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` (user or managed) to Permissions section | COMPLETE (added) — NEW |
+| 12 | HIGH | Missing Settings | Add `terminalTitleFromRename` (boolean, default true) to Display Settings | COMPLETE (added) — NEW |
+| 13 | MED | Missing Settings | Add `enableWorkflows` (scope exception, disables workflows from any scope when false) near `disableWorkflows` | COMPLETE (added) — NEW |
+| 14 | MED | Missing Settings | Add `isolatePeerMachines` (scope exception: true from any scope wins) near cross-session settings | COMPLETE (added) — NEW |
+| 15 | MED | Missing Settings | Add `sandbox.ripgrep` (user or managed, union key) to Sandbox Settings | COMPLETE (added) — NEW |
+| 16 | MED | Wrong Type | Fix `sandbox.credentials.awsPairs`: was "object"; is array of `{accessKeyIdVar, secretAccessKeyVar, sessionTokenVar?}` entries; added scope and default note | COMPLETE (corrected) — NEW |
+| 17 | MED | Wrong Fields | Fix `spinnerTipsOverride`: add missing `tipsFile` (file path, overrides `tips`) and `label` (custom spinner label) fields | COMPLETE (added) — NEW |
+| 18 | MED | Wrong Description | Fix `bashEditDiffEnabled`: was "Show a diff preview"; official "Record files changed while a Bash command ran in every permission mode" | COMPLETE (corrected) — NEW |
+| 19 | MED | Wrong Env Var | Fix `CLAUDE_CODE_DISABLE_FILE_MENTIONS`: was about "file-mention suggestions"; officially "stop expanding @ mentions of files/directories"; noted project/local scope is ignored | COMPLETE (corrected) — NEW |
+| 20 | LOW | Version Fix | Fix `effortLevel` How-to-use step 3: v2.1.243 → v2.1.251 (now consistent with effortLevel row description) | COMPLETE (corrected) — NEW |
