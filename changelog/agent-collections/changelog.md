@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-15 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Star | msitarzewski/agency-agents ★ unchanged (168.4k rounds to 168k; no k-boundary crossed; need ≥168.5k) | INVALID (no k-boundary crossed; RECURRING) |
+| 2 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.6k rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 3 | LOW | Count | msitarzewski/agency-agents agents 283 = 283 (dir-traversal: academic/6+design/10+engineering/66+finance/5+game-development/21+gis/13+healthcare/3+marketing/37+paid-media/7+product/6+project-management/7+research/1+sales/9+security/12+spatial-computing/6+specialized/59+support/6+testing/9=283; strategy/ and integrations/ excluded as docs; conf 0.72 below 0.88 threshold; RECURRING oscillation; exact match with table) | INVALID (exact match; conf 0.72 below 0.88 threshold; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 → 166 (dir-traversal: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; 4 delta in cat09 explained by external-linked entries not stored as .md files; conf 0.82; methodology mismatch with README listing; Nov-11 COMPLETE at conf 0.92 established 170 via README listing; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.82 at threshold; dir-traversal 166 vs README-listing 170; 4 delta = external-linked entries in cat09; Nov-11 COMPLETE at conf 0.92 stands; no confirmed net removals; no change) |
+| 5 | LOW | Sort | Verify sort order (168k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
