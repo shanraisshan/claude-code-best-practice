@@ -1680,3 +1680,15 @@ No priority action items — report is fully in sync with official documentation
 | 3 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
 
 _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 14 → Nov 15, 2026._
+
+---
+
+## [2026-11-16 11:05 AM PKT] Claude Code v2.1.325
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-15 — official docs still do not reflect this change) |
+| 2 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-15 — official docs still do not reflect this change) |
+| 3 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped Nov 15 → Nov 16, 2026._
