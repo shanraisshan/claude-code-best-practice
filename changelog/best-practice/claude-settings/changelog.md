@@ -1360,3 +1360,28 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-16 10:48 AM PKT] Claude Code v2.1.325
+
+Sources verified: [Settings Reference](https://code.claude.com/docs/en/settings-reference), [CLI Reference](https://code.claude.com/docs/en/cli-reference), [Env Vars](https://code.claude.com/docs/en/env-vars), [CHANGELOG](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md) (v2.1.323–v2.1.325). Research agent provided additional field-level analysis (settings-reference parsed: 249 keys, env-vars page: 413 vars). All fixes applied by automated run.
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.325; header "249+ settings / 403+ env vars" → "249+ settings / 413+" (official env-vars page has 413) | COMPLETE (badge, version, and env count updated) — NEW |
+| 2 | HIGH | Wrong Default | Fix `sandbox.autoAllowBashIfSandboxed` default `true` → `false` (changed in v2.1.325; before v2.1.324 was `true`). Added description of the change with version note | COMPLETE (default and description updated) — NEW |
+| 3 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_MODE_MODEL`: was described as CI/headless model override; correct meaning is model for auto-mode classifier requests | COMPLETE (description corrected) — NEW |
+| 4 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_MODE_SERVER`: was described as a server endpoint URL; correct meaning is `1`/`0` toggle for server-side classification review | COMPLETE (description corrected) — NEW |
+| 5 | HIGH | Wrong Description | Fix `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`: default was listed as `0`; correct default is `200000`; values below `100000` are raised to `100000` | COMPLETE (default corrected) — NEW |
+| 6 | HIGH | Wrong Description | Fix `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP`: was described as CA cert drops across context resets; correct meaning is about keeping looped CA chains in TLS trust store | COMPLETE (description corrected) — NEW |
+| 7 | HIGH | Wrong Description | Fix `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`: was described as giving subagents independent session IDs; correct meaning is restoring pre-v2.1.317 `claude -p` behavior on self-hosted runners | COMPLETE (description corrected) — NEW |
+| 8 | HIGH | Removed Key | Mark `subagentStatusLine` as REMOVED in v2.1.323 (subagent rows now always use the default look) | COMPLETE (annotated as removed) — NEW |
+| 9 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` (v2.1.323 CHANGELOG, not yet on env-vars page), `CLAUDE_CODE_RESUME_HINT_COMMAND` (v2.1.323), `CLAUDE_CODE_AUTOMOUNT_ROOTS` (v2.1.323), `MCP_SDK_GENERATION` (v2.1.323 — `v1` runs v2 client in compatibility mode) | COMPLETE (all 4 added) — NEW |
+| 10 | MED | Wrong Description | Fix `policyHelper`: add v2.1.323 note that `env` vars from user settings and `--settings` files are no longer passed to the helper binary | COMPLETE (note added) — NEW |
+| 11 | MED | Wrong Description | Fix `CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS`: add default (32000) and range (32000–300000); maximum was raised from 64000 to 300000 in v2.1.323 | COMPLETE (default and range added) — NEW |
+| 12 | MED | Wrong Description | Fix `CLAUDE_CODE_MODEL_CATALOG`: was described as a path to custom catalog JSON; correct meaning is `off` toggle that blocks catalog downloads for air-gapped environments | COMPLETE (description corrected) — NEW |
+| 13 | MED | Wrong Description | Fix `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`: was described as accepting model aliases/IDs; correct behavior is set to `1`, with model coming from `CLAUDE_CODE_SUBAGENT_MODEL` or session model | COMPLETE (description corrected) — NEW |
+| 14 | MED | Wrong Description | Fix `CLAUDE_CODE_PLUGIN_DIR_WATCH`: was described as `1` enables watching; correct behavior is on by default, `0` turns off (especially for headless sessions) | COMPLETE (description corrected) — NEW |
+| 15 | MED | Wrong Description | Fix `CLAUDE_CODE_DISABLE_1M_CONTEXT`: add v2.1.323 note that this also applies to unrecognized `claude-*` model IDs | COMPLETE (note added) — NEW |
+| 16 | MED | Sandbox Example | Update sandbox section example `autoAllowBashIfSandboxed: true` → `false` to reflect new default | COMPLETE (example updated) — NEW |
