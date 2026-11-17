@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-17 08:40 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 169k | COMPLETE (page shows "169k" star button + "168.9k" sidebar; two independent WebFetch reads; 168,900 > 168,500 threshold → rounds to 169k; k-boundary crossed; RECURRING — milestone crossing; conf 0.95; web-browse only) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 = 283+ min (dir-traversal: 271+ minimum from 19/22 dirs, all truncated by GitHub display limit; true total unknown but ≥271; conf 0.60 below 0.88 threshold; RECURRING oscillation; Nov 11 COMPLETE established 283 at higher conf; no change) | INVALID (conf 0.60 below 0.88 threshold; truncated directory listings; RECURRING oscillation) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (page shows 26.6k; rounds to 27k; no k-boundary crossed — need ≥27.5k) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 → 166 (dir-traversal: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; conf 0.90 above threshold BUT methodology mismatch — workflow rules use README listing for curated lists; cat09 shows 12 vs prior 16; Nov 11 COMPLETE established 170 via README listing at conf 0.92; RECURRING cat09 oscillation; no confirmed deletions from meta-orchestration) | INVALID (RECURRING oscillation; cat09 discrepancy: dir-traversal gives 12 vs README-listing 16; methodology mismatch with established Nov 11 COMPLETE; no confirmed file deletions; no change) |
+| 5 | LOW | Sort | Verify sort order (169k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
