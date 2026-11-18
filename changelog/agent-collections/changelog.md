@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-18 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 169k | COMPLETE (GitHub web UI shows 169.0k consistently across two fetches; 169.0k implies actual ≥ 168,950 > 168,500 k-boundary threshold → rounds to 169k; k-boundary crossed; RECURRING — milestone crossing; conf 0.70; web-browse only; precedent Oct 13 COMPLETE at same conf 0.70 via web-browse) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 unchanged (README self-report "230+" known understated; partial dir: engineering/66+marketing/37+design/10+testing/9+academic/6+=128 from 5 of 18 dirs; conf 0.70 below 0.88 threshold; RECURRING oscillation) | INVALID (conf 0.70 below 0.88 threshold; README "230+" understated per translation notes 184/281; exact count requires full 18-dir traversal; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.6k rounds to 27k; need ≥ 27.5k for 28k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 = 170 (166 in-repo .md files: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166 + 4 external link entries in cat09 (airis-mcp-gateway, moai-adk, pied-piper, taskade) = 170; conf 0.88 at threshold; exact match; RECURRING) | INVALID (exact match; conf 0.88 at threshold; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (169k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
