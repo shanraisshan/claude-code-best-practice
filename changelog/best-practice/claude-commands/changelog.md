@@ -1709,3 +1709,20 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 8 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-16 — official docs still do not reflect this change) |
 | 9 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-16 — official docs still do not reflect this change) |
 | 10 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-18 11:05 AM PKT] Claude Code v2.1.327
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/tui` — v2.1.327 changelog adds `/tui classic` as the name for the non-fullscreen renderer; docs still show `[default\|fullscreen]` signature | ✋ ON HOLD (changelog-only — official docs still show `[default\|fullscreen]`; defer until docs catch up) |
+| 2 | LOW | Changed Argument | Update `/help` — v2.1.326 changelog adds `/help <command>` for per-command help; official table row not yet updated | ✋ ON HOLD (changelog-only — official docs do not yet show argument syntax; defer until docs catch up) |
+| 3 | LOW | Changed Description | Update `/install-github-app` — v2.1.327 changelog: now asks for confirmation before it changes a repository; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 4 | LOW | Changed Description | Update `/status` — v2.1.327 changelog: now includes a list of broken files; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 5 | LOW | Changed Description | Update `/config` — v2.1.327 changelog: now shows a note when other settings override a row; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 6 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-17 — official docs still do not reflect this change) |
+| 7 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-17 — official docs still do not reflect this change) |
+| 8 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+_No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge bumped v2.1.326 → v2.1.327._
