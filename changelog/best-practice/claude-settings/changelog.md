@@ -1360,3 +1360,25 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-19 10:40 AM PKT] Claude Code v2.1.328
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Default | Update `sandbox.autoAllowBashIfSandboxed` default from `true` to `false` (v2.1.325 — sandboxed Bash now prompts unless explicitly set) | COMPLETE (updated) — NEW |
+| 2 | HIGH | REMOVED | Mark `subagentStatusLine` as REMOVED in v2.1.323 | COMPLETE (marked) — NEW |
+| 3 | HIGH | Missing Setting | Add `attributionProject` (string, v2.1.327) to Attribution section | COMPLETE (added) — NEW |
+| 4 | HIGH | Missing Setting | Add `managedSourcesBehavior` to Managed-only table (default `"first-wins"`, v2.1.242+) | COMPLETE (added) — NEW |
+| 5 | HIGH | Missing Settings | Add `isolatePeerMachines` and `skipAutoPermissionPrompt` to General Settings | COMPLETE (added) — NEW |
+| 6 | HIGH | Missing Setting | Add `enableWorkflows` (counterpart to `disableWorkflows`) to General Settings | COMPLETE (added) — NEW |
+| 7 | HIGH | Missing Setting | Add `terminalTitleFromRename` (boolean, default `true`) to Display Settings | COMPLETE (added) — NEW |
+| 8 | HIGH | Missing Settings | Add `disableDesktopLocalSessions`, `disableRemotePreviewScripts`, `sshHostAllowlist`, `gatewayInternalNetworks` to Managed-only table | COMPLETE (added) — NEW |
+| 9 | HIGH | Missing Setting | Add `sandbox.ripgrep` (`{command, args?}`, user or managed) to Sandbox Settings | COMPLETE (added) — NEW |
+| 10 | HIGH | Missing Setting | Add `worktree.location` (user/desktop) to Worktree Settings | COMPLETE (added) — NEW |
+| 11 | HIGH | Missing Settings | Add `sshHostAllowlist` (managed) and `sshHostCommands` (user/managed) to Workspace & Teams | COMPLETE (added) — NEW |
+| 12 | HIGH | Missing Global Config | Add 6 missing `~/.claude.json` keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | COMPLETE (added) — NEW |
+| 13 | HIGH | Stale Annotation | Fix `sandbox.ignoreViolations` stale "(in JSON schema, not on official settings page)" — now officially documented | COMPLETE (fixed) — NEW |
+| 14 | HIGH | Missing Env Vars | Add 8 new env vars: `OTEL_RESOURCE_INCLUDE_HOST` (v2.1.326), `CLAUDE_CODE_DISABLE_SHELL_HEAD_START` (v2.1.327), `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.327), `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME` (v2.1.328†), `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` (v2.1.323†), `CLAUDE_CODE_RESUME_HINT_COMMAND` (v2.1.323), `CLAUDE_CODE_PERFORCE_MODE` (v2.1.323), `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE` (v2.1.323) [† = changelog-only, unverified] | COMPLETE (added) — NEW |
+| 15 | MED | Useful Command | Add `claude mcp add-json <name>` command for piping MCP config from stdin (v2.1.327) | COMPLETE (added) — NEW |
