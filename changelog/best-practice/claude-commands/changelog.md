@@ -1726,3 +1726,19 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 8 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
 
 _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge bumped v2.1.326 → v2.1.327._
+
+---
+
+## [2026-11-19 11:05 AM PKT] Claude Code v2.1.328
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Argument | Update `/tui` — argument hint changed from `[default\|fullscreen]` to `[classic\|fullscreen]` per official docs (v2.1.327); `classic` requires v2.1.327 or later; `default` still works; description updated with `classic` availability note (resolves ON HOLD from 2026-11-18) | ✅ COMPLETE (signature and description updated at #25 in Config tag) |
+| 2 | LOW | Scope Decision | `/plugin-authoring` — present in official docs without [Skill] marker but self-describes as "a skill from a built-in plugin" | ❌ INVALID (recurring — bundled plugin skill, excluded per report's existing scope disclaimer) |
+| 3 | LOW | Changed Argument | `/help` — v2.1.326 changelog adds `/help <command>` for per-command help; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 4 | LOW | Changed Description | `/install-github-app` — v2.1.327 changelog: now asks for confirmation before it changes a repository; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 5 | LOW | Changed Description | `/status` — v2.1.327 changelog: now includes a list of broken files; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 6 | LOW | Changed Description | `/config` — v2.1.327 changelog: now shows a note when other settings override a row; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 7 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 8 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 9 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
