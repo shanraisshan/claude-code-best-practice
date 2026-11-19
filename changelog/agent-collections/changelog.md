@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-19 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 169k | COMPLETE (GitHub page 169.2k; 169,200 > 168,500 threshold → rounds to 169k; k-boundary crossed; RECURRING — milestone crossing; conf 0.85 on stars; web-browse only) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 = 283 (dir-traversal: engineering/66+specialized/59+marketing/37+game-development/21+gis/13+security/12+design/10+testing/9+sales/9+paid-media/7+project-management/7+product/6+support/6+academic/6+spatial-computing/6+finance/5+healthcare/3+research/1=283; strategy/ and integrations/ excluded; conf 0.72 below 0.88 threshold; RECURRING oscillation; exact match with table) | INVALID (exact match; conf 0.72 below 0.88 threshold; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.7k rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 = 170 (166 in-repo .md files across 10 categories + 4 external links in meta-orchestration = 170 README-listed; conf 0.90 above threshold; exact match) | INVALID (exact match; conf 0.90 above threshold; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (169k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
