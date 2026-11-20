@@ -5035,3 +5035,44 @@
 | 32 | LOW | Workflow | github/spec-kit: speckit.constitution→speckit.specify→speckit.plan→speckit.tasks→speckit.implement(sub)→speckit.converge(sub) confirmed same 6-step | COMPLETE (RECURRING — no change) |
 | 33 | LOW | Sort | Sort order 328k>321k>307k>151k>142k>99.7k(OOS)>75.2k>64.1k>55.5k>40.9k>26.2k>12.9k — unchanged relative positions | COMPLETE (no re-sort needed) |
 | 34 | INFO | Infra | shields.io JSON endpoint blocked (403 CONNECT tunnel — RECURRING); GitHub API session-restricted to current repo only — WebFetch HTML used by research agents and for independent verification | ON HOLD (RECURRING — WebFetch/HTML method confirmed authoritative) |
+
+---
+
+## [2026-11-20 09:15 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update obra/superpowers ★ from 321k to 322k (Agent 1: 322.2k; WebFetch HTML confirmed) | COMPLETE (RECURRING — applied) |
+| 2 | HIGH | Star | Update Fission-AI/OpenSpec ★ from 75.2k to 75.3k (Agent 2: 75.3k; WebFetch HTML confirmed) | COMPLETE (NEW — applied) |
+| 3 | HIGH | Star | Update bmad-code-org/BMAD-METHOD ★ from 55.5k to 55.6k (Agent 2: 55.6k; WebFetch HTML confirmed) | COMPLETE (NEW — applied) |
+| 4 | HIGH | Star | Update Yeachan-Heo/oh-my-claudecode ★ from 40.9k to 41.0k (Agent 2: 41.0k; WebFetch HTML confirmed) | COMPLETE (NEW — applied) |
+| 5 | LOW | Star | mattpocock/skills 328.3k → 328k — no change (Agent 1: 328.3k) | COMPLETE (RECURRING — no action) |
+| 6 | LOW | Star | affaan-m/ECC 307.4k → 307k — no change (Agent 1: 307.4k) | COMPLETE (RECURRING — no action) |
+| 7 | LOW | Star | github/spec-kit 150.7k (Agent 1: 150.7k; counts-don't-fall from 151k) | INVALID (RECURRING — counts-don't-fall; keep 151k) |
+| 8 | LOW | Star | garrytan/gstack 142.2k → 142k — no change (Agent 2: 142.2k) | COMPLETE (RECURRING — no action) |
+| 9 | LOW | Star | gsd-build/GSD 64.1k — no change (archived; Agent 2: 64.1k) | COMPLETE (RECURRING — no action) |
+| 10 | LOW | Star | EveryInc/CE 26.2k — no change (Agent 2: 26.2k) | COMPLETE (RECURRING — no action) |
+| 11 | LOW | Star | humanlayer/humanlayer 12.9k — no change (Agent 2: 12.9k) | COMPLETE (RECURRING — no action) |
+| 12 | LOW | Count | affaan-m/ECC skills 328 (Agent 1: 328 from manifests/install-modules.json; UP from 327s; 1st consecutive) | ON HOLD (NEW — 1st consecutive UP; keep 327s) |
+| 13 | LOW | Count | affaan-m/ECC commands 99 (Agent 1: 99 visible, truncated; counts-don't-fall from 112c) | INVALID (RECURRING — counts-don't-fall; keep 112c) |
+| 14 | LOW | Count | github/spec-kit commands 9 (Agent 1: 9 core in templates/commands/; counts-don't-fall from 10c) | INVALID (RECURRING — counts-don't-fall; keep 10c) |
+| 15 | LOW | Count | garrytan/gstack skills 63 (Agent 2: 63 from AGENTS.md index; counts-don't-fall from 64s) | INVALID (RECURRING — counts-don't-fall; keep 64s) |
+| 16 | LOW | Count | bmad-code-org/BMAD skills 32 (Agent 2: 32 dirs; counts-don't-fall from 33s) | INVALID (RECURRING — counts-don't-fall; keep 33s) |
+| 17 | LOW | Count | Fission-AI/OpenSpec commands 0 (Agent 2: v2.0 breaking, /opsx:* removed; counts-don't-fall from 12c) | INVALID (RECURRING — counts-don't-fall; keep 12c) |
+| 18 | LOW | Count | Fission-AI/OpenSpec agents 4 (Agent 2: .agents/skills/ internal CI/docs agents; not user-facing) | INVALID (NEW — internal agents not in .claude/agents/; keep 0a) |
+| 19 | LOW | Count | gsd-build/GSD commands 67 (Agent 2: 67 visible, truncated; counts-don't-fall from 85c; archived) | INVALID (RECURRING — counts-don't-fall; archived; keep 85c) |
+| 20 | LOW | Count | EveryInc/CE skills 38 (Agent 2: 38 dirs; yesterday ON HOLD at 39 — reverts to 38; keep 38s) | COMPLETE (RESOLVED — yesterday's ON HOLD cancelled by today's finding; no change) |
+| 21 | LOW | Count | Yeachan-Heo/omc skills 84 (Agent 2: 84 dirs; yesterday ON HOLD at 86 — reverts to 84; keep 84s) | COMPLETE (RESOLVED — yesterday's ON HOLD cancelled by today's finding; no change) |
+| 22 | LOW | Workflow | affaan-m/ECC: plan→tdd-workflow(sub)→code-review(sub)→security-scan→e2e-testing(sub)→test-coverage (chain reset from current 7-step) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 23 | LOW | Workflow | obra/superpowers: adds executing-plans(top)→receiving-code-review(sub) → 9-step (2nd consecutive vs 1st on Nov 19) | ON HOLD (RECURRING — 2nd consecutive; keep current 7-step) |
+| 24 | LOW | Workflow | mattpocock/skills: grill-with-docs→to-spec→to-tickets→implement(sub)→tdd(sub)→code-review(sub)→pr (7-step, drops setup-matt-pocock-skills; chain reset) | ON HOLD (RECURRING — chain reset; keep current 8-step) |
+| 25 | LOW | Workflow | Fission-AI/OpenSpec: openspec-explore→openspec-propose→openspec-apply-change→openspec-verify-change(sub)→openspec-archive-change (5-step v2.0 skill names; chain reset from /opsx:* pipeline) | ON HOLD (RECURRING — chain reset; keep current /opsx:* 5-step) |
+| 26 | LOW | Workflow | garrytan/gstack: office-hours→autoplan→review→qa→ship→retro (6-step; drops plan-reviews and land-and-deploy; chain reset) | ON HOLD (RECURRING — chain reset; keep current 11-step) |
+| 27 | LOW | Workflow | bmad-code-org/BMAD: bmad-agent-pm→bmad-agent-architect→bmad-agent-dev→bmad-build(sub)→bmad-code-review(sub)→bmad-retrospective (6-step; chain reset) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| 28 | LOW | Workflow | gsd-build/GSD: new-project→plan-phase→execute-phase→verify-work(sub)→milestone-complete→resume-work(sub) (6-step; archived; chain reset) | ON HOLD (RECURRING — chain reset archived; keep current 8-step) |
+| 29 | LOW | Workflow | EveryInc/CE: ce-brainstorm→ce-plan→ce-work(top)→ce-simplify-code(top)→ce-code-review(top)→ce-compound (same 6-step confirmed) | COMPLETE (RECURRING — no change) |
+| 30 | LOW | Workflow | Yeachan-Heo/omc: team-plan(top)→team-prd(top)→team-exec(top)→team-verify(top)→team-fix(sub) (5-step; drops deep-interview/plan/team/release; chain reset) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
+| 31 | LOW | Workflow | humanlayer/humanlayer: create-task→agent-session→review-plan→approve→agent-execute(sub)→review-output (6-step product model; different names from current grind/subagent-orchestrator pipeline) | ON HOLD (RECURRING — chain reset; keep current 6-step) |
+| 32 | LOW | Workflow | github/spec-kit: speckit.constitution→speckit.specify→speckit.plan→speckit.tasks→speckit.implement(sub)→speckit.converge(sub) confirmed same 6-step | COMPLETE (RECURRING — no change) |
+| 33 | LOW | Sort | Sort order 328k>322k>307k>151k>142k>99.7k(OOS)>75.3k>64.1k>55.6k>41.0k>26.2k>12.9k — unchanged relative positions | COMPLETE (no re-sort needed) |
+| 34 | INFO | Infra | shields.io JSON endpoint blocked (403 CONNECT tunnel — RECURRING); GitHub API session-restricted to current repo only — WebFetch HTML used by research agents and for independent verification | ON HOLD (RECURRING — WebFetch/HTML method confirmed authoritative) |
