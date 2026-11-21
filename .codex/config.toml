@@ -1,2 +1,14 @@
 sandbox_mode = "danger-full-access"
 approval_policy = "never"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@0.0.70"]
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@2.1.8"]
+
+[mcp_servers.deepwiki]
+command = "npx"
+args = ["-y", "deepwiki-mcp@0.0.6"]
