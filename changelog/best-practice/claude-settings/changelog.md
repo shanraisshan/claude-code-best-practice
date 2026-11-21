@@ -1360,3 +1360,34 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-20 10:54 AM PKT] Claude Code v2.1.329
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Wrong Default | Fix `sandbox.autoAllowBashIfSandboxed` default: was `true`, changed to `false` in v2.1.325 | COMPLETE (corrected) — NEW |
+| 2 | HIGH | Removed Setting | Remove `subagentStatusLine` row: setting removed in v2.1.323 | COMPLETE (removed) — NEW |
+| 3 | HIGH | Wrong Semantics | Fix permission syntax note: Write/Glob/Grep path patterns do not match in ANY rule type (allow, deny, or ask) — previous note incorrectly said they work in deny/ask | COMPLETE (corrected) — NEW |
+| 4 | HIGH | Wrong Semantics | Fix Write/NotebookEdit permission table rows: path patterns do not work in any rule type | COMPLETE (corrected) — NEW |
+| 5 | HIGH | Wrong Content | Fix `effortLevel` xhigh row: Fable 5.1 → Fable 5.2 | COMPLETE (corrected) — NEW |
+| 6 | HIGH | Wrong Description | Fix `effortLevel` description: add note that Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 default to `medium` (lower than 4.x default) | COMPLETE (corrected) — NEW |
+| 7 | HIGH | Deprecated Setting | Mark `keybindingFlavor` as deprecated since v2.1.261 — no longer has any effect | COMPLETE (annotated) — NEW |
+| 8 | HIGH | Deprecated Setting | Mark `disableArtifact` as deprecated — use `enableArtifact: false` instead | COMPLETE (annotated) — NEW |
+| 9 | HIGH | Missing Setting | Add `terminalTitleFromRename` to Display Settings | COMPLETE (added) — NEW |
+| 10 | HIGH | Missing Settings | Add 6 missing Global Config keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | COMPLETE (added) — NEW |
+| 11 | HIGH | Missing Setting | Add `enableWorkflows` to General Settings | COMPLETE (added) — NEW |
+| 12 | HIGH | Missing Setting | Add `managedSourcesBehavior` to Managed-only policy keys | COMPLETE (added) — NEW |
+| 13 | HIGH | Wrong Env Vars | Fix 10 env var descriptions (batch 1): `CLAUDE_CODE_AUTO_MODE_SERVER`, `CLAUDE_CODE_AUTO_MODE_MODEL`, `CLAUDE_CODE_LOOP_KEEPALIVE`, `CLAUDE_CODE_PLUGIN_DIR_WATCH`, `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`, `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`, `CLAUDE_CODE_MODEL_CATALOG`, `MCP_DISCOVERY_CACHE`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` | COMPLETE (corrected) — NEW |
+| 14 | HIGH | Wrong Env Vars | Fix 11 env var descriptions (batch 2): `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`, `CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS`, `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS`, `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS`, `CLAUDE_CODE_TOOL_MEMORY_LIMIT`, `CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR`, `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS`, `MCP_PROTOCOL_NEGOTIATION`, `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS` | COMPLETE (corrected) — NEW |
+| 15 | HIGH | Missing Env Vars | Add 7 new env vars from v2.1.323–v2.1.328: `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES`, `CLAUDE_CODE_RESUME_HINT_COMMAND`, `CLAUDE_CODE_AUTOMOUNT_ROOTS`, `CLAUDE_CODE_TRANSCRIPT_LOCAL_GC`, `OTEL_RESOURCE_INCLUDE_HOST`, `CLAUDE_CODE_DISABLE_SHELL_HEAD_START`, `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME` | COMPLETE (added) — NEW |
+| 16 | HIGH | Missing Setting | Add `attributionProject` to Attribution Settings (v2.1.327) | COMPLETE (added) — NEW |
+| 17 | HIGH | Missing Setting | Add `isolatePeerMachines` to General Settings (v2.1.323) | COMPLETE (added) — NEW |
+| 18 | HIGH | Missing Setting | Add `skipAutoPermissionPrompt` to Permissions section (v2.1.325) | COMPLETE (added) — NEW |
+| 19 | HIGH | Missing Setting | Add `sandbox.ripgrep` to Sandbox Settings (v2.1.325) | COMPLETE (added) — NEW |
+| 20 | HIGH | Missing Setting | Add `worktree.location` to Workspace Settings (v2.1.325) | COMPLETE (added) — NEW |
+| 21 | MED | Wrong Default | Fix `autoContinueAtUsageLimit` default: was `-`, is `true` | COMPLETE (corrected) — NEW |
+| 22 | MED | Wrong Type | Fix `sandbox.credentials.awsPairs` type: was `object`, is `array` | COMPLETE (corrected) — NEW |
+| 23 | MED | Wrong Fields | Fix `sshConfigs` optional fields: removed `startDirectory` (not a valid field — only `sshPort` and `sshIdentityFile` are optional) | COMPLETE (corrected) — NEW |
+| 24 | MED | Badge/Meta | Update Last Updated badge to Nov 20, 2026 10:54 AM PKT; version badge to v2.1.329; env var count to 420+ | COMPLETE (updated) — NEW |
