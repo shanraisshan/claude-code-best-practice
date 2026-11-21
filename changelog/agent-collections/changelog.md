@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-21 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 170k | COMPLETE (GitHub web: 169,600 exact; 169,600 > 169,500 threshold → rounds to 170k; crosses two k-boundaries (169k and 170k); RECURRING — milestone crossing; conf 0.72 on overall report but stars web-confirmed across 3 independent fetches) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 unchanged (per-dir: engineering/66+specialized/59+marketing/37+gis/13+security/12+design/10+testing/9+sales/9+paid-media/7+project-management/7+product/6+support/6+academic/6+spatial-computing/6+game-development/6 root only (subdirs unexplored)+finance/5+strategy/3+healthcare/3+research/1=~271 raw; some dirs may include README.md; game-dev subdirs Unity/Unreal/Godot/Blender/Roblox not counted; net estimated ~250-260; conf 0.72 below 0.88 threshold; RECURRING oscillation) | INVALID (conf 0.72 below 0.88 threshold; game-dev subdirs unexplored reduces net count; Nov 3 COMPLETE established 283 at conf 0.90 stands; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,700 rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 → 166 (per-dir: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; conf 0.87 below 0.88 threshold; Nov 11 COMPLETE established 170 at conf 0.92 via README listing; methodology mismatch: per-dir file count=166 vs README listing=170; RECURRING oscillation) | INVALID (conf 0.87 below 0.88 threshold; methodology mismatch persists; Nov 11 COMPLETE at higher conf stands; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (170k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
