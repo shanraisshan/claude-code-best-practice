@@ -1191,6 +1191,24 @@
 
 ---
 
+## [2026-11-21 08:07 AM PKT] Skill Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update mattpocock/skills ★ from 322k to 329k (~329,000 via WebFetch HTML — +7k, sixty-sixth consecutive amplification event) | RECURRING (surges logged 2026-05-01 +15k, 2026-05-12 +25k, 2026-05-20 +21k, 2026-05-25 +7k, 2026-05-31 +9k, 2026-06-04 +4k, 2026-06-05 +1k, 2026-06-07 +2k, 2026-06-11 +5k, 2026-06-15 +4k, 2026-06-19 +7k, 2026-06-24 +8k, 2026-06-28 +4k, 2026-07-01 +4k, 2026-07-02 +1k, 2026-07-04 +3k, 2026-07-06 +2k, 2026-07-08 +3k, 2026-07-13 +7k, 2026-07-14 +2k, 2026-07-16 +3k, 2026-07-17 +2k, 2026-07-24 +11k, 2026-07-25 +2k, 2026-07-26 +1k, 2026-07-27 +2k, 2026-07-28 +7k, 2026-07-31 +4k, 2026-08-01 +2k, 2026-08-02 +1k, 2026-08-16 +19k, 2026-08-26 +19k, 2026-08-27 +1k, 2026-08-29 +2k, 2026-08-30 +1k, 2026-09-02 +3k, 2026-09-11 +15k, 2026-09-12 +1k, 2026-09-13 +1k, 2026-09-17 +3k, 2026-09-20 +2k, 2026-09-21 +1k, 2026-09-24 +2k, 2026-09-26 +1k, 2026-10-02 +3k, 2026-10-04 +1k, 2026-10-05 +1k, 2026-10-12 +10k, 2026-10-13 +2k, 2026-10-15 +3k, 2026-10-17 +3k, 2026-10-18 +1k, 2026-10-20 +3k, 2026-10-21 +1k, 2026-10-23 +2k, 2026-10-25 +2k, 2026-10-27 +1k, 2026-10-28 +1k, 2026-10-31 +3k, 2026-11-02 +1k, 2026-11-03 +1k, 2026-11-04 +2k, 2026-11-07 +5k, 2026-11-10 +3k, 2026-11-12 +2k) |
+| 2 | HIGH | Count | Update mattpocock/skills active skills from 27 to 31 (engineering 20 + productivity 7 + misc 4 = 31; skills/misc/ folder reappeared with git-guardrails-claude-code, migrate-to-shoehorn, scaffold-exercises, setup-pre-commit; in-progress/ folder has 8 skills excluded per 2026-11-07 methodology; deprecated/ confirmed empty) | RECURRING (count oscillated 31→27→31; misc/ folder disappeared 2026-11-12, now reappeared with same 4 skills) |
+| 3 | MEDIUM | Star | Update anthropics/skills ★ from 193k to 198k (~198,100 via WebFetch HTML — +5k) | RECURRING (routine star bumps logged 2026-05-12, 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-04, 2026-06-05, 2026-06-11, 2026-06-15, 2026-06-19, 2026-06-24, 2026-06-28, 2026-07-01, 2026-07-02, 2026-07-04, 2026-07-06, 2026-07-08, 2026-07-13, 2026-07-14, 2026-07-17, 2026-07-24, 2026-07-27, 2026-07-28, 2026-08-01, 2026-08-02, 2026-08-16, 2026-08-26, 2026-08-29, 2026-08-30, 2026-08-31, 2026-09-02, 2026-09-11, 2026-09-12, 2026-09-13, 2026-09-14, 2026-09-17, 2026-09-22, 2026-09-27, 2026-10-04, 2026-10-05, 2026-10-12, 2026-10-17, 2026-10-21, 2026-10-25, 2026-10-31, 2026-11-02, 2026-11-04, 2026-11-07, 2026-11-10, 2026-11-12) |
+| 4 | MEDIUM | Star | Update K-Dense-AI/scientific-agent-skills ★ from 57k to 58k (~57,900 via WebFetch HTML — +1k, now rounds to 58k) | RECURRING (star bumps logged 2026-05-20, 2026-05-25, 2026-05-31, 2026-06-11, 2026-06-19, 2026-07-01, 2026-07-13, 2026-07-24, 2026-08-16, 2026-08-27, 2026-08-29, 2026-08-30, 2026-08-31, 2026-09-02, 2026-09-11, 2026-09-12, 2026-09-13, 2026-09-14, 2026-09-24, 2026-09-26, 2026-10-05, 2026-10-13, 2026-10-17, 2026-10-20, 2026-10-23, 2026-10-27, 2026-11-02, 2026-11-10) |
+| 5 | LOW | Star | Update wshobson/agents ★ from 42k to 43k (~42,700 via WebFetch HTML — +700, now rounds to 43k) | RECURRING (star bumps logged 2026-05-01, 2026-05-12, 2026-05-20, 2026-06-11, 2026-07-04, 2026-07-28, 2026-08-16, 2026-09-11, 2026-09-27, 2026-10-05, 2026-10-12) |
+| 6 | LOW | No Change | wshobson/agents skill count steady at 185 (README text "185 skills" confirmed) | COMPLETE (verified, no drift) |
+| 7 | LOW | No Change | K-Dense-AI/scientific-agent-skills skill count steady at 177 (README badge Skills-177-brightgreen confirmed) | COMPLETE (verified, no drift) |
+| 8 | LOW | No Change | anthropics/skills skill count steady at 19 (19 subdirs in skills/; template/SKILL.md excluded per scope rule) | COMPLETE (verified, no drift) |
+| 9 | LOW | No Change | VoltAgent/awesome-agent-skills steady — ★ 37k (~37,400 via WebFetch HTML; still rounds to 37k) and curated count 1,497+ (README badge Skills-1497+-blue confirmed; 0 actual SKILL.md files in repo) | COMPLETE (verified, no drift) |
+| 10 | LOW | No Change | Sort order preserved — mattpocock (329k) > anthropics (198k) > Egonex-AI (67k, manual) > K-Dense-AI (58k) > wshobson (43k) > VoltAgent (37k) > manual rows (27k, 27k, 15k); no star crossings | COMPLETE (verified) |
+| 11 | LOW | No Change | Manual entries untouched — impeccable (27k/1), addyosmani/agent-skills (27k/21), alirezarezvani/claude-skills (15k/246), Egonex-AI/Understand-Anything (67k/8) — out of 5-repo research scope | COMPLETE (verified, manual entries preserved) |
+
+---
+
 ## [2026-11-12 08:08 AM PKT] Skill Collections Update
 
 | # | Priority | Type | Action | Status |
