@@ -1360,3 +1360,19 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-17 10:44 AM PKT] Claude Code v2.1.326
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Default | Update `sandbox.autoAllowBashIfSandboxed` default `true` → `false` (v2.1.324 behavior change) and add note that sandboxed Bash now follows normal permission flow | COMPLETE (default and description updated) — NEW |
+| 2 | HIGH | Missing Env Var | Add `OTEL_RESOURCE_INCLUDE_HOST` env var (v2.1.326) — hostname resource attribute for OTel metrics | COMPLETE (added) — NEW |
+| 3 | HIGH | Missing Env Var | Add `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` env var (v2.1.323) — suppress subagent progress output | COMPLETE (added) — NEW |
+| 4 | MED | Missing Env Var | Add `CLAUDE_CODE_RESUME_HINT_COMMAND` env var (v2.1.323) — custom hint on session resume | COMPLETE (added) — NEW |
+| 5 | MED | Missing Env Var | Add `CLAUDE_CODE_AUTOMOUNT_ROOTS` env var (v2.1.323) — auto-add directories as working roots at startup | COMPLETE (added) — NEW |
+| 6 | MED | Missing Env Var | Add `MCP_SDK_GENERATION` env var (v2.1.323) — opt MCP servers into v1 legacy client mode | COMPLETE (added) — NEW |
+| 7 | MED | Changed Description | Update `CLAUDE_CODE_DISABLE_1M_CONTEXT` to note v2.1.323 change: unrecognized model IDs now assume 1M context window (was 200K) | COMPLETE (description updated) — NEW |
+| 8 | MED | Example Update | Update Quick Reference sandbox example: `autoAllowBashIfSandboxed: true` → `false` to match new default | COMPLETE (corrected) — NEW |
+| 9 | LOW | Env Var | `OTEL_LOG_TOOL_DETAILS` still not on official env-vars page — recurring since 2026-03-15 | ON HOLD (not on official env-vars page — recurring, 26+ runs) |
