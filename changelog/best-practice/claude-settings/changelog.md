@@ -1360,3 +1360,24 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-18 10:44 AM PKT] Claude Code v2.1.327
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.327; header "As of v2.1.322" → "As of v2.1.327" | COMPLETE (applied) — NEW |
+| 2 | HIGH | New Setting | Add `attributionProject` (string, v2.1.327) to Attribution Settings table — billing group for Claude apps gateway sessions | COMPLETE (applied) — NEW |
+| 3 | HIGH | New Setting | Add `isolatePeerMachines` (boolean) to Core Configuration — requires explicit approval before `SendMessage` reaches other machines | COMPLETE (applied) — NEW |
+| 4 | HIGH | Missing Settings | Add 6 missing `~/.claude.json` Global Config keys: `claudeInChromeDefaultEnabled`, `copyFullResponse` (default false), `copyOnSelect` (default true), `defaultToAgentsView` (default false), `leftArrowOpensAgents` (default true), `prStatusFooterEnabled` (default true) | COMPLETE (applied) — NEW |
+| 5 | HIGH | Wrong Default | Fix `sandbox.autoAllowBashIfSandboxed` default from `true` to `false` (changed in v2.1.324); add note about explicit opt-in required | COMPLETE (applied) — NEW |
+| 6 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_SHELL_HEAD_START` (v2.1.327), `OTEL_RESOURCE_INCLUDE_HOST` (v2.1.326), `CLAUDE_CODE_RESUME_HINT_COMMAND` (v2.1.323), `CLAUDE_CODE_AUTOMOUNT_ROOTS` (v2.1.323) | COMPLETE (applied) — NEW |
+| 7 | HIGH | Wrong Env Vars | Fix inverted/wrong descriptions: `CLAUDE_CODE_AUTO_MODE_SERVER` (was URL, is 0/1 flag), `CLAUDE_CODE_AUTO_MODE_MODEL` (was CI model, is classifier model), `CLAUDE_CODE_LOOP_KEEPALIVE` (was ms interval, is behavior-restore flag), `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID` (was inverted), `CLAUDE_CODE_PLUGIN_DIR_WATCH` (was enable flag, is disable flag), `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` (was model alias, is boolean flag) | COMPLETE (applied) — NEW |
+| 8 | MED | Removed Setting | Remove `subagentStatusLine` from Display Settings — removed in v2.1.323 | COMPLETE (applied) — NEW |
+| 9 | MED | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED (since v2.1.261, has no effect) | COMPLETE (applied) — NEW |
+| 10 | MED | Deprecated Setting | Mark `disableArtifact` as DEPRECATED (use `enableArtifact: false` instead) | COMPLETE (applied) — NEW |
+| 11 | MED | Wrong Version | Fix `/effort` saved model version: was "v2.1.243"; officially v2.1.251 | COMPLETE (applied) — NEW |
+| 12 | MED | New Setting | Add `enableWorkflows` (boolean) to Core Configuration near `disableWorkflows` | COMPLETE (applied) — NEW |
+| 13 | MED | New Setting | Add `skipAutoPermissionPrompt` (boolean) to Permissions section near `skipDangerousModePermissionPrompt` | COMPLETE (applied) — NEW |
+| 14 | MED | Recurring | `OTEL_LOG_TOOL_DETAILS` — not on official env-vars page (57th consecutive ON HOLD run) | ON HOLD (not on official env-vars page — recurring) — RECURRING (first seen: 2026-05-11) |
