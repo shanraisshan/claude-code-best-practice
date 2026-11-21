@@ -1360,3 +1360,23 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-21 10:48 AM PKT] Claude Code v2.1.330
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.330; header "249+ settings / 403+ env vars" → "250+ settings / 421+ env vars"; Sources count "249+" → "250+" | ✅ COMPLETE (badge, header, and counts updated) — NEW |
+| 2 | HIGH | Changed Default | Fix `sandbox.autoAllowBashIfSandboxed` default: `true` → `false` (changed in v2.1.325). Both agents confirmed this via official sandbox docs. Example also updated | ✅ COMPLETE (default updated; v2.1.325 change note added; example fixed) — NEW |
+| 3 | HIGH | Removed Setting | Mark `subagentStatusLine` REMOVED in v2.1.323 — key was removed in v2.1.323; previously showed a custom status line while a subagent was running | ✅ COMPLETE (marked REMOVED with v2.1.323 attribution) — NEW |
+| 4 | HIGH | Annotation Cleanup | Remove stale `*(in JSON schema, not on official settings page)*` annotation from `sandbox.ignoreViolations` — now confirmed on official settings page | ✅ COMPLETE (annotation removed; description updated) — NEW |
+| 5 | MED | Wrong Description | Fix `effortLevel` description inconsistency: says "high on every model" but Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 default to `medium`. Align with Effort Level table (line ~679) | ✅ COMPLETE (description updated to mention 5.5-class model medium default) — NEW |
+| 6 | HIGH | Permission Syntax | Verify `Write(path)`, `NotebookEdit(path)`, `Glob(path)` behavior in `deny`/`ask` rules — both agents flagged possible change to "never match in ANY list including deny". Could not verify against official permissions page without re-fetching docs | ✋ ON HOLD (needs official permissions page verification — both agents at 0.95 confidence) — NEW |
+| 7 | HIGH | New Managed Key | Add `enforceAnthropicSignIn` (boolean, managed-only) to Managed-only policy keys table — requires users to sign in with Anthropic account (v2.1.329). Not verified against official settings page this run | ✋ ON HOLD (changelog-only — needs official settings page confirmation) — NEW |
+| 8 | MED | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME`, `CLAUDE_CODE_RESUME_HINT_COMMAND`, `CLAUDE_CODE_FULL_SIGN_IN_LINK`, `OTEL_RESOURCE_INCLUDE_HOST`, `MCP_SDK_GENERATION`, `CLAUDE_CODE_GATEWAY_HINT_HEADERS` — flagged by both agents but not verified against official /en/env-vars page this run | ✋ ON HOLD (needs official env-vars page confirmation) — NEW |
+| 9 | MED | Missing Global Config | Add missing `~/.claude.json` keys: `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled`, `claudeInChromeDefaultEnabled` — flagged by both agents but not verified this run | ✋ ON HOLD (needs official settings page confirmation) — NEW |
+| 10 | MED | Missing Settings | Add `managedSourcesBehavior` to hierarchy section — `"merge"` mode causes all managed sources to merge (v2.1.325+). Not verified this run | ✋ ON HOLD (changelog-only — needs official confirmation) — NEW |
+| 11 | MED | Missing Env Var | Verify `allowedProviders` values — agents flagged missing values: `mantle`, `customEndpoint`, `gateway`, `anthropicAws`, `anthropicGoogleCloud`. Not verified this run | ✋ ON HOLD (needs official settings page confirmation) — NEW |
+| 12 | LOW | Broken Anchor | Fix `best-practice/claude-cli-startup-flags.md` line ~211: anchor `#environment-variables` → `#environment-variables-via-env` (broken cross-reference) | ✋ ON HOLD (confirmed broken anchor — out of scope for settings report commit) — NEW |
+| 13 | LOW | Suspect Key Recurrence | `OTEL_LOG_TOOL_DETAILS` — still NOT on official /en/env-vars page after 30+ consecutive runs. Per Rule 10B, annotation retained | ✋ ON HOLD (kept — recurring from 2026-04-14 v2.1.107) |
