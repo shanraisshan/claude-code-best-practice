@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-22 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 170k | COMPLETE (GitHub page 169.7k; crosses two k-boundaries (169k AND 170k); rounds to 170k; RECURRING — milestone crossing; conf 0.85; web-browse only) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 → 281 min (per-dir traversal: academic/6+design/10+engineering/66+finance/5+game-development/18+gis/13+healthcare/3+marketing/37+paid-media/7+product/6+project-management/7+research/1+sales/9+security/12+spatial-computing/6+specialized/59+strategy/1+support/6+testing/9=281 min; multiple "View all files" truncations; actual likely 290-310; conf 0.68 below 0.88 threshold; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.68 below 0.88 threshold; 281 is lower bound due to truncated dirs; 283 within oscillation band; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.7k rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 = 170 (per-dir: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166 in-repo + 4 external links in meta-orchestration = 170 README table total; conf 0.93; exact match; 3 new agents added since last run: motion-director Nov 2, ponder-auditor Oct 30, ux-microcopy-reviewer Oct 30 — all already counted) | INVALID (exact match; README table methodology gives 170; conf 0.93 above threshold; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (170k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
