@@ -1360,3 +1360,33 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-22 10:47 AM PKT] Claude Code v2.1.330
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Badge & Counts | Bump version badge to v2.1.330; update settings count to 250+ and env var count to 421+ | COMPLETE (updated) — NEW |
+| 2 | HIGH | Changed Default | Fix `sandbox.autoAllowBashIfSandboxed` default: `true` → `false` (changed in v2.1.325; sandboxed commands now prompt by default) | COMPLETE (corrected) — NEW |
+| 3 | HIGH | Hierarchy | Update managed tier description: add note about `managedSourcesBehavior: "merge"` (v2.1.242+); old text said "sources do not merge" unconditionally | COMPLETE (updated) — NEW |
+| 4 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string, `"first-wins"`, managed-only, v2.1.242+) to Managed-only policy keys table | COMPLETE (added) — NEW |
+| 5 | HIGH | Missing Settings | Add `enforceAnthropicSignIn` (boolean, `false`, managed-only, v2.1.329+) to Managed-only policy keys table | COMPLETE (added) — NEW |
+| 6 | HIGH | Permission Syntax | Add `Grep(path)` to allow-rule never-matched note; fix claim that deny/ask rules work for Grep (they don't) | COMPLETE (corrected) — NEW |
+| 7 | HIGH | Env Var Description | Fix `CLAUDE_CODE_AUTO_MODE_SERVER`: was described as endpoint URL; correct: it is a `1`/`0` toggle for server-side auto-mode review | COMPLETE (corrected) — NEW |
+| 8 | HIGH | Env Var Description | Fix `CLAUDE_CODE_AUTO_MODE_MODEL`: was described as CI/headless model; correct: it is the classifier model for auto-mode decisions | COMPLETE (corrected) — NEW |
+| 9 | HIGH | Env Var Description | Fix `CLAUDE_CODE_LOOP_KEEPALIVE`: was described as millisecond heartbeat; correct: it is a boolean trigger for one extra `/loop` iteration | COMPLETE (corrected) — NEW |
+| 10 | HIGH | Env Var Description | Fix `CLAUDE_CODE_PLUGIN_DIR_WATCH`: was described as opt-in with `1`; correct: on by default, `0` disables it | COMPLETE (corrected) — NEW |
+| 11 | HIGH | Env Var Description | Fix `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`: was described as a model name; correct: it is a boolean `1` toggle | COMPLETE (corrected) — NEW |
+| 12 | HIGH | Env Var Description | Fix `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK`: was described as disabling prompt retry; correct: disables `switchModelsOnFlag` model switch | COMPLETE (corrected) — NEW |
+| 13 | HIGH | Env Var Description | Fix `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`: default was `0`; correct: `200000` with floor of `100000`; version was v2.1.299, correct: v2.1.290 | COMPLETE (corrected) — NEW |
+| 14 | HIGH | Env Var Description | Fix `CLAUDE_CODE_DISABLE_FILE_MENTIONS`: was described as disabling UI suggestions; correct: disables `@` file-mention expansion | COMPLETE (corrected) — NEW |
+| 15 | MED | Env Var Description | Fix `CLAUDE_CODE_MODEL_CATALOG`: was described as a path to local JSON; correct: `off` disables remote catalog from downloads.claude.ai | COMPLETE (corrected) — NEW |
+| 16 | MED | Env Var Description | Fix `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`: was described as the opposite behavior; correct: makes nested `claude -p` reuse parent session ID | COMPLETE (corrected) — NEW |
+| 17 | MED | Env Var Description | Fix `CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP`: update description to clarify private CA cross-cert behavior | COMPLETE (corrected) — NEW |
+| 18 | MED | Missing Env Vars | Add `CLAUDE_CODE_FULL_SIGN_IN_LINK` (v2.1.330), `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME` (v2.1.328), `CLAUDE_CODE_AUTOMOUNT_ROOTS` (v2.1.323) | COMPLETE (added) — NEW |
+| 19 | MED | Removed Setting | Mark `subagentStatusLine` as REMOVED in v2.1.323 | COMPLETE (marked) — NEW |
+| 20 | MED | Deprecated Setting | Mark `disableArtifact` as DEPRECATED (use `enableArtifact: false` instead) | COMPLETE (marked) — NEW |
+| 21 | MED | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED since v2.1.261 — has no effect | COMPLETE (marked) — NEW |
+| 22 | MED | Suspect Key | Remove `*(in JSON schema, not on official settings page)*` caveat from `sandbox.ignoreViolations` — now documented on official settings-reference | COMPLETE (annotation removed) — NEW |
+| 23 | LOW | Sources | Update Settings Reference description: 249+ → 250+; correct column names (Scope/Type/Default → Key/Description/Topic/Scope) | COMPLETE (corrected) — NEW |
