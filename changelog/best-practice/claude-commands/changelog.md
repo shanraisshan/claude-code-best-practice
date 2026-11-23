@@ -1790,3 +1790,11 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 7 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
 
 _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands still in sync). Version badge date bumped 2026-11-21 → 2026-11-22._
+
+---
+
+## [2026-11-23 11:05 AM PKT] Claude Code v2.1.330
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | LOW | Changed Description | Update `/export [filename]` — docs add "and on v2.1.327 or later refuses one that already exists" to the filename behavior | ✅ COMPLETE (refuses-existing-file detail added to description at #43 in Export tag) |
