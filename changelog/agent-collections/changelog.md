@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-24 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 170k | COMPLETE (GitHub API: 169,959 exact; crosses two k-boundaries (168.5k→169k→169.5k→170k); rounds to 170k; RECURRING — milestone crossing; conf 0.88) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 → 284 (git tree two-part fetch: all 20 dirs enumerated; engineering/66+specialized/59+marketing/37+game-development/21+gis/13+security/12+design/10+testing/9+sales/9+paid-media/7+project-management/7+product/6+support/6+academic/6+spatial-computing/6+finance/5+healthcare/3+integrations/1+research/1=283 matches 284 with examples/ boundary reclassification; conf 0.88 at threshold; RECURRING oscillation ±1) | INVALID (RECURRING oscillation; conf 0.88 exactly at threshold; documented ±1 band 283-284; examples/ classification boundary ambiguous; no change) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,745 exact; rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 → 166 (git tree complete non-truncated: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; cat09 12 git-tree vs 16 README-listed; conf 0.93; Nov 11 COMPLETE established 170 via README listing at conf 0.92) | INVALID (RECURRING oscillation; cat09 12 vs 16 methodology mismatch — same discrepancy as Nov 11 and Nov 8; Nov 11 baseline 170 via README listing stands; no confirmed net deletions from cat09; no change) |
+| 5 | LOW | Sort | Verify sort order (170k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
