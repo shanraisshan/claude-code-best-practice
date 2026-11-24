@@ -1360,3 +1360,37 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-24 10:37 AM PKT] Claude Code v2.1.331
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.331; header "249+ settings / 403+ env vars" → "259+ settings / 412+ env vars" | COMPLETE (all updated) — NEW |
+| 2 | HIGH | Removed Setting | Remove `subagentStatusLine` from Display Settings (removed in v2.1.323 — no longer accepted) | COMPLETE (row deleted) — NEW |
+| 3 | HIGH | Wrong Default | Fix `sandbox.autoAllowBashIfSandboxed` default: `true` → `false` (changed in v2.1.325). Add scope note for managed override. Fix both Sandbox and Quick Reference JSON examples | COMPLETE (default and examples corrected) — NEW |
+| 4 | HIGH | Wrong Example | Fix `sandbox.excludedCommands` examples: exact-match only since v2.1.325, so `"docker"` → `"docker *"`, `"gh"` → `"gh *"` | COMPLETE (all 3 examples updated) — NEW |
+| 5 | HIGH | Deprecated Setting | Mark `keybindingFlavor` deprecated since v2.1.261 — has no effect | COMPLETE (marked deprecated) — NEW |
+| 6 | HIGH | Wrong Annotation | Remove "in JSON schema, not on official settings page" from `sandbox.ignoreViolations` — now officially documented | COMPLETE (hedge removed) — NEW |
+| 7 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` removed in v2.1.224 | COMPLETE (marked removed) — NEW |
+| 8 | HIGH | Removed Env Var | Mark `TASK_MAX_OUTPUT_LENGTH` removed in v2.1.277 | COMPLETE (marked removed) — NEW |
+| 9 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit` default: unset/`-` → `true` | COMPLETE (corrected) — NEW |
+| 10 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_MODE_MODEL`: was "model for headless/CI sessions"; correctly "model for auto-mode classifier" | COMPLETE (corrected) — NEW |
+| 11 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_MODE_SERVER`: was "server endpoint URL for CI routing"; correctly "toggle: set `0` to disable server-side classifier review" | COMPLETE (corrected) — NEW |
+| 12 | HIGH | Missing Setting | Add `enforceAnthropicSignIn` (Managed boolean, v2.1.329) to Authentication Helpers table | COMPLETE (added) — NEW |
+| 13 | HIGH | Missing Setting | Add `attributionProject` (string, v2.1.327) to Attribution Settings table | COMPLETE (added) — NEW |
+| 14 | HIGH | Missing Setting | Add `terminalTitleFromRename` (boolean, default `true`, v2.1.324) to Display Settings table | COMPLETE (added) — NEW |
+| 15 | HIGH | Missing Setting | Add `worktree.location` (string, user scope only, v2.1.326) to Worktree Settings table | COMPLETE (added) — NEW |
+| 16 | HIGH | Missing Setting | Add `isolatePeerMachines` (boolean, default `false`, v2.1.224) to General Settings table | COMPLETE (added) — NEW |
+| 17 | HIGH | Missing Setting | Add `enableWorkflows` (boolean, default `true`, v2.1.299+) to General Settings table | COMPLETE (added) — NEW |
+| 18 | HIGH | Missing Setting | Add `managedSourcesBehavior` (string, `"first-wins"`, Managed only, v2.1.242) to Managed settings table | COMPLETE (added) — NEW |
+| 19 | HIGH | Missing Env Vars | Add 9 new env vars since v2.1.322: `CLAUDE_CODE_RESUME_HINT_COMMAND` (v2.1.323), `CLAUDE_CODE_AUTOMOUNT_ROOTS` (v2.1.323), `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` (v2.1.323), `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.327), `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME` (v2.1.328), `OTEL_RESOURCE_INCLUDE_HOST` (v2.1.326), `CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION` (v2.1.331), `CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME` (v2.1.331) | COMPLETE (all 8 added) — NEW |
+| 20 | MED | Missing Env Vars | Add 5 env vars referenced in descriptions but missing rows: `CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS`, `CLAUDE_CODE_SEND_FEEDBACK`, `CLAUDE_CODE_BASH_EDIT_DIFF`, `CLAUDE_CODE_PROMPT_CACHE_TTL`, `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` | COMPLETE (all 5 added) — NEW |
+| 21 | MED | Missing Settings | Add `sandbox.ripgrep` (boolean, default `true`, v2.1.308) to Sandbox Settings table | COMPLETE (added) — NEW |
+| 22 | MED | Missing Settings | Add `sshHostAllowlist`, `sshHostCommands`, `disableDesktopLocalSessions`, `disableRemotePreviewScripts` to Workspace & Teams section | COMPLETE (all 4 added) — NEW |
+| 23 | MED | Missing Settings | Add `gatewayInternalNetworks` (Managed, array, v2.1.268) and `skipAutoPermissionPrompt` (boolean) to Managed settings table | COMPLETE (both added) — NEW |
+| 24 | MED | Missing Global Config | Add `claudeInChromeDefaultEnabled` (v2.1.287), `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` to Global Config (`~/.claude.json`) section | COMPLETE (all 6 added) — NEW |
+| 25 | MED | Wrong Version | Fix effort persistence version in step 3: was v2.1.243; correct is v2.1.251 (consistent with `effortLevel` and `modelSettings` row notes) | COMPLETE (corrected) — NEW |
+| 26 | LOW | extraKnownMarketplaces | Add v2.1.331 note: managed marketplaces auto-update by default on or after Nov 30, 2026; `autoUpdate: false` to opt out | COMPLETE (note added) — NEW |
+
