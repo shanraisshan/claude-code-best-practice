@@ -1798,3 +1798,20 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | # | Priority | Type | Action | Status |
 |---|----------|------|--------|--------|
 | 1 | LOW | Changed Description | Update `/export [filename]` — docs add "and on v2.1.327 or later refuses one that already exists" to the filename behavior | ✅ COMPLETE (refuses-existing-file detail added to description at #43 in Export tag) |
+
+---
+
+## [2026-11-24 11:05 AM PKT] Claude Code v2.1.331
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | New Command | Add `/ship:review` to Project tag — Alias for `/code-review`; inserted alphabetically after `/security-review` (count 96 → 97) | ✅ COMPLETE (added as #66 in Project tag; downstream rows 66–96 renumbered 67–97; count heading updated 96 → 97) |
+| 2 | MED | Changed Description | Update `/teleport` — official text now "Opens a picker, then loads the conversation"; removes "fetches the branch and conversation" (v2.1.329) | ✅ COMPLETE (updated description at #77 in Remote tag) |
+| 3 | MED | Changed Description | Update `/terminal-setup` — Apple Terminal instruction changed from "enable Option+Enter for newlines and turn off the audible bell instead" to only "turn off the audible bell instead" (v2.1.329 fixed Terminal.app Option-as-Meta side effect) | ✅ COMPLETE (updated description at #23 in Config tag) |
+| 4 | LOW | Changed Argument | `/help` — v2.1.326 changelog adds `/help <command>` for per-command help; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 5 | LOW | Changed Description | `/install-github-app` — v2.1.327 changelog: now asks for confirmation before it changes a repository; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 6 | LOW | Changed Description | `/status` — v2.1.327 changelog: now includes a list of broken files; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 7 | LOW | Changed Description | `/config` — v2.1.327 changelog: now shows a note when other settings override a row; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 8 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 9 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 10 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
