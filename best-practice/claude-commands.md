@@ -1,6 +1,6 @@
 # Commands Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2024%2C%202026%2011%3A05%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.331-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2025%2C%202026%2011%3A05%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.332-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-commands-implementation.md)
 
 Claude Code commands — frontmatter fields and official built-in slash commands.
@@ -28,11 +28,11 @@ Claude Code commands — frontmatter fields and official built-in slash commands
 | `paths` | string/list | No | Glob patterns that limit when this skill is activated. Accepts a comma-separated string or a YAML list. When set, Claude loads the skill automatically only when working with files matching the patterns. Patterns are relative to Claude's current working directory, and files outside that directory don't match |
 | `allowed-tools` | string/list | No | Tools Claude can use without asking permission during the turn that invokes this skill. The grant clears when you send your next message. Accepts a space- or comma-separated string, or a YAML list |
 | `disallowed-tools` | string/list | No | Tools removed from Claude's available pool while this command is active. Use for autonomous skills that should never call certain tools. Accepts a space- or comma-separated string, or a YAML list. The restriction clears when you send your next message. Can't remove `EndConversation` while any other tool remains |
-| `model` | string | No | Model to use when this command runs (e.g., `haiku`, `sonnet`, `opus`). Applies for the current turn only; the session model resumes on your next message. Accepts the same values as `/model`, or `inherit` to keep the active model. A value excluded by your organization's `availableModels` allowlist, or unsupported in auto mode, is ignored and the session keeps its current model |
-| `effort` | string | No | Effort level when this skill is active. Overrides the session effort level. Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model |
+| `model` | string | No | Model to use when this skill runs. Applies when you invoke it with `/name` — when Claude runs the skill automatically, the session keeps its current model. With `context: fork`, becomes the forked subagent's model for that invocation. The session model resumes on your next message. Accepts the same values as `/model`, or `inherit` to keep the active model. A value excluded by your organization's `availableModels` allowlist, or unsupported in auto mode, is ignored and the session keeps its current model |
+| `effort` | string | No | Effort level for this skill's turn. Applies for the rest of the current turn only. Does not override the `CLAUDE_CODE_EFFORT_LEVEL` environment variable. With `context: fork`, sets the forked subagent's effort level for that invocation. Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model |
 | `context` | string | No | Set to `fork` to run in a forked subagent context |
-| `agent` | string | No | Which subagent type to use when `context: fork` is set (default: `general-purpose`) |
-| `background` | boolean | No | Only applies with `context: fork`. Set to `false` to wait for the forked subagent's result in the turn that invoked the skill, instead of running it in the background. Default: `true`. Requires Claude Code v2.1.218 or later |
+| `agent` | string | No | Which subagent type to use when `context: fork` is set |
+| `background` | boolean | No | Only applies with `context: fork`. Set to `false` to wait for the forked subagent's result in the turn that invoked the skill, instead of running it in the background. Default: `true` |
 | `shell` | string | No | Shell for `` !`command` `` blocks — accepts `bash` (default) or `powershell`. The PowerShell tool is on by default on Windows without Git Bash, and on Windows with Git Bash for claude.ai and Console accounts; `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` is needed on Bedrock, Agent Platform, Foundry, and on macOS, Linux, and WSL |
 | `metadata` | object | No | Free-form YAML map for your own key-value data read from `SKILL.md` by your own tooling. Claude Code doesn't act on its contents and drops a value that isn't a map. Do not reuse reserved field names such as `paths` as keys |
 | `license` | string | No | License covering the skill per the [Agent Skills](https://agentskills.io) spec. Claude Code accepts the field but does not act on it |
