@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-25 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 170k | COMPLETE (GitHub page 170.1k; 170,100 exact; 170,100 > 169,500 threshold → rounds to 170k; crosses two k-boundaries (169k, 170k); double milestone crossing; RECURRING — milestone crossing; conf ~0.90 on stars; web-browse only) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 unchanged (floor 275 verified, est 290-310; conf 0.72 below 0.88 threshold; content batch 7 & 8 merged Nov 6–9 adding ~10-20 agents but dir enumeration incomplete; RECURRING oscillation) | INVALID (RECURRING oscillation; conf 0.72 below 0.88 threshold; floor 275 < 283 and high estimate 310 > 283 — within oscillation band; no change) |
+| 3 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 → 166 (all 10 dirs: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; cat09 gives 12 vs Nov 11's 16; conf 0.90; RECURRING oscillation) | INVALID (RECURRING oscillation; cat09 count oscillates between 12 and 16 depending on methodology; Nov 11 COMPLETE established 170 at conf ≥ 0.87 via README listing; no confirmed net removals; no change) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.8k rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (170k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
