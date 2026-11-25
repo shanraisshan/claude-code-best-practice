@@ -1360,3 +1360,25 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-25 10:44 AM PKT] Claude Code v2.1.332
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Bump badge v2.1.322 → v2.1.332; update counts "249+ settings / 403+ env vars" → "251+ settings / 429+ env vars" | ✅ COMPLETE (badge and counts updated) |
+| 2 | HIGH | Removed Setting | Mark `subagentStatusLine` removed in v2.1.323 | ✅ COMPLETE (marked removed) |
+| 3 | HIGH | Changed Default | Fix `sandbox.autoAllowBashIfSandboxed` default from `true` → `false` (changed v2.1.325) | ✅ COMPLETE (default corrected, examples updated) |
+| 4 | HIGH | Missing Settings | Add `managedSourcesBehavior` (Managed, `"first-wins"`/`"merge"`, v2.1.242), `enforceAnthropicSignIn` (Managed, v2.1.329), `isolatePeerMachines` (Any, bool), `skipAutoPermissionPrompt` (user/managed, bool), `terminalTitleFromRename` (Any, bool default true), `enableWorkflows` (Any, bool), `sandbox.ripgrep` (user/managed, object), `gatewayInternalNetworks` (Managed, v2.1.268), `disableDirectMcpSkills` (Managed, v2.1.331) | ✅ COMPLETE (all 9 added to respective tables) |
+| 5 | HIGH | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION` (v2.1.331), `OTEL_RESOURCE_INCLUDE_HOST` (v2.1.326), `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME` (v2.1.328), `CLAUDE_CODE_RESUME_HINT_COMMAND` (v2.1.323), `CLAUDE_CODE_AUTOMOUNT_ROOTS` (v2.1.323), `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` (v2.1.323; not on official docs page), `CLAUDE_CODE_GATEWAY_HINT_HEADERS` (v2.1.327) | ✅ COMPLETE (all 7 added) |
+| 6 | HIGH | Missing Global Config Keys | Add `claudeInChromeDefaultEnabled`, `copyFullResponse` (default false), `copyOnSelect` (default true), `defaultToAgentsView` (default false), `leftArrowOpensAgents` (default true), `prStatusFooterEnabled` (default true) to Global Config (`~/.claude.json`) table | ✅ COMPLETE (all 6 added) |
+| 7 | HIGH | Suspect Key Resolved | `sandbox.ignoreViolations` caveat stale — it IS documented as `{commandSubstring: violationSubstrings[]}` object; remove "(in JSON schema, not on official settings page)" annotation — RECURRING (first seen: 2026-03-05) | ✅ COMPLETE (annotation removed, description updated) |
+| 8 | HIGH | Wrong Version | Effort level "as of v2.1.243" note: should say v2.1.251 | ✅ COMPLETE (corrected) |
+| 9 | HIGH | Changed Behavior | `autoContinueAtUsageLimit` default is `true`, not `-` | ✅ COMPLETE (default updated) |
+| 10 | HIGH | CLAUDE.md Sync | Add `PostToolUseFailure` and `PreSkillShellCommand` to CLAUDE.md hook events list (33 total); update count comment | ✅ COMPLETE (CLAUDE.md updated) |
+| 11 | MED | Deprecated Settings | Mark `keybindingFlavor` deprecated since v2.1.261 (no effect); mark `disableArtifact` deprecated (use `enableArtifact`); add `pluginDigests` deprecated note (v2.1.325) | ✅ COMPLETE (all 3 annotated) |
+| 12 | MED | Settings Hierarchy | Add HKLM registry outranks managed-settings.json on Windows (v2.1.331); add `managedSourcesBehavior: "merge"` note to managed-tier description | ✅ COMPLETE (hierarchy updated) |
+| 13 | MED | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_SHELL_HEAD_START` (newest), `CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME` (v2.1.331, not on official docs), `SELF_HOSTED_RUNNER_START_DIR` (v2.1.330), `CLAUDE_CODE_FULL_SIGN_IN_LINK` (v2.1.330), `CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS` (confirmed, already in report), `CLAUDE_RUNNER_SESSION_UUID` (v2.1.328), `CLAUDE_CODE_REMOTE_SESSION_UUID` (v2.1.328) | ✅ COMPLETE (5 new vars added; 2 already present) |
+| 14 | MED | Model Alias Fix | Update `advisorModel`: Fable alias is now accepted again (remove "v2.1.210+ fable no longer attaches" note) | ✅ COMPLETE (stale note removed) |
+| 15 | LOW | Sandbox Example | Fix sandbox `excludedCommands` example: `"git"` → `"git *"`, `"docker"` → `"docker *"` (bare strings only match exact zero-argument commands) | ✅ COMPLETE (examples corrected) |
