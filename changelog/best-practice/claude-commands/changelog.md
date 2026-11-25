@@ -1815,3 +1815,22 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 8 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
 | 9 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
 | 10 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-25 11:05 AM PKT] Claude Code v2.1.332
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Description | Update `model` field — applies only when you invoke the skill with `/name`; auto-invocation keeps the session model; with `context: fork` becomes the forked subagent's model for that invocation (v2.1.330) | ✅ COMPLETE (description updated to reflect v2.1.330 behavioral change per official docs) |
+| 2 | MED | Changed Description | Update `effort` field — applies for the rest of the current turn only; does not override the `CLAUDE_CODE_EFFORT_LEVEL` env var; with `context: fork` sets the forked subagent's effort level for that invocation | ✅ COMPLETE (description updated to match official docs) |
+| 3 | LOW | Changed Description | Update `agent` field — drop "(default: `general-purpose`)" per official docs | ✅ COMPLETE (default note removed) |
+| 4 | LOW | Changed Description | Update `background` field — drop "Requires Claude Code v2.1.218 or later" per official docs | ✅ COMPLETE (version requirement note removed) |
+| 5 | LOW | Changed Description | `/tasks` — v2.1.329 added this session's scheduled tasks, `/loop` wakeups, the goal, and conversation forks to the view; `x` stops one after asking; official docs table not yet updated | ✋ ON HOLD (changelog-only — defer until official docs catch up) |
+| 6 | LOW | Changed Argument | `/help` — v2.1.326 changelog adds `/help <command>` for per-command help; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 7 | LOW | Changed Description | `/install-github-app` — v2.1.327 changelog: now asks for confirmation before it changes a repository; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 8 | LOW | Changed Description | `/status` — v2.1.327 changelog: now includes a list of broken files; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 9 | LOW | Changed Description | `/config` — v2.1.327 changelog: now shows a note when other settings override a row; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-18 — official docs still do not reflect this change) |
+| 10 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 11 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
+| 12 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
