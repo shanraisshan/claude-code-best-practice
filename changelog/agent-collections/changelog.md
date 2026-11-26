@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-26 08:41 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 170k | COMPLETE (HTML-confirmed 170.3k across three independent fetches; content batch 7 Nov 6 + batch 8 Nov 9 within 30-day window; RECURRING — milestone crossing; crosses 2 k-boundaries (169k, 170k); conf 0.80) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 = 283 (README roster table confirmed; 18 category dirs; exact match; conf 0.80) | INVALID (exact match; RECURRING) |
+| 3 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26,800 rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 4 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 = 170 (README 170 entries: 166 in-repo .md + 4 external links; ponder-auditor Oct 28 + motion-director Nov 2 + ux-microcopy-reviewer Oct 30 already in table; conf 0.87; exact match) | INVALID (exact match; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (170k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
