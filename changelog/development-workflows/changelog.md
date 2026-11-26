@@ -5261,3 +5261,27 @@
 | 33 | LOW | Workflow | humanlayer/humanlayer: spec-needed→grind-research→plan→implement→test-it-locally(sub)→code-review (different structure from current 6-step grind-research pipeline) | ON HOLD (RECURRING — chain reset; keep current 6-step) |
 | 34 | LOW | Sort | Sort order 332k>326k>310k>151k>143k>99.7k(OOS)>75.7k>64.1k>55.7k>41.0k>26.2k>13.0k — relative positions unchanged | COMPLETE (no re-sort needed) |
 | 35 | INFO | Infra | shields.io blocked (empty responses — RECURRING); WebFetch HTML used for all independent star verification; GitHub API session-restricted to current repo only | ON HOLD (RECURRING — WebFetch/HTML method confirmed authoritative) |
+
+---
+
+## [2026-11-26 09:19 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | mattpocock/skills ★ 332k → 333k | COMPLETE (NEW — +1k) |
+| 2 | HIGH | Star | obra/superpowers ★ 326k → 327k | COMPLETE (NEW — +1k) |
+| 3 | HIGH | Star | affaan-m/ECC ★ 310k → 311k | COMPLETE (NEW — +1k) |
+| 4 | HIGH | Workflow | mattpocock/skills: added grill-with-docs, domain-modeling, pr; removed grill-me, diagnosing-bugs, improve-codebase-architecture; code-review promoted to top-level (v1.3.1 skill additions) | COMPLETE (NEW — 9-step pipeline updated) |
+| 5 | HIGH | Workflow | obra/superpowers: subagent-driven-development → executing-plans; implementer/task-reviewer removed; added receiving-code-review, verification-before-completion (v7.0.0 major rebuild) | COMPLETE (NEW — 9-step pipeline updated) |
+| 6 | HIGH | Workflow | affaan-m/ECC: pipeline reset to plan→test→implement→review→verify→remember→improve (v2.2.3 catalog restructure; legacy command shims reduced) | COMPLETE (NEW — 7-step pipeline updated) |
+| 7 | MED | Count | affaan-m/ECC commands 112 → 99 (99 legacy command shims per README; v2.2.3) | COMPLETE (NEW — decrease from 112c to 99c confirmed) |
+| 8 | MED | Count | garrytan/gstack skills 64 → 62 (/cso skill removed in v1.104.0.0 Nov 25; AGENTS.md authoritative; documented deletion) | COMPLETE (NEW — 2-skill decrease; documented release change) |
+| 9 | MED | Count | Fission-AI/OpenSpec skills 12 → 13 (/openspec router skill added in v2.2.0 Nov 24) | COMPLETE (NEW — +1 skill, confirmed release) |
+| 10 | MED | Workflow | Fission-AI/OpenSpec: removed "review" step between propose and apply-change (v2.2.0 workflow simplification) | COMPLETE (NEW — 5-step pipeline, review step dropped) |
+| 11 | MED | Star | bmad-code-org/BMAD ★ 55.7k → 55.8k | COMPLETE (NEW — +0.1k) |
+| 12 | MED | Count | bmad-code-org/BMAD agents 8 → 7 (6 method + 1 founder; v6.12.0 catalog; src/bmm-skills/ path confirmed 404) | COMPLETE (NEW — decrease; src path 404 recurring; count drop accepted as catalog reduction) |
+| 13 | MED | Count | bmad-code-org/BMAD skills 33 → 32 (12 core-tools + 16 method + 3 toolsmith + 1 founder = 32; 6th consecutive confirmation) | COMPLETE (NEW — 6th consecutive at 32; accepted threshold crossed) |
+| 14 | MED | Star | Yeachan-Heo/oh-my-claudecode ★ 41.0k → 41.1k | COMPLETE (NEW — +0.1k) |
+| 15 | LOW | Count | gsd-build/GSD commands 85 (agent: 67 visible; archived; truncated listing "View all files"; counts-don't-fall) | INVALID (RECURRING — archived; truncated listing; keep 85c) |
+| 16 | LOW | Sort | Sort order 333k>327k>311k>151k>143k>99.7k(OOS)>75.7k>64.1k>55.8k>41.1k>26.2k>13.0k — relative positions unchanged | COMPLETE (no re-sort needed) |
+| 17 | INFO | Infra | shields.io blocked (RECURRING); WebFetch HTML used for all star verification; GitHub API restricted | ON HOLD (RECURRING — WebFetch/HTML method) |
