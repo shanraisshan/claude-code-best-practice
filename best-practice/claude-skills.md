@@ -1,6 +1,6 @@
 # Skills Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2025%2C%202026%2010%3A03%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.332-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2027%2C%202026%2010%3A03%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.332-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
 Claude Code skills — frontmatter fields and official bundled skills.
@@ -41,7 +41,7 @@ Claude Code skills — frontmatter fields and official bundled skills.
 
 ---
 
-## ![Official](../!/tags/official.svg) **(27)**
+## ![Official](../!/tags/official.svg) **(30)**
 
 | # | Skill | Description |
 |---|-------|-------------|
@@ -72,6 +72,9 @@ Claude Code skills — frontmatter fields and official bundled skills.
 | 25 | `plugin-authoring` | Make a mod — a change to Claude's own interface or behaviour, such as a live pane or panel, a band above the prompt, a status line, a toast, a slash command, or a hook on tool calls or prompts. Used to make, change or debug a mod or its hooks module. Requires v2.1.287+ |
 | 26 | `ship` | Commit and push your work and open a GitHub pull request (if your branch has none), then review the change. Claude watches the PR in this session and pushes fixes for review feedback and failing checks. `/ship stop` ends the watch. Use `/ship [level] [pr] [+bot]` |
 | 27 | `steward` | Watch your open GitHub pull request in this session and push fixes for review feedback and failing checks, without the initial review that `/ship` runs first. `/steward stop` ends the watch. Alias: `/ship:steward`. Use `/steward [pr] [+bot]` |
+| 28 | `claude-approvals` | Edit, explain, or tune a Claude Approvals policy file or classifier. Use `/claude-approvals [what to change or explain]`. Requires v2.1.331+ |
+| 29 | `motion` | Make a new animation from your brief as a Claude Motion artifact (e.g., `/motion an explainer of how our deploy pipeline works`). Available on local Desktop app sessions and Anthropic-hosted cloud sessions only; not available in the terminal or IDE extensions. Requires a Team or Enterprise account where the Motion template is available. Requires v2.1.323+ |
+| 30 | `whiteboard` | Make a new whiteboard from your brief as a Claude Whiteboards artifact (e.g., `/whiteboard a service map of the checkout flow`). Requires a session where artifacts are available and the Whiteboards template enabled; hidden when the organization turns that template off. Requires v2.1.323+ |
 
 See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
 
