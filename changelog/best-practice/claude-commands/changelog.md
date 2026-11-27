@@ -1834,3 +1834,16 @@ _No frontmatter or command drift (20 frontmatter fields, 96 built-in commands st
 | 10 | LOW | Changed Description | `/security-review` — v2.1.323 changelog: now asks before Claude runs the review; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
 | 11 | LOW | Changed Description | `/logout` — v2.1.323 changelog: in a background session now signs out every session on the computer and ends the session; official docs table not yet updated | ✋ ON HOLD (recurring from 2026-11-13 — official docs still do not reflect this change) |
 | 12 | LOW | Changed Description | `/autocompact` — per-model saving feature (v2.1.288 changelog) not yet in official docs table | ✋ ON HOLD (recurring since 2026-10-03 — official docs table still not updated; defer until docs catch up) |
+
+---
+
+## [2026-11-27 11:04 AM PKT] Claude Code v2.1.332
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | MED | Changed Description | Update `/config` — shorter text: "adjust preferences" (was "adjust theme, model, output style, and other preferences"); example changed to `/config verbose=true` (removed `/config thinking=false`); "though it can turn one off" removed; "you can set" → "it accepts" | ✅ COMPLETE (description updated at #10 in Config tag) |
+| 2 | MED | Changed Description | Update `/permissions` — add "In the desktop app, edit your settings files instead." before alias | ✅ COMPLETE (description updated at #15 in Config tag) |
+| 3 | MED | Changed Description | Update `/privacy-settings` — add "or get a link to them on claude.ai" to description | ✅ COMPLETE (description updated at #17 in Config tag) |
+| 4 | MED | Changed Description | Update `/model` — replace "Once you confirm the switch, Claude Code applies the change without waiting for the current response to finish." with "See when the new model starts."; simplify `-p` wording | ✅ COMPLETE (description updated at #58 in Model tag) |
+| 5 | MED | Changed Description | Update `/background` — add "While a `/ship` or `/steward` watch is on, see Messages during a watch." before alias | ✅ COMPLETE (description updated at #80 in Session tag) |
+| 6 | LOW | Changelog Note | `/help <command>` added in v2.1.326 — official docs table still reads "Show help and available commands" with no mention of the argument | ✋ ON HOLD (official docs table not yet updated; defer until docs catch up) |
