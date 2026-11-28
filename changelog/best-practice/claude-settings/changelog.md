@@ -1360,3 +1360,22 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-23 10:42 AM PKT] Claude Code v2.1.330
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Changed Behavior | Fix `sandbox.autoAllowBashIfSandboxed` default: `true` → `false` since v2.1.324/325; sandboxed commands now go through normal permission flow unless explicitly set | ✅ COMPLETE (updated default and description in report) |
+| 2 | HIGH | Deprecated Setting | Remove `subagentStatusLine` removed in v2.1.323 | ✅ COMPLETE (removed from Display Settings table) |
+| 3 | HIGH | Env Var Descriptions | Fix 11 wrong/inverted env var descriptions (`CLAUDE_CODE_SAFE_MODE`, `CLAUDE_CODE_FORK_SUBAGENT`, `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT`, `CLAUDE_CODE_ENABLE_TODO_TOOLS`, `CLAUDE_CODE_EFFORT_LEVEL`, `CLAUDE_CODE_MAX_OUTPUT_TOKENS`, `FORCE_HYPERLINK`, `CLAUDE_CODE_DISABLE_FILE_MENTIONS`, `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`, `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`, `CLAUDE_CODE_AUTO_MODE_MODEL`) | ✅ COMPLETE (all 11 corrected) |
+| 4 | HIGH | Removed Env Vars | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` (removed v2.1.224) and `TASK_MAX_OUTPUT_LENGTH` (removed v2.1.277) | ✅ COMPLETE (marked REMOVED in table) |
+| 5 | HIGH | New Env Vars | Add 9 missing env vars from v2.1.323–330: `CLAUDE_CODE_AUTOMOUNT_ROOTS`, `CLAUDE_CODE_RESUME_HINT_COMMAND`, `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES`, `OTEL_RESOURCE_INCLUDE_HOST`, `CLAUDE_CODE_DISABLE_SHELL_HEAD_START`, `CLAUDE_CODE_DISABLE_PROXY_SCHEME_REPAIR`, `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME`, `CLAUDE_CODE_FULL_SIGN_IN_LINK` | ✅ COMPLETE (all added to env var table) |
+| 6 | HIGH | New Setting | Add `enforceAnthropicSignIn` (Managed only, v2.1.329) — blocks sessions without valid authenticated identity | ✅ COMPLETE (added to Managed-only table) |
+| 7 | HIGH | New Setting | Add `attributionProject` (v2.1.327) — billing group tag for gateway routing | ✅ COMPLETE (added to Attribution Settings table) |
+| 8 | MEDIUM | Deprecated Setting | Mark `disableArtifact` as deprecated; direct users to `enableArtifact: false` | ✅ COMPLETE (deprecated note added) |
+| 9 | MEDIUM | Version Metadata | Update badge and intro to v2.1.330 and Nov 23, 2026 | ✅ COMPLETE (badge and intro updated) |
+| 10 | LOW | Missing Settings | `enableWorkflows`, `managedSourcesBehavior`, `gatewayInternalNetworks`, `isolatePeerMachines`, and ~9 other keys present in JSON schema / changelog but unconfirmed in official docs | ✋ ON HOLD (high volume; requires individual confirmation against official docs before adding) |
+| 11 | LOW | Missing Env Vars | ~74 more env vars present on official page but not yet in report (beyond the 9 added this run) | ✋ ON HOLD (high volume; phased approach needed across future runs) |
+| 12 | LOW | Suspect Env Var | `OTEL_LOG_TOOL_DETAILS` — in JSON schema but not on official env-vars page for 30+ consecutive runs | ✋ ON HOLD (may be internal/undocumented; keeping as annotated suspect entry) |
