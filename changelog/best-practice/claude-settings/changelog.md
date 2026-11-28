@@ -1360,3 +1360,33 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-14 10:52 AM PKT] Claude Code v2.1.325
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Security | Fix `sandbox.autoAllowBashIfSandboxed` default: `true` → `false` (changed in v2.1.324); add note to sandbox example | COMPLETE (corrected) — NEW |
+| 2 | HIGH | Security | Fix permission syntax note: `Write(path)`, `NotebookEdit(path)`, `Glob(path)` are NOT matched in deny/ask rules — previous note incorrectly said they "continue to work as expected" | COMPLETE (corrected) — NEW |
+| 3 | HIGH | Removed Setting | Mark `subagentStatusLine` as REMOVED in v2.1.323 (was present without removal notice) | COMPLETE (marked removed) — NEW |
+| 4 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit`: scope Any → User or managed; default `-` → `true` | COMPLETE (corrected) — NEW |
+| 5 | HIGH | Version Bump | Update badge and header from v2.1.322 → v2.1.325; update settings/env var counts | COMPLETE (updated) — NEW |
+| 6 | MED | Stale Annotation | Remove "(in JSON schema, not on official settings page)" from `sandbox.ignoreViolations` — now on official page | COMPLETE (annotation removed) — NEW |
+| 7 | MED | Deprecated Setting | Mark `keybindingFlavor` as deprecated since v2.1.261 with no effect | COMPLETE (deprecated note added) — NEW |
+| 8 | MED | Wrong Description | Fix `desktopSessionCleanupPeriodDays`: description updated (Desktop/Cowork transcripts), default `-` → `0`, scope added (user or managed) | COMPLETE (corrected) — NEW |
+| 9 | MED | Wrong Default | Fix `effortLevel` description: add note that Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 default to `medium` | COMPLETE (corrected) — NEW |
+| 10 | MED | Wrong Description | Fix `pluginConfigs`: description was "Per-plugin MCP server configs" → "Stores per-plugin userConfig dialog answers" | COMPLETE (corrected) — NEW |
+| 11 | MED | Deprecated Setting | Add `pluginDigests` to Plugin Settings table as DEPRECATED in v2.1.325 | COMPLETE (added) — NEW |
+| 12 | MED | Wrong Description | Fix `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID`: corrected description to clarify nesting vs. independent session ID behavior | COMPLETE (corrected) — NEW |
+| 13 | MED | Missing Settings | Add `skipAutoPermissionPrompt` to Permission Keys table (User or managed) | COMPLETE (added) — NEW |
+| 14 | MED | Missing Settings | Add `enableWorkflows` to General Settings (distinct from `disableWorkflows`) | COMPLETE (added) — NEW |
+| 15 | MED | Missing Settings | Add `managedSourcesBehavior` and `gatewayInternalNetworks` to Managed-only policy keys | COMPLETE (added) — NEW |
+| 16 | MED | Missing Settings | Add `worktree.location` and `isolatePeerMachines` to Worktree Settings | COMPLETE (added) — NEW |
+| 17 | MED | Missing Settings | Add `sandbox.ripgrep` to Sandbox Settings | COMPLETE (added) — NEW |
+| 18 | MED | Missing Settings | Add `terminalTitleFromRename` to Display Settings | COMPLETE (added) — NEW |
+| 19 | MED | Missing Settings | Add 6 missing Global Config keys: `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled`, `claudeInChromeDefaultEnabled` | COMPLETE (added) — NEW |
+| 20 | MED | Admin Keys | Update admin-source union keys table: add `allowManagedMcpServersOnly`, `deniedMcpServers`, `disableClaudeAiConnectors`, `sandbox.ripgrep` | COMPLETE (updated) — NEW |
+| 21 | MED | Missing Env Vars | Add `CLAUDE_CODE_RESUME_HINT_COMMAND` (v2.1.323) and `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` (v2.1.323) | COMPLETE (added) — NEW |
+| 22 | MED | Missing Env Vars | Add `CLAUDE_CODE_SUBAGENT_EFFORT`, `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`, `ANTHROPIC_PROFILE`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_FEDERATION_RULE_ID` | COMPLETE (added) — NEW |
+| 23 | MED | Missing Env Vars | Add `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK`, `CLAUDE_CODE_PLUGIN_DIRS`, `CLAUDE_CODE_DISABLE_MCP_TASKS`, `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`, `CLAUDE_CODE_DISABLE_FEATURE_FLAGS`, `CLAUDE_CODE_RESTRICTED`, `CLAUDE_CODE_ENABLE_CFC`, `CLAUDE_CODE_DISABLE_CFC_PROMPT`, `CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS` | COMPLETE (added) — NEW |
