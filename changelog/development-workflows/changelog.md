@@ -5318,3 +5318,32 @@
 | 24 | LOW | Workflow | Yeachan-Heo/omc: deep-interview→plan→autoresearch(sub)→execute→verify(sub)→ralph(sub) (6-step vs current 9-step) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
 | 25 | LOW | Sort | Sort order 334k>328k>311k>152k>143k>99.7k(OOS)>75.8k>64.1k>55.8k>41.1k>26.3k>13.0k — relative positions unchanged | COMPLETE (no re-sort needed) |
 | 26 | INFO | Infra | shields.io blocked (empty responses — RECURRING); WebFetch HTML used for all independent star verification; GitHub API restricted to current repo only | ON HOLD (RECURRING — WebFetch/HTML method confirmed authoritative) |
+
+---
+
+## [2026-11-28 09:09 AM PKT] Development Workflows Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | affaan-m/ECC ★ 311k → 312k (WebFetch: 311.9k / Agent 1 exact: 311,941; rounds to 312k; stars-don't-fall rule applied) | COMPLETE (NEW — updated README table) |
+| 2 | HIGH | Star | Fission-AI/OpenSpec ★ 75.8k → 75.9k (WebFetch: 75.9k; +0.1k) | COMPLETE (NEW — updated README table) |
+| 3 | LOW | Star | mattpocock/skills 334k — no change (WebFetch: 334.3k / Agent 1 exact: 334,345; rounds to 334k; unchanged) | COMPLETE (RECURRING — no action) |
+| 4 | LOW | Star | obra/superpowers 328k — no change (WebFetch: 328.4k / Agent 1 exact: 328,410; rounds to 328k; unchanged) | COMPLETE (RECURRING — no action) |
+| 5 | LOW | Star | github/spec-kit 152k — no change (WebFetch: 152.4k / Agent 1 exact: 152,355; rounds to 152k; unchanged) | COMPLETE (RECURRING — no action) |
+| 6 | LOW | Star | garrytan/gstack 143k — no change (WebFetch: 142.8k; rounds to 143k; unchanged) | COMPLETE (RECURRING — no action) |
+| 7 | LOW | Star | gsd-build/GSD 64.1k — no change (WebFetch: 64.1k; unchanged) | COMPLETE (RECURRING — no action) |
+| 8 | LOW | Star | bmad-code-org/BMAD 55.8k — no change (WebFetch: 55.8k; unchanged) | COMPLETE (RECURRING — no action) |
+| 9 | LOW | Star | Yeachan-Heo/omc 41.1k — no change (WebFetch: 41.1k; unchanged) | COMPLETE (RECURRING — no action) |
+| 10 | LOW | Star | EveryInc/CE 26.3k — no change (WebFetch: 26.3k; unchanged) | COMPLETE (RECURRING — no action) |
+| 11 | LOW | Star | humanlayer/humanlayer 13.0k — no change (WebFetch: 13.0k; unchanged) | COMPLETE (RECURRING — no action) |
+| 12 | LOW | Count | affaan-m/ECC commands 99+ (Agent 1: 99 visible; GitHub truncates at 100; more exist; counts-don't-fall from 99c) | INVALID (RECURRING — truncated listing; keep 99c) |
+| 13 | LOW | Count | affaan-m/ECC skills 286+ (Agent 1: v2.2.0 release notes cite 286; current 328s; counts-don't-fall) | INVALID (RECURRING — counts-don't-fall; keep 328s) |
+| 14 | LOW | Count | mattpocock/skills skills 31 shipped (Agent 1: 31 across engineering/misc/productivity; counts-don't-fall from 39s) | INVALID (RECURRING — counts-don't-fall; keep 39s) |
+| 15 | LOW | Count | github/spec-kit commands 9 (Agent 1: 9 in templates/commands/; confirmed unchanged) | COMPLETE (RECURRING — no change; 9c confirmed) |
+| 16 | LOW | Count | obra/superpowers skills 15 (Agent 1: 15 confirmed by complete listing; matches current 15s) | COMPLETE (RECURRING — no change) |
+| 17 | LOW | Workflow | github/spec-kit: speckit-* (hyphen) vs current /speckit.* (dot) notation (same 6 steps; v1.4.1-v1.4.5 activity in Nov 2026) | ON HOLD (RECURRING — notation change only; keep current /speckit.* 6-step) |
+| 18 | LOW | Workflow | affaan-m/ECC: plan→tdd-workflow→feature-dev→code-review→quality-gate→pr (6-step vs current 7-step) | ON HOLD (RECURRING — chain reset; keep current pipeline) |
+| 19 | LOW | Workflow | obra/superpowers: subagent-driven-development(top) replaces executing-plans(top) in position 4; verification-before-completion missing (8-step vs current 9-step) | ON HOLD (RECURRING — chain reset; executing-plans skill exists; keep current 9-step) |
+| 20 | LOW | Workflow | mattpocock/skills: grill-with-docs→to-spec→to-tickets→implement-spec(sub)→code-review(sub)→pr (6-step vs current 9-step) | ON HOLD (RECURRING — chain reset; setup/domain-modeling/implement/tdd present in repo; keep current 9-step) |
+| 21 | LOW | Sort | Sort order 334k>328k>312k>152k>143k>99.7k(OOS)>75.9k>64.1k>55.8k>41.1k>26.3k>13.0k — relative positions unchanged | COMPLETE (no re-sort needed) |
+| 22 | INFO | Infra | Research agent 2 (7 repos) notifications did not arrive within session; Agent 1 (4 repos) arrived after 8 min; shields.io blocked (RECURRING); WebFetch HTML used for star verification | ON HOLD (RECURRING — WebFetch/HTML confirmed authoritative; Agent 2 star data covered by direct WebFetch) |
