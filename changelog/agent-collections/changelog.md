@@ -10,6 +10,18 @@ Tracks updates to the AGENT COLLECTIONS table in `README.md`.
 
 ---
 
+## [2026-11-28 08:42 AM PKT] Agent Collections Update
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Star | Update msitarzewski/agency-agents ★ from 168k to 171k | COMPLETE (GitHub HTML 170.7k confirmed by 2 independent fetches; 170.7k > 170.5k threshold → rounds to 171k; 3 k-boundaries crossed (169k, 170k, 171k); API blocked; RECURRING — milestone crossing; conf 0.72 on overall report; stars HTML-confirmed) |
+| 2 | LOW | Count | msitarzewski/agency-agents agents 283 = 283 (dir-traversal: engineering/66+specialized/59+marketing/37+game-development/6+unity/4+gis/13+security/12+design/10+testing/9+sales/9+paid-media/7+project-management/7+product/6+support/6+academic/6+spatial-computing/6+finance/5+healthcare/3+research/1+strategy/1=283 confirmed; ~15-20 unchecked in 4 game-dev subdirs + strategy subdirs; conf 0.72 below 0.88 threshold; RECURRING oscillation; exact match with table) | INVALID (exact match; conf 0.72 below 0.88 threshold; RECURRING) |
+| 3 | LOW | Count | VoltAgent/awesome-claude-code-subagents agents 170 vs 166 file-count (file-count: 01:13+02:30+03:16+04:19+05:13+06:16+07:17+08:19+09:12+10:11=166; +3 net new in 30 days: motion-director, ponder-auditor, microcopy-reviewer; cat09 discrepancy: 16 (README-listing) vs 12 (file-count); 4 external-link entries in cat09 not stored as local files; conf 0.88 at threshold; RECURRING oscillation; methodology mismatch — README-listing baseline 170 vs file-count 166) | INVALID (RECURRING oscillation; conf 0.88 at threshold; methodology mismatch: README-listing 170 vs file-count 166; Nov 11 COMPLETE established 170 at conf 0.92 via README listing; no confirmed net removal from README listing baseline; no change) |
+| 4 | LOW | Star | VoltAgent/awesome-claude-code-subagents ★ unchanged (26.8k rounds to 27k; no k-boundary crossed) | INVALID (no k-boundary crossed; RECURRING) |
+| 5 | LOW | Sort | Verify sort order (171k > 27k — stars descending) | COMPLETE (order preserved; RECURRING) |
+
+---
+
 ## [2026-11-11 08:36 AM PKT] Agent Collections Update
 
 | # | Priority | Type | Action | Status |
