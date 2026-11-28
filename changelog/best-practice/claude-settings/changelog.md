@@ -1360,3 +1360,26 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-15 10:44 AM PKT] Claude Code v2.1.325
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.325; timestamp Nov 11 → Nov 15; header "403+ env vars" → "418+ env vars"; Sources count corrected | COMPLETE (all updated) — NEW |
+| 2 | HIGH | Wrong Default | Fix `sandbox.autoAllowBashIfSandboxed`: default `true` → `false` (changed in v2.1.324); added note "Changed to `false` by default in v2.1.324"; update Quick Reference sandbox example block | COMPLETE (default corrected + example updated) — NEW |
+| 3 | HIGH | Removed Setting | Mark `subagentStatusLine`: **REMOVED in v2.1.323** — no longer in official docs | COMPLETE (marked REMOVED) — NEW |
+| 4 | HIGH | Deprecated Setting | Mark `keybindingFlavor`: **Deprecated since v2.1.261 — has no effect** | COMPLETE (marked deprecated) — NEW |
+| 5 | HIGH | Missing Settings | Add 6 missing Global Config Settings (`~/.claude.json`): `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | COMPLETE (all 6 added) — NEW |
+| 6 | HIGH | Missing Settings | Add `enableWorkflows` boolean setting (true enables Workflow tool, default: `false`) | COMPLETE (added) — NEW |
+| 7 | HIGH | Missing Settings | Add `managedSourcesBehavior` string (Managed only): controls how managed-tier sources interact with user-tier sources; `"replace"`/`"append"`/`"prepend"` | COMPLETE (added to Plugin Settings table) — NEW |
+| 8 | HIGH | Removed Env Var | Mark `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`: **REMOVED in v2.1.224** | COMPLETE (marked REMOVED) — NEW |
+| 9 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_MODE_MODEL`: was described as "auto-mode safety review endpoint URL"; correctly "Model for auto-mode classifier requests" | COMPLETE (corrected) — NEW |
+| 10 | HIGH | Wrong Description | Fix `CLAUDE_CODE_AUTO_MODE_SERVER`: was described as "auto-mode safety review endpoint URL"; correctly "Set to `1` to enable server-side auto-mode safety review" | COMPLETE (corrected) — NEW |
+| 11 | HIGH | Wrong Description | Fix `CLAUDE_CODE_LOOP_KEEPALIVE`: corrected description to "Set to `1` to keep the old fallback wakeup behavior" | COMPLETE (corrected) — NEW |
+| 12 | HIGH | Wrong Description | Fix `CLAUDE_CODE_PLUGIN_DIR_WATCH`: was inverted — `0` disables watching; by default watches for new/removed plugin files; corrected description | COMPLETE (corrected) — NEW |
+| 13 | HIGH | Missing Env Vars | Add 3 new env vars from v2.1.323: `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES` (set to `1` to suppress per-turn agent progress summaries), `CLAUDE_CODE_RESUME_HINT_COMMAND` (command template for in-terminal resume hints), `CLAUDE_CODE_AUTOMOUNT_ROOTS` (comma-separated paths auto-added as project roots) | COMPLETE (all 3 added) — NEW |
+| 14 | MED | Wrong Description | Fix `CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS`: add note "As of v2.1.323, the maximum accepted value is `300000` (5 minutes)" | COMPLETE (note added) — NEW |
+| 15 | MED | Suspect Key Resolved | Remove "not on official page" annotation from `sandbox.ignoreViolations`; confirmed in JSON schema; updated description | COMPLETE (annotation removed) — NEW |
+| 16 | LOW | Sources | Correct Sources section count phrasing from "249+ keys with Scope/Type/Default columns" → "249 keys grouped by scope" | COMPLETE (updated) — NEW |
