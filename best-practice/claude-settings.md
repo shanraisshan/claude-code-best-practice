@@ -1,9 +1,9 @@
 # Settings Best Practice
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2011%2C%202026%2010%3A47%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.322-blue?style=flat&labelColor=555)<br>
+![Last Updated](https://img.shields.io/badge/Last_Updated-Nov%2027%2C%202026%2010%3A40%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.332-blue?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.claude/settings.json)
 
-A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.322, Claude Code exposes **249+ settings** and **403+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
+A comprehensive guide to all available configuration options in Claude Code's `settings.json` files. As of v2.1.332, Claude Code exposes **250+ settings** and **380+ environment variables** (use the `"env"` field in `settings.json` to avoid wrapper scripts).
 
 <table width="100%">
 <tr>
@@ -145,7 +145,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
 | `bashOutputMaxChars` | number | - | Override the maximum number of characters Claude captures from a Bash or PowerShell tool response. When set, takes precedence over the `BASH_MAX_OUTPUT_LENGTH` env var. Use to increase the capture limit for verbose commands or tighten it to control context usage. Requires v2.1.261+ |
 | `syncClaudeAiSkills` | boolean | - | Sync skills from claude.ai to this Claude Code session. Scope: user, local, managed, or `--settings`. Requires v2.1.275+ |
 | `syncClaudeAiPlugins` | boolean | - | Sync plugins from claude.ai to this Claude Code session. Scope: user, local, managed, or `--settings`. Requires v2.1.275+ |
-| `idleCompaction` | boolean | `true` | Trigger a compaction when the session becomes idle and context usage is high. When `false`, idle compaction is suppressed and only turn-boundary compaction applies. Settable from any scope. Pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`. Requires v2.1.299+ |
+| `idleCompaction` | object | - | Configure idle-triggered compaction. Object shape: `{"type": "compact" \| "summarize", "model": "haiku" \| ..., "minTokens": number}`. `type` controls the compaction strategy; `model` overrides which model runs the compaction; `minTokens` sets the minimum context usage before idle compaction fires. Settable from any scope. Pairs with `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS`. Requires v2.1.299+ |
 | `promptSuggestionEnabled` | boolean | `true` | Show prompt suggestions in the input box based on context. Set to `false` to disable prompt autocomplete suggestions |
 
 **Example:**
@@ -156,7 +156,7 @@ Within the managed tier, precedence is: server-managed > MDM/OS-level policies >
   "language": "japanese",
   "cleanupPeriodDays": 60,
   "autoUpdatesChannel": "stable",
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": false
 }
 ```
 
@@ -211,6 +211,7 @@ Customize attribution messages for git commits and pull requests.
 | `attribution.pr` | string | Generated message | Pull request description attribution |
 | `attribution.sessionUrl` | boolean | `true` | Include a link to the claude.ai session URL in commits and PRs generated in web sessions or Remote Control sessions. Set to `false` to omit the link. Has no effect in local CLI sessions (v2.1.183) |
 | `prUrlTemplate` | string | - | URL template that rewrites the PR links Claude Code renders in footer badges and tool summaries to point at an internal review tool. Supported placeholders: `{host}`, `{owner}`, `{repo}`, `{number}`, `{url}`. Useful for self-hosted GitHub Enterprise or custom review tools. **Note:** GitLab MR links keep their native GitLab URL and are not rewritten by this template (v2.1.119) |
+| `attributionProject` | string | - | Billing group label for cost attribution. When set, the value is included in session cost reports to group usage by project or team for chargeback purposes. Set via `/config` as **Attribution project**. Confirmed on official settings page (v2.1.327) |
 | `includeCoAuthoredBy` | boolean | `true` | **DEPRECATED** - Use `attribution` instead |
 
 **Example:**
@@ -234,7 +235,7 @@ Scripts for dynamic authentication token generation.
 | `apiKeyHelper` | string | Shell script path that outputs auth token (sent as both `X-Api-Key` and `Authorization: Bearer` headers) |
 | `forceLoginMethod` | string | Restrict login to `"claudeai"`, `"console"`, or `"gateway"` accounts. Use `"gateway"` for organization-managed Claude gateway deployments. The `"gateway"` value is only honored when set from sources that also supply `forceLoginGatewayUrl` (managed or user settings) |
 | `forceLoginOrgUUID` | string \| array | Require login to belong to a specific organization. Accepts a single UUID string (which also pre-selects that organization during login) or an array of UUIDs where any listed organization is accepted without pre-selection. When set in managed settings, login fails if the authenticated account does not belong to a listed organization; an empty array fails closed and blocks login with a misconfiguration message |
-| `forceLoginGatewayUrl` | string | Pre-fill the Claude gateway URL on the login screen when `forceLoginMethod` is `"gateway"`. Avoids requiring users to manually enter the gateway URL. Typically set alongside `forceLoginMethod: "gateway"`. **Scope:** User or managed; since v2.1.295, user settings are honored when no machine-managed source is present |
+| `forceLoginGatewayUrl` | string | Pre-fill the Claude gateway URL on the login screen when `forceLoginMethod` is `"gateway"`. Avoids requiring users to manually enter the gateway URL. Typically set alongside `forceLoginMethod: "gateway"`. **Scope: Managed only** |
 | `gcpAuthRefresh` | string | Custom script that refreshes GCP Application Default Credentials when they expire or cannot be loaded. Run by Claude Code before retrying authentication. Useful when ADC are short-lived and require an org-specific helper to renew. Example: `"gcloud auth application-default login"` |
 
 **Example:**
@@ -395,7 +396,7 @@ Control what tools and operations Claude can perform.
 
 Hook configuration (events, properties, matchers, exit codes, environment variables, and HTTP hooks) is maintained in a dedicated repository:
 
-> **[claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks)** — Complete hook reference with sound notification system, all 33 hook events (including `PostToolBatch`, `PostToolUseFailure`, `UserPromptExpansion`, `StopFailure`, `CwdChanged`, `DirectoryAdded`, `FileChanged`, `WorktreeCreate`, `WorktreeRemove`, `PostCompact`, `Elicitation`, `ElicitationResult`, `InstructionsLoaded`, `MessageDisplay`, `PermissionDenied`, `TaskCreated` and others), HTTP hooks, `mcp_tool` handler type, `onFailure: "block"` option (v2.1.295+), matcher patterns, exit codes, and environment variables.
+> **[claude-code-hooks](https://github.com/shanraisshan/claude-code-hooks)** — Complete hook reference with sound notification system, all 34 hook events (including `PostToolBatch`, `PostToolUseFailure`, `UserPromptExpansion`, `StopFailure`, `CwdChanged`, `DirectoryAdded`, `FileChanged`, `WorktreeCreate`, `WorktreeRemove`, `PostCompact`, `Elicitation`, `ElicitationResult`, `InstructionsLoaded`, `MessageDisplay`, `PermissionDenied`, `TaskCreated`, `PreSkillShellCommand` (v2.1.332) and others), HTTP hooks, `mcp_tool` handler type, `onFailure: "block"` option (v2.1.295+), matcher patterns, exit codes, and environment variables.
 
 Hook-related settings keys (`hooks`, `disableAllHooks` (also disables any custom status line), `allowManagedHooksOnly`, `allowedHttpHookUrls`, `httpHookAllowedEnvVars`) are documented there.
 
@@ -423,14 +424,14 @@ Configure Model Context Protocol servers for extended capabilities.
 | `enabledMcpjsonServers` | array | Any | Allowlist specific server names |
 | `disabledMcpjsonServers` | array | Any | Blocklist specific server names |
 | `allowedMcpServers` | array | Any | Allowlist with name/command/URL matching. Entries merge across settings files |
-| `deniedMcpServers` | array | Any | Blocklist with matching. Entries merge across settings files. **v2.1.318:** URL-based entries now also block matching Anthropic-provided servers and connectors in cloud sessions and self-hosted runners, not just user-added servers |
+| `deniedMcpServers` | array | Any | Blocklist with matching. Entries merge across settings files. **v2.1.318:** URL-based entries now also block matching Anthropic-provided servers and connectors in cloud sessions and self-hosted runners, not just user-added servers. **v2.1.330:** Name-based entries (`{"name": "..."}`) now only hide the named connector from the user's MCP list — they do not block the connector entirely |
 | `allowManagedMcpServersOnly` | boolean | Managed only | Only allow MCP servers explicitly listed in managed allowlist |
 | `channelsEnabled` | boolean | Managed only | Allow [channels](https://code.claude.com/docs/en/channels) for Team and Enterprise users. When unset or `false`, channel message delivery is blocked regardless of `--channels` flag |
 | `allowedChannelPlugins` | array | Managed only | Allowlist of channel plugins that may push messages. Replaces the default Anthropic allowlist when set. Undefined = fall back to the default, empty array = block all channel plugins. Requires `channelsEnabled: true`. Each entry is an object with `marketplace` and `plugin` fields (v2.1.84) |
 | `managedMcpServers` | object | Managed only | Admin-deployed MCP server definitions that take precedence over all other scopes, including user and project `.mcp.json` entries. Same shape as `mcpServers`. When present, managed MCP servers are loaded unconditionally — users cannot disable them. Requires v2.1.259+ |
 | `allowAllClaudeAiMcps` | boolean | Managed only | Load claude.ai cloud MCP connectors alongside `managed-mcp.json`. When enabled, claude.ai-hosted MCP connectors are made available in addition to admin-deployed managed MCP servers |
 | `disableClaudeAiConnectors` | boolean | Any | Disable auto-fetching of claude.ai MCP connectors. When `true`, claude.ai cloud connectors are not loaded. **Restrictive-value exception:** `true` applies from any scope, including project settings, even against a managed `false` — lower-priority scopes can opt out but cannot opt in (v2.1.182) |
-| `allowClaudeInChromeWithManagedMcp` | boolean | `false` | **(Managed, device sources only)** Allow Claude in Chrome to access managed MCP servers. When `true`, Chrome-based Claude instances receive access to the admin-deployed MCP servers from `managedMcpServers`. Requires v2.1.282+ |
+| `allowClaudeInChromeWithManagedMcp` | boolean | Managed (device sources only) | **(Managed, device sources only)** Allow Claude in Chrome to access managed MCP servers. When `true`, Chrome-based Claude instances receive access to the admin-deployed MCP servers from `managedMcpServers`. Requires v2.1.282+ |
 | `allowedProviders` | array | Managed only | Restrict which API providers (Anthropic, Bedrock, Vertex, Foundry) may be used. Each entry is a provider identifier. When set, Claude Code refuses to start sessions against providers not in the list. Requires v2.1.285+. Pairs with `forceLoginMethod` for provider enforcement |
 
 ### MCP Server Matching (Managed Settings)
@@ -640,7 +641,7 @@ Map Anthropic model IDs to provider-specific model IDs for Bedrock, Vertex, or F
 |-----|------|---------|-------------|
 | `effortLevel` | string | - | Persist the effort level across sessions. Accepts `"low"`, `"medium"`, `"high"`, `"xhigh"` (Fable 5, Opus 5, Sonnet 5, Opus 4.7, Opus 4.8, v2.1.111). **`"max"` and `"ultracode"` are session-only and are not accepted here** — set them via `/effort` or `--settings` for a single session but do not write them to `settings.json`. Written automatically when you run `/effort <level>`. The default effort is `high` on every model that supports effort, except Opus 4.7 which defaults to `xhigh`. Unsupported levels fall back to the highest supported level on the active model. **Before v2.1.251, `/effort` wrote to `effortLevel`; as of v2.1.251, `/effort` saves defaults per-model via `modelSettings`** — use `modelSettings` when you want different effort defaults per model. Note: Opus 5.5 and later 5.x models ignore a top-level `effortLevel` in user settings |
 | `modelSettings` | object | - | Per-model saved effort levels and configuration, keyed by model alias or ID. Each entry contains `effortLevel` (and `maxEffortLevel`, `autoCompactWindow` fields). `/effort` writes to this key as of v2.1.251, enabling different default effort levels on different models. Resolved per model (not "entire object"). Requires v2.1.251+. Example: `{"opus": {"effortLevel": "xhigh"}, "sonnet": {"effortLevel": "high"}}` |
-| `modelPicker` | object | - | Curate and order the `/model` picker with labeled, ordered rows. Object shape: `{options: [{model: "opus", label: "Opus 5"}, ...], replaceBuiltInOptions?: boolean}`. **Scope: user or managed only** — ignored in project and local settings. **Does not merge across settings files** — the highest-precedence file that defines it supplies the entire object. Use `replaceBuiltInOptions: true` to remove all built-in entries (v2.1.242+) |
+| `modelPicker` | object | - | Curate and order the `/model` picker. Object shape: `{models: [{model: "opus", label: "Opus 5"}, ...], sortOrder?: string, showAllModels?: boolean}`. `models` is the ordered list of entries; `sortOrder` controls display ordering; `showAllModels` toggles whether the full model catalog is also shown. **Scope: user or managed only** — ignored in project and local settings. **Does not merge across settings files** — the highest-precedence file that defines it supplies the entire object (v2.1.242+) |
 | `modelPricing` | object | - | **(Managed only)** Contracted per-model rates and discount multipliers applied to usage cost reporting. Allows organizations to configure accurate cost attribution when using negotiated pricing tiers rather than public list prices (v2.1.243+) |
 | `fallbackModel` | array | - | Up to 3 fallback model IDs tried sequentially when the primary model is unavailable (e.g., rate-limited or capacity issue). Each entry is a model ID or alias; `"default"` expands to the account default. Claude Code attempts the primary model first; if it fails, each fallback is tried in order. Stops at the first successful response. **Unlike most array settings, this key does not merge across settings files** — the highest-precedence file that defines it supplies the entire chain; entries beyond 3 (after deduplication) are silently ignored (v2.1.166) |
 | `modelOverrides` | object | - | Map model picker entries to provider-specific IDs (e.g., Bedrock inference profile ARNs). Each key is a model picker entry name, each value is the provider model ID |
@@ -899,7 +900,7 @@ The file suggestion script receives a JSON object on stdin (e.g., `{"query": "sr
 | Key | Type | Description |
 |-----|------|-------------|
 | `awsAuthRefresh` | string | Script to refresh AWS auth (modifies `.aws` dir) |
-| `awsCredentialExport` | string | Script outputting JSON with AWS credentials |
+| `awsCredentialExport` | string | Script outputting JSON with AWS credentials. Claude Code runs this script to obtain temporary AWS credentials and passes them to Bedrock requests. **Times out after 10 minutes** (v2.1.332) — ensure the script completes within that window |
 
 **Example:**
 ```json
@@ -945,6 +946,7 @@ Set environment variables for all Claude Code sessions.
 | `ANTHROPIC_API_KEY` | API key for authentication |
 | `ANTHROPIC_AUTH_TOKEN` | OAuth token |
 | `CLAUDE_CODE_OAUTH_TOKEN` | OAuth access token for Claude.ai authentication. Alternative to `/login` for SDK and automated environments. Takes precedence over keychain-stored credentials |
+| `CLAUDE_CODE_FULL_SIGN_IN_LINK` | When set to `1`, displays the full OAuth sign-in URL in the terminal instead of opening a browser. Useful for headless or remote environments where a browser cannot be launched (v2.1.330) |
 | `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` | OAuth refresh token for Claude.ai authentication. When set, `claude auth login` exchanges this token directly instead of opening a browser. Requires `CLAUDE_CODE_OAUTH_SCOPES` |
 | `CLAUDE_CODE_OAUTH_SCOPES` | Space-separated OAuth scopes the refresh token was issued with (e.g., `"user:profile user:inference user:sessions:claude_code"`). Required when `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` is set |
 | `ANTHROPIC_WORKSPACE_ID` | Workspace ID for [workload identity federation](https://platform.claude.com/docs/en/manage-claude/workload-identity-federation). Set when your federation rule is scoped to more than one workspace so the token exchange knows which workspace to target (v2.1.141) |
@@ -988,6 +990,8 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_REMOTE` | Read-only. Set automatically to `true` when Claude Code is running as a cloud session. Read this from a hook or setup script to detect whether you are in a cloud environment |
 | `CLAUDE_CODE_REMOTE_SESSION_ID` | Read-only. Set automatically in cloud sessions to the current session's ID. Read this to construct a link back to the session transcript |
 | `CLAUDE_CODE_BRIDGE_SESSION_ID` | Read-only. Set automatically in Bash tool and hook command subprocesses while the session has an active Remote Control connection. Value is the session ID in `session_` form (same identifier in the session's `claude.ai/code` URL). Removed when the connection ends. Allows scripts to link back to the session that ran them. In cloud sessions, read `CLAUDE_CODE_REMOTE_SESSION_ID` instead (v2.1.199) |
+| `CLAUDE_RUNNER_SESSION_UUID` | Read-only. Session UUID injected into self-hosted runner orchestrator environments. Identifies the top-level runner session for multi-agent orchestration (v2.1.328) |
+| `CLAUDE_CODE_REMOTE_SESSION_UUID` | Read-only. Session UUID for the current remote cloud session, available in self-hosted runner contexts. Use alongside `CLAUDE_RUNNER_SESSION_UUID` for end-to-end session tracing (v2.1.328) |
 | `CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX` | Prefix for auto-generated Remote Control session names. Defaults to the machine hostname |
 | `CLAUDE_CLIENT_PRESENCE_FILE` | Path to a file that, when present, signals an active client and suppresses mobile push notifications from Remote Control. Useful in environments where a desktop client is always running and mobile pings are unwanted |
 | `CLAUDE_CODE_DISABLE_NOTIFICATION_PRESENCE_CHECK` | Set to `1` to send push notifications even while the user is actively typing in the session. By default, notifications are suppressed when active user presence is detected (v2.1.193) |
@@ -1068,6 +1072,8 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Disable fast mode entirely (`1` to disable) |
 | `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | **REMOVED in v2.1.160** — the environment variable is now a no-op. Fast mode runs on the default model regardless of this variable. Previously pinned [fast mode](https://code.claude.com/docs/en/fast-mode) to Claude Opus 4.6 instead of the default (v2.1.142–v2.1.159) |
 | `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` | Set to `1` to disable the non-streaming fallback when a streaming request fails mid-stream. Streaming errors propagate to the retry layer instead. Useful when a proxy or gateway causes the fallback to produce duplicate tool execution (v2.1.83) |
+| `CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION` | Set to `1` to disable HTTP response body compression for API responses. Useful when a gateway or proxy performs its own decompression and double-decompression causes corruption (v2.1.331) |
+| `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME` | Set to `1` to disable the deferred tool resumption mechanism that allows long-running tool calls to be resumed after a network interruption. Disabling prevents automatic re-attachment on reconnect (v2.1.328) |
 | `CLAUDE_ENABLE_STREAM_WATCHDOG` | Stream idle watchdog that aborts stalled streams. Enabled by default as of v2.1.163; set to `0` to disable |
 | `CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING` | Enabled by default on the Anthropic API (v2.1.139+); set to `0` to opt out |
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Disable auto memory (`1` to disable) |
@@ -1087,6 +1093,8 @@ Set environment variables for all Claude Code sessions.
 | `CLAUDE_CODE_TMPDIR` | Override the temp directory used for internal temp files. Claude Code appends `/claude/` to this path. Default: `/tmp` on Unix/macOS, `os.tmpdir()` on Windows |
 | `ANTHROPIC_CUSTOM_HEADERS` | Custom headers for API requests (`Name: Value` format, newline-separated for multiple headers) |
 | `CLAUDE_CODE_EXTRA_BODY` | JSON object to merge into the top level of every API request body. Use to inject vendor-specific fields (e.g., routing hints for a custom gateway) |
+| `CLAUDE_CODE_GATEWAY_HINT_HEADERS` | JSON object of additional HTTP headers to include in gateway-bound requests. Used when a gateway requires custom routing hints or authentication metadata beyond standard API headers (v2.1.327) |
+| `CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME` | Set to `1` to force the gateway identity-provider connection to use the hostname directly instead of resolving via DNS discovery. Useful when the IdP is behind a load balancer or split-horizon DNS (v2.1.331) |
 | `CLAUDE_CODE_PROPAGATE_TRACEPARENT` | Set to `1` to propagate the W3C `traceparent` header through requests when routing through a custom proxy, linking Claude Code traces to your upstream telemetry |
 | `ANTHROPIC_FOUNDRY_API_KEY` | API key for Microsoft Foundry authentication |
 | `ANTHROPIC_FOUNDRY_BASE_URL` | Base URL for Foundry resource |
@@ -1205,6 +1213,7 @@ Set environment variables for all Claude Code sessions.
 | `OTEL_METRICS_INCLUDE_VERSION` | Set to `1` to include the Claude Code version as a label on all OpenTelemetry metric data points |
 | `OTEL_METRICS_INCLUDE_RESOURCE_ATTRIBUTES` | Set to `1` to promote `OTEL_RESOURCE_ATTRIBUTES` key/value pairs onto every metric data point as dimensions |
 | `CLAUDE_CODE_OTEL_DIAG_STDERR` | Set to `1` to emit OpenTelemetry SDK diagnostic output to stderr. Use to troubleshoot collector connectivity or exporter configuration issues |
+| `OTEL_SERVICE_NAME` | Override the OpenTelemetry service name reported in spans and metrics. Defaults to `claude-code`. Useful when multiple services share the same OTel collector and you need to distinguish Claude Code's telemetry (v2.1.332) |
 | `CLAUDE_CODE_FORK_SUBAGENT` | Forked subagents are **enabled by default**. Set to `0` to disable forked subagents. Forked subagents run in an isolated child process instead of sharing the main agent's context |
 | `CLAUDE_CODE_MCP_SERVER_NAME` | Name of the MCP server, passed as an environment variable to `headersHelper` scripts so they can generate server-specific authentication headers *(in v2.1.85 changelog, not yet on official env-vars page)* |
 | `CLAUDE_CODE_MCP_SERVER_URL` | URL of the MCP server, passed as an environment variable to `headersHelper` scripts alongside `CLAUDE_CODE_MCP_SERVER_NAME` *(in v2.1.85 changelog, not yet on official env-vars page)* |
