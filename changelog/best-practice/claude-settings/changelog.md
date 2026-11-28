@@ -1360,3 +1360,23 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-13 10:46 AM PKT] Claude Code v2.1.323
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.323; header "403+ env vars" → "406+ env vars"; timestamp Nov 11 → Nov 13 | COMPLETE (all updated) — NEW |
+| 2 | HIGH | Removed Setting | Mark `subagentStatusLine` as REMOVED in v2.1.323 — this setting is now a no-op | COMPLETE (marked removed) — NEW |
+| 3 | HIGH | Changed Behavior | Remove "Research preview" from `auto` permission mode — it is the built-in default starting mode as of v2.1.283 | COMPLETE (corrected) — NEW |
+| 4 | HIGH | Wrong Default | Fix `autoContinueAtUsageLimit`: default is `true`; scope is user or managed only | COMPLETE (corrected) — NEW |
+| 5 | HIGH | Stale Annotation | Remove "(in JSON schema, not on official settings page)" from `sandbox.ignoreViolations` — now on official settings page | COMPLETE (annotation removed) — NEW |
+| 6 | HIGH | Deprecated Setting | Mark `keybindingFlavor` as DEPRECATED as of v2.1.261 — no effect | COMPLETE (marked deprecated) — NEW |
+| 7 | HIGH | Wrong Description | Update `CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS`: max raised from 64,000ms to 300,000ms in v2.1.323 | COMPLETE (corrected) — NEW |
+| 8 | HIGH | Missing Env Vars | Add 3 new env vars from v2.1.323: `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES`, `CLAUDE_CODE_RESUME_HINT_COMMAND`, `CLAUDE_CODE_AUTOMOUNT_ROOTS` | COMPLETE (all 3 added with changelog annotations) — NEW |
+| 9 | MED | Permission Syntax | Add v2.1.323 startup warning note: `Bash(* install)` and `Bash(VAR=* cmd)` allow rules emit a warning | COMPLETE (note added to Bash wildcard section) — NEW |
+| 10 | MED | Deprecated Setting | Mark `disableArtifact` as DEPRECATED — use `enableArtifact: false` instead | COMPLETE (marked deprecated) — NEW |
+| 11 | MED | Changed Description | Update `autoInstallIdeExtension`: since v2.1.318, only applies to /ide from external terminal | COMPLETE (corrected) — NEW |
+| 12 | MED | Missing Setting | Add `terminalTitleFromRename` (boolean, default `true`, v2.1.323) to Display Settings — reflects session rename in terminal title | COMPLETE (added with unverified annotation) — NEW |
+| 13 | MED | Missing Setting | Add `isolatePeerMachines` to Permissions section (scope exception: any scope, honored even when managed sets false) — from official settings page exceptions table | COMPLETE (added to permissions table) — NEW |
