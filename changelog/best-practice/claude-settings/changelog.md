@@ -1360,3 +1360,30 @@
 | 28 | MED | Useful Commands | Fix `--doctor` → `claude doctor`/`/doctor` (was listed as a CLI flag, not a command) | COMPLETE (corrected) — NEW |
 | 29 | MED | Useful Commands | Fix Ultracode: v2.1.284 enables parallel multi-agent workflow (not extended thinking) | COMPLETE (updated) — NEW |
 | 30 | MED | Wrong Scope | Fix `forceLoginMethod`/`forceLoginGatewayUrl` scope to Managed only | COMPLETE (corrected) — NEW |
+
+---
+
+## [2026-11-28 10:47 AM PKT] Claude Code v2.1.332
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| 1 | HIGH | Version Metadata | Update badge v2.1.322 → v2.1.332; header "249+ settings / 403+ env vars" → "256+ settings / 411+ env vars" | COMPLETE (all updated) — NEW |
+| 2 | HIGH | Wrong Default | Fix `sandbox.autoAllowBashIfSandboxed` default: `true` → `false` (changed in v2.1.325) | COMPLETE (corrected) — NEW |
+| 3 | HIGH | Wrong Description | Remove stale "(in JSON schema, not on official settings page)" annotation from `sandbox.ignoreViolations` — now on official index | COMPLETE (annotation removed) — NEW |
+| 4 | HIGH | Removed Setting | Mark `subagentStatusLine` as "Removed in v2.1.323" | COMPLETE (marked removed) — NEW |
+| 5 | HIGH | Hook Count | Update hooks redirect: "33 hook events" → "34 hook events" (PreSkillShellCommand added v2.1.332) | COMPLETE (updated) — NEW |
+| 6 | HIGH | Missing Settings | Add `enableWorkflows` (boolean, positive-sense counterpart to `disableWorkflows`, v2.1.323) | COMPLETE (added) — NEW |
+| 7 | HIGH | Missing Settings | Add `skipAutoPermissionPrompt` (boolean, v2.1.326) and `isolatePeerMachines` (boolean, Managed only, v2.1.328) to Permissions table | COMPLETE (both added) — NEW |
+| 8 | HIGH | Missing Settings | Add `managedSourcesBehavior` (string enum, Managed only, v2.1.329) and `enforceAnthropicSignIn` (boolean, Managed only, v2.1.330) to General Settings | COMPLETE (both added) — NEW |
+| 9 | HIGH | Missing Settings | Add `disableDirectMcpSkills` (boolean, Managed only, v2.1.325) to MCP Settings table | COMPLETE (added) — NEW |
+| 10 | HIGH | Missing Settings | Add `terminalTitleFromRename` (boolean, v2.1.325) to Display Settings | COMPLETE (added) — NEW |
+| 11 | HIGH | Missing Env Vars | Add 8 new env vars from v2.1.323–v2.1.331: `CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION`, `CLAUDE_CODE_FULL_SIGN_IN_LINK`, `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME`, `CLAUDE_CODE_GATEWAY_HINT_HEADERS`, `CLAUDE_CODE_DISABLE_SHELL_HEAD_START`, `OTEL_RESOURCE_INCLUDE_HOST`, `CLAUDE_CODE_DISABLE_AGENT_PROGRESS_SUMMARIES`, `CLAUDE_CODE_RESUME_HINT_COMMAND` | COMPLETE (all 8 added) — NEW |
+| 12 | HIGH | Missing Global Config | Add 6 missing `~/.claude.json` keys: `claudeInChromeDefaultEnabled`, `copyFullResponse`, `copyOnSelect`, `defaultToAgentsView`, `leftArrowOpensAgents`, `prStatusFooterEnabled` | COMPLETE (all 6 added) — NEW |
+| 13 | HIGH | CLAUDE.md Sync | Add 4 missing hook events to CLAUDE.md: `PostToolUseFailure`, `PreModelSwitch`, `PostModelSwitch`, `PreSkillShellCommand`; fix count 33 → 34 | COMPLETE (updated CLAUDE.md) — NEW |
+| 14 | MED | Model Aliases | Update `sonnet` alias: Sonnet 5 on Agent Platform/Foundry; `opus` alias: Opus 5.5 on Foundry (v2.1.332) | COMPLETE (corrected) — NEW |
+| 15 | MED | Wrong Description | Add `channelsEnabled` note: channels not available on Pro/Max/Ultra regardless of setting | COMPLETE (added note) — NEW |
+| 16 | MED | Changed Behavior | Update `deniedMcpServers` v2.1.330 note: name-based entries now hide only the named connector, not all at the same URL | COMPLETE (added note) — NEW |
+| 17 | MED | Changed Behavior | Add `extraKnownMarketplaces` auto-update notice: managed marketplaces auto-update from Nov 30, 2026 | COMPLETE (added note) — NEW |
+| 18 | MED | Changed Behavior | Add `awsCredentialExport` 10-minute timeout note (v2.1.332) | COMPLETE (added note) — NEW |
+| 19 | MED | Changed Behavior | Clarify `attribution: false` hides all attribution including session URL footer (v2.1.281+) | COMPLETE (added note) — NEW |
+| 20 | MED | Deprecated Setting | Mark `keybindingFlavor` as deprecated with no effect (deprecated v2.1.330) | COMPLETE (marked deprecated) — NEW |
