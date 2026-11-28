@@ -5347,3 +5347,29 @@
 | 20 | LOW | Workflow | mattpocock/skills: grill-with-docs→to-spec→to-tickets→implement-spec(sub)→code-review(sub)→pr (6-step vs current 9-step) | ON HOLD (RECURRING — chain reset; setup/domain-modeling/implement/tdd present in repo; keep current 9-step) |
 | 21 | LOW | Sort | Sort order 334k>328k>312k>152k>143k>99.7k(OOS)>75.9k>64.1k>55.8k>41.1k>26.3k>13.0k — relative positions unchanged | COMPLETE (no re-sort needed) |
 | 22 | INFO | Infra | Research agent 2 (7 repos) notifications did not arrive within session; Agent 1 (4 repos) arrived after 8 min; shields.io blocked (RECURRING); WebFetch HTML used for star verification | ON HOLD (RECURRING — WebFetch/HTML confirmed authoritative; Agent 2 star data covered by direct WebFetch) |
+
+### Agent 2 Addendum (arrived post-commit)
+
+| # | Priority | Type | Action | Status |
+|---|----------|------|--------|--------|
+| A1 | LOW | Star | Fission-AI/OpenSpec 75.9k confirmed (Agent 2 exact: 75,900 — already updated above) | COMPLETE (RECURRING — confirmed) |
+| A2 | LOW | Star | humanlayer/humanlayer 13.0k confirmed (Agent 2 exact: 12,970 — rounds to 13.0k) | COMPLETE (RECURRING — no action) |
+| A3 | LOW | Star | gsd-build/GSD 64.1k confirmed (Agent 2 exact: 64,113) | COMPLETE (RECURRING — no action) |
+| A4 | LOW | Star | garrytan/gstack 143k confirmed (Agent 2 exact: 142,821) | COMPLETE (RECURRING — no action) |
+| A5 | LOW | Star | bmad-code-org/BMAD 55.8k confirmed (Agent 2 exact: 55,845) | COMPLETE (RECURRING — no action) |
+| A6 | LOW | Star | EveryInc/CE 26.3k confirmed (Agent 2 exact: 26,257) | COMPLETE (RECURRING — no action) |
+| A7 | LOW | Star | Yeachan-Heo/omc 41.1k confirmed (Agent 2 exact: 41,102) | COMPLETE (RECURRING — no action) |
+| A8 | LOW | Count | garrytan/gstack skills 62 (Agent 2: 62 from AGENTS.md authoritative index; matches current 62s) | COMPLETE (RECURRING — confirmed) |
+| A9 | LOW | Count | EveryInc/CE skills 38 (Agent 2: 38 in root skills/; matches current 38s; plugins/ paths cited in task do not exist) | COMPLETE (RECURRING — confirmed) |
+| A10 | LOW | Count | Yeachan-Heo/omc agents 19, skills 84 (Agent 2: confirmed by view_all; matches current 19a/84s) | COMPLETE (RECURRING — confirmed) |
+| A11 | LOW | Count | humanlayer/humanlayer skills 29 (Agent 2: 29 confirmed in .claude/skills/; matches current 29s) | COMPLETE (RECURRING — confirmed) |
+| A12 | LOW | Count | bmad-code-org/BMAD skills 32 (Agent 2: 16 method + 12 core-tools + 3 toolsmith + 1 founder = 32; matches current 32s) | COMPLETE (RECURRING — confirmed) |
+| A13 | LOW | Count | gsd-build/GSD commands 67 (Agent 2: 67 enumerated; counts-don't-fall from 85c; archived) | INVALID (RECURRING — counts-don't-fall; keep 85c) |
+| A14 | LOW | Count | bmad-code-org/BMAD agents 6 (Agent 2: 6 in skills/method/; src/bmm-skills/ path does not exist; counts-don't-fall from 7a) | INVALID (RECURRING — counts-don't-fall; keep 7a) |
+| A15 | LOW | Count | Fission-AI/OpenSpec agents 4 (Agent 2: 4 .agents/skills/ subdirs; not .md files in .agents/; methodology question) | ON HOLD (RECURRING — keep 0a; .agents/skills/ pattern non-standard; not .md agent definitions) |
+| A16 | LOW | Workflow | humanlayer/humanlayer: spec→research→plan→implement→typecheck(sub)→code-review→ship (7-step vs current 6-step grind-research pipeline) | ON HOLD (RECURRING — chain reset; keep current 6-step) |
+| A17 | LOW | Workflow | gsd-build/GSD: new-project→new-milestone→plan-phase→spec-phase(sub)→execute-phase→verify-work(sub)→review→ship (8-step; plan/spec order swapped, review replaces complete-milestone vs current 8-step) | ON HOLD (RECURRING — chain reset archived; keep current 8-step) |
+| A18 | LOW | Workflow | garrytan/gstack: drops autoplan, plan-design-review, plan-devex-review (8-step vs current 11-step) | ON HOLD (RECURRING — chain reset; keep current 11-step) |
+| A19 | LOW | Workflow | bmad-code-org/BMAD: bmad-setup→bmad-deep-recon→bmad-build→bmad-review→bmad-walkthrough(sub)→bmad-eval(sub)→bmad-retrospective (7-step; completely different step names from current pipeline) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| A20 | LOW | Workflow | EveryInc/CE: ce-brainstorm→ce-plan→ce-work→ce-commit-push-pr(sub)→ce-babysit-pr(sub)→ce-compound (6-step; drops ce-setup/ce-noslop/ce-compound-refresh; adds commit/babysit steps) | ON HOLD (RECURRING — chain reset; keep current 7-step) |
+| A21 | LOW | Workflow | Yeachan-Heo/omc: omc-setup→deep-interview→ralplan→autopilot→execute(sub)→verify(sub)→fix(sub) (7-step; omc-setup added, team/* steps removed, ralplan replaces plan vs current 9-step) | ON HOLD (RECURRING — chain reset; keep current 9-step) |
